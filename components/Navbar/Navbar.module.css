@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 .navbar{
     background-color: #000;
     color: #fff;
@@ -7,11 +5,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    height: 8vh;
 }
 
 .logo{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -19,4 +17,11 @@
     display: flex;
     justify-content: space-between;
     width: 20%;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 10px;
 }
