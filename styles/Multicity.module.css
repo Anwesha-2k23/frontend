@@ -1,0 +1,101 @@
+.container{
+    position: relative;
+    height: 92.5vh;
+}
+
+.multicityTitle{
+    top: 10%;
+    left: 50%;
+    position: absolute;
+    color: #000000;
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+}
+
+.multicityHeroContent{
+    top: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    transform: translate(0%, -50%); 
+}
+
+.heroPara{
+    width: 50vw;
+    position: relative;
+}
+
+.heroPara h1{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+.heroPara p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #000000;
+}
+
+.multicityHeroContent button{
+    position: relative;
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.event{
+    height: 100vh;
+    position: relative;
+}
+
+.eventsCarousel{
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    transform: translate(-50%, -50%);
+}
+
+.eventsCarousel .carouselImg{
+    width: 30vw;
+    height: 47vh;
+    background: #000;
+    margin-inline: 1vw;
+}
+
+.eventButtons{
+    top: 40%;
+    left: 50%;
+    width: 40%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    justify-content: space-around;
+}
+
+.eventButtons span{
+    width: 10vw;
+    height: 5vh;
+    position: relative;
+    border: none;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
