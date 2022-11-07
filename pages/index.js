@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar/Navbar'
 
-const DateCountdown = dynamic(() => import("react-date-countdown-timer"), {
+const Countdown = dynamic(() => import('../components/Countdown/index'), {
   ssr: false,
 });
 
@@ -20,10 +20,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div className={styles.hero}>
-        <DateCountdown
-          dateTo="February 17, 2023 00:00:00 GMT+05:30"
-          callback={() => alert("Anwesha is HERE!!!")}
-        />
+        <Countdown dateTo="February 17, 2023 00:00:00 GMT+05:30" callback={() =>console.log("Anwesha 2023 is Here!!!")}/>
       </div>
     </>
   );
