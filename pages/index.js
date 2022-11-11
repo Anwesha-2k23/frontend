@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from "next/dynamic";
@@ -10,6 +11,11 @@ const Countdown = dynamic(() => import('../components/Countdown/index'), {
 });
 
 export default function Home() {
+
+  // temporary: redirect to './comingsoon.js' for the time being on load time until lading page is ready
+  useEffect(() => {
+    window.location.href = '/comingsoon';
+  }, []);
 
   return (
     <>

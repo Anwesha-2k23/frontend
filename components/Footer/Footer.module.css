@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    overflow-x: hidden;
 }
 
 .icon_link {
@@ -32,7 +33,6 @@
 
 .icon_links {
     display: flex;
-    width: 50%;
     max-width: 500px;
     align-items: center;
     justify-content: space-around;
@@ -40,15 +40,65 @@
 
 .footer_links{
     display: flex;
-    width: 40%;
     max-width: 400px;
     align-items: center;
     justify-content: space-around;
 } 
 .tac_links{
     display: flex;
-    width: 30%;
     max-width: 350px;
     align-items: center;
     justify-content: space-around;
+}
+.footerSeperator{
+    width: 60%;
+    height: 0.25px;
+    background-color: white;
+    margin: 0;
+}
+.link:hover{
+    padding:5px;
+    background-color: #cec6c6;
+    color: black;
+}
+.linkGroup{
+    overflow: hidden;
+}
+
+@media screen and (min-width: 800px){
+    .footer{
+        height: 25vh;
+    }
+    .footerSeperator{
+        display: none;
+    }
+    .linkGroup{
+        padding:20px 0px;
+    }
+    .icon_link{
+        margin: 0 20px;
+    }
+    .footer_link{
+        margin: 0 20px;
+    }
+    .tac_link{
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .footer{
+        height: 30vh;
+    }
+    .linkGroup{
+        padding:20px 0px;
+    }
+    .icon_link{
+        margin: 0 20px;
+    }
+    .footer_link{
+        margin: 0 20px;
+    }
+    .tac_link{
+        margin: 0 20px;
+    }
 }
