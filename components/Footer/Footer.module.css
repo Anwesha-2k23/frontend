@@ -102,3 +102,14 @@
         margin: 0 20px;
     }
 }
+@media screen and (max-width: 350px){
+    .footer{
+        height: 70vh;
+    }
+    .linkGroup{
+        flex-direction: column;
+    }
+    .link{
+        margin-top: 10px;
+    }
+}

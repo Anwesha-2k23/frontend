@@ -16,7 +16,6 @@
 .links{
     display: flex;
     justify-content: space-between;
-    width: 20%;
 }
 
 .link{
