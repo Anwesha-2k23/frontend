@@ -1,12 +1,38 @@
-.anwesha_bg_img{
-    background-image: url('../images/anwesha_bg_img.png');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    justify-content: end;
-    font-size: 30px;
-    color: rgb(58, 48, 29);
-    align-items: center;
-    flex-direction: column;
+.anwesha_bg_img {
+  background-image: url("../images/anwesha_bg_img.png");
+  background-size: cover;
+  background-position: center;
+  /* width: 100vw; */
+  min-height: 270px;
+  display: flex;
+  justify-content: end;
+  font-size: 30px;
+  color: rgb(58, 48, 29);
+  align-items: center;
+  flex-direction: column;
+}
+
+.bgText {
+  position: absolute;
+  top: 15%;
+  font-size: 2rem;
+  color: rgb(58, 48, 29);
+}
+
+@media screen and (min-width: 500px) {
+  .anwesha_bg_img {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .bgText {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bgText {
+    top: 42%;
+  }
 }
