@@ -1,0 +1,12 @@
+.anwesha_bg_img{
+    background-image: url('../images/anwesha_bg_img.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    color: rgb(58, 48, 29);
+    align-items: center;
+    flex-direction: column;
+}
