@@ -7,8 +7,8 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={[styles.icon_links, styles.linkGroup].join(" ")}>
         <Link className={[styles.icon_link, styles.link].join(" ")} href=""> Facebook</Link>   {/* Facebook Link Here */}
-        <Link className={[styles.icon_link, styles.link].join(" ")} href="">Instagram</Link>  {/* Instagram Link Here */}
-        <Link className={[styles.icon_link, styles.link].join(" ")} href="">Youtube</Link>  {/* Youtube Link Here */}
+        <Link className={[styles.icon_link, styles.link].join(" ")} href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y=">Instagram</Link>  {/* Instagram Link Here */}
+        <Link className={[styles.icon_link, styles.link].join(" ")} href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur">Youtube</Link>  {/* Youtube Link Here */}
       </div>
       <hr className={styles.footerSeperator}/>
       <div className={[styles.footer_links, styles.linkGroup].join(" ")}>
