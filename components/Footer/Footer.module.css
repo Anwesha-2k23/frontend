@@ -1,0 +1,54 @@
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 15vh;
+    background-color:black ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon_link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25em;
+    padding-bottom: 6px;
+    cursor: pointer;
+}
+.footer_link{
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+} 
+.tac_link{
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.icon_links {
+    display: flex;
+    width: 50%;
+    max-width: 500px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer_links{
+    display: flex;
+    width: 40%;
+    max-width: 400px;
+    align-items: center;
+    justify-content: space-around;
+} 
+.tac_links{
+    display: flex;
+    width: 30%;
+    max-width: 350px;
+    align-items: center;
+    justify-content: space-around;
+}
