@@ -6,17 +6,17 @@ import Footer from '../components/Footer/Footer'
 export default function comingsoon() {
 
     return (
-      <div className="comingsoon-body">
+      <div className={styles.comingsoon_body}>
         <Head>
           <title>Anwesha 2023 - Coming Soon</title>
           <meta name="description" content="Anwesha 2023" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className={styles.anwesha_bg_img}>
           <h1 className={styles.bgText}>COMING SOON...</h1>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
