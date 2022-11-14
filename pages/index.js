@@ -1,33 +1,36 @@
-import { useEffect } from 'react';
-import Head from 'next/head'
-import Image from 'next/image'
-import dynamic from "next/dynamic";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-import styles from '../styles/Home.module.css'
-import Navbar from '../components/Navbar/Navbar'
+import styles from "../styles/comingsoon.module.css";
 
-const Countdown = dynamic(() => import('../components/Countdown/index'), {
-  ssr: false,
-});
-
-export default function Home() {
-
-  // temporary: redirect to './comingsoon.js' for the time being on load time until lading page is ready
-  useEffect(() => {
-    window.location.href = '/comingsoon';
-  }, []);
-
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+export default function comingsoon() {
   return (
-    <>
+    <div className={styles.comingsoon_body}>
       <Head>
-        <title>Anwesha 2023</title>
+        <title>Anwesha 2023 - Coming Soon</title>
         <meta name="description" content="Anwesha 2023" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
-      <Navbar />
-      <div className={styles.hero}>
-        <Countdown dateTo="February 17, 2023 00:00:00 GMT+05:30" callback={() =>console.log("Anwesha 2023 is Here!!!")}/>
+      {/* <Navbar /> */}
+      <div className={styles.anwesha_bg_img}>
+        <h1 className={styles.bgText}>COMING SOON...</h1>
       </div>
-    </>
+      <div className={styles.socials}>
+        <div className={styles.imageElement}>
+          <Link href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y=" target="_blank">
+            <Image src="/instalogo.png" width={50} height={50} />
+          </Link>
+        </div>
+        <div className={styles.imageElement}>
+          <Link href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur" target="_blank">
+            <Image src="/ytlogo.png" width={50} height={50} />
+          </Link>
+        </div>
+      </div>
+      {/* <Footer/> */}
+    </div>
   );
 }
