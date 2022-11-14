@@ -25,6 +25,18 @@
   margin-right: 3%;
 }
 
+.socials{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 52px;
+  top: 5px;
+}
+
+.imageElement{
+  padding: 5px;
+}
+
 @media screen and (max-width: 820px) and (min-width: 700px) {
   .bgText{
     top: 42%;
@@ -55,5 +67,13 @@
   .bgText{
     font-size: 3rem;
     top: 10%;
+  }
+}
+@media screen and (max-width:580px){
+  .socials{
+    top: 20%;
+  flex-direction: column;
+  right: 20px;
+  top: 70%;
   }
 }
