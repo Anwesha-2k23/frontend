@@ -1,0 +1,36 @@
+.mainForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.field{
+    margin-bottom: 4px;
+}
+
+.field  input{
+    width: 60vw;
+    max-width: 700px;
+    height: 35px;
+    margin:2px;
+    border-radius: 20px;
+
+}
+
+.field label{
+    font-size: 20px;
+}
+
+.buttonWrapper{
+    margin-top: 20px;
+    width: 60vw;
+    max-width: 700px;
+}
+
+.buttonWrapper button{
+    width: 15vw;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 25px;
+}
