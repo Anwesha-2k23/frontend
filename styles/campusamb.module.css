@@ -55,10 +55,24 @@
 .anwesha_text{
     position: absolute;
     top: 35%;
-    left: 4vw;
+    left: 3vw;
     height: 6vw;
 }
 
+.btn_register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  font-size: 25px;
+  margin-left: 4.5vw;
+  margin-top: 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #2B0072;
+  color: aliceblue;
+}
 @media screen and (max-width: 700px) {
   .anwesha_bg_img{
     background-image: url("../images/Slice\ 1.jpg");
@@ -70,7 +84,7 @@
     position: absolute;
     height: 15vw;
     top: 30%;
-    left: 3%;
+    left: -2%;
   }
   .bgText{
     position: relative;
@@ -90,19 +104,19 @@
     letter-spacing: 0.3ch;
     color: #2B0072;
   }
+  .btn_register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 127px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 4.5vw;
+    margin-top: 28px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #2B0072;
+    color: aliceblue;
+  }
 
-}
-.btn_register{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 40px;
-  font-size: 25px;
-  margin-left: 4.5vw;
-  margin-top: 20px;
-  border-radius: 7px;
-  cursor: pointer;
-  background-color: #2B0072;
-  color: aliceblue;
 }
