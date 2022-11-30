@@ -9,7 +9,7 @@
   /* width: 100vw; */
   min-height: 270px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   font-size: 30px;
   color: rgb(58, 48, 29);
   align-items: flex-end;

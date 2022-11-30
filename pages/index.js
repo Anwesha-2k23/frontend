@@ -21,12 +21,12 @@ export default function comingsoon() {
       <div className={styles.socials}>
         <div className={styles.imageElement}>
           <Link href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y=" target="_blank">
-            <Image src="/instalogo.png" width={50} height={50} />
+            <Image src="/instalogo.png" width={50} height={50} alt=""/>
           </Link>
         </div>
         <div className={styles.imageElement}>
           <Link href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur" target="_blank">
-            <Image src="/ytlogo.png" width={50} height={50} />
+            <Image src="/ytlogo.png" width={50} height={50} alt=""/>
           </Link>
         </div>
       </div>
