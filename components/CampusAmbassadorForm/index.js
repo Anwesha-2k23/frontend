@@ -1,9 +1,25 @@
+import React from 'react';
+
 import styles from './style.module.css'
 
 const CampusAmbassadorForm = ()=>{
+
+  const [phone, setPhone] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [college, setCollege] = React.useState('');
+  const [referral, setReferral] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({ phone, name, email, college, referral, password });
+  }
+
     return (
         <>
-            <form action='' method="post" className={styles.mainForm}>
+            <h1 className={styles.mainHeading}>Register for Campus ambassador</h1>
+            <form className={styles.mainForm}>
             <div className= {styles.field}>
                 <label for="Phone_number">Phone Number</label>
                 <br/>
@@ -12,6 +28,7 @@ const CampusAmbassadorForm = ()=>{
                    name="Phone_Number"
                    required
                    maxlength="13"
+                   onChange={(e)=>setPhone(e.target.value)}
                  />
                 <br/>
             </div>
@@ -21,16 +38,7 @@ const CampusAmbassadorForm = ()=>{
                   <input
                     type="email"
                     name="Email_Id"
-                    required
-                  />
-                <br/>
-            </div>
-            <div className= {styles.field}>
-                <label for="email_id">Email ID</label>
-                <br/>
-                  <input
-                    type="email"
-                    name="Email_Id"
+                    onChange={(e)=>setEmail(e.target.value)}
                     required
                   />
                 <br/>
@@ -41,6 +49,7 @@ const CampusAmbassadorForm = ()=>{
                   <input
                     type="text"
                     name="Full_Name"
+                    onChange={(e)=>setName(e.target.value)}
                     required
                   />
                 <br/>
@@ -51,6 +60,7 @@ const CampusAmbassadorForm = ()=>{
                   <input
                     type="text"
                     name="College_Name"
+                    onChange={(e)=>setCollege(e.target.value)}
                     required
                   />
                 <br/>
@@ -61,6 +71,7 @@ const CampusAmbassadorForm = ()=>{
                   <input
                     type="text"
                     name="Refferal_Code"
+                    onChange={(e)=>setReferral(e.target.value)}
                     required
                   />
                 <br/>
@@ -71,12 +82,13 @@ const CampusAmbassadorForm = ()=>{
                   <input
                     type="password"
                     name="Password"
+                    onChange={(e)=>setPassword(e.target.value)}
                     required
                   />
                 <br/>
             </div>
             <div className={styles.buttonWrapper}>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={(e)=>handleSubmit(e)}>Submit</button>
             </div>
             </form>
         </>
