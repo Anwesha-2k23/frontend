@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from './style.module.css'
 
+const host = '13.234.226.170:8000'
+
 const CampusAmbassadorForm = ()=>{
 
   const [phone, setPhone] = React.useState('');
@@ -11,9 +13,31 @@ const CampusAmbassadorForm = ()=>{
   const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    let body = { phone, name, email, college, referral, password };
     console.log({ phone, name, email, college, referral, password });
+    try{
+      const response = await fetch(`http://${host}/campasambassador/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+      //check if request is successful
+      if (response.status === 200) {
+        alert('Succesfully registered  for Campus Ambassador');
+        const data = await response.json();
+        console.log(data);
+      }
+      else{
+        alert('Something went wrong');
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
     return (
@@ -21,19 +45,19 @@ const CampusAmbassadorForm = ()=>{
             <h1 className={styles.mainHeading}>Register for Campus ambassador</h1>
             <form className={styles.mainForm}>
             <div className= {styles.field}>
-                <label for="Phone_number">Phone Number</label>
+                <label htmlFor="Phone_number">Phone Number</label>
                 <br/>
                  <input
                    type="text"
                    name="Phone_Number"
                    required
-                   maxlength="13"
+                   maxLength="13"
                    onChange={(e)=>setPhone(e.target.value)}
                  />
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="email_id">Email ID</label>
+                <label htmlFor="email_id">Email ID</label>
                 <br/>
                   <input
                     type="email"
@@ -44,7 +68,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="full_name">Full Name</label>
+                <label htmlFor="full_name">Full Name</label>
                 <br/>
                   <input
                     type="text"
@@ -55,7 +79,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="college_name">College Name</label>
+                <label htmlFor="college_name">College Name</label>
                 <br/>
                   <input
                     type="text"
@@ -66,7 +90,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="refferal_code">Refferal Code</label>
+                <label htmlFor="refferal_code">Refferal Code</label>
                 <br/>
                   <input
                     type="text"
@@ -77,7 +101,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <br/>
                   <input
                     type="password"
