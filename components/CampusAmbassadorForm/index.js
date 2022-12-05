@@ -12,11 +12,12 @@ const CampusAmbassadorForm = ()=>{
   const [college, setCollege] = React.useState('');
   const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [years_of_study, setYearsOfStudy] = React.useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    let body = { phone, name, email, college, referral, password };
-    console.log({ phone, name, email, college, referral, password });
+    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
+    console.log(body);
     try{
       const response = await fetch(`http://${host}/campasambassador/register`, {
         method: 'POST',
@@ -96,6 +97,17 @@ const CampusAmbassadorForm = ()=>{
                     type="text"
                     name="Refferal_Code"
                     onChange={(e)=>setReferral(e.target.value)}
+                    required
+                  />
+                <br/>
+            </div>
+            <div className= {styles.field}>
+                <label htmlFor="refferal_code">Years of Study</label>
+                <br/>
+                  <input
+                    type="text"
+                    name="Refferal_Code"
+                    onChange={(e)=>setYearsOfStudy(e.target.value)}
                     required
                   />
                 <br/>
