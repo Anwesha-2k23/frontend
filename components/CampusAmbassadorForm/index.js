@@ -1,6 +1,10 @@
 import React from 'react';
 
+import Modal from '../Modal';
+
 import styles from './style.module.css'
+
+const host = '13.234.226.170:8000'
 
 const CampusAmbassadorForm = ()=>{
 
@@ -10,10 +14,44 @@ const CampusAmbassadorForm = ()=>{
   const [college, setCollege] = React.useState('');
   const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [cnfPassword, setCnfPassword] = React.useState('');
+  const [years_of_study, setYearsOfStudy] = React.useState("");
+  const [success, setSuccess] = React.useState(false);
+  const [failure, setFailure] = React.useState(false);
+  const [errorMsg, setErrorMsg] = React.useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log({ phone, name, email, college, referral, password });
+    if (password !== cnfPassword) {
+      setErrorMsg("Passwords do not match");
+      setFailure(true);
+      return;
+    }
+    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
+    console.log(body);
+    try{
+      const response = await fetch(`http://${host}/campasambassador/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+      //check if request is successful
+      if (response.status === 200) {
+        setSuccess(true);
+        const data = await response.json();
+        console.log(data);
+      }
+      else{
+        const data = await response.json();
+        setErrorMsg(data.message);
+        setFailure(true);
+      }
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
     return (
@@ -21,19 +59,19 @@ const CampusAmbassadorForm = ()=>{
             <h1 className={styles.mainHeading}>Register for Campus ambassador</h1>
             <form className={styles.mainForm}>
             <div className= {styles.field}>
-                <label for="Phone_number">Phone Number</label>
+                <label htmlFor="Phone_number">Phone Number</label>
                 <br/>
                  <input
                    type="text"
                    name="Phone_Number"
                    required
-                   maxlength="13"
+                   maxLength="13"
                    onChange={(e)=>setPhone(e.target.value)}
                  />
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="email_id">Email ID</label>
+                <label htmlFor="email_id">Email ID</label>
                 <br/>
                   <input
                     type="email"
@@ -44,7 +82,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="full_name">Full Name</label>
+                <label htmlFor="full_name">Full Name</label>
                 <br/>
                   <input
                     type="text"
@@ -55,7 +93,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="college_name">College Name</label>
+                <label htmlFor="college_name">College Name</label>
                 <br/>
                   <input
                     type="text"
@@ -66,7 +104,7 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="refferal_code">Refferal Code</label>
+                <label htmlFor="refferal_code">Refferal Code</label>
                 <br/>
                   <input
                     type="text"
@@ -77,7 +115,18 @@ const CampusAmbassadorForm = ()=>{
                 <br/>
             </div>
             <div className= {styles.field}>
-                <label for="password">Password</label>
+                <label htmlFor="refferal_code">Years of Study</label>
+                <br/>
+                  <input
+                    type="text"
+                    name="Refferal_Code"
+                    onChange={(e)=>setYearsOfStudy(e.target.value)}
+                    required
+                  />
+                <br/>
+            </div>
+            <div className= {styles.field}>
+                <label htmlFor="password">Password</label>
                 <br/>
                   <input
                     type="password"
@@ -87,10 +136,23 @@ const CampusAmbassadorForm = ()=>{
                   />
                 <br/>
             </div>
+            <div className= {styles.field}>
+                <label htmlFor="password">Confirm Password</label>
+                <br/>
+                  <input
+                    type="password"
+                    name="Password"
+                    onChange={(e)=>setCnfPassword(e.target.value)}
+                    required
+                  />
+                <br/>
+            </div>
             <div className={styles.buttonWrapper}>
                 <button type="submit" onClick={(e)=>handleSubmit(e)}>Submit</button>
             </div>
             </form>
+            {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess}/>}
+            {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure}/>}
         </>
     )
 }

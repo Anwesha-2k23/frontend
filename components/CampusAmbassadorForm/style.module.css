@@ -43,4 +43,10 @@
     height: 40px;
     font-size: 20px;
     border-radius: 25px;
+    cursor: pointer;
+}
+
+.buttonWrapper button:hover{
+    background-color: #424040;
+    color: #fff;
 }
