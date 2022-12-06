@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Modal from '../Modal';
+
 import styles from './style.module.css'
 
 const host = '13.234.226.170:8000'
@@ -12,10 +14,19 @@ const CampusAmbassadorForm = ()=>{
   const [college, setCollege] = React.useState('');
   const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [cnfPassword, setCnfPassword] = React.useState('');
   const [years_of_study, setYearsOfStudy] = React.useState("");
+  const [success, setSuccess] = React.useState(false);
+  const [failure, setFailure] = React.useState(false);
+  const [errorMsg, setErrorMsg] = React.useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (password !== cnfPassword) {
+      setErrorMsg("Passwords do not match");
+      setFailure(true);
+      return;
+    }
     let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
     console.log(body);
     try{
@@ -28,12 +39,14 @@ const CampusAmbassadorForm = ()=>{
       });
       //check if request is successful
       if (response.status === 200) {
-        alert('Succesfully registered  for Campus Ambassador');
+        setSuccess(true);
         const data = await response.json();
         console.log(data);
       }
       else{
-        alert('Something went wrong');
+        const data = await response.json();
+        setErrorMsg(data.message);
+        setFailure(true);
       }
     }
     catch(err){
@@ -123,10 +136,23 @@ const CampusAmbassadorForm = ()=>{
                   />
                 <br/>
             </div>
+            <div className= {styles.field}>
+                <label htmlFor="password">Confirm Password</label>
+                <br/>
+                  <input
+                    type="password"
+                    name="Password"
+                    onChange={(e)=>setCnfPassword(e.target.value)}
+                    required
+                  />
+                <br/>
+            </div>
             <div className={styles.buttonWrapper}>
                 <button type="submit" onClick={(e)=>handleSubmit(e)}>Submit</button>
             </div>
             </form>
+            {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess}/>}
+            {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure}/>}
         </>
     )
 }
