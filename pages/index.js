@@ -28,7 +28,8 @@ export default function comingsoon() {
       </Head>
       {/* <Navbar /> */}
       <div className={styles.anwesha_bg_img}>
-        <h1 className={styles.bgText}>COMING SOON...</h1>
+        <img src="/hero_text.png" alt="Anwesha text" className={styles.anwesha_text_image}/>
+        {/* <h1 className={styles.bgText}>COMING SOON...</h1> */}
       </div>
       <div className={styles.socials}>
         <div className={styles.imageElement}>
@@ -60,6 +61,7 @@ export default function comingsoon() {
       <div className={styles.ca_info}>
         <h1 className={styles.ca_heading}>Campus Ambassador</h1>
         <p className={styles.ca_text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis expedita voluptas vitae accusantium animi. Labore perferendis rem placeat quod corporis quas eius quibusdam id, veniam illo aut mollitia dolore doloremque cupiditate, debitis quos molestiae totam! Eligendi ad reprehenderit, exercitationem iusto, vero corrupti quibusdam animi odio, praesentium delectus obcaecati debitis! Reiciendis amet natus atque eum harum nobis, iste ad repellendus voluptate odio deleniti dolorem veniam temporibus distinctio voluptates assumenda aspernatur! Perferendis dicta libero atque officia quaerat maxime nam</p>
+        <button className={styles.ca_button}>Register Now!</button>
       </div>
       </div>
 

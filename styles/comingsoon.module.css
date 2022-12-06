@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .anwesha_bg_img {
-  background-image: url("../images/anwesha_bg_img.png");
+  background-image: url("../images/main_hero.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -15,6 +15,12 @@
   color: rgb(58, 48, 29);
   align-items: flex-end;
   flex-direction: column;
+}
+
+.anwesha_text_image{
+  position: relative;
+  bottom: 30%;
+  height: 8.5vw;
 }
 
 .bgText {
@@ -83,6 +89,18 @@
   position: relative;
   top: 10vh;
   margin-inline: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ca_button{
+  background-color: #660101;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: aliceblue;
 }
 
 @keyframes focus-in-contract {
@@ -116,6 +134,11 @@
   .bgText{
     top: 42%;
   }
+  .anwesha_bg_img{
+    background-image: url("../images/anwesha_bg_mobile.png");
+    align-items: center;
+    height: 100%;
+  }
 }
 @media screen and (max-width: 1000px) and (min-width: 820px) {
   .bgText{
@@ -127,17 +150,27 @@
     top: 70%;
   }
 }
+@media screen and (max-width: 1600px) and (min-width: 800px) {
+  .anwesha_text_image{
+    top: -4vh;
+    left: -594px;
+    height: 100px;
+  }
+}
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   .anwesha_bg_img{
     aspect-ratio: 16/9;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .anwesha_bg_img{
     background-image: url("../images/anwesha_bg_mobile.png");
     align-items: center;
     height: 100%;
+  }
+  .anwesha_text_image{
+    visibility: hidden;
   }
   .bgText{
     font-size: 7vw;
@@ -156,6 +189,15 @@
     left: 0%;
     margin-left: 5%;
     margin-top: 15px;
+  }
+  .ca_button{
+    background-color: #660101;
+    font-size: 1.7vw;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: aliceblue;
   }
 }
 @media screen and (max-width:580px){
