@@ -1,43 +1,76 @@
 import style from './Gallery.module.css'
 const Gallery = (props) => {
+  const images = props.images;
+  let i=0;
+  while(images.length%4!=0){
+    images.push(images[i])
+    i++;
+  }
+  let n=images.length
+  let images1=[]
+  let images2=[]
+  let images3=[]
+  let images4=[]
+  for(let i=0;i<n;i++)
+  {
+    if(i<n/4)
+    {
+      images1.push(images[i])
+    }
+    else if(i<n/2)
+    {
+      images2.push(images[i])
+    }
+    else if(i<3*n/4)
+    {
+      images3.push(images[i])
+    }
+    else
+    {
+      images4.push(images[i])
+    }
+  }
   return (
-    <div className={style.event}>
+    <div className={style.gallery}>
       <h1>{props.eventName}</h1>
-      <p className={style.description}>{props.desc}</p>
-      <div className={style.gallery}>
-    <figure className={`${style.galleryItem} ${style.galleryItem1}`}>
-      <div className={style.galleryImg}>
-      <img src={`${props.image1}`} className={style.galleryImg} alt="Image 1"></img>
-      </div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem2}`}>
-        <div className={style.galleryImg}>
-      <img src={`${props.image2}`} className={style.galleryImg} alt="Image 2"></img>
-        </div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem3}`}>
-            <div className={style.galleryImg}>
-      <img src={`${props.image3}`} className={style.galleryImg} alt="Image 3"></img>
+      <p>{props.desc}</p>
+      <div className={style.row}>
+      <div className={style.column}>
+            {
+              images1.map((image, index) => {
+                return(
+                  <img src={`${image}`} className={style.image} key={index} alt=""/>
+                )
+              })}
+            </div>
+        <div className={style.column}>
+              {
+              images2.map((image, index) => {
+                return(
+                  <img src={`${image}`} className={style.image} key={index} alt=""/>
+                )
+              })}
+            </div>
+        <div className={style.column}>
 
+              {
+              images3.map((image, index) => {
+                return(
+                  <img src={`${image}`} className={style.image} key={index} alt=""/>
+                )
+              })}
             </div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem4}`}>
-            <div className={style.galleryImg}>
-      <img src={`${props.image4}`} className={style.galleryImg} alt="Image 4"></img>
-            </div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem5}`}>
-            <div className={style.galleryImg}>
-      <img src={`${props.image5}`} className={style.galleryImg} alt="Image 5"></img>
-            </div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem6}`}>
-            <div className={style.galleryImg}>
-      <img src={`${props.image6}`} className={style.galleryImg} alt="Image 6"></img>
-            </div>
-    </figure>
-  </div>
-    </div>
+        <div className={style.column}>
+
+              {
+              images4.map((image, index) => {
+                return(
+                  <img src={`${image}`} className={style.image} key={index} alt=""/>
+                )
+              })}
+           </div>
+      </div>
+</div>
     
   )
 }
