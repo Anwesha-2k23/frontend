@@ -28,7 +28,6 @@ const CampusAmbassadorForm = ()=>{
       return;
     }
     let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
-    console.log(body);
     try{
       const response = await fetch(`http://${host}/campasambassador/register`, {
         method: 'POST',
@@ -41,7 +40,6 @@ const CampusAmbassadorForm = ()=>{
       if (response.status === 200) {
         setSuccess(true);
         const data = await response.json();
-        console.log(data);
       }
       else{
         const data = await response.json();
@@ -55,7 +53,7 @@ const CampusAmbassadorForm = ()=>{
   }
 
     return (
-        <>
+        <div className={styles.form}>
             <h1 className={styles.mainHeading}>Register for Campus ambassador</h1>
             <form className={styles.mainForm}>
             <div className= {styles.field}>
@@ -153,7 +151,7 @@ const CampusAmbassadorForm = ()=>{
             </form>
             {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess}/>}
             {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure}/>}
-        </>
+        </div>
     )
 }
 
