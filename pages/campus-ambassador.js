@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/gallery.module.css'
+import styles from '../styles/ca.module.css'
 import Navbar from '../components/Navbar/Navbar'
 import CampusAmbassadorForm from '../components/CampusAmbassadorForm';
 

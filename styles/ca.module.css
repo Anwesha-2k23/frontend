@@ -1,0 +1,8 @@
+.container {
+  font-family: "Poppins", sans-serif;
+  background-image: url("../public/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100vh;
+}
