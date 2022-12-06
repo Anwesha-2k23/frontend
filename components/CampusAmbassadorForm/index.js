@@ -29,7 +29,7 @@ const CampusAmbassadorForm = ()=>{
     }
     let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
     try{
-      const response = await fetch(`http://${host}/campasambassador/register`, {
+      const response = await fetch(`https://${host}/campasambassador/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

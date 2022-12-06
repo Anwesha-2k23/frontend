@@ -5,7 +5,7 @@
 }
 .anwesha_bg_img {
   font-family: "Poppins", sans-serif;
-  background-image: url("../public/bg.png");
+  background-image: url("/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
