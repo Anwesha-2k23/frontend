@@ -17,8 +17,8 @@ Beginner to intermediate levels of knowledge in **HTML**, **CSS** and **Javascri
 
 
 ## 🖥️ Running the Server
-1. Install the dependencies using `npm i`
-2. Run the server using `npm run dev` or `yarn dev`
+1. Install the dependencies using `yarn install`
+2. Run the server using `yarn dev`
 3. Server should have started running
 4. You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
