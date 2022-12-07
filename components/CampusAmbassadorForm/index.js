@@ -4,7 +4,7 @@ import Modal from '../Modal';
 
 import styles from './style.module.css'
 
-const host = '13.234.226.170:8000'
+const host = "backend.anwesha.live";
 
 const CampusAmbassadorForm = ()=>{
 
