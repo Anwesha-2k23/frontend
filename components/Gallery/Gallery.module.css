@@ -1,51 +1,47 @@
-.gallery{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left:10%;
-    margin-right:10%;
-    margin-top: 5%;
-}
-.row {
+.gallery {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5%;
 }
 
-.column {
-    flex: 50%;
-    padding: 0 4px;
+.container {
+  columns: 5;
+  column-gap: 0.8rem;
+}
+
+.image_item {
+  width: 300px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.image {
+  max-width: 100%;
+}
+
+@media screen and (max-width:1800px) {
+  .container {
+    columns: 4;
   }
-  
-.column img {
-    margin-top: 8px;
-    vertical-align: middle;
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+    columns: 3;
   }
-.image{
-    max-height: 500px;
-    /* width: auto; */
 }
 
-.description{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 20px;
+@media screen and (max-width:800px) {
+  .container {
+    columns: 2;
+  }
 }
 
-@media only screen and (min-width: 768px){
-    .column{
-        flex: 33%;
-    }
-    
-} 
-
-@media only screen and (min-width: 1024px){
-   .gallery{
-    justify-content: flex-start;
-    align-items: flex-start;
-   }
-   .column{
-         flex: 25%;
-   }
-} 
+@media screen and (max-width:520px) {
+  .container {
+    columns: 1;
+  }
+}
