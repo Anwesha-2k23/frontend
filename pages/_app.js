@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <main className={roboto.className}>
       <Script
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
       <Script strategy="lazyOnload">
         {`
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${process.env.GOOGLE_ANALYTICS});
+          gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
       </Script>
       <Component {...pageProps} />
