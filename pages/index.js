@@ -11,6 +11,7 @@ export default function comingsoon() {
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
+
       <div className={styles.anwesha_bg_img}>
         <div className={styles.container}>
           <Image src="/A_logo.png" width={400} height={400} />
