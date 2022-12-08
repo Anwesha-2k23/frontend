@@ -6,13 +6,6 @@ import styles from "../styles/comingsoon.module.css";
 export default function comingsoon() {
   return (
     <div className={styles.comingsoon_body}>
-      <script async src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.GOOGLE_ANALYTICS}></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-          gtag('config', process.env.GOOGLE_ANALYTICS);
-      </script>
       <Head>
         <title>Anwesha 2023 - Coming Soon</title>
         <meta name="description" content="Anwesha 2023" />
