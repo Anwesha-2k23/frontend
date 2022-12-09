@@ -1,22 +1,28 @@
 import style from './Gallery.module.css'
+import { useInView } from 'react-intersection-observer';
+import ImageItem from './ImageItem';
+import { useScrollDirection } from 'react-use-scroll-direction'
 const Gallery = (props) => {
+  const { ref: h1ref, inView: h1view } = useInView();
+  const { ref: pref, inView: pview } = useInView();
+  const {
+    scrollDirection,
+  } = useScrollDirection()
+  // console.log(scrollDirection === "DOWN");
   const images = props.images;
   return (
     <div className={style.gallery}>
-      <h1>{props.eventName}</h1>
-      <p>{props.desc}</p>
+      <h1 ref={h1ref} className={`${(scrollDirection !== "UP") ? ((h1view) ? style.show : style.hidden) : ''}`}>{props.eventName}</h1>
+      <p ref={pref} className={`${(scrollDirection !== "UP") ? ((pview) ? style.show : style.hidden) : ''}`}>{props.desc}</p>
       <div className={style.container}>
         {
           images.map((image, index) => {
             return (
-              <div key={index} className={style.image_item}>
-                <img src={`${image}`} className={style.image} alt="" />
-              </div>
+              <ImageItem image={image} key={index} />
             )
           })}
       </div>
-    </div>
-
+    </div >
   )
 }
 
