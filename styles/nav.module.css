@@ -1,6 +1,6 @@
 .search{
     margin-left: 8rem;
-    position:relative;
+    /* position:relative; */
 }
 
 .h4{
@@ -13,7 +13,7 @@
 
 .h5{
   position: absolute;
-  margin-top: -12rem;
+  margin-top: -7rem;
   margin-left: 50rem;
   font-family: 'Poppins', sans-serif;
   color: white;
@@ -21,16 +21,16 @@
 
 .h6{
   position: absolute;
-  margin-top: -12rem;
-  margin-left: 54rem;
+  margin-top: -7rem;
+  margin-left: 54.2rem;
   font-family: 'Poppins', sans-serif;
   color: white;
 }
 
 .h7{
   position: absolute;
-  margin-top: -12rem;
-  margin-left: 60rem;
+  margin-top: -7rem;
+  margin-left: 60.5rem;
   font-family: 'Poppins', sans-serif;
   color: white;
 
@@ -38,8 +38,8 @@
 
 .h8{
  position: absolute;
- margin-left: 67rem;
- margin-top: -12rem;
+ margin-left: 68rem;
+ margin-top: -7rem;
  font-family: 'Poppins', sans-serif;
  color: white;
 }
@@ -284,55 +284,33 @@
     width: 1rem;
 } */
 
-.navbar_2{
-  height: 6rem;
-  margin-top: -11rem;
-  margin-left: 40rem;
-  position: absolute;
-} 
-
-.navbar_1{
-  transform: rotateX(180deg);
-  width: 100%;
-  height: 20rem;
-  margin-top: -4rem;
-  position: relative;
-}
-
-.navbar_3{
-  height: 10rem;
-  margin-top: -12.4rem;
-  margin-left: -1rem;
-  position: absolute;
-} 
-.navbar_4{
-  height: 10rem;
-  margin-top: -12.4rem;
-  margin-left: 79rem;
-  position: absolute;
-} 
+ 
 
 @media only screen and (max-width: 1000px) {
   .navbar_1{
 opacity: 0;
+display: none;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .navbar_2{
 opacity: 0;
+display: none;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .navbar_3{
 opacity: 0;
+display: none;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .navbar_4{
 opacity: 0;
+display: none;
   }
 }
 
@@ -364,11 +342,43 @@ opacity: 1;
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .whole{
-     height: 3.4rem;
-     background:white;
+/* @media only screen and (max-width: 1000px) {
+  .whole_2{
+     height: 3.5rem;
   }
+} */
+
+.whole{
+  z-index:0;
 }
 
+.navbar_2{
+  height: 6rem;
+  margin-top: -5rem;
+  margin-left: 40rem;
+  position: absolute;
+  z-index: 1;
+} 
 
+.navbar_1{
+  transform: rotateX(180deg);
+  width: 100%;
+  height: 20rem;
+  margin-top: 5rem;
+  position: absolute;
+  margin-left:-0.75rem ;
+  z-index: 1;
+}
+
+.navbar_3{
+  height: 10rem;
+  margin-top: -4.4rem;
+  margin-left: -1rem;
+  position: absolute;
+} 
+.navbar_4{
+  height: 10rem;
+  margin-top: -4.4rem;
+  margin-left: 79rem;
+  position: absolute;
+}
