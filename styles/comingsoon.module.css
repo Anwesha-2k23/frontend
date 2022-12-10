@@ -55,7 +55,7 @@
 }
 
 .ca_poster{
-  background-image: url("../public/CA.png");
+  background-image: url("/CA.png");
   cursor: pointer;
     background-size: cover;
     background-position: right;

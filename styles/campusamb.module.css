@@ -8,7 +8,7 @@
 }
 
 .anwesha_bg_img {
-    background-image: url("../public/CA.png");
+    background-image: url("/CA.png");
     background-size: cover;
     background-position: center;
     /* background-size: 100% 100%; */
@@ -81,7 +81,7 @@
 }
 @media screen and (max-width: 700px) {
   .anwesha_bg_img{
-    background-image: url("../public/Slice\ 1.jpg");
+    background-image: url("/Slice\ 1.jpg");
     align-items: center;
     height: 100%;
     background-size: cover;
