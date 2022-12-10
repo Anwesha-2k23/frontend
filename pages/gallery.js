@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/gallery.module.css'
 import Navbar from '../components/Navbar/Navbar'
 import Gallery from '../components/Gallery/Gallery';
+import Footer from '../components/Footer/Footer';
 
 export default function Multicity() {
     return (
@@ -17,6 +18,7 @@ export default function Multicity() {
                 <br /><br />
                 <Gallery></Gallery>
             </div>
+            <Footer />
         </>
     );
 }

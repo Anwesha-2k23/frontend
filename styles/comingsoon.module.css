@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-
-.comingsoon_body {
+.comingsoon_body{
+  background-color:#FFF6A5;
   height: 100vh;
 }
 .anwesha_bg_img {
   font-family: "Poppins", sans-serif;
-  background-image: url("../images/bg.png");
+  background-image: url("/bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
-  height: 100vh;
 }
-
 .container {
   display: flex;
   flex-direction: row;
@@ -20,26 +18,17 @@
   flex-wrap: wrap;
   margin: 40px auto;
 }
-
 .text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* width: 100vw; */
 }
-
-.comingsoon {
-  font-size: 42px;
-  margin: auto;
-}
-
 .anweshaText {
   letter-spacing: -10px;
   font-size: 96px;
   margin: 0 auto;
 }
-
 .iitp {
   color: "#5D0808";
   letter-spacing: 46px;
@@ -48,20 +37,107 @@
   margin-left: 50px;
 }
 
-.parent{
-  width: 100vw;
-  text-align: center;
-  display: flex;
-}
-
 .socials{
+  position: fixed;
   display: flex;
   flex-direction: row;
-  margin: 0px auto;
+  right: 52px;
+  top: 5px;
 }
 
 .imageElement{
-  margin: 20px 20px;
+  padding: 10px;
+}
+
+.ca{
+  position: relative;
+  overflow: hidden;
+}
+
+.ca_poster{
+  background-image: url("/CA.png");
+  cursor: pointer;
+    background-size: cover;
+    background-position: right;
+    /* background-size: 100% 100%; */
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    /* width: 100vw; */
+    min-height: 270px;
+    height: 40vw;
+    width: 40vw;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 6px;
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    align-items: flex-end;
+    flex-direction: column;
+    filter: brightness(60%);
+}
+
+.ca_heading{
+  color: rgb(58, 48, 29) !important;
+}
+
+.ca_info{
+  position: absolute;
+  top: 10%;
+  left: 54%;
+  /* transform: translate(-50%, -50%); */
+  font-size: 1.45vw;
+  color: rgb(58, 48, 29);
+  font-weight: 900;
+  margin-right: 3%;
+
+}
+.dispatch_form{
+  position: relative;
+  top: 10vh;
+  margin-inline: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ca_button{
+  background-color: #660101;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+@keyframes focus-in-contract {
+    
+  0% {
+    letter-spacing:1em;
+    filter:blur(12px);
+    opacity:0;
+  }
+  100% {
+    filter:blur(0);
+    opacity:1;
+  }
+}
+@keyframes focus-in-expand-top {
+			
+  0% {
+    letter-spacing:-.5em;
+    transform:translateY(-300px);
+    filter:blur(12px);
+    opacity:0;
+  }
+  0% {
+    transform:translateY(0);
+    filter:blur(0);
+    opacity:1;
+  }
 }
 
 @media screen and (max-width: 620px) {
@@ -73,13 +149,6 @@
   .iitp{
     font-size: 24px;
     letter-spacing: 41px;
-  }
-}
-
-@media screen and (min-width: 1019px) {
-  .parent{
-    position: absolute;
-    bottom: 0;
   }
 }
 
@@ -129,9 +198,9 @@
     letter-spacing: 20px;
   margin-left: 30px;
   }
-  .comingsoon{
+  /* .comingsoon{
     font-size: 35px;
-  }
+  } */
 }
 @media screen and (max-width: 309px) {
   .anweshaText {
@@ -144,7 +213,70 @@
     letter-spacing: 14px;
   margin-left: 25px;
   }
-  .comingsoon{
+  /* .comingsoon{
     font-size: 28px;
+  } */
+}
+
+@media screen and (max-width: 820px) and (min-width: 700px) {
+  .bgText{
+    top: 42%;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 820px) {
+  .bgText{
+    top: 55%;
+  }
+}
+@media screen and (max-width: 1030px) and (min-width: 1000px) {
+  .bgText{
+    top: 70%;
+  }
+}
+@media screen and (max-width: 1600px) and (min-width: 800px) {
+  .anwesha_text_image{
+    top: -4vh;
+    left: -594px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+}
+@media screen and (max-width: 800px) {
+  .anwesha_text_image{
+    visibility: hidden;
+  }
+  .bgText{
+    font-size: 7vw;
+    top: 50%;
+    margin: 10px;
+    animation: focus-in-expand-top 3.2s ease 2s infinite normal none;
+  }
+  .ca_poster{
+    height: 60vw;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .ca_info{
+    position: relative;
+    top: 100%;
+    left: 0%;
+    margin-left: 5%;
+    margin-top: 15px;
+  }
+  .ca_button{
+    background-color: #660101;
+    font-size: 1.7vw;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: aliceblue;
+  }
+}
+@media screen and (max-width:580px){
+  .socials{
+    display: none;
   }
 }
