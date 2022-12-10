@@ -4,9 +4,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 import styles from "../styles/comingsoon.module.css";
-
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 export default function comingsoon() {
   useEffect(() => {
     
@@ -26,7 +23,6 @@ export default function comingsoon() {
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
-      {/* <Navbar /> */}
       <div className={styles.anwesha_bg_img}>
         <img src="/hero_text.png" alt="Anwesha text" className={styles.anwesha_text_image}/>
         {/* <h1 className={styles.bgText}>COMING SOON...</h1> */}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .navbar{
     background-color: #000;
     color: #fff;
@@ -6,6 +8,8 @@
     justify-content: space-between;
     align-items: center;
     height: 8vh;
+    overflow-y: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo{
