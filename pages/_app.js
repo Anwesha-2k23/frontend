@@ -8,7 +8,7 @@ const poppins = Poppins({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <main className={roboto.className}>
+    <main className={poppins.className}>
       <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
       <Component {...pageProps} />
     </main>
-  )
+  );
 }
 
 export default MyApp
