@@ -34,7 +34,7 @@
 }
 
 .socials{
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: row;
   right: 52px;
@@ -42,7 +42,7 @@
 }
 
 .imageElement{
-  padding: 5px;
+  padding: 10px;
 }
 
 .ca{
@@ -52,6 +52,7 @@
 
 .ca_poster{
   background-image: url("../public/CA.png");
+  cursor: pointer;
     background-size: cover;
     background-position: right;
     /* background-size: 100% 100%; */
@@ -74,12 +75,16 @@
     filter: brightness(60%);
 }
 
+.ca_heading{
+  color: rgb(58, 48, 29) !important;
+}
+
 .ca_info{
   position: absolute;
   top: 10%;
   left: 54%;
   /* transform: translate(-50%, -50%); */
-  font-size: 2vw;
+  font-size: 1.45vw;
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
@@ -101,6 +106,7 @@
   margin-top: 10px;
   font-weight: 600;
   color: aliceblue;
+  cursor: pointer;
 }
 
 @keyframes focus-in-contract {

@@ -76,6 +76,9 @@
   background-color: #2B0072;
   color: aliceblue;
 }
+.btn_text{
+  color: aliceblue;
+}
 @media screen and (max-width: 700px) {
   .anwesha_bg_img{
     background-image: url("../public/Slice\ 1.jpg");
