@@ -1,0 +1,12 @@
+.anwesha_bg_img {
+  font-family: "Poppins", sans-serif;
+  background-image: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100vh;
+}
+
+.heading_color {
+  background-color: aliceblue;
+}
