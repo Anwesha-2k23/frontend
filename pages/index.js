@@ -19,11 +19,11 @@ export default function comingsoon() {
   return (
     <div className={styles.comingsoon_body}>
       <Head>
-        <title>Anwesha 2023 - Coming Soon</title>
+        <title>Anwesha 2023</title>
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
-      
+
       <div className={styles.socials}>
         <div className={styles.imageElement}>
           <Link
@@ -56,12 +56,22 @@ export default function comingsoon() {
         </div>
       </div>
       <div className={styles.anwesha_bg_img}>
-        <img
-          src="/hero_text.png"
-          alt="Anwesha text"
-          className={styles.anwesha_text_image}
-        />
-        {/* <h1 className={styles.bgText}>COMING SOON...</h1> */}
+        <div className={styles.container}>
+          <Image src="/A_logo.png" width={400} height={400} />
+
+          <div className={styles.text}>
+            <p style={{ marginBottom: 10, paddingRight: 5 }}>
+              <span className={styles.anweshaText} style={{ color: "#660101" }}>
+                Anwesha
+              </span>
+              <span className={styles.anweshaText} style={{ color: "#CB4846" }}>
+                {" "}
+                ‘23{" "}
+              </span>
+            </p>
+            <p className={styles.iitp}>IIT PATNA</p>
+          </div>
+        </div>
       </div>
 
       {/* Campus Ambassador */}
