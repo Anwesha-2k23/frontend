@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .anwesha_bg_img {
-  background-image: url("../images/main_hero.png");
+  background-image: url("../public/main_hero.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -51,7 +51,7 @@
 }
 
 .ca_poster{
-  background-image: url("../images/CA.png");
+  background-image: url("../public/CA.png");
     background-size: cover;
     background-position: right;
     /* background-size: 100% 100%; */
@@ -135,7 +135,7 @@
     top: 42%;
   }
   .anwesha_bg_img{
-    background-image: url("../images/anwesha_bg_mobile.png");
+    background-image: url("../public/anwesha_bg_mobile.png");
     align-items: center;
     height: 100%;
   }
@@ -165,7 +165,7 @@
 }
 @media screen and (max-width: 800px) {
   .anwesha_bg_img{
-    background-image: url("../images/anwesha_bg_mobile.png");
+    background-image: url("../public/anwesha_bg_mobile.png");
     align-items: center;
     height: 100%;
   }
