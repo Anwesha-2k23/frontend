@@ -81,19 +81,10 @@ export default function comingsoon() {
         </Link>
         <div className={styles.ca_info}>
           <Link href="/campusambassador">
-            <h1 className={styles.ca_heading}>Campus Ambassador</h1>
+            <h1 className={styles.ca_heading}>Campus Ambassador Programme</h1>
           </Link>
           <p className={styles.ca_text}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-            expedita voluptas vitae accusantium animi. Labore perferendis rem
-            placeat quod corporis quas eius quibusdam id, veniam illo aut
-            mollitia dolore doloremque cupiditate, debitis quos molestiae totam!
-            Eligendi ad reprehenderit, exercitationem iusto, vero corrupti
-            quibusdam animi odio, praesentium delectus obcaecati debitis!
-            Reiciendis amet natus atque eum harum nobis, iste ad repellendus
-            voluptate odio deleniti dolorem veniam temporibus distinctio
-            voluptates assumenda aspernatur! Perferendis dicta libero atque
-            officia quaerat maxime nam
+            Join Anwesha's campus ambassador programme and seize the opportunity to become the face of your college! 
           </p>
           <Link href="/ca-register">
             <button className={styles.ca_button}>Register Now!</button>
