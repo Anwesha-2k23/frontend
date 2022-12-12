@@ -1,35 +1,40 @@
 .nav_div{
   position: relative;
-  background-color: rgb(34, 198, 201);
-  height: 12rem;
+  /* background-color: rgb(34, 198, 201); */
+  height: 15.8rem;
+ 
+  
   
 }
 
 .navbar_3{
 position: absolute;
-left:0
+left:0;
+z-index: 1;
 }
 
 .navbar_4{
 position: absolute;
 right:-.50%;
+z-index: 1;
 }
 
 .navbar_2{
   position: absolute;
   left: 44%;
+  z-index: 1;
+  top:-3%;
 }
  .navbar_1{
   width: 100%;
-  position: absolute;
-  top:25%;
-  transform: rotateX(180deg);
+  /* position: absolute; */
+  /* transform: rotateX(180deg); */
   } 
 
 .item_1{
   position: absolute;
   left:60%;
-  top:15%;
+  top:12%;
   font-family: 'Poppins', sans-serif;
   color: white;
 
@@ -37,7 +42,7 @@ right:-.50%;
 .item_2{
   position: absolute;
   left:65.5%;
-  top:15%;
+  top:12%;
   font-family: 'Poppins', sans-serif;
   color: white;
 
@@ -45,7 +50,7 @@ right:-.50%;
 .item_3{
   position: absolute;
   left:76%;
-  top:15%;
+  top:12%;
   font-family: 'Poppins', sans-serif;
   color: white;
 
@@ -87,9 +92,9 @@ right:-.50%;
 } */
 
 .nav_image{
-top:5%;
+top:7%;
 width: 100%;
-height: 50%;
+height: 60%;
 overflow: hidden;
 position: absolute;
 
@@ -97,51 +102,100 @@ position: absolute;
 
 .headings{
   position: absolute;
-  top:60%;
+  top:70%;
   left:7%;
   font-family: 'Poppins', sans-serif;
 }
 .headings_2{
   position: absolute;
-  top:74%;
+  top:84%;
   left:7%;
   opacity: 0.7;
   font-family: 'Poppins', sans-serif;
 }
 
-@media only screen and  (max-width:1200px){
+/* @media only screen and  (max-width:1200px){
   .navbar_1{
        top:40%;
        transition: ease-in-out;
        transition: 1s;
   }
+} */
+
+/* @media only screen and  (max-width:1200px){
+  .nav_image{
+      display: initial;
+  }
 }
 
-@media only screen and  (max-width:1000px){
+/* @media only screen and  (max-width:1600px){
+  .nav_image{
+      display: none;
+  }
+}  */
+
+@media only screen and  (max-width:1100px){
+  .navbar_3{
+      display: none;
+  }
+}
+
+@media only screen and  (max-width:1100px){
+  .navbar_4{
+      display: none;
+  }
+}
+
+
+
+
+@media only screen and  (max-width:1600px){
+  .nav_image{
+      display: none;
+  }
+} 
+
+@media only screen and  (max-width:1100px){
+  .nav_image{
+      display: initial;
+  }
+} 
+ 
+@media only screen and  (max-width:1600px){
+  .main{
+      display: none;
+  }
+}
+@media only screen and  (max-width:1100px){
+  .main{
+      display: initial;
+     
+  }
+}
+
+
+
+@media only screen and  (max-width:1100px){
+  .navbar_1{
+      display: none;
+    
+  }
+}
+
+@media only screen and  (max-width:1100px){
+  .navbar_2{
+      display: none;
+    
+  }
+}
+
+
+
+
+@media only screen and  (max-width:1100px){
   .nav_div{
-      display: none;
-  }
-}
-
-@media only screen and  (max-width:1600px){
-  .main{
-      display: none;
-  }
-}
-@media only screen and  (max-width:1000px){
-  .main{
       display: initial;
-  }
-}
-
-@media only screen and  (max-width:1600px){
-  .nav_image{
-      display: none;
-  }
-}
-@media only screen and  (max-width:1000px){
-  .nav_image{
-      display: initial;
+      
   }
 }
 @media only screen and  (max-width:1600px){
@@ -149,7 +203,7 @@ position: absolute;
       display: none;
   }
 }
-@media only screen and  (max-width:1000px){
+@media only screen and  (max-width:1100px){
   .headings{
       display: initial;
   }
@@ -159,10 +213,16 @@ position: absolute;
       display: none;
   }
 }
-@media only screen and  (max-width:1000px){
+@media only screen and  (max-width:1100px){
   .headings_2{
       display: initial;
   }
 }
+
+/* @media only screen and  (max-width:1200px){
+  .div_image{
+      display: initial;
+  }
+} */
 
 

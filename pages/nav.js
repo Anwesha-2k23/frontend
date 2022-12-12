@@ -16,7 +16,7 @@ const Navbar = () => {
                 <img src="./navbar/navbar mandala right.svg" className={styles.navbar_4} />
                 <img src="./navbar/logo.svg" className={styles.navbar_2} />
 
-                <img src="./navbar/nav bar.svg" className={styles.navbar_1} />
+                <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
                 <h4 class={` ${styles.item_1} nav-item`}>
                     <a class="nav-link active" aria-current="page" href="/campus_ambassador">CA</a>
                 </h4>
