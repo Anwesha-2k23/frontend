@@ -26,54 +26,55 @@ const Navbar = () => {
                 <h4 class={styles.item_3}>
                     <a class="nav-link active" aria-current="page" href="#">Events</a>
                 </h4>
+                <img className={styles.nav_image} src="https://i.redd.it/7nw9uzlp0de71.jpg" />
 
-            </div>
-            <nav class={`${styles.main} navbar bg-light fixed-top`}>
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class={` ${styles.search}bi bi-search`} viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                    <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class={`${styles.h1} nav-item`}>
-                                    <a class="nav-link active" aria-current="page" href="/campus_ambassador">CA</a>
-                                </li>
-                                <li class={`${styles.h2} nav-item`}>
-                                    <a class="nav-link active" href="/multcity">Multicity</a>
-                                </li>
-                                <li class={`${styles.h3} nav-item`}>
-                                    <a class="nav-link active" aria-current="page" href="#">Events</a>
-                                </li>
-                                <li class={`${styles.h4} nav-item`}>
-                                    <a class="nav-link active" href="#">Login</a>
-                                </li>
+                <nav class={`${styles.main} navbar  fixed-top`}>
+                    <div class="container-fluid">
+                        <button class={ `${styles.b}  navbar-toggler`} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class={` ${styles.search}bi bi-search`} viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                        <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                            <div class="offcanvas-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li class={`${styles.h1} nav-item`}>
+                                        <a class="nav-link active" aria-current="page" href="/campus_ambassador">CA</a>
+                                    </li>
+                                    <li class={`${styles.h2} nav-item`}>
+                                        <a class="nav-link active" href="/multcity">Multicity</a>
+                                    </li>
+                                    <li class={`${styles.h3} nav-item`}>
+                                        <a class="nav-link active" aria-current="page" href="#">Events</a>
+                                    </li>
+                                    <li class={`${styles.h4} nav-item`}>
+                                        <a class="nav-link active" href="#">Login</a>
+                                    </li>
 
 
-                            </ul>
+                                </ul>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-            </nav>
-            
-            <div className={styles.div_image}>
-                <img className={styles.nav_image} src="https://i.redd.it/7nw9uzlp0de71.jpg"/>
+
+                </nav>
+
             </div>
+
+
+
             <div className={styles.headings}>
                 <h1>Lorem Ipsum</h1>
                 <h1>dolor sit</h1>
-                
+
             </div>
             <div className={styles.headings_2}>
-            <h4>Lorem ipsum dolor sit amet,</h4>
+                <h4>Lorem ipsum dolor sit amet,</h4>
                 <h4>consectetur adipiscing elit.</h4>
             </div>
 

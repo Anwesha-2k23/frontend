@@ -1,11 +1,6 @@
 .nav_div{
   position: relative;
-  /* background-color: rgb(34, 198, 201); */
-  height: 15.8rem;
- 
-  
-  
-}
+  height: 75.8rem;}
 
 .navbar_3{
 position: absolute;
@@ -20,21 +15,20 @@ z-index: 1;
 }
 
 .navbar_2{
-  position: absolute;
+  position: fixed;
   left: 44%;
   z-index: 1;
-  top:-3%;
+  top:0%;
 }
  .navbar_1{
   width: 100%;
-  /* position: absolute; */
-  /* transform: rotateX(180deg); */
+  z-index: 1;
   } 
 
 .item_1{
   position: absolute;
   left:60%;
-  top:12%;
+  top:1%;
   font-family: 'Poppins', sans-serif;
   color: white;
 
@@ -42,22 +36,21 @@ z-index: 1;
 .item_2{
   position: absolute;
   left:65.5%;
-  top:12%;
+  top:1%;
   font-family: 'Poppins', sans-serif;
   color: white;
-
 }
 .item_3{
   position: absolute;
   left:76%;
-  top:12%;
+  top:1%;
   font-family: 'Poppins', sans-serif;
-  color: white;
-
-}
+  color: white;}
 
 .main{
-  position: relative;
+  position: absolute;
+  top:0%;
+  z-index: 0;
 }
 
 .h1{
@@ -78,7 +71,6 @@ z-index: 1;
   font-weight: 900;
   font-size: 1.7rem;
   margin-left: 2rem;
-
 }
 .h4{
   font-family: 'Poppins', sans-serif;
@@ -86,17 +78,10 @@ z-index: 1;
   font-size: 1.7rem;
   margin-left: 2rem;
 }
-
-/* .div_image{
-  position: relative;
-} */
-
 .nav_image{
-top:7%;
+top:26%;
 width: 100%;
-height: 60%;
-overflow: hidden;
-position: absolute;
+height: 44%;
 
 }
 
@@ -114,25 +99,20 @@ position: absolute;
   font-family: 'Poppins', sans-serif;
 }
 
-/* @media only screen and  (max-width:1200px){
-  .navbar_1{
-       top:40%;
-       transition: ease-in-out;
-       transition: 1s;
-  }
-} */
 
-/* @media only screen and  (max-width:1200px){
-  .nav_image{
-      display: initial;
+@media only screen and  (max-width:1600px){
+  .b{
+      display: none;
   }
 }
 
-/* @media only screen and  (max-width:1600px){
-  .nav_image{
-      display: none;
+@media only screen and  (max-width:1100px){
+  .b{
+      display: initial;
+      opacity: 1;
+      z-index: 1;
   }
-}  */
+}
 
 @media only screen and  (max-width:1100px){
   .navbar_3{
@@ -146,9 +126,11 @@ position: absolute;
   }
 }
 
-
-
-
+@media only screen and  (max-width:1100px){
+  .navbar_2{
+      display: none;
+  }
+}
 @media only screen and  (max-width:1600px){
   .nav_image{
       display: none;
@@ -158,6 +140,24 @@ position: absolute;
 @media only screen and  (max-width:1100px){
   .nav_image{
       display: initial;
+      overflow: hidden;
+      z-index: 0;
+  }
+} 
+@media only screen and  (max-width:1100px){
+  .item_1{
+      display: none;
+  }
+} 
+
+@media only screen and  (max-width:1100px){
+  .item_2{
+      display: none;
+  }
+} 
+@media only screen and  (max-width:1100px){
+  .item_3{
+      display: none;
   }
 } 
  
@@ -173,31 +173,6 @@ position: absolute;
   }
 }
 
-
-
-@media only screen and  (max-width:1100px){
-  .navbar_1{
-      display: none;
-    
-  }
-}
-
-@media only screen and  (max-width:1100px){
-  .navbar_2{
-      display: none;
-    
-  }
-}
-
-
-
-
-@media only screen and  (max-width:1100px){
-  .nav_div{
-      display: initial;
-      
-  }
-}
 @media only screen and  (max-width:1600px){
   .headings{
       display: none;
@@ -219,10 +194,6 @@ position: absolute;
   }
 }
 
-/* @media only screen and  (max-width:1200px){
-  .div_image{
-      display: initial;
-  }
-} */
+
 
 
