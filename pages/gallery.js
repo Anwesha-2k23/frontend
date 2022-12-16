@@ -4,7 +4,7 @@ import styles from '../styles/gallery.module.css'
 import Navbar from '../components/Navbar/Navbar'
 import Gallery from '../components/Gallery/Gallery';
 
-export default function Multicity() {
+export default function Multicity({folderLinks}) {
     const images = [
         "https://images.unsplash.com/photo-1670387123483-f64189de053d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
         "https://images.unsplash.com/photo-1670304866394-7f84b2365366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -34,15 +34,101 @@ export default function Multicity() {
             <Navbar />
             <div className={styles.container}>
                 <br /><br />
-                <Gallery
-                    eventName="Event-1"
-                    desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem incidunt exercitationem veritatis officia nulla ipsam beatae! Laboriosam atque porro accusamus consectetur, dolorum odio voluptatum vel"
-                    images={images} />
-                <Gallery eventName="Event-2" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem incidunt exercitationem veritatis officia nulla ipsam beatae! Laboriosam atque porro accusamus consectetur, dolorum odio voluptatum vel" images={images}></Gallery>
-                <Gallery eventName="Event-3" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem incidunt exercitationem veritatis officia nulla ipsam beatae! Laboriosam atque porro accusamus consectetur, dolorum odio voluptatum vel" images={images}></Gallery>
+                {folderLinks.map(folder => (<Gallery key={Math.random()}
+                    eventName={folder.name}
+                    desc={folder.desc}
+                    images={folder.links} />))}
+                {/* <Gallery eventName="Event-2" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem incidunt exercitationem veritatis officia nulla ipsam beatae! Laboriosam atque porro accusamus consectetur, dolorum odio voluptatum vel" images={images}></Gallery>
+                <Gallery eventName="Event-3" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem incidunt exercitationem veritatis officia nulla ipsam beatae! Laboriosam atque porro accusamus consectetur, dolorum odio voluptatum vel" images={images}></Gallery> */}
 
             </div>
         </>
     );
 }
 
+export async function getServerSideProps(context) {
+    const fs = require('fs').promises;
+    const path = require('path');
+    const process = require('process');
+    // const {authenticate} = require('@google-cloud/local-auth');
+    console.log('This is a console log from getserversideprops');
+    const { google } = require('googleapis');
+    const CLIENT_ID = '64981515508-g3deddbotdeqtdq25j8vklb4fh1nmfv7.apps.googleusercontent.com'
+    const CLIENT_SECRET = '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'
+    const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
+    const REFRESH_TOKEN = '1//04FRC9YzpGJUnCgYIARAAGAQSNwF-L9IrxL7xJZ62Ey2PRJ0g160w_Pj4KOCQFKla009PxajQZdIug_idPNsEjwdOMzqWTTZr1h8'
+  
+    const oauth2Client = new google.auth.OAuth2(
+      CLIENT_ID,
+      CLIENT_SECRET,
+      REDIRECT_URI
+    )
+  
+    oauth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+
+    const scopes = [
+      'https://www.googleapis.com/auth/drive'
+    ];
+
+    const drive = google.drive({
+        version: 'v3',
+        auth: oauth2Client
+      });
+
+      const fileMetadata = {
+          // name: 'Invoices',
+          mimeType: 'application/vnd.google-apps.folder'
+        };
+        let folderLinks = [];
+        try {
+          const folder = await drive.files.list({ q: "mimeType='application/vnd.google-apps.folder'", fields: 'files(id, name, description)'
+          });
+          // console.log(folder.data.files);
+           folderLinks = await Promise.all(folder.data.files.map(async folder => {
+            // const foldername = folder.name;
+            // console.log(foldername);
+            // Get a list of all the images in the folder
+            console.log('folder id: ', folder.id);
+            
+            const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
+            // const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
+            console.log(images.data.files);
+            // Map over the list of images and get the public link for each one
+            const imageLinks = await Promise.all(images.data.files.map(async image => {
+              const link = await drive.files.get({ fileId: image.id, fields: 'webContentLink' });
+              // console.log(link);
+              return link.data.webContentLink;
+            }));
+            // console.log(imageLinks) // imageLinks is an array of links to all the images in the folder
+            return { name: folder.name, desc: folder.description, links: imageLinks };
+          }))
+          // console.log(folderLinks)
+        } catch (error) {
+          throw error;
+        }
+    // const folders = await drive.files.list({ q: "mimeType='application/vnd.google-apps.folder' and trashed = false" });
+    // console.log(folders);
+
+    
+
+    // const fileMetadata = {
+    //   name: 'Invoices',
+    //   mimeType: 'application/vnd.google-apps.folder',
+    // };
+    // try {
+    //   const file = await drive.files.create({
+    //     resource: fileMetadata,
+    //     fields: 'id',
+    //   });
+    //   console.log('Folder Id:', file.data.id);
+    //   // return file.data.id;
+    // } catch (err) {
+    //   // TODO(developer) - Handle error
+    //   throw err;
+    // }
+    
+  
+    return {
+      props: {folderLinks}, // will be passed to the page component as props
+    }
+  }
