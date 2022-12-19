@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Gallery from '../components/Gallery/Gallery';
 
 export default function Multicity({folderLinks}) {
+    console.log(folderLinks)
     const images = [
         "https://images.unsplash.com/photo-1670387123483-f64189de053d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80",
         "https://images.unsplash.com/photo-1670304866394-7f84b2365366?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -75,20 +76,22 @@ export async function getServerSideProps(context) {
         auth: oauth2Client
       });
 
-      const fileMetadata = {
-          // name: 'Invoices',
-          mimeType: 'application/vnd.google-apps.folder'
-        };
+      
         let folderLinks = [];
         try {
-          const folder = await drive.files.list({ q: "mimeType='application/vnd.google-apps.folder'", fields: 'files(id, name, description)'
+        //   const folder = await drive.files.list({ q: "mimeType='application/vnd.google-apps.folder'", fields: 'files(id, name, description)'
+          const folder = await drive.files.list({ q: "mimeType='application/vnd.google-apps.folder'", fields: 'files(id, name, description)', folderId: '16VraLVVaRmX9EEIv6oimLJ1dD7T2nVUy'
           });
-          // console.log(folder.data.files);
-           folderLinks = await Promise.all(folder.data.files.map(async folder => {
+        //   console.log(Array.from(folder.data.files));
+          const folderdata = Array.from(folder.data.files);
+          folderdata.shift()
+            // console.log(folderdata);
+           folderLinks = await Promise.all(folderdata.map(async folder => {
+        //    folderLinks = await Promise.all(folderdata.map(async folder => {
             // const foldername = folder.name;
             // console.log(foldername);
             // Get a list of all the images in the folder
-            console.log('folder id: ', folder.id);
+            // console.log('folder id: ', folder.id);
             
             const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
             // const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
@@ -96,7 +99,7 @@ export async function getServerSideProps(context) {
             // Map over the list of images and get the public link for each one
             const imageLinks = await Promise.all(images.data.files.map(async image => {
               const link = await drive.files.get({ fileId: image.id, fields: 'webContentLink' });
-              // console.log(link);
+            //   console.log(link.data.webContentLink);
               return link.data.webContentLink;
             }));
             // console.log(imageLinks) // imageLinks is an array of links to all the images in the folder
