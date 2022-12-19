@@ -95,12 +95,12 @@ export async function getServerSideProps(context) {
             
             const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
             // const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
-            console.log(images.data.files);
+            console.log(images.data.files.length);
             // Map over the list of images and get the public link for each one
             const imageLinks = await Promise.all(images.data.files.map(async image => {
-              const link = await drive.files.get({ fileId: image.id, fields: 'webContentLink' });
-            //   console.log(link.data.webContentLink);
-              return link.data.webContentLink;
+              // const link = await drive.files.get({ fileId: image.id, fields: 'webViewLink' });
+              let url = 'https://drive.google.com/uc?export=view&id=' + image.id;
+              return url;
             }));
             // console.log(imageLinks) // imageLinks is an array of links to all the images in the folder
             return { name: folder.name, desc: folder.description, links: imageLinks };
