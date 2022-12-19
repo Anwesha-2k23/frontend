@@ -12,9 +12,9 @@ const Navbar = () => {
         <Link className={styles.link} href="/">
           Home
         </Link>
-        {/* <Link className={styles.link} href="/multicity">
+        <Link className={styles.link} href="/multicity">
           Multicity
-        </Link> */}
+        </Link>
         <Link className={styles.link} href="/campus-ambassador">
           Campus Ambassadors
         </Link>

@@ -1,101 +1,71 @@
-.container{
-    position: relative;
-    height: 92.5vh;
+.hero {
+    background-image: url(/kolkata.png);
+    aspect-ratio: 16/9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    width: 100vw;
+    height: 101vh;
 }
 
-.multicityTitle{
-    top: 10%;
-    left: 50%;
-    position: absolute;
-    color: #000000;
-    font-size: 3rem;
-    transform: translate(-50%, -50%);
+.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 58px 0;
 }
 
-.multicityHeroContent{
-    top: 50%;
+.container {
+    margin: 10px;
+}
+
+.description {
     display: flex;
-    position: relative;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-around;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    transform: translate(0%, -50%); 
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    flex-wrap: wrap;
 }
 
-.heroPara{
-    width: 50vw;
-    position: relative;
+.text {
+    width: 60%;
+    min-width: 260px;
 }
-
-.heroPara h1{
-    font-size: 2rem;
-    font-weight: 500;
-    color: #000000;
+.heading {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
-
-.heroPara p{
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #000000;
+.content {
+    font-weight: 400;
 }
-
-.multicityHeroContent button{
-    position: relative;
-    width: 10vw;
-    height: 5vh;
-    border: none;
+.btn {
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
     border-radius: 5px;
-    font-size: 1.5rem;
-    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 0 0 0;
     cursor: pointer;
-    color: #ffffff;
-    background-color: #000000;
+    transition: all 0.3s ease-in-out;
+    width: 140px;
+}
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+.gallery {
+    margin-top: 80px;
 }
 
-.event{
-    height: 100vh;
-    position: relative;
-}
-
-.eventsCarousel{
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-around;
-    transform: translate(-50%, -50%);
-}
-
-.eventsCarousel .carouselImg{
-    width: 30vw;
-    height: 47vh;
-    background: #000;
-    margin-inline: 1vw;
-}
-
-.eventButtons{
-    top: 40%;
-    left: 50%;
-    width: 40%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    transform: translate(-50%, -50%);
-    justify-content: space-around;
-}
-
-.eventButtons span{
-    width: 10vw;
-    height: 5vh;
-    position: relative;
-    border: none;
-    color: #000000;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    font-weight: 500;
-    cursor: pointer;
+/* responsive css */
+@media screen and (max-width: 850px) {
+    .hero {
+        background-image: url(/kolkata_mobile.png);
+        aspect-ratio: 9/16;
+    }
 }

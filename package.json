@@ -12,10 +12,15 @@
     "@next/font": "^13.0.2",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
-    "framer-motion": "^7.6.12",
+    "framer-motion": "^7.10.2",
     "next": "13.0.2",
+    "prettier": "^2.8.1",
     "react": "18.2.0",
     "react-date-countdown-timer": "^1.1.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-images-viewer": "^1.7.1",
+    "react-intersection-observer": "^9.4.1",
+    "react-parallax": "^3.5.1",
+    "react-use-scroll-direction": "^0.1.0"
   }
 }
