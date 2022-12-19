@@ -93,7 +93,7 @@ export async function getServerSideProps(context) {
             // Get a list of all the images in the folder
             // console.log('folder id: ', folder.id);
             
-            const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
+            const images = await drive.files.list({ q: `'${folder.id}' in parents and (mimeType='image/jpeg' or mimeType='image/png')` });
             // const images = await drive.files.list({ q: `mimeType='image/jpeg' or mimeType='image/png' and parents in '${folder.id}'` });
             console.log(images.data.files.length);
             // Map over the list of images and get the public link for each one
