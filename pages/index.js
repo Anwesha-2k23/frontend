@@ -2,70 +2,156 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from "../styles/comingsoon.module.css";
+
 export default function comingsoon() {
   useEffect(() => {
-    
-    var d = document
-    var w="https://tally.so/widgets/embed.js"
-    var v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-  
-    return () => {
-      
-    }
+
+    // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrxRcuEKHomXeoxz7GtpVzQPLmCsBUg5UdNkEjwzC4HsfQ30zpXJ-rOzTexOnikb1e/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      toast.success('You are subscribed to our newsletter', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      let a = await fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      let b = await a.json()
+      console.log(b)
+      if (b.result != "success") {
+        toast.error('Failed to subscribe the newsletter', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      }
+      // .then(response => console.log('Success!', response))
+      // .catch(error => console.error('Error!', error.message))
+    })
+
+
   }, [])
   
   return (
     <div className={styles.comingsoon_body}>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Head>
-        <title>Anwesha 2023 - Coming Soon</title>
+        <title>Anwesha 2023</title>
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
-      <div className={styles.anwesha_bg_img}>
-        <img src="/hero_text.png" alt="Anwesha text" className={styles.anwesha_text_image}/>
-        {/* <h1 className={styles.bgText}>COMING SOON...</h1> */}
-      </div>
+
       <div className={styles.socials}>
         <div className={styles.imageElement}>
-          <Link href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y=" target="_blank">
-            <Image src="/instagram.svg" width={50} height={50} />
+          <Link
+            href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
+            target="_blank"
+          >
+            <Image src="/instagram.svg" width={40} height={40} />
           </Link>
         </div>
         <div className={styles.imageElement}>
-          <Link href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur" target="_blank">
-            <Image src="/youtube.svg" width={50} height={50} />
+          <Link
+            href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
+            target="_blank"
+          >
+            <Image src="/youtube.svg" width={40} height={40} />
           </Link>
         </div>
         <div className={styles.imageElement}>
           <Link href="https://twitter.com/anweshaiitpat" target="_blank">
-            <Image src="/twitter.svg" width={50} height={50} />
+            <Image src="/twitter.svg" width={40} height={40} />
           </Link>
         </div>
         <div className={styles.imageElement}>
-          <Link href="https://www.facebook.com/anwesha.iitpatna/" target="_blank">
-            <Image src="/facebook.svg" width={50} height={50} />
+          <Link
+            href="https://www.facebook.com/anwesha.iitpatna/"
+            target="_blank"
+          >
+            <Image src="/facebook.svg" width={40} height={40} />
           </Link>
+        </div>
+      </div>
+      <div className={styles.anwesha_bg_img}>
+        <div className={styles.container}>
+          <Image src="/A_logo.png" width={400} height={400} />
+
+          <div className={styles.text}>
+            <p style={{ marginBottom: 10, paddingRight: 5 }}>
+              <span className={styles.anweshaText} style={{ color: "#660101" }}>
+                Anwesha
+              </span>
+              <span className={styles.anweshaText} style={{ color: "#CB4846" }}>
+                {" "}
+                ‘23{" "}
+              </span>
+            </p>
+            <p className={styles.iitp}>IIT PATNA</p>
+          </div>
         </div>
       </div>
 
       {/* Campus Ambassador */}
       <div className={styles.ca}>
-      <div className={styles.ca_poster}>
-      </div>
-      <div className={styles.ca_info}>
-        <h1 className={styles.ca_heading}>Campus Ambassador</h1>
-        <p className={styles.ca_text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis expedita voluptas vitae accusantium animi. Labore perferendis rem placeat quod corporis quas eius quibusdam id, veniam illo aut mollitia dolore doloremque cupiditate, debitis quos molestiae totam! Eligendi ad reprehenderit, exercitationem iusto, vero corrupti quibusdam animi odio, praesentium delectus obcaecati debitis! Reiciendis amet natus atque eum harum nobis, iste ad repellendus voluptate odio deleniti dolorem veniam temporibus distinctio voluptates assumenda aspernatur! Perferendis dicta libero atque officia quaerat maxime nam</p>
-        <button className={styles.ca_button}>Register Now!</button>
-      </div>
+        <Link href="/campusambassador">
+          <div className={styles.ca_poster}></div>
+        </Link>
+        <div className={styles.ca_info}>
+          <Link href="/campusambassador">
+            <h1 className={styles.ca_heading}>Campus Ambassador Programme</h1>
+          </Link>
+          <p className={styles.ca_text}>
+            Join Anwesha's campus ambassador programme and seize the opportunity to become the face of your college! 
+          </p>
+          <Link href="/ca-register">
+            <button className={styles.ca_button}>Register Now!</button>
+          </Link>
+        </div>
       </div>
 
-      {/* Anwesha Dispatch */}
+      {/* Anwesha Newsletter */}
       <div className={styles.dispatch_form}>
-      <iframe data-tally-src="https://tally.so/embed/mRW0rJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="1326" frameborder="0" marginheight="0" marginwidth="0" title="Anwesha Dispatch">
-      </iframe>
-      
+        <div className={styles.newsletter}>
+          <i className={styles.icon}></i>
+          <h1 className={styles.title}>Newsletter</h1>
+          <div className={styles.txt_holder}>
+            <p className={styles.txt_primary}>Subscribe to our Newsletter</p>
+            <p className={styles.txt_secondary}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora vel
+              perferendis optio eius, autem voluptate blanditiis exercitationem at nulla unde quod nostrum ea
+              eaque illum sed odio ullam quasi deleniti?</p>
+          </div>
+          <form className={styles.form} name="submit-to-google-sheet">
+            <input type="email" name="Email" id="email" placeholder="Your Email" className={styles.form_control} />
+            <button className={styles.btn} type="submit">Submit</button>
+          </form>
+        </div>
       </div>
       {/* <script>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}

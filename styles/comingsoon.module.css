@@ -1,40 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 .comingsoon_body{
   background-color:#FFF6A5;
   height: 100vh;
 }
 .anwesha_bg_img {
-  background-image: url("../public/main_hero.png");
+  font-family: "Poppins", sans-serif;
+  background-image: url("/bg.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  /* width: 100vw; */
-  min-height: 270px;
+  background-repeat: repeat-y;
+}
+.container {
   display: flex;
-  justify-content: end;
-  font-size: 30px;
-  color: rgb(58, 48, 29);
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+.text {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.anwesha_text_image{
-  position: relative;
-  bottom: 30%;
-  height: 8.5vw;
+.anweshaText {
+  letter-spacing: -10px;
+  font-size: 96px;
+  margin: 0 auto;
 }
-
-.bgText {
-  position: relative;
-  top: -65%;
-  font-size: 3rem;
-  color: rgb(58, 48, 29);
-  font-weight: 900;
-  margin-right: 3%;
-  animation: focus-in-contract 4.2s ease-out 0.4s infinite normal none; 
+.iitp {
+  color: "#5D0808";
+  letter-spacing: 46px;
+  font-size: 32px;
+  margin-bottom: 25px;
+  margin-left: 50px;
 }
 
 .socials{
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: row;
   right: 52px;
@@ -42,7 +46,7 @@
 }
 
 .imageElement{
-  padding: 5px;
+  padding: 10px;
 }
 
 .ca{
@@ -51,7 +55,8 @@
 }
 
 .ca_poster{
-  background-image: url("../public/CA.png");
+  background-image: url("/CA.png");
+  cursor: pointer;
     background-size: cover;
     background-position: right;
     /* background-size: 100% 100%; */
@@ -74,12 +79,17 @@
     filter: brightness(60%);
 }
 
+.ca_heading{
+  text-decoration: none;
+  color: rgb(58, 48, 29) !important;
+}
+
 .ca_info{
   position: absolute;
   top: 10%;
   left: 54%;
   /* transform: translate(-50%, -50%); */
-  font-size: 2vw;
+  font-size: 1.45vw;
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
@@ -89,7 +99,7 @@
   position: relative;
   top: 10vh;
   margin-inline: 15px;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 }
 
@@ -101,6 +111,7 @@
   margin-top: 10px;
   font-weight: 600;
   color: aliceblue;
+  cursor: pointer;
 }
 
 @keyframes focus-in-contract {
@@ -130,14 +141,87 @@
   }
 }
 
+@media screen and (max-width: 620px) {
+  .anweshaText {
+    font-size: 80px;
+    letter-spacing: -8px;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 24px;
+    letter-spacing: 41px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .anweshaText {
+    font-size: 80px;
+    letter-spacing: -8px;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 24px;
+    letter-spacing: 35px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .anweshaText {
+    font-size: 73px;
+    letter-spacing: -6px;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 22px;
+    letter-spacing: 31px;
+  margin-left: 33px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .anweshaText {
+    font-size: 60px;
+    letter-spacing: -4px;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 20px;
+    letter-spacing: 25px;
+  margin-left: 33px;
+  }
+}
+@media screen and (max-width: 355px) {
+  .anweshaText {
+    font-size: 50px;
+    letter-spacing: -2px;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 19px;
+    letter-spacing: 20px;
+  margin-left: 30px;
+  }
+  /* .comingsoon{
+    font-size: 35px;
+  } */
+}
+@media screen and (max-width: 309px) {
+  .anweshaText {
+    font-size: 37px;
+    letter-spacing: 0;
+    margin: auto;
+  }
+  .iitp{
+    font-size: 17px;
+    letter-spacing: 14px;
+  margin-left: 25px;
+  }
+  /* .comingsoon{
+    font-size: 28px;
+  } */
+}
+
 @media screen and (max-width: 820px) and (min-width: 700px) {
   .bgText{
     top: 42%;
-  }
-  .anwesha_bg_img{
-    background-image: url("../public/anwesha_bg_mobile.png");
-    align-items: center;
-    height: 100%;
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 820px) {
@@ -159,16 +243,8 @@
 }
 
 @media screen and (min-width: 800px) {
-  .anwesha_bg_img{
-    aspect-ratio: 16/9;
-  }
 }
 @media screen and (max-width: 800px) {
-  .anwesha_bg_img{
-    background-image: url("../public/anwesha_bg_mobile.png");
-    align-items: center;
-    height: 100%;
-  }
   .anwesha_text_image{
     visibility: hidden;
   }
@@ -202,9 +278,176 @@
 }
 @media screen and (max-width:580px){
   .socials{
-    top: 20%;
+    display: none;
+  }
+}
+
+/* Newsletter */
+  
+.newsletter {
+  margin: 0 auto;
+  width: 80%;
+  height: 350px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fefdf9;
+  display: flex;
   flex-direction: column;
-  right: 20px;
-  top: 70%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icon {
+  background-color: #ffbe35;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: -20px;
+  left: 40%;
+  text-align: center;
+  padding-top: 0.8rem;
+}
+
+.title {
+  /* margin: 0px; */
+  margin-top: 1rem;
+  font-size: 48px;
+  /* letter-spacing: 3px; */
+}
+
+.txt_holder {
+  margin: 0.5rem auto;
+  text-align: center;
+  width: 80%;
+}
+
+.txt_primary {
+  margin: 0.5rem auto;
+  font-size: 16px;
+}
+
+.txt_secondary {
+  color: #777;
+  font-size: 12px;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.form_control {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.3rem;
+  width: 70%;
+}
+
+/* .form-control::placeholder {
+  color: #333;
+  font-size: 12px;
+  opacity: 0.6;
+} */
+
+.btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin: 0 0.5rem;
+  border-radius: 3px;
+  background-color: #ffbe35;
+  color: #1a1567;
+}
+
+.btn:hover {
+  background-color: #43c6d5;
+  color: #1a1567;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .newsletter {
+    width: 60%;
+    height: 350px;
+  }
+
+  .icon {
+    left: 45%;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+
+  .txt {
+    font-size: 20px;
+  }
+
+  .form_control {
+    width: 200px;
+  }
+
+  .btn {
+    padding: 0.3rem 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    padding: 9.5rem 0;
+    height: max-content;
+  }
+
+  .newsletter {
+    /* margin-top: 5rem; */
+    width: 50%;
+    height: 450px;
+  }
+
+  .icon {
+    padding-top: 1rem;
+    width: 80px;
+    height: 80px;
+    left: 45%;
+    top: -35px;
+  }
+
+  .title {
+    font-size: 60px;
+    margin-top: 12px;
+  }
+
+  .txt_holder {
+    margin-top: -1rem;
+  }
+
+  .txt_primary {
+    font-size: 24px;
+  }
+
+  .txt_secondary {
+    font-size: 20px;
+  }
+
+  .form_control {
+    padding: 1rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+/* 
+  ::placeholder {
+    font-size: 20px;
+  } */
+
+  .btn {
+    padding: 1rem;
+    width: 25%;
+    margin: 0 auto;
+    font-size: 20px;
   }
 }
