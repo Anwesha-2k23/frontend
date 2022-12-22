@@ -1,21 +1,25 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from "../styles/comingsoon.module.css";
+var validator = require("email-validator");
 
 export default function comingsoon() {
+  const [email, setEmail] = useState('')
   useEffect(() => {
 
     // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzrxRcuEKHomXeoxz7GtpVzQPLmCsBUg5UdNkEjwzC4HsfQ30zpXJ-rOzTexOnikb1e/exec'
     const form = document.forms['submit-to-google-sheet']
-
+    
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
+      console.log(document.getElementById('email').value)
+      if(validator.validate(document.getElementById('email').value)){
       toast.success('You are subscribed to our newsletter', {
         position: "top-right",
         autoClose: 3000,
@@ -29,6 +33,7 @@ export default function comingsoon() {
       let a = await fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       let b = await a.json()
       console.log(b)
+      setEmail('')
       if (b.result != "success") {
         toast.error('Failed to subscribe the newsletter', {
           position: "top-right",
@@ -41,12 +46,30 @@ export default function comingsoon() {
           theme: "light",
           });
       }
+    }
+    else{
+      toast.warning('Check your email once again', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+      
       // .then(response => console.log('Success!', response))
       // .catch(error => console.error('Error!', error.message))
     })
 
 
   }, [])
+
+  const handleChange = (e) => {
+    setEmail(e.target.value)
+  }
   
   return (
     <div className={styles.comingsoon_body}>
@@ -148,7 +171,7 @@ export default function comingsoon() {
               eaque illum sed odio ullam quasi deleniti?</p>
           </div>
           <form className={styles.form} name="submit-to-google-sheet">
-            <input type="email" name="Email" id="email" placeholder="Your Email" className={styles.form_control} />
+            <input onChange={handleChange} type="email" value={email} name="Email" id="email" placeholder="Your Email" className={styles.form_control} />
             <button className={styles.btn} type="submit">Submit</button>
           </form>
         </div>
