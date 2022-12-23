@@ -13,7 +13,7 @@ export default function comingsoon() {
   useEffect(() => {
 
     // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzrxRcuEKHomXeoxz7GtpVzQPLmCsBUg5UdNkEjwzC4HsfQ30zpXJ-rOzTexOnikb1e/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
     const form = document.forms['submit-to-google-sheet']
     
     form.addEventListener('submit', async (e) => {
