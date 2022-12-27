@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
-import { Parallax, Background } from 'react-parallax'
 import styles from '../styles/Multicity.module.css'
 import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible'
 const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
     ssr: false,
 })
 import Navbar from '../components/Navbar/Navbar'
+import { useEffect } from 'react'
 
 const images = [
     {
@@ -53,6 +53,12 @@ const images = [
 
 export default function Multicity() {
     const { ref, inView } = useInView()
+    const ref2 = useInView().ref
+    const inView2 = useInView().inView
+
+    useEffect(() => {
+        console.log(inView2)
+    }, [inView2])
 
     return (
         <>
@@ -62,46 +68,42 @@ export default function Multicity() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Parallax strength={600}>
-                <div className={styles.hero}></div>
-            </Parallax>
+            <div className={styles.hero}></div>
 
-            <div className="CoverDiv" ref={ref}>
-                <FadeInWhenVisible inView={inView}>
-                    <div className={styles.container}>
+            <div className={styles.container}>
+                <div className="CoverDiv" ref={ref}>
+                    <FadeInWhenVisible inView={inView}>
                         <div className={styles.title}>
                             Anwesha Multicity Auditions
                         </div>
-                        <div className={styles.description}>
-                            <div className={styles.text}>
-                                <p className={styles.heading}>Kolkata</p>
-                                <p className={styles.content}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Iusto minus voluptatem,
-                                    nisi neque maiores accusantium, rerum,
-                                    aliquam ullam totam libero sunt! Optio
-                                    similique, ipsam, asperiores tenetur
-                                    repudiandae maiores fugit earum, aliquid
-                                    consequuntur aliquam dignissimos culpa
-                                    aperiam perferendis aspernatur voluptas
-                                    ut?Lorem ipsum dolor sit, amet consectetur
-                                    adipisicing elit. Quae est maiores facilis
-                                    accusantium veniam tempora, deserunt
-                                    recusandae quam ea eius, fuga architecto
-                                    doloremque cumque eligendi, nam natus. Nemo
-                                    repellat placeat doloremque quod veniam
-                                    officia dolores eum, veritatis natus id
-                                    labore ut modi sunt quisquam non fugit quas
-                                    magni a quidem dicta perferendis fugiat
-                                    totam reiciendis! Consequuntur modi, facere
-                                    saepe repellat autem nobis?
-                                </p>
-                            </div>
-                            <button className={styles.btn}>Register</button>
-                            <button className={styles.btn}>Rulebook</button>
-                        </div>
+                    </FadeInWhenVisible>
+                </div>
+
+                <div className={styles.description}>
+                    <div className={styles.text}>
+                        <p className={styles.heading}>Kolkata</p>
+                        <p className={styles.content}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Iusto minus voluptatem, nisi neque maiores
+                            accusantium, rerum, aliquam ullam totam libero sunt!
+                            Optio similique, ipsam, asperiores tenetur
+                            repudiandae maiores fugit earum, aliquid
+                            consequuntur aliquam dignissimos culpa aperiam
+                            perferendis aspernatur voluptas ut?Lorem ipsum dolor
+                            sit, amet consectetur adipisicing elit. Quae est
+                            maiores facilis accusantium veniam tempora, deserunt
+                            recusandae quam ea eius, fuga architecto doloremque
+                            cumque eligendi, nam natus. Nemo repellat placeat
+                            doloremque quod veniam officia dolores eum,
+                            veritatis natus id labore ut modi sunt quisquam non
+                            fugit quas magni a quidem dicta perferendis fugiat
+                            totam reiciendis! Consequuntur modi, facere saepe
+                            repellat autem nobis?
+                        </p>
                     </div>
-                </FadeInWhenVisible>
+                    <button className={styles.btn}>Register</button>
+                    <button className={styles.btn}>Rulebook</button>
+                </div>
             </div>
             <div className={styles.gallery}>
                 <Gallery

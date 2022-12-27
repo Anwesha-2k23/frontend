@@ -8,6 +8,7 @@ function FadeInWhenVisible({ inView, children }) {
         if (inView) {
             animation.start({
                 x: 0,
+                opacity: 1,
                 transition: {
                     type: 'tween',
                     duration: 0.8,
@@ -15,7 +16,8 @@ function FadeInWhenVisible({ inView, children }) {
             })
         } else {
             animation.start({
-                x: '+40vw',
+                x: '+20vw',
+                opacity: 0,
             })
         }
     }, [inView])
