@@ -95,6 +95,11 @@
   margin-right: 3%;
 
 }
+
+.ca_info a{
+  text-decoration: none;
+}
+
 .dispatch_form{
   position: relative;
   top: 10vh;

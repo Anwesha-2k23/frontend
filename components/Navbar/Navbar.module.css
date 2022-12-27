@@ -22,7 +22,9 @@
 }
 
 .nav_div{
-    position: relative;
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
 }
   
   .navbar_3{

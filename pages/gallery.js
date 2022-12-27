@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/gallery.module.css'
-import Navbar from '../components/Navbar/Navbar'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+    ssr: false,
+})
 import Gallery from '../components/Gallery/Gallery';
 import Footer from '../components/Footer/Footer';
 
@@ -21,16 +24,18 @@ export default function Multicity() {
     return (
         <>
             <Head>
-                <title>Multicity - Anwesha 2023</title>
+                <title>Gallery - Anwesha 2023</title>
                 <meta name="description" content="Anwesha 2023" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/AnwehshaIcon.png" />
             </Head>
             <Navbar />
+            <div style={{ width: '100vw', height: '100px' }}></div>
             <div className={styles.container}>
-                <br /><br />
+                <br />
+                <br />
                 <Gallery images={images}></Gallery>
             </div>
             <Footer />
         </>
-    );
+    )
 }

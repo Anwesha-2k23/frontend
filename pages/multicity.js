@@ -6,7 +6,9 @@ import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible
 const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
     ssr: false,
 })
-import Navbar from '../components/Navbar/Navbar'
+const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+    ssr: false,
+})
 import { useEffect } from 'react'
 
 const images = [
@@ -63,10 +65,12 @@ export default function Multicity() {
     return (
         <>
             <Head>
-                <title>Multicity - Anwesha 2023</title>
+                <title>Multicity-Anwesha 2023</title>
                 <meta name="description" content="Anwesha 2023" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
+            <Navbar />
+            <div style={{ width: '100vw', height: '100px' }}></div>
 
             <div className={styles.hero}></div>
 

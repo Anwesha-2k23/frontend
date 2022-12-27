@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from './Navbar.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 
 const Navbar = () => {
@@ -14,10 +15,12 @@ const Navbar = () => {
             <div className={styles.nav_div}>
                 <img src="./navbar/navbar mandala left.svg" className={[styles.navbar_3].join(" ")} />
                 <img src="./navbar/navbar mandala right.svg" className={styles.navbar_4} />
-                <img src="./navbar/logo.svg" className={[styles.navbar_2].join(" ")} />
+                <Link href="/">
+                    <img src="./navbar/logo.svg" className={[styles.navbar_2].join(" ")} />
+                </Link>
                 <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
                 <h4 className={` ${styles.item_1} nav-item`}>
-                    <Link className="nav-link active" aria-current="page" href="/campus_ambassador">CA</Link>
+                    <Link className="nav-link active" aria-current="page" href="/campusambassador">CA</Link>
                 </h4>
                 <h4 className={` ${styles.item_2} nav-item`}>
                     <Link className="nav-link active" aria-current="page" href="/multicity">Multicity</Link>
