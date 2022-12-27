@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
+import Navbar from "../components/Navbar/Navbar";
 import styles from "../styles/comingsoon.module.css";
 export default function comingsoon() {
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function comingsoon() {
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
 
-      <div className={styles.socials}>
+      {/* <div className={styles.socials}>
         <div className={styles.imageElement}>
           <Link
             href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
@@ -54,7 +55,8 @@ export default function comingsoon() {
             <Image src="/facebook.svg" width={40} height={40} />
           </Link>
         </div>
-      </div>
+      </div> */}
+      <Navbar />
       <div className={styles.anwesha_bg_img}>
         <div className={styles.container}>
           <Image src="/A_logo.png" width={400} height={400} />
