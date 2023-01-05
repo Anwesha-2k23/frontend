@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { Poppins } from "@next/font/google";
 import Script from 'next/script';
+import Footer from '../components/Footer/Footer';
 
 const poppins = Poppins({
   weight: "900",
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
         `}
       </Script>
       <Component {...pageProps} />
+      <Footer />
     </main>
   );
 }

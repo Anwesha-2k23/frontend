@@ -70,7 +70,13 @@ export default function Multicity() {
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
             <Navbar />
-            <div style={{ width: '100vw', height: '100px' }}></div>
+            <div
+                style={{
+                    width: '100vw',
+                    height: '100px',
+                    background: '#a7e2dc',
+                }}
+            ></div>
 
             <div className={styles.hero}></div>
 
@@ -110,11 +116,11 @@ export default function Multicity() {
                 </div>
             </div>
             <div className={styles.gallery}>
-                <Gallery
+                {/* <Gallery
                     eventName="Some glimpses"
                     desc="Here are some pictures of our last kolkata multicity events"
                     images={images}
-                />
+                /> */}
             </div>
         </>
     )

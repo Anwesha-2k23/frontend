@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 .comingsoon_body{
   background-color:#FFF6A5;
-  height: 100vh;
+  /* height: 100vh; */
+  overflow: hidden;
 }
 .anwesha_bg_img {
   font-family: "Poppins", sans-serif;

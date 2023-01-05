@@ -17,7 +17,7 @@ const images = [
     },
     {
         src: '/gallery/img3.jpg',
-    }
+    },
 ]
 
 export default function Multicity() {
@@ -35,7 +35,6 @@ export default function Multicity() {
                 <br />
                 <Gallery images={images}></Gallery>
             </div>
-            <Footer />
         </>
     )
 }
