@@ -286,11 +286,11 @@
   
 .newsletter {
   margin: 0 auto;
-  width: 80%;
+  /* width: 80%; */
   height: 350px;
   border-radius: 3px;
   position: relative;
-  background-color: #fefdf9;
+  background-color: #fff6a5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,7 +312,7 @@
 .title {
   /* margin: 0px; */
   margin-top: 1rem;
-  font-size: 48px;
+  font-size: 20px;
   /* letter-spacing: 3px; */
 }
 
@@ -325,6 +325,7 @@
 .txt_primary {
   margin: 0.5rem auto;
   font-size: 16px;
+  color: rgb(58, 48, 29);
 }
 
 .txt_secondary {
@@ -333,6 +334,7 @@
   width: 80%;
   text-align: center;
   margin: auto;
+  color: rgba(58, 48, 29, 0.698);
 }
 
 .form {
@@ -340,6 +342,8 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-block: 5px;
   /* justify-content: space-around; */
 }
 
@@ -361,18 +365,18 @@
   border: none;
   margin: 0 0.5rem;
   border-radius: 3px;
-  background-color: #ffbe35;
-  color: #1a1567;
+  background-color: #660101;
+  color: white;
 }
 
-.btn:hover {
+/* .btn:hover {
   background-color: #43c6d5;
   color: #1a1567;
-}
+} */
 
 @media (min-width: 426px) and (max-width: 768px) {
   .newsletter {
-    width: 60%;
+    /* width: 60%; */
     height: 350px;
   }
 
@@ -381,7 +385,7 @@
   }
 
   .title {
-    font-size: 55px;
+    font-size: 25px;
   }
 
   .txt {
@@ -399,13 +403,13 @@
 
 @media (min-width: 769px) {
   .container {
-    padding: 9.5rem 0;
+    padding: 12.5rem 0;
     height: max-content;
   }
 
   .newsletter {
     /* margin-top: 5rem; */
-    width: 50%;
+    /* width: 50%; */
     height: 450px;
   }
 
@@ -418,8 +422,9 @@
   }
 
   .title {
-    font-size: 60px;
+    font-size: 40px;
     margin-top: 12px;
+    color: rgb(58, 48, 29);
   }
 
   .txt_holder {
@@ -436,7 +441,7 @@
 
   .form_control {
     padding: 1rem;
-    width: 70%;
+    /* width: 70%; */
     margin: 0 auto;
   }
 /* 
