@@ -124,7 +124,9 @@ export default function comingsoon() {
           </Link>
         </div>
       </div>
+
       <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} className={styles.anwesha_bg_img}>
+
         <div className={styles.container}>
           <Image src="/A_logo.png" width={400} height={400} />
 
@@ -141,10 +143,12 @@ export default function comingsoon() {
             <p className={styles.iitp}>IIT PATNA</p>
           </div>
         </div>
+
       </motion.div>
 
       {/* Campus Ambassador */}
       <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.ca}>
+
         <Link href="/campusambassador">
           <div className={styles.ca_poster}></div>
         </Link>
@@ -159,6 +163,7 @@ export default function comingsoon() {
             <button className={styles.ca_button}>Register Now!</button>
           </Link>
         </div>
+
       </motion.div>
 
       {/* Anwesha Newsletter */}
@@ -181,6 +186,7 @@ Drop down your email address and subscribe to our mailing list below!</p>
           </form>
         </div>
       </motion.div>
+
       {/* <script>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
       </script> */}

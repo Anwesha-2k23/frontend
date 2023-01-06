@@ -37,14 +37,22 @@ const CampusAmbassadorForm = ()=>{
         body: JSON.stringify(body),
       });
       //check if request is successful
-      if (response.status === 200) {
+      if (response.status === 201) {
         setSuccess(true);
+        setFailure(false);
+        setErrorMsg("");
         const data = await response.json();
       }
-      else{
+      else if(response.status === 409){
         const data = await response.json();
         setErrorMsg(data.message);
         setFailure(true);
+        setSuccess(false);
+      }
+      else{
+        setErrorMsg("Internal Server Error. Check your browser console for more details");
+        setFailure(true);
+        setSuccess(false);
       }
     }
     catch(err){

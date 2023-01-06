@@ -45,6 +45,7 @@
 
 .buttonWrapper button{
     width: 15vw;
+    min-width: 102px;
     height: 40px;
     font-size: 20px;
     border-radius: 25px;
