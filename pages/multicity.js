@@ -69,7 +69,6 @@ export default function Multicity() {
                 <meta name="description" content="Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <Navbar />
             <div
                 style={{
                     width: '100vw',

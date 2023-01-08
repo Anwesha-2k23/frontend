@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 .comingsoon_body{
   background-color:#FFF6A5;
-  /* height: 100vh; */
   overflow: hidden;
 }
 .anwesha_bg_img {
@@ -83,6 +82,8 @@
 .ca_heading{
   text-decoration: none;
   color: rgb(58, 48, 29) !important;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .ca_info{
@@ -96,16 +97,11 @@
   margin-right: 3%;
 
 }
-
-.ca_info a{
-  text-decoration: none;
-}
-
 .dispatch_form{
   position: relative;
   top: 10vh;
   margin-inline: 15px;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
 }
 
@@ -285,5 +281,182 @@
 @media screen and (max-width:580px){
   .socials{
     display: none;
+
+  }
+}
+
+/* Newsletter */
+  
+.newsletter {
+  margin: 0 auto;
+  /* width: 80%; */
+  height: 350px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #fff6a5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.icon {
+  background-color: #ffbe35;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: -20px;
+  left: 40%;
+  text-align: center;
+  padding-top: 0.8rem;
+}
+
+.title {
+  /* margin: 0px; */
+  margin-top: 1rem;
+  font-size: 20px;
+  /* letter-spacing: 3px; */
+}
+
+.txt_holder {
+  margin: 0.5rem auto;
+  text-align: center;
+  width: 80%;
+}
+
+.txt_primary {
+  margin: 0.5rem auto;
+  font-size: 16px;
+  color: rgb(58, 48, 29);
+}
+
+.txt_secondary {
+  color: #777;
+  font-size: 12px;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  color: rgba(58, 48, 29, 0.698);
+}
+
+.form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 5px;
+  /* justify-content: space-around; */
+}
+
+.form_control {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.3rem;
+  width: 70%;
+}
+
+/* .form-control::placeholder {
+  color: #333;
+  font-size: 12px;
+  opacity: 0.6;
+} */
+
+.btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin: 0 0.5rem;
+  border-radius: 3px;
+  background-color: #660101;
+  color: white;
+}
+
+/* .btn:hover {
+  background-color: #43c6d5;
+  color: #1a1567;
+} */
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .newsletter {
+    /* width: 60%; */
+    height: 350px;
+  }
+
+  .icon {
+    left: 45%;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .txt {
+    font-size: 20px;
+  }
+
+  .form_control {
+    width: 200px;
+  }
+
+  .btn {
+    padding: 0.3rem 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    padding: 12.5rem 0;
+    height: max-content;
+  }
+
+  .newsletter {
+    /* margin-top: 5rem; */
+    /* width: 50%; */
+    height: 450px;
+  }
+
+  .icon {
+    padding-top: 1rem;
+    width: 80px;
+    height: 80px;
+    left: 45%;
+    top: -35px;
+  }
+
+  .title {
+    font-size: 40px;
+    margin-top: 12px;
+    color: rgb(58, 48, 29);
+  }
+
+  .txt_holder {
+    margin-top: -1rem;
+  }
+
+  .txt_primary {
+    font-size: 24px;
+  }
+
+  .txt_secondary {
+    font-size: 20px;
+  }
+
+  .form_control {
+    padding: 1rem;
+    /* width: 70%; */
+    margin: 0 auto;
+  }
+/* 
+  ::placeholder {
+    font-size: 20px;
+  } */
+
+  .btn {
+    padding: 1rem;
+    width: 25%;
+    margin: 0 auto;
+    font-size: 20px;
+
   }
 }
