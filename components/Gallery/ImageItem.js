@@ -11,7 +11,7 @@ const Image = (props) => {
     return (
         <div ref={imgref} className={`${style.image_item} ${(scrollDirection !== "UP") ? ((imgview) ? style.show : style.hidden) : ''}`}>
             {/* <div ref={imgref} className={`${style.image_item} ${(imgview) ? style.show : style.hidden}`}> */}
-            <img src={`${image}`} className={style.image} onClick={()=>props.clickFn(props.idx)}/>
+            <img src={`${image}`} className={style.image} style={{cursor: 'pointer'}} onClick={()=>props.clickFn(props.idx)}/>
         </div>
     )
 }
