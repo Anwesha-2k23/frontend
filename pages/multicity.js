@@ -1,41 +1,126 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import { useInView } from 'react-intersection-observer'
 import styles from '../styles/Multicity.module.css'
+import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible'
+const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
+    ssr: false,
+})
+const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+    ssr: false,
+})
+import { useEffect } from 'react'
 
-import Navbar from '../components/Navbar/Navbar'
+const images = [
+    {
+        src: 'https://whataftercollege.com/wp-content/uploads/2019/03/Cover-image-11-1024x535.jpg',
+    },
+
+    {
+        src: 'https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto/hansraj-college%2Cjpg00.jpg',
+    },
+
+    {
+        src: 'https://www.thehighereducationreview.com/newsimagespl/e1lpgT67.jpeg',
+    },
+
+    {
+        src: 'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2019/10/grub-1570690748.jpg',
+    },
+
+    {
+        src: 'https://blog.stucred.com/wp-content/uploads/2019/04/david-calderon-973699-unsplash.jpg',
+    },
+
+    {
+        src: 'https://i0.wp.com/du-assassins.in/wp-content/uploads/2019/01/13srcc1.jpg?fit=580%2C386&ssl=1',
+    },
+
+    {
+        src: 'https://www.holidify.com/images/cmsuploads/compressed/1516704233Soma2-1600X900_20190123222123.jpg',
+    },
+
+    {
+        src: 'https://static.kiit.ac.in/news/2019/02/16085130/KIIT-Fest-2019-Inaguration-Day-1-4.jpg',
+    },
+
+    {
+        src: 'https://utsav.gov.in/public/uploads/event_picture_image/event_1189/1663672816468241902.jpg',
+    },
+
+    {
+        src: 'https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-4.0.3',
+    },
+]
 
 export default function Multicity() {
+    const { ref, inView } = useInView()
+    const ref2 = useInView().ref
+    const inView2 = useInView().inView
+
+    useEffect(() => {
+        console.log(inView2)
+    }, [inView2])
+
     return (
         <>
             <Head>
-                <title>Multicity - Anwesha 2023</title>
+                <title>Multicity-Anwesha 2023</title>
                 <meta name="description" content="Anwesha 2023" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <Navbar />
+            <div
+                style={{
+                    width: '100vw',
+                    height: '100px',
+                    background: '#a7e2dc',
+                }}
+            ></div>
+
+            <div className={styles.hero}></div>
+
             <div className={styles.container}>
-                <h1 className={styles.multicityTitle}>Multicity</h1>
-                <div className={styles.multicityHeroContent}>
-                    <div className={styles.heroPara}>
-                        <h2 className={styles.heroParaHeading}>Lorem</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae aut velit porro harum repudiandae ratione voluptates quidem, corporis cumque ex omnis, vel voluptate, eius ipsum natus esse voluptas ut. Doloremque vel odio sint sapiente quisquam dolore corrupti, possimus sunt praesentium impedit laboriosam dolor delectus recusandae! Non facilis nulla optio animi repudiandae maiores laboriosam eaque consequatur beatae officia necessitatibus in, vel autem assumenda omnis impedit tenetur iure! Veniam qui accusantium non.</p>
+                <div className="CoverDiv" ref={ref}>
+                    <FadeInWhenVisible inView={inView}>
+                        <div className={styles.title}>
+                            Anwesha Multicity Auditions
+                        </div>
+                    </FadeInWhenVisible>
+                </div>
+
+                <div className={styles.description}>
+                    <div className={styles.text}>
+                        <p className={styles.heading}>Kolkata</p>
+                        <p className={styles.content}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Iusto minus voluptatem, nisi neque maiores
+                            accusantium, rerum, aliquam ullam totam libero sunt!
+                            Optio similique, ipsam, asperiores tenetur
+                            repudiandae maiores fugit earum, aliquid
+                            consequuntur aliquam dignissimos culpa aperiam
+                            perferendis aspernatur voluptas ut?Lorem ipsum dolor
+                            sit, amet consectetur adipisicing elit. Quae est
+                            maiores facilis accusantium veniam tempora, deserunt
+                            recusandae quam ea eius, fuga architecto doloremque
+                            cumque eligendi, nam natus. Nemo repellat placeat
+                            doloremque quod veniam officia dolores eum,
+                            veritatis natus id labore ut modi sunt quisquam non
+                            fugit quas magni a quidem dicta perferendis fugiat
+                            totam reiciendis! Consequuntur modi, facere saepe
+                            repellat autem nobis?
+                        </p>
                     </div>
-                    <button style={styles.heroButton}>Register</button>
-                    <button style={styles.heroButton}>Rule Book</button>
+                    <button className={styles.btn}>Register</button>
+                    <button className={styles.btn}>Rulebook</button>
                 </div>
             </div>
-            <div className={styles.event}>
-                <h1 className={styles.multicityTitle}>Events</h1>
-                <div className={styles.eventsCarousel}>
-                    <div className={styles.carouselImg}></div>
-                    <div className={styles.carouselImg}></div>
-                    <div className={styles.carouselImg}></div>
-                </div>
-                <div className={styles.eventButtons}>
-                    <span className={styles.register}>Register</span>
-                    <span className={styles.ruleBook}>Rulebook</span>
-                </div>
+            <div className={styles.gallery}>
+                {/* <Gallery
+                    eventName="Some glimpses"
+                    desc="Here are some pictures of our last kolkata multicity events"
+                    images={images}
+                /> */}
             </div>
         </>
-    );
+    )
 }

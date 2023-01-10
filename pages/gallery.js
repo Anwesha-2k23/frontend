@@ -1,7 +1,23 @@
 import Head from 'next/head'
 import styles from '../styles/gallery.module.css'
-import Navbar from '../components/Navbar/Navbar'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+    ssr: false,
+})
 import Gallery from '../components/Gallery/Gallery';
+import Footer from '../components/Footer/Footer';
+
+const images = [
+    {
+        src: '/gallery/img.jpg',
+    },
+    {
+        src: '/gallery/img2.jpg',
+    },
+    {
+        src: '/gallery/img3.jpg',
+    },
+]
 
 export default function Multicity({ folderLinks }) {
   return (

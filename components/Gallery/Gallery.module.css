@@ -79,8 +79,58 @@ h1.show{
   }
 }
 
-@media screen and (max-width:520px) {
+=======
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5%;
+}
+
+.container {
+  columns: 5;
+  column-gap: 0.8rem;
+}
+
+.image_item {
+  width: 300px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-75%);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1s ease;
+}
+
+@media screen and (max-width:1800px) {
   .container {
-    columns: 1;
+    columns: 4;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+    columns: 3;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .container {
+    columns: 2;
   }
 }

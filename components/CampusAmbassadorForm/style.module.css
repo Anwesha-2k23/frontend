@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.form{
+    font-family: 'Poppins', sans-serif;
+}
 .mainForm{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.mainHeading{
+        font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: '#5D0808';
 }
 
 .field{
@@ -14,8 +28,9 @@
     max-width: 700px;
     height: 35px;
     margin:2px;
-    border-radius: 20px;
-
+    border-radius: 15px;
+    padding: 2px 20px;
+    font-size: 17px;
 }
 
 .field label{
@@ -30,7 +45,14 @@
 
 .buttonWrapper button{
     width: 15vw;
+    min-width: 102px;
     height: 40px;
     font-size: 20px;
     border-radius: 25px;
+    cursor: pointer;
+}
+
+.buttonWrapper button:hover{
+    background-color: #424040;
+    color: #fff;
 }

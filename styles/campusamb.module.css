@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "BroadwayShadow";
+  src: url("../styles/fonts/BroadwayShadow.ttf");
+}
+.campusamb_body{
+    /* background-color:#FFF6A5; */
+    height: 100vh;
+}
+
+.anwesha_bg_img {
+    background-image: url("/CA.png");
+    background-size: cover;
+    background-position: center;
+    /* background-size: 100% 100%; */
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    /* width: 100vw; */
+    min-height: 270px;
+        height: calc(100vh - 100px);
+    overflow-y: hidden;
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .hero_text{
+    display: flex;
+    /* align-items: center; */
+    width: 102vw;
+    position: absolute;
+    top: 45%;
+    align-content: center;
+    flex-direction: column;
+  }
+
+  .bgText{
+    position: relative;
+    font-size: 7vw;
+    font-weight: 400;
+    left: 4%;
+    font-family: 'BroadwayShadow', sans-serif;
+    letter-spacing: 0.3ch;
+    color: #2B0072;
+    
+  }
+  .bgText_small{
+    position: relative;
+    font-size: 6vw;
+    font-weight: 400;
+    left: 4%;
+    font-family: 'BroadwayShadow', sans-serif;
+    letter-spacing: 0.3ch;
+    color: #2B0072;
+  }
+
+.anwesha_text{
+    position: absolute;
+    top: 35%;
+    left: 3vw;
+    height: 6vw;
+}
+
+.btn_register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 51px;
+  font-size: 25px;
+  margin-left: 4.5vw;
+  margin-top: 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #2B0072;
+  color: aliceblue;
+}
+.btn_register a{
+  text-decoration: none;
+}
+.btn_text{
+  color: aliceblue;
+}
+@media screen and (max-width: 700px) {
+  .anwesha_bg_img{
+    background-image: url("/Slice\ 1.jpg");
+    align-items: center;
+    height: 100%;
+    background-size: cover;
+  }
+  .anwesha_text{
+    position: absolute;
+    height: 15vw;
+    top: 30%;
+    left: -2%;
+  }
+  .bgText{
+    position: relative;
+    font-size: 10vw;
+    font-weight: 400;
+    left: 4%;
+    font-family: 'BroadwayShadow', sans-serif;
+    letter-spacing: 0.3ch;
+    color: #2B0072;
+  }
+  .bgText_small{
+    position: relative;
+    font-size: 8vw;
+    font-weight: 400;
+    left: 4%;
+    font-family: 'BroadwayShadow', sans-serif;
+    letter-spacing: 0.3ch;
+    color: #2B0072;
+  }
+  .btn_register{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 127px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 4.5vw;
+    margin-top: 28px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #2B0072;
+    color: aliceblue;
+  }
+
+}
