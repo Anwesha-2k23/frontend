@@ -12,55 +12,31 @@ const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 import { useEffect } from 'react'
 
 const images = [
-    {
-        src: 'https://whataftercollege.com/wp-content/uploads/2019/03/Cover-image-11-1024x535.jpg',
-    },
+        'https://whataftercollege.com/wp-content/uploads/2019/03/Cover-image-11-1024x535.jpg',
 
-    {
-        src: 'https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto/hansraj-college%2Cjpg00.jpg',
-    },
+        'https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto/hansraj-college%2Cjpg00.jpg',
 
-    {
-        src: 'https://www.thehighereducationreview.com/newsimagespl/e1lpgT67.jpeg',
-    },
+        'https://www.thehighereducationreview.com/newsimagespl/e1lpgT67.jpeg',
 
-    {
-        src: 'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2019/10/grub-1570690748.jpg',
-    },
+        'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2019/10/grub-1570690748.jpg',
 
-    {
-        src: 'https://blog.stucred.com/wp-content/uploads/2019/04/david-calderon-973699-unsplash.jpg',
-    },
+        'https://blog.stucred.com/wp-content/uploads/2019/04/david-calderon-973699-unsplash.jpg',
 
-    {
-        src: 'https://i0.wp.com/du-assassins.in/wp-content/uploads/2019/01/13srcc1.jpg?fit=580%2C386&ssl=1',
-    },
+        'https://i0.wp.com/du-assassins.in/wp-content/uploads/2019/01/13srcc1.jpg?fit=580%2C386&ssl=1',
 
-    {
-        src: 'https://www.holidify.com/images/cmsuploads/compressed/1516704233Soma2-1600X900_20190123222123.jpg',
-    },
+        'https://www.holidify.com/images/cmsuploads/compressed/1516704233Soma2-1600X900_20190123222123.jpg',
 
-    {
-        src: 'https://static.kiit.ac.in/news/2019/02/16085130/KIIT-Fest-2019-Inaguration-Day-1-4.jpg',
-    },
+        'https://static.kiit.ac.in/news/2019/02/16085130/KIIT-Fest-2019-Inaguration-Day-1-4.jpg',
 
-    {
-        src: 'https://utsav.gov.in/public/uploads/event_picture_image/event_1189/1663672816468241902.jpg',
-    },
+        'https://utsav.gov.in/public/uploads/event_picture_image/event_1189/1663672816468241902.jpg',
 
-    {
-        src: 'https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-4.0.3',
-    },
+        'https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-4.0.3',
 ]
 
 export default function Multicity() {
     const { ref, inView } = useInView()
     const ref2 = useInView().ref
     const inView2 = useInView().inView
-
-    useEffect(() => {
-        console.log(inView2)
-    }, [inView2])
 
     return (
         <>
@@ -115,11 +91,11 @@ export default function Multicity() {
                 </div>
             </div>
             <div className={styles.gallery}>
-                {/* <Gallery
+                <Gallery
                     eventName="Some glimpses"
                     desc="Here are some pictures of our last kolkata multicity events"
                     images={images}
-                /> */}
+                />
             </div>
         </>
     )

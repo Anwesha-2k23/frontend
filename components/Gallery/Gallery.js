@@ -12,8 +12,8 @@ const Gallery = (props) => {
   const images = props.images;
   return (
     <div className={style.gallery}>
-      <h1 ref={h1ref} className={`${(scrollDirection !== "UP") ? ((h1view) ? style.show : style.hidden) : ''}`}>{props.eventName}</h1>
-      <p ref={pref} className={`${(scrollDirection !== "UP") ? ((pview) ? style.show : style.hidden) : ''}`}>{props.desc}</p>
+      <h1 ref={h1ref} >{props.eventName}</h1>
+      <p ref={pref} >{props.desc}</p>
       <div className={style.container}>
         {
           images.map((image, index) => {
