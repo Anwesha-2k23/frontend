@@ -279,6 +279,7 @@
 @media screen and (max-width:580px){
   .socials{
     display: none;
+
   }
 }
 
@@ -454,5 +455,6 @@
     width: 25%;
     margin: 0 auto;
     font-size: 20px;
+
   }
 }
