@@ -177,6 +177,7 @@
 .lottie_text{
   font-size: 40px;
   color: #2B0072;
+  text-align: center;
 }
 
 @media screen and (max-width: 700px) {

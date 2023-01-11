@@ -2,7 +2,6 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import GreetingLottie from "../components/displaylottie";
-
 import styles from "../styles/campusamb.module.css";
 // import Anwesha_text from "../images/Anwesha_text.png";
 
@@ -53,33 +52,109 @@ export default function campusAmbassador() {
       <section className={styles.rulebook_section}>
         <div className={styles.responsibilities}>
           <h1 className={styles.rulebook_text_heading}>Responsibilities</h1>
+
+
           <div className={styles.lottie_row}>
-            <div className={styles.lottie_container}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
               <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_gegs7als.json" />
-            </div>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
             <h2 className={styles.lottie_text}> Increase footfall from the college</h2>
+            </motion.div>
           </div>
+
+
           <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
             <h2 className={styles.lottie_text}> Increase the registration from the college</h2>
-            <div className={styles.lottie_container}>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
               <GreetingLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_tpa51dr0.json" />
-            </div>
+            </motion.div>
           </div>
+
+
           <div className={styles.lottie_row}>
-            <div className={styles.lottie_container}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
               <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_l2l6hr2l.json" />
-            </div>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
             <h2 className={styles.lottie_text}>Social Media and Publicity</h2>
+            </motion.div>
           </div>
+
+
           <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
             <h2 className={styles.lottie_text}>Hospitality: Facilitate campus visits and auditions for Anwesha Team</h2>
-            <div className={styles.lottie_container}>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
               <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_e9zwg7jb.json" />
-            </div>
+            </motion.div>
           </div>
         </div>
-        <div className={styles.perks}>
 
+        {/* Perks */}
+        <div className={styles.responsibilities}>
+          <h1 className={styles.rulebook_text_heading}>Perks</h1>
+
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets3.lottiefiles.com/packages/lf20_0zv8teye.json" />
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>Selfie with celebs</h2>
+            </motion.div>
+          </div>
+
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>Campus Ambassador Certificate</h2>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_rrvu3zea.json" />
+            </motion.div>
+          </div>
+
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets6.lottiefiles.com/packages/lf20_gn0tojcq.json" />
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>CA Merchandise</h2>
+            </motion.div>
+          </div>
+
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>Free Anwesha tickets and goodies</h2>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_n0jeixzn.json" />
+            </motion.div>
+          </div>
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets8.lottiefiles.com/packages/lf20_yzsAKLdwYm.json" />
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>Learn management skills and interaction with talented people</h2>
+            </motion.div>
+          </div>
+
+          <div className={styles.lottie_row}>
+            <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}}>
+            <h2 className={styles.lottie_text}>Top 3 CA's name will feature on Anwesha social media handles</h2>
+            </motion.div>
+            <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.lottie_container}>
+              <GreetingLottie animationPath="https://assets6.lottiefiles.com/packages/lf20_tduixm8u.json" />
+            </motion.div>
+          </div>
         </div>
         <div className={styles.judging_criteria}>
 
