@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import GreetingLottie from "../components/displaylottie";
 import styles from "../styles/campusamb.module.css";
 // import Anwesha_text from "../images/Anwesha_text.png";
