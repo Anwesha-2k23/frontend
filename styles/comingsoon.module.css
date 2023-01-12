@@ -320,7 +320,7 @@
 .txt_holder {
   margin: 0.5rem auto;
   text-align: center;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .txt_primary {
