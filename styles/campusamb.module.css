@@ -196,6 +196,14 @@
   padding: 10px;
 }
 
+.lottie_row_judging{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
 .points_table{
   width: 60%;
   padding-block: 25px ;
@@ -238,5 +246,12 @@
   }
   .reward_desc{
     font-size: medium;
+  }
+  .lottie_row_judging{
+    display: flex;
+    flex-direction: column;
+  }
+  .points_table{
+    width: 100%;
   }
 }

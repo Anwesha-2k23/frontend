@@ -167,7 +167,7 @@ export default function campusAmbassador() {
         {/* Judging Criteria */}
         <div className={styles.responsibilities}>
           <h1 className={styles.rulebook_text_heading}>Judging Criteria</h1>
-          <div className={styles.lottie_row}>
+          <div className={styles.lottie_row_judging}>
             <motion.div initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }} className={styles.lottie_container}>
               <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_LDP1qTExIJ.json" />
             </motion.div>
