@@ -95,7 +95,9 @@
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
-
+}
+.ca_info a{
+  text-decoration: none;
 }
 .dispatch_form{
   position: relative;

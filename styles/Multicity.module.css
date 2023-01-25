@@ -53,10 +53,17 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     width: 140px;
+    color: black !important;
 }
 .btn:hover {
     background-color: black;
-    color: white;
+    color: white !important;
+}
+.btn > *{
+    color: black !important;
+}
+.btn > *:hover{
+    color: white !important;
 }
 .gallery {
     margin-top: 80px;

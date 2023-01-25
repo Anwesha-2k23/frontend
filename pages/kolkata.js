@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
 import styles from '../styles/Multicity.module.css'
@@ -84,7 +85,9 @@ export default function Multicity() {
                         </p>
                     </div>
                     <button className={styles.btn}>Register</button>
-                    <button className={styles.btn}>Rulebook</button>
+                    <button className={styles.btn}>
+                        <Link href='#rulebook' style={{textDecoration: 'none',}}>Rulebook</Link>{' '}
+                    </button>
                 </div>
             </div>
             <div className={styles.gallery}>
@@ -92,6 +95,15 @@ export default function Multicity() {
                     eventName="Some glimpses"
                     desc="Here are some pictures of our last kolkata multicity events"
                     images={images}
+                />
+            </div>
+            <div className={styles.rulebook} id="rulebook">
+                <embed
+                    src="/multicity/rulebook.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    view="Fit"
+                    type="application/pdf"
+                    width="100%"
+                    style={{ height: '100vh' }}
                 />
             </div>
         </>

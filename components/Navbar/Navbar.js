@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link className="nav-link active" aria-current="page" href="/campusambassador">CA</Link>
                 </h4>
                 <h4 className={` ${styles.item_2} nav-item`}>
-                    <Link className="nav-link active" aria-current="page" href="/multicity">Multicity</Link>
+                    <Link className="nav-link active" aria-current="page" href="/all-multicity">Multicity</Link>
                 </h4>
                 <h4 className={styles.item_3}>
                     <Link className="nav-link active" aria-current="page" href="#">Events</Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
                                         <Link className={`nav-link active`} aria-current="page" href="/campus_ambassador"><p className={styles.sidebar_links}>CA</p></Link>
                                     </li>
                                     <li className={`${styles.h2} nav-item ${styles.sidebar_links} ${styles.sidebar_links}`}>
-                                        <Link className="nav-link active" href="/multcity"><p className={styles.sidebar_links}>Multicity</p></Link>
+                                        <Link className="nav-link active" href="/all-multicity"><p className={styles.sidebar_links}>Multicity</p></Link>
                                     </li>
                                     <li className={`${styles.h3} nav-item ${styles.sidebar_links}`}>
                                         <Link className="nav-link active" aria-current="page" href="#"><p className={styles.sidebar_links}>Events</p></Link>
