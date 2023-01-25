@@ -7,9 +7,6 @@ import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible
 const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
     ssr: false,
 })
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
-    ssr: false,
-})
 
 const images = [
     'https://whataftercollege.com/wp-content/uploads/2019/03/Cover-image-11-1024x535.jpg',
@@ -86,7 +83,13 @@ export default function Multicity() {
                     </div>
                     <button className={styles.btn}>Register</button>
                     <button className={styles.btn}>
-                        <Link href='#rulebook' style={{textDecoration: 'none',}}>Rulebook</Link>{' '}
+                        <Link
+                            href="/multicity/rulebook.pdf"
+                            style={{ textDecoration: 'none' }}
+                            target='_blank'
+                        >
+                            Rulebook
+                        </Link>{' '}
                     </button>
                 </div>
             </div>
@@ -97,7 +100,7 @@ export default function Multicity() {
                     images={images}
                 />
             </div>
-            <div className={styles.rulebook} id="rulebook">
+            {/* <div className={styles.rulebook} id="rulebook">
                 <embed
                     src="/multicity/rulebook.pdf#toolbar=0&navpanes=0&scrollbar=0"
                     view="Fit"
@@ -105,7 +108,7 @@ export default function Multicity() {
                     width="100%"
                     style={{ height: '100vh' }}
                 />
-            </div>
+            </div> */}
         </>
     )
 }
