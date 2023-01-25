@@ -28,8 +28,7 @@
     "react-parallax": "^3.5.1",
     "react-simple-image-viewer": "^1.2.2",
     "react-toastify": "^9.1.1",
-    "react-use-scroll-direction": "^0.1.0"
-    "react-lottie": "^1.2.3",
-    "react-toastify": "^9.1.1"
+    "react-use-scroll-direction": "^0.1.0",
+    "react-lottie": "^1.2.3"
   }
 }
