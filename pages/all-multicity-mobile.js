@@ -7,12 +7,12 @@ import { useEffect } from 'react'
 
 const Multicity = () => {
     useEffect(() => {
-        if(window.innerWidth > 1240){
+        if (window.innerWidth > 1240) {
             window.location.href = '/all-multicity'
         }
     }, [])
     return (
-        <div className={styles.container}>
+        <div className={styles.container} style={{overflow: 'hidden'}}>
             <Head>
                 <title>Anwesha 2023</title>
                 <meta name="description" content="Multicity-Anwesha 2023" />
@@ -32,47 +32,53 @@ const Multicity = () => {
                 height={831}
             />
             <motion.div
-                    initial={{ opacity: 0, x: '30%' }}
-                    whileInView={{ opacity: 1, x: '0' }}
-                    transition={{ duration: 0.5 }}
-                    style={{ width: '310px', top: '75%', position: 'absolute' }}
-                >
-                    <Image
-                        alt="poster"
-                        src="/multicity/Lucknow-poster.png"
-                        width={300}
-                        height={300}
-                        className={styles.poster}
-                    ></Image>
+                initial={{ opacity: 0, scale: 0.1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                style={{ width: '310px', top: '75%', position: 'absolute' }}
+            >
+                <Image
+                    alt="poster"
+                    src="/multicity/Lucknow-poster.png"
+                    width={300}
+                    height={300}
+                    className={styles.poster}
+                ></Image>
             </motion.div>
 
             <Image
                 alt="road"
                 src="/multicity/mobile-road.png"
                 width={150}
-                height={831}
-                style={{transform: 'translateY(-10px)' }}
+                height={431}
+                style={{ transform: 'translateY(-10px)', objectFit: 'cover' }}
             />
             <motion.div
-                    initial={{ opacity: 0, x: '30%', y: -10 }}
-                    whileInView={{ opacity: 1, x: '0', y: -10 }}
-                    transition={{ duration: 0.5 }}
-                    style={{ width: '310px', top: '150%', position: 'absolute' }}
-                >
-                    <Link href="/kolkata">
-                        <Image
-                            alt="poster"
-                            src="/multicity/kolkata.png"
-                            width={300}
-                            height={300}
-                            style={{ borderRadius: '20px' }}
-                            className={[
-                                styles.poster,
-                                styles.kolkataPoster,
-                            ].join(' ')}
-                        ></Image>
-                    </Link>
-                </motion.div>
+                initial={{ opacity: 0, y: -10, scale: 0.1 }}
+                whileInView={{ opacity: 1, y: -1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                style={{ width: '310px', top: '150%', position: 'absolute' }}
+            >
+                <Link href="/kolkata">
+                    <Image
+                        alt="poster"
+                        src="/multicity/kolkata.png"
+                        width={300}
+                        height={300}
+                        style={{ borderRadius: '20px' }}
+                        className={[styles.poster, styles.kolkataPoster].join(
+                            ' '
+                        )}
+                    ></Image>
+                </Link>
+            </motion.div>
+            <Image
+                alt="cloud"
+                src="/multicity/cloud.png"
+                width={232}
+                height={190}
+                style={{transform: 'translateY(-40px) scale(1.5)'}}
+            />
         </div>
     )
 }
