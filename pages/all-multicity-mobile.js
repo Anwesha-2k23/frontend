@@ -52,9 +52,31 @@ const Multicity = () => {
                 alt="road"
                 src="/multicity/mobile-road.png"
                 width={150}
-                height={431}
+                height={500}
                 style={{ transform: 'translateY(-10px)', objectFit: 'cover' }}
             />
+
+            <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                className={styles.otherElements}
+                style={{top: '120%'}}
+            >
+                <Image
+                    alt="drumroll"
+                    src="/multicity/drumroll.png"
+                    width={90}
+                    height={149}
+                />
+                <Image
+                    alt="salescar"
+                    src="/multicity/salescar.png"
+                    width={185}
+                    height={176}
+                />
+            </motion.div>
+
             <motion.div
                 initial={{ opacity: 0, y: -10, scale: 0.1 }}
                 whileInView={{ opacity: 1, y: -1, scale: 1 }}
@@ -64,7 +86,7 @@ const Multicity = () => {
                 <Link href="/kolkata">
                     <Image
                         alt="poster"
-                        src="/multicity/kolkata.png"
+                        src="/multicity/bhopal_poster.png"
                         width={300}
                         height={300}
                         style={{ borderRadius: '20px' }}

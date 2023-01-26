@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
-import styles from '../styles/Lucknow.module.css'
-import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible'
-const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
+import styles from '../../styles/Lucknow.module.css'
+import FadeInWhenVisible from '../../components/FadeInWhenVisible/FadeInWhenVisible'
+const Gallery = dynamic(() => import('../../components/Gallery/Gallery'), {
     ssr: false,
 })
 
@@ -61,7 +61,7 @@ export default function Multicity() {
 
                 <div className={styles.description}>
                     <div className={styles.text}>
-                        <p className={styles.heading}>Kolkata</p>
+                        <p className={styles.heading}>Lucknow</p>
                         <p className={styles.content}>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Iusto minus voluptatem, nisi neque maiores
@@ -96,7 +96,7 @@ export default function Multicity() {
             <div className={styles.gallery}>
                 <Gallery
                     eventName="Some glimpses"
-                    desc="Here are some pictures of our last kolkata multicity events"
+                    desc="Here are some pictures of our last Lucknow multicity events"
                     images={images}
                 />
             </div>

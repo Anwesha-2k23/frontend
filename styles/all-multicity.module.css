@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
 }
 .container > *{
     font-family: 'Lolapeluza', sans-serif !important;
@@ -40,6 +41,7 @@
 .poster{
     border-radius: 20px;
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 .poster:hover{
     box-shadow: #60389a 11px 9px 0px;

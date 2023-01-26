@@ -43,10 +43,11 @@
 .nav_drawer{
     display: none;
     opacity: 0;
-    position: absolute;
+    position: fixed;
     top: 98px;
     width: 100vw;
     transition: all .3s ease;
+    z-index: 2;
 }
 
 .nav_drawer ul{

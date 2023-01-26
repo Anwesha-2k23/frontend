@@ -106,7 +106,7 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    <Link href="/lucknow">
+                    <Link href="/multicity/lucknow">
                         <Image
                             alt="poster"
                             src="/multicity/Lucknow-poster.png"
@@ -124,10 +124,11 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    <Link href="/kolkata">
+                    {/* replace this with bhopal page link */}
+                    <Link href="">
                         <Image
                             alt="poster"
-                            src="/multicity/kolkata.png"
+                            src="/multicity/bhopal_poster.png"
                             width={400}
                             height={400}
                             style={{ borderRadius: '20px' }}
@@ -141,7 +142,7 @@ const Multicity = () => {
                 <Image
                     alt="milestone"
                     src="/multicity/milestone.png"
-                    style={{ transform: 'scaleX(-1)' }}
+                    style={{ transform: 'scaleX(-1)', visibility: 'hidden' }}
                     width={400}
                     height={300}
                 ></Image>
