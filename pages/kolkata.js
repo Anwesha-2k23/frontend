@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
-import styles from '../styles/Multicity.module.css'
+import styles from '../styles/Kolkata.module.css'
 import FadeInWhenVisible from '../components/FadeInWhenVisible/FadeInWhenVisible'
 const Gallery = dynamic(() => import('../components/Gallery/Gallery'), {
     ssr: false,

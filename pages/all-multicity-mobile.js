@@ -12,7 +12,7 @@ const Multicity = () => {
         }
     }, [])
     return (
-        <div className={styles.container} style={{overflow: 'hidden'}}>
+        <div className={styles.container} style={{ overflow: 'hidden' }}>
             <Head>
                 <title>Anwesha 2023</title>
                 <meta name="description" content="Multicity-Anwesha 2023" />
@@ -37,13 +37,15 @@ const Multicity = () => {
                 transition={{ duration: 0.5 }}
                 style={{ width: '310px', top: '75%', position: 'absolute' }}
             >
-                <Image
-                    alt="poster"
-                    src="/multicity/Lucknow-poster.png"
-                    width={300}
-                    height={300}
-                    className={styles.poster}
-                ></Image>
+                <Link href="/lucknow">
+                    <Image
+                        alt="poster"
+                        src="/multicity/Lucknow-poster.png"
+                        width={300}
+                        height={300}
+                        className={styles.poster}
+                    ></Image>
+                </Link>
             </motion.div>
 
             <Image
@@ -77,7 +79,7 @@ const Multicity = () => {
                 src="/multicity/cloud.png"
                 width={232}
                 height={190}
-                style={{transform: 'translateY(-40px) scale(1.5)'}}
+                style={{ transform: 'translateY(-40px) scale(1.5)' }}
             />
         </div>
     )

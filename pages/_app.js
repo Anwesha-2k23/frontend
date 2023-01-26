@@ -2,9 +2,10 @@ import '../styles/globals.css'
 import { Poppins } from "@next/font/google";
 import Script from 'next/script';
 import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
-    ssr: false,
-})
+// const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+//     ssr: false,
+// })
+import Navbar from '../components/Navbar-temp'
 import Footer from '../components/Footer/Footer';
 
 const poppins = Poppins({

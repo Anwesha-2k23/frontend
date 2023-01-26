@@ -131,6 +131,6 @@ h1.show{
 
 @media screen and (max-width:800px) {
   .container {
-    columns: 2;
+    columns: 1;
   }
 }

@@ -19,7 +19,7 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <div style={{ height: '250px' }}></div>
+            <div style={{ height: '150px' }}></div>
             <h1>Multicity Auditions</h1>
             <Image
                 alt="IIT Patna"
@@ -106,13 +106,15 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    <Image
-                        alt="poster"
-                        src="/multicity/Lucknow-poster.png"
-                        width={400}
-                        height={400}
-                        className={styles.poster}
-                    ></Image>
+                    <Link href="/lucknow">
+                        <Image
+                            alt="poster"
+                            src="/multicity/Lucknow-poster.png"
+                            width={400}
+                            height={400}
+                            className={styles.poster}
+                        ></Image>
+                    </Link>
                 </motion.div>
             </div>
             <div className={styles.city} style={{ top: '185%' }}>
@@ -154,7 +156,8 @@ const Multicity = () => {
                         width={100}
                         height={200}
                         style={{
-                            transform: 'translateX(-140px) translateY(100px) scaleX(-1)',
+                            transform:
+                                'translateX(-140px) translateY(100px) scaleX(-1)',
                             overflowX: 'visible',
                         }}
                     ></Image>
