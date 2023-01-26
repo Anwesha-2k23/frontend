@@ -43,7 +43,7 @@ export default function Multicity() {
             <div
                 style={{
                     width: '100vw',
-                    height: '110px',
+                    height: '90px',
                     background: '#a7e2dc',
                 }}
             ></div>
