@@ -1,27 +1,22 @@
 import Head from 'next/head'
 import styles from '../styles/ca.module.css'
-import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
-    ssr: false,
-})
-import CampusAmbassadorForm from '../components/CampusAmbassadorForm';
+import Navbar from '../components/Navbar/Navbar'
+import UserRegisterForm from '../components/UserRegister-Login';
 import GreetingLottie from "../components/displaylottie";
 
-
-export default function caRegister() {
+export default function userRegister() {
   return (
     <>
       <Head>
-        <title>Campus Ambassador - Anwesha 2023</title>
+        <title>User Register - Anwesha 2023</title>
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
       {/* <Navbar /> */}
       <div className={styles.container}>
         
-        <CampusAmbassadorForm />
+        <UserRegisterForm />
       </div>
     </>
   );
-
 }

@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/ca.module.css'
-import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
-    ssr: false,
-})
-import CampusAmbassadorForm from '../components/CampusAmbassadorForm';
+import Navbar from '../components/Navbar/Navbar'
+import CampusAmbassadorLogin from '../components/CampusAmbassadorForm/login';
 import GreetingLottie from "../components/displaylottie";
 
-
-export default function caRegister() {
+export default function caLogin() {
   return (
     <>
       <Head>
@@ -19,9 +15,8 @@ export default function caRegister() {
       {/* <Navbar /> */}
       <div className={styles.container}>
         
-        <CampusAmbassadorForm />
+        <CampusAmbassadorLogin />
       </div>
     </>
   );
-
 }
