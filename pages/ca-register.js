@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/ca.module.css'
-import Navbar from '../components/Navbar/Navbar'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
+    ssr: false,
+})
 import CampusAmbassadorForm from '../components/CampusAmbassadorForm';
 import GreetingLottie from "../components/displaylottie";
+
 
 export default function caRegister() {
   return (
@@ -19,4 +23,5 @@ export default function caRegister() {
       </div>
     </>
   );
+
 }
