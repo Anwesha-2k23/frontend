@@ -191,7 +191,7 @@ Drop down your email address and subscribe to our mailing list below!</p>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
       </script> */}
 
-      {/* <Footer/> */}
-    </div>
-  );
+            {/* <Footer/> */}
+        </div>
+    )
 }

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 .comingsoon_body{
   background-color:#FFF6A5;
-  height: 100vh;
+  overflow: hidden;
 }
 .anwesha_bg_img {
   font-family: "Poppins", sans-serif;
@@ -82,6 +82,8 @@
 .ca_heading{
   text-decoration: none;
   color: rgb(58, 48, 29) !important;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .ca_info{
@@ -93,11 +95,12 @@
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
-
+}
+.ca_info a{
+  text-decoration: none;
 }
 .dispatch_form{
   position: relative;
-  top: 10vh;
   margin-inline: 15px;
   /* max-width: 800px; */
   margin: 0 auto;
@@ -320,7 +323,7 @@
 .txt_holder {
   margin: 0.5rem auto;
   text-align: center;
-  /* width: 80%; */
+  width: 80%;
 }
 
 .txt_primary {

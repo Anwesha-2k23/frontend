@@ -24,7 +24,6 @@ export default function Home() {
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="/AnweshaIcon.png" />
       </Head>
-      <Navbar />
       <div className={styles.hero}>
         <Countdown dateTo="February 17, 2023 00:00:00 GMT+05:30" callback={() =>console.log("Anwesha 2023 is Here!!!")}/>
       </div>
