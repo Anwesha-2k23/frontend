@@ -5,6 +5,8 @@ import Modal from '../Modal';
 import styles from './style.module.css'
 import { motion } from "framer-motion";
 import GreetingLottie from "../displaylottie";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const host = "backend.anwesha.live";
 
 const CampusAmbassadorForm = () => {

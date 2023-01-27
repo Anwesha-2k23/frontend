@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Modal from '../Modal';
-
 import styles from './style.module.css'
 import { motion } from "framer-motion";
 import GreetingLottie from "../displaylottie";
@@ -9,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const host = "backend.anwesha.live";
 
-const CampusAmbassadorLogin = () => {
+const UserLoginForm = () => {
 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -21,7 +19,7 @@ const CampusAmbassadorLogin = () => {
     event.preventDefault();
     let body = { "username": email, "password": password };
     try {
-      const response = await fetch(`https://${host}/campasambassador/login`, {
+      const response = await fetch(`https://${host}/user/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +96,7 @@ const CampusAmbassadorLogin = () => {
         pauseOnHover
         theme="light"
       />
-      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-100%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Login as Campus ambassador</motion.h1>
+      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-100%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Login for Anwesha 2K23</motion.h1>
       <div className={styles.form}>
         <motion.div className={styles.lottie_container} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
           <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_dn6rwtwl.json" />
@@ -146,4 +144,4 @@ const CampusAmbassadorLogin = () => {
   )
 }
 
-export default CampusAmbassadorLogin
+export default UserLoginForm
