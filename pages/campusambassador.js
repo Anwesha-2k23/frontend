@@ -13,7 +13,7 @@ export default function campusAmbassador() {
                 <meta name="description" content="Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <div style={{ height: '100px' }}></div>
+            {/* <div style={{ height: '100px' }}></div> */}
             <div className={styles.anwesha_bg_img}>
                 <motion.div
                     initial={{ opacity: 0 }}

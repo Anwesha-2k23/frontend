@@ -20,25 +20,27 @@ function MyApp({ Component, pageProps }) {
     showHeader = false;
   }
   return (
-    <main className={poppins.className}>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-      <Script strategy="lazyOnload">
-        {`
+      <main className={poppins.className}>
+          <Script
+              strategy="lazyOnload"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <Script strategy="lazyOnload">
+              {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
+
       </Script>
       {showHeader && <Navbar />}
       <Component {...pageProps} />
       <Footer />
     </main>
   );
+
 }
 
 export default MyApp

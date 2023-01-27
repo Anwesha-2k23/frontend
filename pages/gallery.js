@@ -27,7 +27,6 @@ export default function Multicity({ folderLinks }) {
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <div className={styles.container}>
         <br /><br />
         {folderLinks.map(folder => (<Gallery key={Math.random()}
