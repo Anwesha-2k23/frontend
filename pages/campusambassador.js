@@ -50,7 +50,7 @@ export default function campusAmbassador() {
             </motion.div>
 
             <div className={styles.btn_register} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
-              <Link href="./leaderboard" className={styles.disabled}>Leaderboard</Link>
+              <Link href="#" className={styles.disabled}>Leaderboard</Link>
             </div>
           </div>
 
