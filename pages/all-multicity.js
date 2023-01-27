@@ -106,7 +106,8 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    <Link href="/multicity/lucknow">
+                    {/* TODO: replace this with lucknow page link */}
+                    <Link href="">
                         <Image
                             alt="poster"
                             src="/multicity/Lucknow-poster.png"
@@ -124,7 +125,7 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    {/* replace this with bhopal page link */}
+                    {/* TODO: replace this with bhopal page link */}
                     <Link href="">
                         <Image
                             alt="poster"
