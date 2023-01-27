@@ -15,7 +15,6 @@ const images = [
     '/multicity/lucknow/4.jpg',
     '/multicity/lucknow/6.jpg',
     '/multicity/lucknow/7.jpg',
-    '/multicity/lucknow/8.jpg',
     '/multicity/lucknow/9.JPG',
     '/multicity/lucknow/10.JPG',
     '/multicity/lucknow/11.JPG',
