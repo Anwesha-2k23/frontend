@@ -9,6 +9,7 @@ import styles from '../styles/comingsoon.module.css'
 import { motion } from 'framer-motion'
 var validator = require('email-validator')
 
+
 export default function comingsoon() {
     const [email, setEmail] = useState('')
     useEffect(() => {
@@ -91,6 +92,7 @@ export default function comingsoon() {
                 <meta name="description" content="Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
+
 
             <div className={styles.socials}>
                 <div className={styles.imageElement}>

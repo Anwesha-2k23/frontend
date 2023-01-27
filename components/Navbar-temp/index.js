@@ -33,13 +33,13 @@ function Navigation() {
                     <Image
                         src="/navbar/hamburger.png"
                         alt="drawer"
-                        width={50}
-                        height={50}
+                        width={35}
+                        height={35}
                         className={styles.mobile_nav}
                     />
                 </button>
                 <Link href="/" className={styles.navLogo}>
-                    <img src="/navbar/logo.svg" alt="logo" height={90} />
+                    <img src="/navbar/logo.svg" alt="logo" height={60} />
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>

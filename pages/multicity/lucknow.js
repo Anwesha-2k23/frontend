@@ -8,26 +8,21 @@ const Gallery = dynamic(() => import('../../components/Gallery/Gallery'), {
     ssr: false,
 })
 
+// TODO: Add images of lucknow multicity
 const images = [
-    'https://whataftercollege.com/wp-content/uploads/2019/03/Cover-image-11-1024x535.jpg',
-
-    'https://res.cloudinary.com/purnesh/image/upload/w_540,f_auto/hansraj-college%2Cjpg00.jpg',
-
-    'https://www.thehighereducationreview.com/newsimagespl/e1lpgT67.jpeg',
-
-    'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2019/10/grub-1570690748.jpg',
-
-    'https://blog.stucred.com/wp-content/uploads/2019/04/david-calderon-973699-unsplash.jpg',
-
-    'https://i0.wp.com/du-assassins.in/wp-content/uploads/2019/01/13srcc1.jpg?fit=580%2C386&ssl=1',
-
-    'https://www.holidify.com/images/cmsuploads/compressed/1516704233Soma2-1600X900_20190123222123.jpg',
-
-    'https://static.kiit.ac.in/news/2019/02/16085130/KIIT-Fest-2019-Inaguration-Day-1-4.jpg',
-
-    'https://utsav.gov.in/public/uploads/event_picture_image/event_1189/1663672816468241902.jpg',
-
-    'https://images.unsplash.com/46/unsplash_52c319226cefb_1.JPG?ixlib=rb-4.0.3',
+    '/multicity/lucknow/1.jpg',
+    '/multicity/lucknow/3.jpg',
+    '/multicity/lucknow/4.jpg',
+    '/multicity/lucknow/6.jpg',
+    '/multicity/lucknow/7.jpg',
+    '/multicity/lucknow/8.jpg',
+    '/multicity/lucknow/9.JPG',
+    '/multicity/lucknow/10.JPG',
+    '/multicity/lucknow/11.JPG',
+    '/multicity/lucknow/12.JPG',
+    '/multicity/lucknow/13.JPG',
+    '/multicity/lucknow/15.JPG',
+    '/multicity/lucknow/16.JPG',
 ]
 
 export default function Multicity() {
@@ -38,15 +33,8 @@ export default function Multicity() {
             <Head>
                 <title>Multicity-Anwesha 2023</title>
                 <meta name="description" content="Anwesha 2023" />
-                <link rel="icon" href="./AnwehsaIcon.png" />
+                <link rel="icon" href="/AnwehsaIcon.png" />
             </Head>
-            <div
-                style={{
-                    width: '100vw',
-                    height: '90px',
-                    background: '#a7e2dc',
-                }}
-            ></div>
 
             <div className={styles.hero}></div>
 
@@ -63,30 +51,54 @@ export default function Multicity() {
                     <div className={styles.text}>
                         <p className={styles.heading}>Lucknow</p>
                         <p className={styles.content}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Iusto minus voluptatem, nisi neque maiores
-                            accusantium, rerum, aliquam ullam totam libero sunt!
-                            Optio similique, ipsam, asperiores tenetur
-                            repudiandae maiores fugit earum, aliquid
-                            consequuntur aliquam dignissimos culpa aperiam
-                            perferendis aspernatur voluptas ut?Lorem ipsum dolor
-                            sit, amet consectetur adipisicing elit. Quae est
-                            maiores facilis accusantium veniam tempora, deserunt
-                            recusandae quam ea eius, fuga architecto doloremque
-                            cumque eligendi, nam natus. Nemo repellat placeat
-                            doloremque quod veniam officia dolores eum,
-                            veritatis natus id labore ut modi sunt quisquam non
-                            fugit quas magni a quidem dicta perferendis fugiat
-                            totam reiciendis! Consequuntur modi, facere saepe
-                            repellat autem nobis?
+                            “Zindagi ka safar toh yun hi chalta jaega. Pta tha
+                            lucknow jakar, ek tukda dil ka vahin choot jaega.”
+                            <br />
+                            <br />
+                            Our Anwesha team went to Lucknow to conduct
+                            multi-city auditions at BBDU, in a big city with
+                            millions of budding talents. The impeccable hosting
+                            by Aaina BBDU gave those talented spirits a way to
+                            showcase their flair. The team returned with a bag
+                            full of everlasting memories. We at Anwesha would
+                            like to extend our heartfelt gratitude to BBDU
+                            Lucknow for hosting us.
+                            <br />
+                            <br />
+                            The multicity auditions by Team Anwesha were nothing
+                            short of magical. Held in the enchanting city of
+                            Lucknow, the auditions were a whirlwind of talent,
+                            laughter, and wonder. The participants, who hailed
+                            from all corners of the city, brought their own
+                            brand of magic to the stage, leaving the judges
+                            spellbound. The energy in the room was electric, as
+                            if a group of unicorns had converged to showcase
+                            their talents. The team at Anwesha worked tirelessly
+                            to make the audition process as seamless as
+                            possible. All in all, it was a fantastical
+                            experience that left us all eagerly counting down
+                            the days until the main event.
                         </p>
                     </div>
-                    <button className={styles.btn}>Register</button>
+                    <button
+                        className={styles.btn}
+                        disabled
+                        style={{ cursor: 'not-allowed' }}
+                    >
+                        <span
+                            style={{
+                                textDecoration: 'none',
+                                cursor: 'not-allowed',
+                            }}
+                        >
+                            Register
+                        </span>{' '}
+                    </button>
                     <button className={styles.btn}>
                         <Link
                             href="/multicity/rulebook.pdf"
                             style={{ textDecoration: 'none' }}
-                            target='_blank'
+                            target="_blank"
                         >
                             Rulebook
                         </Link>{' '}

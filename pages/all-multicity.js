@@ -106,8 +106,7 @@ const Multicity = () => {
                     transition={{ duration: 0.5 }}
                     style={{ width: '410px' }}
                 >
-                    {/* TODO: replace this with lucknow page link */}
-                    <Link href="">
+                    <Link href="/multicity/lucknow">
                         <Image
                             alt="poster"
                             src="/multicity/Lucknow-poster.png"
@@ -118,7 +117,7 @@ const Multicity = () => {
                     </Link>
                 </motion.div>
             </div>
-            <div className={styles.city} style={{ top: '185%' }}>
+            <div className={styles.city} style={{ top: '1700px' }}>
                 <motion.div
                     initial={{ opacity: 0, x: '-100%' }}
                     whileInView={{ opacity: 1, x: '0' }}
@@ -126,10 +125,10 @@ const Multicity = () => {
                     style={{ width: '410px' }}
                 >
                     {/* TODO: replace this with bhopal page link */}
-                    <Link href="">
+                    <Link href="/multicity/bhopal">
                         <Image
                             alt="poster"
-                            src="/multicity/bhopal_poster.png"
+                            src="/multicity/bhopal_poster.jpeg"
                             width={400}
                             height={400}
                             style={{ borderRadius: '20px' }}

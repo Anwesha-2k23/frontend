@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useInView } from 'react-intersection-observer'
-import styles from '../../styles/Kolkata.module.css'
+import styles from '../../styles/Bhopal.module.css'
 import FadeInWhenVisible from '../../components/FadeInWhenVisible/FadeInWhenVisible'
 const Gallery = dynamic(() => import('../../components/Gallery/Gallery'), {
     ssr: false,
@@ -40,13 +40,6 @@ export default function Multicity() {
                 <meta name="description" content="Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <div
-                style={{
-                    width: '100vw',
-                    height: '100px',
-                    background: '#a7e2dc',
-                }}
-            ></div>
 
             <div className={styles.hero}></div>
 
@@ -63,52 +56,42 @@ export default function Multicity() {
                     <div className={styles.text}>
                         <p className={styles.heading}>Bhopal</p>
                         <p className={styles.content}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Iusto minus voluptatem, nisi neque maiores
-                            accusantium, rerum, aliquam ullam totam libero sunt!
-                            Optio similique, ipsam, asperiores tenetur
-                            repudiandae maiores fugit earum, aliquid
-                            consequuntur aliquam dignissimos culpa aperiam
-                            perferendis aspernatur voluptas ut?Lorem ipsum dolor
-                            sit, amet consectetur adipisicing elit. Quae est
-                            maiores facilis accusantium veniam tempora, deserunt
-                            recusandae quam ea eius, fuga architecto doloremque
-                            cumque eligendi, nam natus. Nemo repellat placeat
-                            doloremque quod veniam officia dolores eum,
-                            veritatis natus id labore ut modi sunt quisquam non
-                            fugit quas magni a quidem dicta perferendis fugiat
-                            totam reiciendis! Consequuntur modi, facere saepe
-                            repellat autem nobis?
+                            Get ready Bhopal, the stage is set and the spotlight
+                            is on you! Anwesha is bringing its multicity
+                            auditions to your city, and we are excited to see
+                            the amazing talent that you have to offer. <br /> <br /> Whether
+                            you're a singer, dancer, actor, musician, or any
+                            other kind of artist, we want to see what you've
+                            got! Flaunt your talents and compete for a chance to
+                            win Anwesha goodies and free passes to the main
+                            fest. <br /><br /> Register for the multi-city auditions and
+                            check out the rulebook for more details!
+                            <br /> <br />
+                            Venue: Technocrats Institute of Technology and Science
+                            <br />
+                            Dates: 4th - 5th February, 2023
                         </p>
                     </div>
-                    <button className={styles.btn}>Register</button>
+                    <button className={styles.btn}><span>Register</span></button>
                     <button className={styles.btn}>
                         <Link
                             href="/multicity/rulebook.pdf"
                             style={{ textDecoration: 'none' }}
-                            target='_blank'
+                            target="_blank"
                         >
                             Rulebook
                         </Link>{' '}
                     </button>
                 </div>
             </div>
-            <div className={styles.gallery}>
+            {/* <div className={styles.gallery}>
                 <Gallery
                     eventName="Some glimpses"
                     desc="Here are some pictures of our last Bhopal multicity events"
                     images={images}
                 />
-            </div>
-            {/* <div className={styles.rulebook} id="rulebook">
-                <embed
-                    src="/multicity/rulebook.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                    view="Fit"
-                    type="application/pdf"
-                    width="100%"
-                    style={{ height: '100vh' }}
-                />
             </div> */}
+            <div style={{height: '100px'}}></div>
         </>
     )
 }

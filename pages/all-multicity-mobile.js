@@ -37,8 +37,7 @@ const Multicity = () => {
                 transition={{ duration: 0.5 }}
                 style={{ width: '310px', top: '75%', position: 'absolute' }}
             >
-                {/* TODO: replace with lucknow link  */}
-                <Link href="">
+                <Link href="/multicity/lucknow">
                     <Image
                         alt="poster"
                         src="/multicity/Lucknow-poster.png"
@@ -84,11 +83,10 @@ const Multicity = () => {
                 transition={{ duration: 0.5 }}
                 style={{ width: '310px', top: '150%', position: 'absolute' }}
             >
-                {/* TODO: replace with bhopal link  */}
-                <Link href="">
+                <Link href="/multicity/bhopal">
                     <Image
                         alt="poster"
-                        src="/multicity/bhopal_poster.png"
+                        src="/multicity/bhopal_poster.jpeg"
                         width={300}
                         height={300}
                         style={{ borderRadius: '20px' }}
@@ -101,9 +99,16 @@ const Multicity = () => {
             <Image
                 alt="cloud"
                 src="/multicity/cloud.png"
-                width={232}
-                height={190}
-                style={{ transform: 'translateY(-40px) scale(1.5)' }}
+                width={234}
+                height={96}
+                style={{ transform: 'translateY(-75px) translateX(-35px) scale(1.2)' }}
+            />
+            <Image
+                alt="cloud"
+                src="/multicity/cloud2.png"
+                width={234}
+                height={96}
+                style={{ transform: 'translateY(-150px) translateX(38px)' }}
             />
         </div>
     )
