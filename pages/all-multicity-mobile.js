@@ -18,7 +18,7 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <div style={{ height: '19vh' }}></div>
+            <div style={{ height: '5vh' }}></div>
             <Image
                 alt="IIT Patna"
                 src="/multicity/school.png"
@@ -37,7 +37,8 @@ const Multicity = () => {
                 transition={{ duration: 0.5 }}
                 style={{ width: '310px', top: '75%', position: 'absolute' }}
             >
-                <Link href="/multicity/lucknow">
+                {/* TODO: replace with lucknow link  */}
+                <Link href="">
                     <Image
                         alt="poster"
                         src="/multicity/Lucknow-poster.png"
@@ -61,7 +62,7 @@ const Multicity = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
                 className={styles.otherElements}
-                style={{top: '120%'}}
+                style={{ top: '120%' }}
             >
                 <Image
                     alt="drumroll"
@@ -83,7 +84,7 @@ const Multicity = () => {
                 transition={{ duration: 0.5 }}
                 style={{ width: '310px', top: '150%', position: 'absolute' }}
             >
-                {/* replace with bhopal link  */}
+                {/* TODO: replace with bhopal link  */}
                 <Link href="">
                     <Image
                         alt="poster"
