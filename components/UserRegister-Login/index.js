@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Modal from '../Modal';
+// import Modal from '../../Modal';
 
 import styles from './style.module.css'
 import { motion } from "framer-motion";
@@ -9,16 +9,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const host = "backend.anwesha.live";
 
-const CampusAmbassadorForm = () => {
+const UserRegisterForm = () => {
 
   const [phone, setPhone] = React.useState('');
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [college, setCollege] = React.useState('');
-  const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [cnfPassword, setCnfPassword] = React.useState('');
-  const [years_of_study, setYearsOfStudy] = React.useState("");
   const [success, setSuccess] = React.useState(false);
   const [failure, setFailure] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
@@ -26,13 +23,23 @@ const CampusAmbassadorForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== cnfPassword) {
+      toast.warning('Passwords do not match', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setErrorMsg("Passwords do not match");
       setFailure(true);
       return;
     }
-    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
+    let body = { "phone_number": phone, "full_name": name, "email_id": email, "password": password };
     try {
-      const response = await fetch(`https://${host}/campasambassador/register`, {
+      const response = await fetch(`https://${host}/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +52,7 @@ const CampusAmbassadorForm = () => {
         setFailure(false);
         setErrorMsg("");
         const data = await response.json();
-        // console.log(data)
+        console.log(data)
         toast.success('You are successfully registered', {
           position: "top-right",
           autoClose: 3000,
@@ -75,6 +82,7 @@ const CampusAmbassadorForm = () => {
       }
       else {
         const data = await response.json();
+        // console.log(data)
         setErrorMsg("Internal Server Error. Check your browser console for more details");
         setFailure(true);
         setSuccess(false);
@@ -109,13 +117,12 @@ const CampusAmbassadorForm = () => {
         pauseOnHover
         theme="light"
       />
-      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-100%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Register for Campus ambassador</motion.h1>
+      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-100%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Register for Anwesha-2k23</motion.h1>
       <div className={styles.form}>
         <motion.div className={styles.lottie_container} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
           <GreetingLottie animationPath="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" />
         </motion.div>
         <motion.form className={styles.mainForm} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
-          <div className={styles.form_row}>
           <div className={styles.field}>
             <label htmlFor="Phone_number">Phone Number</label>
             <br />
@@ -141,7 +148,6 @@ const CampusAmbassadorForm = () => {
             />
             <br />
           </div>
-          </div>
           <div className={styles.field}>
             <label htmlFor="full_name">Full Name</label>
             <br />
@@ -153,44 +159,6 @@ const CampusAmbassadorForm = () => {
               required
             />
             <br />
-          </div>
-          <div className={styles.field}>
-            <label htmlFor="college_name">College Name</label>
-            <br />
-            <input
-              type="text"
-              name="College_Name"
-              placeholder='Eg: IIT Patna'
-              onChange={(e) => setCollege(e.target.value)}
-              required
-            />
-            <br />
-          </div>
-          <div className={styles.form_row}>
-          <div className={styles.field}>
-            <label htmlFor="refferal_code">Refferal Code</label>
-            <br />
-            <input
-              type="text"
-              name="Refferal_Code"
-              placeholder='Eg: ANW46DDC'
-              onChange={(e) => setReferral(e.target.value)}
-              required
-            />
-            <br />
-          </div>
-          <div className={styles.field}>
-            <label htmlFor="refferal_code">Years of Study</label>
-            <br />
-            <input
-              type="text"
-              name="Refferal_Code"
-              placeholder='Eg: BTECH 3rd year'
-              onChange={(e) => setYearsOfStudy(e.target.value)}
-              required
-            />
-            <br />
-          </div>
           </div>
           <div className={styles.form_row}>
           <div className={styles.field}>
@@ -232,4 +200,4 @@ const CampusAmbassadorForm = () => {
   )
 }
 
-export default CampusAmbassadorForm
+export default UserRegisterForm
