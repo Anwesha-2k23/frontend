@@ -65,7 +65,7 @@
     /* width: 100vw; */
     min-height: 270px;
     height: 40vw;
-    width: 40vw;
+    width: 80vw;
     margin-left: 10vw;
     margin-top: 10vh;
     border-radius: 20px;
@@ -88,13 +88,14 @@
 
 .ca_info{
   position: absolute;
-  top: 10%;
-  left: 54%;
+  top: 65%;
+  left: 20%;
   /* transform: translate(-50%, -50%); */
   font-size: 1.45vw;
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
+  width: 64vw;
 }
 .ca_info a{
   text-decoration: none;
@@ -263,9 +264,9 @@
     margin-left: 5%;
   }
   .ca_info{
-    position: relative;
-    top: 100%;
-    left: 0%;
+    position: absolute;
+    top: 71%;
+    left: 14%;
     margin-left: 5%;
     margin-top: 15px;
   }
