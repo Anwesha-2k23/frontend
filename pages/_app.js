@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
 
       </Script>
       {showHeader && <Navbar />}
+      {showHeader && <div style={{height: '98px'}}/>}
       <Component {...pageProps} />
       <Footer />
     </main>
