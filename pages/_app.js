@@ -14,25 +14,26 @@ const poppins = Poppins({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <main className={poppins.className}>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-      <Script strategy="lazyOnload">
-        {`
+      <main className={poppins.className}>
+          <Script
+              strategy="lazyOnload"
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <Script strategy="lazyOnload">
+              {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
-      </Script>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </main>
-  );
+          </Script>
+          <Navbar />
+          <div style={{ height: '98px' }}></div>
+          <Component {...pageProps} />
+          <Footer />
+      </main>
+  )
 }
 
 export default MyApp

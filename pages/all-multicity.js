@@ -19,7 +19,7 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
-            <div style={{ height: '150px' }}></div>
+            {/* <div style={{ height: '150px' }}></div> */}
             <h1>Multicity Auditions</h1>
             <Image
                 alt="IIT Patna"
