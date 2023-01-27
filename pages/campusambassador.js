@@ -78,7 +78,7 @@ export default function campusAmbassador() {
                             whileTap={{ scale: 0.8 }}
                         >
                             <Link
-                                href="https://unstop.com/internship/campus-ambassador-internship-anwesha-indian-institute-of-technology-iit-patna-578500"
+                                href="/ca-register"
                                 className={styles.btn_text}
                             >
                                 Register

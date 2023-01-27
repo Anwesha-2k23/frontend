@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { Poppins } from "@next/font/google";
 import Script from 'next/script';
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router';
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 //     ssr: false,
 // })
@@ -11,8 +12,13 @@ import Footer from '../components/Footer/Footer';
 const poppins = Poppins({
   weight: "900",
 });
-
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  // const showHeader = router.pathname === '/ca-register' || '/ca-login' ? false : true;
+  let showHeader = true;
+  if(router.pathname === '/ca-register' || router.pathname === '/ca-login' || router.pathname === '/userLogin' || router.pathname === '/userRegister') {
+    showHeader = false;
+  }
   return (
       <main className={poppins.className}>
           <Script
@@ -27,13 +33,14 @@ function MyApp({ Component, pageProps }) {
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
-          </Script>
-          <Navbar />
-          <div style={{ height: '98px' }}></div>
-          <Component {...pageProps} />
-          <Footer />
-      </main>
-  )
+
+      </Script>
+      {showHeader && <Navbar />}
+      <Component {...pageProps} />
+      <Footer />
+    </main>
+  );
+
 }
 
 export default MyApp
