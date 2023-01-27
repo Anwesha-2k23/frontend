@@ -48,6 +48,7 @@
     width: 100vw;
     transition: all .3s ease;
     z-index: 2;
+    transform: translateY(-2px);
 }
 
 .nav_drawer ul{
