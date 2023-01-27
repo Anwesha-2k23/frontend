@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Modal from '../Modal';
+import Modal from '../../Modal';
 
 import styles from './style.module.css'
 import { motion } from "framer-motion";
-import GreetingLottie from "../displaylottie";
+import GreetingLottie from "../../displaylottie";
 const host = "backend.anwesha.live";
 
 const CampusAmbassadorForm = () => {
