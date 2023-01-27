@@ -47,7 +47,6 @@
 }
 
 .section1 {
-    width: 33vw;
     height: 100%;
     padding: 15px;
     display: flex;
@@ -252,10 +251,6 @@
 @media screen and (max-width: 1000px) {
     .footer {
         height: 50vh;
-    }
-
-    .section1 {
-        display: none;
     }
 
     .section3 {
