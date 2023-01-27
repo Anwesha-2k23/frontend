@@ -2,6 +2,10 @@
   font-family: "BroadwayShadow";
   src: url("../styles/fonts/BroadwayShadow.ttf");
 }
+@font-face {
+  font-family: "popinsBold";
+  src: url("../styles/fonts/Poppins-SemiBold.ttf");
+}
 
 .anwesha_bg_img {
   background-image: url("../public/CA.png");
@@ -134,6 +138,10 @@
     color: aliceblue;
   }
 
+  .btn_register{
+    width: 151px;
+  }
+
 }
 
 
@@ -175,19 +183,21 @@
   font-size: 40px;
   color: #2B0072;
   text-align: center;
+  font-family: popinsBold;
 }
 
 .reward_heading{
   font-size: 40px;
   color: #2B0072;
   padding: 10px;
-  
+  font-family: popinsBold;
 }
 
 .reward_desc{
   font-size: 30px;
   color: #2B007285;
   padding: 10px;
+  font-family: popinsBold;
 }
 
 .lottie_row_judging{
@@ -201,6 +211,7 @@
 .points_table{
   width: 60%;
   padding-block: 25px ;
+  font-family: popinsBold;
 }
 .points_table td, .points_table th {
   border: 1px solid #ddd;
@@ -248,4 +259,5 @@
   .points_table{
     width: 100%;
   }
+  
 }
