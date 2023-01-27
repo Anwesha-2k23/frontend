@@ -70,20 +70,27 @@ export default function campusAmbassador() {
                   <span className={styles.bgText}>CAMPUS AMBASSADOR</span>
                   <span className={styles.bgText_small}>PROGRAM</span>
 
-                  <div style={{ display: 'flex', height: '100px' }}>
-                      {/* TODO: Add the register link of the campus ambassador button */}
-                      <motion.div
-                          className={styles.btn_register}
-                          whileHover={{ scale: 1.2 }}
-                          whileTap={{ scale: 0.8 }}
-                      >
-                          <Link
-                              href="https://unstop.com/internship/campus-ambassador-internship-anwesha-indian-institute-of-technology-iit-patna-578500"
-                              className={styles.btn_text}
-                          >
-                              Register
-                          </Link>
-                      </motion.div>
+        </motion.div>
+        <motion.div
+          className={styles.hero_text}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.bgText}>CAMPUS AMBASSADOR</span>
+          <span className={styles.bgText_small}>PROGRAM</span>
+
+          <div style={{ display: 'flex', height: '100px' }}>
+
+            {/* TODO: Add the register link of the campus ambassador button */}
+            <motion.div className={styles.btn_register} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
+              <Link href="https://unstop.com/internship/campus-ambassador-internship-anwesha-indian-institute-of-technology-iit-patna-578500" className={styles.btn_text}>Register</Link>
+            </motion.div>
+
+            <div className={styles.btn_register} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
+              <Link href="#" className={styles.disabled}>Leaderboard</Link>
+            </div>
+          </div>
 
                       <div
                           className={styles.btn_register}

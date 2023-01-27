@@ -5,6 +5,7 @@ const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
     ssr: false,
 })
 import CampusAmbassadorForm from '../components/CampusAmbassadorForm';
+import GreetingLottie from "../components/displaylottie";
 
 export default function CampusAmbassador() {
     return (
