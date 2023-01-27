@@ -26,6 +26,7 @@
     text-decoration: none;
     padding: 10px;
     display: inline-block;
+    font-weight: bold;
 }
 
 .navLinks ul{
