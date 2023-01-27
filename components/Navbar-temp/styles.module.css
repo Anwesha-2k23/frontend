@@ -69,6 +69,7 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1050px){
