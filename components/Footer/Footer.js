@@ -68,7 +68,10 @@ const Footer = () => {
               <div className={[styles.sectionSeperator].join(' ')}></div>
               <div className={[styles.section1].join(' ')}>
                   <h4>
-                      Email : <a href="">anweshaiitp@gmail.com</a>
+                      Email :{' '}
+                      <a href="mailto:anweshaiitp@gmail.com">
+                          anweshaiitp@gmail.com
+                      </a>
                   </h4>
                   <h4>Phone : +91 7907323522 </h4>
                   <h4>
