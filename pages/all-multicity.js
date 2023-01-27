@@ -141,8 +141,7 @@ const Multicity = () => {
                 </motion.div>
                 <Image
                     alt="milestone"
-                    src="/multicity/milestone.png"
-                    style={{ transform: 'scaleX(-1)', visibility: 'hidden' }}
+                    src="/multicity/milestone_bhopal.png"
                     width={400}
                     height={300}
                 ></Image>
