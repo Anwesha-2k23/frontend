@@ -84,16 +84,13 @@
     display: flex;
     width: 60px;
     height: 60px;
-    background: white;
     color: blue;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
     overflow: hidden;
 }
 
 .icon_link:hover {
-    background-color: white !important;
     transform: scale(1.1);
 }
 
@@ -202,7 +199,6 @@
 
 .link:hover {
     padding: 2px;
-    background-color: #cec6c6;
     color: black;
     transition-property: background-color,color;
     transition-timing-function: ease-in-out;

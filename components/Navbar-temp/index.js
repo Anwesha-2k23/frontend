@@ -22,6 +22,8 @@ function Navigation() {
             setDrawerOpen(false)
         }
     }
+
+    //TODO: make the navbar pick the background color of the viewed page
     return (
         <>
             <div className={styles.mainNav}>

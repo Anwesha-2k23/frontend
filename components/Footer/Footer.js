@@ -25,29 +25,24 @@ const Footer = () => {
                       >
                           <img src="/footer/facebook.svg"></img>
                       </Link>{' '}
-                      {/* Facebook Link Here */}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
                       >
                           <img src="/footer/instagram.svg"></img>
                       </Link>
-                      {/* </div> Instagram Link Here */}
-                      {/* <div> */}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
                       >
                           <img src="/footer/youtube.svg"></img>
                       </Link>{' '}
-                      {/* Youtube Link Here */}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://twitter.com/anweshaiitpat/"
                       >
                           <img src="/footer/twitter.svg"></img>
                       </Link>{' '}
-                      {/* Youtube Link Here */}
                   </div>
                   {/* <div
                       className={[
