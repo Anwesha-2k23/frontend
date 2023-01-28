@@ -7,32 +7,36 @@ const host = "backend.anwesha.live";
 
 const bhopalReg = () => {
 
-    const [eventname, setEventName] = React.useState('');
-    const [leadername, setLeaderName] = React.useState('');
-    const [leaderemail, setLeaderEmail] = React.useState('');
-    const [leaderphone, setLeaderPhone] = React.useState('');
-    const [leaderorg, setLeaderOrg] = React.useState('');
-    const [member1name, setMember1Name] = React.useState('');
-    const [member1email, setMember1Email] = React.useState('');
-    const [member1phone, setMember1Phone] = React.useState('');
-    const [member1org, setMember1Org] = React.useState('');
-    const [member2name, setMember2Name] = React.useState('');
-    const [member2email, setMember2Email] = React.useState('');
-    const [member2phone, setMember2Phone] = React.useState('');
-    const [member2org, setMember2Org] = React.useState('');
-    const [member3name, setMember3Name] = React.useState('');
-    const [member3email, setMember3Email] = React.useState('');
-    const [member3phone, setMember3Phone] = React.useState('');
-    const [member3org, setMember3Org] = React.useState('');
+    const [eventname, setEventName] = React.useState(null);
+    const [orgtype, setOrgType] = React.useState(null);
+    const [leadername, setLeaderName] = React.useState(null);
+    const [leaderemail, setLeaderEmail] = React.useState(null);
+    const [leaderphone, setLeaderPhone] = React.useState(null);
+    const [leaderorg, setLeaderOrg] = React.useState(null);
+    const [member1name, setMember1Name] = React.useState(null);
+    const [member1email, setMember1Email] = React.useState(null);
+    const [member1phone, setMember1Phone] = React.useState(null);
+    const [member1org, setMember1Org] = React.useState(null);
+    const [member2name, setMember2Name] = React.useState(null);
+    const [member2email, setMember2Email] = React.useState(null);
+    const [member2phone, setMember2Phone] = React.useState(null);
+    const [member2org, setMember2Org] = React.useState(null);
+    const [member3name, setMember3Name] = React.useState(null);
+    const [member3email, setMember3Email] = React.useState(null);
+    const [member3phone, setMember3Phone] = React.useState(null);
+    const [member3org, setMember3Org] = React.useState(null);
     const [success, setSuccess] = React.useState(false);
     const [failure, setFailure] = React.useState(false);
     const [errorMsg, setErrorMsg] = React.useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
+        console.log(leaderemail)
+        console.log(eventname)
+        let body = { "event_id": eventname, "organisation_type": orgtype, "leader_email": leaderemail, "leader_name": leadername, "leader_phone_no": leaderphone, "leader_organisation": leaderorg, "member_one_name": member1name, "member_one_email": member1email, "member_one_phone": member1phone, "member_one_organisation": member1org, "member_two_name": member2name, "member_two_email": member2email, "member_two_phone": member2phone, "member_two_organisation": member2org, "member_three_name": member3name, "member_three_email": member3email, "member_three_phone": member3phone, "member_three_organisation": member3org };
+        console.log(body);
         try {
-            const response = await fetch(`https://${host}/campasambassador/register`, {
+            const response = await fetch(`https://${host}/multicity/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,7 +44,7 @@ const bhopalReg = () => {
                 body: JSON.stringify(body),
             });
             //check if request is successful
-            if (response.status === 201) {
+            if (response.status === 200) {
                 setSuccess(true);
                 setFailure(false);
                 setErrorMsg("");
@@ -123,7 +127,7 @@ const bhopalReg = () => {
                                         <input
                                             type="radio"
                                             name="EventName"
-                                            value="Heel Turn"
+                                            value="ev8d"
                                             id="Heel Turn"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
@@ -225,6 +229,41 @@ const bhopalReg = () => {
                                     <br />
                                 </div>
                             </div>
+                            <motion.div className={styles.field} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
+                                <label htmlFor="OrgType">Organization Type</label>
+                                <br />
+                                <div className={styles.radio}>
+                                    <div>
+                                        <div className={styles.radioBtn}>
+                                            <input
+                                                type="radio"
+                                                name="OrgType"
+                                                value="School"
+                                                id="School"
+                                                onChange={(e) => setOrgType(e.target.value)}
+                                            />
+                                            <label for="School">School</label></div>
+                                        <div className={styles.radioBtn}>
+                                            <input
+                                                type="radio"
+                                                name="OrgType"
+                                                value="College"
+                                                id="College"
+                                                onChange={(e) => setOrgType(e.target.value)}
+                                            />
+                                            <label for="College">College</label></div>
+                                        <div className={styles.radioBtn}>
+                                            <input
+                                                type="radio"
+                                                name="OrgType"
+                                                value="Others"
+                                                id="Others"
+                                                onChange={(e) => setOrgType(e.target.value)}
+                                            />
+                                            <label for="Others">Others</label></div>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </motion.div>
 
                         {eventname == 'Syngphony (Duet)' ? (
@@ -283,7 +322,7 @@ const bhopalReg = () => {
                                         <br />
                                     </div>
                                 </div>
-                            </motion.div>) : ''}
+                            </motion.div>) : null}
 
                         {eventname == 'Yuddhkshetra' ? (
                             <div>
@@ -457,7 +496,7 @@ const bhopalReg = () => {
                                 </motion.div>
                             </div>
 
-                        ) : ''}
+                        ) : null}
                         <motion.div className={styles.buttonWrapper} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} >
                             <button onClick={(e) => handleSubmit(e)}>Submit</button>
                         </motion.div>
