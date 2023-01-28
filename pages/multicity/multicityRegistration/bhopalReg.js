@@ -140,7 +140,7 @@ const bhopalReg = () => {
                     setErrorMsg(data.message);
                     setFailure(true);
                     setSuccess(false);
-                    toast.error('Unable to register', {
+                    toast.error(data.message, {
                         position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: false,
