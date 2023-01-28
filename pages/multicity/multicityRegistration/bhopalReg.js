@@ -3,6 +3,7 @@ import styles from '../../../styles/BhopalReg.module.css'
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Router from 'next/router';
 const host = "backend.anwesha.live";
 
 const bhopalReg = () => {
@@ -28,8 +29,8 @@ const bhopalReg = () => {
     const [success, setSuccess] = React.useState(false);
     const [failure, setFailure] = React.useState(false);
     const [errorMsg, setErrorMsg] = React.useState("");
-    String.prototype.isNumber = function(){return /^\d+$/.test(this);}
-    String.prototype.isEmail = function(){return   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.toLowerCase());}
+    String.prototype.isNumber = function () { return /^\d+$/.test(this); }
+    String.prototype.isEmail = function () { return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.toLowerCase()); }
     const handleSubmit = async (event) => {
         event.preventDefault();
         // console.log(leaderemail)
@@ -58,7 +59,7 @@ const bhopalReg = () => {
                 theme: "light",
             });
         }
-        else if(leaderphone==null || leaderphone.isNumber() == false){
+        else if (leaderphone == null || leaderphone.isNumber() == false) {
             toast.warning("Enter a valid phone number", {
                 position: "top-right",
                 autoClose: 3000,
@@ -70,7 +71,7 @@ const bhopalReg = () => {
                 theme: "light",
             });
         }
-        else if(leaderemail == null || leaderemail.isEmail() == false){
+        else if (leaderemail == null || leaderemail.isEmail() == false) {
             toast.warning("Enter a valid email address", {
                 position: "top-right",
                 autoClose: 3000,
@@ -82,7 +83,7 @@ const bhopalReg = () => {
                 theme: "light",
             });
         }
-        else if(leadername == null || leaderemail == null || leaderphone == null || leaderorg == null ){
+        else if (leadername == null || leaderemail == null || leaderphone == null || leaderorg == null) {
             toast.warning("Fill all the fields to register", {
                 position: "top-right",
                 autoClose: 3000,
@@ -94,8 +95,20 @@ const bhopalReg = () => {
                 theme: "light",
             });
         }
-        else if(eventname == "evb6" && (member1name == null || member1email == null || member1phone == null || member1org == null )){
+        else if (eventname == "evb6" && (member1name == null || member1email == null || member1phone == null || member1org == null)) {
             toast.warning("Fill all the fields of 2nd member also to register", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if ((eventname == "ev5b" || eventname == 'ev6a') && (member1name == null || member1email == null || member1phone == null || member1org == null || member2name == null || member2email == null || member2phone == null || member2org == null || member3name == null || member3email == null || member3phone == null || member3org == null)) {
+            toast.warning("Fill all the fields of all the members to register", {
                 position: "top-right",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -134,6 +147,9 @@ const bhopalReg = () => {
                         progress: undefined,
                         theme: "light",
                     });
+                    setTimeout(() => {
+                        Router.push('/multicity/bhopal')
+                    }, 3000);
                 }
                 else if (response.status === 409) {
                     const data = await response.json();
@@ -167,13 +183,13 @@ const bhopalReg = () => {
                         theme: "light",
                     });
                 }
-              
+
             }
             catch (err) {
                 console.log(err);
             }
         }
-        
+
     }
 
     return (
@@ -208,7 +224,16 @@ const bhopalReg = () => {
                                             id="Heel Turn"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
-                                        <label for="Heel Turn">Heel Turn</label></div>
+                                        <label for="Heel Turn">Heel Turn (Solo)</label></div>
+                                    <div className={styles.radioBtn}>
+                                        <input
+                                            type="radio"
+                                            name="EventName"
+                                            value="ev5b"
+                                            id="Heel Turn (Group)"
+                                            onChange={(e) => setEventName(e.target.value)}
+                                        />
+                                        <label for="Heel Turn (Group)">Heel Turn (Group)</label></div>
                                     <div className={styles.radioBtn}>
                                         <input
                                             type="radio"
@@ -218,7 +243,10 @@ const bhopalReg = () => {
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
                                         <label for="Syngphony (Solo)">Syngphony (Solo)</label></div>
-                                    <div className={styles.radioBtn}>
+
+                                </div>
+                                <div>
+                                <div className={styles.radioBtn}>
                                         <input
                                             type="radio"
                                             name="EventName"
@@ -227,8 +255,6 @@ const bhopalReg = () => {
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
                                         <label for="Syngphony (Duet)">Syngphony (Duet)</label></div>
-                                </div>
-                                <div>
                                     <div className={styles.radioBtn}>
                                         <input
                                             type="radio"
@@ -247,6 +273,7 @@ const bhopalReg = () => {
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
                                         <label for="Mr./Ms. Anwesha">Mr./Ms. Anwesha</label></div>
+                                    
                                 </div>
                             </div>
                             <br />
@@ -402,7 +429,7 @@ const bhopalReg = () => {
                                 </div>
                             </motion.div>) : null}
 
-                        {eventname == 'ev6a' ? (
+                        {eventname == 'ev6a' || eventname == 'ev5b' ? (
                             <div>
                                 <motion.div initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
                                     <h2 className={styles.subHeading}>1st Team Member's Details</h2>
