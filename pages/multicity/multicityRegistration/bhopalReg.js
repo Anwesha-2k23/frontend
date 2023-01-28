@@ -229,7 +229,7 @@ const bhopalReg = () => {
                                     <br />
                                 </div>
                             </div>
-                            <motion.div className={styles.field} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
+                            <div className={styles.field} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
                                 <label htmlFor="OrgType">Organization Type</label>
                                 <br />
                                 <div className={styles.radio}>
@@ -238,7 +238,7 @@ const bhopalReg = () => {
                                             <input
                                                 type="radio"
                                                 name="OrgType"
-                                                value="School"
+                                                value="0"
                                                 id="School"
                                                 onChange={(e) => setOrgType(e.target.value)}
                                             />
@@ -247,7 +247,7 @@ const bhopalReg = () => {
                                             <input
                                                 type="radio"
                                                 name="OrgType"
-                                                value="College"
+                                                value="1"
                                                 id="College"
                                                 onChange={(e) => setOrgType(e.target.value)}
                                             />
@@ -256,14 +256,14 @@ const bhopalReg = () => {
                                             <input
                                                 type="radio"
                                                 name="OrgType"
-                                                value="Others"
+                                                value="2"
                                                 id="Others"
                                                 onChange={(e) => setOrgType(e.target.value)}
                                             />
                                             <label for="Others">Others</label></div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         </motion.div>
 
                         {eventname == 'Syngphony (Duet)' ? (
