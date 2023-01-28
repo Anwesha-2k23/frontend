@@ -28,75 +28,152 @@ const bhopalReg = () => {
     const [success, setSuccess] = React.useState(false);
     const [failure, setFailure] = React.useState(false);
     const [errorMsg, setErrorMsg] = React.useState("");
-
+    String.prototype.isNumber = function(){return /^\d+$/.test(this);}
+    String.prototype.isEmail = function(){return   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.toLowerCase());}
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(leaderemail)
-        console.log(eventname)
-        let body = { "event_id": eventname, "organisation_type": orgtype, "leader_email": leaderemail, "leader_name": leadername, "leader_phone_no": leaderphone, "leader_organisation": leaderorg, "member_one_name": member1name, "member_one_email": member1email, "member_one_phone_no": member1phone, "member_one_organisation": member1org, "member_two_name": member2name, "member_two_email": member2email, "member_two_phone_no": member2phone, "member_two_organisation": member2org, "member_three_name": member3name, "member_three_email": member3email, "member_three_phone_no": member3phone, "member_three_organisation": member3org };
-        console.log(body);
-        try {
-            const response = await fetch(`https://${host}/multicity/register`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(body),
+        // console.log(leaderemail)
+        // console.log(eventname)
+        if (eventname == null) {
+            toast.warning("Select a event to register", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
             });
-            //check if request is successful
-            if (response.status === 200) {
-                setSuccess(true);
-                setFailure(false);
-                setErrorMsg("");
-                const data = await response.json();
-                // console.log(data)
-                toast.success('You are successfully registered', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
+        }
+        else if (orgtype == null) {
+            toast.warning("Select a organisation type to register", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if(leaderphone==null || leaderphone.isNumber() == false){
+            toast.warning("Enter a valid phone number", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if(leaderemail == null || leaderemail.isEmail() == false){
+            toast.warning("Enter a valid email address", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if(leadername == null || leaderemail == null || leaderphone == null || leaderorg == null ){
+            toast.warning("Fill all the fields to register", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else if(eventname == "evb6" && (member1name == null || member1email == null || member1phone == null || member1org == null )){
+            toast.warning("Fill all the fields of 2nd member also to register", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else {
+            let body = { "event_id": eventname, "organisation_type": orgtype, "leader_email": leaderemail, "leader_name": leadername, "leader_phone_no": leaderphone, "leader_organisation": leaderorg, "member_one_name": member1name, "member_one_email": member1email, "member_one_phone_no": member1phone, "member_one_organisation": member1org, "member_two_name": member2name, "member_two_email": member2email, "member_two_phone_no": member2phone, "member_two_organisation": member2org, "member_three_name": member3name, "member_three_email": member3email, "member_three_phone_no": member3phone, "member_three_organisation": member3org };
+            // console.log(body);
+            try {
+                const response = await fetch(`https://${host}/multicity/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(body),
                 });
+                //check if request is successful
+                if (response.status === 200) {
+                    setSuccess(true);
+                    setFailure(false);
+                    setErrorMsg("");
+                    const data = await response.json();
+                    // console.log(data)
+                    toast.success('You are successfully registered', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
+                else if (response.status === 409) {
+                    const data = await response.json();
+                    setErrorMsg(data.message);
+                    setFailure(true);
+                    setSuccess(false);
+                    toast.error('Unable to register', {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
+                else {
+                    const data = await response.json();
+                    setErrorMsg("Internal Server Error. Check your browser console for more details");
+                    setFailure(true);
+                    setSuccess(false);
+                    toast.error(data.message, {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                }
+              
             }
-            else if (response.status === 409) {
-                const data = await response.json();
-                setErrorMsg(data.message);
-                setFailure(true);
-                setSuccess(false);
-                toast.error('Unable to register', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
-            }
-            else {
-                const data = await response.json();
-                setErrorMsg("Internal Server Error. Check your browser console for more details");
-                setFailure(true);
-                setSuccess(false);
-                toast.error(data.message, {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+            catch (err) {
+                console.log(err);
             }
         }
-        catch (err) {
-            console.log(err);
-        }
+        
     }
 
     return (
@@ -224,6 +301,7 @@ const bhopalReg = () => {
                                         name="Leader_Organization"
                                         placeholder='Eg: IIT Patna'
                                         required
+
                                         onChange={(e) => setLeaderOrg(e.target.value)}
                                     />
                                     <br />
