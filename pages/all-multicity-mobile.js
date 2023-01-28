@@ -3,13 +3,17 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Multicity = () => {
+
+    const [height, setHeight] = useState(0)
+
     useEffect(() => {
         if (window.innerWidth > 1240) {
             window.location.href = '/all-multicity'
         }
+        setHeight(window.innerHeight)
     }, [])
     return (
         <div className={styles.container} style={{ overflow: 'hidden' }}>
@@ -61,7 +65,7 @@ const Multicity = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
                 className={styles.otherElements}
-                style={{ top: '120%' }}
+                style={{ top: height>756? '120%' : 925 }}
             >
                 <Image
                     alt="drumroll"
@@ -81,7 +85,7 @@ const Multicity = () => {
                 initial={{ opacity: 0, y: -10, scale: 0.1 }}
                 whileInView={{ opacity: 1, y: -1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                style={{ width: '310px', top: '150%', position: 'absolute' }}
+                style={{ width: '310px', top: height>756? '150%': 1200, position: 'absolute' }}
             >
                 <Link href="/multicity/bhopal">
                     <Image
