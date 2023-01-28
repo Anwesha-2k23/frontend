@@ -91,7 +91,8 @@
   top: 65%;
   left: 20%;
   /* transform: translate(-50%, -50%); */
-  font-size: 1.45vw;
+  /* font-size: 1.65vw; */
+  font-size: 10px;
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
@@ -265,7 +266,7 @@
   }
   .ca_info{
     position: absolute;
-    top: 71%;
+    top: 25%;
     left: 14%;
     margin-left: 5%;
     margin-top: 15px;
