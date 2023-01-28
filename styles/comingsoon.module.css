@@ -91,12 +91,17 @@
   top: 65%;
   left: 20%;
   /* transform: translate(-50%, -50%); */
-  /* font-size: 1.65vw; */
-  font-size: 10px;
+  font-size: 1.35vw;
   color: rgb(58, 48, 29);
   font-weight: 900;
   margin-right: 3%;
   width: 64vw;
+}
+
+@media screen and (max-width: 800px){
+  .ca_info{
+    font-size: 10px;
+  }
 }
 .ca_info a{
   text-decoration: none;
