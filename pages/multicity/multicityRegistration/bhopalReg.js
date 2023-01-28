@@ -136,7 +136,7 @@ const bhopalReg = () => {
                                         <input
                                             type="radio"
                                             name="EventName"
-                                            value="Syngphony (Solo)"
+                                            value="evfb"
                                             id="Syngphony (Solo)"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
@@ -145,7 +145,7 @@ const bhopalReg = () => {
                                         <input
                                             type="radio"
                                             name="EventName"
-                                            value="Syngphony (Duet)"
+                                            value="evb6"
                                             id="Syngphony (Duet)"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
@@ -156,7 +156,7 @@ const bhopalReg = () => {
                                         <input
                                             type="radio"
                                             name="EventName"
-                                            value="Yuddhkshetra"
+                                            value="ev6a"
                                             id="Yuddhkshetra"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
@@ -165,7 +165,7 @@ const bhopalReg = () => {
                                         <input
                                             type="radio"
                                             name="EventName"
-                                            value="Mr./Ms. Anwesha"
+                                            value="ev4f"
                                             id="Mr./Ms. Anwesha"
                                             onChange={(e) => setEventName(e.target.value)}
                                         />
@@ -266,7 +266,7 @@ const bhopalReg = () => {
                             </div>
                         </motion.div>
 
-                        {eventname == 'Syngphony (Duet)' ? (
+                        {eventname == 'evb6' ? (
                             <motion.div initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
                                 <h2 className={styles.subHeading}>Team Member's Details</h2>
                                 <div className={styles.form_row}>
@@ -324,7 +324,7 @@ const bhopalReg = () => {
                                 </div>
                             </motion.div>) : null}
 
-                        {eventname == 'Yuddhkshetra' ? (
+                        {eventname == 'ev6a' ? (
                             <div>
                                 <motion.div initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
                                     <h2 className={styles.subHeading}>1st Team Member's Details</h2>
