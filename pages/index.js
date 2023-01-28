@@ -176,8 +176,7 @@ export default function comingsoon() {
                         </h1>
                     </Link>
                     <p className={styles.ca_text}>
-                        Join Anwesha's campus ambassador programme and seize the
-                        opportunity to become the face of your college!
+                        The wait is over! Anwesha is here with it's Campus Ambassador Programme. Don't miss this amazing opportunity to associate and work with the biggest festival of North East India.
                     </p>
                     <Link href="/ca-register">
                         <button className={styles.ca_button}>
