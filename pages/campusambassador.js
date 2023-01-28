@@ -107,7 +107,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_gegs7als.json" />
@@ -115,7 +115,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 {' '}
@@ -128,7 +128,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 {' '}
@@ -138,7 +138,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets1.lottiefiles.com/packages/lf20_tpa51dr0.json" />
@@ -149,7 +149,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_l2l6hr2l.json" />
@@ -157,7 +157,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Social Media and Publicity
@@ -169,7 +169,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Hospitality: Facilitate campus visits and
@@ -179,7 +179,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_e9zwg7jb.json" />
@@ -195,7 +195,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets3.lottiefiles.com/packages/lf20_0zv8teye.json" />
@@ -203,7 +203,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Selfie with celebs
@@ -215,7 +215,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Campus Ambassador Certificate
@@ -224,7 +224,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_rrvu3zea.json" />
@@ -235,7 +235,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets6.lottiefiles.com/packages/lf20_gn0tojcq.json" />
@@ -243,7 +243,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 CA Merchandise
@@ -255,7 +255,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Free Anwesha tickets and goodies
@@ -264,7 +264,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_n0jeixzn.json" />
@@ -275,7 +275,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets8.lottiefiles.com/packages/lf20_yzsAKLdwYm.json" />
@@ -283,7 +283,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Learn management skills and interaction with
@@ -296,7 +296,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
                                 Top 3 CA's name will feature on Anwesha social
@@ -306,7 +306,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets6.lottiefiles.com/packages/lf20_tduixm8u.json" />
@@ -323,7 +323,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_LDP1qTExIJ.json" />
@@ -333,7 +333,7 @@ export default function campusAmbassador() {
                                 <motion.tr
                                     initial={{ opacity: 0, x: '100%' }}
                                     whileInView={{ opacity: 1, x: '0%' }}
-                                    transition={{ duration: 1 }}
+                                    transition={{ duration: 0.3 }}
                                 >
                                     <th className={styles.table_heading}>
                                         Condition
@@ -450,7 +450,7 @@ export default function campusAmbassador() {
                             <motion.h3
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 0.3 }}
                                 className={styles.reward_heading}
                             >
                                 Best CA
@@ -458,7 +458,7 @@ export default function campusAmbassador() {
                             <motion.h4
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1, delay: 0.25 }}
+                                transition={{ duration: 1 }}
                                 className={styles.reward_desc}
                             >
                                 Best CA sash + Hoodie + surprise gifts
@@ -466,7 +466,7 @@ export default function campusAmbassador() {
                             <motion.h3
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1, delay: 0.5 }}
+                                transition={{ duration: 1 }}
                                 className={styles.reward_heading}
                             >
                                 Top 5 CA
@@ -474,7 +474,7 @@ export default function campusAmbassador() {
                             <motion.h4
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1, delay: 0.75 }}
+                                transition={{ duration: 1 }}
                                 className={styles.reward_desc}
                             >
                                 Appreciation on social Media Handles + surprise
@@ -483,7 +483,7 @@ export default function campusAmbassador() {
                             <motion.h3
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1, delay: 1 }}
+                                transition={{ duration: 1 }}
                                 className={styles.reward_heading}
                             >
                                 Top 10 CA
@@ -491,7 +491,7 @@ export default function campusAmbassador() {
                             <motion.h4
                                 initial={{ opacity: 0, x: '-100%' }}
                                 whileInView={{ opacity: 1, x: '0%' }}
-                                transition={{ duration: 1, delay: 1.25 }}
+                                transition={{ duration: 1 }}
                                 className={styles.reward_desc}
                             >
                                 Suitable prizes
@@ -500,7 +500,7 @@ export default function campusAmbassador() {
                         <motion.div
                             initial={{ opacity: 0, x: '-100%' }}
                             whileInView={{ opacity: 1, x: '0%' }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.3 }}
                             className={styles.lottie_container}
                         >
                             <GreetingLottie animationPath="https://assets4.lottiefiles.com/private_files/lf30_a4mKwA.json" />

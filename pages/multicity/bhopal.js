@@ -72,7 +72,11 @@ export default function Multicity() {
                             Dates: 4th - 5th February, 2023
                         </p>
                     </div>
-                    <button className={styles.btn}><span>Register</span></button>
+                    <button className={styles.btn}><Link
+                            href="./multicityregistration/bhopalreg"
+                            style={{ textDecoration: 'none' }}
+                            target="_blank"
+                        >Register</Link></button>
                     <button className={styles.btn}>
                         <Link
                             href="/multicity/rulebook.pdf"
