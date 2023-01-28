@@ -33,7 +33,7 @@ const bhopalReg = () => {
         event.preventDefault();
         console.log(leaderemail)
         console.log(eventname)
-        let body = { "event_id": eventname, "organisation_type": orgtype, "leader_email": leaderemail, "leader_name": leadername, "leader_phone_no": leaderphone, "leader_organisation": leaderorg, "member_one_name": member1name, "member_one_email": member1email, "member_one_phone": member1phone, "member_one_organisation": member1org, "member_two_name": member2name, "member_two_email": member2email, "member_two_phone": member2phone, "member_two_organisation": member2org, "member_three_name": member3name, "member_three_email": member3email, "member_three_phone": member3phone, "member_three_organisation": member3org };
+        let body = { "event_id": eventname, "organisation_type": orgtype, "leader_email": leaderemail, "leader_name": leadername, "leader_phone_no": leaderphone, "leader_organisation": leaderorg, "member_one_name": member1name, "member_one_email": member1email, "member_one_phone_no": member1phone, "member_one_organisation": member1org, "member_two_name": member2name, "member_two_email": member2email, "member_two_phone_no": member2phone, "member_two_organisation": member2org, "member_three_name": member3name, "member_three_email": member3email, "member_three_phone_no": member3phone, "member_three_organisation": member3org };
         console.log(body);
         try {
             const response = await fetch(`https://${host}/multicity/register`, {
@@ -240,7 +240,7 @@ const bhopalReg = () => {
                                                 name="OrgType"
                                                 value="0"
                                                 id="School"
-                                                onChange={(e) => setOrgType(e.target.value)}
+                                                onChange={(e) => setOrgType(0)}
                                             />
                                             <label for="School">School</label></div>
                                         <div className={styles.radioBtn}>
@@ -249,7 +249,7 @@ const bhopalReg = () => {
                                                 name="OrgType"
                                                 value="1"
                                                 id="College"
-                                                onChange={(e) => setOrgType(e.target.value)}
+                                                onChange={(e) => setOrgType(1)}
                                             />
                                             <label for="College">College</label></div>
                                         <div className={styles.radioBtn}>
@@ -258,7 +258,7 @@ const bhopalReg = () => {
                                                 name="OrgType"
                                                 value="2"
                                                 id="Others"
-                                                onChange={(e) => setOrgType(e.target.value)}
+                                                onChange={(e) => setOrgType(2)}
                                             />
                                             <label for="Others">Others</label></div>
                                     </div>
