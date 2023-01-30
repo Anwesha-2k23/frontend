@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "BroadwayShadow";
-    src: url("../../styles/fonts/BroadwayShadow.ttf");
+    src: url("/font/BroadwayShadow.ttf");
 }
 
 .form {
