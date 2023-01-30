@@ -25,9 +25,53 @@ const CampusAmbassadorForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // check if required fields are empty
+    if(phone === '' || name === '' || email === '' || college === '' || password === '' || cnfPassword === '' || years_of_study === '') {
+      setErrorMsg("Please fill all the required fields");
+      setFailure(true);
+      toast.error('Please fill all the required fields', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+      })
+      return;
+    }
+
     if (password !== cnfPassword) {
       setErrorMsg("Passwords do not match");
       setFailure(true);
+      toast.error('Passwords do not match', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+      })
+      return;
+    }
+
+    if (phone.length == 10 && Number(phone) == NaN){
+      setErrorMsg("Phone number should be valid");
+      setFailure(true);
+      toast.error('Phone number should be a number', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+      })
       return;
     }
     let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
@@ -62,16 +106,16 @@ const CampusAmbassadorForm = () => {
         setErrorMsg(data.message);
         setFailure(true);
         setSuccess(false);
-        toast.error('Unable to register', {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast.error(data.message, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
       }
       else {
         const data = await response.json();
