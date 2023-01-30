@@ -15,10 +15,8 @@ const CampusAmbassadorForm = () => {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [college, setCollege] = React.useState('');
-  const [referral, setReferral] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [cnfPassword, setCnfPassword] = React.useState('');
-  const [years_of_study, setYearsOfStudy] = React.useState("");
   const [success, setSuccess] = React.useState(false);
   const [failure, setFailure] = React.useState(false);
   const [errorMsg, setErrorMsg] = React.useState("");
@@ -27,7 +25,7 @@ const CampusAmbassadorForm = () => {
     event.preventDefault();
 
     // check if required fields are empty
-    if(phone === '' || name === '' || email === '' || college === '' || password === '' || cnfPassword === '' || years_of_study === '') {
+    if(phone === '' || name === '' || email === '' || college === '' || password === '' || cnfPassword === '') {
       setErrorMsg("Please fill all the required fields");
       setFailure(true);
       toast.error('Please fill all the required fields', {
@@ -74,7 +72,7 @@ const CampusAmbassadorForm = () => {
       })
       return;
     }
-    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "refferal_code": referral, "password": password, "years_of_study": years_of_study };
+    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "password": password};
     try {
       const response = await fetch(`https://${host}/campasambassador/register`, {
         method: 'POST',
@@ -211,7 +209,7 @@ const CampusAmbassadorForm = () => {
             />
             <br />
           </div>
-          <div className={styles.form_row}>
+          {/* <div className={styles.form_row}>
           <div className={styles.field}>
             <label htmlFor="refferal_code">Refferal Code</label>
             <br />
@@ -236,7 +234,7 @@ const CampusAmbassadorForm = () => {
             />
             <br />
           </div>
-          </div>
+          </div> */}
           <div className={styles.form_row}>
           <div className={styles.field}>
             <label htmlFor="password">Password</label>
@@ -270,8 +268,8 @@ const CampusAmbassadorForm = () => {
             <button onClick={(e) => handleSubmit(e)}>Submit</button>
           </motion.div>
         </motion.form>
-        {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
-        {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}
+        {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
+        {/* {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}
       </div>
     </div>
   )
