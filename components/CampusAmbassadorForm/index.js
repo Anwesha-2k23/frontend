@@ -89,7 +89,7 @@ const CampusAmbassadorForm = () => {
         setFailure(false);
         setErrorMsg("");
         const data = await response.json();
-        // console.log(data)
+        console.log(data)
         toast.success('You are successfully registered', {
           position: "top-right",
           autoClose: 3000,
@@ -119,6 +119,7 @@ const CampusAmbassadorForm = () => {
       }
       else {
         const data = await response.json();
+        console.log(data)
         setErrorMsg("Internal Server Error. Check your browser console for more details");
         setFailure(true);
         setSuccess(false);
