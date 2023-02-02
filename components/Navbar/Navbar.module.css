@@ -1,30 +1,324 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.toggle_nav{
+    position: absolute;
+    /* border: 2px solid red; */
+    top: -18vw;
+}
 
-.navbar{
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8vh;
-    overflow-y: hidden;
+.b{
+    opacity: 0;
+}
+
+.sidebar{
+    background-color: #0CC7E9;
+    color: whitesmoke;
+}
+
+.sidebar_header{
+    background-color: #0CC7E9;
+}
+
+.sidebar_links {
+    color: whitesmoke; 
+}
+
+.nav_div{
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
+}
+  
+  .navbar_3{
+  position: absolute;
+  left:0;
+  z-index: 1;
+ 
+  }
+
+  .navbar_4{
+  position: absolute;
+  right:-.50%;
+  z-index: 1;
+  }
+  
+  .navbar_2{
+    position: absolute;
+    left: calc((100% - 153px)/2);
+    z-index: 1;
+    top:40px;
+  }
+   .navbar_1{
+    width: 100%;
+    z-index: 1;
+    } 
+  
+  .item_1{
+    position: absolute;
+    left:60%;
+    top:1%;
+    font-family: 'tangosans', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
+  
+  }
+  .item_2{
+    position: absolute;
+    left:65.5%;
+    top:1%;
     font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
+  }
+  .item_3{
+    position: absolute;
+    left:76%;
+    top:1%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
 }
+  
+  .main{
+    position: relative;
+    top:0%;
+    z-index: 0;
+  }
+  
+  .h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+  }
+  
+  .h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+  }
+  .h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+  }
+  .h4{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+  }
+  .nav_image{
+  top:26%;
+  width: 100%;
+  height: 44%;
+  
+  }
+  
+  .headings{
+    position: absolute;
+    top:70%;
+    left:7%;
+    font-family: 'Poppins', sans-serif;
+  }
+  .headings_2{
+    position: absolute;
+    top:84%;
+    left:7%;
+    opacity: 0.7;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  @media only screen and  (max-width:1760px){
+    .b{
+        display: none;
+    }
+    .navbar_2{
+        top:20px;
+     }
+  }
 
-.logo{
-    font-size: 1rem;
-    font-weight: bold;
-}
+  @media only screen and  (max-width:1600px){
+    .navbar_2{
+       top:0;
+    }
+  }
+  
+  @media only screen and  (max-width:1100px){
+    .navbar_3{
+        display: none;
+    }
+  }
+  
+  @media only screen and  (max-width:1100px){
+    .navbar_4{
+      /* border: 2px solid red; */
+      height: auto; 
+      width: auto; 
+      max-width: 150px; 
+      max-height: 150px;
+    }
+  }
+  @media only screen and  (max-width:1100px){
+    .b{
+        /* position: relative; */
+        top: 20px;
+        display: initial;
+        opacity: 1;
+        width: 60px;
+        height: 60px;
+        margin-top: 20px;
+        padding-left: none;
+        z-index: 1;
+    }
+    .toggle_icon{
+        width: 30px;
+        height: 30px;
+    }
+    .navbar_4{
+      width: 125px;
+      height: 125px;
+    }
+  }
 
-.links{
-    display: flex;
-    justify-content: space-between;
-}
 
-.link{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0 10px;
-}
+  
+  
+
+  @media only screen and  (max-width:1100px){
+    .navbar_2{
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+    }
+  }
+  @media only screen and  (max-width:1600px){
+    .nav_image{
+        display: none;
+    }
+  } 
+  
+  @media only screen and  (max-width:1100px){
+    .nav_image{
+        display: initial;
+        overflow: hidden;
+        z-index: 0;
+    }
+  } 
+  @media only screen and  (max-width:1100px){
+    .item_1{
+        display: none;
+    }
+  } 
+  
+  
+  @media only screen and  (max-width:1100px){
+    .item_3{
+        display: none;
+    }
+  } 
+   
+  @media only screen and  (max-width:1600px){
+    .main{
+        display: none;
+    }
+  }
+  @media only screen and  (max-width:1100px){
+    .main{
+        display: initial;
+       
+    }
+  }
+  
+  @media only screen and  (max-width:1600px){
+    .headings{
+        display: none;
+    }
+  }
+  @media only screen and  (max-width:1100px){
+    .headings{
+        display: initial;
+    }
+  }
+  @media only screen and  (max-width:1600px){
+    .headings_2{
+        display: none;
+    }
+  }
+  @media only screen and  (max-width:1100px){
+    .headings_2{
+        display: initial;
+    }
+  }
+  
+  @media only screen and  (max-width:1100px){
+    .item_2{
+        display: none;
+    }
+  } 
+  
+  @media only screen and  (max-width:1100px){
+    .b{
+        /* position: absolute; */
+        top: 20px;
+        /* display: initial; */
+        border: 2px solid red;
+        opacity: 1;
+        width: 60px;
+        height: 60px;
+        margin-top: 20px;
+        padding-left: none;
+        z-index: 6;
+    }
+    .toggle_icon{
+        width: 30px;
+        height: 30px;
+    }
+    .navbar_4{
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  @media only screen and  (max-width:786px){
+    .b{
+        width: 50px;
+        height: 50px;
+        margin-top: 5px;
+    }
+    .toggle_icon{
+        width: 25px;
+        height: 25px;
+    }
+    .navbar_4{
+      width: 100px;
+      height: 100px;
+    }
+    .navbar_2{
+      width: 75px;
+      height: 75px;
+      /* border: 2px solid red; */
+      margin-left: 35px;
+  }
+  }
+  
+  @media only screen and  (max-width:576px){
+    .b{
+        /* position: relative; */
+        margin-top: 0px;
+    }
+
+    .navbar_2{
+      width: 60px;
+      height: 60px;
+      /* border: 2px solid red; */
+      margin-left: 45px;
+    }
+    .navbar_4{
+      width: 75px;
+      height: 75px;
+    }
+  }

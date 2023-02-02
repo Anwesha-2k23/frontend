@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: "BroadwayShadow";
+    src: url("../../styles/fonts/BroadwayShadow.ttf");
+}
+
+.form {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.mainForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 2vw;
+    height: 70vh;
+}
+
+.mainHeading {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #2B0072;
+    font-family: BroadwayShadow;
+    font-size: 6vw;
+    font-weight: 400;
+    left: 4%;
+}
+
+.form_row{
+    display: flex;
+    flex-direction: row;
+}
+
+.form_row .field input{
+    width: 20vw;
+}
+
+.field {
+    margin-bottom: 4px;
+}
+
+.field input {
+    width: 40vw;
+    height: 45px;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-size: 17px;
+    border-color: #2B0072;
+    border-bottom: 2px solid #2B0072;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.field label {
+    font-size: 20px;
+    color: #2B0072;
+}
+
+.buttonWrapper {
+    margin-top: 20px;
+    width: 60vw;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonWrapper button {
+    width: 200px;
+    height: 45px;
+    font-size: 25px;
+    margin-top: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #2B0072;
+    color: aliceblue;
+}
+
+/* .buttonWrapper button:hover {
+    background-color: #424040;
+    color: #fff;
+} */
+
+.lottie {
+    width: 50%;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.lottie_container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 50vw;
+    height: 80vh;
+}
+
+@media only screen and (max-width: 860px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 20px;
+    }
+
+    .mainForm {
+        align-items: center;
+        height: 100vh;
+    }
+
+    .mainHeading {
+        font-size: 10vw;
+    }
+
+    .form_row{
+        flex-direction: column;
+    }
+
+    .form_row .field input{
+        width: 80vw;
+    }
+
+    .field input {
+        width: 80vw;
+    }
+
+    .lottie {
+        width: 100%;
+    }
+
+    .lottie_container {
+        width: 100vw;
+        height: 50vh;
+    }
+}
