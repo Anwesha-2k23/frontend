@@ -6,7 +6,9 @@ import { useRouter } from 'next/router';
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 //     ssr: false,
 // })
-import Navbar from '../components/Navbar-temp'
+// import Navbar from '../components/Navbar-temp'
+import Navbar from '../components/Navbar/Navbar'
+
 import Footer from '../components/Footer/Footer';
 
 const poppins = Poppins({

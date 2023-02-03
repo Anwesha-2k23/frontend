@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@font-face {
+  font-family: "BroadwayShadow";
+  src: url("../styles/fonts/BroadwayShadow.ttf");
+}
 .comingsoon_body{
   background-color:#FFF6A5;
   overflow: hidden;
@@ -9,6 +13,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
+   background-attachment: fixed;
 }
 .container {
   display: flex;
@@ -52,6 +57,7 @@
 .ca{
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .ca_poster{
@@ -65,12 +71,12 @@
     /* width: 100vw; */
     min-height: 270px;
     height: 40vw;
-    width: 80vw;
-    margin-left: 10vw;
-    margin-top: 10vh;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 6px;
+    width: 100%;
+    /* margin-left: 10vw; */
+    /* margin-top: 10vh; */
+    /* border-radius: 20px; */
+    /* border-style: solid; */
+    /* border-width: 6px; */
     display: flex;
     justify-content: end;
     font-size: 30px;
@@ -81,18 +87,35 @@
 
 .ca_heading{
   text-decoration: none;
-  color: rgb(58, 48, 29) !important;
-    font-size: 2em;
-    font-weight: bold;
+  /* color: rgb(58, 48, 29) !important; */
+    font-size: 4em;
+    /* font-weight: bold; */
+    /* font-family: 'BroadwayShadow'; */
+    margin-bottom: 0.2em;
+    position: relative;
+    /* font-size: 10vw; */
+    font-weight: 400;
+    left: 4%;
+    font-family: 'BroadwayShadow', sans-serif;
+    letter-spacing: 0.3ch;
+    color: #ffffff;
+}
+
+.ca_heading:hover {
+  color: #2B0072;
+  transition: 0.2s;
 }
 
 .ca_info{
   position: absolute;
-  top: 65%;
+  /* top: 65%; */
+  display: flex;
+  flex-direction: column;
   left: 20%;
+  top: 20%;
   /* transform: translate(-50%, -50%); */
   font-size: 1.35vw;
-  color: rgb(58, 48, 29);
+  color: #E5E5E5;
   font-weight: 900;
   margin-right: 3%;
   width: 64vw;
@@ -114,7 +137,7 @@
 }
 
 .ca_button{
-  background-color: #660101;
+  background-color: #2B0072;
   font-size: 1.5vw;
   border-radius: 10px;
   padding: 10px;
@@ -122,6 +145,7 @@
   font-weight: 600;
   color: aliceblue;
   cursor: pointer;
+  justify-self: flex-end;
 }
 
 @keyframes focus-in-contract {
@@ -331,6 +355,7 @@
   margin: 0.5rem auto;
   text-align: center;
   width: 80%;
+  height: fit-content;
 }
 
 .txt_primary {
@@ -439,7 +464,7 @@
   }
 
   .txt_holder {
-    margin-top: -1rem;
+    /* margin-top: -1rem; */
   }
 
   .txt_primary {
@@ -467,4 +492,175 @@
     font-size: 20px;
 
   }
+}
+
+.nlsection {
+  display: flex;
+  flex-direction: row;
+  /* background-color: #ffbe35; */
+  background-image: url('/bg.png');
+  align-items: center;
+  color: #660101;
+  margin-top: 30px;
+}
+
+.nlwriteup {
+  width: 50%;
+  padding-left: 20px;
+  line-height: 30px;
+
+}
+
+.nlwriteup img {
+  height: 100px;
+}
+
+.nlwriteup h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.nlwriteup h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.nlwriteup span {
+  line-height: 10px;
+}
+
+.nlnew {
+  /* height: fit-content;
+  width: fit-content; */
+  height: 600px;
+  width: 50%;
+  position: relative;
+}
+
+.nllaptop{
+  /* position: absolute; */
+  object-fit: contain;
+
+
+}
+
+.nlmail {
+  position: absolute;
+  left: 180px;
+  top: 120px;
+}
+
+.nlnew input {
+  position: absolute;
+  bottom: 190px;
+  left: 190px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.3rem;
+  width: 280px;
+  font-size: 18px;
+  height: auto;
+  background-color: #6F84F3;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.nlnew input :placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFFFF;
+  opacity: 1; /* Firefox */
+}
+
+.nlnew input :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: r#FFFFFF;
+}
+
+.nlnew input :-ms-input-placeholder { /* Microsoft Edge */
+  color: #FFFFFF;
+}
+
+.nlnewbtn {
+  height: 40px;
+  position: absolute;
+  bottom: 130px;
+  left: 370px;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin: 0 0.5rem;
+  border-radius: 3px;
+  background-color: #660101;
+  color: white;
+  cursor: pointer;
+}
+
+.nlnew div {
+  position: absolute;
+  top: 270px;
+  left: 190px;
+  background-color: #EFEAEA;
+  width: 280px;
+  padding-top: 10px;
+  color: #787575;
+}
+
+@media screen and (max-width:968px) {
+  .nlsection {
+    flex-direction: column;
+  }
+  .nlwriteup {
+    width: 100%;
+  }
+  .nlnew {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:476px) {
+  .nllaptop {
+    display: none;
+  }
+
+  .nlmail {
+    left: 10px;
+  }
+  .nlnew div {
+    left: 20px;
+  }
+  .nlnew input {
+    left: 20px;
+  }
+  .nlnewbtn {
+    left: 200px;
+  }
+}
+
+.div1 {
+  float: left;
+  min-height: 100px;
+  background: #D25A1E;
+  position: relative;
+  width: calc(50% - 30px);
+}
+.div2 {
+  float: right;
+  min-height: 100px;
+  background: #D25A1E;
+  position: relative;
+  width: calc(50% - 30px);
+}
+.div1:after, .div2:before {
+  content:'';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.div1:after {
+  left: 100%;
+  border-top: 100px solid #D25A1E;
+  border-right: 50px solid transparent;
+}
+.div2:before {
+  right: 100%;
+  border-bottom: 100px solid #D25A1E;
+  border-left: 50px solid transparent;
 }

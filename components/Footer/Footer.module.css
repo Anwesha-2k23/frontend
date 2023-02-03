@@ -10,6 +10,7 @@
     justify-content: space-around;
     overflow-x: hidden;
     font-size: 1.1rem;
+
    
 }
 
@@ -55,25 +56,44 @@
     justify-content: center;
     overflow: hidden;
     font-size: 1.1rem;
+    margin: 5vh;
 }
 
-.section1 h4 {
+.section1 a {
     padding: 7px;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    /* display: flex;
+    justify-content: center; */
+    /* text-align: center; */
 }
 
-.section1 h4 a {
+.section1 a span {
     color: white;
     cursor: pointer;
     overflow: hidden;
+    text-decoration: none;
 }
 
-.section1 h4 a:hover {
+.section1 div {
+    color: white;
+}
+
+
+.section1 a:hover {
     /* padding: 7px; */
-    color: blue;
+    transform: scale(1.05);
     transition-property: color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.5s;
+}
+
+.section1 img {
+    height: 30px;
+    margin-right: 10px;
 }
 
 .icon_link {
@@ -82,8 +102,8 @@
     font-size: 0.75rem;
     cursor: pointer;
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     color: blue;
     align-items: center;
     justify-content: center;
@@ -140,12 +160,13 @@
     /* align-items: center; */
     overflow: hidden;
     justify-content: center;
+    margin-left: 5vh;
 }
 .anwesha_text{
     display: flex;
-    height: 9vh;
+    height: 13vh;
     padding: 4px;
-    margin: 10px;
+    margin: 5vh;
     /* margin-top: 4px; */
 }
 .anwesha_text_img{
