@@ -59,7 +59,7 @@ const Footer = () => {
                       </a>
                   </div> */}
               </div>
-                  <img src="/assets/frame.svg"/>
+                  <img className={styles.frame_img} src="/assets/frame.svg"/>
               {/* <div className={[styles.sectionSeperator].join(' ')}></div> */}
               <div className={[styles.section1].join(' ')}>
                   <a href="mailto:anweshaiitp@gmail.com">

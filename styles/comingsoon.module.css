@@ -3,6 +3,11 @@
   font-family: "BroadwayShadow";
   src: url("../styles/fonts/BroadwayShadow.ttf");
 }
+
+.main_component {
+  padding-top: 7vw;
+}
+
 .comingsoon_body{
   background-color:#FFF6A5;
   overflow: hidden;
@@ -58,6 +63,9 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
 }
 
 .ca_poster{
@@ -111,14 +119,16 @@
   /* top: 65%; */
   display: flex;
   flex-direction: column;
-  left: 20%;
-  top: 20%;
+  /* left: 20%; */
+  margin-left: 5%;
+  max-width: 600px;
+  top: 15%;
   /* transform: translate(-50%, -50%); */
   font-size: 1.35vw;
   color: #E5E5E5;
   font-weight: 900;
-  margin-right: 3%;
-  width: 64vw;
+  /* margin-right: 3%; */
+  width: 90%;
 }
 
 @media screen and (max-width: 800px){
@@ -288,19 +298,19 @@
     margin: 10px;
     animation: focus-in-expand-top 3.2s ease 2s infinite normal none;
   }
-  .ca_poster{
+  /* .ca_poster{
     height: 60vw;
     width: 90%;
     margin-left: 5%;
-  }
-  .ca_info{
+  } */
+  /* .ca_info{
     position: absolute;
     top: 25%;
     left: 14%;
     margin-left: 5%;
     margin-top: 15px;
-  }
-  .ca_button{
+  } */
+  /* .ca_button{
     background-color: #660101;
     font-size: 1.7vw;
     border-radius: 10px;
@@ -308,7 +318,7 @@
     margin-top: 10px;
     font-weight: 600;
     color: aliceblue;
-  }
+  } */
 }
 @media screen and (max-width:580px){
   .socials{

@@ -42,12 +42,14 @@ const Navbar = () => {
                     <img src="./navbar/logo.svg" className={[styles.navbar_2].join(" ")} />
                 </Link>
                 <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
+                {mobile ? null : <>
                 <h4 className={` ${styles.item_1} nav-item`}>
                     <Link className={styles.nav_item} aria-current="page" href="/campusambassador">CA</Link>
                 </h4>
                 <h4 className={` ${styles.item_2} nav-item`}>
                     <Link className={styles.nav_item} aria-current="page" href="/all-multicity">Multicity</Link>
                 </h4>
+                </>}
                 {/* <h4 className={styles.item_3}>
                     <Link className={styles.nav_item} aria-current="page" href="#">Events</Link>
                 </h4> */}
