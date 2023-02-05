@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @font-face {
   font-family: "BroadwayShadow";
-  src: url("../fonts/BroadwayShadow.ttf");
+  src: url("./fonts/BroadwayShadow.ttf");
 }
 
 .main_component {
