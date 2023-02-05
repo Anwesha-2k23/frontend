@@ -23,25 +23,25 @@ const Footer = () => {
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://www.facebook.com/anwesha.iitpatna/"
                       >
-                          <img src="/footer/facebook.svg"></img>
+                          <img src="/footer/facebook.svg"/>
                       </Link>{' '}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
                       >
-                          <img src="/footer/instagram.svg"></img>
+                          <img src="/footer/instagram.svg"/>
                       </Link>
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
                       >
-                          <img src="/footer/youtube.svg"></img>
+                          <img src="/footer/youtube.svg"/>
                       </Link>{' '}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://twitter.com/anweshaiitpat/"
                       >
-                          <img src="/footer/twitter.svg"></img>
+                          <img src="/footer/twitter.svg"/>
                       </Link>{' '}
                   </div>
                   {/* <div
