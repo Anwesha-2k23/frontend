@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import style from './style.module.css';
 
 const index = (props) => {
@@ -11,7 +11,7 @@ const index = (props) => {
     let hour = Math.floor((diff / 3600000) % 24); // time diff's hours (modulated to 24)
     let min = Math.floor((diff / 60000) % 60); // time diff's minutes (modulated to 60)
     let sec = Math.floor((diff / 1000) % 60); // time diff's seconds (modulated to 60)
-  const [time, setTime] = React.useState({
+  const [time, setTime] = useState({
     year,
     month,
     day,
@@ -20,7 +20,7 @@ const index = (props) => {
     sec,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTime({
       year,
       month,

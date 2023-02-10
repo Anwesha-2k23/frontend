@@ -3,10 +3,13 @@ import { Poppins } from "@next/font/google";
 import Script from 'next/script';
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router';
+import styles from '../styles/comingsoon.module.css'
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 //     ssr: false,
 // })
-import Navbar from '../components/Navbar-temp'
+// import Navbar from '../components/Navbar-temp'
+import Navbar from '../components/Navbar/Navbar'
+
 import Footer from '../components/Footer/Footer';
 
 const poppins = Poppins({
@@ -16,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   // const showHeader = router.pathname === '/ca-register' || '/ca-login' ? false : true;
   let showHeader = true;
-  if(router.pathname === '/ca-register' || router.pathname === '/ca-login' || router.pathname === '/userLogin' || router.pathname === '/userRegister') {
+  if(router.pathname === '/ca-login' || router.pathname === '/userLogin' || router.pathname === '/userRegister') {
     showHeader = false;
   }
   return (
@@ -36,8 +39,8 @@ function MyApp({ Component, pageProps }) {
 
       </Script>
       {showHeader && <Navbar />}
-      {showHeader && <div style={{height: '68px'}}/>}
-      <Component {...pageProps} />
+      {/* {showHeader && <div style={{height: '68px'}}/>} */}
+      <div className={styles.main_component}><Component  {...pageProps} /></div>
       <Footer />
     </main>
   );

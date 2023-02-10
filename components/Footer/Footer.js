@@ -7,13 +7,13 @@ const Footer = () => {
       <div className={styles.footer}>
           <div className={[styles.mainSection].join(' ')}>
               <div className={[styles.section3].join(' ')}>
-                  <div className={styles.anwesha_text}>
+                  <Link href="/" className={styles.anwesha_text}>
                       <img
                           src="/Anwesha_text.png"
                           alt="Anwesha"
                           className={styles.anwesha_text_img}
                       />
-                  </div>
+                  </Link>
                   <div
                       className={[styles.icon_links, styles.linkGroup].join(
                           ' '
@@ -23,25 +23,25 @@ const Footer = () => {
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://www.facebook.com/anwesha.iitpatna/"
                       >
-                          <img src="/footer/facebook.svg"></img>
+                          <img src="/footer/facebook.svg"/>
                       </Link>{' '}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
                       >
-                          <img src="/footer/instagram.svg"></img>
+                          <img src="/footer/instagram.svg"/>
                       </Link>
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
                       >
-                          <img src="/footer/youtube.svg"></img>
+                          <img src="/footer/youtube.svg"/>
                       </Link>{' '}
                       <Link
                           className={[styles.icon_link, styles.link].join(' ')}
                           href="https://twitter.com/anweshaiitpat/"
                       >
-                          <img src="/footer/twitter.svg"></img>
+                          <img src="/footer/twitter.svg"/>
                       </Link>{' '}
                   </div>
                   {/* <div
@@ -59,23 +59,23 @@ const Footer = () => {
                       </a>
                   </div> */}
               </div>
-
-              <div className={[styles.sectionSeperator].join(' ')}></div>
+                  <img className={styles.frame_img} src="/assets/frame.svg"/>
+              {/* <div className={[styles.sectionSeperator].join(' ')}></div> */}
               <div className={[styles.section1].join(' ')}>
-                  <h4>
-                      Email :{' '}
-                      <a href="mailto:anweshaiitp@gmail.com">
+                  <a href="mailto:anweshaiitp@gmail.com">
+                  <img src="/footer/mail.svg"/>{' '}
+                      <span>
                           anweshaiitp@gmail.com
-                      </a>
-                  </h4>
-                  <h4>Phone : +91 7907323522 </h4>
-                  <h4>
-                      Address : Anwesha Office, Indian Institute of Technology
-                      Patna, Bihta, Patna - 801 103
-                  </h4>
+                      </span>
+                  </a>
+                  <a  href="tel:+917907323522"><img src="/footer/phone.svg"/> <span>+91 79073 23522 </span></a>
+                  <a href="https://goo.gl/maps/g8QCu3qN2DhuM2W49">
+                  <img src="/footer/location.svg"/><div>Anwesha Office,<br/>Indian Institute of Technology
+                      Patna,<br/>Bihta, Patna - 801 103</div>
+                  </a>
               </div>
           </div>
-          <div className={[styles.footerSeperator].join(' ')}>svsdf</div>
+          {/* <div className={[styles.footerSeperator].join(' ')}>svsdf</div> */}
       </div>
   )
 }
