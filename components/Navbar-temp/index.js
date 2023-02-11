@@ -41,12 +41,7 @@ function Navigation() {
                     />
                 </button>
                 <Link href="/" className={styles.navLogo}>
-                    <Image
-                        src="/Anwesha_text_black.png"
-                        alt="logo"
-                        width={200}
-                        height={40}
-                    />
+                    <Image src="/Anwesha_text_black.png" alt="logo" width={200} height={40} />
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>
@@ -60,9 +55,6 @@ function Navigation() {
                             <Link href="/campusambassador">
                                 Campus Ambassador
                             </Link>
-                        </li>
-                        <li>
-                            <Link href="/events">Events</Link>
                         </li>
                     </ul>
                 </div>
@@ -78,9 +70,6 @@ function Navigation() {
                     </li>
                     <li>
                         <Link href="/campusambassador">Campus Ambassador</Link>
-                    </li>
-                    <li>
-                        <Link href="/events">Events</Link>
                     </li>
                 </ul>
             </div>
