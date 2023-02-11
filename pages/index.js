@@ -93,42 +93,6 @@ export default function comingsoon() {
                 <link rel="icon" href="./AnwehsaIcon.png" />
             </Head>
 
-
-            {/* <div className={styles.socials}>
-                <div className={styles.imageElement}>
-                    <Link
-                        href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
-                        target="_blank"
-                    >
-                        <Image src="/instagram.svg" width={40} height={40} />
-                    </Link>
-                </div>
-                <div className={styles.imageElement}>
-                    <Link
-                        href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
-                        target="_blank"
-                    >
-                        <Image src="/youtube.svg" width={40} height={40} />
-                    </Link>
-                </div>
-                <div className={styles.imageElement}>
-                    <Link
-                        href="https://twitter.com/anweshaiitpat"
-                        target="_blank"
-                    >
-                        <Image src="/twitter.svg" width={40} height={40} />
-                    </Link>
-                </div>
-                <div className={styles.imageElement}>
-                    <Link
-                        href="https://www.facebook.com/anwesha.iitpatna/"
-                        target="_blank"
-                    >
-                        <Image src="/facebook.svg" width={40} height={40} />
-                    </Link>
-                </div>
-            </div> */}
-
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

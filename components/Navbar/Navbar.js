@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from './Navbar.module.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min'
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <img src="./navbar/navbar mandala right.svg" className={styles.navbar_4} />
                 <div className={styles.navbar_flex}>
                 <Link href="/">
-                    <img src="./navbar/logo_no_bg.svg" className={[styles.navbar_2].join(" ")} />
+                    <Image src="/navbar/logo_no_bg.svg" width={100} height={200} className={[styles.navbar_2].join(" ")} />
                 </Link>
                 <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
                 {mobile ? null : <>
