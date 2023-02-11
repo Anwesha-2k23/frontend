@@ -19,9 +19,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   // const showHeader = router.pathname === '/ca-register' || '/ca-login' ? false : true;
   let showHeader = true;
-  if(router.pathname === '/ca-login' || router.pathname === '/userLogin' || router.pathname === '/userRegister') {
-    showHeader = false;
-  }
+  
   return (
       <main className={poppins.className}>
           <Script

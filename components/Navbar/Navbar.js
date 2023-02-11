@@ -95,6 +95,9 @@ const Navbar = () => {
                     <h4 className={styles.sidemenu_item}>
                         <Link className={styles.sidenav_item} aria-current="page" href="/all-multicity">Multicity</Link>
                     </h4>
+                    <h4 className={styles.sidemenu_item}>
+                        <Link className={styles.sidenav_item} aria-current="page" href="/gallery">Gallery</Link>
+                    </h4>
                     {/* <h4 className={styles.sidemenu_item}>
                         <Link className={styles.sidenav_item} aria-current="page" href="#">Events</Link>
                     </h4> */}
