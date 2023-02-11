@@ -39,7 +39,7 @@ const Navbar = () => {
                 <img src="./navbar/navbar mandala right.svg" className={styles.navbar_4} />
                 <div className={styles.navbar_flex}>
                 <Link href="/">
-                    <img src="./navbar/logo.svg" className={[styles.navbar_2].join(" ")} />
+                    <img src="./navbar/logo_no_bg.svg" className={[styles.navbar_2].join(" ")} />
                 </Link>
                 <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
                 {mobile ? null : <>
@@ -48,6 +48,9 @@ const Navbar = () => {
                 </h4>
                 <h4 className={` ${styles.item_2} nav-item`}>
                     <Link className={styles.nav_item} aria-current="page" href="/all-multicity">Multicity</Link>
+                </h4>
+                <h4 className={` ${styles.item_3} nav-item`}>
+                    <Link className={styles.nav_item} aria-current="page" href="/gallery">Gallery</Link>
                 </h4>
                 </>}
                 {/* <h4 className={styles.item_3}>
