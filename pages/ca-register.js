@@ -17,6 +17,7 @@ export default function caRegister() {
         <link rel="icon" href="./AnwehsaIcon.png" />
       </Head>
       {/* <Navbar /> */}
+      <div style={{height: 40}}></div>
       <div className={styles.container}>
         
         <CampusAmbassadorForm />

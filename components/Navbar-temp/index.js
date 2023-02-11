@@ -41,7 +41,7 @@ function Navigation() {
                     />
                 </button>
                 <Link href="/" className={styles.navLogo}>
-                    <img src="/navbar/logo.svg" alt="logo" height={60} />
+                    <Image src="/Anwesha_text_black.png" alt="logo" width={200} height={40} />
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>

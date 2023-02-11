@@ -7,8 +7,8 @@ import styles from '../styles/comingsoon.module.css'
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 //     ssr: false,
 // })
-// import Navbar from '../components/Navbar-temp'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../components/Navbar-temp'
+// import Navbar from '../components/Navbar/Navbar'
 
 import Footer from '../components/Footer/Footer';
 
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
 
       </Script>
       {showHeader && <Navbar />}
-      {/* {showHeader && <div style={{height: '68px'}}/>} */}
+      {/* {showHeader && <div style={{height: '30%'}}/>} */}
       <div className={styles.main_component}><Component  {...pageProps} /></div>
       <Footer />
     </main>

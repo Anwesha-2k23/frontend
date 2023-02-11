@@ -8,9 +8,9 @@ export default function Multicity({ folderLinks }) {
   return (
     <>
       <Head>
-        <title>Multicity - Anwesha 2023</title>
+        <title>Gallery - Anwesha 2023</title>
         <meta name="description" content="Anwesha 2023" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/AnwehsaIcon.png" />
       </Head>
       {/* <Navbar /> */}
       <div className={styles.container}>
