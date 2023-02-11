@@ -136,7 +136,7 @@ export default function comingsoon() {
                 className={styles.anwesha_bg_img}
             >
                 <div className={styles.container}>
-                    <Image src="/A_logo.png" width={400} height={400} />
+                    <Image src="/logo_no_bg.svg" width={400} height={400} />
 
                     <div className={styles.text}>
                         <p style={{ marginBottom: 10, paddingRight: 5 }}>
@@ -185,7 +185,11 @@ export default function comingsoon() {
                     </Link>
                 </div>
             </motion.div>
-            <div className={styles.nlsection}>
+            <motion.div className={styles.nlsection}
+            initial={{ opacity: 0, x: '100%' }}
+            whileInView={{ opacity: 1, x: '0%' }}
+            transition={{ duration: 1 }}
+            >
     <div className={styles.nlwriteup}>
         <img src="/assets/logo-casual.png"/>
         <h1>Anwesha Dispatch</h1>
@@ -221,7 +225,7 @@ export default function comingsoon() {
           </motion.div> */}
         </form>
     </div>
-    </div>
+    </motion.div>
 
 
             {/* <script>

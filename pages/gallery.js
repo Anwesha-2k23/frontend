@@ -1,25 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/gallery.module.css'
-import dynamic from 'next/dynamic'
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
-    ssr: false,
-})
+import Navbar from '../components/Navbar/Navbar'
 import Gallery from '../components/Gallery/Gallery';
-import Footer from '../components/Footer/Footer';
-
-const images = [
-    {
-        src: '/gallery/img.jpg',
-    },
-    {
-        src: '/gallery/img2.jpg',
-    },
-    {
-        src: '/gallery/img3.jpg',
-    },
-]
 
 export default function Multicity({ folderLinks }) {
+  // {console.log(folderLinks)}
   return (
     <>
       <Head>
@@ -27,6 +12,7 @@ export default function Multicity({ folderLinks }) {
         <meta name="description" content="Anwesha 2023" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <Navbar /> */}
       <div className={styles.container}>
         <br /><br />
         {folderLinks.map(folder => (<Gallery key={Math.random()}
@@ -93,7 +79,7 @@ export async function getServerSideProps(context) {
         let url = 'https://drive.google.com/uc?export=view&id=' + image.id;
         return url;
       }));
-
+      // console.log(imageLinks)
       // Returning the required information about the image
       return { name: folder.name, desc: folder.description, links: imageLinks };
     }))
