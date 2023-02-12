@@ -36,6 +36,16 @@
     border-radius: 5px 5px 0 0;
 }
 
+.modal_head h1{
+    font-size: 64px;
+}
+
+@media screen and (max-width: 590px){
+    .modal_head h1{
+        font-size: 40px;
+    }
+}
+
 .modal_body{
     padding: 10px;
     background-color: #fff;
