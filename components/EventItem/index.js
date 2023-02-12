@@ -12,6 +12,7 @@ const index = () => {
     }
 
     return (
+        <>
         <div
             style={{
                 display: 'flex',
@@ -39,6 +40,7 @@ const index = () => {
                 4
             </div>
             <div className={styles.eventName}>Dance Show</div>
+        </div>
             {modal && (
                 <>
                     <span
@@ -62,7 +64,7 @@ const index = () => {
                     />
                 </>
             )}
-        </div>
+        </>
     )
 }
 
