@@ -1,3 +1,24 @@
 .container{
     margin: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/gallery_bg.png');
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+.container h1{
+    font-size: 64px;
+}
+
+.content{
+    margin-top: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
