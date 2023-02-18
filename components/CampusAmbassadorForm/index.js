@@ -152,7 +152,7 @@ const CampusAmbassadorForm = () => {
         pauseOnHover
         theme="light"
       />
-      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-100%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Register for Campus ambassador</motion.h1>
+      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-150%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Register for Campus ambassador</motion.h1>
       <div className={styles.form}>
         <motion.div className={styles.lottie_container} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
           <GreetingLottie animationPath="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" />

@@ -7,7 +7,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -14,7 +14,7 @@ export default function caRegister() {
       <Head>
         <title>Campus Ambassador - Anwesha 2023</title>
         <meta name="description" content="Anwesha 2023" />
-        <link rel="icon" href="./AnwehsaIcon.png" />
+        <link rel="icon" href="./logo_no_bg.svg" />
       </Head>
       {/* <Navbar /> */}
       <div style={{height: 40}}></div>
