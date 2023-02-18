@@ -26,7 +26,8 @@ const index = ({event}) => {
                 <div className={styles.imageWrap}>
                     <div className={styles.item}>
                         <Image
-                            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"
+                            // src={event.poster? event.poster: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"}
+                            src={"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"}
                             alt="Fest Image"
                             width={250}
                             height={250}
