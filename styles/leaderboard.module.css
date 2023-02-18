@@ -1,12 +1,23 @@
+@font-face {
+  font-family: "BroadwayShadow";
+  src: url("./fonts/BroadwayShadow.ttf");
+}
 .anwesha_bg_img {
-  font-family: "Poppins", sans-serif;
-  background-image: url("../images/bg.png");
+  font-family:  "Poppins", sans-serif;
+  background-image: url("/bg.png");
   background-size: cover;
-  background-position: center;
-  background-repeat: repeat-y;
-  height: 100vh;
+  /* background-position: center; */
+  /* background-repeat: repeat-y; */
+  /* height: 100vh; */
+  height: fit-content;
 }
 
 .heading_color {
   background-color: aliceblue;
+}
+
+.heading {
+  font-family: "BroadwayShadow";
+  font-size: 6em;
+  margin-top: 8vw;
 }

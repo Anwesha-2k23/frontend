@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "^13.0.2",
     "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.2.3",
     "email-validator": "^2.0.4",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
@@ -19,6 +20,7 @@
     "next": "13.0.2",
     "prettier": "^2.8.1",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-date-countdown-timer": "^1.1.0",
     "react-dom": "18.2.0",
     "react-images-viewer": "^1.7.1",
