@@ -311,12 +311,12 @@ const Events = () => {
                         'Content-Type': 'application/json',
                     },
                 })
-				const data = await res.json()
+                const data = await res.json()
             } catch (e) {
                 console.log('Failed to fetch')
             }
         }
-		callAPI()
+        callAPI()
     })
     return (
         <div className={styles.container}>

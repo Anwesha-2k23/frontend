@@ -26,7 +26,7 @@ const eventRegistration = () => {
             setEventName(name)
             setIsSolo(min_team_size > 1 ? false : true)
             setEventID(id)
-			console.log({min_team_size, max_team_size})
+            console.log({ min_team_size, max_team_size })
         }
     }, [router.isReady])
 
