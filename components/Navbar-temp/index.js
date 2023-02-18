@@ -4,13 +4,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 function Navigation() {
-
     const [drawerOpen, setDrawerOpen] = useState(false)
 
-    const toggleDrawer = ()=>{
-        if(!drawerOpen){
+    const toggleDrawer = () => {
+        if (!drawerOpen) {
             document.getElementById('drawer').style.display = 'block'
-            setTimeout(function(){
+            setTimeout(function () {
                 document.getElementById('drawer').style.opacity = 1
             }, 300)
             setDrawerOpen(true)
@@ -41,7 +40,12 @@ function Navigation() {
                     />
                 </button>
                 <Link href="/" className={styles.navLogo}>
-                    <img src="/navbar/logo.svg" alt="logo" height={60} />
+                    <Image
+                        src="/Anwesha_text_black.png"
+                        alt="logo"
+                        width={200}
+                        height={40}
+                    />
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>
@@ -55,6 +59,9 @@ function Navigation() {
                             <Link href="/campusambassador">
                                 Campus Ambassador
                             </Link>
+                        </li>
+                        <li>
+                            <Link href="/events">Events</Link>
                         </li>
                     </ul>
                 </div>
@@ -70,6 +77,9 @@ function Navigation() {
                     </li>
                     <li>
                         <Link href="/campusambassador">Campus Ambassador</Link>
+                    </li>
+                    <li>
+                        <Link href="/events">Events</Link>
                     </li>
                 </ul>
             </div>

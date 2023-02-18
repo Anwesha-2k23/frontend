@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "BroadwayShadow";
+    src: url("../styles/fonts/BroadwayShadow.ttf");
+}
+
+.container{
+    background-image: url('../images/gallery_bg.png');
+}
+
+.hero {
+    background-image: url(/multicity/bhopal.png);
+    aspect-ratio: 16/9;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    width: 100vw;
+    height: 101vh;
+}
+
+.mainHeading {
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+    text-align: center;
+    color: #2B0072;
+    font-family: BroadwayShadow;
+    font-size: 6vw;
+    font-weight: 400;
+    /* left: 4%; */
+}
+.subHeading {
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #2B0072;
+    font-family: BroadwayShadow;
+    font-size: 4vw;
+    font-weight: 400;
+    /* left: 4%; */
+}
+
+.mainForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    /* margin-right: 2vw; */
+    /* height: 70vh; */
+}
+
+.form_row{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.field {
+    margin-bottom: 30px;
+}
+
+.field input {
+    width: 40vw;
+    height: 45px;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 2px 15px;
+    font-size: 17px;
+    border-color: #2B0072;
+    border-bottom: 2px solid #2B0072;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.field input:focus {
+    outline: none;
+}
+
+.field label {
+    font-size: 20px;
+    color: #2B0072;
+    padding-inline: 5px;
+}
+
+
+.buttonWrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 60vw;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonWrapper button {
+    width: 200px;
+    height: 45px;
+    font-size: 25px;
+    margin-top: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #2B0072;
+    color: aliceblue;
+}
+
+@media only screen and (max-width: 860px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 20px;
+    }
+
+    .mainForm {
+        align-items: center;
+        /* height: 100vh; */
+    }
+
+
+    .mainHeading {
+        font-size: 10vw;
+    }
+
+    .form_row{
+        flex-direction: column;
+    }
+
+    .form_row .field input{
+        width: 80vw;
+    }
+
+    .field input {
+        width: 80vw;
+    }
+
+    .subHeading {
+        font-size: 30px;
+    }
+    .mainHeading {
+        font-size: 45px;
+    }
+}

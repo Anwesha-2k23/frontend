@@ -48,7 +48,6 @@ const Gallery = (props) => {
                         onClose={closeImageViewer}
                     />
                 )}
-
             </div>
         </div>
     )

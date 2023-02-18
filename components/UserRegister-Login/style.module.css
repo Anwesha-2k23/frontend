@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @font-face {
-    font-family: "BroadwayShadow";
-    src: url("../../styles/fonts/BroadwayShadow.ttf");
+    font-family: 'BroadwayShadow';
+    src: url('../../styles/fonts/BroadwayShadow.ttf');
 }
 
 .form {
@@ -27,19 +27,19 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
     text-align: center;
-    color: #2B0072;
+    color: #2b0072;
     font-family: BroadwayShadow;
     font-size: 6vw;
     font-weight: 400;
     left: 4%;
 }
 
-.form_row{
+.form_row {
     display: flex;
     flex-direction: row;
 }
 
-.form_row .field input{
+.form_row .field input {
     width: 20vw;
 }
 
@@ -54,8 +54,8 @@
     border-radius: 5px;
     padding: 2px 15px;
     font-size: 17px;
-    border-color: #2B0072;
-    border-bottom: 2px solid #2B0072;
+    border-color: #2b0072;
+    border-bottom: 2px solid #2b0072;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -67,7 +67,7 @@
 
 .field label {
     font-size: 20px;
-    color: #2B0072;
+    color: #2b0072;
 }
 
 .buttonWrapper {
@@ -85,7 +85,7 @@
     margin-top: 20px;
     border-radius: 7px;
     cursor: pointer;
-    background-color: #2B0072;
+    background-color: #2b0072;
     color: aliceblue;
 }
 
@@ -125,11 +125,11 @@
         font-size: 10vw;
     }
 
-    .form_row{
+    .form_row {
         flex-direction: column;
     }
 
-    .form_row .field input{
+    .form_row .field input {
         width: 80vw;
     }
 

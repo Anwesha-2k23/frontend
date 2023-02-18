@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+	"format-page": "prettier --write pages/",
+	"format-component": "prettier --write components/",
+	"format": "prettier --write components/ && prettier --write pages/"
   },
   "dependencies": {
     "@next/font": "^13.0.2",

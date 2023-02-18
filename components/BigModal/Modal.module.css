@@ -16,8 +16,7 @@
 }
 
 .modalContent {
-    max-width: 400px;
-    height: 300px;
+    max-width: 600px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -35,6 +34,16 @@
     padding: 10px;
     background-color: #fff;
     border-radius: 5px 5px 0 0;
+}
+
+.modal_head h1 {
+    font-size: 64px;
+}
+
+@media screen and (max-width: 590px) {
+    .modal_head h1 {
+        font-size: 40px;
+    }
 }
 
 .modal_body {
