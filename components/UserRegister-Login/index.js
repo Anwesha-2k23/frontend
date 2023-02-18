@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import GreetingLottie from "../displaylottie";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const host = "backend.anwesha.live";
+const host = "localhost:8000";
 
 const UserRegisterForm = () => {
 
@@ -39,7 +39,7 @@ const UserRegisterForm = () => {
     }
     let body = { "phone_number": phone, "full_name": name, "email_id": email, "password": password };
     try {
-      const response = await fetch(`https://${host}/user/register`, {
+      const response = await fetch(`http://${host}/user/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

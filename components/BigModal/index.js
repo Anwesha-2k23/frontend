@@ -1,8 +1,10 @@
 // simple react modal component
 import React from 'react'
 import styles from './Modal.module.css'
+import { useRouter } from 'next/router'
 
 const Modal = (props) => {
+    const router = useRouter()
     return (
         <React.StrictMode>
             <div
@@ -68,7 +70,19 @@ const Modal = (props) => {
                     <div className={styles.modal_footer}>
                         <button
                             className={styles.btn}
-                            onClick={(e) => props.closeHandler()}
+                            onClick={()=>
+                                router.push({
+                                    pathname: `/event-registration/${[props.body.id]}`,
+                                    query: {
+                                        id: props.body.id,
+                                        name: props.body.name,
+                                        description: props.body.description,
+                                        max_team_size: props.body.max_team_size,
+                                        min_team_size: props.body.min_team_size,
+                                        registration_fee: props.body.registration_fee,
+                                    },
+                                })
+                            }
                         >
                             Register
                         </button>
