@@ -158,14 +158,31 @@
 }
 
 .iframe {
-  border-image: url('/hero.jpg') 25% round;
-  width: 90%;
+  /* border-image: url('/hero.jpg') 25% round; 
+  width: 90%; */
   display: flex;
   justify-content: center;
   align-items: center;
   height: fit-content;
 
+  position: relative;
+  padding: 10% 10% 30% 10%;
+  /* padding-bottom: 50%; 16:9 */
+  /* height: 0; */
+  background-image: url('/stars-bg.png');
+  background-size: cover;
+  
+  /* background-color: #D25A1E; */
+
   /* border: 10px solid transparent; */
+}
+
+.iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 100%;
 }
 
 @keyframes focus-in-contract {

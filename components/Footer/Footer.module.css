@@ -137,6 +137,10 @@
     justify-content: space-around;
 }
 
+.icon_link img {
+    height: 60px;
+}
+
 .section3maintext {
     font-size: 1.7rem;
     color: white;

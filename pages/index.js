@@ -123,7 +123,7 @@ export default function comingsoon() {
             </motion.div>
 
             <div className={styles.iframe}>
-            <iframe styles={{width: '80%', maxWidth: '640px'}} src="https://www.youtube.com/embed/sKuWQGbmg6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            <iframe width='80%' height='' styles={{maxWidth: '640px', margin: '0px'}} src="https://www.youtube.com/embed/sKuWQGbmg6A" title="Reflection of Fond Remembrances" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 
             </iframe>
             </div>
