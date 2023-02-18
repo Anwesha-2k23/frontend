@@ -4,13 +4,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 function Navigation() {
-
     const [drawerOpen, setDrawerOpen] = useState(false)
 
-    const toggleDrawer = ()=>{
-        if(!drawerOpen){
+    const toggleDrawer = () => {
+        if (!drawerOpen) {
             document.getElementById('drawer').style.display = 'block'
-            setTimeout(function(){
+            setTimeout(function () {
                 document.getElementById('drawer').style.opacity = 1
             }, 300)
             setDrawerOpen(true)

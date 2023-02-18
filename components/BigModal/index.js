@@ -70,16 +70,19 @@ const Modal = (props) => {
                     <div className={styles.modal_footer}>
                         <button
                             className={styles.btn}
-                            onClick={()=>
+                            onClick={() =>
                                 router.push({
-                                    pathname: `/event-registration/${[props.body.id]}`,
+                                    pathname: `/event-registration/${[
+                                        props.body.id,
+                                    ]}`,
                                     query: {
                                         id: props.body.id,
                                         name: props.body.name,
                                         description: props.body.description,
                                         max_team_size: props.body.max_team_size,
                                         min_team_size: props.body.min_team_size,
-                                        registration_fee: props.body.registration_fee,
+                                        registration_fee:
+                                            props.body.registration_fee,
                                     },
                                 })
                             }

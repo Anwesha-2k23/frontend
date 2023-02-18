@@ -1,31 +1,31 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Navbar.module.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min'
 
-
 const Navbar = () => {
-    const [openSide, setSideOpen] = useState(false);
-    const [mobile, setMobile] = useState(false);
+    const [openSide, setSideOpen] = useState(false)
+    const [mobile, setMobile] = useState(false)
     function handleResize() {
-        if(window.innerWidth <= '500') {
-          setMobile(true);
+        if (window.innerWidth <= '500') {
+            setMobile(true)
+        } else {
+            setMobile(false)
+            setSideOpen(false)
         }
-        else {
-          setMobile(false);
-          setSideOpen(false);
-        }
-      }
-
-      useEffect(() => {handleResize}, [])
+    }
 
     useEffect(() => {
+        handleResize
+    }, [])
 
-        window.addEventListener('resize', handleResize);
-        return _ => {
-            window.removeEventListener('resize', handleResize)}
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+        return (_) => {
+            window.removeEventListener('resize', handleResize)
+        }
     })
 
     return (
@@ -36,29 +36,83 @@ const Navbar = () => {
 
             </Head> */}
             <div className={styles.nav_div}>
-                {mobile ? openSide ? <img className={styles.side_icon} src="/assets/close.svg" onClick={() => {setSideOpen(false)}}/> : <img className={styles.side_icon} src="/assets/hamburger.svg" onClick={() => {setSideOpen(true)}}/> : <img src="./navbar/navbar mandala left.svg" className={[styles.navbar_3].join(" ")} />}
-                <img src="./navbar/navbar mandala right.svg" className={styles.navbar_4} />
+                {mobile ? (
+                    openSide ? (
+                        <img
+                            className={styles.side_icon}
+                            src="/assets/close.svg"
+                            onClick={() => {
+                                setSideOpen(false)
+                            }}
+                        />
+                    ) : (
+                        <img
+                            className={styles.side_icon}
+                            src="/assets/hamburger.svg"
+                            onClick={() => {
+                                setSideOpen(true)
+                            }}
+                        />
+                    )
+                ) : (
+                    <img
+                        src="./navbar/navbar mandala left.svg"
+                        className={[styles.navbar_3].join(' ')}
+                    />
+                )}
+                <img
+                    src="./navbar/navbar mandala right.svg"
+                    className={styles.navbar_4}
+                />
                 <div className={styles.navbar_flex}>
-                <Link href="/">
-                    <Image src="/navbar/logo_no_bg.svg" width={100} height={200} className={[styles.navbar_2].join(" ")} />
-                </Link>
-                <img src="./navbar/nav bar1.svg" className={styles.navbar_1} />
-                {mobile ? null : <>
-                <h4 className={` ${styles.item_1} nav-item`}>
-                    <Link className={styles.nav_item} aria-current="page" href="/campusambassador">CA</Link>
-                </h4>
-                <h4 className={` ${styles.item_2} nav-item`}>
-                    <Link className={styles.nav_item} aria-current="page" href="/all-multicity">Multicity</Link>
-                </h4>
-                <h4 className={` ${styles.item_3} nav-item`}>
-                    <Link className={styles.nav_item} aria-current="page" href="/gallery">Gallery</Link>
-                </h4>
-                </>}
-                {/* <h4 className={styles.item_3}>
+                    <Link href="/">
+                        <Image
+                            src="/navbar/logo_no_bg.svg"
+                            width={100}
+                            height={200}
+                            className={[styles.navbar_2].join(' ')}
+                        />
+                    </Link>
+                    <img
+                        src="./navbar/nav bar1.svg"
+                        className={styles.navbar_1}
+                    />
+                    {mobile ? null : (
+                        <>
+                            <h4 className={` ${styles.item_1} nav-item`}>
+                                <Link
+                                    className={styles.nav_item}
+                                    aria-current="page"
+                                    href="/campusambassador"
+                                >
+                                    CA
+                                </Link>
+                            </h4>
+                            <h4 className={` ${styles.item_2} nav-item`}>
+                                <Link
+                                    className={styles.nav_item}
+                                    aria-current="page"
+                                    href="/all-multicity"
+                                >
+                                    Multicity
+                                </Link>
+                            </h4>
+                            <h4 className={` ${styles.item_3} nav-item`}>
+                                <Link
+                                    className={styles.nav_item}
+                                    aria-current="page"
+                                    href="/gallery"
+                                >
+                                    Gallery
+                                </Link>
+                            </h4>
+                        </>
+                    )}
+                    {/* <h4 className={styles.item_3}>
                     <Link className={styles.nav_item} aria-current="page" href="#">Events</Link>
                 </h4> */}
                 </div>
-                
+
                 {/* <nav className={` navbar   ${styles.toggle_nav}`}>
                     <div className= {`container-fluid`}>
                         <button className={ `${styles.b}  navbar-toggler `} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -88,20 +142,33 @@ const Navbar = () => {
                     </div>
                 </nav> */}
             </div>
-            {openSide ? <div className={styles.side_menubar}>
+            {openSide ? (
+                <div className={styles.side_menubar}>
                     <h4 className={styles.sidemenu_item}>
-                        <Link className={styles.sidenav_item} aria-current="page" href="/campusambassador">CA</Link>
+                        <Link
+                            className={styles.sidenav_item}
+                            aria-current="page"
+                            href="/campusambassador"
+                        >
+                            CA
+                        </Link>
                     </h4>
                     <h4 className={styles.sidemenu_item}>
-                        <Link className={styles.sidenav_item} aria-current="page" href="/all-multicity">Multicity</Link>
+                        <Link
+                            className={styles.sidenav_item}
+                            aria-current="page"
+                            href="/all-multicity"
+                        >
+                            Multicity
+                        </Link>
                     </h4>
                     {/* <h4 className={styles.sidemenu_item}>
                         <Link className={styles.sidenav_item} aria-current="page" href="#">Events</Link>
                     </h4> */}
-                </div> : null}
-        </div >
-    );
+                </div>
+            ) : null}
+        </div>
+    )
 }
 
-export default Navbar;
-
+export default Navbar

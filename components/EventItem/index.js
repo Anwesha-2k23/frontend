@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import Modal from '../BigModal'
 import { useState } from 'react'
 
-const index = ({event}) => {
+const index = ({ event }) => {
     const [modal, setModal] = useState(false)
 
-    const close = ()=>{
+    const close = () => {
         setModal(false)
     }
 
@@ -27,7 +27,9 @@ const index = ({event}) => {
                     <div className={styles.item}>
                         <Image
                             // src={event.poster? event.poster: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"}
-                            src={"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"}
+                            src={
+                                'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80'
+                            }
                             alt="Fest Image"
                             width={250}
                             height={250}

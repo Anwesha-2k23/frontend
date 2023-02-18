@@ -301,16 +301,22 @@ const Events = () => {
 
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
-        fetch(`https://${host}/event/allevents`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
+
+        async function callAPI() {
+            try {
                 setEvents(arr) // TODO: change it to setEvents(data) when API is populated with data
-            })
+                const res = await fetch(`https://${host}/event/allevents`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+				const data = await res.json()
+            } catch (e) {
+                console.log('Failed to fetch')
+            }
+        }
+		callAPI()
     })
     return (
         <div className={styles.container}>

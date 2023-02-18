@@ -9,7 +9,6 @@ import styles from '../styles/comingsoon.module.css'
 import { motion } from 'framer-motion'
 var validator = require('email-validator')
 
-
 export default function comingsoon() {
     const [email, setEmail] = useState('')
     useEffect(() => {
@@ -140,7 +139,10 @@ export default function comingsoon() {
                         </h1>
                     </Link>
                     <p className={styles.ca_text}>
-                        The wait is over! Anwesha is here with it's Campus Ambassador Programme. Don't miss this amazing opportunity to associate and work with the biggest festival of North East India.
+                        The wait is over! Anwesha is here with it's Campus
+                        Ambassador Programme. Don't miss this amazing
+                        opportunity to associate and work with the biggest
+                        festival of North East India.
                     </p>
                     <Link href="/ca-register">
                         <button className={styles.ca_button}>
@@ -149,24 +151,43 @@ export default function comingsoon() {
                     </Link>
                 </div>
             </motion.div>
-            <motion.div className={styles.nlsection}
-            initial={{ opacity: 0, x: '100%' }}
-            whileInView={{ opacity: 1, x: '0%' }}
-            transition={{ duration: 1 }}
+            <motion.div
+                className={styles.nlsection}
+                initial={{ opacity: 0, x: '100%' }}
+                whileInView={{ opacity: 1, x: '0%' }}
+                transition={{ duration: 1 }}
             >
-    <div className={styles.nlwriteup}>
-        <img src="/assets/logo-casual.png"/>
-        <h1>Anwesha Dispatch</h1>
-        <h2>Stay connected with Anwesha</h2>
-        <span>Did you hear that Anwesha's back? Yes, we're as excited as you are, and can't wait to share everything about everything here at Anwesha.</span>
-        <br/>
-        <span>If you're someone who finds it difficult to catch up on the latest updates on various platforms, sign up for our very own mailing list and get all your updates right to your inbox.</span>
-    </div>
-    <div className={styles.nlnew}>
-        <img className={styles.nllaptop} src="/assets/newsletter-laptop.png"/>
-        <img className={styles.nlmail} src="/assets/newsletter-mail.png"/>
-        <div>Drop down your email address and subscribe to our mailing list below!</div>
-        <form className={styles.form} name="submit-to-google-sheet">
+                <div className={styles.nlwriteup}>
+                    <img src="/assets/logo-casual.png" />
+                    <h1>Anwesha Dispatch</h1>
+                    <h2>Stay connected with Anwesha</h2>
+                    <span>
+                        Did you hear that Anwesha's back? Yes, we're as excited
+                        as you are, and can't wait to share everything about
+                        everything here at Anwesha.
+                    </span>
+                    <br />
+                    <span>
+                        If you're someone who finds it difficult to catch up on
+                        the latest updates on various platforms, sign up for our
+                        very own mailing list and get all your updates right to
+                        your inbox.
+                    </span>
+                </div>
+                <div className={styles.nlnew}>
+                    <img
+                        className={styles.nllaptop}
+                        src="/assets/newsletter-laptop.png"
+                    />
+                    <img
+                        className={styles.nlmail}
+                        src="/assets/newsletter-mail.png"
+                    />
+                    <div>
+                        Drop down your email address and subscribe to our
+                        mailing list below!
+                    </div>
+                    <form className={styles.form} name="submit-to-google-sheet">
                         <input
                             onChange={handleChange}
                             type="email"
@@ -187,10 +208,9 @@ export default function comingsoon() {
                         {/* <motion.div className={styles.btn} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
               <button type="submit">Submit</button>
           </motion.div> */}
-        </form>
-    </div>
-    </motion.div>
-
+                    </form>
+                </div>
+            </motion.div>
 
             {/* <script>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
