@@ -122,6 +122,12 @@ export default function comingsoon() {
                 </div>
             </motion.div>
 
+            <div className={styles.iframe}>
+            <iframe styles={{width: '80%', maxWidth: '640px'}} src="https://www.youtube.com/embed/sKuWQGbmg6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+            </iframe>
+            </div>
+
             {/* Campus Ambassador */}
             <motion.div
                 initial={{ opacity: 0, x: '-100%' }}

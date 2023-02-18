@@ -74,7 +74,7 @@ export default function campusAmbassador() {
                         {/* TODO: Add the register link of the campus ambassador button */}
                         <motion.div
                             className={styles.btn_register}
-                            whileHover={{ scale: 1.2 }}
+                            whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.8 }}
                         >
                             <Link
@@ -85,15 +85,22 @@ export default function campusAmbassador() {
                             </Link>
                         </motion.div>
 
-                        <div
+                        {/* <div
                             className={styles.btn_register}
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.8 }}
+                        > */}
+                                                <motion.div
+                            className={styles.btn_register}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.8 }}
                         >
-                            <Link href="#" className={styles.disabled}>
+                        
+                            <Link href="/leaderboard" className={styles.btn_text}>
                                 Leaderboard
                             </Link>
-                        </div>
+                            </motion.div>
+                        {/* </div> */}
                     </div>
                 </motion.div>
             </div>
