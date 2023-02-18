@@ -90,16 +90,18 @@ export default function campusAmbassador() {
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.8 }}
                         > */}
-                                                <motion.div
+                        <motion.div
                             className={styles.btn_register}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.8 }}
                         >
-                        
-                            <Link href="/leaderboard" className={styles.btn_text}>
+                            <Link
+                                href="/leaderboard"
+                                className={styles.btn_text}
+                            >
                                 Leaderboard
                             </Link>
-                            </motion.div>
+                        </motion.div>
                         {/* </div> */}
                     </div>
                 </motion.div>

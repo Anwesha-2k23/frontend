@@ -1,11 +1,11 @@
 .item {
-	display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px 30px 10px 30px;
-	border-radius: 15px;
-	box-shadow: 3px 2px 3px 0px rgb(0 0 0 / 75%);
+    border-radius: 15px;
+    box-shadow: 3px 2px 3px 0px rgb(0 0 0 / 75%);
 }
 
 .imageWrap {
@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     background: rgb(2, 0, 36);
-    background:rgba(32, 32, 32, 0.4);
+    background: rgba(32, 32, 32, 0.4);
     color: #fff;
     visibility: hidden;
     opacity: 0;
@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-	    display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;

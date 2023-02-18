@@ -25,8 +25,10 @@ const UserLoginForm = () => {
                 },
                 body: JSON.stringify(body),
             })
+            console.log(response)
+
             //check if request is successful
-            if (response.status === 201) {
+            if (response.status === 200) {
                 setSuccess(true)
                 setFailure(false)
                 setErrorMsg('')

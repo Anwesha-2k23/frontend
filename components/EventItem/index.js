@@ -31,9 +31,6 @@ const index = ({ event }) => {
                                     ? event.poster
                                     : '/events/poster.png'
                             }
-                            // src={
-                            //     'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80'
-                            // }
                             alt="Fest Image"
                             width={300}
                             height={300}
@@ -43,7 +40,11 @@ const index = ({ event }) => {
                     </div>
                     <p className={styles.img__description}>
                         <span style={{ marginBottom: '10px' }}>
-                            <Image src="/events/Vector.png" width={70} height={70}/>
+                            <Image
+                                src="/events/Vector.png"
+                                width={70}
+                                height={70}
+                            />
                         </span>{' '}
                     </p>
                 </div>
