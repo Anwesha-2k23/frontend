@@ -309,7 +309,7 @@ const Events = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                setEvents(data) // TODO: change it to setEvents(data) when API is populated with data
+                setEvents(arr) // TODO: change it to setEvents(data) when API is populated with data
             })
     })
     return (
