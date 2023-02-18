@@ -26,6 +26,7 @@ const eventRegistration = () => {
             setEventName(name)
             setIsSolo(min_team_size > 1 ? false : true)
             setEventID(id)
+			console.log({min_team_size, max_team_size})
         }
     }, [router.isReady])
 
@@ -55,7 +56,7 @@ const eventRegistration = () => {
         }
     }
     let teamSize = []
-    for (var i = min_team_size; i <= max_team_size; i++) {
+    for (var i = 1; i <= parseInt(max_team_size); i++) {
         teamSize.push(i)
     }
     return (
@@ -138,9 +139,6 @@ const eventRegistration = () => {
                             )}
 
                             {/* TODO: Add the component with the for loop from min participation to max participation */}
-                            {teamSize.map((item, index) => {
-                                ;<div>Hello World</div>
-                            })}
 
                             {/* {!isTeamGenerated && ( */}
                             {teamSize.map((item, index) => (
