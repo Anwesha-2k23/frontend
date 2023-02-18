@@ -26,23 +26,26 @@ const index = ({ event }) => {
                 <div className={styles.imageWrap}>
                     <div className={styles.item}>
                         <Image
-                            // src={event.poster? event.poster: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80"}
                             src={
-                                'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80'
+                                event.poster
+                                    ? event.poster
+                                    : '/events/poster.png'
                             }
+                            // src={
+                            //     'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzdHxlbnwwfHwwfHw%3D&w=1000&q=80'
+                            // }
                             alt="Fest Image"
-                            width={250}
-                            height={250}
-                            style={{ borderRadius: 5 }}
+                            width={300}
+                            height={300}
+                            style={{ borderRadius: 15 }}
                             objectFit={'contain'}
                         />
                     </div>
                     <p className={styles.img__description}>
                         <span style={{ marginBottom: '10px' }}>
-                            Know more...
+                            <Image src="/events/Vector.png" width={70} height={70}/>
                         </span>{' '}
                     </p>
-                    4
                 </div>
                 <div className={styles.eventName}>{event.name}</div>
             </div>
