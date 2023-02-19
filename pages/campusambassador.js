@@ -22,7 +22,12 @@ export default function campusAmbassador() {
                     viewport={{ once: true }}
                 >
                     <div className={styles.anwesha_text}>
-                    <Image className={styles.anwesha_img} src="/ca_anwesha_logo.svg" width={400} height={100} />
+                        <Image
+                            className={styles.anwesha_img}
+                            src="/ca_anwesha_logo.svg"
+                            width={400}
+                            height={100}
+                        />
                     </div>
                 </motion.div>
                 <motion.div
@@ -87,7 +92,7 @@ export default function campusAmbassador() {
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1}}
+                            whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.3 }}
                         >
                             <h2 className={styles.lottie_text}>
@@ -128,7 +133,7 @@ export default function campusAmbassador() {
                             <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_l2l6hr2l.json" />
                         </motion.div>
                         <motion.div
-                            initial={{ opacity: 0}}
+                            initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.3 }}
                         >
@@ -301,14 +306,14 @@ export default function campusAmbassador() {
                         >
                             <GreetingLottie animationPath="https://assets9.lottiefiles.com/packages/lf20_LDP1qTExIJ.json" />
                         </motion.div>
-                        <motion.table className={styles.points_table}
-                        initial={{ opacity: 0, x: '100%' }}
-                        whileInView={{ opacity: 1, x: '0%' }}
-                        transition={{ duration: 0.3 }}>
+                        <motion.table
+                            className={styles.points_table}
+                            initial={{ opacity: 0, x: '100%' }}
+                            whileInView={{ opacity: 1, x: '0%' }}
+                            transition={{ duration: 0.3 }}
+                        >
                             <tbody>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <th className={styles.table_heading}>
                                         Condition
                                     </th>
@@ -316,66 +321,50 @@ export default function campusAmbassador() {
                                         Points
                                     </th>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Online Registration
                                     </td>
                                     <td className={styles.tablecol2}>15xp</td>
                                 </tr>
 
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Offline Registration
                                     </td>
                                     <td className={styles.tablecol2}>30xp</td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Instagram Story
                                     </td>
                                     <td className={styles.tablecol2}>5xp</td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Instagram Post
                                     </td>
                                     <td className={styles.tablecol2}>10xp</td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Putting poster/banner
                                     </td>
                                     <td className={styles.tablecol2}>15xp</td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Share messages on WA groups<sup>*</sup>
                                     </td>
                                     <td className={styles.tablecol2}>5xp</td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Putting a WA status
                                     </td>
                                     <td className={styles.tablecol2}>5xp</td>
                                 </tr>
-                                <tr
-                                   
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Creative way of incorporating glimpses
                                         of Anwesha
@@ -384,9 +373,7 @@ export default function campusAmbassador() {
                                         10-30xp
                                     </td>
                                 </tr>
-                                <tr
-                                    
-                                >
+                                <tr>
                                     <td className={styles.tablecol1}>
                                         Hospitality
                                     </td>

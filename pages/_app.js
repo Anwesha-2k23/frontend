@@ -16,7 +16,6 @@ const poppins = Poppins({
     weight: '900',
 })
 function MyApp({ Component, pageProps }) {
-
     const router = useRouter()
     // const showHeader = router.pathname === '/ca-register' || '/ca-login' ? false : true;
     let showHeader = true
