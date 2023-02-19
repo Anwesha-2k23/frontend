@@ -20,12 +20,12 @@
     align-items: flex-end;
     justify-content: center;
     margin-right: 2vw;
-    height: 70vh;
+    /* height: 70vh; */
 }
 
 .mainHeading {
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: 5rem;
     text-align: center;
     color: #2b0072;
     font-family: BroadwayShadow;

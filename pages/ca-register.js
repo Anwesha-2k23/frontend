@@ -8,18 +8,22 @@ import CampusAmbassadorForm from '../components/CampusAmbassadorForm'
 import GreetingLottie from '../components/displaylottie'
 
 export default function caRegister() {
-    return (
-        <>
-            <Head>
-                <title>Campus Ambassador - Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
-                <link rel="icon" href="./AnwehsaIcon.png" />
-            </Head>
-            {/* <Navbar /> */}
-            <div style={{ height: 40 }}></div>
-            <div className={styles.container}>
-                <CampusAmbassadorForm />
-            </div>
-        </>
-    )
+
+  return (
+    <>
+      <Head>
+        <title>Campus Ambassador - Anwesha 2023</title>
+        <meta name="description" content="Anwesha 2023" />
+        <link rel="icon" href="./logo_no_bg.svg" />
+      </Head>
+      {/* <Navbar /> */}
+      <div style={{height: 40}}></div>
+      <div className={styles.container}>
+        
+        <CampusAmbassadorForm />
+      </div>
+    </>
+  );
+
+
 }

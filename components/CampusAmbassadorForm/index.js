@@ -152,19 +152,131 @@ const CampusAmbassadorForm = () => {
         }
     }
 
-    return (
-        <div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
+
+    if (phone.length == 10 && Number(phone) == NaN){
+      setErrorMsg("Phone number should be valid");
+      setFailure(true);
+      toast.error('Phone number should be a number', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+      })
+      return;
+    }
+    let body = { "phone_number": phone, "full_name": name, "email_id": email, "college_name": college, "password": password};
+    try {
+      const response = await fetch(`https://${host}/campasambassador/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+      //check if request is successful
+      if (response.status === 201) {
+        setSuccess(true);
+        setFailure(false);
+        setErrorMsg("");
+        const data = await response.json();
+        console.log(data)
+        toast.success('You are successfully registered', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+      else if (response.status === 409) {
+        const data = await response.json();
+        setErrorMsg(data.message);
+        setFailure(true);
+        setSuccess(false);
+        toast.error(data.message, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+      }
+      else {
+        const data = await response.json();
+        console.log(data)
+        setErrorMsg("Internal Server Error. Check your browser console for more details");
+        setFailure(true);
+        setSuccess(false);
+        toast.error(data.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  return (
+    <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <motion.h1 className={styles.mainHeading} initial={{ opacity: 0, y: "-150%" }} whileInView={{ opacity: 1, y: "0%" }} transition={{ duration: 1 }}>Register for Campus ambassador</motion.h1>
+      <div className={styles.form}>
+        <motion.div className={styles.lottie_container} initial={{ opacity: 0, x: "-100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
+          <GreetingLottie animationPath="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" />
+        </motion.div>
+        <motion.form className={styles.mainForm} initial={{ opacity: 0, x: "100%" }} whileInView={{ opacity: 1, x: "0%" }} transition={{ duration: 1 }}>
+          <div className={styles.form_row}>
+          <div className={styles.field}>
+            <label htmlFor="Phone_number">Phone Number</label>
+            <br />
+            <input
+              type="text"
+              name="Phone_Number"
+              placeholder='Eg: 9835486875'
+              required
+              maxLength="10"
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <br />
+          </div>
+          <div className={styles.field}>
+            <label htmlFor="email_id">Email ID</label>
+            <br />
+            <input
+              type="email"
+              name="Email_Id"
+              placeholder='Eg: vineet@gmail.com'
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <motion.h1
                 className={styles.mainHeading}

@@ -103,6 +103,12 @@
     text-align: center;
   }
 
+  .anwesha_img{
+    margin-top: 80px;
+    /* height: 80px; */
+    width: 280px;
+  }
+
   .bgText {
     position: relative;
     font-size: 10vw;
@@ -229,7 +235,9 @@
   text-align: left;
   background-color: #2B0072;
   color: white;
+  text-transform: uppercase;
 }
+
 
 @media screen and (max-width: 700px) {
   .rulebook_text_heading {
