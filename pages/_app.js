@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
+import { AuthProvider, PrivateRoute } from '../components/authContext'
 import { useRouter } from 'next/router'
 import styles from '../styles/comingsoon.module.css'
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
@@ -42,12 +43,16 @@ function MyApp({ Component, pageProps }) {
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
         `}
             </Script>
+            <AuthProvider>
             {showHeader && <Navbar />}
             {/* {showHeader && <div style={{height: '30%'}}/>} */}
             <div className={styles.main_component}>
+            <PrivateRoute>
                 <Component {...pageProps} />
+                </PrivateRoute>
             </div>
             <Footer />
+            </AuthProvider>
         </main>
     )
 }

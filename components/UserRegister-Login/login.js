@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
 import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
+import { AuthContext } from '../authContext'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'backend.anwesha.live'
+import Router from 'next/router'
+// const host = 'https://backend.anwesha.live'
+const host = process.env.NEXT_PUBLIC_HOST
 
 const UserLoginForm = () => {
+    const context = useContext(AuthContext);
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [success, setSuccess] = React.useState(false)
@@ -18,12 +22,13 @@ const UserLoginForm = () => {
         event.preventDefault()
         let body = { username: email, password: password }
         try {
-            const response = await fetch(`https://${host}/user/login`, {
+            const response = await fetch(`${host}/user/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(body),
+                credentials: 'include',
             })
             console.log(response)
 
@@ -43,6 +48,7 @@ const UserLoginForm = () => {
                     progress: undefined,
                     theme: 'light',
                 })
+                context.getUser()
             } else if (response.status === 409) {
                 const data = await response.json()
                 setErrorMsg(data.message)
