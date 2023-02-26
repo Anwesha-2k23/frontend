@@ -76,7 +76,7 @@ function Navigation() {
                             <Link href="/events">Events</Link>
                         </li>
                         <li>
-                            {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name.split(" ")[0]}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
+                            {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
                             <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
                         </li>
                     </ul>
@@ -98,7 +98,7 @@ function Navigation() {
                         <Link href="/events">Events</Link>
                     </li>
                     <li>
-                        {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name.split(" ")[0]}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
+                        {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
                         <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
                     </li>
                 </ul>

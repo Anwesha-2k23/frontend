@@ -117,7 +117,12 @@ const Modal = (props) => {
                         <button
                             className={styles.btn}
                             onClick={() =>
-                                router.push({
+                                {
+                                if(props.body.is_solo) {
+                                    console.log('proper')
+                                }
+                                else {
+                                    router.push({
                                     pathname: `/event-registration/${[
                                         props.body.id,
                                     ]}`,
@@ -130,7 +135,9 @@ const Modal = (props) => {
                                         registration_fee:
                                             props.body.registration_fee,
                                     },
-                                })
+                                })    
+                                }
+                                }
                             }
                         >
                             Register

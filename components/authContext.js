@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
         .then(response => response.json())
         .then(result => {
             // console.log(response.status)
-            if(result.message === "you are unauthenticated , Please Log in First" || result.message === "Your token is expired please generate new one") {
+            if(result.message === "you are unauthenticated , Please Log in First" || result.message === "Your token is expired please generate new one" || result.message === "Your token is expired please login again") {
                 setUser(null);
                 console.log("Unauth")
             }

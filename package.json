@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
-	"format-page": "prettier --write pages/",
-	"format-component": "prettier --write components/",
-	"format": "prettier --write components/ && prettier --write pages/"
+    "format-page": "prettier --write pages/",
+    "format-component": "prettier --write components/",
+    "format": "prettier --write components/ && prettier --write pages/"
   },
   "dependencies": {
     "@next/font": "^13.0.2",
@@ -31,6 +31,7 @@
     "react-lottie": "^1.2.3",
     "react-parallax": "^3.5.1",
     "react-simple-image-viewer": "^1.2.2",
+    "react-tabs": "^6.0.0",
     "react-toastify": "^9.1.1",
     "react-use-scroll-direction": "^0.1.0"
   }
