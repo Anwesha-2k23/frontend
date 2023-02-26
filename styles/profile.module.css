@@ -40,3 +40,9 @@
     margin-top: 100px;
     text-transform: uppercase;
 }
+
+@media only screen and (max-width: 500px) {
+    .anwesha_id {
+        font-size: 10vw;
+    }
+}

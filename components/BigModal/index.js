@@ -56,95 +56,73 @@ const Modal = (props) => {
                             />
                         </div>
                         <div className={styles.modal_body}>
-                            <p>
-                                Organiser:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    {props.body.organizer}
-                                </span>
-                            </p>
-                            <p>
-                                Venue:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    {props.body.venue}
-                                </span>
-                            </p>
-                            <p>
-                                Timing:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    {new Date(
-                                        props.body.start_time
-                                    ).toDateString()}{' '}
-                                    -{' '}
-                                    {new Date(
-                                        props.body.end_time
-                                    ).toDateString()}
-                                </span>
-                            </p>
-                            <p>
-                                Description:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    {props.body.description}
-                                </span>
-                            </p>
-                            <p>
-                                Prize:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    ₹{props.body.prize}
-                                </span>
-                            </p>
-                            <p>
-                                Registration Fee:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    ₹{props.body.registration_fee}
-                                </span>
-                            </p>
-                            <p>
-                                Team size:{' '}
-                                <span style={{ fontWeight: 400 }}>
-                                    {props.body.min_team_size ===
-                                    props.body.max_team_size
-                                        ? props.body.min_team_size +
-                                          ' member(s)'
-                                        : props.body.min_team_size +
-                                          ' - ' +
-                                          props.body.max_team_size +
-                                          ' members'}
-                                </span>
-                            </p>
+                        <div className={styles.date_loc}>
+                        <div className={styles.date_row}>
+                            <img src='/assets/calendar-clock.svg' />
+                            <div className={styles.date}><span className={styles.day}>{new Date(props.body.start_time).toLocaleString('default', {day: 'numeric'})}</span><span className={styles.month}>{new Date(props.body.start_time).toLocaleString('default', {month: 'short'})}</span></div>
+                            {props.body.end_time ? <div>-</div> : null}
+                            {props.body.end_time ? <div className={styles.date}><span className={styles.day}>{new Date(props.body.end_time).toLocaleString('default', {day: 'numeric'})}</span><span className={styles.month}>{new Date(props.body.end_time).toLocaleString('default', {month: 'short'})}</span></div> : null}
+                        </div>
+                        <div className={styles.location}><img src='/assets/location.svg'/>{props.body.venue}</div>
+                        </div>
+                        <p className={styles.description}>{props.body.description}</p>
+                        <div className={styles.team_pay}>
+                        <div><img src='/assets/team.svg' />
+                        {props.body.max_team_size === 1 ? 'Solo' : props.body.min_team_size ===
+                                props.body.max_team_size
+                                    ? props.body.min_team_size +
+                                        ' members'
+                                    : props.body.min_team_size +
+                                        ' - ' +
+                                        props.body.max_team_size +
+                                        ' members'}</div>
+                        {props.body.registration_fee ? <div><img src='/assets/payment.svg' />₹{props.body.registration_fee}</div> : null}
+                        </div>
+                        {props.body.registration_deadline ? <div className={styles.team_pay}><img src='/assets/alert.svg' />Registration closes {new Date(props.body.registration_deadline).toDateString('default', {day: 'numeric', month: 'long'})}</div> : null}
+                        {props.body.prize ? <div className={styles.team_pay}><img src='/assets/prize.svg' />Prizes worth ₹{props.body.prize}!</div> : null}
+                        <div className={styles.contacts}>
+                            <img src='/assets/contact.svg' />
+                            <div className={styles.contact}>{props.body.organizer.map(e => {
+                                return(
+                                    <div><span>{e[0]}</span><a target='_blank' href={`tel:${e[1]}`}>{e[1]}</a></div>
+                                )
+                            })}</div>
+                        </div>
                         </div>
                     </div>
                     <div className={styles.modal_footer}>
                         <button
                             className={styles.btn}
-                            onClick={() =>
-                                {
-                                if(props.body.is_solo) {
-                                    console.log('proper')
-                                }
-                                else {
-                                    router.push({
-                                    pathname: `/event-registration/${[
-                                        props.body.id,
-                                    ]}`,
-                                    query: {
-                                        id: props.body.id,
-                                        name: props.body.name,
-                                        description: props.body.description,
-                                        max_team_size: props.body.max_team_size,
-                                        min_team_size: props.body.min_team_size,
-                                        registration_fee:
-                                            props.body.registration_fee,
-                                    },
-                                })    
-                                }
-                                }
-                            }
+                            // onClick={() =>
+                            //     {
+                            //     if(props.body.is_solo) {
+                            //         console.log('proper')
+                            //     }
+                            //     else {
+                            //         router.push({
+                            //         pathname: `/event-registration/${[
+                            //             props.body.id,
+                            //         ]}`,
+                            //         query: {
+                            //             id: props.body.id,
+                            //             name: props.body.name,
+                            //             description: props.body.description,
+                            //             max_team_size: props.body.max_team_size,
+                            //             min_team_size: props.body.min_team_size,
+                            //             registration_fee:
+                            //                 props.body.registration_fee,
+                            //         },
+                            //     })    
+                            //     }
+                            //     }
+                            // }
+                            disabled
                         >
                             Register
                         </button>
                         <button
                             className={styles.btn}
-                            onClick={(e) => props.closeHandler()}
+                            // onClick={(e) => props.closeHandler()}
                         >
                             Rulebook
                         </button>

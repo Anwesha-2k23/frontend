@@ -90,6 +90,120 @@
     background-color: #ffffff;
 }
 .btn:hover {
-    background-color: #ff79d0;
-    color: #fff;
+    /* background-color: #ff79d0; */
+    /* color: #fff; */
+}
+
+.date_loc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px dotted #8CC1FF;
+    width: 100%;
+    border-radius: 30px;
+    padding: 0px 15px 0px 15px;
+}
+
+.date_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.date_row img {
+    height: 50px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.day {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.month {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.location img {
+    height: 50px;
+}
+
+.description{
+    font-size: 20px;
+    font-weight: 100;
+    padding: 20px 5px 20px 5px;
+}
+
+.team_pay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.team_pay img {
+    height: 40px;
+    margin: 5px;
+}
+
+.team_pay div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contacts img {
+    height: 40px;
+    margin: 5px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.contact div {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    border: 3px dotted #8CC1FF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.contact a {
+    text-decoration: none;
 }

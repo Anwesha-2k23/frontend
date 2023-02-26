@@ -100,4 +100,14 @@
     .field label {
         font-size: 14px;
     }
+    .button_row {
+        flex-direction: column;
+    }
+    .button_row button {
+        width: 40vw;
+        font-size: 5vw;
+    }
+    .container {
+        padding-bottom: 110px;
+    }
 }

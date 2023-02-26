@@ -1966,6 +1966,11 @@ react-parallax@^3.5.1:
   resolved "https://registry.yarnpkg.com/react-parallax/-/react-parallax-3.5.1.tgz#73071679371b7738e21ffac8daa0bc3cb7e5174d"
   integrity sha512-p5zPsPsqELlIOGaPS01O0IRx8R2bxcBAtrdF/RHf9nIxxk5hijbM2y89tk4rJQBcNH6ESSLe7J2NV4/ms7FLFw==
 
+react-razorpay@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-razorpay/-/react-razorpay-1.2.0.tgz#5b5b605d5476f3db94def7fc98c2705e18abef0b"
+  integrity sha512-UMQF8od/yKPPgXcbv5+IaCDeRrZdeu9HCYsKjALpSsPMtPP1LU0QBcjJVYsPi1vjdrlXbrUH9/YhOVMcvFVsIQ==
+
 react-scrolllock@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-scrolllock/-/react-scrolllock-3.0.2.tgz#b1607cb5f6b8a3bce02c78e7dfb1cbe564c1e992"
