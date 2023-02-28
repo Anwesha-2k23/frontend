@@ -108,7 +108,7 @@ const UserRegisterForm = () => {
     }
 
     return (
-        <div>
+        <div style={{position: 'relative', marginTop: '120px', overflow: 'hidden'}}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}

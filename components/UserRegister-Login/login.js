@@ -89,7 +89,7 @@ const UserLoginForm = () => {
     }
 
     return (
-        <div style={{marginTop: '120px'}}>
+        <div style={{position: 'relative', marginTop: '120px', overflow: 'hidden'}}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}

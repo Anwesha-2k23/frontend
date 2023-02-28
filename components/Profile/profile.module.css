@@ -87,6 +87,73 @@
     border-radius: 5px;
 }
 
+.event {
+    background-color: #E5E5E5;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.event h2 {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 5px;
+}
+
+.date_loc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px dotted #000000;
+    width: 100%;
+    border-radius: 30px;
+    padding: 0px 15px 0px 15px;
+}
+
+.date_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.date_row img {
+    height: 50px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.day {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.month {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.location img {
+    height: 50px;
+}
+
 @media only screen and (max-width: 920px) {
     .field {
         width: 90%;

@@ -1,11 +1,14 @@
 // simple react modal component
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { AuthContext } from '../authContext'
+import soloEventRegistration from '../Payments/soloEventRegistration'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 const Modal = (props) => {
     const router = useRouter()
+    const userData = useContext(AuthContext)
     useEffect(() => {
         console.log(props.body)
     }, [])
@@ -43,7 +46,7 @@ const Modal = (props) => {
                         }}
                     >
                         <div className={styles.image}>
-                            <Image
+                            <img
                                 src={
                                     props.body.poster
                                         ? props.body.poster
@@ -82,50 +85,59 @@ const Modal = (props) => {
                         {props.body.prize ? <div className={styles.team_pay}><img src='/assets/prize.svg' />Prizes worth ₹{props.body.prize}!</div> : null}
                         <div className={styles.contacts}>
                             <img src='/assets/contact.svg' />
+                            {Array.isArray(props.body.organizer) ?
                             <div className={styles.contact}>{props.body.organizer.map(e => {
+                                
                                 return(
-                                    <div><span>{e[0]}</span><a target='_blank' href={`tel:${e[1]}`}>{e[1]}</a></div>
+                                    <a style={e[1] ? null : {pointerEvents: 'none'}} target='_blank' href={e[1] ? `tel:${e[1]}` : '#'}><span>{e[0]}</span>{e[1] ? <span><img alt='phone' src='/footer/phone.svg' />{e[1]}</span> : null}</a>
                                 )
-                            })}</div>
+                            })}</div> : <div className={styles.contact}>{props.body.organizer}</div>}
                         </div>
                         </div>
                     </div>
                     <div className={styles.modal_footer}>
-                        <button
+                        {props.body.is_active ? <button
                             className={styles.btn}
-                            // onClick={() =>
-                            //     {
-                            //     if(props.body.is_solo) {
-                            //         console.log('proper')
-                            //     }
-                            //     else {
-                            //         router.push({
-                            //         pathname: `/event-registration/${[
-                            //             props.body.id,
-                            //         ]}`,
-                            //         query: {
-                            //             id: props.body.id,
-                            //             name: props.body.name,
-                            //             description: props.body.description,
-                            //             max_team_size: props.body.max_team_size,
-                            //             min_team_size: props.body.min_team_size,
-                            //             registration_fee:
-                            //                 props.body.registration_fee,
-                            //         },
-                            //     })    
-                            //     }
-                            //     }
-                            // }
-                            disabled
+                            onClick={() =>
+                                {
+                                if(props.body.is_online) {
+                                    console.log('online')
+                                    router.replace(props.body.registration_link)
+                                }
+                                // else if(props.body.is_solo) {
+                                //     soloEventRegistration(userData, props.body.id)
+                                //     // console.log('proper')
+                                // }
+                                // else {
+                                //     router.push({
+                                //     pathname: `/event-registration/${[
+                                //         props.body.id,
+                                //     ]}`,
+                                //     query: {
+                                //         id: props.body.id,
+                                //         name: props.body.name,
+                                //         description: props.body.description,
+                                //         max_team_size: props.body.max_team_size,
+                                //         min_team_size: props.body.min_team_size,
+                                //         registration_fee:
+                                //             props.body.registration_fee,
+                                //     },
+                                // })    
+                                // }
+                                }
+                            }
+                            // disabled
                         >
                             Register
-                        </button>
-                        <button
+                        </button> : null}
+                        {props.body.video ? <a
+                        target='_blank'
                             className={styles.btn}
+                            href={props.body.video}
                             // onClick={(e) => props.closeHandler()}
                         >
                             Rulebook
-                        </button>
+                        </a> : null}
                     </div>
                 </div>
             </div>

@@ -45,8 +45,8 @@ function profile() {
       <Tabs className={styles.tabs}>
     <TabList className={styles.tabList} selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <Tab className={styles.tab}>DETAILS</Tab>
-      {/* <Tab className={styles.tab}>MY EVENTS</Tab>
-      <Tab className={styles.tab}>MY MERCHANDISE</Tab> */}
+      <Tab className={styles.tab}>MY EVENTS</Tab>
+      {/* <Tab className={styles.tab}>MY MERCHANDISE</Tab> */}
     </TabList>
 
     <TabPanel className={styles.tabPanel}>

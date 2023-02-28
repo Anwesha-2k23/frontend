@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
     const authContext = React.useContext(AuthContext);
 
     useEffect(() => {
-        if (authContext.state.user === null && (["/profile", '/event-registration'].includes(router.pathname) || router.pathname.includes('/event-registration'))) {
+        if (authContext.state.user === null && (["/profile", '/event-registration'].includes(router.pathname))) {
             router.push("/userLogin");
         } else if (authContext.state.user !== null && ['/userLogin', "/userRegister"].includes(router.pathname)) {
             router.push("/profile");

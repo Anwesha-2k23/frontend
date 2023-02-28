@@ -1,10 +1,14 @@
 import { setRequestMeta } from 'next/dist/server/request-meta'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import teamEventRegistration from '../../components/Payments/teamEventRegistration';
 import styles from '../../styles/EventRegistration.module.css'
+import { AuthContext } from '../../components/authContext';
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 
 const eventRegistration = () => {
+    const data = useContext(AuthContext);
+
     const router = useRouter()
     const {
         id,
@@ -14,6 +18,12 @@ const eventRegistration = () => {
         min_team_size,
         registration_fee,
     } = router.query
+    useEffect(() => {
+        const anwID = data.state.user ? data.state.user.anwesha_id : '';
+        const arr = Array(min_team_size).fill("")
+        arr[0] = anwID
+        setMemberID(arr);
+    }, [data])
     const [eventID, setEventID] = useState('')
     const [eventName, setEventName] = useState('')
     const [teamName, setTeamName] = useState('')
@@ -26,36 +36,38 @@ const eventRegistration = () => {
             setEventName(name)
             setIsSolo(min_team_size > 1 ? false : true)
             setEventID(id)
+        // setMemberID([data.state.user.anwesha_id, ...new Array(max_team_size).fill("")]);
+
             console.log({ min_team_size, max_team_size })
         }
     }, [router.isReady])
 
-    const generateTeamID = async (e) => {
-        e.preventDefault()
-        // console.log('Generating Team ID')
-        let body = { event_id: eventID, team_name: teamName }
-        let host = process.env.NEXT_PUBLIC_HOST
-        try {
-            const response = await fetch(`http://localhost:8000/event/createteam`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(body),
-                credentials: 'include'
-            })
+    // const generateTeamID = async (e) => {
+    //     e.preventDefault()
+    //     // console.log('Generating Team ID')
+    //     let body = { event_id: eventID, team_name: teamName }
+    //     let host = process.env.NEXT_PUBLIC_HOST
+    //     try {
+    //         const response = await fetch(`http://localhost:8000/event/createteam`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(body),
+    //             credentials: 'include'
+    //         })
 
-            if (response.status === 201) {
-                const data = await response.json()
-                setTeamID(data.team_id)
-                setIsTeamGenerated(true)
-            } else {
-                console.log(response.status)
-            }
-        } catch (err) {
-            console.log(err)
-        }
-    }
+    //         if (response.status === 201) {
+    //             const data = await response.json()
+    //             setTeamID(data.team_id)
+    //             setIsTeamGenerated(true)
+    //         } else {
+    //             console.log(response.status)
+    //         }
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
     let teamSize = []
     for (var i = 1; i <= parseInt(max_team_size); i++) {
         teamSize.push(i)
@@ -72,12 +84,12 @@ const eventRegistration = () => {
                             transition={{ duration: 1 }}
                         >
                             <h2 className={styles.subHeading}>
-                                Team's Details
+                                Team Details
                             </h2>
                             <div className={styles.form_row}>
                                 <div className={styles.field}>
                                     <label htmlFor="Event_Name">
-                                        Event's Name
+                                        Event Name
                                     </label>
                                     <br />
                                     <input
@@ -99,7 +111,7 @@ const eventRegistration = () => {
                                     <input
                                         type="text"
                                         name="Teams_Name"
-                                        placeholder="Eg: Rockers"
+                                        placeholder="Eg: Pwolians"
                                         required
                                         value={teamName}
                                         onChange={(e) =>
@@ -109,18 +121,89 @@ const eventRegistration = () => {
                                     <br />
                                 </div>
                             </div>
+                            <div className={styles.members} style={{display: 'flex', flexWrap: 'wrap', width: '100%'}}>
+                            {memberID.map((item, index) => {
+                            return(<div className={styles.member_input}>
+                                <span>{index + 1}</span>
+                                <div>ANW</div>
+                                <input
+                                type="text"
+                                name="Team_Member"
+                                // required
+                                value={memberID[index].substring(3)}
+                                readOnly={!index}
+                                onChange={(e) => {let arr = memberID; memberID[index] = e.target.value; setMemberID(arr)}}
+                                required
+                                minLength={7}
+                                maxLength={7}
+                                />
+                                {index >= min_team_size ? <img src='/assets/remove.svg' onClick={() => {let arr = memberID; arr.splice(index, 1); setMemberID([...arr])}} /> : null}
+                            </div>)})}
+                            </div>
+                            {memberID.length < max_team_size ? <button className={styles.add_member_btn} onClick={(e) => {e.preventDefault(); setMemberID([...memberID, ""])}}><img src='/assets/plus.svg' />Add Team Member</button> : null}
 
-                            <motion.div
+                            {/* {loop(min_team_size - 1, i => {
+                                return(
+                                    <div>
+                                        <div>ANW</div>
+                                        <input
+                                        type="text"
+                                        name="Team_Member"
+                                        // required
+                                        value={memberID[i]}
+                                        onChange={(e) => {let arr = [...memberID]; arr[i] = e.target.value; setMemberID([...arr])}}
+                                        readOnly
+                                        />
+                                    </div>
+                                )
+                            })} */}
+
+
+                            {/* {[...Array(parseInt(min_team_size) - 1)].map((elementInArray, index) => { 
+                                return(
+                                    <div>
+                                        <div>ANW</div>
+                                        <input
+                                        type="text"
+                                        name="Team_Member"
+                                        // required
+                                        value={memberID[i]}
+                                        onChange={(e) => {let arr = [...memberID]; arr[i] = e.target.value; setMemberID([...arr])}}
+                                        readOnly
+                                        />
+                                    </div>
+                                )
+                            })}
+                            {[...Array(parseInt(max_team_size) - parseInt(min_team_size))].map((elementInArray, index) => { 
+                                return(
+                                    <div>
+                                        <div>ANW Extras</div>
+                                        <input
+                                        type="text"
+                                        name="Team_Member"
+                                        // required
+                                        value={memberID[i]}
+                                        onChange={(e) => {let arr = [...memberID]; arr[i] = e.target.value; setMemberID([...arr])}}
+                                        readOnly
+                                        />
+                                    </div>
+                                )
+                            })} */}
+
+                            {/* <motion.div
                                 className={styles.buttonWrapper}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.8 }}
-                            >
-                                <button onClick={(e) => generateTeamID(e)}>
-                                    Generate Team
+                            > */}
+                            <br/>
+                                <button className={styles.register_btn}
+                                onClick={(e) => {e.preventDefault(); teamEventRegistration(data, id, teamName, memberID)}}
+                                >
+                                    REGISTER
                                 </button>
-                            </motion.div>
+                            {/* </motion.div> */}
 
-                            {isTeamGenerated && (
+                            {/* {isTeamGenerated && (
                                 <div className={styles.form_row}>
                                     <div className={styles.field}>
                                         <label htmlFor="Team_ID">
@@ -137,12 +220,12 @@ const eventRegistration = () => {
                                         <br />
                                     </div>
                                 </div>
-                            )}
+                            )} */}
 
                             {/* TODO: Add the component with the for loop from min participation to max participation */}
 
                             {/* {!isTeamGenerated && ( */}
-                            {teamSize.map((item, index) => (
+                            {/* {teamSize.map((item, index) => (
                                 <div className={styles.form_row} key={index}>
                                     <div className={styles.field}>
                                         <label htmlFor="Team_Member">
@@ -164,7 +247,7 @@ const eventRegistration = () => {
                                         <br />
                                     </div>
                                 </div>
-                            ))}
+                            ))} */}
 
                             {/* <div className={styles.buttonWrapper} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }} >
                                 <button onClick={(e) => {e.preventDefault();addedMembers+1}}>Add Member</button>

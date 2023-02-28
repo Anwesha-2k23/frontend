@@ -20,12 +20,14 @@ const index = ({ event }) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexWrap: 'wrap',
+                    position: 'relative'
                 }}
                 onClick={() => setModal(true)}
             >
+                {event.is_active ? null : <img src='/assets/coming-soon.png' style={{position: 'absolute', top: '8px', right: '30px', zIndex: 2, height: '100px' }}/>}
                 <div className={styles.imageWrap}>
                     <div className={styles.item}>
-                        <Image
+                        <img
                             src={
                                 event.poster
                                     ? event.poster

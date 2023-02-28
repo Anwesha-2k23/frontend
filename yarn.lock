@@ -267,6 +267,23 @@
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
+"@rive-app/canvas@1.0.100":
+  version "1.0.100"
+  resolved "https://registry.yarnpkg.com/@rive-app/canvas/-/canvas-1.0.100.tgz#46244db3589b70ea64aef4ab776cb4d31cafd2dc"
+  integrity sha512-22L0ikCeLtUhoBYTEQaGlGxm560ZHW8L1WteQO69QJOL4bgrjQbmLFLZnNqSSDTQQACx6RJ1Y2auJmrkh9+DlQ==
+
+"@rive-app/react-canvas@^3.0.36":
+  version "3.0.36"
+  resolved "https://registry.yarnpkg.com/@rive-app/react-canvas/-/react-canvas-3.0.36.tgz#be568d86545ee573f114563538a023acac886bef"
+  integrity sha512-ILz9Ak4x9xSq8eRApZEe+cYM41NemuR/KOhBdh+eTWUp+f37zzA+8l1kN/3BWVcdlHCe4UcbamerQI4ZczLnVA==
+  dependencies:
+    "@rive-app/canvas" "1.0.100"
+
+"@rive-app/webgl@1.0.96":
+  version "1.0.96"
+  resolved "https://registry.yarnpkg.com/@rive-app/webgl/-/webgl-1.0.96.tgz#1e6d5330e9d09b3b89c4247fc00b87e876ffa5ef"
+  integrity sha512-w/va/Xhd4vsE467W9NZEqg8ZD6hbmKW8rZl1A1ld+jQ+KLup0Jvf7YL1BignwRzeKHgtFGlHe6TBs+lXvTBDEg==
+
 "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
@@ -2104,6 +2121,19 @@ rimraf@^3.0.2:
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
+
+rive-js@^0.7.33:
+  version "0.7.33"
+  resolved "https://registry.yarnpkg.com/rive-js/-/rive-js-0.7.33.tgz#da67b19d5c9c2f9147420d88e45c4cbed48657dd"
+  integrity sha512-u/dqr4XYx1TOo5xtSCN+6YvUKYU88ii6xWP82Xz15O4OqF3GM1Pa4WXx4dEOa6QG6IqbM0JcfsAhae7TjVZf6Q==
+
+rive-react@^3.0.36:
+  version "3.0.36"
+  resolved "https://registry.yarnpkg.com/rive-react/-/rive-react-3.0.36.tgz#e1c14b34a74cb8aed0b015a7181d80b386894149"
+  integrity sha512-It3qvFYQgBhLq3LwLsJxfbo/uafVxbuupgEmZRwkVxiES+LO1c721u104cz4Oqn+TqsLMr74YE3oQlWZMduJiw==
+  dependencies:
+    "@rive-app/canvas" "1.0.100"
+    "@rive-app/webgl" "1.0.96"
 
 run-parallel@^1.1.9:
   version "1.2.0"

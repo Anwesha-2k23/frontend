@@ -3,14 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
+import { useRouter } from "next/router";
 
 const host = process.env.NEXT_PUBLIC_HOST
 
 function Navigation() {
     const userData = useContext(AuthContext);
     const [drawerOpen, setDrawerOpen] = useState(false)
+    const router = useRouter();
 
-    console.log(userData.state.user)
+    console.log(router.pathname)
 
     const toggleDrawer = () => {
         if (!drawerOpen) {
@@ -64,15 +66,15 @@ function Navigation() {
                         {/* <li>
                             <Link href="/">Home</Link>
                         </li> */}
-                        <li>
+                        <li style={router.pathname === '/all-multicity' ? {borderBottom: '3px solid white'} : null}>
                             <Link href="/all-multicity">Multicity</Link>
                         </li>
-                        <li>
+                        <li style={router.pathname === '/campusambassador' ? {borderBottom: '3px solid white'} : null}> 
                             <Link href="/campusambassador">
                                 Campus Ambassador
                             </Link>
                         </li>
-                        <li>
+                        <li style={router.pathname === '/events' ? {borderBottom: '3px solid white'} : null}>
                             <Link href="/events">Events</Link>
                         </li>
                         <li>

@@ -157,12 +157,14 @@
 .island {
     position: absolute;
     top: 150px;
+    overflow: hidden;
 }
 
 .clouds {
     position: absolute;
     bottom: 10px;
     left: 20px;
+    overflow: hidden;
     /* z-index: 3; */
 }
 
