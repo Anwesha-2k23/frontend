@@ -22,11 +22,7 @@ function FadeInWhenVisible({ inView, children }) {
         }
     }, [inView])
 
-    return (
-        <motion.div animate={animation}>
-            {children}
-        </motion.div>
-    )
+    return <motion.div animate={animation}>{children}</motion.div>
 }
 
 export default FadeInWhenVisible

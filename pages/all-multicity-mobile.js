@@ -6,7 +6,6 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 const Multicity = () => {
-
     const [height, setHeight] = useState(0)
 
     useEffect(() => {
@@ -65,7 +64,7 @@ const Multicity = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
                 className={styles.otherElements}
-                style={{ top: height>756? '120%' : 925 }}
+                style={{ top: height > 756 ? '120%' : 925 }}
             >
                 <Image
                     alt="drumroll"
@@ -85,7 +84,11 @@ const Multicity = () => {
                 initial={{ opacity: 0, y: -10, scale: 0.1 }}
                 whileInView={{ opacity: 1, y: -1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                style={{ width: '310px', top: height>756? '150%': 1200, position: 'absolute' }}
+                style={{
+                    width: '310px',
+                    top: height > 756 ? '150%' : 1200,
+                    position: 'absolute',
+                }}
             >
                 <Link href="/multicity/bhopal">
                     <Image
@@ -105,7 +108,9 @@ const Multicity = () => {
                 src="/multicity/cloud.png"
                 width={234}
                 height={96}
-                style={{ transform: 'translateY(-75px) translateX(-35px) scale(1.2)' }}
+                style={{
+                    transform: 'translateY(-75px) translateX(-35px) scale(1.2)',
+                }}
             />
             <Image
                 alt="cloud"

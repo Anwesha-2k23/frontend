@@ -14,6 +14,7 @@ Beginner to intermediate levels of knowledge in **HTML**, **CSS** and **Javascri
 4. After the nescessary changes/additions are made, stage and commit them using `git add .` and then `git commit -m '<Commit Message here>'`. Keep commit messages concise and to the point.
 5. Push the commited changes to the `main` branch of your forked repository `git push origin main`
 6. Go to your forked repository on GitHub. Create a pull request from the `🔃Contribute` button provided there. Providing a detailed description as well as screenshots and if possible, video-snippets of the changes made is highly encouraged while creating the pull request.
+7. After writing code, make sure to format the code by running `yarn format` in terminal, which will automatically format everything with prettier.
 
 
 ## 🖥️ Running the Server

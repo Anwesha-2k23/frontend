@@ -59,24 +59,30 @@ export default function Multicity() {
                             Get ready Bhopal, the stage is set and the spotlight
                             is on you! Anwesha is bringing its multicity
                             auditions to your city, and we are excited to see
-                            the amazing talent that you have to offer. <br /> <br /> Whether
-                            you're a singer, dancer, actor, musician, or any
-                            other kind of artist, we want to see what you've
-                            got! Flaunt your talents and compete for a chance to
-                            win Anwesha goodies and free passes to the main
-                            fest. <br /><br /> Register for the multi-city auditions and
+                            the amazing talent that you have to offer. <br />{' '}
+                            <br /> Whether you're a singer, dancer, actor,
+                            musician, or any other kind of artist, we want to
+                            see what you've got! Flaunt your talents and compete
+                            for a chance to win Anwesha goodies and free passes
+                            to the main fest. <br />
+                            <br /> Register for the multi-city auditions and
                             check out the rulebook for more details!
                             <br /> <br />
-                            Venue: Technocrats Institute of Technology and Science
+                            Venue: Technocrats Institute of Technology and
+                            Science
                             <br />
                             Dates: 4th - 5th February, 2023
                         </p>
                     </div>
-                    <button className={styles.btn}><Link
+                    <button className={styles.btn}>
+                        <Link
                             href="./multicityregistration/bhopalreg"
                             style={{ textDecoration: 'none' }}
                             target="_blank"
-                        >Register</Link></button>
+                        >
+                            Register
+                        </Link>
+                    </button>
                     <button className={styles.btn}>
                         <Link
                             href="/multicity/rulebook.pdf"
@@ -95,7 +101,7 @@ export default function Multicity() {
                     images={images}
                 />
             </div> */}
-            <div style={{height: '100px'}}></div>
+            <div style={{ height: '100px' }}></div>
         </>
     )
 }

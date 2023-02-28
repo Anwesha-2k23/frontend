@@ -6,11 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format-page": "prettier --write pages/",
+    "format-component": "prettier --write components/",
+    "format": "prettier --write components/ && prettier --write pages/"
   },
   "dependencies": {
     "@next/font": "^13.0.2",
+    "@rive-app/react-canvas": "^3.0.36",
     "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.2.3",
     "email-validator": "^2.0.4",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
@@ -19,14 +24,19 @@
     "next": "13.0.2",
     "prettier": "^2.8.1",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.0",
     "react-date-countdown-timer": "^1.1.0",
     "react-dom": "18.2.0",
     "react-images-viewer": "^1.7.1",
     "react-intersection-observer": "^9.4.1",
     "react-lottie": "^1.2.3",
     "react-parallax": "^3.5.1",
+    "react-razorpay": "^1.2.0",
     "react-simple-image-viewer": "^1.2.2",
+    "react-tabs": "^6.0.0",
     "react-toastify": "^9.1.1",
-    "react-use-scroll-direction": "^0.1.0"
+    "react-use-scroll-direction": "^0.1.0",
+    "rive-js": "^0.7.33",
+    "rive-react": "^3.0.36"
   }
 }

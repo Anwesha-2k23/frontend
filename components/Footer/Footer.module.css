@@ -10,8 +10,6 @@
     justify-content: space-around;
     overflow-x: hidden;
     font-size: 1.1rem;
-
-   
 }
 
 .mainSection {
@@ -83,7 +81,6 @@
     color: white;
 }
 
-
 .section1 a:hover {
     /* padding: 7px; */
     transform: scale(1.05);
@@ -140,6 +137,10 @@
     justify-content: space-around;
 }
 
+.icon_link img {
+    height: 60px;
+}
+
 .section3maintext {
     font-size: 1.7rem;
     color: white;
@@ -156,14 +157,14 @@
     padding-left: 2vw;
     margin-top: 3px;
 }
-.button_links{
+.button_links {
     display: flex;
     /* align-items: center; */
     overflow: hidden;
     justify-content: center;
     margin-left: 5vh;
 }
-.anwesha_text{
+.anwesha_text {
     display: flex;
     height: 13vh;
     width: auto;
@@ -171,14 +172,14 @@
     margin: 5vh;
     /* margin-top: 4px; */
 }
-.anwesha_text_img{
+.anwesha_text_img {
     padding: 2px;
     /* margin: 3px; */
 }
-.anwesha_text_img:hover{
+.anwesha_text_img:hover {
     transform: scale(1.06);
 }
-.button_links a img{
+.button_links a img {
     /* display: flex; */
     padding: 3 0px;
     /* width: 70px; */
@@ -195,15 +196,12 @@
     justify-content: space-around;
 }
 
-
-
-.googlePlayButton a{
+.googlePlayButton a {
     /* border: 2px solid green; */
     display: block;
     min-width: 65px;
     overflow: hidden;
 }
-
 
 .tac_links {
     display: flex;
@@ -222,7 +220,7 @@
 .link:hover {
     padding: 2px;
     color: black;
-    transition-property: background-color,color;
+    transition-property: background-color, color;
     transition-timing-function: ease-in-out;
     transition-duration: 0.4s;
 }
@@ -232,7 +230,7 @@
 }
 
 @media screen and (max-width: 1444px) {
-    .icon_link{
+    .icon_link {
         display: flex;
         width: 47px;
         height: 47px;
@@ -366,11 +364,9 @@
     .link img {
         height: 100%;
         /* height: 20vw; */
-
     }
     .anwesha_text {
         height: 40vw;
         width: auto;
     }
 }
-

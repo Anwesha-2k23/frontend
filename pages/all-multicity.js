@@ -7,11 +7,11 @@ import { useEffect } from 'react'
 
 const Multicity = () => {
     useEffect(() => {
-        if(window.innerWidth < 1240){
+        if (window.innerWidth < 1240) {
             window.location.href = '/all-multicity-mobile'
         }
     }, [])
-    
+
     return (
         <div className={styles.container}>
             <Head>
