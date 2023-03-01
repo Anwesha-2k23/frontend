@@ -12,8 +12,6 @@ function Navigation() {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const router = useRouter()
 
-    console.log(router.pathname)
-
     const toggleDrawer = () => {
         if (!drawerOpen) {
             document.getElementById('drawer').style.display = 'block'

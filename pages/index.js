@@ -19,7 +19,6 @@ export default function comingsoon() {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault()
-            console.log(document.getElementById('email').value)
             if (validator.validate(document.getElementById('email').value)) {
                 toast.success('You are subscribed to our newsletter', {
                     position: 'top-right',
@@ -36,7 +35,6 @@ export default function comingsoon() {
                     body: new FormData(form),
                 })
                 let b = await a.json()
-                console.log(b)
                 setEmail('')
                 if (b.result != 'success') {
                     toast.error('Failed to subscribe the newsletter', {
@@ -99,7 +97,7 @@ export default function comingsoon() {
                 className={styles.anwesha_bg_img}
             >
                 <div className={styles.container}>
-                    <Image src="/logo_no_bg.svg" width={400} height={400} />
+                    <Image src="/logo_no_bg.svg" width={400} height={400} alt="Anwesha logo"/>
 
                     <div className={styles.text}>
                         <p style={{ marginBottom: 10, paddingRight: 5 }}>
@@ -129,9 +127,9 @@ export default function comingsoon() {
                     styles={{ maxWidth: '640px', margin: '0px' }}
                     src="https://www.youtube.com/embed/sKuWQGbmg6A"
                     title="Reflection of Fond Remembrances"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                 ></iframe>
             </div>
 

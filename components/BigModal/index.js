@@ -209,7 +209,6 @@ const Modal = (props) => {
                                 className={styles.btn}
                                 onClick={() => {
                                     if (props.body.is_online) {
-                                        console.log('online')
                                         router.replace(
                                             props.body.registration_link
                                         )

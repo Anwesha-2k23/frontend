@@ -4,7 +4,6 @@ import { useScrollDirection } from 'react-use-scroll-direction'
 const Image = (props) => {
     const { ref: imgref, inView: imgview } = useInView()
     const { scrollDirection } = useScrollDirection()
-    // console.log(scrollDirection === "DOWN");
     const { image } = props
     return (
         <div
