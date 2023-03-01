@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import React from 'react'
@@ -7,8 +8,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from '../styles/comingsoon.module.css'
 import { motion } from 'framer-motion'
-// import Displayrive from '../components/displayRive'
-import Displayrive from '../components/displayRive'
+const Displayrive = dynamic(() => import('../components/displayRive'), {
+    ssr: false,
+})
 var validator = require('email-validator')
 
 export default function comingsoon() {
@@ -75,10 +77,9 @@ export default function comingsoon() {
     }
 
     return (
-        
         <div className={styles.comingsoon_body}>
             <div style={{ height: '500px', width: 'auto' }}>
-                <Displayrive riveUrl="/rive_emoji_pack.riv" />
+                <Displayrive riveUrl="/Anwesha.riv" />
             </div>
             <ToastContainer
                 position="top-right"
@@ -105,7 +106,12 @@ export default function comingsoon() {
                 className={styles.anwesha_bg_img}
             >
                 <div className={styles.container}>
-                    <Image src="/logo_no_bg.svg" width={400} height={400} />
+                    <Image
+                        src="/logo_no_bg.svg"
+                        width={400}
+                        height={400}
+                        alt="Logo without background"
+                    />
 
                     <div className={styles.text}>
                         <p style={{ marginBottom: 10, paddingRight: 5 }}>
@@ -135,9 +141,9 @@ export default function comingsoon() {
                     styles={{ maxWidth: '640px', margin: '0px' }}
                     src="https://www.youtube.com/embed/sKuWQGbmg6A"
                     title="Reflection of Fond Remembrances"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                 ></iframe>
             </div>
 
@@ -230,7 +236,6 @@ export default function comingsoon() {
                     </form>
                 </div>
             </motion.div>
-            
 
             {/* <script>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
