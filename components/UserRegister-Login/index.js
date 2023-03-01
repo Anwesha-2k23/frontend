@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'http://localhost:8000'
+const host = process.env.NEXT_PUBLIC_HOST
 // const host = 'https://backend.anwesha.live'
 
 const UserRegisterForm = () => {
