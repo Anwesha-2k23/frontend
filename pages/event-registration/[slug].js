@@ -36,14 +36,17 @@ const eventRegistration = () => {
         let body = { event_id: eventID, team_name: teamName }
         let host = process.env.NEXT_PUBLIC_HOST
         try {
-            const response = await fetch(`http://localhost:8000/event/createteam`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(body),
-                credentials: 'include'
-            })
+            const response = await fetch(
+                `http://localhost:8000/event/createteam`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(body),
+                    credentials: 'include',
+                }
+            )
 
             if (response.status === 201) {
                 const data = await response.json()

@@ -7,8 +7,8 @@ import { motion } from 'framer-motion'
 import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'http://localhost:8000'
-// const host = 'https://backend.anwesha.live'
+// const host = 'http://localhost:8000'
+const host = 'https://backend.anwesha.live'
 
 const UserRegisterForm = () => {
     const [phone, setPhone] = React.useState('')
@@ -121,8 +121,16 @@ const UserRegisterForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img className={styles.island} alt="floating-island-iitp" src="/assets/floating-island.svg"/>
-            <img className={styles.clouds} alt="clouds" src="/assets/clouds.svg"/>
+            <img
+                className={styles.island}
+                alt="floating-island-iitp"
+                src="/assets/floating-island.svg"
+            />
+            <img
+                className={styles.clouds}
+                alt="clouds"
+                src="/assets/clouds.svg"
+            />
             {/* <motion.h1
                 className={styles.mainHeading}
                 initial={{ opacity: 0, y: '-100%' }}
@@ -146,8 +154,8 @@ const UserRegisterForm = () => {
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                <h3>REGISTER</h3>
-                <hr/>
+                    <h3>REGISTER</h3>
+                    <hr />
                     <div className={styles.field}>
                         <label htmlFor="full_name">Full Name</label>
                         <br />
@@ -221,7 +229,9 @@ const UserRegisterForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userLogin">Already have an account? Login here.</Link>
+                    <Link href="/userLogin">
+                        Already have an account? Login here.
+                    </Link>
                 </motion.form>
                 {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
         {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}

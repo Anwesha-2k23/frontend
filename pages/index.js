@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import styles from '../styles/comingsoon.module.css'
 import { motion } from 'framer-motion'
+// import Displayrive from '../components/displayRive'
+import Displayrive from '../components/displayRive'
 var validator = require('email-validator')
 
 export default function comingsoon() {
@@ -73,7 +75,11 @@ export default function comingsoon() {
     }
 
     return (
+        
         <div className={styles.comingsoon_body}>
+            <div style={{ height: '500px', width: 'auto' }}>
+                <Displayrive riveUrl="/rive_emoji_pack.riv" />
+            </div>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -224,6 +230,7 @@ export default function comingsoon() {
                     </form>
                 </div>
             </motion.div>
+            
 
             {/* <script>
       var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}

@@ -7,7 +7,7 @@ import { AuthContext } from '../authContext'
 const host = process.env.NEXT_PUBLIC_HOST
 
 function Navigation() {
-    const userData = useContext(AuthContext);
+    const userData = useContext(AuthContext)
     const [drawerOpen, setDrawerOpen] = useState(false)
 
     console.log(userData.state.user)
@@ -29,9 +29,11 @@ function Navigation() {
     }
 
     const handleLogout = () => {
-        fetch(`${host}/user/logout`, 
-        {method: 'POST', redirect: 'follow', credentials: 'include'})
-        .then(() => userData.getUser())
+        fetch(`${host}/user/logout`, {
+            method: 'POST',
+            redirect: 'follow',
+            credentials: 'include',
+        }).then(() => userData.getUser())
     }
 
     //TODO: make the navbar pick the background color of the viewed page
@@ -76,8 +78,38 @@ function Navigation() {
                             <Link href="/events">Events</Link>
                         </li>
                         <li>
-                            {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
-                            <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
+                            {userData.isAuth ? (
+                                <div className={styles.user_container}>
+                                    <Link
+                                        className={styles.user_info}
+                                        href="/profile"
+                                    >
+                                        <div>
+                                            <span className={styles.user_name}>
+                                                {userData.state.user.full_name}
+                                            </span>
+                                            <span className={styles.user_id}>
+                                                {userData.state.user.anwesha_id}
+                                            </span>
+                                        </div>
+                                    </Link>
+                                    <Image
+                                        src="/assets/logout.svg"
+                                        className={styles.logout}
+                                        height={40}
+                                        width={40}
+                                        alt="logout"
+                                        onClick={handleLogout}
+                                    />
+                                </div>
+                            ) : (
+                                <Link
+                                    className={styles.login}
+                                    href="/userLogin"
+                                >
+                                    Login
+                                </Link>
+                            )}
                         </li>
                     </ul>
                 </div>
@@ -98,8 +130,35 @@ function Navigation() {
                         <Link href="/events">Events</Link>
                     </li>
                     <li>
-                        {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
-                        <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
+                        {userData.isAuth ? (
+                            <div className={styles.user_container}>
+                                <Link
+                                    className={styles.user_info}
+                                    href="/profile"
+                                >
+                                    <div>
+                                        <span className={styles.user_name}>
+                                            {userData.state.user.full_name}
+                                        </span>
+                                        <span className={styles.user_id}>
+                                            {userData.state.user.anwesha_id}
+                                        </span>
+                                    </div>
+                                </Link>
+                                <Image
+                                    src="/assets/logout.svg"
+                                    className={styles.logout}
+                                    height={40}
+                                    width={40}
+                                    alt="logout"
+                                    onClick={handleLogout}
+                                />
+                            </div>
+                        ) : (
+                            <Link className={styles.login} href="/userLogin">
+                                Login
+                            </Link>
+                        )}
                     </li>
                 </ul>
             </div>

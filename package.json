@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/font": "^13.0.2",
+    "@rive-app/react-canvas": "^3.0.36",
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.2.3",
     "email-validator": "^2.0.4",
@@ -34,6 +35,7 @@
     "react-simple-image-viewer": "^1.2.2",
     "react-tabs": "^6.0.0",
     "react-toastify": "^9.1.1",
-    "react-use-scroll-direction": "^0.1.0"
+    "react-use-scroll-direction": "^0.1.0",
+    "rive-js": "^0.7.33"
   }
 }

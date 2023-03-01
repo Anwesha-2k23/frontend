@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
@@ -11,7 +11,7 @@ import Router from 'next/router'
 const host = process.env.NEXT_PUBLIC_HOST
 
 const UserLoginForm = () => {
-    const context = useContext(AuthContext);
+    const context = useContext(AuthContext)
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [success, setSuccess] = React.useState(false)
@@ -89,7 +89,7 @@ const UserLoginForm = () => {
     }
 
     return (
-        <div style={{marginTop: '120px'}}>
+        <div style={{ marginTop: '120px' }}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -102,8 +102,16 @@ const UserLoginForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img className={styles.island} alt="floating-island-iitp" src="/assets/floating-island.svg"/>
-            <img className={styles.clouds} alt="clouds" src="/assets/clouds.svg"/>
+            <img
+                className={styles.island}
+                alt="floating-island-iitp"
+                src="/assets/floating-island.svg"
+            />
+            <img
+                className={styles.clouds}
+                alt="clouds"
+                src="/assets/clouds.svg"
+            />
             {/* <motion.h1
                 className={styles.mainHeading}
                 initial={{ opacity: 0, y: '-100%' }}
@@ -158,7 +166,9 @@ const UserLoginForm = () => {
                         <br />
                     </div>
 
-                    <Link href="#" className={styles.forgotpass}>Forgot password?</Link>
+                    <Link href="#" className={styles.forgotpass}>
+                        Forgot password?
+                    </Link>
                     {/* </div> */}
                     {/* <div className={styles.buttonWrapper}>
             <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
@@ -170,7 +180,9 @@ const UserLoginForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userRegister">Don't have an account? Register here.</Link>
+                    <Link href="/userRegister">
+                        Don't have an account? Register here.
+                    </Link>
                 </motion.form>
                 {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
         {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}
