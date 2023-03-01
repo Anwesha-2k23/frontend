@@ -1,14 +1,14 @@
+// User registration form
+
 import React from 'react'
 import Link from 'next/link'
-// import Modal from '../../Modal';
 
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
-import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'http://localhost:8000'
-// const host = 'https://backend.anwesha.live'
+
+const host = process.env.NEXT_PUBLIC_HOST
 
 const UserRegisterForm = () => {
     const [phone, setPhone] = React.useState('')
@@ -16,13 +16,24 @@ const UserRegisterForm = () => {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [cnfPassword, setCnfPassword] = React.useState('')
-    const [success, setSuccess] = React.useState(false)
-    const [failure, setFailure] = React.useState(false)
-    const [errorMsg, setErrorMsg] = React.useState('')
+    const [passwordShown, setPasswordShown] = React.useState(false)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        if (password !== cnfPassword) {
+        // running user input validation
+        if (name.length < 5) {
+            toast.warning('Username is too small', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+            return
+        } else if (password !== cnfPassword) {
             toast.warning('Passwords do not match', {
                 position: 'top-right',
                 autoClose: 3000,
@@ -33,10 +44,39 @@ const UserRegisterForm = () => {
                 progress: undefined,
                 theme: 'light',
             })
-            setErrorMsg('Passwords do not match')
-            setFailure(true)
+            return
+        } else if (
+            email
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                ) == null
+        ) {
+            toast.warning('Provide valid email address', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+            return
+        } else if (phone.match(/^[0-9]{10}$/) == null) {
+            toast.warning('Provide valid phone number', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
             return
         }
+
         let body = {
             phone_number: phone,
             full_name: name,
@@ -52,10 +92,7 @@ const UserRegisterForm = () => {
                 body: JSON.stringify(body),
             })
             //check if request is successful
-            if (response.status === 201) {
-                setSuccess(true)
-                setFailure(false)
-                setErrorMsg('')
+            if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
                 console.log(data)
                 toast.success('You are successfully registered', {
@@ -70,10 +107,7 @@ const UserRegisterForm = () => {
                 })
             } else if (response.status === 409) {
                 const data = await response.json()
-                setErrorMsg(data.message)
-                setFailure(true)
-                setSuccess(false)
-                toast.error('Unable to register', {
+                toast.error(data.message || 'Unable to register', {
                     position: 'top-right',
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -85,12 +119,6 @@ const UserRegisterForm = () => {
                 })
             } else {
                 const data = await response.json()
-                // console.log(data)
-                setErrorMsg(
-                    'Internal Server Error. Check your browser console for more details'
-                )
-                setFailure(true)
-                setSuccess(false)
                 toast.error(data.message, {
                     position: 'top-right',
                     autoClose: 3000,
@@ -104,11 +132,27 @@ const UserRegisterForm = () => {
             }
         } catch (err) {
             console.log(err)
+            toast.error('Unable to register. check your internet connection', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
         }
     }
 
     return (
-        <div style={{position: 'relative', marginTop: '120px', overflow: 'hidden'}}>
+        <div
+            style={{
+                position: 'relative',
+                marginTop: '120px',
+                overflow: 'hidden',
+            }}
+        >
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -121,33 +165,25 @@ const UserRegisterForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img className={styles.island} alt="floating-island-iitp" src="/assets/floating-island.svg"/>
-            <img className={styles.clouds} alt="clouds" src="/assets/clouds.svg"/>
-            {/* <motion.h1
-                className={styles.mainHeading}
-                initial={{ opacity: 0, y: '-100%' }}
-                whileInView={{ opacity: 1, y: '0%' }}
-                transition={{ duration: 1 }}
-            >
-                Register for Anwesha-2k23
-            </motion.h1> */}
+            <img
+                className={styles.island}
+                alt="floating-island-iitp"
+                src="/assets/floating-island.svg"
+            />
+            <img
+                className={styles.clouds}
+                alt="clouds"
+                src="/assets/clouds.svg"
+            />
             <div className={styles.form}>
-                {/* <motion.div
-                    className={styles.lottie_container}
-                    initial={{ opacity: 0, x: '-100%' }}
-                    whileInView={{ opacity: 1, x: '0%' }}
-                    transition={{ duration: 1 }}
-                >
-                    <GreetingLottie animationPath="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" />
-                </motion.div> */}
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                <h3>REGISTER</h3>
-                <hr/>
+                    <h3>REGISTER</h3>
+                    <hr />
                     <div className={styles.field}>
                         <label htmlFor="full_name">Full Name</label>
                         <br />
@@ -190,7 +226,7 @@ const UserRegisterForm = () => {
                             <label htmlFor="password">Password</label>
                             <br />
                             <input
-                                type="password"
+                                type={passwordShown ? 'text' : 'password'}
                                 name="Password"
                                 // placeholder="Password"
                                 onChange={(e) => setPassword(e.target.value)}
@@ -202,7 +238,7 @@ const UserRegisterForm = () => {
                             <label htmlFor="password">Confirm Password</label>
                             <br />
                             <input
-                                type="password"
+                                type={passwordShown ? 'text' : 'password'}
                                 name="Password"
                                 // placeholder="Confirm Password"
                                 onChange={(e) => setCnfPassword(e.target.value)}
@@ -211,9 +247,25 @@ const UserRegisterForm = () => {
                             <br />
                         </div>
                     </div>
-                    {/* <div className={styles.buttonWrapper}>
-            <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
-          </div> */}
+                    <div
+                        className={styles.field}
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <input
+                            type="checkbox"
+                            style={{ width: '20px', height: '20px' }}
+                            onClick={() => {
+                                setPasswordShown((prev) => !prev)
+                            }}
+                        />{' '}
+                        Show Password
+                    </div>
+
                     <motion.div
                         className={styles.buttonWrapper}
                         whileHover={{ scale: 1.1 }}
@@ -221,10 +273,10 @@ const UserRegisterForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userLogin">Already have an account? Login here.</Link>
+                    <Link href="/userLogin">
+                        Already have an account? Login here.
+                    </Link>
                 </motion.form>
-                {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
-        {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}
             </div>
         </div>
     )

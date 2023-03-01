@@ -15,15 +15,12 @@ function Leaderboard() {
     const [searchInput, setSearchInput] = useState('')
     const [data, setData] = useState([])
     useEffect(() => {
-        const response = fetch(
-            `${host}/campasambassador/leaderboarddata`,
-            {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }
-        )
+        const response = fetch(`${host}/campasambassador/leaderboarddata`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then((response) => response.json())
             .then((data) => {
                 setData(data.leaderBoardData)

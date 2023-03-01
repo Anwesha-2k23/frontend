@@ -44,14 +44,14 @@ function MyApp({ Component, pageProps }) {
         `}
             </Script>
             <AuthProvider>
-            {showHeader && <Navbar />}
-            {/* {showHeader && <div style={{height: '30%'}}/>} */}
-            <div className={styles.main_component}>
-            <PrivateRoute>
-                <Component {...pageProps} />
-                </PrivateRoute>
-            </div>
-            <Footer />
+                {showHeader && <Navbar />}
+                {/* {showHeader && <div style={{height: '30%'}}/>} */}
+                <div className={styles.main_component}>
+                    <PrivateRoute>
+                        <Component {...pageProps} />
+                    </PrivateRoute>
+                </div>
+                <Footer />
             </AuthProvider>
         </main>
     )
