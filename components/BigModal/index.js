@@ -9,7 +9,7 @@ import Image from 'next/image'
 const Modal = (props) => {
     const router = useRouter()
     const userData = useContext(AuthContext)
-   
+
     return (
         <React.StrictMode>
             <div
@@ -76,8 +76,22 @@ const Modal = (props) => {
                                             })}
                                         </span>
                                     </div>
-                                    {props.body.end_time && new Date(props.body.end_time).toDateString() != new Date(props.body.start_time).toDateString() ? <div>-</div> : null}
-                                    {props.body.end_time && new Date(props.body.end_time).toDateString() != new Date(props.body.start_time).toDateString()  ? (
+                                    {props.body.end_time &&
+                                    new Date(
+                                        props.body.end_time
+                                    ).toDateString() !=
+                                        new Date(
+                                            props.body.start_time
+                                        ).toDateString() ? (
+                                        <div>-</div>
+                                    ) : null}
+                                    {props.body.end_time &&
+                                    new Date(
+                                        props.body.end_time
+                                    ).toDateString() !=
+                                        new Date(
+                                            props.body.start_time
+                                        ).toDateString() ? (
                                         <div className={styles.date}>
                                             <span className={styles.day}>
                                                 {new Date(
@@ -146,38 +160,40 @@ const Modal = (props) => {
                                 <img src="/assets/contact.svg" />
                                 {Array.isArray(props.body.organizer) ? (
                                     <div className={styles.contact}>
-                                        {props.body.organizer.map((e, index) => {
-                                            return (
-                                                <a
-                                                    key={index}
-                                                    style={
-                                                        e[1]
-                                                            ? null
-                                                            : {
-                                                                  pointerEvents:
-                                                                      'none',
-                                                              }
-                                                    }
-                                                    target="_blank"
-                                                    href={
-                                                        e[1]
-                                                            ? `tel:${e[1]}`
-                                                            : '#'
-                                                    }
-                                                >
-                                                    <span>{e[0]}</span>
-                                                    {e[1] ? (
-                                                        <span>
-                                                            <img
-                                                                alt="phone"
-                                                                src="/footer/phone.svg"
-                                                            />
-                                                            {e[1]}
-                                                        </span>
-                                                    ) : null}
-                                                </a>
-                                            )
-                                        })}
+                                        {props.body.organizer.map(
+                                            (e, index) => {
+                                                return (
+                                                    <a
+                                                        key={index}
+                                                        style={
+                                                            e[1]
+                                                                ? null
+                                                                : {
+                                                                      pointerEvents:
+                                                                          'none',
+                                                                  }
+                                                        }
+                                                        target="_blank"
+                                                        href={
+                                                            e[1]
+                                                                ? `tel:${e[1]}`
+                                                                : '#'
+                                                        }
+                                                    >
+                                                        <span>{e[0]}</span>
+                                                        {e[1] ? (
+                                                            <span>
+                                                                <img
+                                                                    alt="phone"
+                                                                    src="/footer/phone.svg"
+                                                                />
+                                                                {e[1]}
+                                                            </span>
+                                                        ) : null}
+                                                    </a>
+                                                )
+                                            }
+                                        )}
                                     </div>
                                 ) : (
                                     <div className={styles.contact}>

@@ -160,7 +160,18 @@ const UserLoginForm = () => {
                             required
                         />
                         <br />
-                        <div
+
+                        <br />
+                    </div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <span
                             style={{
                                 display: 'flex',
                                 flexDirection: 'row',
@@ -170,19 +181,23 @@ const UserLoginForm = () => {
                         >
                             <input
                                 type="checkbox"
-                                style={{ width: '20px' }}
+                                id="showPassword"
+                                style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    margin: '5px',
+                                }}
                                 onChange={() => {
                                     setPasswordShown((prev) => !prev)
                                 }}
                             />
                             Show Password
-                            <Link href="#" className={styles.forgotpass}>
-                                Forgot password?
-                            </Link>
-                        </div>
+                        </span>
                         <br />
+                        <Link href="#" className={styles.forgotpass}>
+                            Forgot password?
+                        </Link>
                     </div>
-
                     <motion.div
                         className={styles.buttonWrapper}
                         whileHover={{ scale: 1.1 }}

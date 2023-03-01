@@ -248,7 +248,6 @@ const UserRegisterForm = () => {
                         </div>
                     </div>
                     <div
-                        className={styles.field}
                         style={{
                             display: 'flex',
                             flexDirection: 'row',
@@ -258,7 +257,11 @@ const UserRegisterForm = () => {
                     >
                         <input
                             type="checkbox"
-                            style={{ width: '20px', height: '20px' }}
+                            style={{
+                                width: '20px',
+                                height: '20px',
+                                margin: '5px',
+                            }}
                             onClick={() => {
                                 setPasswordShown((prev) => !prev)
                             }}
