@@ -15,7 +15,7 @@ const Events = () => {
 
         async function callAPI() {
             try {
-                const res = await fetch(`https://${host}/event/allevents`, {
+                const res = await fetch(`${host}/event/allevents`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const Events = () => {
             }
         }
         callAPI()
-    })
+    }, [])
     return (
         <div className={styles.mainContainer}>
             <Head>

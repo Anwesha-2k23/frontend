@@ -12,15 +12,47 @@
     align-content: center;
     align-items: center;
     padding-left: 20px;
+    height: fit-content;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
 .mainForm {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    margin-left: auto;
     justify-content: center;
     margin-right: 2vw;
+    padding: 30px 10px 30px 20px;
+    background: #FFFFFF;
+    border: 4px solid #6833FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
     /* height: 70vh; */
+}
+
+.mainForm h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.mainForm hr {
+    color: #6833FF;
+    width: 220px;
+    height: 3px;
+    border: 4px solid #6833FF;
+    margin-bottom: 20px;
+}
+
+.mainForm label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
 }
 
 .mainHeading {
@@ -44,34 +76,37 @@
 }
 
 .field {
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 .field input {
     width: 40vw;
     height: 45px;
     margin: 2px;
-    border-radius: 5px;
     padding: 2px 15px;
     font-size: 17px;
-    border-color: #2b0072;
+    background: #EEE9FF;
+    border: 1px solid #6833FF;
+    border-radius: 5px;
+    /* border-color: #2b0072;
     border-bottom: 2px solid #2b0072;
     border-top: 0;
     border-left: 0;
-    border-right: 0;
+    border-right: 0; */
 }
 
 .field input:focus {
     outline: none;
 }
 
-.field label {
+/* .field label {
     font-size: 20px;
     color: #2b0072;
-}
+} */
 
 .buttonWrapper {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 60vw;
     max-width: 700px;
     display: flex;
@@ -81,18 +116,28 @@
 .buttonWrapper button {
     width: 200px;
     height: 45px;
-    font-size: 25px;
     margin-top: 20px;
-    border-radius: 7px;
     cursor: pointer;
-    background-color: #2b0072;
-    color: aliceblue;
+    color: #FFFFFF;
+    background: #6833FF;
+    border: 1px solid #4F4F4F;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
 }
 
 /* .buttonWrapper button:hover {
     background-color: #424040;
     color: #fff;
 } */
+
+.forgotpass {
+    margin-left: auto;
+    margin-right: 20px;
+}
 
 .lottie {
     width: 50%;
@@ -109,19 +154,33 @@
     height: 80vh;
 }
 
+.island {
+    position: absolute;
+    top: 150px;
+    overflow: hidden;
+}
+
+.clouds {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    overflow: hidden;
+    /* z-index: 3; */
+}
+
 @media only screen and (max-width: 860px) {
-    .form {
+    /* .form {
         flex-direction: column;
         align-items: center;
         padding-inline: 20px;
-    }
+    } */
 
-    .mainForm {
+    /* .mainForm {
         align-items: center;
         height: 100vh;
-    }
+    } */
 
-    .mainHeading {
+    /* .mainHeading {
         font-size: 10vw;
     }
 
@@ -135,14 +194,41 @@
 
     .field input {
         width: 80vw;
-    }
+    } */
 
-    .lottie {
+    /* .lottie {
         width: 100%;
     }
 
     .lottie_container {
         width: 100vw;
         height: 50vh;
+    } */
+}
+
+@media only screen and (max-width: 920px) {
+    .mainForm {
+        margin-top: -60px;
+        margin-right: auto;
+        width: 95%;
+        padding: 2px;
+    }
+    .field {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+    .field input {
+        min-width: 210px;
+        font-size: 13px;
+    }
+    .field label {
+        font-size: 14px;
+    }
+    .form {
+        padding-bottom: 210px;
+    }
+    .form_row {
+        flex-direction: column;
     }
 }

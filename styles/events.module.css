@@ -1,11 +1,12 @@
 .mainContainer{
+    width: 100%;
     margin: 0;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-image: url('/events/bg.png');
-	background-size: contain;
+	background-size: cover;
 	/* background-position-x: center; */
 	/* background-position-y: center; */
     background-repeat: repeat-y;

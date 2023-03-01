@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 // import Modal from '../../Modal';
 
 import styles from './style.module.css'
@@ -7,7 +7,8 @@ import { motion } from 'framer-motion'
 import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'localhost:8000'
+const host = 'http://localhost:8000'
+// const host = 'https://backend.anwesha.live'
 
 const UserRegisterForm = () => {
     const [phone, setPhone] = React.useState('')
@@ -43,7 +44,7 @@ const UserRegisterForm = () => {
             password: password,
         }
         try {
-            const response = await fetch(`http://${host}/user/register`, {
+            const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -107,7 +108,7 @@ const UserRegisterForm = () => {
     }
 
     return (
-        <div>
+        <div style={{position: 'relative', marginTop: '120px', overflow: 'hidden'}}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -120,39 +121,42 @@ const UserRegisterForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <motion.h1
+            <img className={styles.island} alt="floating-island-iitp" src="/assets/floating-island.svg"/>
+            <img className={styles.clouds} alt="clouds" src="/assets/clouds.svg"/>
+            {/* <motion.h1
                 className={styles.mainHeading}
                 initial={{ opacity: 0, y: '-100%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
                 transition={{ duration: 1 }}
             >
                 Register for Anwesha-2k23
-            </motion.h1>
+            </motion.h1> */}
             <div className={styles.form}>
-                <motion.div
+                {/* <motion.div
                     className={styles.lottie_container}
                     initial={{ opacity: 0, x: '-100%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
                     <GreetingLottie animationPath="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json" />
-                </motion.div>
+                </motion.div> */}
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
+                <h3>REGISTER</h3>
+                <hr/>
                     <div className={styles.field}>
-                        <label htmlFor="Phone_number">Phone Number</label>
+                        <label htmlFor="full_name">Full Name</label>
                         <br />
                         <input
                             type="text"
-                            name="Phone_Number"
-                            placeholder="Eg: 9835486875"
+                            name="Full_Name"
+                            placeholder="Eg: Vineet Kumar Singh"
+                            onChange={(e) => setName(e.target.value)}
                             required
-                            maxLength="10"
-                            onChange={(e) => setPhone(e.target.value)}
                         />
                         <br />
                     </div>
@@ -169,14 +173,15 @@ const UserRegisterForm = () => {
                         <br />
                     </div>
                     <div className={styles.field}>
-                        <label htmlFor="full_name">Full Name</label>
+                        <label htmlFor="Phone_number">Phone Number</label>
                         <br />
                         <input
                             type="text"
-                            name="Full_Name"
-                            placeholder="Eg: Vineet Kumar Singh"
-                            onChange={(e) => setName(e.target.value)}
+                            name="Phone_Number"
+                            placeholder="Eg: 9835486875"
                             required
+                            maxLength="10"
+                            onChange={(e) => setPhone(e.target.value)}
                         />
                         <br />
                     </div>
@@ -187,7 +192,7 @@ const UserRegisterForm = () => {
                             <input
                                 type="password"
                                 name="Password"
-                                placeholder="Password"
+                                // placeholder="Password"
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
                             />
@@ -199,7 +204,7 @@ const UserRegisterForm = () => {
                             <input
                                 type="password"
                                 name="Password"
-                                placeholder="Confirm Password"
+                                // placeholder="Confirm Password"
                                 onChange={(e) => setCnfPassword(e.target.value)}
                                 required
                             />
@@ -214,8 +219,9 @@ const UserRegisterForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
+                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
+                    <Link href="/userLogin">Already have an account? Login here.</Link>
                 </motion.form>
                 {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
         {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}

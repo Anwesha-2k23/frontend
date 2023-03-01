@@ -9,14 +9,14 @@ import LeaderboardItem from '../components/Leaderboard/LeaderboardItem'
 import Items from '../components/Leaderboard/Items'
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-const host = 'backend.anwesha.live'
+const host = process.env.NEXT_PUBLIC_HOST
 
 function Leaderboard() {
     const [searchInput, setSearchInput] = useState('')
     const [data, setData] = useState([])
     useEffect(() => {
         const response = fetch(
-            `https://${host}/campasambassador/leaderboarddata`,
+            `${host}/campasambassador/leaderboarddata`,
             {
                 method: 'GET',
                 headers: {

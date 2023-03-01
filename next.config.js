@@ -10,6 +10,8 @@ const nextConfig = {
             'user-images.githubusercontent.com',
             'avatars.githubusercontent.com',
             'www.internationalmusicfestival.com',
+            'drive.google.com',
+            'i.ibb.co'
         ],
     },
 }

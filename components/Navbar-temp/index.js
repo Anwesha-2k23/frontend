@@ -1,10 +1,18 @@
 import styles from './styles.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../authContext'
+import { useRouter } from "next/router";
+
+const host = process.env.NEXT_PUBLIC_HOST
 
 function Navigation() {
+    const userData = useContext(AuthContext);
     const [drawerOpen, setDrawerOpen] = useState(false)
+    const router = useRouter();
+
+    console.log(router.pathname)
 
     const toggleDrawer = () => {
         if (!drawerOpen) {
@@ -20,6 +28,12 @@ function Navigation() {
             }, 300)
             setDrawerOpen(false)
         }
+    }
+
+    const handleLogout = () => {
+        fetch(`${host}/user/logout`, 
+        {method: 'POST', redirect: 'follow', credentials: 'include'})
+        .then(() => userData.getUser())
     }
 
     //TODO: make the navbar pick the background color of the viewed page
@@ -49,19 +63,23 @@ function Navigation() {
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>
-                        <li>
+                        {/* <li>
                             <Link href="/">Home</Link>
-                        </li>
-                        <li>
+                        </li> */}
+                        <li style={router.pathname === '/all-multicity' ? {borderBottom: '3px solid white'} : null}>
                             <Link href="/all-multicity">Multicity</Link>
                         </li>
-                        <li>
+                        <li style={router.pathname === '/campusambassador' ? {borderBottom: '3px solid white'} : null}> 
                             <Link href="/campusambassador">
                                 Campus Ambassador
                             </Link>
                         </li>
-                        <li>
+                        <li style={router.pathname === '/events' ? {borderBottom: '3px solid white'} : null}>
                             <Link href="/events">Events</Link>
+                        </li>
+                        <li>
+                            {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
+                            <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
                         </li>
                     </ul>
                 </div>
@@ -69,9 +87,9 @@ function Navigation() {
 
             <div id="drawer" className={styles.nav_drawer}>
                 <ul>
-                    <li>
+                    {/* <li>
                         <Link href="/">Home</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link href="/all-multicity">Multicity</Link>
                     </li>
@@ -80,6 +98,10 @@ function Navigation() {
                     </li>
                     <li>
                         <Link href="/events">Events</Link>
+                    </li>
+                    <li>
+                        {userData.isAuth ? <div className={styles.user_container}><Link className={styles.user_info} href='/profile'><div><span className={styles.user_name}>{userData.state.user.full_name}</span><span className={styles.user_id}>{userData.state.user.anwesha_id}</span></div></Link>
+                        <Image src='/assets/logout.svg' className={styles.logout} height={40} width={40} alt='logout' onClick={handleLogout}/></div> : <Link className={styles.login} href="/userLogin">Login</Link>}
                     </li>
                 </ul>
             </div>

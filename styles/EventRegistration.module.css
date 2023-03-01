@@ -103,6 +103,115 @@
     color: aliceblue;
 }
 
+.members {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.member_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+}
+
+.member_input span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    background-color: #6833FF;
+    color: #FFFFFF;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.member_input div {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    background-color: #6833FF;
+    color: #FFFFFF;
+    padding: 2px 5px 2px 5px;
+    border: 4px 4px 4px 0px solid #6833FF;
+    box-shadow: 0px 4px 4px #6833FF;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.member_input input {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    background: #FFFFFF;
+    border: 4px 4px 4px 0px solid #6833FF;
+    box-shadow: 0px 4px 4px #6833FF;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.member_input img {
+    height: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.member_input img:hover {
+    transform: scale(1.05);
+}
+
+.add_member_btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 7px 2px 7px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #6833FF;
+    border: 1px solid #4F4F4F;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 36px;
+}
+
+.add_member_btn img {
+    height: 30px;
+    margin-right: 5px;
+}
+
+.register_btn {
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #6833FF;
+    border: 1px solid #4F4F4F;
+    border-radius: 5px;
+    margin: 10px auto 20px auto;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 36px;
+}
+
 @media only screen and (max-width: 860px) {
     .form {
         flex-direction: column;
@@ -129,6 +238,13 @@
     }
 
     .field input {
+        width: 80vw;
+    }
+
+    .members {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
         width: 80vw;
     }
 

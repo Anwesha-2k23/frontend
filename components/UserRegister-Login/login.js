@@ -1,13 +1,17 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
+import Link from 'next/link'
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
 import GreetingLottie from '../displaylottie'
 import { ToastContainer, toast } from 'react-toastify'
+import { AuthContext } from '../authContext'
 import 'react-toastify/dist/ReactToastify.css'
-const host = 'backend.anwesha.live'
+import Router from 'next/router'
+// const host = 'https://backend.anwesha.live'
+const host = process.env.NEXT_PUBLIC_HOST
 
 const UserLoginForm = () => {
+    const context = useContext(AuthContext);
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [success, setSuccess] = React.useState(false)
@@ -18,12 +22,13 @@ const UserLoginForm = () => {
         event.preventDefault()
         let body = { username: email, password: password }
         try {
-            const response = await fetch(`https://${host}/user/login`, {
+            const response = await fetch(`${host}/user/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(body),
+                credentials: 'include',
             })
             console.log(response)
 
@@ -43,6 +48,7 @@ const UserLoginForm = () => {
                     progress: undefined,
                     theme: 'light',
                 })
+                context.getUser()
             } else if (response.status === 409) {
                 const data = await response.json()
                 setErrorMsg(data.message)
@@ -83,7 +89,7 @@ const UserLoginForm = () => {
     }
 
     return (
-        <div>
+        <div style={{position: 'relative', marginTop: '120px', overflow: 'hidden'}}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -96,29 +102,34 @@ const UserLoginForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <motion.h1
+            <img className={styles.island} alt="floating-island-iitp" src="/assets/floating-island.svg"/>
+            <img className={styles.clouds} alt="clouds" src="/assets/clouds.svg"/>
+            {/* <motion.h1
                 className={styles.mainHeading}
                 initial={{ opacity: 0, y: '-100%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
                 transition={{ duration: 1 }}
             >
                 Login for Anwesha 2K23
-            </motion.h1>
+            </motion.h1> */}
             <div className={styles.form}>
-                <motion.div
+                {/* <motion.div
                     className={styles.lottie_container}
                     initial={{ opacity: 0, x: '-100%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
                     <GreetingLottie animationPath="https://assets4.lottiefiles.com/packages/lf20_dn6rwtwl.json" />
-                </motion.div>
+
+                </motion.div> */}
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
+                    <h3>LOGIN</h3>
+                    <hr />
                     {/* <div className={styles.form_row}> */}
                     <div className={styles.field}>
                         <label htmlFor="email_id">Email ID</label>
@@ -146,6 +157,8 @@ const UserLoginForm = () => {
                         />
                         <br />
                     </div>
+
+                    <Link href="#" className={styles.forgotpass}>Forgot password?</Link>
                     {/* </div> */}
                     {/* <div className={styles.buttonWrapper}>
             <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
@@ -155,8 +168,9 @@ const UserLoginForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
+                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
+                    <Link href="/userRegister">Don't have an account? Register here.</Link>
                 </motion.form>
                 {/* {success && <Modal title="Success" body="You have successfully registered for Campus Ambassador" closeHandler={setSuccess} />}
         {failure && <Modal title="Error" body={errorMsg} closeHandler={setFailure} />} */}
