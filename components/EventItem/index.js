@@ -34,6 +34,7 @@ const index = ({ event }) => {
                             zIndex: 2,
                             height: '100px',
                         }}
+                        alt="Coming Soon"
                     />
                 )}
                 <div className={styles.imageWrap}>
@@ -48,7 +49,7 @@ const index = ({ event }) => {
                             width={300}
                             height={300}
                             style={{ borderRadius: 15 }}
-                            objectFit={'contain'}
+                            objectfit={'contain'}
                         />
                     </div>
                     <p className={styles.img__description}>
@@ -57,6 +58,7 @@ const index = ({ event }) => {
                                 src="/events/Vector.png"
                                 width={70}
                                 height={70}
+                                alt="Fest Image overlay"
                             />
                         </span>{' '}
                     </p>

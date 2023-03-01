@@ -9,9 +9,7 @@ import Image from 'next/image'
 const Modal = (props) => {
     const router = useRouter()
     const userData = useContext(AuthContext)
-    useEffect(() => {
-        console.log(props.body)
-    }, [])
+   
     return (
         <React.StrictMode>
             <div
@@ -78,8 +76,8 @@ const Modal = (props) => {
                                             })}
                                         </span>
                                     </div>
-                                    {props.body.end_time ? <div>-</div> : null}
-                                    {props.body.end_time ? (
+                                    {props.body.end_time && new Date(props.body.end_time).toDateString() != new Date(props.body.start_time).toDateString() ? <div>-</div> : null}
+                                    {props.body.end_time && new Date(props.body.end_time).toDateString() != new Date(props.body.start_time).toDateString()  ? (
                                         <div className={styles.date}>
                                             <span className={styles.day}>
                                                 {new Date(
@@ -148,9 +146,10 @@ const Modal = (props) => {
                                 <img src="/assets/contact.svg" />
                                 {Array.isArray(props.body.organizer) ? (
                                     <div className={styles.contact}>
-                                        {props.body.organizer.map((e) => {
+                                        {props.body.organizer.map((e, index) => {
                                             return (
                                                 <a
+                                                    key={index}
                                                     style={
                                                         e[1]
                                                             ? null
