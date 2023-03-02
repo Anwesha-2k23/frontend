@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.middle_container}>
                 <img className={styles.frame_img} src="/assets/frame.svg" />
-                <Link href="https://www.privacypolicygenerator.info/live.php?token=CTWW30ktwwolZoEjXYlIGA3YueyobFYA" className={styles.privacy_text}>Privacy Poicy</Link>
+                <Link href="/privacy" className={styles.privacy_text}>Privacy Poicy</Link>
                 <Link href="/terms" className={styles.terms_text}>Terms and Conditions</Link>
 
                 </div>
