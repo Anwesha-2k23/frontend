@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -51,7 +53,17 @@ const AuthProvider = ({ children }) => {
                 } else {
                     setUser(result)
                 }
-                console.log(result)
+                // console.log(result)
+                toast.error(result.message, {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                })
             })
             .catch((error) => console.log('error', error))
     }
@@ -59,6 +71,19 @@ const AuthProvider = ({ children }) => {
         getUser()
     }, [])
     return (
+        <>
+        <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         <Provider
             value={{
                 state: { user: user },
@@ -69,6 +94,7 @@ const AuthProvider = ({ children }) => {
         >
             {children}
         </Provider>
+        </>
     )
 }
 

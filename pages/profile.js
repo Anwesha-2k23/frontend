@@ -48,7 +48,7 @@ function profile() {
                     >
                         <Tab className={styles.tab}>DETAILS</Tab>
                         <Tab className={styles.tab}>MY EVENTS</Tab>
-                        {/* <Tab className={styles.tab}>MY MERCHANDISE</Tab> */}
+                        <Tab className={styles.tab}>MY MERCHANDISE</Tab>
                     </TabList>
 
                     <TabPanel className={styles.tabPanel}>
