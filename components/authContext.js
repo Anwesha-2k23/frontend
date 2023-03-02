@@ -32,7 +32,7 @@ const PrivateRoute = ({ children }) => {
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
-
+    const router = useRouter()
     function getUser() {
         fetch(`${host}/user/editprofile`, {
             method: 'GET',
@@ -50,20 +50,22 @@ const AuthProvider = ({ children }) => {
                         'Your token is expired please login again'
                 ) {
                     setUser(null)
+                    if(['/profile', '/event-registration'].includes(router.pathname)){
+                    toast.error(result.message, {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    })
+                }
                 } else {
                     setUser(result)
                 }
                 // console.log(result)
-                toast.error(result.message, {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
             })
             .catch((error) => console.log('error', error))
     }
