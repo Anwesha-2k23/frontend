@@ -17,5 +17,10 @@ export default function Displayrive() {
         'Hover on N'
     )
 
-    return <RiveComponent onClick={() => onHoverInput.fire()} />
+    return <RiveComponent onClick={() => onHoverInput.fire()} style={{
+      position: 'absolute',
+      width: '100%',
+      height: '25%',
+      minWidth: '300px', 
+    }} />
 }

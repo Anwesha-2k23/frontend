@@ -7,7 +7,6 @@ const index = () => {
   return (
     <div className={styles.parentcontainer}>
         <DisplayRiveAnwesha/>
-        <HomeBackgroundAnimation />
     </div>
   )
 }
