@@ -52,9 +52,9 @@
 @media screen and (max-width: 950px) {
     .modalContent {
         padding: 0;
-        border-radius: 0;
-        border-top-right-radius: 15px;
-        border-top-left-radius: 15px;
+        border-radius: 15px;
+        /* border-top-right-radius: 15px;
+        border-top-left-radius: 15px; */
         margin-inline: 10px;
         padding-inline: 25px;
         transform: scale(0.8);
