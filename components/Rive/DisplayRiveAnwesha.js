@@ -8,9 +8,6 @@ export default function Displayrive() {
         animations: ['A', 'N', 'W', 'E', 'S', 'H', 'A2'],
         autoplay: true,
     })
-    if (rive) {
-        console.log(rive.contents)
-    }
     const onHoverInput = useStateMachineInput(
         rive,
         'Anwesha State Machine',

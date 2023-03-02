@@ -1,13 +1,13 @@
 .parentcontainer{
-    height: 100vh;
+    height: 117vh;
     width: 100vw;
     background-image: url(/homepage/homepage_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* .sac_animation{
-    position: absolute;
-    top: 50%;
-    left: 20%;
-} */
+@media screen and (max-width: 610px){
+    .parentcontainer{
+        height: 100vh;
+    }
+}

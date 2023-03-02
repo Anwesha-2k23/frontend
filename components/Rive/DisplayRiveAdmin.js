@@ -1,6 +1,7 @@
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
+import styles from './style.module.css';
 
-export default function Displayrive({styling}) {
+export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
         src: "Anwesha animations.riv",
         artboard: 'Admin isle.png',
@@ -13,5 +14,5 @@ export default function Displayrive({styling}) {
         'Hover on Register'
     )
 
-    return <RiveComponent style={styling} />
+    return <RiveComponent className={styles.adminRive} />
 }
