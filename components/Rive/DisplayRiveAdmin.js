@@ -13,7 +13,7 @@ export default function Displayrive() {
         'Hover on Register'
     )
 
-    return <RiveComponent onClick={() => onHoverInput.fire()} style={{
+    return <RiveComponent style={{
       position: 'absolute',
       top: '200px',
       height: '750px',
