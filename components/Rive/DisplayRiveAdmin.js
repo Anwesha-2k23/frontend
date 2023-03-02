@@ -1,11 +1,11 @@
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
-import styles from './style.module.css';
+import styles from './style.module.css'
 
 export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
-        src: "Anwesha animations.riv",
+        src: 'Anwesha animations.riv',
         artboard: 'Admin isle.png',
-        stateMachines: "Anwesha Register component",
+        stateMachines: 'Anwesha Register component',
         autoplay: true,
     })
     const onHoverInput = useStateMachineInput(

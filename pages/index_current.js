@@ -97,7 +97,12 @@ export default function comingsoon() {
                 className={styles.anwesha_bg_img}
             >
                 <div className={styles.container}>
-                    <Image src="/logo_no_bg.svg" width={400} height={400} alt="Anwesha logo"/>
+                    <Image
+                        src="/logo_no_bg.svg"
+                        width={400}
+                        height={400}
+                        alt="Anwesha logo"
+                    />
 
                     <div className={styles.text}>
                         <p style={{ marginBottom: 10, paddingRight: 5 }}>

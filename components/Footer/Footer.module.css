@@ -229,7 +229,7 @@
     overflow: hidden;
 }
 
-.middle_container{
+.middle_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,13 +238,13 @@
     color: aliceblue;
 }
 
-.privacy_text{
-    color:aliceblue;
+.privacy_text {
+    color: aliceblue;
     text-decoration: none;
 }
 
-.terms_text{
-    color:aliceblue;
+.terms_text {
+    color: aliceblue;
     text-decoration: none;
 }
 

@@ -1,6 +1,10 @@
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 
-export default function HomeBackgroundAnimation({ riveUrl, artboardName,styling}) {
+export default function HomeBackgroundAnimation({
+    riveUrl,
+    artboardName,
+    styling,
+}) {
     const { rive, RiveComponent } = useRive({
         src: riveUrl,
         artboard: artboardName,
@@ -17,7 +21,5 @@ export default function HomeBackgroundAnimation({ riveUrl, artboardName,styling}
     //     'Hover on N'
     // )
 
-    return (
-    <RiveComponent style={styling} onHover={() => rive && rive.play()} />
-    )
+    return <RiveComponent style={styling} onHover={() => rive && rive.play()} />
 }

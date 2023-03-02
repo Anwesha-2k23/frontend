@@ -13,9 +13,9 @@ function Navigation() {
     const [isHome, setIsHome] = useState(['/'].includes(router.pathname))
 
     useEffect(() => {
-      setIsHome(['/'].includes(router.pathname))
+        setIsHome(['/'].includes(router.pathname))
     }, [router.pathname])
-    
+
     const toggleDrawer = () => {
         if (!drawerOpen) {
             document.getElementById('drawer').style.display = 'block'
@@ -43,7 +43,10 @@ function Navigation() {
     //TODO: make the navbar pick the background color of the viewed page
     return (
         <>
-            <div className={styles.mainNav} style={{ color: isHome ? "white" : "black" }}>
+            <div
+                className={styles.mainNav}
+                style={{ color: isHome ? 'white' : 'black' }}
+            >
                 <button
                     className={styles.mobile_only}
                     style={{ background: 'none', border: 'none' }}
@@ -57,21 +60,22 @@ function Navigation() {
                         className={styles.mobile_nav}
                     />
                 </button>
-                
+
                 <Link href="/" className={styles.navLogo}>
                     {['/'].includes(router.pathname) ? (
-                    <Image
-                        src="/Anwesha_text.png"
-                        alt="logo"
-                        width={200}
-                        height={40}
-                    />):(
                         <Image
-                        src="/Anwesha_text_black.png"
-                        alt="logo"
-                        width={200}
-                        height={40}
-                    />
+                            src="/Anwesha_text.png"
+                            alt="logo"
+                            width={200}
+                            height={40}
+                        />
+                    ) : (
+                        <Image
+                            src="/Anwesha_text_black.png"
+                            alt="logo"
+                            width={200}
+                            height={40}
+                        />
                     )}
                 </Link>
                 <div className={styles.navLinks}>
