@@ -21,6 +21,7 @@ export default function Displayrive() {
       position: 'absolute',
       width: '100%',
       height: '25%',
-      minWidth: '300px', 
+      minWidth: '300px',
+      transform: 'translateY(19px)'
     }} />
 }

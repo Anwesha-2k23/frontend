@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeBackgroundAnimation from '../components/Rive/homeBackgrounAnim'
 import styles from '../styles/homepage.module.css'
-import DisplayRiveAnwesha from '../components/DisplayRiveAnwesha'
+import DisplayRiveAnwesha from '../components/Rive/DisplayRiveAnwesha'
 
 const index = () => {
   return (
