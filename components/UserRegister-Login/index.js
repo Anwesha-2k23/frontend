@@ -274,7 +274,7 @@ const UserRegisterForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
+                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
                     </motion.div>
                     <Link href="/userLogin">
                         Already have an account? Login here.
