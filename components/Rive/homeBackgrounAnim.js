@@ -1,12 +1,12 @@
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 
-export default function HomeBackgroundAnimation() {
+export default function HomeBackgroundAnimation({ riveUrl, artboardName,styling}) {
     const { rive, RiveComponent } = useRive({
-        src: '../public/Anwesha_animations.riv',
-        // artboard: 'Anwesha.svg',
+        src: riveUrl,
+        artboard: artboardName,
         // stateMachines: 'Anwesha State Machine',
         // animations: ['A', 'N', 'W', 'E', 'S', 'H', 'A2'],
-        autoplay: false,
+        autoplay: true,
     })
     if (rive) {
         console.log(rive.contents)
@@ -17,5 +17,7 @@ export default function HomeBackgroundAnimation() {
     //     'Hover on N'
     // )
 
-    return <RiveComponent onHover={() => rive && rive.play()} />
+    return (
+    <RiveComponent style={styling} onHover={() => rive && rive.play()} />
+    )
 }

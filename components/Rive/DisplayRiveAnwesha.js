@@ -17,7 +17,7 @@ export default function Displayrive() {
         'Hover on N'
     )
 
-    return <RiveComponent onClick={() => onHoverInput.fire()} style={{
+    return <RiveComponent onMouseOver={() => onHoverInput && onHoverInput.fire()} style={{
       position: 'absolute',
       width: '100%',
       height: '25%',

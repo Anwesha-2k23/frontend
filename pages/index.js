@@ -9,6 +9,8 @@ const index = () => {
     <div className={styles.parentcontainer}>
         <DisplayRiveAnwesha/>
         <DisplayRiveAdmin/>
+        <HomeBackgroundAnimation riveUrl="/Anwesha_animations.riv" artboardName={'SAC'} styling={{ height: '500px', width: '500px', position: 'absolute', top: '40%', left: '2%' }} />
+        <HomeBackgroundAnimation riveUrl="/Anwesha_animations.riv" artboardName={'Gymkhana'} styling={{ height: '350px', width: '350px', position: 'absolute', top: '50%', left: '75%' }} />
     </div>
   )
 }
