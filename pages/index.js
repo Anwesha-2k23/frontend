@@ -15,7 +15,7 @@ const index = () => {
             <div className={styles.parentcontainer}>
                 <div className={styles.container}>
                     <DisplayRiveAnwesha />
-                    <DisplayRiveAdmin />
+                    <Link href="/userRegister"><DisplayRiveAdmin /></Link>
                     <DisplayRiveSAC />
                     <DisplayRiveGymkhana />
                     <Image
