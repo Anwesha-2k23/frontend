@@ -229,6 +229,25 @@
     overflow: hidden;
 }
 
+.middle_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: aliceblue;
+}
+
+.privacy_text{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.terms_text{
+    color:aliceblue;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 1444px) {
     .icon_link {
         display: flex;
