@@ -1,17 +1,21 @@
 import styles from './styles.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../authContext'
 import { useRouter } from 'next/router'
-
 const host = process.env.NEXT_PUBLIC_HOST
 
 function Navigation() {
     const userData = useContext(AuthContext)
     const [drawerOpen, setDrawerOpen] = useState(false)
     const router = useRouter()
+    const [isHome, setIsHome] = useState(['/'].includes(router.pathname))
 
+    useEffect(() => {
+      setIsHome(['/'].includes(router.pathname))
+    }, [router.pathname])
+    
     const toggleDrawer = () => {
         if (!drawerOpen) {
             document.getElementById('drawer').style.display = 'block'
@@ -39,7 +43,7 @@ function Navigation() {
     //TODO: make the navbar pick the background color of the viewed page
     return (
         <>
-            <div className={styles.mainNav}>
+            <div className={styles.mainNav} style={{ color: isHome ? "white" : "black" }}>
                 <button
                     className={styles.mobile_only}
                     style={{ background: 'none', border: 'none' }}
@@ -53,13 +57,22 @@ function Navigation() {
                         className={styles.mobile_nav}
                     />
                 </button>
+                
                 <Link href="/" className={styles.navLogo}>
+                    {['/'].includes(router.pathname) ? (
                     <Image
+                        src="/Anwesha_text.png"
+                        alt="logo"
+                        width={200}
+                        height={40}
+                    />):(
+                        <Image
                         src="/Anwesha_text_black.png"
                         alt="logo"
                         width={200}
                         height={40}
                     />
+                    )}
                 </Link>
                 <div className={styles.navLinks}>
                     <ul>
