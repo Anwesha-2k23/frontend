@@ -15,6 +15,7 @@ import Footer from '../components/Footer/Footer'
 
 const poppins = Poppins({
     weight: '900',
+    weight: '400',
 })
 function MyApp({ Component, pageProps }) {
     const router = useRouter()
