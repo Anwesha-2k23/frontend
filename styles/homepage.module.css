@@ -6,8 +6,22 @@
     background-size: cover;
 }
 
+.lecturehall{
+    position: absolute;
+    top: 400px;
+    left: 400px;
+}
+
+@media screen and (max-width: 1171px){
+   .lecturehall{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 610px){
     .parentcontainer{
         height: 100vh;
     }
+   
 }
+
