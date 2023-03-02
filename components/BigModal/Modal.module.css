@@ -93,16 +93,16 @@
     /* border: 2px solid black; */
     border-radius: 25px;
     cursor: pointer;
-    background-color: #8CC1FF;
-    color: #FFFFFF;
+    background-color: #8cc1ff;
+    color: #ffffff;
     outline: none;
     text-decoration: none;
 }
 
 .modal_footer :nth-child(2) {
-    background-color: #FFFFFF;
-    color: #8CC1FF;
-    border: 2px solid #8CC1FF;
+    background-color: #ffffff;
+    color: #8cc1ff;
+    border: 2px solid #8cc1ff;
 }
 
 .btn:hover {
@@ -115,7 +115,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 4px dotted #8CC1FF;
+    border: 4px dotted #8cc1ff;
     width: 100%;
     border-radius: 30px;
     padding: 0px 15px 0px 15px;
@@ -126,7 +126,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .date_row img {
@@ -163,7 +162,7 @@
     height: 50px;
 }
 
-.description{
+.description {
     font-size: 20px;
     font-weight: 100;
     padding: 20px 5px 20px 5px;
@@ -189,7 +188,6 @@
     align-items: center;
     margin-right: 20px;
 }
-
 
 .contacts {
     display: flex;
@@ -217,11 +215,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin: 0px;
-    border: 3px dotted #FFFFFF;
+    border: 3px dotted #ffffff;
     border-radius: 8px;
     padding: 5px;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: #000000;
 }
 

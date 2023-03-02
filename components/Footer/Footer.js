@@ -67,7 +67,12 @@ const Footer = () => {
                       </a>
                   </div> */}
                 </div>
+                <div className={styles.middle_container}>
                 <img className={styles.frame_img} src="/assets/frame.svg" />
+                <Link href="https://www.privacypolicygenerator.info/live.php?token=CTWW30ktwwolZoEjXYlIGA3YueyobFYA" className={styles.privacy_text}>Privacy Poicy</Link>
+                <Link href="/terms" className={styles.terms_text}>Terms and Conditions</Link>
+
+                </div>
                 {/* <div className={[styles.sectionSeperator].join(' ')}></div> */}
                 <div className={[styles.section1].join(' ')}>
                     <a href="mailto:anweshaiitp@gmail.com">

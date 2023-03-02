@@ -82,7 +82,7 @@
     display: flex;
     flex-direction: row;
     border-radius: 40px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 2px 5px 2px 5px;
     align-items: center;
     justify-content: center;
@@ -108,7 +108,7 @@
 .logout {
     cursor: pointer;
     border-radius: 20px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     transition: 0.5s;
 }
 
@@ -117,11 +117,10 @@
 }
 
 .login {
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     background-color: #000000;
     border-radius: 5px;
 }
-
 
 @media screen and (max-width: 1050px) {
     .navLinks {

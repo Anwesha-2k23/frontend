@@ -20,11 +20,23 @@ const index = ({ event }) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexWrap: 'wrap',
-                    position: 'relative'
+                    position: 'relative',
                 }}
                 onClick={() => setModal(true)}
             >
-                {event.is_active ? null : <img src='/assets/coming-soon.png' style={{position: 'absolute', top: '8px', right: '30px', zIndex: 2, height: '100px' }}/>}
+                {event.is_active ? null : (
+                    <img
+                        src="/assets/coming-soon.png"
+                        style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '30px',
+                            zIndex: 2,
+                            height: '100px',
+                        }}
+                        alt="Coming Soon"
+                    />
+                )}
                 <div className={styles.imageWrap}>
                     <div className={styles.item}>
                         <img
@@ -37,7 +49,7 @@ const index = ({ event }) => {
                             width={300}
                             height={300}
                             style={{ borderRadius: 15 }}
-                            objectFit={'contain'}
+                            objectfit={'contain'}
                         />
                     </div>
                     <p className={styles.img__description}>
@@ -46,6 +58,7 @@ const index = ({ event }) => {
                                 src="/events/Vector.png"
                                 width={70}
                                 height={70}
+                                alt="Fest Image overlay"
                             />
                         </span>{' '}
                     </p>

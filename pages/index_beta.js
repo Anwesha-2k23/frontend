@@ -25,7 +25,7 @@ export default function Home() {
             </Head>
             <div className={styles.hero}>
                 <Countdown
-                    dateTo="February 17, 2023 00:00:00 GMT+05:30"
+                    dateTo="March 17, 2023 00:00:00 GMT+05:30"
                     callback={() => console.log('Anwesha 2023 is Here!!!')}
                 />
             </div>

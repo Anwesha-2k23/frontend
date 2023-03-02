@@ -41,8 +41,8 @@ const Events = () => {
                 <h1>Events</h1>
 
                 <div className={styles.content}>
-                    {events.map((event) => {
-                        return <EventItem event={event} />
+                    {events.map((event, index) => {
+                        return <EventItem event={event} key={index} />
                     })}
                 </div>
             </div>

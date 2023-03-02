@@ -27,6 +27,7 @@ export default function campusAmbassador() {
                             src="/ca_anwesha_logo.svg"
                             width={400}
                             height={100}
+                            alt="Anwesha logo"
                         />
                     </div>
                 </motion.div>
