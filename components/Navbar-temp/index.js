@@ -4,22 +4,31 @@ import Image from 'next/image'
 import { useState, useContext, useEffect, useRef } from 'react'
 import { AuthContext } from '../authContext'
 import { useRouter } from 'next/router'
+import Logo from '../Rive/logo'
+import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 const host = process.env.NEXT_PUBLIC_HOST
+const STATE_MACHINE_NAME = 'Basic State Machine'
+const INPUT_NAME = 'Switch'
 
 function Navigation() {
     const userData = useContext(AuthContext)
     const [drawerOpen, setDrawerOpen] = useState(false)
+    const [clickInputFired, setClickInputFired] = useState(false);
     const router = useRouter()
     const [isHome, setIsHome] = useState(['/'].includes(router.pathname))
-
+    const { rive, RiveComponent } = useRive({
+        src: '/navbar/hamburger-time.riv',
+        autoplay: true,
+        stateMachines: STATE_MACHINE_NAME,
+    })
+    const onClickInput = useStateMachineInput(rive, STATE_MACHINE_NAME, INPUT_NAME)
+    
     useEffect(() => {
-        setIsHome(['/'].includes(router.pathname))
-        document.getElementById('drawer').style.opacity = 0
-        setTimeout(function () {
-            document.getElementById('drawer').style.display = 'none'
-        }, 300)
-        setDrawerOpen(false)
-    }, [router.pathname])
+        if (onClickInput && clickInputFired) {
+          onClickInput.fire();
+          setClickInputFired(false);
+        }
+      }, [onClickInput, clickInputFired]);
 
     useEffect(() => {
       document.addEventListener('click', handleClickOutside, true)
@@ -34,11 +43,23 @@ function Navigation() {
                 document.getElementById('drawer').style.display = 'none'
             }, 300)
             setDrawerOpen(false)
+            if (onClickInput){
+                onClickInput.fire()
+            }
+            setClickInputFired(true);
         }
         else{
-            // console.log('Div is clicked')
         }
     }
+
+    useEffect(() => {
+        setIsHome(['/'].includes(router.pathname))
+        document.getElementById('drawer').style.opacity = 0
+        setTimeout(function () {
+            document.getElementById('drawer').style.display = 'none'
+        }, 300)
+        setDrawerOpen(false)
+    }, [router.pathname])
     
 
     const toggleDrawer = () => {
@@ -48,12 +69,14 @@ function Navigation() {
                 document.getElementById('drawer').style.opacity = 1
             }, 300)
             setDrawerOpen(true)
+            onClickInput.fire()
         } else {
             document.getElementById('drawer').style.opacity = 0
             setTimeout(function () {
                 document.getElementById('drawer').style.display = 'none'
             }, 300)
             setDrawerOpen(false)
+            onClickInput.fire()
         }
     }
 
@@ -73,7 +96,7 @@ function Navigation() {
                 style={{ color: isHome ? 'white' : 'black' }}
                 ref={refNav}
             >
-                <button
+                {/* <button
                     className={styles.mobile_only}
                     style={{ background: 'none', border: 'none' }}
                     onClick={() => toggleDrawer()}
@@ -85,8 +108,10 @@ function Navigation() {
                         height={35}
                         className={styles.mobile_nav}
                     />
-                </button>
-
+                </button> */}
+                <div style={{height: "10%", width:"10%"}}> 
+                <RiveComponent onClick={() => { toggleDrawer()}} />
+                </div>
                 <Link href="/" className={styles.navLogo} >
                     {['/'].includes(router.pathname) ? (
                         <Image

@@ -1,20 +1,15 @@
-import Rive from 'rive-react'
-import { useRive } from '@rive-app/react-canvas'
-// import assetRive from './rive_emoji_pack.riv'
-// State Machine require the useRive hook.
+import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
 function Logo() {
-    // const { rive, RiveComponent } = useRive({
-    //     src: '../rive_emoji_pack.riv',
-    //     // autoplay: true,
-    //     });
-
+    const STATE_MACHINE_NAME = 'Basic State Machine'
+    const INPUT_NAME = 'Switch'
+    const { rive, RiveComponent } = useRive({
+        src: '/navbar/hamburger-time.riv',
+        autoplay: true,
+        stateMachines: STATE_MACHINE_NAME,
+    })
+        const onClickInput = useStateMachineInput(rive, STATE_MACHINE_NAME, INPUT_NAME)
     return (
-        <Rive
-            src="hamburger_time.riv"
-            //   onMouseEnter={() => rive && rive.play()}
-            //   onMouseLeave={() => rive && rive.pause()}
-        />
+        <RiveComponent onClick={() => onClickInput.fire()} />
     )
 }
-
 export default Logo
