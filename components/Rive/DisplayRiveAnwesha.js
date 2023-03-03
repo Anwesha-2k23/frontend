@@ -20,7 +20,7 @@ export default function Displayrive() {
             style={{
                 position: 'absolute',
                 width: '100%',
-                height: '25%',
+                height: '21%',
                 minWidth: '300px',
                 transform: 'translateY(50px)',
                 zIndex: '2',

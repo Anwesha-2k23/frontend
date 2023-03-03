@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link'
 import HomeBackgroundAnimation from '../components/Rive/homeBackgrounAnim'
@@ -10,7 +11,12 @@ import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 
 const index = () => {
     return (
-        <>
+        <> 
+            <Head>
+                <title>Anwesha 2023</title>
+                <meta name="description" content="Anwesha 2023" />
+                <link rel="icon" href="./logo_no_bg.svg" />
+            </Head>
             {/*Hero section*/}
             <div className={styles.parentcontainer}>
                 <div className={styles.container}>
@@ -27,6 +33,9 @@ const index = () => {
                     />
                 </div>
             </div>
+
+            {/*Blend home section with other sections*/}
+            <div className={styles.blendHomeSection}></div>
 
             {/*Events section*/}
             <div className={styles.eventSection}>
