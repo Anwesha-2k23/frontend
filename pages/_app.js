@@ -14,7 +14,8 @@ import Navbar from '../components/Navbar-temp'
 import Footer from '../components/Footer/Footer'
 
 const poppins = Poppins({
-    weight: '900',
+    weight: ['400', '900'],
+    subsets: ['latin'],
 })
 function MyApp({ Component, pageProps }) {
     const router = useRouter()
