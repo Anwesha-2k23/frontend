@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect, useRef } from 'react'
 import { AuthContext } from '../authContext'
 import { useRouter } from 'next/router'
 const host = process.env.NEXT_PUBLIC_HOST
@@ -14,7 +14,32 @@ function Navigation() {
 
     useEffect(() => {
         setIsHome(['/'].includes(router.pathname))
+        document.getElementById('drawer').style.opacity = 0
+        setTimeout(function () {
+            document.getElementById('drawer').style.display = 'none'
+        }, 300)
+        setDrawerOpen(false)
     }, [router.pathname])
+
+    useEffect(() => {
+      document.addEventListener('click', handleClickOutside, true)
+    }, [])
+
+    const refNav = useRef(null)
+
+    const handleClickOutside = (event) => {
+        if (refNav.current && !refNav.current.contains(event.target)) {
+            document.getElementById('drawer').style.opacity = 0
+            setTimeout(function () {
+                document.getElementById('drawer').style.display = 'none'
+            }, 300)
+            setDrawerOpen(false)
+        }
+        else{
+            // console.log('Div is clicked')
+        }
+    }
+    
 
     const toggleDrawer = () => {
         if (!drawerOpen) {
@@ -46,6 +71,7 @@ function Navigation() {
             <div
                 className={styles.mainNav}
                 style={{ color: isHome ? 'white' : 'black' }}
+                ref={refNav}
             >
                 <button
                     className={styles.mobile_only}
@@ -61,7 +87,7 @@ function Navigation() {
                     />
                 </button>
 
-                <Link href="/" className={styles.navLogo}>
+                <Link href="/" className={styles.navLogo} >
                     {['/'].includes(router.pathname) ? (
                         <Image
                             src="/Anwesha_text.png"
@@ -156,13 +182,13 @@ function Navigation() {
                         <Link href="/">Home</Link>
                     </li> */}
                     <li>
-                        <Link href="/all-multicity">Multicity</Link>
+                        <Link href="/all-multicity" onClick={() => toggleDrawer()}>Multicity</Link>
                     </li>
                     <li>
-                        <Link href="/campusambassador">Campus Ambassador</Link>
+                        <Link href="/campusambassador" onClick={() => toggleDrawer()}>Campus Ambassador</Link>
                     </li>
                     <li>
-                        <Link href="/events">Events</Link>
+                        <Link href="/events" onClick={() => toggleDrawer()}>Events</Link>
                     </li>
                     <li>
                         {userData.isAuth ? (
@@ -170,6 +196,7 @@ function Navigation() {
                                 <Link
                                     className={styles.user_info}
                                     href="/profile"
+                                    onClick={() => toggleDrawer()}
                                 >
                                     <div>
                                         <span className={styles.user_name}>
@@ -190,7 +217,7 @@ function Navigation() {
                                 />
                             </div>
                         ) : (
-                            <Link className={styles.login} href="/userLogin">
+                            <Link className={styles.login} href="/userLogin" onClick={() => toggleDrawer()}>
                                 Login
                             </Link>
                         )}
