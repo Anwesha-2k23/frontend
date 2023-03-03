@@ -279,13 +279,7 @@ const privacy = () => {
                     immediately, after they are posted on this page.
                 </p>
 
-                <p className={styles.para}>
-                    Our Privacy Policy was created with the help of the{' '}
-                    <a href="https://www.termsfeed.com/privacy-policy-generator/">
-                        TermsFeed Privacy Policy Generator
-                    </a>
-                    .
-                </p>
+               
             </div>
             <div className={styles.sec}>
                 <h2 className={styles.subheading}>Contact Us</h2>
