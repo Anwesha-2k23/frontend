@@ -46,32 +46,21 @@ const index = () => {
                         height={395}
                         alt="Events section"
                     />
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', maxWidth: '600px', position: 'relative',boxShadow: '#000000 7px 7px 0px', marginBottom: '10px', borderBottomLeftRadius: '15px', borderBottomRightRadius: '15px'}}>
+                    <img src="/home/events.svg" layout='fill' width="100%" objectFit='contain' alt="Events image"/>
                     <div className={styles.eventSectionText}>
-                        Lorem ipsum dolor sit amet consectetur. Nisl consectetur
-                        vel mi massa non dictum sociis. Quis condimentum nisl
-                        quisque consectetur sed egestas augue diam. Commodo
-                        egestas sit risus amet egestas ac. Adipiscing dapibus
-                        feugiat diam sit varius. Quisque hac sollicitudin in
-                        enim amet. Eget semper faucibus purus adipiscing mattis.
-                        Pharetra morbi diam vivamus sed pretium turpis. Magna
-                        interdum lectus vel aliquam magna lacus facilisis. Magna
-                        etiam integer diam aliquet nisl imperdiet quis lorem
-                        non. Tincidunt sit turpis ac lectus et sed orci eu
-                        venenatis. Neque blandit donec urna aliquet ipsum
-                        feugiat eu montes viverra. Leo diam accumsan vitae
-                        natoque.
+                       Step into a world where dreams come true and possibilities are endless. The Isles of Utopia await, where every individual is free to thrive and prosper, and the pursuit of happiness is a shared goal. It's a world where compassion and empathy reign, and social justice is the foundation of society. Come explore the idyllic landscapes, bask in the warm glow of the sun, and feel the gentle breeze on your face. The Isles of Utopia offer a glimpse of a better world, a world where anything is possible, and everyone is welcome
                         <br />
                         <br />
-                        <div style={{ textAlign: 'right', width: '100%' }}>
+                        <div style={{ textAlign: 'center', width: '100%' }}>
                             <button
                                 className={styles.homebtn}
-                                style={{ alignSelf: 'right' }}
                             >
                                 <Link
                                     href="/events"
                                     style={{
                                         textDecoration: 'none',
-                                        color: '#000',
+                                        color: '#fff',
                                     }}
                                 >
                                     Explore More
@@ -79,6 +68,7 @@ const index = () => {
                             </button>
                         </div>
                     </div>
+                  </div>
                 </div>
             </div>
 

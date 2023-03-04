@@ -46,7 +46,8 @@
     background: #fff;
     font-weight: 400;
     font-size: 16px;
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .themeSection{
@@ -79,18 +80,13 @@
 .homebtn{
     padding: 15px 10px;
     gap: 10px;
-    width: 122px;
+    width: 60%;
     height: 51px;
-    background: #CB8AFF;
-    border: 3px solid #000000;
-    border-radius: 4px;
+    background: #000000;
+    border-radius: 10px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-}
-
-.homebtn:hover{
-    background: #9d44e4;
 }
 
 @media screen and (max-width: 1550px){
