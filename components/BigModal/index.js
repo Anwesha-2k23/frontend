@@ -204,6 +204,16 @@ const Modal = (props) => {
                         </div>
                     </div>
                     <div className={styles.modal_footer}>
+                                                {props.body.video ? (
+                            <a
+                                target="_blank"
+                                className={styles.rulebtn}
+                                href={props.body.video}
+                                // onClick={(e) => props.closeHandler()}
+                            >
+                                Rulebook
+                            </a>
+                        ) : null}
                         {props.body.is_active ? (
                             <button
                                 className={styles.btn}
@@ -244,16 +254,7 @@ const Modal = (props) => {
                                 Register
                             </button>
                         ) : null}
-                        {props.body.video ? (
-                            <a
-                                target="_blank"
-                                className={styles.btn}
-                                href={props.body.video}
-                                // onClick={(e) => props.closeHandler()}
-                            >
-                                Rulebook
-                            </a>
-                        ) : null}
+
                     </div>
                 </div>
             </div>

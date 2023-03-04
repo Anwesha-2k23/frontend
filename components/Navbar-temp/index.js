@@ -90,7 +90,6 @@ function Navigation() {
         }).then(() => userData.getUser())
     }
 
-    //TODO: make the navbar pick the background color of the viewed page
     return (
         <>
             <div
@@ -151,7 +150,7 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link href="/all-multicity">Multicity</Link>
+                            <Link className={styles.linknav} href="/all-multicity">Multicity</Link>
                         </li>
                         <li
                             style={
@@ -160,7 +159,7 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link href="/campusambassador">
+                            <Link className={styles.linknav} href="/campusambassador">
                                 Campus Ambassador
                             </Link>
                         </li>
@@ -171,7 +170,7 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link href="/events">Events</Link>
+                            <Link className={styles.linknav} href="/events">Events</Link>
                         </li>
                         <li>
                             {userData.isAuth ? (

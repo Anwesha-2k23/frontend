@@ -255,9 +255,9 @@ const index = () => {
                             <br />
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
-                                <button className={styles.homebtn}>
-                                    <Link href="/ourteam" style={{ color: '#fff' }}>
-                                        Meet the Team
+                                <button className={styles.homebtn} disabled>
+                                    <Link href="#" style={{ color: '#fff' }}>
+                                        Coming Soon...
                                     </Link>
                                 </button>
                             </div>

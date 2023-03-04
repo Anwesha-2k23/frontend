@@ -77,7 +77,8 @@
 
 .modal_footer {
     display: flex;
-    justify-content: flex-end;
+    width: 100%;
+    justify-content: inherit;
     align-items: center;
     padding: 10px;
     background-color: #fff;
@@ -88,31 +89,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     min-width: 175px;
+    min-height: 70px;
     margin: 10px;
-    height: 40px;
+    margin-left: 17px;
     font-size: 20px;
     font-weight: 500;
-    /* border: 2px solid black; */
-    border-radius: 25px;
+    border-radius: 15px;
     cursor: pointer;
-    background-color: #8cc1ff;
+    background-color: #000000;
     color: #ffffff;
     outline: none;
     text-decoration: none;
+    padding: 20px 59px;
+}
+
+.rulebtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 175px;
+    min-height: 70px;
+    margin: 10px;
+    margin-right: 17px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    border: 3px solid #000000;
+    outline: none;
+    text-decoration: none;
+    padding: 17px 59px;
 }
 
 .modal_footer :nth-child(2) {
-    background-color: #ffffff;
-    color: #8cc1ff;
-    border: 2px solid #8cc1ff;
+    background-color: #000000;
+    color: #ffffff;
 }
 
-.btn:hover {
-    /* background-color: #ff79d0; */
-    /* color: #fff; */
-}
 
 .date_loc {
     display: flex;

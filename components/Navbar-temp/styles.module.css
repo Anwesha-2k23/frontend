@@ -32,6 +32,10 @@
     font-weight: bold;
 }
 
+.linknav:hover {
+    filter: invert(100%);
+}
+
 .navLinks ul {
     display: flex;
     flex-direction: row;
