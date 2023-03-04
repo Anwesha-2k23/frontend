@@ -50,18 +50,22 @@ const AuthProvider = ({ children }) => {
                         'Your token is expired please login again'
                 ) {
                     setUser(null)
-                    if(['/profile', '/event-registration'].includes(router.pathname)){
-                    toast.error(result.message, {
-                        position: 'top-right',
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                    })
-                }
+                    if (
+                        ['/profile', '/event-registration'].includes(
+                            router.pathname
+                        )
+                    ) {
+                        toast.error(result.message, {
+                            position: 'top-right',
+                            autoClose: 3000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        })
+                    }
                 } else {
                     setUser(result)
                 }
@@ -74,7 +78,7 @@ const AuthProvider = ({ children }) => {
     }, [])
     return (
         <>
-        <ToastContainer
+            <ToastContainer
                 position="top-right"
                 autoClose={3000}
                 hideProgressBar={false}
@@ -86,16 +90,16 @@ const AuthProvider = ({ children }) => {
                 pauseOnHover
                 theme="light"
             />
-        <Provider
-            value={{
-                state: { user: user },
-                setUser: setUser,
-                isAuth: user !== null,
-                getUser: getUser,
-            }}
-        >
-            {children}
-        </Provider>
+            <Provider
+                value={{
+                    state: { user: user },
+                    setUser: setUser,
+                    isAuth: user !== null,
+                    getUser: getUser,
+                }}
+            >
+                {children}
+            </Provider>
         </>
     )
 }

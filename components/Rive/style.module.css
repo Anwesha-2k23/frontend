@@ -1,0 +1,71 @@
+.adminRive {
+    position: absolute;
+    top: 200px;
+    height: 750px;
+    width: 100%;
+    z-index: 2;
+}
+
+@media screen and (max-width: 720px) {
+    .adminRive {
+        top: 150px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .adminRive {
+        top: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .adminRive {
+        top: 30px;
+    }
+}
+
+/* SAC rive CSS */
+.SACRive {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+}
+
+@media screen and (max-width: 1171px) {
+    .SACRive {
+        display: none;
+    }
+}
+
+/* Gymkhana rive CSS */
+.gymkhanaRive {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 40%;
+    left: 75%;
+}
+@media screen and (max-width: 1171px) {
+    .gymkhanaRive {
+        display: none;
+    }
+}
+
+/* Hmburger Menu */
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    display: none;
+    height: 10%;
+    width: 10%;
+}
+
+@media screen and (max-width: 800px) {
+    .hamburger {
+        display: block;
+    }
+}

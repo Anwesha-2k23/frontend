@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/ca.module.css'
-import Navbar from '../components/Navbar/Navbar'
 import UserLoginForm from '../components/UserRegister-Login/login'
-import GreetingLottie from '../components/displaylottie'
 
 export default function userLogin() {
     return (

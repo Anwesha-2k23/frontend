@@ -1,0 +1,130 @@
+.parentcontainer{
+    height: 117vh;
+    width: 100vw;
+    background-image: url(/home/homepage_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blendHomeSection{
+    top: 104vh;
+    position: absolute;
+    width: 100%;
+    height: 9vh;
+    background: rgba(255, 255, 255, 0);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.lecturehall{
+    position: absolute;
+    top: 400px;
+    left: 400px;
+}
+
+.eventSection{
+    background: url(/home/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    transform: translateY(-50px);
+}
+
+.eventSectionContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.eventSectionText{
+    max-width: 600px;
+    padding: 30px;
+    background: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.themeSection{
+    background: url(/home/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    transform: translateY(-52px);
+}
+
+.themeSectionContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.themeSectionText{
+    max-width: 600px;
+    padding: 30px;
+    background: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.homebtn{
+    padding: 15px 10px;
+    gap: 10px;
+    width: 60%;
+    height: 51px;
+    background: #000000;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.homebtn:hover{
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+@media screen and (max-width: 1550px){
+    .blendHomeSection{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1171px){
+   .lecturehall{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1134px){
+    .themeSectionContainer{
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 610px){
+    .parentcontainer{
+        height: 100vh;
+    }
+   
+}
+
+@media screen and (max-height: 790px){
+    .blendHomeSection{
+        display: block;
+    }
+}
+

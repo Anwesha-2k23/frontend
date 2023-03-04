@@ -120,17 +120,12 @@ const UserLoginForm = () => {
                 alt="floating-island-iitp"
                 src="/assets/floating-island.svg"
             />
-            <img
-                className={styles.clouds}
-                alt="clouds"
-                src="/assets/clouds.svg"
-            />
 
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '0%' }}
+                    whileInView={{ opacity: 1, x: '-2%' }}
                     transition={{ duration: 1 }}
                 >
                     <h3>LOGIN</h3>
