@@ -104,7 +104,7 @@
     padding: 20px 59px;
 }
 
-.rulebtn{
+.rulebtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,6 @@
     background-color: #000000;
     color: #ffffff;
 }
-
 
 .date_loc {
     display: flex;

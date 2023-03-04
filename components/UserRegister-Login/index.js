@@ -95,7 +95,7 @@ const UserRegisterForm = () => {
             if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
                 console.log(data)
-                toast.success('You are successfully registered', {
+                toast.success('Please check your email for verification', {
                     position: 'top-right',
                     autoClose: 3000,
                     hideProgressBar: false,

@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
     //     showHeader = false
     // }
     return (
-        <main className={poppins.className} style={{ background: '#9fd4fc' }}>
+        <main className={poppins.className} style={{ background: '#b8ccff' }}>
             <Script
                 strategy="lazyOnload"
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

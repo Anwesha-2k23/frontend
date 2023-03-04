@@ -124,16 +124,16 @@ function Navigation() {
                 >
                     {['/'].includes(router.pathname) ? (
                         <Image
-                            src="/Anwesha_text.png"
+                            src="/navbar/logo_no_bg.svg"
                             alt="logo"
-                            width={200}
+                            width={60}
                             height={40}
                         />
                     ) : (
                         <Image
-                            src="/Anwesha_text_black.png"
+                            src="/navbar/logo_no_bg.svg"
                             alt="logo"
-                            width={200}
+                            width={60}
                             height={40}
                         />
                     )}
@@ -150,7 +150,12 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link className={styles.linknav} href="/all-multicity">Multicity</Link>
+                            <Link
+                                className={styles.linknav}
+                                href="/all-multicity"
+                            >
+                                Multicity
+                            </Link>
                         </li>
                         <li
                             style={
@@ -159,7 +164,10 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link className={styles.linknav} href="/campusambassador">
+                            <Link
+                                className={styles.linknav}
+                                href="/campusambassador"
+                            >
                                 Campus Ambassador
                             </Link>
                         </li>
@@ -170,7 +178,9 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link className={styles.linknav} href="/events">Events</Link>
+                            <Link className={styles.linknav} href="/events">
+                                Events
+                            </Link>
                         </li>
                         <li>
                             {userData.isAuth ? (

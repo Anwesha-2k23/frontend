@@ -58,8 +58,7 @@ const index = () => {
                             position: 'relative',
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
-                            borderBottomLeftRadius: '15px',
-                            borderBottomRightRadius: '15px',
+                            borderRadius: '15px',
                         }}
                     >
                         <img
@@ -68,6 +67,7 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
+                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
                         />
                         <div className={styles.eventSectionText}>
                             Anwesha, the Annual Cultural-Management Fest of IIT
@@ -126,8 +126,7 @@ const index = () => {
                             position: 'relative',
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
-                            borderBottomLeftRadius: '15px',
-                            borderBottomRightRadius: '15px',
+                            borderRadius: '15px',
                         }}
                     >
                         <img
@@ -136,6 +135,7 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
+                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
                         />
 
                         <div className={styles.themeSectionText}>
@@ -186,8 +186,7 @@ const index = () => {
                             position: 'relative',
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
-                            borderBottomLeftRadius: '15px',
-                            borderBottomRightRadius: '15px',
+                            borderRadius: '15px',
                         }}
                     >
                         <img
@@ -196,9 +195,16 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
+                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
                         />
                         <div className={styles.eventSectionText}>
-                             Anwesha 2023 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival.                           <br />
+                            Anwesha 2023 is envisioned to be an innovative and
+                            cultural uplifting festival of togetherness in not
+                            just the state or region, but the whole nation. We
+                            have reimagined the lens through which we understand
+                            culture and celebration, deriving the cornerstones
+                            for this year's edition that shall drive forward our
+                            festival. <br />
                             <br />
                             <div style={{ textAlign: 'center', width: '100%' }}>
                                 <button className={styles.homebtn}>
@@ -238,8 +244,7 @@ const index = () => {
                             position: 'relative',
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
-                            borderBottomLeftRadius: '15px',
-                            borderBottomRightRadius: '15px',
+                            borderRadius: '15px',
                         }}
                     >
                         <img
@@ -248,10 +253,21 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
+                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
                         />
 
                         <div className={styles.themeSectionText}>
-                           The grandeur of Anwesha is something that requires a powerful community to come together alongwith their thrilling ideas and dedicated promises. The Anwesha community comprises of seven different committees including Events and Planning, Media, Public and Relations, Hospitality, Registration, Security and Planning, Creatives and Design, Web and App Development and Sponorship committee. It takes a whole year of these dedicated committee members to pull off Anwesha on a bigger scale ever imagined by our guests and participants.
+                            The grandeur of Anwesha is something that requires a
+                            powerful community to come together alongwith their
+                            thrilling ideas and dedicated promises. The Anwesha
+                            community comprises of seven different committees
+                            including Events and Planning, Media, Public and
+                            Relations, Hospitality, Registration, Security and
+                            Planning, Creatives and Design, Web and App
+                            Development and Sponorship committee. It takes a
+                            whole year of these dedicated committee members to
+                            pull off Anwesha on a bigger scale ever imagined by
+                            our guests and participants.
                             <br />
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
@@ -266,7 +282,6 @@ const index = () => {
                 </div>
             </div>
             {/*End team section*/}
-
 
             <div style={{ height: '101px' }}></div>
         </>
