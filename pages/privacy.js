@@ -278,8 +278,6 @@ const privacy = () => {
                     Policy on this page. These changes are effective
                     immediately, after they are posted on this page.
                 </p>
-
-               
             </div>
             <div className={styles.sec}>
                 <h2 className={styles.subheading}>Contact Us</h2>

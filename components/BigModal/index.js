@@ -212,27 +212,31 @@ const Modal = (props) => {
                                         router.replace(
                                             props.body.registration_link
                                         )
-                                    }
-                                    else if(props.body.is_solo) {
+                                    } else if (props.body.is_solo) {
                                         console.log(props.body)
-                                        soloEventRegistration(userData, props.body.id)
+                                        soloEventRegistration(
+                                            userData,
+                                            props.body.id
+                                        )
                                         // console.log('proper')
-                                    }
-                                    else {
+                                    } else {
                                         router.push({
-                                        pathname: `/event-registration/${[
-                                            props.body.id,
-                                        ]}`,
-                                        query: {
-                                            id: props.body.id,
-                                            name: props.body.name,
-                                            description: props.body.description,
-                                            max_team_size: props.body.max_team_size,
-                                            min_team_size: props.body.min_team_size,
-                                            registration_fee:
-                                                props.body.registration_fee,
-                                        },
-                                    })
+                                            pathname: `/event-registration/${[
+                                                props.body.id,
+                                            ]}`,
+                                            query: {
+                                                id: props.body.id,
+                                                name: props.body.name,
+                                                description:
+                                                    props.body.description,
+                                                max_team_size:
+                                                    props.body.max_team_size,
+                                                min_team_size:
+                                                    props.body.min_team_size,
+                                                registration_fee:
+                                                    props.body.registration_fee,
+                                            },
+                                        })
                                     }
                                 }}
                                 // disabled

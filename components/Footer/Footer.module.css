@@ -37,7 +37,7 @@
     justify-content: center;
 }
 
-.footerTable{
+.footerTable {
     color: white;
     font-size: 1.3rem;
     font-weight: 700;
@@ -52,7 +52,7 @@
     gap: 110px;
 }
 
-.footerTableRow{
+.footerTableRow {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,7 +61,7 @@
     gap: 32px;
 }
 
-.footerLink{
+.footerLink {
     color: white;
     text-decoration: none;
     font-weight: 700;
@@ -81,7 +81,7 @@
     /* font-size: 1.1rem; */
 }
 
-.nlnewbtn{
+.nlnewbtn {
     height: 30px;
     width: 100px;
     background: #ffffff;
@@ -299,17 +299,17 @@
     text-decoration: none;
 }
 
-.frame_img{
+.frame_img {
     height: 96px;
 }
 
-.newsletter{
+.newsletter {
     font-size: 24px;
     font-weight: 700;
     margin-block: 15px;
 }
 
-.mailInput{
+.mailInput {
     width: 322px;
     height: 44px;
     border-radius: 5px;
@@ -321,14 +321,14 @@
     margin-bottom: 20px;
 }
 
-.termsPrivacy{
+.termsPrivacy {
     display: flex;
     flex-direction: row;
     gap: 46px;
     font-weight: 550;
 }
 
-.address{
+.address {
     font-weight: 500;
     font-size: 20px;
     overflow: hidden;
@@ -339,10 +339,9 @@
     text-decoration: none;
 }
 
-.address a{
+.address a {
     color: white;
     text-decoration: none;
-    
 }
 
 @media screen and (max-width: 1444px) {
@@ -351,11 +350,11 @@
         width: 47px;
         height: 47px;
     }
-    .footer{
+    .footer {
         height: 48vh;
         overflow: hidden;
     }
-    .mainSection{
+    .mainSection {
         overflow: hidden;
     }
 }

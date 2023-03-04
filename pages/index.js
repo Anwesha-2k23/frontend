@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Head from 'next/head';
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import HomeBackgroundAnimation from '../components/Rive/homeBackgrounAnim'
@@ -11,7 +11,7 @@ import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 
 const index = () => {
     return (
-        <> 
+        <>
             <Head>
                 <title>Anwesha 2023</title>
                 <meta name="description" content="Anwesha 2023" />
@@ -21,7 +21,9 @@ const index = () => {
             <div className={styles.parentcontainer}>
                 <div className={styles.container}>
                     <DisplayRiveAnwesha />
-                    <Link href="/userRegister"><DisplayRiveAdmin /></Link>
+                    <Link href="/userRegister">
+                        <DisplayRiveAdmin />
+                    </Link>
                     <DisplayRiveSAC />
                     <DisplayRiveGymkhana />
                     <Image
