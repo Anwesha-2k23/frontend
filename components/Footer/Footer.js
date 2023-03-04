@@ -166,7 +166,7 @@ const Footer = () => {
                     </span>
                     <form className={styles.form} name="submit-to-google-sheet">
                         <input
-                            placeholder="ram@gmail.com"
+                            placeholder="Anwesha Dispatch"
                             onChange={handleChange}
                             value={email}
                             type="email"

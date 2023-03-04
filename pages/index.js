@@ -94,7 +94,7 @@ const index = () => {
                                         href="/events"
                                         style={{
                                             textDecoration: 'none',
-                                            color: '#fff',
+                                            color: 'inherit',
                                         }}
                                     >
                                         Explore More
@@ -152,13 +152,6 @@ const index = () => {
                             possible, and everyone is welcome
                             <br />
                             <br />
-                            <div style={{ textAlign: 'center', color: '#fff' }}>
-                                <button className={styles.homebtn}>
-                                    <Link href="#" style={{ color: '#fff' }}>
-                                        Theme Video
-                                    </Link>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -212,7 +205,7 @@ const index = () => {
                                         href="/aboutus"
                                         style={{
                                             textDecoration: 'none',
-                                            color: '#fff',
+                                            color: 'inherit',
                                         }}
                                     >
                                         Know More
@@ -272,7 +265,7 @@ const index = () => {
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
-                                    <Link href="#" style={{ color: '#fff' }}>
+                                    <Link href="#" style={{ color: 'inherit' }}>
                                         Coming Soon...
                                     </Link>
                                 </button>
