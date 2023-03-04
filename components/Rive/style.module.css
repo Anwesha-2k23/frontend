@@ -51,3 +51,22 @@
         display: none;
     }
 }
+
+
+/* Hmburger Menu */
+
+.hamburger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 4;
+    display: none;
+    height: 10%;
+    width: 10%;
+}
+
+@media screen and (max-width: 800px) {
+    .hamburger {
+        display: block;
+    }
+}

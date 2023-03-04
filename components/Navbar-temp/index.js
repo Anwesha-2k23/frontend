@@ -109,10 +109,10 @@ function Navigation() {
                         className={styles.mobile_nav}
                     />
                 </button> */}
-                <div style={{height: "10%", width:"10%"}}> 
+                <div className={styles.hamburger} > 
                 <RiveComponent onClick={() => { toggleDrawer()}} />
                 </div>
-                <Link href="/" className={styles.navLogo} >
+                <Link href="/" onClick={()=>onClickInput.fire()} className={styles.navLogo} >
                     {['/'].includes(router.pathname) ? (
                         <Image
                             src="/Anwesha_text.png"

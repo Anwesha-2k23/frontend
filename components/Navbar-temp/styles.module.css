@@ -122,6 +122,15 @@
     border-radius: 5px;
 }
 
+.hamburger{
+    position: relative;
+    cursor: pointer;
+    z-index: 4;
+    height: 50%;
+    width: 10%;
+    display: none !important;
+}
+
 @media screen and (max-width: 1050px) {
     .navLinks {
         display: none;
@@ -135,5 +144,8 @@
     }
     .user_name {
         color: #000;
+    }
+    .hamburger{
+        display: block !important;
     }
 }

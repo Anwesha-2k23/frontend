@@ -23,7 +23,7 @@ export default function Displayrive() {
                 height: '21%',
                 minWidth: '300px',
                 transform: 'translateY(50px)',
-                zIndex: '3',
+                zIndex: '1',
             }}
         />
     )
