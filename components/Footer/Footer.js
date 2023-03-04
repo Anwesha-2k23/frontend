@@ -100,7 +100,7 @@ const Footer = () => {
                                     Profile
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/about">
+                            <Link className={styles.footerLink} href="/aboutus">
                                 <div className={styles.footerTableCell}>
                                     About Us
                                 </div>
