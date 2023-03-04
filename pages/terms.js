@@ -92,8 +92,6 @@ const terms = () => {
                     </li>
                 </ul>
 
-                
-
                 <p className={styles.para}>
                     Parts of this website offer an opportunity for users to post
                     and exchange opinions and information in certain areas of

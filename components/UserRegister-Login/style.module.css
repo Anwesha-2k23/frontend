@@ -55,8 +55,8 @@
     line-height: 27px;
 }
 
-.mainForm a{
-    color: #000000; 
+.mainForm a {
+    color: #000000;
 }
 
 .mainHeading {
@@ -174,8 +174,8 @@
     /* z-index: 3; */
 }
 
-@media screen and (max-width: 670px){
-    .island{
+@media screen and (max-width: 670px) {
+    .island {
         display: none;
     }
 }

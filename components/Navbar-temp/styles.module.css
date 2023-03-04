@@ -122,7 +122,7 @@
     border-radius: 5px;
 }
 
-.hamburger{
+.hamburger {
     position: relative;
     cursor: pointer;
     z-index: 4;
@@ -145,7 +145,7 @@
     .user_name {
         color: #000;
     }
-    .hamburger{
+    .hamburger {
         display: block !important;
     }
 }

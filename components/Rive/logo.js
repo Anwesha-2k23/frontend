@@ -8,9 +8,11 @@ function Logo() {
         autoplay: true,
         stateMachines: STATE_MACHINE_NAME,
     })
-        const onClickInput = useStateMachineInput(rive, STATE_MACHINE_NAME, INPUT_NAME)
-    return (
-        <RiveComponent  onClick={() => onClickInput.fire()} />
+    const onClickInput = useStateMachineInput(
+        rive,
+        STATE_MACHINE_NAME,
+        INPUT_NAME
     )
+    return <RiveComponent onClick={() => onClickInput.fire()} />
 }
 export default Logo

@@ -13,7 +13,7 @@ const INPUT_NAME = 'Switch'
 function Navigation() {
     const userData = useContext(AuthContext)
     const [drawerOpen, setDrawerOpen] = useState(false)
-    const [clickInputFired, setClickInputFired] = useState(false);
+    const [clickInputFired, setClickInputFired] = useState(false)
     const router = useRouter()
     const [isHome, setIsHome] = useState(['/'].includes(router.pathname))
     const { rive, RiveComponent } = useRive({
@@ -21,17 +21,21 @@ function Navigation() {
         autoplay: true,
         stateMachines: STATE_MACHINE_NAME,
     })
-    const onClickInput = useStateMachineInput(rive, STATE_MACHINE_NAME, INPUT_NAME)
-    
-    useEffect(() => {
-        if (onClickInput && clickInputFired) {
-          onClickInput.fire();
-          setClickInputFired(false);
-        }
-      }, [onClickInput, clickInputFired]);
+    const onClickInput = useStateMachineInput(
+        rive,
+        STATE_MACHINE_NAME,
+        INPUT_NAME
+    )
 
     useEffect(() => {
-      document.addEventListener('click', handleClickOutside, true)
+        if (onClickInput && clickInputFired) {
+            onClickInput.fire()
+            setClickInputFired(false)
+        }
+    }, [onClickInput, clickInputFired])
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true)
     }, [])
 
     const refNav = useRef(null)
@@ -43,12 +47,11 @@ function Navigation() {
                 document.getElementById('drawer').style.display = 'none'
             }, 300)
             setDrawerOpen(false)
-            if (onClickInput){
+            if (onClickInput) {
                 onClickInput.fire()
             }
-            setClickInputFired(true);
-        }
-        else{
+            setClickInputFired(true)
+        } else {
         }
     }
 
@@ -60,7 +63,6 @@ function Navigation() {
         }, 300)
         setDrawerOpen(false)
     }, [router.pathname])
-    
 
     const toggleDrawer = () => {
         if (!drawerOpen) {
@@ -109,10 +111,18 @@ function Navigation() {
                         className={styles.mobile_nav}
                     />
                 </button> */}
-                <div className={styles.hamburger} > 
-                <RiveComponent onClick={() => { toggleDrawer()}} />
+                <div className={styles.hamburger}>
+                    <RiveComponent
+                        onClick={() => {
+                            toggleDrawer()
+                        }}
+                    />
                 </div>
-                <Link href="/" onClick={()=>onClickInput.fire()} className={styles.navLogo} >
+                <Link
+                    href="/"
+                    onClick={() => onClickInput.fire()}
+                    className={styles.navLogo}
+                >
                     {['/'].includes(router.pathname) ? (
                         <Image
                             src="/Anwesha_text.png"
@@ -207,13 +217,25 @@ function Navigation() {
                         <Link href="/">Home</Link>
                     </li> */}
                     <li>
-                        <Link href="/all-multicity" onClick={() => toggleDrawer()}>Multicity</Link>
+                        <Link
+                            href="/all-multicity"
+                            onClick={() => toggleDrawer()}
+                        >
+                            Multicity
+                        </Link>
                     </li>
                     <li>
-                        <Link href="/campusambassador" onClick={() => toggleDrawer()}>Campus Ambassador</Link>
+                        <Link
+                            href="/campusambassador"
+                            onClick={() => toggleDrawer()}
+                        >
+                            Campus Ambassador
+                        </Link>
                     </li>
                     <li>
-                        <Link href="/events" onClick={() => toggleDrawer()}>Events</Link>
+                        <Link href="/events" onClick={() => toggleDrawer()}>
+                            Events
+                        </Link>
                     </li>
                     <li>
                         {userData.isAuth ? (
@@ -242,7 +264,11 @@ function Navigation() {
                                 />
                             </div>
                         ) : (
-                            <Link className={styles.login} href="/userLogin" onClick={() => toggleDrawer()}>
+                            <Link
+                                className={styles.login}
+                                href="/userLogin"
+                                onClick={() => toggleDrawer()}
+                            >
                                 Login
                             </Link>
                         )}
