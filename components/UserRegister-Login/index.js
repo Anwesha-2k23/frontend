@@ -88,7 +88,7 @@ const UserRegisterForm = () => {
             full_name: name,
             email_id: email,
             password: password,
-            usertype,
+            user_type: usertype,
             college_name,
         }
         try {
