@@ -48,11 +48,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     flex-grow: 1;
-    gap: 50px;
+    gap: 25px;
 }
 
 .teamCard{
-    background-color: #ffffff;
+    background-color: transparent;
     padding: 20px;
     width: 290px;
     display: flex;
@@ -60,13 +60,13 @@
     align-items: center;
     border-radius: 13px;
     margin: 20px;
-    box-shadow: 4.63213px 4.63213px 0px #000000;
+    /* box-shadow: 4.63213px 4.63213px 0px #000000; */
 }
 
 .memberImage{
-    background-color: #56a5fe;
+    /* background-color: #56a5fe; */
     border-radius: 17px;
-    border: green 2px solid;
+    /* border: green 2px solid; */
     margin-bottom: 10px;
 }
 
@@ -78,7 +78,7 @@
 
 .memberName{
     font-size: 19px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 24px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -86,7 +86,7 @@
 
 .memberCommitte{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 18.5px;
     overflow: hidden;
     margin-block: 5px;
