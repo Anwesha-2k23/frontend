@@ -35,8 +35,14 @@ function Navigation() {
     }, [onClickInput, clickInputFired])
 
     useEffect(() => {
-        document.addEventListener('click', handleClickOutside, true)
-    }, [])
+        console.log(drawerOpen)
+        if (drawerOpen) {
+        document.addEventListener('click', handleClickOutside)
+        }
+        return () => {
+            document.removeEventListener('click', handleClickOutside)
+          }
+    }, [drawerOpen])
 
     const refNav = useRef(null)
 
@@ -51,6 +57,7 @@ function Navigation() {
                 onClickInput.fire()
             }
             setClickInputFired(true)
+            console.log('clicked outside')
         } else {
         }
     }
@@ -65,22 +72,18 @@ function Navigation() {
     }, [router.pathname])
 
     const toggleDrawer = () => {
+        const drawer = document.getElementById('drawer')
         if (!drawerOpen) {
-            document.getElementById('drawer').style.display = 'block'
-            setTimeout(function () {
-                document.getElementById('drawer').style.opacity = 1
-            }, 300)
-            setDrawerOpen(true)
-            onClickInput.fire()
+          drawer.style.display = 'block'
+          setTimeout(() => drawer.style.opacity = 1, 300)
         } else {
-            document.getElementById('drawer').style.opacity = 0
-            setTimeout(function () {
-                document.getElementById('drawer').style.display = 'none'
-            }, 300)
-            setDrawerOpen(false)
-            onClickInput.fire()
+          drawer.style.opacity = 0
+          setTimeout(() => drawer.style.display = 'none', 300)
         }
-    }
+        setDrawerOpen(!drawerOpen)
+        onClickInput.fire()
+      }
+      
 
     const handleLogout = () => {
         fetch(`${host}/user/logout`, {
