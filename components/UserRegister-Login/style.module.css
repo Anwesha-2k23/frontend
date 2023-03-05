@@ -76,7 +76,7 @@
     gap: 13px;
 }
 
-.form_row .field input {
+.form_row .field input, .field select {
     width: 12vw;
 }
 
@@ -84,7 +84,7 @@
     margin-bottom: 10px;
 }
 
-.field input {
+.field input, .field select{
     width: 25vw;
     height: 45px;
     margin: 2px;
@@ -100,8 +100,25 @@
     border-right: 0; */
 }
 
-.field input:focus {
+.field input:focus, .field select:focus{
     outline: none;
+}
+
+.userType{
+    width: 25vw;
+    min-width: 230px;
+    height: 45px;
+    margin: 2px;
+    padding: 2px 15px;
+    font-size: 17px;
+    background: #eee9ff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    /* border-color: #2b0072;
+    border-bottom: 2px solid #2b0072;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0; */
 }
 
 /* .field label {
@@ -228,7 +245,7 @@
         justify-content: center;
         align-items: center;
     }
-    .field input {
+    .field input, .field select {
         min-width: 230px;
         font-size: 13px;
         width: 44vw;
