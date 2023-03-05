@@ -30,6 +30,7 @@
     width: 400px;
     position: absolute;
     top: 50%;
+    z-index: 3;
 }
 
 @media screen and (max-width: 1171px) {
@@ -45,6 +46,7 @@
     position: absolute;
     top: 40%;
     left: 75%;
+    z-index: 3;
 }
 @media screen and (max-width: 1171px) {
     .gymkhanaRive {
