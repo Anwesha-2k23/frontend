@@ -44,6 +44,7 @@ const UserLoginForm = () => {
             //check if request is successful
             // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
+                const data = await response.json()
                 if (data.success === true) {
                 toast.success('You are successfully logged in', {
                     position: 'top-right',
