@@ -7,10 +7,12 @@ import styles from './style.module.css'
 import { motion } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useRouter } from 'next/router'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
 const UserRegisterForm = () => {
+    const router = useRouter()
     const [phone, setPhone] = React.useState('')
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
@@ -105,6 +107,7 @@ const UserRegisterForm = () => {
                     progress: undefined,
                     theme: 'light',
                 })
+                router.push('/userLogin')
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to register', {
