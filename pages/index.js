@@ -265,7 +265,7 @@ const index = () => {
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
-                                    <Link href="#" style={{ color: 'inherit' }}>
+                                    <Link href="#" style={{ color: 'inherit', textDecoration:'none' }}>
                                         Coming Soon...
                                     </Link>
                                 </button>

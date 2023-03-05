@@ -185,7 +185,7 @@ const Footer = () => {
                     </form>
                     <div className={styles.termsPrivacy}>
                         <Link href="/privacy" className={styles.privacy_text}>
-                            Privacy Poicy
+                            Privacy Policy
                         </Link>
                         <Link href="/terms" className={styles.terms_text}>
                             Terms and Conditions
@@ -220,6 +220,7 @@ const Footer = () => {
                               alt="Get it on Google Play"
                               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                           /> */}
+                          <div>Download the Anwesha'23 app now</div>
                             <Image
                                 alt="google play icon"
                                 src={'/footer/googlePlay.svg'}

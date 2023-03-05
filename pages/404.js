@@ -1,5 +1,5 @@
+import Image from 'next/image'
 import React from 'react'
-
 const Custom404 = () => {
     return (
         <div
@@ -9,8 +9,16 @@ const Custom404 = () => {
                 width: '100vw',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'none',
+                display: 'flex',
+                justifyContent: 'center',
+                // alignItems: 'center',
+
             }}
-        ></div>
+        >
+            <div style={{color:'white', fontWeight:'700', fontSize:'62px', position:'absolute', top: '290px' }}>404</div>
+            <br />
+            <div style={{color:'white', fontWeight:'700', fontSize:'62px', position:'absolute', top: '350px' }}>Page not found</div>
+        </div>
     )
 }
 
