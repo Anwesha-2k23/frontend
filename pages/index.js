@@ -60,6 +60,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         {/* <img
@@ -130,6 +131,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
@@ -183,6 +185,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
@@ -241,6 +244,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
