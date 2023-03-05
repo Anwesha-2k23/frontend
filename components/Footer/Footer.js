@@ -160,7 +160,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.middle_container}>
-                    <img className={styles.frame_img} src="/Anwesha_text.png" />
+                    <img className={styles.frame_img} src="/footer/anwesha_text_footer.png" />
                     <span className={styles.newsletter}>
                         Subscribe to our Mailing list
                     </span>
@@ -176,12 +176,11 @@ const Footer = () => {
                         />
                         {/* <button
                             className={styles.nlnewbtn}
-                            whileHover={{ scale: 1.15 }}
-                            whileTap={{ scale: 0.9 }}
                             type="submit"
-                        >
-                            Subscribe
-                        </button> */}
+                        > */}
+                            {/* Subscribe */}
+                            <input type="image" alt="submit" name="submit" style={{height:'40px', filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)'}} src='/footer/newsletter.svg' />
+                        {/* </button> */}
                     </form>
                     <div className={styles.termsPrivacy}>
                         <Link href="/privacy" className={styles.privacy_text}>
