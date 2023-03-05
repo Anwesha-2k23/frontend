@@ -1,27 +1,27 @@
 import Image from 'next/image'
 import React from 'react'
-import styles from '../styles/ourteam.module.css'
+import styles from '../styles/oursponsors.module.css'
 
-const ourteam = () => {
+const oursponsors = () => {
     // const n = 4;
     const data = {
         coordinators: [
-            { name: 'Anurag', committee: 'WebnApp', image: '/A_logo.png' },
-            { name: 'Aritra', committee: 'WebnApp', image: '/A_logo.png' },
-            { name: 'Praveen', committee: 'WebnApp', image: '/A_logo.png' },
-            { name: 'Divit', committee: 'WebnApp', image: '/A_logo.png' },
-            { name: 'Divit', committee: 'WebnApp', image: '/A_logo.png' },
+            { name: 'Anurag', image: '/A_logo.png' },
+            { name: 'Aritra', image: '/A_logo.png' },
+            { name: 'Praveen', image: '/A_logo.png' },
+            { name: 'Divit', image: '/A_logo.png' },
+            { name: 'Divit', image: '/A_logo.png' },
                 
         ],
     }
     return (
         <div className={styles.parentContainer}>
             <div className={styles.container}>
-                <h2 className={styles.teamHeader}>Our Team</h2>
+                <h2 className={styles.teamHeader}>Sponsors</h2>
                 <hr className={styles.teamHeadingBar} />
                 <div className={styles.coordinators}>
-                    <h2 className={styles.teamSubHeading}>Coordinators</h2>
-                    <hr className={styles.teamSubHeadingBar} />
+                    {/* <h2 className={styles.teamSubHeading}>Coordinators</h2> */}
+                    {/* <hr className={styles.teamSubHeadingBar} /> */}
                     <div className={styles.picContainer}>
                         {/* {[...Array(n)].map((e, i) =>  */}
                         {data.coordinators.map((item, index) => (
@@ -37,9 +37,6 @@ const ourteam = () => {
                                     <div className={styles.memberName}>
                                         <strong>{item.name}</strong>
                                     </div>
-                                    <div className={styles.memberCommitte}>
-                                        {item.committee}
-                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -50,4 +47,4 @@ const ourteam = () => {
     )
 }
 
-export default ourteam
+export default oursponsors

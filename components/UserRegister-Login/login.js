@@ -44,6 +44,7 @@ const UserLoginForm = () => {
             //check if request is successful
             // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
+                if (data.success === true) {
                 toast.success('You are successfully logged in', {
                     position: 'top-right',
                     autoClose: 3000,
@@ -55,6 +56,19 @@ const UserLoginForm = () => {
                     theme: 'light',
                 })
                 context.getUser()
+                }
+                else {
+                    toast.error(data.message, {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    })
+                }
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to login', {

@@ -50,7 +50,7 @@
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     padding-top: 40px;
-    gap: 110px;
+    gap: 65px;
 }
 
 .footerTableRow {
@@ -82,19 +82,15 @@
     /* font-size: 1.1rem; */
 }
 
+.form{
+    display: flex;
+}
+
 .nlnewbtn {
-    height: 30px;
+    height: 45px;
     width: 100px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+    background: transparent;
     border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
     cursor: pointer;
 }
 
@@ -253,6 +249,16 @@
     display: block;
     min-width: 65px;
     overflow: hidden;
+    text-decoration: none;
+}
+
+.googlePlayButton a div{
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.googlePlayButton a img{
+    height: 50px;
 }
 
 .tac_links {
@@ -301,12 +307,12 @@
 }
 
 .frame_img {
-    height: 96px;
+    height: 87px;
 }
 
 .newsletter {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     margin-block: 15px;
 }
 

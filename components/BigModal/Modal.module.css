@@ -43,6 +43,7 @@
     background-color: #fff;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
+    padding-block: 35px;
 }
 
 .modal_head h1 {
@@ -84,6 +85,8 @@
     background-color: #fff;
     border-radius: 0 0 5px 5px;
     height: 116px;
+    overflow: hidden;
+    padding-block: 47px;
 }
 .btn {
     display: flex;

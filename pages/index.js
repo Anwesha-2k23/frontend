@@ -8,6 +8,7 @@ import DisplayRiveAnwesha from '../components/Rive/DisplayRiveAnwesha'
 import DisplayRiveAdmin from '../components/Rive/DisplayRiveAdmin'
 import DisplayRiveSAC from '../components/Rive/DisplayRiveSAC'
 import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
+import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
 
 const index = () => {
     return (
@@ -59,16 +60,19 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
-                        <img
+                        {/* <img
                             src="/home/events.svg"
                             layout="fill"
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
                             style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
-                        />
+                        /> */}
+                        <DisplayRiveEvent />
+
                         <div className={styles.eventSectionText}>
                             Anwesha, the Annual Cultural-Management Fest of IIT
                             Patna, is grandeur host of magnificent and thrilling
@@ -127,6 +131,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
@@ -180,6 +185,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
@@ -238,6 +244,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
+                            marginInline: '15px'
                         }}
                     >
                         <img
@@ -265,7 +272,7 @@ const index = () => {
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
-                                    <Link href="#" style={{ color: 'inherit' }}>
+                                    <Link href="#" style={{ color: 'inherit', textDecoration:'none' }}>
                                         Coming Soon...
                                     </Link>
                                 </button>
