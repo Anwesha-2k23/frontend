@@ -11,7 +11,6 @@ const oursponsors = () => {
             { name: 'Praveen', image: '/A_logo.png' },
             { name: 'Divit', image: '/A_logo.png' },
             { name: 'Divit', image: '/A_logo.png' },
-                
         ],
     }
     return (

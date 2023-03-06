@@ -76,7 +76,8 @@
     gap: 13px;
 }
 
-.form_row .field input, .field select {
+.form_row .field input,
+.field select {
     width: 12vw;
 }
 
@@ -84,7 +85,8 @@
     margin-bottom: 10px;
 }
 
-.field input, .field select{
+.field input,
+.field select {
     width: 25vw;
     height: 45px;
     margin: 2px;
@@ -100,11 +102,12 @@
     border-right: 0; */
 }
 
-.field input:focus, .field select:focus{
+.field input:focus,
+.field select:focus {
     outline: none;
 }
 
-.userType{
+.userType {
     width: 25vw;
     min-width: 230px;
     height: 45px;
@@ -191,6 +194,23 @@
     /* z-index: 3; */
 }
 
+.iitp_email {
+    border-radius: 5px 0px 0px 5px !important;
+    width: 20vw !important;
+    margin: 0px !important;
+    height: 45px;
+}
+
+.iitp_email_ext {
+    background-color: #000000;
+    color: #ffffff;
+    height: 45px;
+    font-size: 17px;
+    padding: 10px 3px 10px 5px;
+    border-radius: 0px 5px 5px 0px;
+    margin: 0px;
+}
+
 @media screen and (max-width: 670px) {
     .island {
         display: none;
@@ -245,10 +265,14 @@
         justify-content: center;
         align-items: center;
     }
-    .field input, .field select {
+    .field input,
+    .field select {
         min-width: 230px;
         font-size: 13px;
         width: 44vw;
+    }
+    .iitp_email_ext {
+        font-size: 13px;
     }
     .field label {
         font-size: 14px;

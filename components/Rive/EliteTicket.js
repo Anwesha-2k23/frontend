@@ -3,9 +3,10 @@ import styles from './style.module.css'
 
 export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
-        src: 'Events Eye.riv',
-        artboard: 'events.svg',
+        src: 'Elite Card.riv',
+        artboard: 'Elite card.svg',
         autoplay: true,
     })
-    return <RiveComponent className={styles.eventsEye} />
+
+    return <RiveComponent className={styles.EliteCard} />
 }

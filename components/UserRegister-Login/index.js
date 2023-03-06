@@ -21,11 +21,19 @@ const UserRegisterForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
     const [usertype, setUserType] = React.useState('iitp_student')
     const [college_name, setCollegeName] = React.useState('')
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         setUserType(e.target.value)
     }
     const handleSubmit = async (event) => {
         event.preventDefault()
+        console.log({
+            phone_number: phone,
+            full_name: name,
+            email_id: email,
+            password: password,
+            user_type: usertype,
+            college_name,
+        })
         // running user input validation
         if (name.length < 5) {
             toast.warning('Username is too small', {
@@ -200,7 +208,7 @@ const UserRegisterForm = () => {
                         />
                         <br />
                     </div>
-                    <div className={styles.field}>
+                    {/* <div className={styles.field}>
                         <label htmlFor="email_id">Email ID</label>
                         <br />
                         <input
@@ -211,7 +219,7 @@ const UserRegisterForm = () => {
                             required
                         />
                         <br />
-                    </div>
+                    </div> */}
                     <div className={styles.field}>
                         <label htmlFor="Phone_number">Phone Number</label>
                         <br />
@@ -225,22 +233,84 @@ const UserRegisterForm = () => {
                         />
                         <br />
                     </div>
-                    <div className={styles.field}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        I am a student of IIT Patna{' '}
+                        <input
+                            type="checkbox"
+                            style={{
+                                width: '20px',
+                                height: '20px',
+                                margin: '5px',
+                            }}
+                            checked={usertype === 'iitp_student'}
+                            onChange={() => {
+                                setEmail('')
+                                if(usertype === 'iitp_student') {
+                                    setUserType('student')
+                                }
+                                else {
+                                    setUserType('iitp_student');
+                                    setCollegeName('IIT Patna')
+                                }
+                            }}
+                        />
+                    </div>
+                    {(() => {
+                        switch (usertype) {
+                        case 'iitp_student':
+                            return (
+                                <div className={styles.field}>
+                                    <label htmlFor="email_id">IITP Mail ID</label>
+                                    <br />
+                                    <input
+                                        type="email"
+                                        name="IITP_Mail_Id"
+                                        onChange={(e) => setEmail(e.target.value + '@iitp.ac.in')}
+                                        required
+                                        className={styles.iitp_email}
+                                    />
+                                    <span className={styles.iitp_email_ext}>@iitp.ac.in</span>
+                                    <br />
+                                </div>
+                                )
+                        default:
+                            return null
+                        }
+                    })()}
+                    {usertype !== 'iitp_student' ? <div className={styles.field}>
                         <label>Select user type:</label>
                         <br/>
-                            <select name="userType" id="userType" onChange={(e)=>handleChange(e)}>
-                              <option value="iitp_student">Student (IIT Patna)</option>
+                            <select name="userType" id="userType" value={usertype} onChange={(e)=>handleChange(e)}>
                               <option value="student">Student</option>
                               <option value="non-student">Non Student</option>
                               <option value="alumni">Alumni</option>
                               <option value="faculty">Faculty</option>
                             </select>
-                    </div>
-                    <div className={styles.field}>
-                            <label htmlFor="college_name">College Name: </label>
+                    </div> : null}
+                    {usertype !== 'iitp_student' ? <div className={styles.field}>
+                            <label htmlFor="email_id">Email ID</label>
                             <br />
-                            <input type="text" name="college_name" placeholder="Eg: IIT Patna" onChange={(e)=>setCollegeName(e.target.value)} required/>
-                    </div>
+                            <input
+                                type="email"
+                                name="Email_Id"
+                                placeholder="Eg: vineet@gmail.com"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <br />
+                        </div> : null}
+                        {usertype !== 'iitp_student' ? <div className={styles.field}>
+                            <label htmlFor="college_name">Institute/Organization Name: </label>
+                            <br />
+                            <input type="text" name="college_name" placeholder="Eg: NIT Patna" value={usertype === 'iitp_student' ? 'IIT Patna' : college_name} disabled={usertype === 'iitp_student'} onChange={(e)=>setCollegeName(e.target.value)} required/>
+                    </div> : null}
                     <div className={styles.form_row}>
                         <div className={styles.field}>
                             <label htmlFor="password">Password</label>
