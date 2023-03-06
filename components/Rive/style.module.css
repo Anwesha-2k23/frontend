@@ -79,3 +79,9 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+@media screen and (max-width: 600px) {
+    .eventsEye{
+        height: 31vw;
+    }
+}
