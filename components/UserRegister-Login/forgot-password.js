@@ -52,7 +52,6 @@ const ForgotPassword = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                context.getUser()
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to reset password', {
