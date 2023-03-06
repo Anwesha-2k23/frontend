@@ -11,7 +11,6 @@ const ourteam = () => {
             { name: 'Praveen', committee: 'WebnApp', image: '/A_logo.png' },
             { name: 'Divit', committee: 'WebnApp', image: '/A_logo.png' },
             { name: 'Divit', committee: 'WebnApp', image: '/A_logo.png' },
-                
         ],
     }
     return (

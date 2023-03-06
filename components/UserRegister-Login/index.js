@@ -21,7 +21,7 @@ const UserRegisterForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
     const [usertype, setUserType] = React.useState('iitp_student')
     const [college_name, setCollegeName] = React.useState('')
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         setUserType(e.target.value)
     }
     const handleSubmit = async (event) => {

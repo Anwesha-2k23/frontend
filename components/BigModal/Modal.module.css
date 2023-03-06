@@ -134,10 +134,10 @@
 
 .date_loc {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border: 4px dotted #8cc1ff;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    /* border: 4px dotted #8cc1ff; */
     width: 100%;
     border-radius: 30px;
     padding: 0px 15px 0px 15px;
@@ -153,23 +153,33 @@
 .date_row img {
     height: 50px;
 }
-
+.date_text {
+    font-size: 20px;
+    font-weight: 200;
+    margin-right: 8px;
+}
+.date_value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 8px;
+}
 .date {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin: 15px;
+    align-items: center; */
+    margin: 3px;
+    font-weight: 700;
 }
 
 .day {
-    font-size: 30px;
-    font-weight: 100;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .month {
-    font-size: 20px;
-    text-transform: uppercase;
+    font-size: 25px;
+    /* text-transform: uppercase; */
 }
 
 .location {
@@ -187,15 +197,21 @@
 .description {
     font-size: 20px;
     font-weight: 100;
-    padding: 20px 5px 20px 5px;
+    padding: 0px 5px 20px 5px;
 }
 
 .team_pay {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     font-size: 20px;
     font-weight: 200;
+}
+
+.team_pay a {
+    color: #000000;
+    text-decoration: none;
+    position: relative;
 }
 
 .team_pay img {

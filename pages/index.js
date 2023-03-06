@@ -9,6 +9,7 @@ import DisplayRiveAdmin from '../components/Rive/DisplayRiveAdmin'
 import DisplayRiveSAC from '../components/Rive/DisplayRiveSAC'
 import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
+import EliteTicket from '../components/Rive/EliteTicket' 
 
 const index = () => {
     return (
@@ -39,6 +40,57 @@ const index = () => {
 
             {/*Blend home section with other sections*/}
             <div className={styles.blendHomeSection}></div>
+            
+            {/*Steps section*/}
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px'}}><div className={styles.steps}></div></div>
+            {/*End Steps section*/}
+
+            {/*ticket section*/}
+            <div className={styles.ticketContainer}>
+                <div className={styles.ticketDetails}>
+                    <span style={{fontSize: 24, textAlign: 'center'}}>Get your Early Bird</span>
+                    <span style={{fontSize: 36, fontWeight: 'bold', textAlign: 'center'}}>free entry passes</span>
+                </div>
+                <div className={styles.ticketImages}>
+                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank"><EliteTicket/></Link>
+                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank"><Image src="/home/pro-card.png" width={277} height={440} alt="Pro ticket" /></Link>
+                </div>
+            </div>
+            {/*end ticket section*/}
+
+            {/* Merchandise Section */}
+            <div className={styles.themeSection}>
+                <div className={styles.merchContainer}>
+                    <div className={styles.merchDetails}>
+                        <Image
+                            className={styles.tshirtImage}
+                            src="/home/tshirts.svg"
+                            alt="Tshirts"
+                            width={600}
+                            height={580}
+                        />
+                    </div>
+                    <div className={styles.merchBooking}>
+                        <img
+                            src="/home/grab_merc_text.png"
+                            alt="Grab the merch"
+                        />
+                        {/* TODO : Add the link for the payment of the TShirts */}
+                        <a href="#">
+                            <button href="#" className={styles.merchBookBtn}>
+                                Shop Now
+                            </button>
+                        </a>
+                    </div>
+                    {/* TODO : Add the link for the payment of the TShirts */}
+                    <a href="#">
+                        <button href="#" className={styles.merchBookBtn2}>
+                            Shop Now
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {/* end Merchandise Section */}
 
             {/*Events section*/}
             <div className={styles.eventSection}>
@@ -60,7 +112,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         {/* <img
@@ -131,7 +183,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -140,7 +192,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
 
                         <div className={styles.themeSectionText}>
@@ -185,7 +240,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -194,7 +249,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
                         <div className={styles.eventSectionText}>
                             Anwesha 2023 is envisioned to be an innovative and
@@ -244,7 +302,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -253,7 +311,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
 
                         <div className={styles.themeSectionText}>
@@ -272,7 +333,13 @@ const index = () => {
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
-                                    <Link href="#" style={{ color: 'inherit', textDecoration:'none' }}>
+                                    <Link
+                                        href="#"
+                                        style={{
+                                            color: 'inherit',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
                                         Coming Soon...
                                     </Link>
                                 </button>
@@ -282,6 +349,7 @@ const index = () => {
                 </div>
             </div>
             {/*End team section*/}
+
 
             <div style={{ height: '101px' }}></div>
         </>

@@ -46,19 +46,18 @@ const UserLoginForm = () => {
             if (response.status === 200 || response.status === 201) {
                 const data = await response.json()
                 if (data.success === true) {
-                toast.success('You are successfully logged in', {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
-                context.getUser()
-                }
-                else {
+                    toast.success('You are successfully logged in', {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    })
+                    context.getUser()
+                } else {
                     toast.error(data.message, {
                         position: 'top-right',
                         autoClose: 3000,

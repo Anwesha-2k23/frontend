@@ -37,11 +37,11 @@ function Navigation() {
     useEffect(() => {
         console.log(drawerOpen)
         if (drawerOpen) {
-        document.addEventListener('click', handleClickOutside)
+            document.addEventListener('click', handleClickOutside)
         }
         return () => {
             document.removeEventListener('click', handleClickOutside)
-          }
+        }
     }, [drawerOpen])
 
     const refNav = useRef(null)
@@ -74,16 +74,15 @@ function Navigation() {
     const toggleDrawer = () => {
         const drawer = document.getElementById('drawer')
         if (!drawerOpen) {
-          drawer.style.display = 'block'
-          setTimeout(() => drawer.style.opacity = 1, 300)
+            drawer.style.display = 'block'
+            setTimeout(() => (drawer.style.opacity = 1), 300)
         } else {
-          drawer.style.opacity = 0
-          setTimeout(() => drawer.style.display = 'none', 300)
+            drawer.style.opacity = 0
+            setTimeout(() => (drawer.style.display = 'none'), 300)
         }
         setDrawerOpen(!drawerOpen)
         onClickInput.fire()
-      }
-      
+    }
 
     const handleLogout = () => {
         fetch(`${host}/user/logout`, {
@@ -148,16 +147,16 @@ function Navigation() {
                         </li> */}
                         <li
                             style={
-                                router.pathname === '/all-multicity'
+                                router.pathname === '/aboutus'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
                             <Link
                                 className={styles.linknav}
-                                href="/all-multicity"
+                                href="/aboutus"
                             >
-                                Multicity
+                                About Us
                             </Link>
                         </li>
                         <li
