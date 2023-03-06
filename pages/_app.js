@@ -14,7 +14,8 @@ import Navbar from '../components/Navbar-temp'
 import Footer from '../components/Footer/Footer'
 
 const poppins = Poppins({
-    weight: '900',
+    weight: ['400', '900'],
+    subsets: ['latin'],
 })
 function MyApp({ Component, pageProps }) {
     const router = useRouter()
@@ -28,7 +29,7 @@ function MyApp({ Component, pageProps }) {
     //     showHeader = false
     // }
     return (
-        <main className={poppins.className}>
+        <main className={poppins.className} style={{ background: '#a7ddfe' }}>
             <Script
                 strategy="lazyOnload"
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

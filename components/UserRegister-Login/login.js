@@ -44,6 +44,8 @@ const UserLoginForm = () => {
             //check if request is successful
             // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
+                const data = await response.json()
+                if (data.success === true) {
                 toast.success('You are successfully logged in', {
                     position: 'top-right',
                     autoClose: 3000,
@@ -55,6 +57,19 @@ const UserLoginForm = () => {
                     theme: 'light',
                 })
                 context.getUser()
+                }
+                else {
+                    toast.error(data.message, {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    })
+                }
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to login', {
@@ -120,17 +135,12 @@ const UserLoginForm = () => {
                 alt="floating-island-iitp"
                 src="/assets/floating-island.svg"
             />
-            <img
-                className={styles.clouds}
-                alt="clouds"
-                src="/assets/clouds.svg"
-            />
 
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '0%' }}
+                    whileInView={{ opacity: 1, x: '-2%' }}
                     transition={{ duration: 1 }}
                 >
                     <h3>LOGIN</h3>

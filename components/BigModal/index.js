@@ -204,51 +204,24 @@ const Modal = (props) => {
                         </div>
                     </div>
                     <div className={styles.modal_footer}>
-                        {props.body.is_active ? (
-                            <button
-                                className={styles.btn}
-                                onClick={() => {
-                                    if (props.body.is_online) {
-                                        router.replace(
-                                            props.body.registration_link
-                                        )
-                                    }
-                                    // else if(props.body.is_solo) {
-                                    //     soloEventRegistration(userData, props.body.id)
-                                    //     // console.log('proper')
-                                    // }
-                                    // else {
-                                    //     router.push({
-                                    //     pathname: `/event-registration/${[
-                                    //         props.body.id,
-                                    //     ]}`,
-                                    //     query: {
-                                    //         id: props.body.id,
-                                    //         name: props.body.name,
-                                    //         description: props.body.description,
-                                    //         max_team_size: props.body.max_team_size,
-                                    //         min_team_size: props.body.min_team_size,
-                                    //         registration_fee:
-                                    //             props.body.registration_fee,
-                                    //     },
-                                    // })
-                                    // }
-                                }}
-                                // disabled
-                            >
-                                Register
-                            </button>
-                        ) : null}
                         {props.body.video ? (
                             <a
                                 target="_blank"
-                                className={styles.btn}
+                                className={styles.rulebtn}
                                 href={props.body.video}
                                 // onClick={(e) => props.closeHandler()}
                             >
                                 Rulebook
                             </a>
                         ) : null}
+                        <button
+                            className={styles.btn}
+                            onClick={() => {
+                                router.replace(props.body.registration_link)
+                            }}
+                        >
+                            Register
+                        </button>
                     </div>
                 </div>
             </div>

@@ -7,17 +7,23 @@ import styles from './style.module.css'
 import { motion } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useRouter } from 'next/router'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
 const UserRegisterForm = () => {
+    const router = useRouter()
     const [phone, setPhone] = React.useState('')
     const [name, setName] = React.useState('')
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [cnfPassword, setCnfPassword] = React.useState('')
     const [passwordShown, setPasswordShown] = React.useState(false)
-
+    const [usertype, setUserType] = React.useState('iitp_student')
+    const [college_name, setCollegeName] = React.useState('')
+    const handleChange = (e)=>{
+        setUserType(e.target.value)
+    }
     const handleSubmit = async (event) => {
         event.preventDefault()
         // running user input validation
@@ -82,6 +88,8 @@ const UserRegisterForm = () => {
             full_name: name,
             email_id: email,
             password: password,
+            user_type: usertype,
+            college_name,
         }
         try {
             const response = await fetch(`${host}/user/register`, {
@@ -95,7 +103,7 @@ const UserRegisterForm = () => {
             if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
                 console.log(data)
-                toast.success('You are successfully registered', {
+                toast.success('Please check your email for verification', {
                     position: 'top-right',
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -105,6 +113,7 @@ const UserRegisterForm = () => {
                     progress: undefined,
                     theme: 'light',
                 })
+                router.push('/userLogin')
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to register', {
@@ -170,16 +179,11 @@ const UserRegisterForm = () => {
                 alt="floating-island-iitp"
                 src="/assets/floating-island.svg"
             />
-            <img
-                className={styles.clouds}
-                alt="clouds"
-                src="/assets/clouds.svg"
-            />
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '0%' }}
+                    whileInView={{ opacity: 1, x: '-2%' }}
                     transition={{ duration: 1 }}
                 >
                     <h3>REGISTER</h3>
@@ -220,6 +224,22 @@ const UserRegisterForm = () => {
                             onChange={(e) => setPhone(e.target.value)}
                         />
                         <br />
+                    </div>
+                    <div className={styles.field}>
+                        <label>Select user type:</label>
+                        <br/>
+                            <select name="userType" id="userType" onChange={(e)=>handleChange(e)}>
+                              <option value="iitp_student">Student (IIT Patna)</option>
+                              <option value="student">Student</option>
+                              <option value="non-student">Non Student</option>
+                              <option value="alumni">Alumni</option>
+                              <option value="faculty">Faculty</option>
+                            </select>
+                    </div>
+                    <div className={styles.field}>
+                            <label htmlFor="college_name">College Name: </label>
+                            <br />
+                            <input type="text" name="college_name" placeholder="Eg: IIT Patna" onChange={(e)=>setCollegeName(e.target.value)} required/>
                     </div>
                     <div className={styles.form_row}>
                         <div className={styles.field}>
@@ -274,7 +294,7 @@ const UserRegisterForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
+                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
                     </motion.div>
                     <Link href="/userLogin">
                         Already have an account? Login here.
