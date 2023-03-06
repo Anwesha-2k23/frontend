@@ -16,6 +16,77 @@
     backdrop-filter: blur(10px);
 }
 
+.steps{
+    width: 1070px;
+    height: 342px;
+    background: url("/home/steps.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.ticketContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("/home/ticketbg.png");
+    min-height: 822px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ticketDetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticketImages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 55vw;
+    max-width: 900px;
+    min-width: 330px;
+    height: 100%;
+}
+
+@media screen and (max-width: 1080px){
+  .ticketContainer{
+    background: url("/home/ticketbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 1360px;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+  .ticketDetails{
+    height: 180px;
+  }
+  .ticketImages{
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1071px){
+  .steps{
+    background: url("/home/steps-mobile.svg");
+    width: 100vw;
+    min-height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .lecturehall {
     position: absolute;
     top: 400px;
@@ -139,7 +210,6 @@
 }
 
 .tshirtImage {
-    height: 350px;
     width: auto;
     /* width: 40%; */
     /* position: relative;
@@ -147,6 +217,12 @@
     margin-left: 70px; */
 }
 
+@media screen and (max-width: 700px) {
+  .tshirtImage {
+    width: 350px;
+    height: 320px;
+  }
+}
 .merchDetails {
     display: flex;
     padding-bottom: 20px;
@@ -221,6 +297,7 @@
     border: 3px solid #000000;
     text-align: center;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .merchBookBtn2 {
@@ -237,7 +314,16 @@
     text-decoration: none;
     display: none;
 }
+.merchBookBtn:hover {
+    background-color: #000000;
+    color: #fff;
+}
 
+@media screen and (max-width: 450px){
+  .merchBookBtn2{
+    width: 300px;
+  }
+}
 
 @media screen and (max-width: 1171px) {
     .merchBooking {

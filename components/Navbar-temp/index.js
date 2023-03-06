@@ -147,16 +147,16 @@ function Navigation() {
                         </li> */}
                         <li
                             style={
-                                router.pathname === '/all-multicity'
+                                router.pathname === '/aboutus'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
                             <Link
                                 className={styles.linknav}
-                                href="/all-multicity"
+                                href="/aboutus"
                             >
-                                Multicity
+                                About Us
                             </Link>
                         </li>
                         <li
