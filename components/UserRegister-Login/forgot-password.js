@@ -8,18 +8,16 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
-const UserLoginForm = () => {
+const ForgotPassword = () => {
     const context = useContext(AuthContext)
     const [email, setEmail] = React.useState('')
-    const [password, setPassword] = React.useState('')
-    const [passwordShown, setPasswordShown] = React.useState(false)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        let body = { username: email, password: password }
+        let body = { email: email}
         // user input validation
-        if (email.length == 0 || password.length == 0) {
-            toast.warning('Please fill email and password', {
+        if (email.length == 0) {
+            toast.warning('Please fill email', {
                 position: 'top-right',
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -32,7 +30,7 @@ const UserLoginForm = () => {
             return
         }
         try {
-            const response = await fetch(`${host}/user/login`, {
+            const response = await fetch(`${host}/user/forgetpassword`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -44,34 +42,19 @@ const UserLoginForm = () => {
             //check if request is successful
             // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
-                const data = await response.json()
-                if (data.success === true) {
-                    toast.success('You are successfully logged in', {
-                        position: 'top-right',
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                    })
-                    context.getUser()
-                } else {
-                    toast.error(data.message, {
-                        position: 'top-right',
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                    })
-                }
+                toast.success('Please check your email for the password reset link. Make sure to check the spam folder as well.', {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                })
             } else if (response.status === 409) {
                 const data = await response.json()
-                toast.error(data.message || 'Unable to login', {
+                toast.error(data.message || 'Unable to reset password', {
                     position: 'top-right',
                     autoClose: 3000,
                     hideProgressBar: false,
@@ -96,7 +79,7 @@ const UserLoginForm = () => {
             }
         } catch (err) {
             console.log(err)
-            toast.error('Login failed. Check your internet connection', {
+            toast.error('Password reset failed. Check your internet connection', {
                 position: 'top-right',
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -134,15 +117,20 @@ const UserLoginForm = () => {
                 alt="floating-island-iitp"
                 src="/assets/floating-island.svg"
             />
+            <img
+                className={styles.clouds}
+                alt="clouds"
+                src="/assets/clouds.svg"
+            />
 
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '-2%' }}
+                    whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>LOGIN</h3>
+                    <h3>PASSWORD RESET</h3>
                     <hr />
                     <div className={styles.field}>
                         <label htmlFor="email_id">Email ID</label>
@@ -157,21 +145,7 @@ const UserLoginForm = () => {
                         <br />
                     </div>
 
-                    <div className={styles.field}>
-                        <label htmlFor="password">Password</label>
-                        <br />
-                        <input
-                            type={passwordShown ? 'text' : 'password'}
-                            id="pwd"
-                            name="Password"
-                            placeholder="Password"
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                        <br />
-
-                        <br />
-                    </div>
+                    
                     <div
                         style={{
                             display: 'flex',
@@ -180,31 +154,9 @@ const UserLoginForm = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        <span
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <input
-                                type="checkbox"
-                                id="showPassword"
-                                style={{
-                                    width: '20px',
-                                    height: '20px',
-                                    margin: '5px',
-                                }}
-                                onChange={() => {
-                                    setPasswordShown((prev) => !prev)
-                                }}
-                            />
-                            Show Password
-                        </span>
                         <br />
-                        <Link href="/password-reset" className={styles.forgotpass}>
-                            Forgot password?
+                        <Link href="/userLogin" className={styles.forgotpass}>
+                            Login here
                         </Link>
                     </div>
                     <motion.div
@@ -214,13 +166,10 @@ const UserLoginForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userRegister">
-                        Don't have an account? Register here.
-                    </Link>
                 </motion.form>
             </div>
         </div>
     )
 }
 
-export default UserLoginForm
+export default ForgotPassword
