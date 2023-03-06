@@ -7,7 +7,7 @@ export default function Displayrive() {
         artboard: 'events.svg',
         autoplay: true,
     })
-    if(rive){
+    if (rive) {
         console.log(rive.contents)
     }
     return <RiveComponent className={styles.eventsEye} />

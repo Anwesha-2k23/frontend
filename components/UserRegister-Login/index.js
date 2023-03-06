@@ -21,7 +21,7 @@ const UserRegisterForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
     const [usertype, setUserType] = React.useState('iitp_student')
     const [college_name, setCollegeName] = React.useState('')
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         setUserType(e.target.value)
     }
     const handleSubmit = async (event) => {
@@ -227,19 +227,31 @@ const UserRegisterForm = () => {
                     </div>
                     <div className={styles.field}>
                         <label>Select user type:</label>
-                        <br/>
-                            <select name="userType" id="userType" onChange={(e)=>handleChange(e)}>
-                              <option value="iitp_student">Student (IIT Patna)</option>
-                              <option value="student">Student</option>
-                              <option value="non-student">Non Student</option>
-                              <option value="alumni">Alumni</option>
-                              <option value="faculty">Faculty</option>
-                            </select>
+                        <br />
+                        <select
+                            name="userType"
+                            id="userType"
+                            onChange={(e) => handleChange(e)}
+                        >
+                            <option value="iitp_student">
+                                Student (IIT Patna)
+                            </option>
+                            <option value="student">Student</option>
+                            <option value="non-student">Non Student</option>
+                            <option value="alumni">Alumni</option>
+                            <option value="faculty">Faculty</option>
+                        </select>
                     </div>
                     <div className={styles.field}>
-                            <label htmlFor="college_name">College Name: </label>
-                            <br />
-                            <input type="text" name="college_name" placeholder="Eg: IIT Patna" onChange={(e)=>setCollegeName(e.target.value)} required/>
+                        <label htmlFor="college_name">College Name: </label>
+                        <br />
+                        <input
+                            type="text"
+                            name="college_name"
+                            placeholder="Eg: IIT Patna"
+                            onChange={(e) => setCollegeName(e.target.value)}
+                            required
+                        />
                     </div>
                     <div className={styles.form_row}>
                         <div className={styles.field}>

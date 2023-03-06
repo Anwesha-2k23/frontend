@@ -4,7 +4,7 @@
     bottom: 0;
     width: 100vw;
     height: fit-content;
-    background-color: #504BBC;
+    background-color: #504bbc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +82,7 @@
     /* font-size: 1.1rem; */
 }
 
-.form{
+.form {
     display: flex;
 }
 
@@ -252,12 +252,12 @@
     text-decoration: none;
 }
 
-.googlePlayButton a div{
+.googlePlayButton a div {
     text-decoration: none;
     margin-bottom: 10px;
 }
 
-.googlePlayButton a img{
+.googlePlayButton a img {
     height: 50px;
 }
 

@@ -160,7 +160,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className={styles.middle_container}>
-                    <img className={styles.frame_img} src="/footer/anwesha_text_footer.png" />
+                    <img
+                        className={styles.frame_img}
+                        src="/footer/anwesha_text_footer.png"
+                    />
                     <span className={styles.newsletter}>
                         Subscribe to our Mailing list
                     </span>
@@ -178,8 +181,17 @@ const Footer = () => {
                             className={styles.nlnewbtn}
                             type="submit"
                         > */}
-                            {/* Subscribe */}
-                            <input type="image" alt="submit" name="submit" style={{height:'40px', filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)'}} src='/footer/newsletter.svg' />
+                        {/* Subscribe */}
+                        <input
+                            type="image"
+                            alt="submit"
+                            name="submit"
+                            style={{
+                                height: '40px',
+                                filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)',
+                            }}
+                            src="/footer/newsletter.svg"
+                        />
                         {/* </button> */}
                     </form>
                     <div className={styles.termsPrivacy}>
@@ -219,7 +231,7 @@ const Footer = () => {
                               alt="Get it on Google Play"
                               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                           /> */}
-                          <div>Download the Anwesha'23 app now</div>
+                            <div>Download the Anwesha'23 app now</div>
                             <Image
                                 alt="google play icon"
                                 src={'/footer/googlePlay.svg'}

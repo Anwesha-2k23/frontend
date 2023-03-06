@@ -72,8 +72,7 @@
     }
 }
 
-
-.eventsEye{
+.eventsEye {
     width: 100%;
     height: 207px;
     border-top-left-radius: 15px;
@@ -81,7 +80,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    .eventsEye{
+    .eventsEye {
         height: 31vw;
     }
 }

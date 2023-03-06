@@ -60,7 +60,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         {/* <img
@@ -131,7 +131,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -140,7 +140,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
 
                         <div className={styles.themeSectionText}>
@@ -185,7 +188,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -194,7 +197,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
                         <div className={styles.eventSectionText}>
                             Anwesha 2023 is envisioned to be an innovative and
@@ -244,7 +250,7 @@ const index = () => {
                             boxShadow: '#000000 7px 7px 0px',
                             marginBottom: '10px',
                             borderRadius: '15px',
-                            marginInline: '15px'
+                            marginInline: '15px',
                         }}
                     >
                         <img
@@ -253,7 +259,10 @@ const index = () => {
                             width="100%"
                             objectFit="contain"
                             alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
                         />
 
                         <div className={styles.themeSectionText}>
@@ -272,7 +281,13 @@ const index = () => {
                             <br />
                             <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
-                                    <Link href="#" style={{ color: 'inherit', textDecoration:'none' }}>
+                                    <Link
+                                        href="#"
+                                        style={{
+                                            color: 'inherit',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
                                         Coming Soon...
                                     </Link>
                                 </button>
@@ -282,6 +297,63 @@ const index = () => {
                 </div>
             </div>
             {/*End team section*/}
+
+            {/* Merchandise Section */}
+            <div className={styles.themeSection}>
+                <div className={styles.merchContainer}>
+                    <div className={styles.merchDetails}>
+                        <img
+                            className={styles.tshirtImage}
+                            src="/home/tshirts.png"
+                            alt="Tshirts"
+                        />
+                        <div className={styles.priceRow}>
+                            <div className={styles.priceCol}>
+                                <span className={styles.tshirtText}>
+                                    1 &nbsp; Tshirt
+                                </span>
+                                <span className={styles.merchPrice}>
+                                    Rs. 399/-
+                                </span>
+                            </div>
+                            <div className={styles.priceCol}>
+                                <span className={styles.tshirtText}>
+                                    2 &nbsp; Tshirts
+                                </span>
+                                <span className={styles.merchPrice}>
+                                    Rs. 749/-
+                                </span>
+                            </div>
+                            <div className={styles.priceCol}>
+                                <span className={styles.tshirtText}>
+                                    3 &nbsp; Tshirts
+                                </span>
+                                <span className={styles.merchPrice}>
+                                    Rs. 1099/-
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.merchBooking}>
+                        <img
+                            src="/home/grab_merc_text.png"
+                            alt="Grab the merch"
+                        />
+                        {/* TODO : Add the link for the payment of the TShirts */}
+                        <a href="#">
+                            <button href="#" className={styles.merchBookBtn}>
+                                Shop Now
+                            </button>
+                        </a>
+                    </div>
+                    {/* TODO : Add the link for the payment of the TShirts */}
+                    <a href="#">
+                        <button href="#" className={styles.merchBookBtn2}>
+                            Shop Now
+                        </button>
+                    </a>
+                </div>
+            </div>
 
             <div style={{ height: '101px' }}></div>
         </>

@@ -12,12 +12,32 @@ const Custom404 = () => {
                 backgroundRepeat: 'repat-x',
                 display: 'flex',
                 justifyContent: 'center',
-                backgroundSize: 'contain'
+                backgroundSize: 'contain',
             }}
         >
-            <div style={{color:'white', fontWeight:'700', fontSize:'62px', position:'absolute', top: '360px' }}>404</div>
+            <div
+                style={{
+                    color: 'white',
+                    fontWeight: '700',
+                    fontSize: '62px',
+                    position: 'absolute',
+                    top: '360px',
+                }}
+            >
+                404
+            </div>
             <br />
-            <div style={{color:'white', fontWeight:'700', fontSize:'62px', position:'absolute', top: '420px' }}>Page not found</div>
+            <div
+                style={{
+                    color: 'white',
+                    fontWeight: '700',
+                    fontSize: '62px',
+                    position: 'absolute',
+                    top: '420px',
+                }}
+            >
+                Page not found
+            </div>
         </div>
     )
 }

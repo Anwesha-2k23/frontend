@@ -13,9 +13,9 @@ export default function Displayrive() {
         'Anwesha Register component',
         'Hover on Register'
     )
-    if(rive){
-    console.log(rive.content);
+    if (rive) {
+        console.log(rive.content)
     }
-    
+
     return <RiveComponent className={styles.adminRive} />
 }

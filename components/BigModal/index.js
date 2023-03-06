@@ -58,83 +58,31 @@ const Modal = (props) => {
                             />
                         </div>
                         <div className={styles.modal_body}>
-                            {/* <div className={styles.date_loc}>
-                                <div className={styles.date_row}>
-                                    <img src="/assets/calendar-clock.svg" />
-                                    <div className={styles.date}>
-                                        <span className={styles.day}>
-                                            {new Date(
-                                                props.body.start_time
-                                            ).toLocaleString('default', {
-                                                day: 'numeric',
-                                            })}
-                                        </span>
-                                        <span className={styles.month}>
-                                            {new Date(
-                                                props.body.start_time
-                                            ).toLocaleString('default', {
-                                                month: 'short',
-                                            })}
-                                        </span>
-                                    </div>
-                                    {props.body.end_time &&
-                                    new Date(
-                                        props.body.end_time
-                                    ).toDateString() !=
-                                        new Date(
-                                            props.body.start_time
-                                        ).toDateString() ? (
-                                        <div>-</div>
-                                    ) : null}
-                                    {props.body.end_time &&
-                                    new Date(
-                                        props.body.end_time
-                                    ).toDateString() !=
-                                        new Date(
-                                            props.body.start_time
-                                        ).toDateString() ? (
-                                        <div className={styles.date}>
-                                            <span className={styles.day}>
-                                                {new Date(
-                                                    props.body.end_time
-                                                ).toLocaleString('default', {
-                                                    day: 'numeric',
-                                                })}
-                                            </span>
-                                            <span className={styles.month}>
-                                                {new Date(
-                                                    props.body.end_time
-                                                ).toLocaleString('default', {
-                                                    month: 'short',
-                                                })}
-                                            </span>
-                                        </div>
-                                    ) : null}
-                                </div>
-                                <div className={styles.location}>
-                                    <img src="/assets/location.svg" />
-                                    {props.body.venue}
-                                </div>
-                            </div> */}
                             <div className={styles.date_venue}>
                                 <span className={styles.date_text}>Date</span>
-                                <span className={styles.date_value}>{new Date(
-                                    props.body.start_time
-                                ).toLocaleString('default', {
-                                    day: 'numeric',
-                                })} - {new Date(
-                                    props.body.end_time
-                                ).toLocaleString('default', {
-                                    day: 'numeric',
-                                })}
+                                <span className={styles.date_value}>
+                                    {new Date(
+                                        props.body.start_time
+                                    ).toLocaleString('default', {
+                                        day: 'numeric',
+                                    })}{' '}
+                                    -{' '}
+                                    {new Date(
+                                        props.body.end_time
+                                    ).toLocaleString('default', {
+                                        day: 'numeric',
+                                    })}
                                     {new Date(
                                         props.body.start_time
                                     ).toLocaleString('default', {
                                         month: 'long',
-                                    })}</span>
+                                    })}
+                                </span>
                                 <br />
                                 <span className={styles.date_text}>Venue</span>
-                                <span className={styles.date_value}>{props.body.venue}</span>
+                                <span className={styles.date_value}>
+                                    {props.body.venue}
+                                </span>
                             </div>
                             <p className={styles.description}>
                                 {props.body.description}
@@ -145,54 +93,74 @@ const Modal = (props) => {
                                     {props.body.max_team_size === 1
                                         ? 'Individual Participation'
                                         : props.body.min_team_size ===
-                                            props.body.max_team_size
-                                            ? props.body.min_team_size + ' members'
-                                            : props.body.min_team_size +
-                                            ' - ' +
-                                            props.body.max_team_size +
-                                            ' members'}
+                                          props.body.max_team_size
+                                        ? props.body.min_team_size + ' members'
+                                        : props.body.min_team_size +
+                                          ' - ' +
+                                          props.body.max_team_size +
+                                          ' members'}
                                 </div>
                                 {props.body.registration_fee ? (
                                     <div>
                                         Registration Fee &nbsp;
                                         {/* <img src="/assets/payment.svg" /> */}
-                                        <span style={{ fontWeight: '700' }}> ₹
-                                            {props.body.registration_fee}</span>
+                                        <span style={{ fontWeight: '700' }}>
+                                            {' '}
+                                            ₹{props.body.registration_fee}
+                                        </span>
                                     </div>
                                 ) : null}
                             </div>
                             {props.body.registration_deadline ? (
-                                <div className={styles.team_pay} style={{ flexDirection: 'row' }}>
+                                <div
+                                    className={styles.team_pay}
+                                    style={{ flexDirection: 'row' }}
+                                >
                                     {/* <img src="/assets/alert.svg" /> */}
                                     Registration closes on &nbsp;{' '}
-                                    <span style={{ fontWeight: '700', }}>
+                                    <span style={{ fontWeight: '700' }}>
                                         {new Date(
                                             props.body.registration_deadline
                                         ).toDateString('default', {
                                             day: 'numeric',
                                             month: 'long',
-                                        })}</span>
+                                        })}
+                                    </span>
                                 </div>
                             ) : null}
                             {props.body.prize ? (
-                                <div className={styles.team_pay} style={{ flexDirection: 'row' }}>
+                                <div
+                                    className={styles.team_pay}
+                                    style={{ flexDirection: 'row' }}
+                                >
                                     {/* <img src="/assets/prize.svg" /> */}
-                                    Prizes worth: &nbsp;<span style={{ fontWeight: '700' }}> ₹{props.body.prize}!</span>
+                                    Prizes worth: &nbsp;
+                                    <span style={{ fontWeight: '700' }}>
+                                        {' '}
+                                        ₹{props.body.prize}!
+                                    </span>
                                 </div>
                             ) : null}
                             <div className={styles.contacts}>
                                 {/* <img src="/assets/contact.svg" />    */}
                                 {Array.isArray(props.body.organizer) ? (
-                                    <div className={styles.team_pay} style={{ flexDirection: 'column' }}>
+                                    <div
+                                        className={styles.team_pay}
+                                        style={{ flexDirection: 'column' }}
+                                    >
                                         Organizers
                                         {props.body.organizer.map(
                                             (e, index) => {
                                                 return (
                                                     <a
                                                         key={index}
-                                                        style={e[1] ? null : {
-                                                                    pointerEvents:'none',
-                                                                }
+                                                        style={
+                                                            e[1]
+                                                                ? null
+                                                                : {
+                                                                      pointerEvents:
+                                                                          'none',
+                                                                  }
                                                         }
                                                         target="_blank"
                                                         href={
@@ -201,9 +169,22 @@ const Modal = (props) => {
                                                                 : '#'
                                                         }
                                                     >
-                                                        <span style={{fontWeight: '700'}}>{e[0]}</span>&nbsp;
+                                                        <span
+                                                            style={{
+                                                                fontWeight:
+                                                                    '700',
+                                                            }}
+                                                        >
+                                                            {e[0]}
+                                                        </span>
+                                                        &nbsp;
                                                         {e[1] ? (
-                                                            <span style={{fontWeight: '700'}}>
+                                                            <span
+                                                                style={{
+                                                                    fontWeight:
+                                                                        '700',
+                                                                }}
+                                                            >
                                                                 {/* <img
                                                                     alt="phone"
                                                                     src="/footer/phone.svg"
@@ -230,7 +211,7 @@ const Modal = (props) => {
                                 target="_blank"
                                 className={styles.rulebtn}
                                 href={props.body.video}
-                            // onClick={(e) => props.closeHandler()}
+                                // onClick={(e) => props.closeHandler()}
                             >
                                 Rulebook
                             </a>
