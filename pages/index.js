@@ -76,16 +76,36 @@ const index = () => {
                             alt="Grab the merch"
                         />
                         {/* TODO : Add the link for the payment of the TShirts */}
-                        <a href="#">
-                            <button href="#" className={styles.merchBookBtn}>
-                                Shop Now
+                        <a href="https://pmny.in/YJ78Zv4cSA0l">
+                            <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn}>
+                                Buy 1
+                            </button>
+                        </a>
+                        <a href="https://pmny.in/MIIjccwJBC3K">
+                            <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn}>
+                                Buy 2
+                            </button>
+                        </a>                        
+                        <a href="https://pmny.in/erg5mzOjA6Oc">
+                            <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn}>
+                                Buy 3
                             </button>
                         </a>
                     </div>
                     {/* TODO : Add the link for the payment of the TShirts */}
-                    <a href="#">
-                        <button href="#" className={styles.merchBookBtn2}>
-                            Shop Now
+                    <a href="https://pmny.in/YJ78Zv4cSA0l">
+                        <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn2}>
+                            Buy 1
+                        </button>
+                    </a>
+                    <a href="https://pmny.in/MIIjccwJBC3K">
+                        <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn2}>
+                            Buy 2
+                        </button>
+                    </a>
+                    <a href="https://pmny.in/erg5mzOjA6Oc">
+                        <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn2}>
+                            Buy 3
                         </button>
                     </a>
                 </div>
