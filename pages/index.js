@@ -49,7 +49,7 @@ const index = () => {
             <div className={styles.ticketContainer}>
                 <div className={styles.ticketDetails}>
                     <span style={{fontSize: 24, textAlign: 'center'}}>Get your Early Bird</span>
-                    <span style={{fontSize: 36, fontWeight: 'bold', textAlign: 'center'}}>free entry passes</span>
+                    <span style={{fontSize: 36, fontWeight: 'bold', textAlign: 'center'}}>fest entry passes</span>
                 </div>
                 <div className={styles.ticketImages}>
                     <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank"><EliteTicket/></Link>
