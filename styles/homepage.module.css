@@ -349,11 +349,16 @@
         justify-content: center;
         align-items: center;
         height: 1014px;
+        background-color: #504ABC;
     }
     .merchBookBtn2 {
         display: block;
     }
     .mobileBuyNow{
         display: block;
+    }
+    .merchDetails{
+        width: 100%;
+        align-items: center;
     }
 }
