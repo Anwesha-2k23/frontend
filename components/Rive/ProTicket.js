@@ -4,7 +4,7 @@ import styles from './style.module.css'
 export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
         src: 'Entry pass cards.riv',
-        artboard: 'Elite card.svg',
+        artboard: 'pro card.svg',
         autoplay: true,
     })
 

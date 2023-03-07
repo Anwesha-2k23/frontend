@@ -203,7 +203,10 @@ const UserLoginForm = () => {
                             Show Password
                         </span>
                         <br />
-                        <Link href="/password-reset" className={styles.forgotpass}>
+                        <Link
+                            href="/password-reset"
+                            className={styles.forgotpass}
+                        >
                             Forgot password?
                         </Link>
                     </div>

@@ -9,7 +9,8 @@ import DisplayRiveAdmin from '../components/Rive/DisplayRiveAdmin'
 import DisplayRiveSAC from '../components/Rive/DisplayRiveSAC'
 import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
-import EliteTicket from '../components/Rive/EliteTicket' 
+import EliteTicket from '../components/Rive/EliteTicket'
+import ProTicket from '../components/Rive/ProTicket'
 
 const index = () => {
     return (
@@ -40,21 +41,43 @@ const index = () => {
 
             {/*Blend home section with other sections*/}
             <div className={styles.blendHomeSection}></div>
-            
+
             {/*Steps section*/}
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px'}}><div className={styles.steps}></div></div>
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '10px',
+                }}
+            >
+                <div className={styles.steps}></div>
+            </div>
             {/*End Steps section*/}
 
             {/*ticket section*/}
             <div className={styles.ticketContainer}>
                 <div className={styles.ticketDetails}>
-                    <span style={{fontSize: 24, textAlign: 'center'}}>Get your Early Bird</span>
-                    <span style={{fontSize: 36, fontWeight: 'bold', textAlign: 'center'}}>Fest Entry Passes</span>
-
+                    <span style={{ fontSize: 24, textAlign: 'center' }}>
+                        Get your Early Bird
+                    </span>
+                    <span
+                        style={{
+                            fontSize: 36,
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Fest Entry Passes
+                    </span>
                 </div>
                 <div className={styles.ticketImages}>
-                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank"><EliteTicket/></Link>
-                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank"><Image src="/home/pro-card.png" width={277} height={440} alt="Pro ticket" /></Link>
+                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank">
+                        <EliteTicket />
+                    </Link>
+                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank">
+                        <ProTicket />
+                    </Link>
                 </div>
             </div>
             {/*end ticket section*/}
@@ -76,37 +99,66 @@ const index = () => {
                             src="/home/grab_merc_text.png"
                             alt="Grab the merch"
                         /> */}
-                        <span className={styles.grabMerchText}>Grab Your <br /> Merchandise!</span>
+                        <span className={styles.grabMerchText}>
+                            Grab Your <br /> Merchandise!
+                        </span>
                         {/* TODO : Add the link for the payment of the TShirts */}
                         <a href="https://pmny.in/YJ78Zv4cSA0l">
-                            <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn}>
+                            <button
+                                href="https://pmny.in/YJ78Zv4cSA0l"
+                                className={styles.merchBookBtn}
+                            >
                                 Buy 1
                             </button>
                         </a>
                         <a href="https://pmny.in/MIIjccwJBC3K">
-                            <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn}>
+                            <button
+                                href="https://pmny.in/MIIjccwJBC3K"
+                                className={styles.merchBookBtn}
+                            >
                                 Buy 2
                             </button>
-                        </a>                        
+                        </a>
                         <a href="https://pmny.in/erg5mzOjA6Oc">
-                            <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn}>
+                            <button
+                                href="https://pmny.in/erg5mzOjA6Oc"
+                                className={styles.merchBookBtn}
+                            >
                                 Buy 3
                             </button>
                         </a>
                     </div>
                     {/* TODO : Add the link for the payment of the TShirts */}
-                    <a href="https://pmny.in/YJ78Zv4cSA0l" className={styles.mobileBuyNow}>
-                        <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn2}>
+                    <a
+                        href="https://pmny.in/YJ78Zv4cSA0l"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/YJ78Zv4cSA0l"
+                            className={styles.merchBookBtn2}
+                        >
                             Buy 1
                         </button>
                     </a>
-                    <a href="https://pmny.in/MIIjccwJBC3K" className={styles.mobileBuyNow}>
-                        <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn2}>
+                    <a
+                        href="https://pmny.in/MIIjccwJBC3K"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/MIIjccwJBC3K"
+                            className={styles.merchBookBtn2}
+                        >
                             Buy 2
                         </button>
                     </a>
-                    <a href="https://pmny.in/erg5mzOjA6Oc" className={styles.mobileBuyNow}>
-                        <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn2}>
+                    <a
+                        href="https://pmny.in/erg5mzOjA6Oc"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/erg5mzOjA6Oc"
+                            className={styles.merchBookBtn2}
+                        >
                             Buy 3
                         </button>
                     </a>
@@ -148,22 +200,50 @@ const index = () => {
                         <DisplayRiveEvent />
 
                         <div className={styles.eventSectionText}>
-                            Anwesha, the Annual Cultural-Management Fest of IIT
-                            Patna, is grandeur host of magnificent and thrilling
-                            events. We have everything starting from our legacy
-                            events including Syngphony, Heelturn to our most
-                            exhilarating title event, Mr/Ms Anwesha. We have
-                            Verve, the fashion walk event, stretching our
-                            platform for all the fashion influencers. We bring
-                            you many unconventional events like StepUp, Graffiti
-                            Workshop, Imagination Station and monochrome as well
-                            as a first of its kind AnimeCon, an evening full of
-                            anime for all anime lovers out there, Anwesha have
-                            got you’ll covered. Just enter the arena and explore
-                            every isles you’ve ever imagined about. Make sure
-                            you create your Anwesha ID and swim into the pool of
-                            events, check out the rulebooks and feel free to
-                            contact the organizers for all doubts/queries.
+                            Get ready to witness the ultimate showdown of
+                            culture and management as Anwesha, the annual fest
+                            of IIT Patna, is coming in hot! With events ranging
+                            from{' '}
+                            <span style={{ fontWeight: 'bold' }}>Symphony</span>{' '}
+                            to{' '}
+                            <span style={{ fontWeight: 'bold' }}>Heelturn</span>
+                            , we've got more action than a Bollywood movie. And
+                            let's not forget about{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                Mr/Ms Anwesha
+                            </span>
+                            , where the competition is hotter than a samosa
+                            fresh out of the fryer. <br />
+                            If you're a fashionista, then{' '}
+                            <span style={{ fontWeight: 'bold' }}>Verve</span> is
+                            the place to be. It's a fashion walk event that'll
+                            make you feel like you're on the ramp, even if your
+                            walk is more like a waddle. And for all you
+                            unconventional folks out there, we've got{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                StepUp, Graffiti Workshop, Imagination Station,
+                            </span>{' '}
+                            and{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                Monochrome
+                            </span>
+                            . Trust us, it's more fun than playing hopscotch in
+                            a sandpit.
+                            <br />
+                            But wait, there's more!{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                AnimeCon
+                            </span>{' '}
+                            is also making its debut this year, and it's going
+                            to be a treat for all you anime lovers out there. We
+                            promise to take you on a journey that's more epic
+                            than Goku's battles with Frieza.
+                            <br />
+                            So, what are you waiting for? Get your Anwesha ID
+                            ready, and get ready to jump into the pool of
+                            events. If you have any doubts or queries, just hit
+                            up the organizers, and they'll help you faster than
+                            a pizza delivery guy. Let's get this party started!
                             <br />
                             <br />
                             <div style={{ textAlign: 'center', width: '100%' }}>
@@ -371,7 +451,6 @@ const index = () => {
                 </div>
             </div>
             {/*End team section*/}
-
 
             <div style={{ height: '101px' }}></div>
         </>

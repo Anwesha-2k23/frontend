@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        let body = { email: email}
+        let body = { email: email }
         // user input validation
         if (email.length == 0) {
             toast.warning('Please fill email', {
@@ -42,16 +42,19 @@ const ForgotPassword = () => {
             //check if request is successful
             // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
-                toast.success('Please check your email for the password reset link. Make sure to check the spam folder as well.', {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
+                toast.success(
+                    'Please check your email for the password reset link. Make sure to check the spam folder as well.',
+                    {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    }
+                )
             } else if (response.status === 409) {
                 const data = await response.json()
                 toast.error(data.message || 'Unable to reset password', {
@@ -79,16 +82,19 @@ const ForgotPassword = () => {
             }
         } catch (err) {
             console.log(err)
-            toast.error('Password reset failed. Check your internet connection', {
-                position: 'top-right',
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'light',
-            })
+            toast.error(
+                'Password reset failed. Check your internet connection',
+                {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                }
+            )
         }
     }
 
@@ -145,7 +151,6 @@ const ForgotPassword = () => {
                         <br />
                     </div>
 
-                    
                     <div
                         style={{
                             display: 'flex',
