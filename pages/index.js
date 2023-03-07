@@ -71,10 +71,11 @@ const index = () => {
                         />
                     </div>
                     <div className={styles.merchBooking}>
-                        <img
+                        {/* <img
                             src="/home/grab_merc_text.png"
                             alt="Grab the merch"
-                        />
+                        /> */}
+                        <span className={styles.grabMerchText}>Grab Your <br /> Merchandise!</span>
                         {/* TODO : Add the link for the payment of the TShirts */}
                         <a href="https://pmny.in/YJ78Zv4cSA0l">
                             <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn}>
@@ -93,17 +94,17 @@ const index = () => {
                         </a>
                     </div>
                     {/* TODO : Add the link for the payment of the TShirts */}
-                    <a href="https://pmny.in/YJ78Zv4cSA0l" style={{overflow: 'hidden', textDecoration: 'none'}}>
+                    <a href="https://pmny.in/YJ78Zv4cSA0l" className={styles.mobileBuyNow}>
                         <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn2}>
                             Buy 1
                         </button>
                     </a>
-                    <a href="https://pmny.in/MIIjccwJBC3K" style={{overflow: 'hidden', textDecoration: 'none'}}>
+                    <a href="https://pmny.in/MIIjccwJBC3K" className={styles.mobileBuyNow}>
                         <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn2}>
                             Buy 2
                         </button>
                     </a>
-                    <a href="https://pmny.in/erg5mzOjA6Oc" style={{overflow: 'hidden', textDecoration: 'none'}}>
+                    <a href="https://pmny.in/erg5mzOjA6Oc" className={styles.mobileBuyNow}>
                         <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn2}>
                             Buy 3
                         </button>
