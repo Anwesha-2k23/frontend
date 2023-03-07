@@ -22,12 +22,12 @@ const aboutus = () => {
                         iconic rock bands, serenity of classical art forms and
                         amusement of comedy shows.
                         <br />
-                        <br />
+                        {/* <br />
                         We invite you to be a part of this extravaganza and help
                         us make it bigger and better by sponsoring it. We hope
                         that our synergy will usher into a relationship for both
                         of us. a novel and longstanding.
-                        <br />
+                        <br /> */}
                         <br />
                         Anwesha 2023 is envisioned to be an innovative and
                         cultural uplifting festival of togetherness in not just
