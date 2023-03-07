@@ -333,6 +333,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 1014px;
     }
     .merchBookBtn2 {
         display: block;

@@ -93,17 +93,17 @@ const index = () => {
                         </a>
                     </div>
                     {/* TODO : Add the link for the payment of the TShirts */}
-                    <a href="https://pmny.in/YJ78Zv4cSA0l">
+                    <a href="https://pmny.in/YJ78Zv4cSA0l" style={{overflow: 'hidden', textDecoration: 'none'}}>
                         <button href="https://pmny.in/YJ78Zv4cSA0l" className={styles.merchBookBtn2}>
                             Buy 1
                         </button>
                     </a>
-                    <a href="https://pmny.in/MIIjccwJBC3K">
+                    <a href="https://pmny.in/MIIjccwJBC3K" style={{overflow: 'hidden', textDecoration: 'none'}}>
                         <button href="https://pmny.in/MIIjccwJBC3K" className={styles.merchBookBtn2}>
                             Buy 2
                         </button>
                     </a>
-                    <a href="https://pmny.in/erg5mzOjA6Oc">
+                    <a href="https://pmny.in/erg5mzOjA6Oc" style={{overflow: 'hidden', textDecoration: 'none'}}>
                         <button href="https://pmny.in/erg5mzOjA6Oc" className={styles.merchBookBtn2}>
                             Buy 3
                         </button>
