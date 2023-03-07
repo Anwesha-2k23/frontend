@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    background-color: #504ABC;
+
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.images img {
+    width: 20vw;
+    border-radius: 1vw;
+    border: 1px dashed blue;
+    margin: 1vw;
+}
+
+.payment_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment_buttons a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: gold;
+    color: #000000;
+    height: 180px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.payment_buttons span {
+    font-weight: 300;
+}
+
+.prev_price {
+    color: red;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+
+.size_chart {
+    background-color: #ffffff;
+    color: #504ABC;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    border-radius: 5px;
+}
