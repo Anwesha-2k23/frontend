@@ -50,7 +50,8 @@ function Navigation() {
         if (refNav.current && !refNav.current.contains(event.target)) {
             document.getElementById('drawer').style.opacity = 0
             setTimeout(function () {
-                document.getElementById('drawer').style.display = 'none'
+                document.getElementById('drawer').style.display = 'none',
+                document.getElementById('nav_div').style.backgroundColor = ''
             }, 300)
             setDrawerOpen(false)
             if (onClickInput) {
@@ -66,19 +67,21 @@ function Navigation() {
         setIsHome(['/'].includes(router.pathname))
         document.getElementById('drawer').style.opacity = 0
         setTimeout(function () {
-            document.getElementById('drawer').style.display = 'none'
+            document.getElementById('drawer').style.display = 'none',
+            document.getElementById('nav_div').style.backgroundColor = ''
         }, 300)
         setDrawerOpen(false)
     }, [router.pathname])
 
     const toggleDrawer = () => {
         const drawer = document.getElementById('drawer')
+        const nav_div = document.getElementById('nav_div')
         if (!drawerOpen) {
             drawer.style.display = 'block'
-            setTimeout(() => (drawer.style.opacity = 1), 300)
+            setTimeout(() => (drawer.style.opacity = 1, nav_div.style.backgroundColor = '#504bbc'), 300)
         } else {
             drawer.style.opacity = 0
-            setTimeout(() => (drawer.style.display = 'none'), 300)
+            setTimeout(() => (drawer.style.display = 'none', nav_div.style.backgroundColor = ''), 300)
         }
         setDrawerOpen(!drawerOpen)
         onClickInput.fire()
@@ -95,8 +98,9 @@ function Navigation() {
     return (
         <>
             <div
+                id = "nav_div"
                 className={styles.mainNav}
-                style={{ color: isHome ? 'white' : 'black' }}
+                style={{ color: isHome ? 'white' : 'black', }}
                 ref={refNav}
             >
                 {/* <button
@@ -121,7 +125,7 @@ function Navigation() {
                 </div>
                 <Link
                     href="/"
-                    onClick={() => onClickInput.fire()}
+                    onClick={() => drawerOpen ? onClickInput.fire(): ''}
                     className={styles.navLogo}
                 >
                     {['/'].includes(router.pathname) ? (
@@ -229,10 +233,10 @@ function Navigation() {
                     </li> */}
                     <li>
                         <Link
-                            href="/all-multicity"
+                            href="/aboutus"
                             onClick={() => toggleDrawer()}
                         >
-                            Multicity
+                            About Us
                         </Link>
                     </li>
                     <li>
