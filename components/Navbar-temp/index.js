@@ -50,8 +50,9 @@ function Navigation() {
         if (refNav.current && !refNav.current.contains(event.target)) {
             document.getElementById('drawer').style.opacity = 0
             setTimeout(function () {
-                document.getElementById('drawer').style.display = 'none',
-                document.getElementById('nav_div').style.backgroundColor = ''
+                ;(document.getElementById('drawer').style.display = 'none'),
+                    (document.getElementById('nav_div').style.backgroundColor =
+                        '')
             }, 300)
             setDrawerOpen(false)
             if (onClickInput) {
@@ -67,8 +68,8 @@ function Navigation() {
         setIsHome(['/'].includes(router.pathname))
         document.getElementById('drawer').style.opacity = 0
         setTimeout(function () {
-            document.getElementById('drawer').style.display = 'none',
-            document.getElementById('nav_div').style.backgroundColor = ''
+            ;(document.getElementById('drawer').style.display = 'none'),
+                (document.getElementById('nav_div').style.backgroundColor = '')
         }, 300)
         setDrawerOpen(false)
     }, [router.pathname])
@@ -78,10 +79,22 @@ function Navigation() {
         const nav_div = document.getElementById('nav_div')
         if (!drawerOpen) {
             drawer.style.display = 'block'
-            setTimeout(() => (drawer.style.opacity = 1, nav_div.style.backgroundColor = '#504bbc'), 300)
+            setTimeout(
+                () => (
+                    (drawer.style.opacity = 1),
+                    (nav_div.style.backgroundColor = '#504bbc')
+                ),
+                300
+            )
         } else {
             drawer.style.opacity = 0
-            setTimeout(() => (drawer.style.display = 'none', nav_div.style.backgroundColor = ''), 300)
+            setTimeout(
+                () => (
+                    (drawer.style.display = 'none'),
+                    (nav_div.style.backgroundColor = '')
+                ),
+                300
+            )
         }
         setDrawerOpen(!drawerOpen)
         onClickInput.fire()
@@ -98,9 +111,9 @@ function Navigation() {
     return (
         <>
             <div
-                id = "nav_div"
+                id="nav_div"
                 className={styles.mainNav}
-                style={{ color: isHome ? 'white' : 'black', }}
+                style={{ color: isHome ? 'white' : 'black' }}
                 ref={refNav}
             >
                 {/* <button
@@ -125,7 +138,7 @@ function Navigation() {
                 </div>
                 <Link
                     href="/"
-                    onClick={() => drawerOpen ? onClickInput.fire(): ''}
+                    onClick={() => (drawerOpen ? onClickInput.fire() : '')}
                     className={styles.navLogo}
                 >
                     {['/'].includes(router.pathname) ? (
@@ -156,10 +169,7 @@ function Navigation() {
                                     : null
                             }
                         >
-                            <Link
-                                className={styles.linknav}
-                                href="/aboutus"
-                            >
+                            <Link className={styles.linknav} href="/aboutus">
                                 About Us
                             </Link>
                         </li>
@@ -232,10 +242,7 @@ function Navigation() {
                         <Link href="/">Home</Link>
                     </li> */}
                     <li>
-                        <Link
-                            href="/aboutus"
-                            onClick={() => toggleDrawer()}
-                        >
+                        <Link href="/aboutus" onClick={() => toggleDrawer()}>
                             About Us
                         </Link>
                     </li>

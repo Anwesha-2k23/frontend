@@ -34,6 +34,8 @@
     min-height: 822px;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .ticketDetails{

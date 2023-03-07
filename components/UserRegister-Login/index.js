@@ -111,16 +111,19 @@ const UserRegisterForm = () => {
             if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
                 console.log(data)
-                toast.success('Please check your email for verification', {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
+                toast.success(
+                    'Please check your email for verification. Check spam folder if mail is not present in inbox',
+                    {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    }
+                )
                 router.push('/userLogin')
             } else if (response.status === 409) {
                 const data = await response.json()
@@ -252,11 +255,10 @@ const UserRegisterForm = () => {
                             checked={usertype === 'iitp_student'}
                             onChange={() => {
                                 setEmail('')
-                                if(usertype === 'iitp_student') {
+                                if (usertype === 'iitp_student') {
                                     setUserType('student')
-                                }
-                                else {
-                                    setUserType('iitp_student');
+                                } else {
+                                    setUserType('iitp_student')
                                     setCollegeName('IIT Patna')
                                 }
                             }}
@@ -264,37 +266,54 @@ const UserRegisterForm = () => {
                     </div>
                     {(() => {
                         switch (usertype) {
-                        case 'iitp_student':
-                            return (
-                                <div className={styles.field}>
-                                    <label htmlFor="email_id">IITP Mail ID</label>
-                                    <br />
-                                    <input
-                                        type="email"
-                                        name="IITP_Mail_Id"
-                                        onChange={(e) => setEmail(e.target.value + '@iitp.ac.in')}
-                                        required
-                                        className={styles.iitp_email}
-                                    />
-                                    <span className={styles.iitp_email_ext}>@iitp.ac.in</span>
-                                    <br />
-                                </div>
+                            case 'iitp_student':
+                                return (
+                                    <div className={styles.field}>
+                                        <label htmlFor="email_id">
+                                            IITP Mail ID
+                                        </label>
+                                        <br />
+                                        <input
+                                            type="email"
+                                            name="IITP_Mail_Id"
+                                            onChange={(e) =>
+                                                setEmail(
+                                                    e.target.value +
+                                                        '@iitp.ac.in'
+                                                )
+                                            }
+                                            required
+                                            className={styles.iitp_email}
+                                        />
+                                        <span className={styles.iitp_email_ext}>
+                                            @iitp.ac.in
+                                        </span>
+                                        <br />
+                                    </div>
                                 )
-                        default:
-                            return null
+                            default:
+                                return null
                         }
                     })()}
-                    {usertype !== 'iitp_student' ? <div className={styles.field}>
-                        <label>Select user type:</label>
-                        <br/>
-                            <select name="userType" id="userType" value={usertype} onChange={(e)=>handleChange(e)}>
-                              <option value="student">Student</option>
-                              <option value="non-student">Non Student</option>
-                              <option value="alumni">Alumni</option>
-                              <option value="faculty">Faculty</option>
+                    {usertype !== 'iitp_student' ? (
+                        <div className={styles.field}>
+                            <label>Select user type:</label>
+                            <br />
+                            <select
+                                name="userType"
+                                id="userType"
+                                value={usertype}
+                                onChange={(e) => handleChange(e)}
+                            >
+                                <option value="student">Student</option>
+                                <option value="non-student">Non Student</option>
+                                <option value="alumni">Alumni</option>
+                                <option value="faculty">Faculty</option>
                             </select>
-                    </div> : null}
-                    {usertype !== 'iitp_student' ? <div className={styles.field}>
+                        </div>
+                    ) : null}
+                    {usertype !== 'iitp_student' ? (
+                        <div className={styles.field}>
                             <label htmlFor="email_id">Email ID</label>
                             <br />
                             <input
@@ -305,12 +324,29 @@ const UserRegisterForm = () => {
                                 required
                             />
                             <br />
-                        </div> : null}
-                        {usertype !== 'iitp_student' ? <div className={styles.field}>
-                            <label htmlFor="college_name">Institute/Organization Name: </label>
+                        </div>
+                    ) : null}
+                    {usertype !== 'iitp_student' ? (
+                        <div className={styles.field}>
+                            <label htmlFor="college_name">
+                                Institute/Organization Name:{' '}
+                            </label>
                             <br />
-                            <input type="text" name="college_name" placeholder="Eg: NIT Patna" value={usertype === 'iitp_student' ? 'IIT Patna' : college_name} disabled={usertype === 'iitp_student'} onChange={(e)=>setCollegeName(e.target.value)} required/>
-                    </div> : null}
+                            <input
+                                type="text"
+                                name="college_name"
+                                placeholder="Eg: NIT Patna"
+                                value={
+                                    usertype === 'iitp_student'
+                                        ? 'IIT Patna'
+                                        : college_name
+                                }
+                                disabled={usertype === 'iitp_student'}
+                                onChange={(e) => setCollegeName(e.target.value)}
+                                required
+                            />
+                        </div>
+                    ) : null}
                     <div className={styles.form_row}>
                         <div className={styles.field}>
                             <label htmlFor="password">Password</label>
