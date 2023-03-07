@@ -48,7 +48,8 @@ const index = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '10px',
+                    marginBottom: '100px',
+                    marginTop: '100px',
                 }}
             >
                 <div className={styles.steps}></div>

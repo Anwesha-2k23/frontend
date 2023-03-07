@@ -95,7 +95,10 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className={styles.footerTableRow}>
-                            <Link className={styles.footerLink} href="/alumni-outreach">
+                            <Link
+                                className={styles.footerLink}
+                                href="/alumni-outreach"
+                            >
                                 <div className={styles.footerTableCell}>
                                     Alumni Outreach
                                 </div>
