@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-.modal{
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.modalContent{
+.modalContent {
     max-width: 400px;
     height: 300px;
     background-color: white;
@@ -28,7 +28,7 @@
     padding: 0 15px;
 }
 
-.modal_head{
+.modal_head {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,13 +37,13 @@
     border-radius: 5px 5px 0 0;
 }
 
-.modal_body{
+.modal_body {
     padding: 10px;
     background-color: #fff;
     border-radius: 0 0 5px 5px;
 }
 
-.modal_footer{
+.modal_footer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -51,7 +51,7 @@
     background-color: #fff;
     border-radius: 0 0 5px 5px;
 }
-.btn{
+.btn {
     width: 15vw;
     min-width: 175px;
     height: 40px;
@@ -59,7 +59,7 @@
     border-radius: 25px;
     cursor: pointer;
 }
-.btn:hover{
+.btn:hover {
     background-color: #424040;
     color: #fff;
 }

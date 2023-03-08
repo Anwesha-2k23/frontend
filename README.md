@@ -1,35 +1,27 @@
-# Caution: This project uses yarn. DO NOT use it with npm 
+# <img src="public/AnwehsaIcon.png" alt="Logo" width="40" height="40">      Anwesha 2023 Frontend
 [![Netlify Status](https://api.netlify.com/api/v1/badges/169e9195-9697-474f-9d0e-15c58701549f/deploy-status)](https://app.netlify.com/sites/anwesha2022/deploys)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 📜 Overview
+IIT Patna’s own cultural-management fest - Anwesha is back on track this year - a saga of art, culture and celebration. Bigger, better and grander than ever before, join in and contribute to the frontend of Anwesha’s revamped website!
+This is a **[Next.js](https://nextjs.org/)** project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Beginner to intermediate levels of knowledge in **HTML**, **CSS** and **Javascript** would be enough to contribute to most of the issues in this project.
 
-## Getting Started
 
-First, run the development server:
+## 🤝 Contributing
+1. Create a fork of this repository
+2. Clone the forked repository on your local device `git clone https://github.com/<your-username>/frontend.git`
+3. Make nescessary changes in code in the `main` branch of your local repository
+4. After the nescessary changes/additions are made, stage and commit them using `git add .` and then `git commit -m '<Commit Message here>'`. Keep commit messages concise and to the point.
+5. Push the commited changes to the `main` branch of your forked repository `git push origin main`
+6. Go to your forked repository on GitHub. Create a pull request from the `🔃Contribute` button provided there. Providing a detailed description as well as screenshots and if possible, video-snippets of the changes made is highly encouraged while creating the pull request.
+7. After writing code, make sure to format the code by running `yarn format` in terminal, which will automatically format everything with prettier.
 
-```bash
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🖥️ Running the Server
+1. Install the dependencies using `yarn install`
+2. Run the server using `yarn dev`
+3. Server should have started running
+4. You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We will review your contributions and either merge your pull request or suggest changes. Hence you are encouraged to **keep yourselves updated both on the PR chat thread as well as the discord channel** at least until your PR has been merged. Points will be awarded in **accordance with CODEPEAK's guidelines and scoring criteria**. You can connect with us on the `anwesha-frontend` discord channel of the Codepeak discord server in case any doubts or discrepancies arise.

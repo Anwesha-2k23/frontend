@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Lolapeluza";
+  src: url("../styles/fonts/Lolapeluza-Black.ttf");
+}
+.container{
+    background-color: #E2D78E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 77px;
+    top: 0px;
+}
+.container > *{
+    font-family: 'Lolapeluza', sans-serif !important;
+}
+
+.container h1{
+    text-transform: uppercase;
+    font-size: 64px;
+    letter-spacing: 1.1px;
+    color: #4E1DD9;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 6vw;
+}
+
+.city{
+    position: absolute;
+    display : flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.mandala{
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.poster{
+    border-radius: 20px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+.poster:hover{
+    box-shadow: #60389a 11px 9px 0px;
+}
+
+.kolkataPoster:hover{
+    box-shadow: #267183 11px 9px 0px;
+}
+
+.otherElements{
+    position: absolute;
+    top: 150%;
+    transform: translateX(180px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 309px;
+}
+
+/* css for mobile view */
+@media screen and (max-height: 756px){
+    
+}

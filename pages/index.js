@@ -1,197 +1,461 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import styles from "../styles/comingsoon.module.css";
-import { motion } from "framer-motion";
-var validator = require("email-validator");
+import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import HomeBackgroundAnimation from '../components/Rive/homeBackgrounAnim'
+import styles from '../styles/homepage.module.css'
+import DisplayRiveAnwesha from '../components/Rive/DisplayRiveAnwesha'
+import DisplayRiveAdmin from '../components/Rive/DisplayRiveAdmin'
+import DisplayRiveSAC from '../components/Rive/DisplayRiveSAC'
+import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
+import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
+import EliteTicket from '../components/Rive/EliteTicket'
+import ProTicket from '../components/Rive/ProTicket'
 
+const index = () => {
+    return (
+        <>
+            <Head>
+                <title>Anwesha 2023</title>
+                <meta name="description" content="Anwesha 2023" />
+                <link rel="icon" href="./logo_no_bg.svg" />
+            </Head>
+            {/*Hero section*/}
+            <div className={styles.parentcontainer}>
+                <div className={styles.container}>
+                    <DisplayRiveAnwesha />
+                    <Link href="/userRegister">
+                        <DisplayRiveAdmin />
+                    </Link>
+                    <DisplayRiveSAC />
+                    <DisplayRiveGymkhana />
+                    <Image
+                        src="/home/Lecture_hall_island.png"
+                        alt="Lecture hall island"
+                        width={141}
+                        height={144}
+                        className={styles.lecturehall}
+                    />
+                </div>
+            </div>
 
-export default function comingsoon() {
-  const [email, setEmail] = useState('')
-  useEffect(() => {
+            {/*Blend home section with other sections*/}
+            <div className={styles.blendHomeSection}></div>
 
-    // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
-    const form = document.forms['submit-to-google-sheet']
-    
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault()
-      console.log(document.getElementById('email').value)
-      if(validator.validate(document.getElementById('email').value)){
-      toast.success('You are subscribed to our newsletter', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      let a = await fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      let b = await a.json()
-      console.log(b)
-      setEmail('')
-      if (b.result != "success") {
-        toast.error('Failed to subscribe the newsletter', {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          });
-      }
-    }
-    else{
-      toast.warning('Check your email once again', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-    }
-      
-      // .then(response => console.log('Success!', response))
-      // .catch(error => console.error('Error!', error.message))
-    })
+            {/*Steps section*/}
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '100px',
+                    marginTop: '100px',
+                }}
+            >
+                <div className={styles.steps}></div>
+            </div>
+            {/*End Steps section*/}
 
+            {/*ticket section*/}
+            <div className={styles.ticketContainer}>
+                <div className={styles.ticketDetails}>
+                    <span style={{ fontSize: 24, textAlign: 'center' }}>
+                        Get your Early Bird
+                    </span>
+                    <span
+                        style={{
+                            fontSize: 36,
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Fest Entry Passes
+                    </span>
+                </div>
+                <div className={styles.ticketImages}>
+                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank">
+                        <EliteTicket />
+                    </Link>
+                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank">
+                        <ProTicket />
+                    </Link>
+                </div>
+            </div>
+            {/*end ticket section*/}
 
-  }, [])
+            {/* Merchandise Section */}
+            <div className={styles.themeSection}>
+                <div className={styles.merchContainer}>
+                    <div className={styles.merchDetails}>
+                        <Image
+                            className={styles.tshirtImage}
+                            src="/home/tshirts.svg"
+                            alt="Tshirts"
+                            width={600}
+                            height={580}
+                        />
+                    </div>
+                    <div className={styles.merchBooking}>
+                        {/* <img
+                            src="/home/grab_merc_text.png"
+                            alt="Grab the merch"
+                        /> */}
+                        <span className={styles.grabMerchText}>
+                            Grab Your <br /> Merchandise!
+                        </span>
+                        {/* TODO : Add the link for the payment of the TShirts */}
+                        <a href="https://pmny.in/YJ78Zv4cSA0l">
+                            <button
+                                href="https://pmny.in/YJ78Zv4cSA0l"
+                                className={styles.merchBookBtn}
+                            >
+                                Buy 1
+                            </button>
+                        </a>
+                        <a href="https://pmny.in/MIIjccwJBC3K">
+                            <button
+                                href="https://pmny.in/MIIjccwJBC3K"
+                                className={styles.merchBookBtn}
+                            >
+                                Buy 2
+                            </button>
+                        </a>
+                        <a href="https://pmny.in/erg5mzOjA6Oc">
+                            <button
+                                href="https://pmny.in/erg5mzOjA6Oc"
+                                className={styles.merchBookBtn}
+                            >
+                                Buy 3
+                            </button>
+                        </a>
+                    </div>
+                    {/* TODO : Add the link for the payment of the TShirts */}
+                    <a
+                        href="https://pmny.in/YJ78Zv4cSA0l"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/YJ78Zv4cSA0l"
+                            className={styles.merchBookBtn2}
+                        >
+                            Buy 1
+                        </button>
+                    </a>
+                    <a
+                        href="https://pmny.in/MIIjccwJBC3K"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/MIIjccwJBC3K"
+                            className={styles.merchBookBtn2}
+                        >
+                            Buy 2
+                        </button>
+                    </a>
+                    <a
+                        href="https://pmny.in/erg5mzOjA6Oc"
+                        className={styles.mobileBuyNow}
+                    >
+                        <button
+                            href="https://pmny.in/erg5mzOjA6Oc"
+                            className={styles.merchBookBtn2}
+                        >
+                            Buy 3
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {/* end Merchandise Section */}
 
-  const handleChange = (e) => {
-    setEmail(e.target.value)
-  }
-  
-  return (
-    <div className={styles.comingsoon_body}>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <Head>
-        <title>Anwesha 2023</title>
-        <meta name="description" content="Anwesha 2023" />
-        <link rel="icon" href="./AnwehsaIcon.png" />
-      </Head>
+            {/*Events section*/}
+            <div className={styles.eventSection}>
+                <div className={styles.eventSectionContainer}>
+                    <Image
+                        src="/home/events_island.svg"
+                        width={535}
+                        height={395}
+                        alt="Events section"
+                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            maxWidth: '600px',
+                            position: 'relative',
+                            boxShadow: '#000000 7px 7px 0px',
+                            marginBottom: '10px',
+                            borderRadius: '15px',
+                            marginInline: '15px',
+                        }}
+                    >
+                        {/* <img
+                            src="/home/events.svg"
+                            layout="fill"
+                            width="100%"
+                            objectFit="contain"
+                            alt="Events image"
+                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
+                        /> */}
+                        <DisplayRiveEvent />
 
-      <div className={styles.socials}>
-        <div className={styles.imageElement}>
-          <Link
-            href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
-            target="_blank"
-          >
-            <Image src="/instagram.svg" width={40} height={40} />
-          </Link>
-        </div>
-        <div className={styles.imageElement}>
-          <Link
-            href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
-            target="_blank"
-          >
-            <Image src="/youtube.svg" width={40} height={40} />
-          </Link>
-        </div>
-        <div className={styles.imageElement}>
-          <Link href="https://twitter.com/anweshaiitpat" target="_blank">
-            <Image src="/twitter.svg" width={40} height={40} />
-          </Link>
-        </div>
-        <div className={styles.imageElement}>
-          <Link
-            href="https://www.facebook.com/anwesha.iitpatna/"
-            target="_blank"
-          >
-            <Image src="/facebook.svg" width={40} height={40} />
-          </Link>
-        </div>
-      </div>
+                        <div className={styles.eventSectionText}>
+                            Get ready to witness the ultimate showdown of
+                            culture and management as Anwesha, the annual fest
+                            of IIT Patna, is coming in hot! With events ranging
+                            from{' '}
+                            <span style={{ fontWeight: 'bold' }}>Symphony</span>{' '}
+                            to{' '}
+                            <span style={{ fontWeight: 'bold' }}>Heelturn</span>
+                            , we've got more action than a Bollywood movie. And
+                            let's not forget about{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                Mr/Ms Anwesha
+                            </span>
+                            , where the competition is hotter than a samosa
+                            fresh out of the fryer. <br />
+                            If you're a fashionista, then{' '}
+                            <span style={{ fontWeight: 'bold' }}>Verve</span> is
+                            the place to be. It's a fashion walk event that'll
+                            make you feel like you're on the ramp, even if your
+                            walk is more like a waddle. And for all you
+                            unconventional folks out there, we've got{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                StepUp, Graffiti Workshop, Imagination Station,
+                            </span>{' '}
+                            and{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                Monochrome
+                            </span>
+                            . Trust us, it's more fun than playing hopscotch in
+                            a sandpit.
+                            <br />
+                            But wait, there's more!{' '}
+                            <span style={{ fontWeight: 'bold' }}>
+                                AnimeCon
+                            </span>{' '}
+                            is also making its debut this year, and it's going
+                            to be a treat for all you anime lovers out there. We
+                            promise to take you on a journey that's more epic
+                            than Goku's battles with Frieza.
+                            <br />
+                            So, what are you waiting for? Get your Anwesha ID
+                            ready, and get ready to jump into the pool of
+                            events. If you have any doubts or queries, just hit
+                            up the organizers, and they'll help you faster than
+                            a pizza delivery guy. Let's get this party started!
+                            <br />
+                            <br />
+                            <div style={{ textAlign: 'center', width: '100%' }}>
+                                <button className={styles.homebtn}>
+                                    <Link
+                                        href="/events"
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                        }}
+                                    >
+                                        Explore More
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/*End events section*/}
 
-      <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} className={styles.anwesha_bg_img}>
+            {/*Theme section*/}
+            <div className={styles.themeSection}>
+                <div className={styles.themeSectionContainer}>
+                    <Image
+                        src="/home/theme.svg"
+                        width={535}
+                        height={395}
+                        alt="Events section"
+                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            maxWidth: '600px',
+                            position: 'relative',
+                            boxShadow: '#000000 7px 7px 0px',
+                            marginBottom: '10px',
+                            borderRadius: '15px',
+                            marginInline: '15px',
+                        }}
+                    >
+                        <img
+                            src="/home/themeposter.svg"
+                            layout="fill"
+                            width="100%"
+                            objectFit="contain"
+                            alt="Events image"
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
+                        />
 
-        <div className={styles.container}>
-          <Image src="/A_logo.png" width={400} height={400} />
+                        <div className={styles.themeSectionText}>
+                            Step into a world where dreams come true and
+                            possibilities are endless. The Isles of Utopia
+                            await, where every individual is free to thrive and
+                            prosper, and the pursuit of happiness is a shared
+                            goal. It's a world where compassion and empathy
+                            reign, and social justice is the foundation of
+                            society. Come explore the idyllic landscapes, bask
+                            in the warm glow of the sun, and feel the gentle
+                            breeze on your face. The Isles of Utopia offer a
+                            glimpse of a better world, a world where anything is
+                            possible, and everyone is welcome
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/*End theme section*/}
 
-          <div className={styles.text}>
-            <p style={{ marginBottom: 10, paddingRight: 5 }}>
-              <span className={styles.anweshaText} style={{ color: "#660101" }}>
-                Anwesha
-              </span>
-              <span className={styles.anweshaText} style={{ color: "#CB4846" }}>
-                {" "}
-                ‘23{" "}
-              </span>
-            </p>
-            <p className={styles.iitp}>IIT PATNA</p>
-          </div>
-        </div>
+            {/*Theme video goes here*/}
 
-      </motion.div>
+            {/*About us section*/}
+            <div className={styles.eventSection}>
+                <div className={styles.eventSectionContainer}>
+                    <Image
+                        src="/home/aboutus.svg"
+                        width={535}
+                        height={395}
+                        alt="Events section"
+                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            maxWidth: '600px',
+                            position: 'relative',
+                            boxShadow: '#000000 7px 7px 0px',
+                            marginBottom: '10px',
+                            borderRadius: '15px',
+                            marginInline: '15px',
+                        }}
+                    >
+                        <img
+                            src="/home/aboutus_poster.png"
+                            layout="fill"
+                            width="100%"
+                            objectFit="contain"
+                            alt="Events image"
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
+                        />
+                        <div className={styles.eventSectionText}>
+                            Anwesha 2023 is envisioned to be an innovative and
+                            cultural uplifting festival of togetherness in not
+                            just the state or region, but the whole nation. We
+                            have reimagined the lens through which we understand
+                            culture and celebration, deriving the cornerstones
+                            for this year's edition that shall drive forward our
+                            festival. <br />
+                            <br />
+                            <div style={{ textAlign: 'center', width: '100%' }}>
+                                <button className={styles.homebtn}>
+                                    <Link
+                                        href="/aboutus"
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                        }}
+                                    >
+                                        Know More
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/*End about us section*/}
 
-      {/* Campus Ambassador */}
-      <motion.div initial={{opacity:0, x:"-100%"}} whileInView={{opacity:1, x:"0%"}} transition={{duration: 1}} className={styles.ca}>
+            {/*Team section*/}
+            <div className={styles.themeSection}>
+                <div className={styles.themeSectionContainer}>
+                    <Image
+                        src="/home/teams_island.svg"
+                        width={535}
+                        height={395}
+                        alt="Events section"
+                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            maxWidth: '600px',
+                            position: 'relative',
+                            boxShadow: '#000000 7px 7px 0px',
+                            marginBottom: '10px',
+                            borderRadius: '15px',
+                            marginInline: '15px',
+                        }}
+                    >
+                        <img
+                            src="/home/team.svg"
+                            layout="fill"
+                            width="100%"
+                            objectFit="contain"
+                            alt="Events image"
+                            style={{
+                                borderTopLeftRadius: '15px',
+                                borderTopRightRadius: '15px',
+                            }}
+                        />
 
-        <Link href="/campusambassador">
-          <div className={styles.ca_poster}></div>
-        </Link>
-        <div className={styles.ca_info}>
-          <Link href="/campusambassador">
-            <h1 className={styles.ca_heading}>Campus Ambassador Programme</h1>
-          </Link>
-          <p className={styles.ca_text}>
-            Join Anwesha's campus ambassador programme and seize the opportunity to become the face of your college! 
-          </p>
-          <Link href="/ca-register">
-            <button className={styles.ca_button}>Register Now!</button>
-          </Link>
-        </div>
+                        <div className={styles.themeSectionText}>
+                            The grandeur of Anwesha is something that requires a
+                            powerful community to come together alongwith their
+                            thrilling ideas and dedicated promises. The Anwesha
+                            community comprises of seven different committees
+                            including Events and Planning, Media, Public and
+                            Relations, Hospitality, Registration, Security and
+                            Planning, Creatives and Design, Web and App
+                            Development and Sponorship committee. It takes a
+                            whole year of these dedicated committee members to
+                            pull off Anwesha on a bigger scale ever imagined by
+                            our guests and participants.
+                            <br />
+                            <br />
+                            <div style={{ textAlign: 'center', color: '#fff' }}>
+                                <button className={styles.homebtn} disabled>
+                                    <Link
+                                        href="#"
+                                        style={{
+                                            color: 'inherit',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        Coming Soon...
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/*End team section*/}
 
-      </motion.div>
-
-      {/* Anwesha Newsletter */}
-      <motion.div initial={{opacity:0, x:"100%"}} whileInView={{opacity:1, x:"0%"}}  transition={{ duration: 1}} className={styles.dispatch_form}>
-        <div className={styles.newsletter}>
-          {/* <i className={styles.icon}></i> */}
-          <h1 className={styles.title}>Anwesha Dispatch</h1>
-          <div className={styles.txt_holder}>
-            <p className={styles.txt_primary}>Stay connected with Anwesha</p>
-            <p className={styles.txt_secondary}>Did you hear that Anwesha's back? Yes, we're as excited as you are, and can't wait to share everything about everything here at Anwesha. <br/><br/>
-If you're someone who finds it difficult to catch up on the latest updates on various platforms, sign up for our very own mailing list and get all your updates right to your inbox.<br/><br/>
-Drop down your email address and subscribe to our mailing list below!</p>
-          </div>
-          <form className={styles.form} name="submit-to-google-sheet">
-            <input onChange={handleChange} type="email" value={email} name="Email" id="email" placeholder="Your Email" className={styles.form_control} />
-            <motion.button className={styles.btn} whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }} type="submit">Subscribe</motion.button>
-            {/* <motion.div className={styles.btn} whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} >
-              <button type="submit">Submit</button>
-          </motion.div> */}
-          </form>
-        </div>
-      </motion.div>
-
-      {/* <script>
-      var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if(d.querySelector('script[src="'+w+'"]'))v();else{var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-      </script> */}
-
-      {/* <Footer/> */}
-    </div>
-  );
+            <div style={{ height: '101px' }}></div>
+        </>
+    )
 }
+
+export default index

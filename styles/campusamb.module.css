@@ -2,14 +2,12 @@
   font-family: "BroadwayShadow";
   src: url("../styles/fonts/BroadwayShadow.ttf");
 }
-
-.campusamb_body {
-  /* background-color:#FFF6A5; */
-  height: 100vh;
+@font-face {
+  font-family: "popinsBold";
+  src: url("../styles/fonts/Poppins-SemiBold.ttf");
 }
 
 .anwesha_bg_img {
-
   background-image: url("../public/CA.png");
   background-size: cover;
   background-position: center;
@@ -69,7 +67,7 @@
   align-items: center;
   justify-content: center;
   width: 200px;
-  height: 40px;
+  height: 51px;
   font-size: 25px;
   margin-left: 4.5vw;
   margin-top: 20px;
@@ -105,6 +103,12 @@
     text-align: center;
   }
 
+  .anwesha_img{
+    margin-top: 80px;
+    /* height: 80px; */
+    width: 280px;
+  }
+
   .bgText {
     position: relative;
     font-size: 10vw;
@@ -138,6 +142,10 @@
     cursor: pointer;
     background-color: #2B0072;
     color: aliceblue;
+  }
+
+  .btn_register{
+    width: 151px;
   }
 
 }
@@ -181,19 +189,21 @@
   font-size: 40px;
   color: #2B0072;
   text-align: center;
+  font-family: popinsBold;
 }
 
 .reward_heading{
   font-size: 40px;
   color: #2B0072;
   padding: 10px;
-  
+  font-family: popinsBold;
 }
 
 .reward_desc{
   font-size: 30px;
   color: #2B007285;
   padding: 10px;
+  font-family: popinsBold;
 }
 
 .lottie_row_judging{
@@ -207,6 +217,7 @@
 .points_table{
   width: 60%;
   padding-block: 25px ;
+  font-family: popinsBold;
 }
 .points_table td, .points_table th {
   border: 1px solid #ddd;
@@ -224,7 +235,9 @@
   text-align: left;
   background-color: #2B0072;
   color: white;
+  text-transform: uppercase;
 }
+
 
 @media screen and (max-width: 700px) {
   .rulebook_text_heading {
@@ -254,4 +267,5 @@
   .points_table{
     width: 100%;
   }
+  
 }

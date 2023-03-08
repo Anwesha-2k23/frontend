@@ -1,30 +1,233 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.nav_container {
+}
 
-.navbar{
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
+.toggle_nav {
+    position: absolute;
+    /* border: 2px solid red; */
+    top: -18vw;
+}
+
+.b {
+    opacity: 0;
+}
+
+.sidebar {
+    background-color: #0cc7e9;
+    color: whitesmoke;
+}
+
+.sidebar_header {
+    background-color: #0cc7e9;
+}
+
+.sidebar_links {
+    color: whitesmoke;
+}
+
+.navbar_flex {
+    position: relative;
+    display: flexbox;
+}
+
+.navbar_flex h4 {
+    font-size: 2vw;
+}
+
+.navbar_flex Link {
+    text-decoration: none;
+}
+
+.nav_div {
+    position: absolute;
+    width: 100vw;
+    z-index: 2;
+    height: fit-content;
+}
+
+.side_icon {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 8vw;
+}
+
+.side_menubar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8vh;
-    overflow-y: hidden;
+    flex-direction: column;
+    left: 0px;
+    position: fixed;
+    background-color: #4e1dd9;
+    z-index: 1;
+    min-width: 200px;
+    height: 100%;
+    padding: 20vw 10px 10px 10px;
+    box-shadow: 20px #4e1dd9;
+    z-index: 1;
+}
+
+.nav_item {
+    color: #4e1dd9;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav_item:hover {
+    background-color: #4e1dd9;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: 0.2s;
+    padding: 0.1vw 0.3vw 0.1vw 0.3vw;
+}
+
+.sidenav_item {
+    color: #0cc7e9;
+    text-decoration: none;
+}
+
+.sidenav_item:hover {
+    background-color: #0cc7e9;
+    color: #4e1dd9;
+    /* width: 100%; */
+    border-radius: 10px;
+    transition: 0.2s;
+    padding: 0.1vw 0.3vw 0.1vw 0.3vw;
+}
+
+.navbar_3 {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    height: 13vw;
+}
+
+.navbar_4 {
+    position: absolute;
+    right: -0.5%;
+    z-index: 1;
+    height: 13vw;
+}
+
+.navbar_2 {
+    position: absolute;
+    align-self: center;
+    left: 50%;
+    margin-left: -5%;
+    /* justify-self: center; */
+    /* left: calc((100% - 153px)/2); */
+    /* transform: translate(-50%, -50%); */
+    height: 40%;
+    z-index: 1;
+    top: 40px;
+    width: 10%;
+    display: inline-block;
+}
+
+.navbar_2:hover {
+    -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+.navbar_1 {
+    width: 100%;
+    z-index: 1;
+}
+
+.item_1 {
+    position: absolute;
+    left: 60%;
+    top: 1%;
+    font-family: 'tangosans', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
+}
+.item_2 {
+    position: absolute;
+    left: 65.5%;
+    top: 1%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
+}
+.item_3 {
+    position: absolute;
+    left: 34%;
+    top: 1%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    margin-top: 2vw;
+}
+
+.main {
+    position: relative;
+    top: 0%;
+    z-index: 0;
+}
+
+.h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+
+.h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+.h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+.h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+.nav_image {
+    top: 26%;
+    width: 100%;
+    height: 44%;
+}
+
+.headings {
+    position: absolute;
+    top: 70%;
+    left: 7%;
+    font-family: 'Poppins', sans-serif;
+}
+.headings_2 {
+    position: absolute;
+    top: 84%;
+    left: 7%;
+    opacity: 0.7;
     font-family: 'Poppins', sans-serif;
 }
 
-.logo{
-    font-size: 1rem;
-    font-weight: bold;
+@media only screen and (max-width: 1760px) {
+    .b {
+        display: none;
+    }
+    .navbar_2 {
+        top: 20px;
+    }
 }
 
-.links{
-    display: flex;
-    justify-content: space-between;
+@media only screen and (max-width: 1600px) {
+    .navbar_2 {
+        top: 0;
+    }
 }
 
-.link{
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0 10px;
+@media screen and (max-width: 950px) {
+    .nav_div {
+        /* background-color: red; */
+    }
 }

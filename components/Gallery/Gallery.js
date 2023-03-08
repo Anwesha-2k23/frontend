@@ -1,34 +1,56 @@
+import { useState, useCallback } from 'react'
 import style from './Gallery.module.css'
+import { useInView } from 'react-intersection-observer'
+import ImageItem from './ImageItem'
+import { useScrollDirection } from 'react-use-scroll-direction'
+import ImageViewer from 'react-simple-image-viewer'
+const Gallery = (props) => {
+    const { ref: h1ref, inView: h1view } = useInView()
+    const { ref: pref, inView: pview } = useInView()
+    const { scrollDirection } = useScrollDirection()
 
-const Gallery = () => {
-  return (
-    <div className={style.gallery}>
-    <figure className={`${style.galleryItem} ${style.galleryItem1}`}>
-      {/* <img src="img/image-1.jpg" className={style.galleryImg} alt="Image 1"></img> */}
-      <div className={style.galleryImg}></div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem2}`}>
-      {/* <img src="img/image-2.jpg" className={style.galleryImg} alt="Image 2"></img> */}
-            <div className={style.galleryImg}></div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem3}`}>
-      {/* <img src="img/image-3.jpg" className={style.galleryImg} alt="Image 3"></img> */}
-            <div className={style.galleryImg}></div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem4}`}>
-      {/* <img src="img/image-4.jpg" className={style.galleryImg} alt="Image 4"></img> */}
-            <div className={style.galleryImg}></div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem5}`}>
-      {/* <img src="img/image-5.jpg" className={style.galleryImg} alt="Image 5"></img> */}
-            <div className={style.galleryImg}></div>
-    </figure>
-    <figure className={`${style.galleryItem} ${style.galleryItem6}`}>
-      {/* <img src="img/image-6.jpg" className={style.galleryImg} alt="Image 6"></img> */}
-            <div className={style.galleryImg}></div>
-    </figure>
-  </div>
-  )
+    const [isViewerOpen, setIsViewerOpen] = useState(false)
+    const [currentImage, setCurrentImage] = useState(0)
+
+    const openImageViewer = useCallback((index) => {
+        setCurrentImage(index)
+        setIsViewerOpen(true)
+    }, [])
+
+    const closeImageViewer = () => {
+        setCurrentImage(0)
+        setIsViewerOpen(false)
+    }
+
+    const images = props.images
+    return (
+        <div className={style.gallery}>
+            <h1 ref={h1ref}>{props.eventName}</h1>
+            <p ref={pref}>{props.desc}</p>
+            <div className={style.container}>
+                {images.map((image, index) => {
+                    return (
+                        <ImageItem
+                            image={image}
+                            key={index}
+                            idx={index}
+                            clickFn={openImageViewer}
+                        />
+                    )
+                })}
+
+                {isViewerOpen && (
+                    <ImageViewer
+                        src={images}
+                        currentIndex={currentImage}
+                        disableScroll={false}
+                        closeOnClickOutside={true}
+                        onClose={closeImageViewer}
+                    />
+                )}
+            </div>
+        </div>
+    )
 }
 
 export default Gallery

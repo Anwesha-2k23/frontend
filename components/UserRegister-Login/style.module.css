@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: 'BroadwayShadow';
+    src: url('../../styles/fonts/BroadwayShadow.ttf');
+}
+
+.form {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    padding-left: 20px;
+    height: fit-content;
+    padding-top: 23;
+    padding-bottom: 150px;
+}
+
+.mainForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    justify-content: center;
+    margin-right: 2vw;
+    padding: 30px 10px 30px 20px;
+    background: #ffffff;
+    box-shadow: #000000 7px 7px 0px;
+    border-radius: 15px;
+    width: 31%;
+    /* height: 70vh; */
+}
+
+.mainForm h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.mainForm hr {
+    color: #000000;
+    width: 220px;
+    height: 3px;
+    border: 4px solid #000000;
+    margin-bottom: 20px;
+}
+
+.mainForm label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.mainForm a {
+    color: #000000;
+}
+
+.mainHeading {
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    text-align: center;
+    color: #2b0072;
+    font-family: BroadwayShadow;
+    font-size: 6vw;
+    font-weight: 400;
+    left: 4%;
+}
+
+.form_row {
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+}
+
+.form_row .field input,
+.field select {
+    width: 12vw;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.field input,
+.field select {
+    width: 25vw;
+    height: 45px;
+    margin: 2px;
+    padding: 2px 15px;
+    font-size: 17px;
+    background: #eee9ff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    /* border-color: #2b0072;
+    border-bottom: 2px solid #2b0072;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0; */
+}
+
+.field input:focus,
+.field select:focus {
+    outline: none;
+}
+
+.userType {
+    width: 25vw;
+    min-width: 230px;
+    height: 45px;
+    margin: 2px;
+    padding: 2px 15px;
+    font-size: 17px;
+    background: #eee9ff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    /* border-color: #2b0072;
+    border-bottom: 2px solid #2b0072;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0; */
+}
+
+/* .field label {
+    font-size: 20px;
+    color: #2b0072;
+} */
+
+.buttonWrapper {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60vw;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonWrapper button {
+    width: 25vw;
+    height: 59px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+    min-width: 200px;
+}
+
+/* .buttonWrapper button:hover {
+    background-color: #424040;
+    color: #fff;
+} */
+
+.forgotpass {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.lottie {
+    width: 50%;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.lottie_container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 50vw;
+    height: 80vh;
+}
+
+.island {
+    position: absolute;
+    top: 150px;
+    overflow: hidden;
+    transform: scale(1.4) translate(119px, 10px);
+}
+
+.clouds {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    overflow: hidden;
+    /* z-index: 3; */
+}
+
+.iitp_email {
+    border-radius: 5px 0px 0px 5px !important;
+    width: 20vw !important;
+    margin: 0px !important;
+    height: 45px;
+}
+
+.iitp_email_ext {
+    background-color: #000000;
+    color: #ffffff;
+    height: 45px;
+    font-size: 17px;
+    padding: 10px 3px 10px 5px;
+    border-radius: 0px 5px 5px 0px;
+    margin: 0px;
+}
+
+@media screen and (max-width: 670px) {
+    .island {
+        display: none;
+    }
+}
+@media only screen and (max-width: 860px) {
+    /* .form {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 20px;
+    } */
+
+    /* .mainForm {
+        align-items: center;
+        height: 100vh;
+    } */
+
+    /* .mainHeading {
+        font-size: 10vw;
+    }
+
+    .form_row {
+        flex-direction: column;
+    }
+
+    .form_row .field input {
+        width: 80vw;
+    }
+
+    .field input {
+        width: 80vw;
+    } */
+
+    /* .lottie {
+        width: 100%;
+    }
+
+    .lottie_container {
+        width: 100vw;
+        height: 50vh;
+    } */
+}
+
+@media only screen and (max-width: 1278px) {
+    .mainForm {
+        /* margin-top: -60px; */
+        margin-right: auto;
+        width: 92%;
+        padding: 2px;
+    }
+    .field {
+        justify-content: center;
+        align-items: center;
+    }
+    .field input,
+    .field select {
+        min-width: 230px;
+        font-size: 13px;
+        width: 44vw;
+    }
+    .iitp_email_ext {
+        font-size: 13px;
+    }
+    .field label {
+        font-size: 14px;
+    }
+    .form {
+        padding-bottom: 210px;
+    }
+    .form_row {
+        flex-direction: column;
+    }
+}

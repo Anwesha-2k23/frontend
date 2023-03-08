@@ -1,0 +1,39 @@
+.parentContainer {
+    background-color: #ABE0FF;
+}
+
+.section1 {
+    padding: 100px 20px;
+    padding-bottom: 20px;
+}
+
+.sectionHeading {
+    font-size: 40px;
+    font-weight: 700;
+    color: #403E9E;
+    margin-inline: 25px;
+}
+
+.sectionHeadingBar {
+    width: 250px;
+    height: 5px;
+    background-color: #403E9E;
+    margin-bottom: 20px;
+    margin-inline: 25px;
+    border: none;
+}
+
+.sectionContent {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-inline: 25px;
+    margin-block: 25px;
+    border-radius: 10px;
+    /* -webkit-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75); */
+    box-shadow: 6px 6px 0px #000000;;
+}

@@ -1,0 +1,12 @@
+import { useRive, useStateMachineInput } from '@rive-app/react-canvas'
+import styles from './style.module.css'
+
+export default function Displayrive() {
+    const { rive, RiveComponent } = useRive({
+        src: 'Entry pass cards.riv',
+        artboard: 'pro card.svg',
+        autoplay: true,
+    })
+
+    return <RiveComponent className={styles.EliteCard} />
+}

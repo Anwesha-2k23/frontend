@@ -1,0 +1,93 @@
+.parentContainer{
+    background-color: #E3E3E3;
+}
+
+.container{
+    margin-inline: 30px;
+    margin-block: 100px;
+}
+
+.teamHeader{
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    color: #403E9E;
+}
+
+.teamHeadingBar{
+    width: 240px;
+    height: 5px;
+    background-color: #403E9E;
+    margin-inline: auto;
+    margin-bottom: 50px;
+    border: none;
+}
+
+.coordinators{
+    display: flex;
+    flex-direction: column;
+    /* TODO : Complete the styling */
+}
+
+.teamSubHeading{
+    font-size: 30px;
+    font-weight: 600;
+    color: #403E9E;
+}
+
+.teamSubHeadingBar{
+    width: 230px;
+    height: 5px;
+    background-color: #403E9E;
+    margin-bottom: 50px;
+    border: none;
+}
+
+.picContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-grow: 1;
+    gap: 50px;
+}
+
+.teamCard{
+    background-color: #ffffff;
+    padding: 20px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 13px;
+    margin: 20px;
+    box-shadow: 4.63213px 4.63213px 0px #000000;
+}
+
+.memberImage{
+    background-color: #56a5fe;
+    border-radius: 17px;
+    border: green 2px solid;
+    margin-bottom: 10px;
+}
+
+.teamMemberDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memberName{
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 24px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.memberCommitte{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.5px;
+    overflow: hidden;
+    margin-block: 5px;
+}
