@@ -75,9 +75,9 @@ const Footer = () => {
                 <div className={[styles.section3].join(' ')}>
                     <div className={styles.footerTable}>
                         <div className={styles.footerTableRow}>
-                            <Link className={styles.footerLink} href="/">
+                            <Link className={styles.footerLink} href="/gallery">
                                 <div className={styles.footerTableCell}>
-                                    Home
+                                    Gallery
                                 </div>
                             </Link>
                             <Link className={styles.footerLink} href="/events">
