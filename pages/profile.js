@@ -19,7 +19,7 @@ function profile() {
     )
 
     useEffect(() => {
-        fetch('http://localhost:8000/user/editprofile', {
+        fetch(`${host}/user/editprofile`, {
             method: 'GET',
             credentials: 'include',
             redirect: 'follow',
