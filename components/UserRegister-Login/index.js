@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import styles from './style.module.css'
-import { motion } from 'framer-motion'
+import { motion, wrap } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router'
@@ -21,6 +21,8 @@ const UserRegisterForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
     const [usertype, setUserType] = React.useState('iitp_student')
     const [college_name, setCollegeName] = React.useState('')
+    const [newsletter, setNewsletter] = React.useState(true)
+    const [terms, setTerms] = React.useState(false)
     const handleChange = (e) => {
         setUserType(e.target.value)
     }
@@ -77,8 +79,22 @@ const UserRegisterForm = () => {
                 theme: 'light',
             })
             return
-        } else if (phone.match(/^[0-9]{10}$/) == null) {
+        } 
+        else if (phone.match(/^[0-9]{10}$/) == null) {
             toast.warning('Provide valid phone number', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+            return
+        }
+        else if (!terms) {
+            toast.warning('Please accept the terms and conditions to continue', {
                 position: 'top-right',
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -283,6 +299,7 @@ const UserRegisterForm = () => {
                                                 )
                                             }
                                             required
+                                            placeholder='Eg: rishiraj_2001ME85'
                                             className={styles.iitp_email}
                                         />
                                         <span className={styles.iitp_email_ext}>
@@ -393,6 +410,53 @@ const UserRegisterForm = () => {
                             }}
                         />{' '}
                         Show Password
+                    </div>
+
+                    <div className={styles.terms_box}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <span>Subscribe to the&nbsp; <strong>Anwesha Dispatch</strong> &nbsp;newsletter{' '}</span>
+                            <input
+                                type="checkbox"
+                                style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    margin: '5px',
+                                }}
+                                checked={newsletter}
+                                onChange={() => {
+                                    setNewsletter((prev) => !prev)
+                                }}
+                            />
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                marginTop: '5px'
+
+                            }}
+                        >
+                            <span>I accept the&nbsp; <a href='/terms' target='_blank'>Terms and Conditions</a>{' '}</span>
+                            <input
+                                type="checkbox"
+                                style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    margin: '5px',
+                                }}
+                                checked={terms}
+                                onChange={() => {
+                                    setTerms((prev) => !prev)
+                                }}
+                            />
+                        </div>
                     </div>
 
                     <motion.div

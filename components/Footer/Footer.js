@@ -17,6 +17,7 @@ const Footer = () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault()
+            console.log(new FormData(form))
             if (validator.validate(document.getElementById('email').value)) {
                 toast.success('You are subscribed to our newsletter', {
                     position: 'top-right',
