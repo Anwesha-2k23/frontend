@@ -157,6 +157,44 @@
     height: 50px;
 }
 
+.team_details {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #000000;
+    color: #FFFFFF; */
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+}
+
+.team_details h3 {
+    font-size: 30px;
+}
+
+.team_details h4 {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.team_details strong {
+    font-size: 25px;
+}
+
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.members div {
+    text-transform: uppercase;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 920px) {
     .field {
         /* width: 90%; */

@@ -30,8 +30,22 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
 
     const response = await data.json()
     if(data.status === 200 || data.status === 201) {
-        router.push(response.payment_url)
-        console.log('Success!')
+        if(data.payment_url) {
+            router.push(response.payment_url)
+        }
+        else {
+            toast.success(response.messagge, {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+            router.replace('/events')
+        }
     }
     else {
         toast.error(response.message, {
