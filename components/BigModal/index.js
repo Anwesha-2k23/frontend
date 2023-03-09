@@ -229,20 +229,21 @@ const Modal = (props) => {
                                         soloEventRegistration(props.body.id, router)
                                     }
                                     else {
-                                        router.push({
-                                            pathname: `/event-registration/${[
-                                                props.body.id,
-                                            ]}`,
-                                            query: {
-                                                id: props.body.id,
-                                                name: props.body.name,
-                                                description: props.body.description,
-                                                max_team_size: props.body.max_team_size,
-                                                min_team_size: props.body.min_team_size,
-                                                registration_fee:
-                                                    props.body.registration_fee,
-                                            },
-                                        }) 
+                                        router.replace(props.body.registration_link)
+                                        // router.push({
+                                        //     pathname: `/event-registration/${[
+                                        //         props.body.id,
+                                        //     ]}`,
+                                        //     query: {
+                                        //         id: props.body.id,
+                                        //         name: props.body.name,
+                                        //         description: props.body.description,
+                                        //         max_team_size: props.body.max_team_size,
+                                        //         min_team_size: props.body.min_team_size,
+                                        //         registration_fee:
+                                        //             props.body.registration_fee,
+                                        //     },
+                                        // }) 
                                     }
                                 }
                                 else {
