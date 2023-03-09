@@ -101,6 +101,7 @@ const Modal = (props) => {
                                           ' members'}
                                 </div>
                                 {props.body.registration_fee ? (
+                                    !userData.isAuth ?
                                     <div>
                                         Registration Fee &nbsp;
                                         {/* <img src="/assets/payment.svg" /> */}
@@ -108,7 +109,15 @@ const Modal = (props) => {
                                             {' '}
                                             ₹{props.body.registration_fee}
                                         </span>
-                                    </div>
+                                    </div> : userData.state.user.user_type !== 'iitp_student' ? 
+                                    <div>
+                                        Registration Fee &nbsp;
+                                        {/* <img src="/assets/payment.svg" /> */}
+                                        <span style={{ fontWeight: '700' }}>
+                                            {' '}
+                                            ₹{props.body.registration_fee}
+                                        </span>
+                                    </div> : null
                                 ) : null}
                             </div>
                             {props.body.registration_deadline ? (
@@ -226,24 +235,24 @@ const Modal = (props) => {
                                 }
                                 else if(userData.isAuth) {
                                     if(props.body.is_solo) {
-                                        soloEventRegistration(props.body.id, router)
+                                        soloEventRegistration(props.body.id, router, props.closeHandler)
                                     }
                                     else {
-                                        router.replace(props.body.registration_link)
-                                        // router.push({
-                                        //     pathname: `/event-registration/${[
-                                        //         props.body.id,
-                                        //     ]}`,
-                                        //     query: {
-                                        //         id: props.body.id,
-                                        //         name: props.body.name,
-                                        //         description: props.body.description,
-                                        //         max_team_size: props.body.max_team_size,
-                                        //         min_team_size: props.body.min_team_size,
-                                        //         registration_fee:
-                                        //             props.body.registration_fee,
-                                        //     },
-                                        // }) 
+                                        // router.replace(props.body.registration_link)
+                                        router.push({
+                                            pathname: `/event-registration/${[
+                                                props.body.id,
+                                            ]}`,
+                                            query: {
+                                                id: props.body.id,
+                                                name: props.body.name,
+                                                description: props.body.description,
+                                                max_team_size: props.body.max_team_size,
+                                                min_team_size: props.body.min_team_size,
+                                                registration_fee:
+                                                    props.body.registration_fee,
+                                            },
+                                        }) 
                                     }
                                 }
                                 else {
