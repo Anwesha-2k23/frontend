@@ -11,8 +11,9 @@ const Footer = () => {
     const [email, setEmail] = useState('')
     useEffect(() => {
         // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx6wexJWQJpEALmI1kD4Q9oEGFSWcrrBaANCzvPV4wXqjEuiK7D_doymGwCgAKqyOeY/exec'
+            // 'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
+            // 'https://script.google.com/macros/s/AKfycbwuF-7teCwop6i8nW2PXubbT78wId4AGWXUWq0BIf3nWZ4JFXtzaeeT9dqDHxDC4pSj/exec'
         const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', async (e) => {
@@ -28,12 +29,28 @@ const Footer = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                let a = await fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form),
-                })
+                let headers = new Headers();
+                headers.append('Access-Control-Allow-Origin', '*');
+
+                let options = {
+                method: 'POST',
+                headers: headers,
+                mode: 'no-cors',
+                body: new FormData(form),
+                };
+
+                let a = await fetch(scriptURL, options);
+                // let a = await fetch(scriptURL, {
+                //     // redirect: "follow",
+                //     method: 'POST',
+                //     // mode: 'cors',
+                //     body: new FormData(form),
+                //     // headers: {
+                //     //     "Content-Type": "text/plain"
+                //     //  },
+                // })
                 let b = await a.json()
-                // console.log(b)
+                console.log(b)
                 setEmail('')
                 if (b.result != 'success') {
                     toast.error('Failed to subscribe the newsletter', {
