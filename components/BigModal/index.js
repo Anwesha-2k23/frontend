@@ -1,7 +1,7 @@
 // simple react modal component
 import React, { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
-import soloEventRegistration from '../Payments/soloEventRegistration'
+import soloEventRegistration from '../Event Registration/soloEventRegistration'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -218,9 +218,39 @@ const Modal = (props) => {
                         ) : null}
                         <button
                             className={styles.btn}
-                            onClick={() => {
-                                router.replace(props.body.registration_link)
-                            }}
+                            onClick={() =>
+                                {
+                                if(props.body.is_online) {
+                                    console.log('online')
+                                    router.replace(props.body.registration_link)
+                                }
+                                else if(userData.isAuth) {
+                                    if(props.body.is_solo) {
+                                        soloEventRegistration(props.body.id, router)
+                                    }
+                                    else {
+                                        router.replace(props.body.registration_link)
+                                        // router.push({
+                                        //     pathname: `/event-registration/${[
+                                        //         props.body.id,
+                                        //     ]}`,
+                                        //     query: {
+                                        //         id: props.body.id,
+                                        //         name: props.body.name,
+                                        //         description: props.body.description,
+                                        //         max_team_size: props.body.max_team_size,
+                                        //         min_team_size: props.body.min_team_size,
+                                        //         registration_fee:
+                                        //             props.body.registration_fee,
+                                        //     },
+                                        // }) 
+                                    }
+                                }
+                                else {
+                                    router.push('/userLogin')
+                                }
+                                }
+                            }
                         >
                             Register
                         </button>
