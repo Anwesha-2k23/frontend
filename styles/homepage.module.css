@@ -292,7 +292,7 @@
 
 
 .merchBookBtn {
-    background-color: #CCC9FF;
+    background-color: #fff;
     width: 401px;
     height: 70px;
     border-radius: 10px;
@@ -303,11 +303,12 @@
     text-align: center;
     text-decoration: none;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .merchBookBtn2 {
     margin-top: 50px;
-    background-color: #CCC9FF;
+    background-color: #fff;
     width: 401px;
     height: 70px;
     border-radius: 10px;
@@ -318,6 +319,7 @@
     text-align: center;
     text-decoration: none;
     display: none;
+    cursor: pointer;
 }
 .merchBookBtn:hover {
     background-color: #000000;
