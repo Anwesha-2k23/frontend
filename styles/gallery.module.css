@@ -1,6 +1,6 @@
 .container{
     /* background-color: #fff6a5; */
-    background-image: url('../images/gallery_bg.png');
+    background-image: url('/home/bg.png');
     background-repeat: repeat-y;
     background-size: 100%;
 }

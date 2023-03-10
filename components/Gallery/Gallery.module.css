@@ -1,7 +1,4 @@
-@font-face {
-    font-family: trajan;
-    src: url(../../fonts/Trajan\ Pro.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .gallery {
     display: flex;
@@ -13,7 +10,23 @@
     padding: 25px;
     /* border: 15px ridge #4e1dd9; */
     border-radius: 20px;
-    background-color: #00389291;
+    background-color: #6660d3d2;
+    box-shadow: 4.63213px 4.63213px 0px #000000;
+}
+
+.gallery h1{
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.gallery p{
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-bottom: 25px;
 }
 
 .container {
@@ -32,6 +45,9 @@
     max-width: 100%;
     border-radius: 15px;
     /* border: 2px ridge #4e1dd9; */
+    box-shadow: -1px 3px 12px 0px rgb(0 0 0 / 90%);
+    margin-block: 10px;
+
 }
 
 .hidden {
@@ -50,14 +66,14 @@
 p.show {
     margin-bottom: 10px;
     font-size: 1.2rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
 
 h1.show {
     margin-bottom: 10px;
     font-size: 3rem;
-    font-family: trajan;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (max-width: 1800px) {
