@@ -13,9 +13,9 @@ function merchandise() {
   const [tshirtLink, setTshirtLink] = useState('')
   const [modal, setModal] = useState(false)
 
-    const close = () => {
-        setModal(false)
-    }
+  const close = () => {
+    setModal(false)
+  }
 
   useEffect(() => {
     const deluxe = document.getElementById('deluxe')
@@ -28,7 +28,7 @@ function merchandise() {
     oneTShirt.addEventListener('click', handleRadioClick)
     twoTShirt.addEventListener('click', handleRadioClick)
     threeTShirt.addEventListener('click', handleRadioClick)
-    
+
     return () => {
       deluxe.addEventListener('click', handleRadioClick)
       superDeluxe.addEventListener('click', handleRadioClick)
@@ -116,149 +116,149 @@ function merchandise() {
   }
   return (
     <>
-    <div className={styles.container}>
-      <div className={styles.themeSection}>
-        <div className={styles.merchContainer}>
-          <div className={styles.merchDetails}>
-          </div>
-          <div className={styles.merchBooking}>
-            {/* <img
+      <div className={styles.container}>
+        <div className={styles.themeSection}>
+          <div className={styles.merchContainer}>
+            <div className={styles.merchDetails}>
+            </div>
+            <div className={styles.merchBooking}>
+              {/* <img
                             src="/home/grab_merc_text.png"
                             alt="Grab the merch"
                         /> */}
-            <span className={styles.grabMerchText}>
-              Exclusive Offers!
-            </span>
-            {/* TODO : Add the link for the payment of the TShirts */}
-            <div className={styles.priceRadioContainer}>
-              <div className={styles.priceRadio}>
-                <div className={styles.priceBlob}>Rs. 399</div>
-                <div className={styles.itemDetails}>
-                  <span><strong>Deluxe Pack</strong></span>
-                  <span>1 TShirt + Cap</span>
+              <span className={styles.grabMerchText}>
+                Exclusive Offers!
+              </span>
+              {/* TODO : Add the link for the payment of the TShirts */}
+              <div className={styles.priceRadioContainer}>
+                <div className={styles.priceRadio}>
+                  <div className={styles.priceBlob}>Rs. 399</div>
+                  <div className={styles.itemDetails}>
+                    <span><strong>Deluxe Pack</strong></span>
+                    <span>1 TShirt + Cap</span>
+                  </div>
+                  <div className={styles.radioContainer}>
+                    <div
+                      id="deluxe"
+                      className={styles.priceRadioBtn}
+                      onClick={() => handleRadioClick()}
+                    />
+                  </div>
                 </div>
-                <div className={styles.radioContainer}>
-                  <div
-                    id="deluxe"
-                    className={styles.priceRadioBtn}
-                    onClick={() => handleRadioClick()}
-                  />
+                <div className={styles.priceRadio}>
+                  <div className={styles.priceBlob}>Rs. 599</div>
+                  <div className={styles.itemDetails}>
+                    <span><strong>Super Deluxe Pack</strong></span>
+                    <span>1 TShirt + Cap + Others</span>
+                  </div>
+                  <div className={styles.radioContainer}>
+                    <div
+                      id="superDeluxe"
+                      className={styles.priceRadioBtn}
+                      onClick={() => handleRadioClick()}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.priceRadio}>
-                <div className={styles.priceBlob}>Rs. 599</div>
-                <div className={styles.itemDetails}>
-                  <span><strong>Super Deluxe Pack</strong></span>
-                  <span>1 TShirt + Cap + Others</span>
+                <div className={[styles.upperShopNowBtn]}>
+                  <a href="#">
+                    <button
+                      href="#"
+                      className={styles.merchBookBtn}
+                    >
+                      Shop Now
+                    </button>
+                  </a>
                 </div>
-                <div className={styles.radioContainer}>
-                  <div
-                    id="superDeluxe"
-                    className={styles.priceRadioBtn}
-                    onClick={() => handleRadioClick()}
-                  />
-                </div>
-              </div>
-              <div className={[styles.upperShopNowBtn]}>
-                <a href="#">
-                  <button
-                    href="#"
-                    className={styles.merchBookBtn}
-                  >
-                    Shop Now
-                  </button>
-                </a>
               </div>
             </div>
           </div>
-        </div>
 
 
 
 
 
 
-        <div className={styles.merchContainer2}>
-          <div className={styles.merchDetails2}>
-            <img
-              src="/merch/t_shirt.svg"
-              alt="Grab the merch"
-            />
-            <div className={styles.shopNowBtn}>
+          <div className={styles.merchContainer2}>
+            <div className={styles.merchDetails2}>
+              <img
+                src="/merch/t_shirt.svg"
+                alt="Grab the merch"
+              />
+              <div className={styles.shopNowBtn}>
                 <a onClick={() => setModal(true)}>
                   <button
                     href="#"
                     className={styles.sizeChartBtn}
                   >
-                   View Size Chart
+                    View Size Chart
                   </button>
                 </a>
               </div>
 
-          </div>
-          <div className={styles.merchBooking}>
-            <span className={styles.grabMerchText}>
-              TShirt Offers!
-            </span>
-            {/* TODO : Add the link for the payment of the TShirts */}
-            <div className={styles.priceRadioContainer}>
-              <div className={styles.priceRadio}>
-                <div className={styles.priceBlob}>Rs. 399</div>
-                <div className={styles.itemDetails}>
-                  <span><strong>Single</strong></span>
-                  {/* <span>1 TShirt + Cap</span> */}
-                </div>
-                <div className={styles.radioContainer}>
-                  <div
-                    id="singleTShirt"
-                    className={styles.priceRadioBtn}
-                    onClick={() => handleRadioClick()}
-                  />
-                </div>
-              </div>
-              <div className={styles.priceRadio}>
-                <div className={styles.priceBlob}>Rs. 749</div>
-                <div className={styles.itemDetails}>
-                  <span><strong>Combo of 2</strong></span>
-                  {/* <span>1 TShirt + Cap + Others</span> */}
-                </div>
-                <div className={styles.radioContainer}>
-                  <div
-                    id="2TShirt"
-                    className={styles.priceRadioBtn}
-                    onClick={() => handleRadioClick()}
-                  />
-                </div>
-              </div>
-              <div className={styles.priceRadio}>
-                <div className={styles.priceBlob}>Rs. 1099</div>
-                <div className={styles.itemDetails}>
-                  <span><strong>Combo of 3</strong></span>
-                  {/* <span>1 TShirt + Cap + Others</span> */}
-                </div>
-                <div className={styles.radioContainer}>
-                  <div
-                    id="3TShirt"
-                    className={styles.priceRadioBtn}
-                    onClick={() => handleRadioClick()}
-                  />
-                </div>
-              </div>
-              <div className={styles.shopNowBtn}>
-                <a href={tshirtLink}>
-                  <button
-                    href={tshirtLink}
-                    className={styles.merchBookBtn}
-                  >
-                    Shop Now
-                  </button>
-                </a>
-              </div>
-              <div style={{ textAlign: 'center', margin: 'auto', color: 'white', marginTop: '10px', fontSize: '18px' }}>*Additional delivery charges apply</div>
             </div>
-          </div>
-          {/* TODO : Add the link for the payment of the TShirts */}
-          {/* <a
+            <div className={styles.merchBooking}>
+              <span className={styles.grabMerchText}>
+                TShirt Offers!
+              </span>
+              {/* TODO : Add the link for the payment of the TShirts */}
+              <div className={styles.priceRadioContainer}>
+                <div className={styles.priceRadio}>
+                  <div className={styles.priceBlob}>Rs. 399</div>
+                  <div className={styles.itemDetails}>
+                    <span><strong>Single</strong></span>
+                    {/* <span>1 TShirt + Cap</span> */}
+                  </div>
+                  <div className={styles.radioContainer}>
+                    <div
+                      id="singleTShirt"
+                      className={styles.priceRadioBtn}
+                      onClick={() => handleRadioClick()}
+                    />
+                  </div>
+                </div>
+                <div className={styles.priceRadio}>
+                  <div className={styles.priceBlob}>Rs. 749</div>
+                  <div className={styles.itemDetails}>
+                    <span><strong>Combo of 2</strong></span>
+                    {/* <span>1 TShirt + Cap + Others</span> */}
+                  </div>
+                  <div className={styles.radioContainer}>
+                    <div
+                      id="2TShirt"
+                      className={styles.priceRadioBtn}
+                      onClick={() => handleRadioClick()}
+                    />
+                  </div>
+                </div>
+                <div className={styles.priceRadio}>
+                  <div className={styles.priceBlob}>Rs. 1099</div>
+                  <div className={styles.itemDetails}>
+                    <span><strong>Combo of 3</strong></span>
+                    {/* <span>1 TShirt + Cap + Others</span> */}
+                  </div>
+                  <div className={styles.radioContainer}>
+                    <div
+                      id="3TShirt"
+                      className={styles.priceRadioBtn}
+                      onClick={() => handleRadioClick()}
+                    />
+                  </div>
+                </div>
+                <div className={styles.shopNowBtn}>
+                  <a href={tshirtLink}>
+                    <button
+                      href={tshirtLink}
+                      className={styles.merchBookBtn}
+                    >
+                      Shop Now
+                    </button>
+                  </a>
+                </div>
+                <div style={{ textAlign: 'center', margin: 'auto', color: 'white', marginTop: '10px', fontSize: '18px' }}>*Additional delivery charges apply</div>
+              </div>
+            </div>
+            {/* TODO : Add the link for the payment of the TShirts */}
+            {/* <a
             href="https://pmny.in/YJ78Zv4cSA0l"
             className={styles.mobileBuyNow}
           >
@@ -291,17 +291,66 @@ function merchandise() {
               Buy 3
             </button>
           </a> */}
+          </div>
+
+          <div className={styles.otherMerch}>
+            <div className={styles.merchCard}>
+              <img src="/merch/cap.svg" alt="" />
+              <div className={styles.textContainer}>
+              <span>Anwesha Cap</span>
+              <div className={styles.priceBlob}>Rs. 150</div>
+              </div>
+              <a href="#">
+                <button
+                  href="#"
+                  className={styles.otherMerchBtn}
+                >
+                  Shop Now
+                </button>
+              </a>
+            </div>
+            <div className={styles.merchCard}>
+              <img src="/merch/wristband.svg" alt="" />
+              <div className={styles.textContainer}>
+              <span>Wrist Band</span>
+              <div className={styles.priceBlob}>Rs. 30</div>
+              </div>
+              <a href="#">
+                <button
+                  href="#"
+                  className={styles.otherMerchBtn}
+                >
+                  Shop Now
+                </button>
+              </a>
+            </div>
+            <div className={styles.merchCard}>
+              <img src="/merch/keychain.svg" alt="" />
+              <div className={styles.textContainer}>
+              <span>Keychain</span>
+              <div className={styles.priceBlob}>Rs. 40</div>
+              </div>
+              <a href="#">
+                <button
+                  href="#"
+                  className={styles.otherMerchBtn}
+                >
+                  Shop Now
+                </button>
+              </a>
+            </div>
+            
+          </div>
         </div>
-      </div>
-    </div >
-    {modal && (
-      <>
+      </div >
+      {modal && (
+        <>
           <MerchModal
-              closeHandler={close}
+            closeHandler={close}
           />
-      </>
-  )}
-  </>
+        </>
+      )}
+    </>
   )
 }
 

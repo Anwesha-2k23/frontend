@@ -319,3 +319,77 @@
     margin-top: 100px;
   }
 }
+
+.otherMerch{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.merchCard{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 40px;
+    background-color:#504ABC;
+    box-shadow: 6px 6px 0px #000000;
+    margin: 30px;
+}
+
+.merchCard img{
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    margin-block: 10px;
+}
+
+.merchCard .textContainer span{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    margin-block: 10px;
+
+}
+
+.merchCard .textContainer div{
+    margin-block: 10px;
+}
+
+.otherMerchBtn{
+    background-color: #fff;
+    width: 301px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    border: 3px solid #000000;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.otherMerchBtn:hover{
+    background-color: #000000;
+    color: #fff;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 650px){
+    .otherMerchBtn{
+        width: 200px;
+    }
+}
