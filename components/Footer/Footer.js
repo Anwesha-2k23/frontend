@@ -10,9 +10,7 @@ var validator = require('email-validator')
 const Footer = () => {
     const [email, setEmail] = useState('')
     useEffect(() => {
-        // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', async (e) => {
@@ -29,14 +27,13 @@ const Footer = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                let a = await fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form),
-                })
-                let b = await a.json()
-                // console.log(b)
+                const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                const data = await response.json()
+                console.log(data)
+                // .then(response => console.log('Success!', response))
+                // .catch(error => console.error('Error!', error.message))
                 setEmail('')
-                if (b.result != 'success') {
+                if (data.result != 'success') {
                     toast.error('Failed to subscribe the newsletter', {
                         position: 'top-right',
                         autoClose: 3000,
@@ -177,7 +174,7 @@ const Footer = () => {
                             onChange={handleChange}
                             value={email}
                             type="email"
-                            name="mailing"
+                            name="Email"
                             id="email"
                             className={styles.mailInput}
                         />
