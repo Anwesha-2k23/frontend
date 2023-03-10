@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/merchandise.module.css'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import MerchModal from '../components/MerchModal'
 
 function merchandise() {
   const [deluxe, setDeluxe] = useState(false)
@@ -10,6 +11,11 @@ function merchandise() {
   const [twoTShirt, setTwoTShirt] = useState(false)
   const [threeTShirt, setThreeTShirt] = useState(false)
   const [tshirtLink, setTshirtLink] = useState('')
+  const [modal, setModal] = useState(false)
+
+    const close = () => {
+        setModal(false)
+    }
 
   useEffect(() => {
     const deluxe = document.getElementById('deluxe')
@@ -109,6 +115,7 @@ function merchandise() {
 
   }
   return (
+    <>
     <div className={styles.container}>
       <div className={styles.themeSection}>
         <div className={styles.merchContainer}>
@@ -178,7 +185,7 @@ function merchandise() {
               alt="Grab the merch"
             />
             <div className={styles.shopNowBtn}>
-                <a href="#">
+                <a onClick={() => setModal(true)}>
                   <button
                     href="#"
                     className={styles.sizeChartBtn}
@@ -287,6 +294,14 @@ function merchandise() {
         </div>
       </div>
     </div >
+    {modal && (
+      <>
+          <MerchModal
+              closeHandler={close}
+          />
+      </>
+  )}
+  </>
   )
 }
 
