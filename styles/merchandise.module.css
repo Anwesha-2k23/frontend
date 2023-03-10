@@ -9,6 +9,13 @@
     ;
 
 }
+/* TODO : Remove these to show other sections */
+.merchContainer{
+    display: none !important;
+}
+.otherMerch{
+    display: none !important;
+}
 
 .merchContainer {
     height: 810px;
