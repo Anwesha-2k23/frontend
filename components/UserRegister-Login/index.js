@@ -110,12 +110,14 @@ const UserRegisterForm = () => {
             college_name,
         }
         try {
+            if(newsletter){
             let emailResponse = await fetch(scriptURL, {
                 method: 'POST',
                 body: formData,
             })
             let emailData = await emailResponse.json()
-            console.log(emailData)
+            // console.log(emailData)
+        }
             const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
                 headers: {
