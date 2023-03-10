@@ -20,7 +20,7 @@ export default function Multicity({ folderLinks }) {
                     <Gallery
                         key={Math.random()}
                         eventName={folder.name}
-                        desc={folder.desc}
+                        desc={folder.desc ? folder.desc : 'No Description'}
                         images={folder.links}
                     />
                 ))}
@@ -88,6 +88,7 @@ export async function getServerSideProps(context) {
                         // To create a link we will append the id of the image to the url
                         let url =
                             'https://drive.google.com/uc?export=view&id=' +
+                            
                             image.id
                         return url
                     })
@@ -96,7 +97,7 @@ export async function getServerSideProps(context) {
                 // Returning the required information about the image
                 return {
                     name: folder.name,
-                    desc: folder.description,
+                    desc: folder.description?folder.description:'No Description',
                     links: imageLinks,
                 }
             })
