@@ -10,14 +10,12 @@ var validator = require('email-validator')
 const Footer = () => {
     const [email, setEmail] = useState('')
     useEffect(() => {
-        // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbx6wexJWQJpEALmI1kD4Q9oEGFSWcrrBaANCzvPV4wXqjEuiK7D_doymGwCgAKqyOeY/exec'
-            // 'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
-            // 'https://script.google.com/macros/s/AKfycbwuF-7teCwop6i8nW2PXubbT78wId4AGWXUWq0BIf3nWZ4JFXtzaeeT9dqDHxDC4pSj/exec'
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault()
+            console.log(new FormData(form))
             if (validator.validate(document.getElementById('email').value)) {
                 toast.success('You are subscribed to our newsletter', {
                     position: 'top-right',
@@ -29,30 +27,13 @@ const Footer = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                let headers = new Headers();
-                headers.append('Access-Control-Allow-Origin', '*');
-
-                let options = {
-                method: 'POST',
-                headers: headers,
-                mode: 'no-cors',
-                body: new FormData(form),
-                };
-
-                let a = await fetch(scriptURL, options);
-                // let a = await fetch(scriptURL, {
-                //     // redirect: "follow",
-                //     method: 'POST',
-                //     // mode: 'cors',
-                //     body: new FormData(form),
-                //     // headers: {
-                //     //     "Content-Type": "text/plain"
-                //     //  },
-                // })
-                let b = await a.json()
-                console.log(b)
+                const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                const data = await response.json()
+                console.log(data)
+                // .then(response => console.log('Success!', response))
+                // .catch(error => console.error('Error!', error.message))
                 setEmail('')
-                if (b.result != 'success') {
+                if (data.result != 'success') {
                     toast.error('Failed to subscribe the newsletter', {
                         position: 'top-right',
                         autoClose: 3000,
@@ -92,9 +73,9 @@ const Footer = () => {
                 <div className={[styles.section3].join(' ')}>
                     <div className={styles.footerTable}>
                         <div className={styles.footerTableRow}>
-                            <Link className={styles.footerLink} href="/gallery">
+                            <Link className={styles.footerLink} href="/">
                                 <div className={styles.footerTableCell}>
-                                    Gallery
+                                    Home
                                 </div>
                             </Link>
                             <Link className={styles.footerLink} href="/events">
@@ -193,7 +174,7 @@ const Footer = () => {
                             onChange={handleChange}
                             value={email}
                             type="email"
-                            name="mailing"
+                            name="Email"
                             id="email"
                             className={styles.mailInput}
                         />
