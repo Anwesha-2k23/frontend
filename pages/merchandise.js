@@ -245,7 +245,7 @@ function merchandise() {
                                     </div>
                                 </div>
                                 <div className={styles.shopNowBtn}>
-                                    <a href={tshirtLink}>
+                                    <a href={tshirtLink} target="_blank">
                                         <button
                                             href={tshirtLink}
                                             className={styles.merchBookBtn}

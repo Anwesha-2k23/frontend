@@ -238,7 +238,7 @@ function Navigation() {
 
             <div id="drawer" className={styles.nav_drawer}>
                 <ul>
-                     <li>
+                    <li>
                         <Link href="/">Home</Link>
                     </li>
                     <li>

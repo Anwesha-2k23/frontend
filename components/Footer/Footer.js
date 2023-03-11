@@ -86,10 +86,7 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                            <Link
-                                className={styles.footerLink}
-                                href="/gallery"
-                            >
+                            <Link className={styles.footerLink} href="/gallery">
                                 <div className={styles.footerTableCell}>
                                     Gallery
                                 </div>
@@ -109,7 +106,11 @@ const Footer = () => {
                                     About Us
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="https://forms.gle/LD4gSRg9CaxEeAXK7">
+                            <Link
+                                className={styles.footerLink}
+                                href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                                target="_blank"
+                            >
                                 <div className={styles.footerTableCell}>
                                     Report issue
                                 </div>
