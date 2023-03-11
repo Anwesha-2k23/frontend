@@ -114,6 +114,7 @@
     width: 100%;
     border-radius: 30px;
     padding: 0px 15px 0px 15px;
+    flex-wrap: wrap;
 }
 
 .date_row {

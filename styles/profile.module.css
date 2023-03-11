@@ -34,6 +34,10 @@
     outline: none;
 }
 
+.tabPanel{
+    width: 90%;
+}
+
 .anwesha_id {
     font-size: 60px;
     margin-left: 5%;
