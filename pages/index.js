@@ -87,13 +87,13 @@ const index = () => {
             <div className={styles.themeSection}>
                 <div className={styles.merchContainer}>
                     <div className={styles.merchDetails}>
-                        <Image
+                        {/* <Image
                             className={styles.tshirtImage}
-                            src="/home/tshirts.svg"
+                            src="/merch/tshirt_with_bg.png"
                             alt="Tshirts"
                             width={600}
                             height={580}
-                        />
+                        /> */}
                     </div>
                     <div className={styles.merchBooking}>
                         {/* <img

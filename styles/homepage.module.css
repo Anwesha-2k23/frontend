@@ -231,6 +231,10 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    background-image: url('/merch/tshirt_with_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .priceRow {
@@ -281,9 +285,10 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 50%;
+    padding-inline: 16%;
 }
 
 .merchBooking img {
@@ -364,5 +369,6 @@
     .merchDetails{
         width: 100%;
         align-items: center;
+        height: 50%;
     }
 }
