@@ -101,23 +101,26 @@ const Modal = (props) => {
                                           ' members'}
                                 </div>
                                 {props.body.registration_fee ? (
-                                    !userData.isAuth ?
-                                    <div>
-                                        Registration Fee &nbsp;
-                                        {/* <img src="/assets/payment.svg" /> */}
-                                        <span style={{ fontWeight: '700' }}>
-                                            {' '}
-                                            ₹{props.body.registration_fee}
-                                        </span>
-                                    </div> : userData.state.user.user_type !== 'iitp_student' ? 
-                                    <div>
-                                        Registration Fee &nbsp;
-                                        {/* <img src="/assets/payment.svg" /> */}
-                                        <span style={{ fontWeight: '700' }}>
-                                            {' '}
-                                            ₹{props.body.registration_fee}
-                                        </span>
-                                    </div> : null
+                                    !userData.isAuth ? (
+                                        <div>
+                                            Registration Fee &nbsp;
+                                            {/* <img src="/assets/payment.svg" /> */}
+                                            <span style={{ fontWeight: '700' }}>
+                                                {' '}
+                                                ₹{props.body.registration_fee}
+                                            </span>
+                                        </div>
+                                    ) : userData.state.user.user_type !==
+                                      'iitp_student' ? (
+                                        <div>
+                                            Registration Fee &nbsp;
+                                            {/* <img src="/assets/payment.svg" /> */}
+                                            <span style={{ fontWeight: '700' }}>
+                                                {' '}
+                                                ₹{props.body.registration_fee}
+                                            </span>
+                                        </div>
+                                    ) : null
                                 ) : null}
                             </div>
                             {props.body.registration_deadline ? (
@@ -227,17 +230,18 @@ const Modal = (props) => {
                         ) : null}
                         <button
                             className={styles.btn}
-                            onClick={() =>
-                                {
-                                if(props.body.is_online) {
+                            onClick={() => {
+                                if (props.body.is_online) {
                                     console.log('online')
                                     router.replace(props.body.registration_link)
-                                }
-                                else if(userData.isAuth) {
-                                    if(props.body.is_solo) {
-                                        soloEventRegistration(props.body.id, router, props.closeHandler)
-                                    }
-                                    else {
+                                } else if (userData.isAuth) {
+                                    if (props.body.is_solo) {
+                                        soloEventRegistration(
+                                            props.body.id,
+                                            router,
+                                            props.closeHandler
+                                        )
+                                    } else {
                                         // router.replace(props.body.registration_link)
                                         router.push({
                                             pathname: `/event-registration/${[
@@ -246,20 +250,21 @@ const Modal = (props) => {
                                             query: {
                                                 id: props.body.id,
                                                 name: props.body.name,
-                                                description: props.body.description,
-                                                max_team_size: props.body.max_team_size,
-                                                min_team_size: props.body.min_team_size,
+                                                description:
+                                                    props.body.description,
+                                                max_team_size:
+                                                    props.body.max_team_size,
+                                                min_team_size:
+                                                    props.body.min_team_size,
                                                 registration_fee:
                                                     props.body.registration_fee,
                                             },
-                                        }) 
+                                        })
                                     }
-                                }
-                                else {
+                                } else {
                                     router.push('/userLogin')
                                 }
-                                }
-                            }
+                            }}
                         >
                             Register
                         </button>

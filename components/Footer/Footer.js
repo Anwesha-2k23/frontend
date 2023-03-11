@@ -10,7 +10,8 @@ var validator = require('email-validator')
 const Footer = () => {
     const [email, setEmail] = useState('')
     useEffect(() => {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', async (e) => {
@@ -27,7 +28,10 @@ const Footer = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form),
+                })
                 const data = await response.json()
                 console.log(data)
                 // .then(response => console.log('Success!', response))

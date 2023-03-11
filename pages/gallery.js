@@ -88,7 +88,6 @@ export async function getServerSideProps(context) {
                         // To create a link we will append the id of the image to the url
                         let url =
                             'https://drive.google.com/uc?export=view&id=' +
-                            
                             image.id
                         return url
                     })
@@ -97,7 +96,9 @@ export async function getServerSideProps(context) {
                 // Returning the required information about the image
                 return {
                     name: folder.name,
-                    desc: folder.description?folder.description:'No Description',
+                    desc: folder.description
+                        ? folder.description
+                        : 'No Description',
                     links: imageLinks,
                 }
             })

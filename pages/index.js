@@ -130,11 +130,8 @@ const index = () => {
                         </a> */}
                     </div>
                     {/* TODO : Add the link for the payment of the TShirts */}
-                    
-                    <Link
-                        href="./merchandise"
-                        className={styles.mobileBuyNow}
-                    >
+
+                    <Link href="./merchandise" className={styles.mobileBuyNow}>
                         <button
                             href="/merchandise"
                             className={styles.merchBookBtn2}

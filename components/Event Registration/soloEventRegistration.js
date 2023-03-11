@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 async function soloEventRegistration(eventID, router, closeHandler) {
-
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
 
@@ -21,21 +20,21 @@ async function soloEventRegistration(eventID, router, closeHandler) {
         credentials: 'include',
     }
 
-    const data = await fetch(
-        `${host}/event/registration/solo`,
-        requestOptions
-    ).then((response) => response.json()).catch(error => {console.error(error)})
+    const data = await fetch(`${host}/event/registration/solo`, requestOptions)
+        .then((response) => response.json())
+        .catch((error) => {
+            console.error(error)
+        })
     // .then(result => console.log(result))
     // .catch(error => console.log('error', error));
 
     // fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
     // 	t.json()
     // )
-    if(data.payment_url) {
+    if (data.payment_url) {
         router.push(data.payment_url)
-    }
-    else {
-        closeHandler();
+    } else {
+        closeHandler()
         toast.success(data.messagge, {
             position: 'top-right',
             autoClose: 3000,
@@ -47,8 +46,5 @@ async function soloEventRegistration(eventID, router, closeHandler) {
             theme: 'light',
         })
     }
-
-
-    
 }
 export default soloEventRegistration

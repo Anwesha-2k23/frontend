@@ -78,11 +78,11 @@
     /* max-height: 60vh; */
 }
 
-.sizeTable thead tr th{
+.sizeTable thead tr th {
     padding-inline: 32px;
     font-size: 30px;
 }
-.sizeTable tbody tr td{
+.sizeTable tbody tr td {
     padding-inline: 35px;
     font-size: 25px;
 }

@@ -23,17 +23,13 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
         credentials: 'include',
     }
 
-    const data = await fetch(
-        `${host}/event/registration/team`,
-        requestOptions
-    )
+    const data = await fetch(`${host}/event/registration/team`, requestOptions)
 
     const response = await data.json()
-    if(data.status === 200 || data.status === 201) {
-        if(data.payment_url) {
+    if (data.status === 200 || data.status === 201) {
+        if (data.payment_url) {
             router.push(response.payment_url)
-        }
-        else {
+        } else {
             toast.success(response.messagge, {
                 position: 'top-right',
                 autoClose: 3000,
@@ -46,8 +42,7 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
             })
             router.replace('/events')
         }
-    }
-    else {
+    } else {
         toast.error(response.message, {
             position: 'top-right',
             autoClose: 3000,
@@ -59,7 +54,6 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
             theme: 'light',
         })
     }
-
 }
 
 export default teamEventRegistration

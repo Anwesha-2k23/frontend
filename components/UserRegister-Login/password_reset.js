@@ -11,7 +11,7 @@ const host = process.env.NEXT_PUBLIC_HOST
 
 const ChangePassword = () => {
     const context = useContext(AuthContext)
-    const router = useRouter();
+    const router = useRouter()
     const [password, setPassword] = React.useState('')
     const [cnfPassword, setCnfPassword] = React.useState('')
     const [passwordShown, setPasswordShown] = React.useState(false)
@@ -19,7 +19,7 @@ const ChangePassword = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        let body = { token: router.query.slug, password: password}
+        let body = { token: router.query.slug, password: password }
         // user input validation
         if (password.length == 0) {
             toast.warning('Please fill password', {
@@ -33,8 +33,7 @@ const ChangePassword = () => {
                 theme: 'light',
             })
             return
-        }
-        else if (password !== cnfPassword) {
+        } else if (password !== cnfPassword) {
             toast.warning('Passwords do not match', {
                 position: 'top-right',
                 autoClose: 3000,
@@ -98,16 +97,19 @@ const ChangePassword = () => {
             }
         } catch (err) {
             console.log(err)
-            toast.error('Password reset failed. Check your internet connection', {
-                position: 'top-right',
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'light',
-            })
+            toast.error(
+                'Password reset failed. Check your internet connection',
+                {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                }
+            )
         }
     }
 
@@ -199,7 +201,6 @@ const ChangePassword = () => {
                         Show Password
                     </div>
 
-                    
                     <div
                         style={{
                             display: 'flex',

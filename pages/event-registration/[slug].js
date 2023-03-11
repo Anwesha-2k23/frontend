@@ -24,12 +24,12 @@ const eventRegistration = () => {
     useEffect(() => {
         const anwID = data.state.user ? data.state.user.anwesha_id : ''
         var arr = []
-        for(let i = 0; i < min_team_size; i++) {
+        for (let i = 0; i < min_team_size; i++) {
             arr.push('')
         }
         arr[0] = anwID
         setMemberID(arr)
-        if(!data.isAuth) {
+        if (!data.isAuth) {
             router.push('/userLogin')
         }
     }, [data])
@@ -117,7 +117,8 @@ const eventRegistration = () => {
                                                 readOnly={!index}
                                                 onChange={(e) => {
                                                     let arr = [...memberID]
-                                                    arr[index] = 'ANW' + e.target.value
+                                                    arr[index] =
+                                                        'ANW' + e.target.value
                                                     setMemberID([...arr])
                                                 }}
                                                 // key={index + 1}

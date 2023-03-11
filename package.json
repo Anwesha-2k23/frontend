@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-images-viewer": "^1.7.1",
     "react-intersection-observer": "^9.4.1",
+    "react-loader-spinner": "^5.3.4",
     "react-lottie": "^1.2.3",
     "react-parallax": "^3.5.1",
     "react-razorpay": "^1.2.0",

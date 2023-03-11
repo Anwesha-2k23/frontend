@@ -4,7 +4,6 @@ import styles from './MerchModal.module.css'
 import Image from 'next/image'
 
 const Merchmodal = (props) => {
-
     return (
         <React.StrictMode>
             <div
@@ -55,9 +54,15 @@ const Merchmodal = (props) => {
                             <table className={styles.sizeTable}>
                                 <thead>
                                     <tr>
-                                        <th className={styles.tableHeading}>Size</th>
-                                        <th className={styles.tableHeading}>Chest</th>
-                                        <th className={styles.tableHeading}>Length</th>
+                                        <th className={styles.tableHeading}>
+                                            Size
+                                        </th>
+                                        <th className={styles.tableHeading}>
+                                            Chest
+                                        </th>
+                                        <th className={styles.tableHeading}>
+                                            Length
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,12 +92,16 @@ const Merchmodal = (props) => {
                                         <td className={styles.tableCell}>29</td>
                                     </tr>
                                     <tr>
-                                        <td className={styles.tableCell}>XXL</td>
+                                        <td className={styles.tableCell}>
+                                            XXL
+                                        </td>
                                         <td className={styles.tableCell}>44</td>
                                         <td className={styles.tableCell}>30</td>
                                     </tr>
                                     <tr>
-                                        <td className={styles.tableCell}>XXXL</td>
+                                        <td className={styles.tableCell}>
+                                            XXXL
+                                        </td>
                                         <td className={styles.tableCell}>46</td>
                                         <td className={styles.tableCell}>31</td>
                                     </tr>

@@ -8,6 +8,7 @@ import { motion, wrap } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router'
+import { ColorRing } from 'react-loader-spinner'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -23,6 +24,7 @@ const UserRegisterForm = () => {
     const [college_name, setCollegeName] = React.useState('')
     const [newsletter, setNewsletter] = React.useState(true)
     const [terms, setTerms] = React.useState(false)
+    const [loading, setLoading] = React.useState(false)
     const handleChange = (e) => {
         setUserType(e.target.value)
     }
@@ -30,7 +32,8 @@ const UserRegisterForm = () => {
         event.preventDefault()
         const formData = new FormData()
         formData.append('Email', email)
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         if (name.length < 5) {
             toast.warning('Username is too small', {
                 position: 'top-right',
@@ -73,8 +76,7 @@ const UserRegisterForm = () => {
                 theme: 'light',
             })
             return
-        } 
-        else if (phone.match(/^[0-9]{10}$/) == null) {
+        } else if (phone.match(/^[0-9]{10}$/) == null) {
             toast.warning('Provide valid phone number', {
                 position: 'top-right',
                 autoClose: 3000,
@@ -86,18 +88,20 @@ const UserRegisterForm = () => {
                 theme: 'light',
             })
             return
-        }
-        else if (!terms) {
-            toast.warning('Please accept the terms and conditions to continue', {
-                position: 'top-right',
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'light',
-            })
+        } else if (!terms) {
+            toast.warning(
+                'Please accept the terms and conditions to continue',
+                {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                }
+            )
             return
         }
 
@@ -110,14 +114,15 @@ const UserRegisterForm = () => {
             college_name,
         }
         try {
-            if(newsletter){
-            let emailResponse = await fetch(scriptURL, {
-                method: 'POST',
-                body: formData,
-            })
-            let emailData = await emailResponse.json()
-            // console.log(emailData)
-        }
+            setLoading(true)
+            if (newsletter) {
+                let emailResponse = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData,
+                })
+                let emailData = await emailResponse.json()
+                // console.log(emailData)
+            }
             const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
                 headers: {
@@ -128,7 +133,7 @@ const UserRegisterForm = () => {
             //check if request is successful
             if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
-                console.log(data)
+                setLoading(false)
                 toast.success(
                     'Please check your email for verification. Check spam folder if mail is not present in inbox',
                     {
@@ -145,6 +150,7 @@ const UserRegisterForm = () => {
                 router.push('/userLogin')
             } else if (response.status === 409) {
                 const data = await response.json()
+                setLoading(false)
                 toast.error(data.message || 'Unable to register', {
                     position: 'top-right',
                     autoClose: 3000,
@@ -157,6 +163,7 @@ const UserRegisterForm = () => {
                 })
             } else {
                 const data = await response.json()
+                setLoading(false)
                 toast.error(data.message, {
                     position: 'top-right',
                     autoClose: 3000,
@@ -301,7 +308,7 @@ const UserRegisterForm = () => {
                                                 )
                                             }
                                             required
-                                            placeholder='Eg: rishiraj_2001ME85'
+                                            placeholder="Eg: rishiraj_2001ME85"
                                             className={styles.iitp_email}
                                         />
                                         <span className={styles.iitp_email_ext}>
@@ -422,7 +429,11 @@ const UserRegisterForm = () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <span>Subscribe to the&nbsp; <strong>Anwesha Dispatch</strong> &nbsp;newsletter{' '}</span>
+                            <span>
+                                Subscribe to the&nbsp;{' '}
+                                <strong>Anwesha Dispatch</strong>{' '}
+                                &nbsp;newsletter{' '}
+                            </span>
                             <input
                                 type="checkbox"
                                 style={{
@@ -441,11 +452,15 @@ const UserRegisterForm = () => {
                                 display: 'flex',
                                 flexDirection: 'row',
                                 alignItems: 'center',
-                                marginTop: '5px'
-
+                                marginTop: '5px',
                             }}
                         >
-                            <span>I accept the&nbsp; <a href='/terms' target='_blank'>Terms and Conditions</a>{' '}</span>
+                            <span>
+                                I accept the&nbsp;{' '}
+                                <a href="/terms" target="_blank">
+                                    Terms and Conditions
+                                </a>{' '}
+                            </span>
                             <input
                                 type="checkbox"
                                 style={{
@@ -466,7 +481,27 @@ const UserRegisterForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
+                        <button onClick={(e) => handleSubmit(e)}>
+                            {loading ? (
+                                <ColorRing
+                                    visible={true}
+                                    height="50"
+                                    width="50"
+                                    ariaLabel="blocks-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass="blocks-wrapper"
+                                    colors={[
+                                        '#85F4FF',
+                                        '#EFFFFD',
+                                        '#85F4FF',
+                                        '#EFFFFD',
+                                        '#85F4FF',
+                                    ]}
+                                />
+                            ) : (
+                                'Submit'
+                            )}
+                        </button>
                     </motion.div>
                     <Link href="/userLogin">
                         Already have an account? Login here.

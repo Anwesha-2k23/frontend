@@ -14,7 +14,7 @@
     box-shadow: 4.63213px 4.63213px 0px #000000;
 }
 
-.gallery h1{
+.gallery h1 {
     font-size: 2.5rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -22,7 +22,7 @@
     color: white;
 }
 
-.gallery p{
+.gallery p {
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -47,7 +47,6 @@
     /* border: 2px ridge #4e1dd9; */
     box-shadow: -1px 3px 12px 0px rgb(0 0 0 / 90%);
     margin-block: 10px;
-
 }
 
 .hidden {
