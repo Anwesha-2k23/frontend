@@ -86,14 +86,14 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                         {/*<Link
+                            <Link
                                 className={styles.footerLink}
-                                href="/sponsors"
+                                href="/gallery"
                             >
                                 <div className={styles.footerTableCell}>
-                                    Sponsors
+                                    Gallery
                                 </div>
-                            </Link> */}
+                            </Link>
                         </div>
                         <div className={styles.footerTableRow}>
                             <Link
@@ -109,11 +109,11 @@ const Footer = () => {
                                     About Us
                                 </div>
                             </Link>
-                        {/* <Link className={styles.footerLink} href="/team">
+                            <Link className={styles.footerLink} href="https://forms.gle/LD4gSRg9CaxEeAXK7">
                                 <div className={styles.footerTableCell}>
-                                    Team
+                                    Report issue
                                 </div>
-                            </Link> */}
+                            </Link>
                         </div>
                     </div>
                     <div
