@@ -69,7 +69,6 @@ const Footer = () => {
 
     const handleChange = (e) => {
         setEmail(e.target.value)
-        console.log(email)
     }
     return (
         <div className={styles.footer}>
@@ -87,14 +86,14 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                            <Link
+                         {/*<Link
                                 className={styles.footerLink}
                                 href="/sponsors"
                             >
                                 <div className={styles.footerTableCell}>
                                     Sponsors
                                 </div>
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className={styles.footerTableRow}>
                             <Link
@@ -110,11 +109,11 @@ const Footer = () => {
                                     About Us
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/team">
+                        {/* <Link className={styles.footerLink} href="/team">
                                 <div className={styles.footerTableCell}>
                                     Team
                                 </div>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <div

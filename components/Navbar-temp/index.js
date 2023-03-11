@@ -238,9 +238,9 @@ function Navigation() {
 
             <div id="drawer" className={styles.nav_drawer}>
                 <ul>
-                    {/* <li>
+                     <li>
                         <Link href="/">Home</Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link href="/aboutus" onClick={() => toggleDrawer()}>
                             About Us
