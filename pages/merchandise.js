@@ -267,44 +267,10 @@ function merchandise() {
                                 </div>
                             </div>
                         </div>
-                        {/* TODO : Add the link for the payment of the TShirts */}
-                        {/* <a
-            href="https://pmny.in/YJ78Zv4cSA0l"
-            className={styles.mobileBuyNow}
-          >
-            <button
-              href="https://pmny.in/YJ78Zv4cSA0l"
-              className={styles.merchBookBtn2}
-            >
-              Buy 1
-            </button>
-          </a>
-          <a
-            href="https://pmny.in/MIIjccwJBC3K"
-            className={styles.mobileBuyNow}
-          >
-            <button
-              href="https://pmny.in/MIIjccwJBC3K"
-              className={styles.merchBookBtn2}
-            >
-              Buy 2
-            </button>
-          </a>
-          <a
-            href="https://pmny.in/erg5mzOjA6Oc"
-            className={styles.mobileBuyNow}
-          >
-            <button
-              href="https://pmny.in/erg5mzOjA6Oc"
-              className={styles.merchBookBtn2}
-            >
-              Buy 3
-            </button>
-          </a> */}
                     </div>
 
                     <div className={styles.otherMerch}>
-                        <div className={styles.merchCard}>
+                        {/* <div className={styles.merchCard}>
                             <img src="/merch/cap.svg" alt="" />
                             <div className={styles.textContainer}>
                                 <span>Anwesha Cap</span>
@@ -333,14 +299,14 @@ function merchandise() {
                                     Shop Now
                                 </button>
                             </a>
-                        </div>
+                        </div> */}
                         <div className={styles.merchCard}>
                             <img src="/merch/keychain.svg" alt="" />
                             <div className={styles.textContainer}>
                                 <span>Keychain</span>
                                 <div className={styles.priceBlob}>Rs. 40</div>
                             </div>
-                            <a href="#">
+                            <a href="https://pmny.in/5JM8vF1JPj6p">
                                 <button
                                     href="#"
                                     className={styles.otherMerchBtn}

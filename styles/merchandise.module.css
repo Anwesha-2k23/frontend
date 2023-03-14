@@ -13,9 +13,9 @@
 .merchContainer{
     display: none !important;
 }
-.otherMerch{
+/* .otherMerch{
     display: none !important;
-}
+} */
 
 .merchContainer {
     height: 810px;
