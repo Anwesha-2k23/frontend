@@ -39,6 +39,7 @@ const index = () => {
                         width={141}
                         height={144}
                         className={styles.lecturehall}
+                        style={{overflow: 'hidden'}}
                     />
                 </div>
             </div>
@@ -61,8 +62,8 @@ const index = () => {
             {/*End Steps section*/}
 
             {/*ticket section*/}
-            <div className={styles.ticketContainer}>
-                <Carousel style={{width: '75vw'}}
+            <div className={styles.ticketContainer} style={{overflow: 'hidden'}}>
+                <Carousel style={{position: 'absolute'}}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                       <div
@@ -70,7 +71,7 @@ const index = () => {
                           hasPrev ? "absolute" : "hidden"
                         }`}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: '5'}}
+                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" />
@@ -140,6 +141,7 @@ const index = () => {
                 </div>
                 </div>
                 <div style={{display:'inline-table'}}>
+
                 </div>
                 </Carousel>
             </div>
@@ -213,6 +215,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -312,6 +315,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -369,6 +373,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -431,6 +436,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
