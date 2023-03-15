@@ -5,6 +5,7 @@ const host = process.env.NEXT_PUBLIC_HOST
 
 function MyEvents() {
     const [events, setEvents] = useState({ solo: [], team: [] })
+    const [passes, setPasses] = useState([])
     var requestOptions = {
         method: 'GET',
         redirect: 'follow',
@@ -14,16 +15,32 @@ function MyEvents() {
         const res = fetch(`${host}/event/myevents`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
-            setEvents(result)
+            let arr = []
+            setEvents(result);
+            result.solo.map(e => {
+                if(e.event_tags === "6") {
+                    arr.push(e)
+                }
+            })
+            setPasses([...arr])
+            console.log(result)
         })
         .catch((error) => console.log('error', error))
     }, [])
 
     return (
         <div>
-            {events.solo.length === 0 && events.team.length === 0 ? (
+            {events.solo.length === 0 && events.team.length === 0 && passes.length === 0 ? (
                 <div>No events registered</div>
             ) : null}
+            {passes.map(e => {
+                return(
+                    <div className={styles.pass}>
+                        <h2>{e.event_name}</h2>
+                        {e.payment_done ? <div className={styles.verified_img}><img src='assets/tick-green.svg'/>Registration Complete</div> : <a className={styles.payment_btn} href={e.payment_url}>Continue to payment <img src='/assets/right-arrow.svg'/></a>}
+                    </div>
+                )
+            })}
             {events.solo ? (
                 events.solo.length !== 0 ? (
                     <div>
@@ -36,6 +53,7 @@ function MyEvents() {
                             }}
                         >
                             {events.solo.map((e) => {
+                                if(e.event_tags !== "6") {
                                 return (
                                     <div className={styles.event}>
                                         <h2>{e.event_name}</h2>
@@ -109,7 +127,7 @@ function MyEvents() {
                                         </div>
                                         {e.payment_done ? <div className={styles.verified_img}><img src='assets/tick-green.svg'/>Registration Complete</div> : <a className={styles.payment_btn} href={e.payment_url}>Continue to payment <img src='/assets/right-arrow.svg'/></a>}
                                     </div>
-                                )
+                                )}
                             })}
                         </div>
                     </div>
