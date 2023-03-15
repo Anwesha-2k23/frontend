@@ -1,6 +1,6 @@
 .parentcontainer {
     height: 117vh;
-    width: 100vw;
+    /* width: 100vw; */
     background-image: url(/home/homepage_bg.png);
     background-repeat: no-repeat;
     background-size: cover;

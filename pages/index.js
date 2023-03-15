@@ -11,6 +11,10 @@ import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
 import EliteTicket from '../components/Rive/EliteTicket'
 import ProTicket from '../components/Rive/ProTicket'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 const index = () => {
     return (
@@ -58,6 +62,36 @@ const index = () => {
 
             {/*ticket section*/}
             <div className={styles.ticketContainer}>
+                <Carousel style={{width: '65vw'}}
+                 renderArrowPrev={(clickHandler, hasPrev) => {
+                    return (
+                      <div
+                        className={`${
+                          hasPrev ? "absolute" : "hidden"
+                        }`}
+                        onClick={clickHandler}
+                        style = {{top: '50%'}}
+                      >
+                        {/* <LeftIcon className="w-9 h-9 text-white" /> */}
+                        <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" />
+                      </div>
+                    );
+                  }}
+                  renderArrowNext={(clickHandler, hasNext) => {
+                    return (
+                      <div
+                        className={`${
+                          hasNext ? "absolute" : "hidden"
+                        }`}
+                        onClick={clickHandler}
+                        style = {{top: '50%'}}
+                      >
+                        {/* <LeftIcon className="w-9 h-9 text-white" /> */}
+                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="left arrow" />
+                      </div>
+                    );
+                  }}>
+                <div style={{display:'inline-table'}}>
                 <div className={styles.ticketDetails}>
                     <span style={{ fontSize: 24, textAlign: 'center' }}>
                         Get your Early Bird
@@ -80,6 +114,35 @@ const index = () => {
                         <ProTicket />
                     </Link>
                 </div>
+                </div>
+                <div style={{display:'inline-table'}}>
+                <div className={styles.ticketDetails}>
+                    <span style={{ fontSize: 24, textAlign: 'center' }}>
+                        Get your Early Bird
+                    </span>
+                    <span
+                        style={{
+                            fontSize: 36,
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Fest Entry Passes
+                    </span>
+                </div>
+                <div className={styles.ticketImages}>
+                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank">
+                        <EliteTicket />
+                    </Link>
+                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank">
+                        <ProTicket />
+                    </Link>
+                </div>
+                </div>
+                <div style={{display:'inline-table'}}>
+
+                </div>
+                </Carousel>
             </div>
             {/*end ticket section*/}
 

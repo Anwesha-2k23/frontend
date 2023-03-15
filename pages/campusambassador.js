@@ -4,9 +4,18 @@ import { motion } from 'framer-motion'
 import GreetingLottie from '../components/displaylottie'
 import styles from '../styles/campusamb.module.css'
 import Image from 'next/image'
+import { useEffect } from 'react'
 // import Anwesha_text from "../images/Anwesha_text.png";
 
 export default function campusAmbassador() {
+    useEffect(() => {
+        // Applying on mount
+                document.body.style.overflowX = "hidden";
+        // Applying on unmount    
+                return () => {
+                  document.body.style.overflowX = "visible";
+                }
+              }, [])
     return (
         <div className={styles.campusamb_body}>
             <Head>

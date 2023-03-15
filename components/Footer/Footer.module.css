@@ -2,7 +2,7 @@
 .footer {
     position: relative;
     bottom: 0;
-    width: 100vw;
+    /* width: 100vw; */
     height: fit-content;
     background-color: #504bbc;
     display: flex;
