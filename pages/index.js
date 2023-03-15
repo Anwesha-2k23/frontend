@@ -181,7 +181,7 @@ const index = () => {
                             culture and management as Anwesha, the annual fest
                             of IIT Patna, is coming in hot! With events ranging
                             from{' '}
-                            <span style={{ fontWeight: 'bold' }}>Symphony</span>{' '}
+                            <span style={{ fontWeight: 'bold' }}>Syngphony</span>{' '}
                             to{' '}
                             <span style={{ fontWeight: 'bold' }}>Heelturn</span>
                             , we've got more action than a Bollywood movie. And
