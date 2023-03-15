@@ -106,6 +106,7 @@ function MyEvents() {
                                                 {e.event_venue}
                                             </div>
                                         </div>
+                                        {e.payment_done ? <div className={styles.verified_img}><img src='assets/tick-green.svg'/>Registration Complete</div> : <a className={styles.payment_btn} href={e.payment_url}>Continue to payment <img src='/assets/right-arrow.svg'/></a>}
                                     </div>
                                 )
                             })}
@@ -208,6 +209,7 @@ function MyEvents() {
                                                 })}
                                             </div>
                                         </div>
+                                        {e.payment_done ? <div className={styles.verified_img}><img src='assets/tick-green.svg'/>Registration Complete</div> : <a className={styles.payment_btn} href={e.payment_url}>Continue to payment <img src='/assets/right-arrow.svg'/></a>}
                                     </div>
                                 )
                             })}
