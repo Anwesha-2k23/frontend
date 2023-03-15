@@ -135,7 +135,7 @@ const UserRegisterForm = () => {
                 const data = await response.json()
                 setLoading(false)
                 toast.success(
-                    'You are registered successfully. Please login to continue',
+                    'Please check your email for verification. Check spam folder if mail is not present in inbox',
                     {
                         position: 'top-right',
                         autoClose: 3000,

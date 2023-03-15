@@ -62,7 +62,7 @@ const index = () => {
 
             {/*ticket section*/}
             <div className={styles.ticketContainer}>
-                <Carousel style={{width: '65vw'}}
+                <Carousel style={{width: '75vw'}}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                       <div
@@ -70,7 +70,7 @@ const index = () => {
                           hasPrev ? "absolute" : "hidden"
                         }`}
                         onClick={clickHandler}
-                        style = {{top: '50%'}}
+                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: '5'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" />
@@ -84,10 +84,10 @@ const index = () => {
                           hasNext ? "absolute" : "hidden"
                         }`}
                         onClick={clickHandler}
-                        style = {{top: '50%'}}
+                        style = {{top: '50%', position: 'absolute', right: '20%'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
-                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="left arrow" />
+                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" />
                       </div>
                     );
                   }}>
@@ -140,7 +140,6 @@ const index = () => {
                 </div>
                 </div>
                 <div style={{display:'inline-table'}}>
-
                 </div>
                 </Carousel>
             </div>
