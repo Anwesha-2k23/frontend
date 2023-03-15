@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './profile.module.css'
 
 const host = process.env.NEXT_PUBLIC_HOST
@@ -10,13 +10,14 @@ function MyEvents() {
         redirect: 'follow',
         credentials: 'include',
     }
-
-    const res = fetch(`${host}/event/myevents`, requestOptions)
+    useEffect(() => {
+        const res = fetch(`${host}/event/myevents`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
             setEvents(result)
         })
         .catch((error) => console.log('error', error))
+    }, [])
 
     return (
         <div>
