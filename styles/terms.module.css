@@ -1,5 +1,6 @@
 .parentcontainer{
     background-image: url('/bg.png');
+    color: black;
 }
 .para{
     font-size: 0.9em;
