@@ -220,6 +220,9 @@ const UserLoginForm = () => {
                     <Link href="/userRegister">
                         Don't have an account? Register here.
                     </Link>
+                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7">
+                        Trouble logging in? Reach out to us here.
+                    </Link>
                 </motion.form>
             </div>
         </div>
