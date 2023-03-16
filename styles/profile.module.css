@@ -26,6 +26,7 @@
     line-height: 36px;
     margin: 10px;
     cursor: pointer;
+    list-style: none;
 }
 
 .tab:focus {
@@ -40,8 +41,8 @@
 
 .anwesha_id {
     font-size: 60px;
-    margin-left: 5%;
-    margin-top: 100px;
+    /* margin-left: 5%; */
+    /* margin-top: 100px; */
     text-transform: uppercase;
 }
 
@@ -49,4 +50,34 @@
     .anwesha_id {
         font-size: 10vw;
     }
+}
+
+.idandqr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .idandqr {
+        flex-direction: column;
+    }
+}
+
+.qrcode{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.qrBtn{
+    background: #6833FF;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
 }

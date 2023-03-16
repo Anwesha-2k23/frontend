@@ -17,6 +17,7 @@ function profile() {
     const [profDetails, setProfDetails] = useState(
         userData.state.user || { anwesha_id: '' }
     )
+    const [qrcode, setQrcode] = useState(userData?userData.state.user?.qr_code : '')
 
     useEffect(() => {
         fetch(`${host}/user/editprofile`, {
@@ -31,6 +32,20 @@ function profile() {
             .catch((error) => console.log('error', error))
     }, [])
 
+    function regenrateqr() {
+        fetch(`${host}/user/regenerateqr`, {
+            method: 'GET',
+            credentials: 'include',
+            redirect: 'follow',
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                setQrcode(result.qr_code)
+            }
+            )
+            .catch((error) => console.log('error', error))
+    }
+
     return (
         <>
             <Head>
@@ -39,7 +54,15 @@ function profile() {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={stylesForm.container}>
-                <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1>
+                <div className={styles.idandqr}>
+                    <h1 className={styles.anwesha_id}>ANW9A065A7</h1>
+                    <div className={styles.qrcode}>
+                    <img src={qrcode} alt="" />
+                    <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
+                    </div>
+                </div>
+                {/* <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1> */}
+
                 <Tabs className={styles.tabs}>
                     <TabList
                         className={styles.tabList}
