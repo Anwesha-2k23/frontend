@@ -86,11 +86,13 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/gallery">
+                            {/* <Link className={styles.footerLink} href="/gallery">
                                 <div className={styles.footerTableCell}>
                                     Gallery
                                 </div>
                             </Link>
+
+                            </Link> */}
                             <Link className={styles.footerLink} href="/metaverse">
                                 <div className={styles.footerTableCell}>
                                     Metaverse
@@ -236,7 +238,7 @@ const Footer = () => {
                             styles.googlePlayButton,
                         ].join(' ')}
                     >
-                        <a href="#">
+                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.college.anwesha2k23">
                             {/* <img
                               alt="Get it on Google Play"
                               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"

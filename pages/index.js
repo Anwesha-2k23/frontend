@@ -67,15 +67,15 @@ const index = () => {
                 showStatus={false}
                 showThumbs={false}
                 swipeable={false}
-                // infiniteLoop={true}
-                // autoPlay={true}
+                // showIndicators={true}
+                showArrows={true}
+                infiniteLoop={true}
+                autoPlay={true}
+                interval={2500}
                 dynamicHeight={true}
                 // centerMode={true}
                 emulateTouch={true}
                 useKeyboardArrows={true}
-                autoPlay={true}
-                interval={3000}
-                infiniteLoop={true}
                 // autoFocus={true}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
@@ -469,7 +469,7 @@ const index = () => {
                             our guests and participants.
                             <br />
                             <br />
-                            <div style={{ textAlign: 'center', color: '#fff' }}>
+                            {/* <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
                                     <Link
                                         href="#"
@@ -481,7 +481,7 @@ const index = () => {
                                         Coming Soon...
                                     </Link>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
