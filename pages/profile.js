@@ -33,7 +33,7 @@ function profile() {
     }, [])
 
     function regenrateqr() {
-        fetch(`${host}/user/regenerateqr`, {
+        fetch(`${host}/user/regenerateqr/`, {
             method: 'GET',
             credentials: 'include',
             redirect: 'follow',
