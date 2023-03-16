@@ -18,7 +18,7 @@ const PrivateRoute = ({ children }) => {
             authContext.state.user === null &&
             ['/profile', '/event-registration'].includes(router.pathname)
         ) {
-            // router.push('/userLogin')
+            router.push('/userLogin')
         } else if (
             authContext.state.user !== null &&
             ['/userLogin', '/userRegister'].includes(router.pathname)
