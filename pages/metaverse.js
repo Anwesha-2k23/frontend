@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/metaverse.module.css'
 import UserRegisterForm from '../components/UserRegister-Login'
+import React from 'react'
+const Iframe = dynamic(() => import('../components/lazyIframe'), { ssr: false })
 
 export default function userRegister() {
+    // const lIframe = lazy(() => lazyIframe)
     return (
         <>
             <Head>
@@ -11,7 +14,7 @@ export default function userRegister() {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <Navbar /> */}
-            <iframe src="/IITP1/index.html" className={styles.metaverse_frame}/>
+            <Iframe />
         </>
     )
 }

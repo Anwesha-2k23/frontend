@@ -73,6 +73,9 @@ const index = () => {
                 // centerMode={true}
                 emulateTouch={true}
                 useKeyboardArrows={true}
+                autoPlay={true}
+                interval={3000}
+                infiniteLoop={true}
                 // autoFocus={true}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
