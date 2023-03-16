@@ -43,7 +43,8 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
             router.replace('/events')
         }
     } else {
-        toast.error(response.message[0], {
+        response.message.map(e => 
+        {toast.error(e, {
             position: 'top-right',
             autoClose: 3000,
             hideProgressBar: false,
@@ -52,6 +53,7 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
             draggable: true,
             progress: undefined,
             theme: 'light',
+        })
         })
     }
 }

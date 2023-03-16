@@ -11,6 +11,10 @@ import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
 import EliteTicket from '../components/Rive/EliteTicket'
 import ProTicket from '../components/Rive/ProTicket'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 const index = () => {
     return (
@@ -35,6 +39,7 @@ const index = () => {
                         width={141}
                         height={144}
                         className={styles.lecturehall}
+                        style={{overflow: 'hidden'}}
                     />
                 </div>
             </div>
@@ -57,7 +62,43 @@ const index = () => {
             {/*End Steps section*/}
 
             {/*ticket section*/}
-            <div className={styles.ticketContainer}>
+            <div className={styles.ticketContainer} style={{overflow: 'hidden'}}>
+                <Carousel style={{position: 'absolute'}}
+                showStatus={false}
+                showThumbs={false}
+                swipeable={false}
+                // infiniteLoop={true}
+                // autoPlay={true}
+                dynamicHeight={true}
+                // centerMode={true}
+                emulateTouch={true}
+                useKeyboardArrows={true}
+                // autoFocus={true}
+                 renderArrowPrev={(clickHandler, hasPrev) => {
+                    return (
+                      <div
+                        className={styles.carouselArrowDivLeft}
+                        onClick={clickHandler}
+                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5, cursor: 'pointer', display: hasPrev ?'block':'none'}}
+                      >
+                        {/* <LeftIcon className="w-9 h-9 text-white" /> */}
+                        <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" className={styles.carouselArrow}/>
+                      </div>
+                    );
+                  }}
+                  renderArrowNext={(clickHandler, hasNext) => {
+                    return (
+                      <div
+                        className={styles.carouselArrowDivRight}
+                        onClick={clickHandler}
+                        style = {{top: '50%', position: 'absolute', right: '20%', cursor: 'pointer', display: hasNext ?'block':'none'}}
+                      >
+                        {/* <LeftIcon className="w-9 h-9 text-white" /> */}
+                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" className={styles.carouselArrow} />
+                      </div>
+                    );
+                  }}>
+                <div style={{display:'inline-table'}}>
                 <div className={styles.ticketDetails}>
                     <span style={{ fontSize: 24, textAlign: 'center' }}>
                         Get your Early Bird
@@ -80,6 +121,17 @@ const index = () => {
                         <ProTicket />
                     </Link>
                 </div>
+                </div>
+                <div className={styles.artistPoster}>
+                    <img className={styles.artistImg} src="/home/sanam.png" alt="Sanam Image" />
+                    <img className={styles.artistImgMob} src="/home/sanam_vertical.png" alt="Sanam Image" />
+                </div>
+                <div className={styles.artistPoster}>
+                    <img className={styles.artistImg} src="/home/trap.png" alt="Trap Image" />
+                    <img className={styles.artistImgMob} src="/home/trap_vertical.png" alt="Trap Image" />
+
+                </div>
+                </Carousel>
             </div>
             {/*end ticket section*/}
 
@@ -151,6 +203,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -250,6 +303,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -307,6 +361,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
@@ -369,6 +424,7 @@ const index = () => {
                         width={535}
                         height={395}
                         alt="Events section"
+                        style={{overflow: 'hidden'}}
                     />
                     <div
                         style={{
