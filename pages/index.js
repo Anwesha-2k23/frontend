@@ -73,13 +73,13 @@ const index = () => {
                 // centerMode={true}
                 emulateTouch={true}
                 useKeyboardArrows={true}
-                autoFocus={true}
+                // autoFocus={true}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                       <div
                         className={styles.carouselArrowDivLeft}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5, cursor: 'pointer'}}
+                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5, cursor: 'pointer', display: hasPrev ?'block':'none'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" className={styles.carouselArrow}/>
@@ -91,7 +91,7 @@ const index = () => {
                       <div
                         className={styles.carouselArrowDivRight}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', right: '20%', cursor: 'pointer'}}
+                        style = {{top: '50%', position: 'absolute', right: '20%', cursor: 'pointer', display: hasNext ?'block':'none'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" className={styles.carouselArrow} />
