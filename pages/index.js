@@ -469,7 +469,7 @@ const index = () => {
                             our guests and participants.
                             <br />
                             <br />
-                            <div style={{ textAlign: 'center', color: '#fff' }}>
+                            {/* <div style={{ textAlign: 'center', color: '#fff' }}>
                                 <button className={styles.homebtn} disabled>
                                     <Link
                                         href="#"
@@ -481,7 +481,7 @@ const index = () => {
                                         Coming Soon...
                                     </Link>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

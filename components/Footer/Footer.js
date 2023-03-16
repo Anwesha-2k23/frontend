@@ -86,11 +86,11 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/gallery">
+                            {/* <Link className={styles.footerLink} href="/gallery">
                                 <div className={styles.footerTableCell}>
                                     Gallery
                                 </div>
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className={styles.footerTableRow}>
                             <Link
