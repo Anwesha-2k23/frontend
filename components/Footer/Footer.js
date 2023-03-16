@@ -91,6 +91,11 @@ const Footer = () => {
                                     Gallery
                                 </div>
                             </Link>
+                            <Link className={styles.footerLink} href="/metaverse">
+                                <div className={styles.footerTableCell}>
+                                    Metaverse
+                                </div>
+                            </Link>
                         </div>
                         <div className={styles.footerTableRow}>
                             <Link
