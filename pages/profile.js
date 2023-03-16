@@ -55,7 +55,7 @@ function profile() {
             </Head>
             <div className={stylesForm.container}>
                 <div className={styles.idandqr}>
-                    <h1 className={styles.anwesha_id}>ANW9A065A7</h1>
+                    <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1>
                     <div className={styles.qrcode}>
                     <img src={qrcode} alt="" />
                     <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
