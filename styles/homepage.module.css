@@ -372,3 +372,36 @@
         height: 50%;
     }
 }
+
+
+.artistPoster{
+    display: inline-table;
+    display: flex;
+    align-content: center;
+    position: relative;
+    /* top: 34px; */
+    /* margin-top: 82px; */
+    justify-content: center;
+    align-items: center;
+    /* height: 120%; */
+    flex-direction: column;
+}
+
+.artistImg{
+    width: 50% !important;
+    display: block;
+}
+
+.artistImgMob{
+    display: none !important;
+}
+
+@media screen and (max-width: 790px) {
+    .artistImg{
+        /* width: 100% !important; */
+        display: none !important;
+    }
+    .artistImgMob{
+        display: block !important;
+    }
+}

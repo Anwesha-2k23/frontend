@@ -64,6 +64,8 @@ const index = () => {
             {/*ticket section*/}
             <div className={styles.ticketContainer} style={{overflow: 'hidden'}}>
                 <Carousel style={{position: 'absolute'}}
+                showStatus={false}
+                showThumbs={false}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                       <div
@@ -71,7 +73,7 @@ const index = () => {
                           hasPrev ? "absolute" : "hidden"
                         }`}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5}}
+                        style = {{top: '50%', position: 'absolute', left: '11%', zIndex: 5, cursor: 'pointer'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" />
@@ -85,7 +87,7 @@ const index = () => {
                           hasNext ? "absolute" : "hidden"
                         }`}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', right: '20%'}}
+                        style = {{top: '50%', position: 'absolute', right: '11%', cursor: 'pointer'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                         <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" />
@@ -116,31 +118,13 @@ const index = () => {
                     </Link>
                 </div>
                 </div>
-                <div style={{display:'inline-table'}}>
-                <div className={styles.ticketDetails}>
-                    <span style={{ fontSize: 24, textAlign: 'center' }}>
-                        Get your Early Bird
-                    </span>
-                    <span
-                        style={{
-                            fontSize: 36,
-                            fontWeight: 'bold',
-                            textAlign: 'center',
-                        }}
-                    >
-                        Fest Entry Passes
-                    </span>
+                <div className={styles.artistPoster}>
+                    <img className={styles.artistImg} src="/home/sanam.png" alt="" />
+                    <img className={styles.artistImgMob} src="/home/sanam_vertical.png" alt="" />
                 </div>
-                <div className={styles.ticketImages}>
-                    <Link href="https://pmny.in/mJs3IkpvufoA" target="_blank">
-                        <EliteTicket />
-                    </Link>
-                    <Link href="https://pmny.in/LrfJCrtUy8S4" target="_blank">
-                        <ProTicket />
-                    </Link>
-                </div>
-                </div>
-                <div style={{display:'inline-table'}}>
+                <div className={styles.artistPoster}>
+                    <img className={styles.artistImg} src="/home/sanam.png" alt="" />
+                    <img className={styles.artistImgMob} src="/home/trap_vertical.png" alt="" />
 
                 </div>
                 </Carousel>
