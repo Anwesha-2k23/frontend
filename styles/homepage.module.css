@@ -388,7 +388,9 @@
 }
 
 .artistImg{
-    width: 50% !important;
+    width: 40% !important;
+    max-width: 700px;
+    min-width: 600px;
     display: block;
 }
 
@@ -396,12 +398,23 @@
     display: none !important;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 450px) {
     .artistImg{
         /* width: 100% !important; */
         display: none !important;
     }
     .artistImgMob{
+        width: 80% !important;
         display: block !important;
     }
+    .carouselArrow{
+        height: 30px;
+    }
+    .carouselArrowDivLeft{
+        left: 2% !important;
+    }
+    .carouselArrowDivRight{
+        right: 2% !important;
+    }
 }
+

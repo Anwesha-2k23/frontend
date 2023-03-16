@@ -66,31 +66,35 @@ const index = () => {
                 <Carousel style={{position: 'absolute'}}
                 showStatus={false}
                 showThumbs={false}
+                swipeable={false}
+                // infiniteLoop={true}
+                // autoPlay={true}
+                dynamicHeight={true}
+                // centerMode={true}
+                emulateTouch={true}
+                useKeyboardArrows={true}
+                autoFocus={true}
                  renderArrowPrev={(clickHandler, hasPrev) => {
                     return (
                       <div
-                        className={`${
-                          hasPrev ? "absolute" : "hidden"
-                        }`}
+                        className={styles.carouselArrowDivLeft}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', left: '11%', zIndex: 5, cursor: 'pointer'}}
+                        style = {{top: '50%', position: 'absolute', left: '20%', zIndex: 5, cursor: 'pointer'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
-                        <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" />
+                        <Image height={60} width={60} src="/home/left_arrow.svg" alt="left arrow" className={styles.carouselArrow}/>
                       </div>
                     );
                   }}
                   renderArrowNext={(clickHandler, hasNext) => {
                     return (
                       <div
-                        className={`${
-                          hasNext ? "absolute" : "hidden"
-                        }`}
+                        className={styles.carouselArrowDivRight}
                         onClick={clickHandler}
-                        style = {{top: '50%', position: 'absolute', right: '11%', cursor: 'pointer'}}
+                        style = {{top: '50%', position: 'absolute', right: '20%', cursor: 'pointer'}}
                       >
                         {/* <LeftIcon className="w-9 h-9 text-white" /> */}
-                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" />
+                        <Image height={60} width={60} src="/home/right_arrow.svg" alt="right arrow" className={styles.carouselArrow} />
                       </div>
                     );
                   }}>
@@ -119,12 +123,12 @@ const index = () => {
                 </div>
                 </div>
                 <div className={styles.artistPoster}>
-                    <img className={styles.artistImg} src="/home/sanam.png" alt="" />
-                    <img className={styles.artistImgMob} src="/home/sanam_vertical.png" alt="" />
+                    <img className={styles.artistImg} src="/home/sanam.png" alt="Sanam Image" />
+                    <img className={styles.artistImgMob} src="/home/sanam_vertical.png" alt="Sanam Image" />
                 </div>
                 <div className={styles.artistPoster}>
-                    <img className={styles.artistImg} src="/home/sanam.png" alt="" />
-                    <img className={styles.artistImgMob} src="/home/trap_vertical.png" alt="" />
+                    <img className={styles.artistImg} src="/home/trap.png" alt="Trap Image" />
+                    <img className={styles.artistImgMob} src="/home/trap_vertical.png" alt="Trap Image" />
 
                 </div>
                 </Carousel>
