@@ -67,8 +67,11 @@ const index = () => {
                 showStatus={false}
                 showThumbs={false}
                 swipeable={false}
-                // infiniteLoop={true}
-                // autoPlay={true}
+                // showIndicators={true}
+                showArrows={true}
+                infiniteLoop={true}
+                autoPlay={true}
+                interval={2500}
                 dynamicHeight={true}
                 // centerMode={true}
                 emulateTouch={true}
