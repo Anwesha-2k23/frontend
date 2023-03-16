@@ -1,6 +1,6 @@
 .parentcontainer {
     height: 117vh;
-    width: 100vw;
+    /* width: 100vw; */
     background-image: url(/home/homepage_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -372,3 +372,49 @@
         height: 50%;
     }
 }
+
+
+.artistPoster{
+    display: inline-table;
+    display: flex;
+    align-content: center;
+    position: relative;
+    /* top: 34px; */
+    /* margin-top: 82px; */
+    justify-content: center;
+    align-items: center;
+    /* height: 120%; */
+    flex-direction: column;
+}
+
+.artistImg{
+    width: 40% !important;
+    max-width: 700px;
+    min-width: 600px;
+    display: block;
+}
+
+.artistImgMob{
+    display: none !important;
+}
+
+@media screen and (max-width: 450px) {
+    .artistImg{
+        /* width: 100% !important; */
+        display: none !important;
+    }
+    .artistImgMob{
+        width: 80% !important;
+        display: block !important;
+    }
+    .carouselArrow{
+        height: 30px;
+    }
+    .carouselArrowDivLeft{
+        left: 2% !important;
+    }
+    .carouselArrowDivRight{
+        right: 2% !important;
+    }
+}
+
