@@ -33,7 +33,7 @@ function profile() {
     }, [])
 
     function regenrateqr() {
-        fetch(`${host}/user/regenerateqr`, {
+        fetch(`${host}/user/regenerateqr/`, {
             method: 'GET',
             credentials: 'include',
             redirect: 'follow',
@@ -58,6 +58,7 @@ function profile() {
                     <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1>
                     <div className={styles.qrcode}>
                     <img src={qrcode} alt="" />
+                    <a href='/anweshapass'>How does AnweshaPass work?</a>
                     <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
                     </div>
                 </div>
