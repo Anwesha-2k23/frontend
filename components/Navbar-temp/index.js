@@ -271,6 +271,11 @@ function Navigation() {
                         </Link>
                     </li>
                     <li>
+                        <Link href="/metaverse" onClick={() => toggleDrawer()}>
+                            Metaverse
+                        </Link>
+                    </li>
+                    <li>
                         {userData.isAuth ? (
                             <div className={styles.user_container}>
                                 <Link
