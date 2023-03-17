@@ -17,7 +17,9 @@ function profile() {
     const [profDetails, setProfDetails] = useState(
         userData.state.user || { anwesha_id: '' }
     )
-    const [qrcode, setQrcode] = useState(userData?userData.state.user?.qr_code : '')
+    const [qrcode, setQrcode] = useState(
+        userData ? userData.state.user?.qr_code : ''
+    )
 
     useEffect(() => {
         fetch(`${host}/user/editprofile`, {
@@ -41,8 +43,7 @@ function profile() {
             .then((response) => response.json())
             .then((result) => {
                 setQrcode(result.qr_code)
-            }
-            )
+            })
             .catch((error) => console.log('error', error))
     }
 
@@ -55,7 +56,9 @@ function profile() {
             </Head>
             <div className={stylesForm.container}>
                 <div className={styles.idandqr}>
-                    <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1>
+                    <h1 className={styles.anwesha_id}>
+                        {profDetails.anwesha_id}
+                    </h1>
                     <div className={styles.qrcode}>
                     <img src={qrcode} alt="" />
                     <a href='/anweshapass'>How does AnweshaPass work?</a>

@@ -43,32 +43,31 @@ async function teamEventRegistration(eventID, teamName, teamMembers, router) {
             router.replace('/events')
         }
     } else {
-        if(Array.isArray(response.message)) {
-        response.message.map(e => 
-        {toast.error(e, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-        })
-        })
-    }
-    else {
-        toast.error(response.message, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-        })
-    }
+        if (Array.isArray(response.message)) {
+            response.message.map((e) => {
+                toast.error(e, {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                })
+            })
+        } else {
+            toast.error(response.message, {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+        }
     }
 }
 

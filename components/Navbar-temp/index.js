@@ -198,6 +198,17 @@ function Navigation() {
                                 Events
                             </Link>
                         </li>
+                        <li
+                            style={
+                                router.pathname === '/metaverse'
+                                    ? { borderBottom: '3px solid white' }
+                                    : null
+                            }
+                        >
+                            <Link className={styles.linknav} href="/metaverse">
+                                Metaverse
+                            </Link>
+                        </li>
                         <li>
                             {userData.isAuth ? (
                                 <div className={styles.user_container}>
@@ -257,6 +268,11 @@ function Navigation() {
                     <li>
                         <Link href="/events" onClick={() => toggleDrawer()}>
                             Events
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/metaverse" onClick={() => toggleDrawer()}>
+                            Metaverse
                         </Link>
                     </li>
                     <li>
