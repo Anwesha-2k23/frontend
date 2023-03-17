@@ -10,12 +10,12 @@ import { useEffect } from 'react'
 export default function campusAmbassador() {
     useEffect(() => {
         // Applying on mount
-                document.body.style.overflowX = "hidden";
-        // Applying on unmount    
-                return () => {
-                  document.body.style.overflowX = "visible";
-                }
-              }, [])
+        document.body.style.overflowX = 'hidden'
+        // Applying on unmount
+        return () => {
+            document.body.style.overflowX = 'visible'
+        }
+    }, [])
     return (
         <div className={styles.campusamb_body}>
             <Head>
