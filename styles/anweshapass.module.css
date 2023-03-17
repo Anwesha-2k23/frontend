@@ -1,0 +1,63 @@
+.parentContainer {
+    background-color: #ABE0FF;
+    padding-top: 100px;
+}
+
+.section1 {
+    padding: 100px 20px;
+    padding-bottom: 20px;
+}
+
+.sectionHeading {
+    font-size: 10vw;
+    font-weight: 700;
+    color: #403E9E;
+    margin-inline: 25px;
+}
+
+.sectionHeadingBar {
+    /* width: 100vw; */
+    height: 5px;
+    background-color: #403E9E;
+    margin-bottom: 20px;
+    margin-inline: 25px;
+    border: none;
+}
+
+.sectionContent {
+    position: relative;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #ffffff;
+    padding: 30px;
+    margin-inline: 25px;
+    margin-block: 25px;
+    border-radius: 10px;
+    /* -webkit-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75); */
+    box-shadow: 6px 6px 0px #000000;;
+}
+
+.sectionContent ol {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.sectionContent li {
+    margin: 10px;
+    line-height: 35px;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionContent {
+        font-size: 16px;
+    }
+    .sectionContent ol {
+        font-size: 15px;
+    }
+    .sectionContent li {
+        line-height: 25px;
+    }
+}
