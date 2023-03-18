@@ -75,7 +75,7 @@ const index = () => {
                     showArrows={true}
                     infiniteLoop={true}
                     autoPlay={true}
-                    interval={1000}
+                    interval={3500}
                     dynamicHeight={true}
                     // centerMode={true}
                     emulateTouch={true}
@@ -134,7 +134,7 @@ const index = () => {
                     <div style={{ display: 'inline-table' }}>
                         <div className={styles.ticketDetails}>
                             <span style={{ fontSize: 24, textAlign: 'center' }}>
-                                Get your Early Bird
+                                Get your
                             </span>
                             <span
                                 style={{
