@@ -17,26 +17,26 @@ function merchandise() {
         setModal(false)
     }
 
-    useEffect(() => {
-        const deluxe = document.getElementById('deluxe')
-        const superDeluxe = document.getElementById('superDeluxe')
-        const oneTShirt = document.getElementById('singleTShirt')
-        const twoTShirt = document.getElementById('2TShirt')
-        const threeTShirt = document.getElementById('3TShirt')
-        deluxe.addEventListener('click', handleRadioClick)
-        superDeluxe.addEventListener('click', handleRadioClick)
-        oneTShirt.addEventListener('click', handleRadioClick)
-        twoTShirt.addEventListener('click', handleRadioClick)
-        threeTShirt.addEventListener('click', handleRadioClick)
+    // useEffect(() => {
+    //     const deluxe = document.getElementById('deluxe')
+    //     const superDeluxe = document.getElementById('superDeluxe')
+    //     const oneTShirt = document.getElementById('singleTShirt')
+    //     const twoTShirt = document.getElementById('2TShirt')
+    //     const threeTShirt = document.getElementById('3TShirt')
+    //     deluxe.addEventListener('click', handleRadioClick)
+    //     superDeluxe.addEventListener('click', handleRadioClick)
+    //     oneTShirt.addEventListener('click', handleRadioClick)
+    //     twoTShirt.addEventListener('click', handleRadioClick)
+    //     threeTShirt.addEventListener('click', handleRadioClick)
 
-        return () => {
-            deluxe.addEventListener('click', handleRadioClick)
-            superDeluxe.addEventListener('click', handleRadioClick)
-            oneTShirt.addEventListener('click', handleRadioClick)
-            twoTShirt.addEventListener('click', handleRadioClick)
-            threeTShirt.addEventListener('click', handleRadioClick)
-        }
-    }, [deluxe, superDeluxe, oneTShirt, twoTShirt, threeTShirt])
+    //     return () => {
+    //         deluxe.addEventListener('click', handleRadioClick)
+    //         superDeluxe.addEventListener('click', handleRadioClick)
+    //         oneTShirt.addEventListener('click', handleRadioClick)
+    //         twoTShirt.addEventListener('click', handleRadioClick)
+    //         threeTShirt.addEventListener('click', handleRadioClick)
+    //     }
+    // }, [deluxe, superDeluxe, oneTShirt, twoTShirt, threeTShirt])
 
     const handleRadioClick = (e) => {
         const deluxeId = document.getElementById('deluxe')
@@ -167,7 +167,7 @@ function merchandise() {
                         </div>
                     </div>
 
-                    <div className={styles.merchContainer2}>
+                    {/* <div className={styles.merchContainer2}>
                         <div className={styles.merchDetails2}>
                             <img
                                 src="/merch/t_shirt.svg"
@@ -188,7 +188,6 @@ function merchandise() {
                             <span className={styles.grabMerchText}>
                                 TShirt Offers!
                             </span>
-                            {/* TODO : Add the link for the payment of the TShirts */}
                             <div className={styles.priceRadioContainer}>
                                 <div className={styles.priceRadio}>
                                     <div className={styles.priceBlob}>
@@ -198,7 +197,7 @@ function merchandise() {
                                         <span>
                                             <strong>Single</strong>
                                         </span>
-                                        {/* <span>1 TShirt + Cap</span> */}
+                                        <span>1 TShirt + Cap</span>
                                     </div>
                                     <div className={styles.radioContainer}>
                                         <div
@@ -216,7 +215,7 @@ function merchandise() {
                                         <span>
                                             <strong>Combo of 2</strong>
                                         </span>
-                                        {/* <span>1 TShirt + Cap + Others</span> */}
+                                        <span>1 TShirt + Cap + Others</span>
                                     </div>
                                     <div className={styles.radioContainer}>
                                         <div
@@ -234,7 +233,7 @@ function merchandise() {
                                         <span>
                                             <strong>Combo of 3</strong>
                                         </span>
-                                        {/* <span>1 TShirt + Cap + Others</span> */}
+                                        <span>1 TShirt + Cap + Others</span>
                                     </div>
                                     <div className={styles.radioContainer}>
                                         <div
@@ -267,7 +266,7 @@ function merchandise() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={styles.otherMerch}>
                         {/* <div className={styles.merchCard}>
