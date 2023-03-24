@@ -101,6 +101,14 @@ const Footer = () => {
                                     Metaverse
                                 </div>
                             </Link>
+                            <Link
+                                className={styles.footerLink}
+                                href="/campusambassador"
+                            >
+                                <div className={styles.footerTableCell}>
+                                    Campus Ambassador
+                                </div>
+                            </Link>
                         </div>
                         <div className={styles.footerTableRow}>
                             <Link
@@ -114,6 +122,11 @@ const Footer = () => {
                             <Link className={styles.footerLink} href="/aboutus">
                                 <div className={styles.footerTableCell}>
                                     About Us
+                                </div>
+                            </Link>
+                            <Link className={styles.footerLink} href="/oursponsors">
+                                <div className={styles.footerTableCell}>
+                                    Our Sponsors
                                 </div>
                             </Link>
                             <Link
