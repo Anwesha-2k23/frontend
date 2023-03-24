@@ -29,7 +29,7 @@ const oursponsors = () => {
             { name: 'Decathalon', image: 'https://drive.google.com/uc?export=view&id=155A3E2w-Xp6M_J16GI3kYn_Kqyf1VM1K',link: 'https://www.decathlon.in/' },
             { name: 'Bihar Khadi', image: 'http://kvibbihar.com/images/khadi_logo.png',link: 'http://www.biharkhadi.com/' },
             { name: 'Bizeal "The Dream Bakers"', image: '/sponsors/bizeal.png',link: 'https://www.bizeal.com/' },
-            { name: 'Jawed Habib', image: '/sponsors/jawed-habib.png',link: 'https://jawedhabib.com/' },
+            { name: 'Talentwala', image: 'https://drive.google.com/uc?export=view&id=1VnxW_CraRRFX5afz5krpZ0H7mRut69Oz',link: '' },
             { name: 'Basic', image: 'https://drive.google.com/uc?export=view&id=1BhFpl6SlDGnMriHJhsO0MttgV6ZoINEa',link: '' },
             { name: 'Bulkinza', image: 'https://bulkinza.com/wp-content/uploads/2022/10/cropped-cropped-cropped-png-logo-18.png',link: 'https://bulkinza.com/' },
             { name: 'Sudha', image: 'https://drive.google.com/uc?export=view&id=1g26UGW2z-m4qkJKeF4Ug06dWHcwR8Vlr',link: 'https://www.patnadairy.org/' },
