@@ -4,7 +4,7 @@
 
 .container{
     margin-inline: 30px;
-    margin-block: 100px;
+    padding-block: 100px;
 }
 
 .teamHeader{
