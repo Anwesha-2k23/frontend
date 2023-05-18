@@ -22,7 +22,7 @@ const oursponsors = () => {
             { name: 'Paras HMRI', image: 'https://drive.google.com/uc?export=view&id=1GURsSfaKltukA9EGBD6EVUIyx3QhKk8l',link: 'https://www.parashospitals.com/india/paras-hospitals-patna/centres-of-excellence/orthopaedics' },
             { name: 'We Excel ', image: 'https://drive.google.com/uc?export=view&id=12C9Gaz0ZJ8SWFzTOiqJxztWYKkceRTVS',link: 'https://weexcel.in/' },
             { name: 'La Pintura', image: '/sponsors/lapintura.jpeg',link: 'https://www.instagram.com/lapinturastudio/?hl=en' },
-            { name: 'Edu Viate', image: 'https://drive.google.com/uc?export=view&id=1SFVfSdzoyyRc2_OEG2ZYX-6R29nZCmPC',link: 'https://eduvitae.co.in/' },
+            { name: 'EduVitae Services', image: 'https://drive.google.com/uc?export=view&id=1SFVfSdzoyyRc2_OEG2ZYX-6R29nZCmPC',link: 'https://eduvitae.co.in/' },
             { name: 'Forum IAS', image: 'https://drive.google.com/uc?export=view&id=15Qtv-gOK4CnYHTdnONlURFNnQPv9H5l0',link: 'https://forumias.com/ias-coaching-in-patna/' },
             { name: 'Testbook', image: '/sponsors/testbook.png',link: 'https://testbook.com/' },
             { name: 'Ultratech Cement', image: 'https://drive.google.com/uc?export=view&id=1Tqa82L1TG-NJ0khVFnMChIo1PNdWzqp4',link: 'https://www.ultratechcement.com/' },
