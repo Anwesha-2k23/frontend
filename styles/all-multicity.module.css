@@ -1,9 +1,15 @@
 @font-face {
-  font-family: "Lolapeluza";
-  src: url("../styles/fonts/Lolapeluza-Black.ttf");
+	font-family: "Poppins";
+	src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 }
+
 .container{
-    background-color: #E2D78E;
+	background-image: url("/MulticityBackground.svg");
+	background-size: 100vw;
+	overflow-x: hidden;
+	background-position: 0 60px;
+	background-attachment: fixed;
+    background-color: #63262d00;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,59 +17,42 @@
     padding-bottom: 77px;
     top: 0px;
 }
+
 .container > *{
-    font-family: 'Lolapeluza', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
-.container h1{
-    text-transform: uppercase;
-    font-size: 64px;
-    letter-spacing: 1.1px;
-    color: #4E1DD9;
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 6vw;
+.background {
+	position: fixed;
+	width: 100vw;
+	z-index: -1;
 }
 
-.city{
-    position: absolute;
-    display : flex;
-    flex-direction: row;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
+.heroImage {
+	width: 100vw;
 }
-.mandala{
-    position: absolute;
-    width: 100vw;
+
+.title {
+	margin-block: 90px;
+}
+
+.title img {
+	width: 500px;
+	max-width: 75vw;
+}
+
+.about {
+    color: #ffffff;
+    text-align: justify;
+    width: 500px;
+	max-width: 75vw;
+}
+
+.content{
+    margin: 50px 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.poster{
-    border-radius: 20px;
-    transition: 0.3s;
-    margin-bottom: 20px;
-}
-.poster:hover{
-    box-shadow: #60389a 11px 9px 0px;
-}
-
-.kolkataPoster:hover{
-    box-shadow: #267183 11px 9px 0px;
-}
-
-.otherElements{
-    position: absolute;
-    top: 150%;
-    transform: translateX(180px);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 309px;
-}
-
-/* css for mobile view */
-@media screen and (max-height: 756px){
-    
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+	row-gap: 150px;
 }
