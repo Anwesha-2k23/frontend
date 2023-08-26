@@ -16,32 +16,32 @@ const Multicity = () => {
 
     const events_temp = [
         {
-            id: 1,
-            city: 'Varanasi',
-            date: 'DD/MM/YY',
-            venue: 'Say IIT BHU',
-            registration_deadline: 'DD/MM/YY',
-            registration_fee: 'If Any',
-            timings: '00:00 PM',
+            key: 1,
+            city: 'Lucknow',
+            date: '10/09/23',
+            venue: 'BBD NIIT',
+            registration_deadline: '05/09/23',
+            registration_fee: 'Nil',
+            timings: '09:00 AM - 06:00 PM',
             contact: [
-                { name: 'Aryan', phone: '7247305110' },
-                { name: 'Abhilasha', phone: '9262293394' },
+                { name: 'Yash Raj Singh', phone: '8789866763' },
+                { name: 'Divyam Wwalia', phone: '9105889422' },
             ],
             register_link: '#',
             rulebook_link: '#',
         },
-        {
-            id: 2,
-            city: 'Kolkata',
-            date: 'DD/MM/YY',
-            venue: 'Say IIT BHU',
-            registration_deadline: 'DD/MM/YY',
-            registration_fee: 'If Any',
-            timings: '00:00 PM',
-            contact: { name: 'Abhilasha', phone: '9262293394' },
-            register_link: '#',
-            rulebook_link: '#',
-        },
+        // {
+        //     key: 2,
+        //     city: 'Kolkata',
+        //     date: 'DD/MM/YY',
+        //     venue: 'Say IIT BHU',
+        //     registration_deadline: 'DD/MM/YY',
+        //     registration_fee: 'If Any',
+        //     timings: '00:00 PM',
+        //     contact: { name: 'Abhilasha', phone: '9262293394' },
+        //     register_link: '#',
+        //     rulebook_link: '#',
+        // },
     ]
 
     return (
@@ -51,9 +51,9 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
-            <img src={'/MulticityHeroImage.svg'} className={styles.heroImage} />
+            <img src={'/multicity/MulticityHeroImage.png'} className={styles.heroImage} />
             <div className={styles.title}>
-                <img src={'/MulticityAuditions.svg'} />
+                <img src={'/multicity/MulticityAuditions.svg'} />
                 <p className={styles.about}>
                     Anwesha, the CULTURAL FEST at IIT Patna gives a huge
                     opportunity and a massive platform to showcase your
