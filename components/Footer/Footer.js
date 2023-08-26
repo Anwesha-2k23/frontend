@@ -72,8 +72,8 @@ const Footer = () => {
     }
     return (
         <div className={styles.footer}>
-            <div className={[styles.mainSection].join(' ')}>
-                <div className={[styles.section3].join(' ')}>
+            <div className={styles.mainSection}>
+                <div className={styles.sectionLeft}>
                     <div className={styles.footerTable}>
                         <div className={styles.footerTableRow}>
                             <Link className={styles.footerLink} href="/">
@@ -86,37 +86,19 @@ const Footer = () => {
                                     Events
                                 </div>
                             </Link>
-                            {/* <Link className={styles.footerLink} href="/gallery">
-                                <div className={styles.footerTableCell}>
-                                    Gallery
-                                </div>
-                            </Link>
-
-                            </Link> */}
                             <Link
                                 className={styles.footerLink}
-                                href="/metaverse"
+                                href="/oursponsors"
                             >
                                 <div className={styles.footerTableCell}>
-                                    Metaverse
-                                </div>
-                            </Link>
-                            <Link
-                                className={styles.footerLink}
-                                href="/campusambassador"
-                            >
-                                <div className={styles.footerTableCell}>
-                                    Campus Ambassador
+                                    Sponsors
                                 </div>
                             </Link>
                         </div>
                         <div className={styles.footerTableRow}>
-                            <Link
-                                className={styles.footerLink}
-                                href="/alumni-outreach"
-                            >
+                            <Link className={styles.footerLink} href="/profile">
                                 <div className={styles.footerTableCell}>
-                                    Alumni Outreach
+                                    Profile
                                 </div>
                             </Link>
                             <Link className={styles.footerLink} href="/aboutus">
@@ -124,12 +106,12 @@ const Footer = () => {
                                     About Us
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/oursponsors">
+                            <Link className={styles.footerLink} href="/ourteam">
                                 <div className={styles.footerTableCell}>
-                                    Our Sponsors
+                                    Team
                                 </div>
                             </Link>
-                            <Link
+                            {/* <Link
                                 className={styles.footerLink}
                                 href="https://forms.gle/LD4gSRg9CaxEeAXK7"
                                 target="_blank"
@@ -137,7 +119,7 @@ const Footer = () => {
                                 <div className={styles.footerTableCell}>
                                     Report issue
                                 </div>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <div
@@ -187,10 +169,11 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={styles.middle_container}>
+
+                <div className={styles.sectionMiddle}>
                     <img
                         className={styles.frame_img}
-                        src="/footer/anwesha_text_footer.png"
+                        src="/footer/Anwesha_Text_Footer.svg"
                     />
                     <span className={styles.newsletter}>
                         Subscribe to our Mailing list
@@ -231,9 +214,8 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                {/* <div className={[styles.sectionSeperator].join(' ')}></div> */}
 
-                <div className={[styles.section1].join(' ')}>
+                <div className={styles.sectionRight}>
                     {/* <a href="https://goo.gl/maps/g8QCu3qN2DhuM2W49"> */}
                     {/* <img src="/footer/location.svg" /> */}
                     <div className={styles.a}>
@@ -262,7 +244,7 @@ const Footer = () => {
                               alt="Get it on Google Play"
                               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                           /> */}
-                            <div>Download the Anwesha'23 app now</div>
+                            {/* <div>Download the Anwesha'23 app now</div> */}
                             <Image
                                 alt="google play icon"
                                 src={'/footer/googlePlay.svg'}
@@ -274,7 +256,6 @@ const Footer = () => {
                     {/* </a> */}
                 </div>
             </div>
-            {/* <div className={[styles.footerSeperator].join(' ')}>svsdf</div> */}
         </div>
     )
 }
