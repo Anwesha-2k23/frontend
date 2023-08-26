@@ -16,6 +16,11 @@
     align-items: center;
     padding-bottom: 77px;
     top: 0px;
+
+	@media screen and (max-width: 450px) {
+		background-image: url("/multicity/MulticityBackground_Mobile.png");
+		background-position: 0 -10px;
+	}
 }
 
 .container > *{
@@ -31,6 +36,7 @@
 .heroImage {
 	width: 100vw;
 	margin-top: calc(60px - 5vw);
+	margin-bottom: min(150px, 25vw);
 }
 
 .parallaxBackground {
@@ -47,6 +53,7 @@
 .title img {
 	width: 500px;
 	max-width: 75vw;
+	margin-bottom: 20px;
 }
 
 .about {

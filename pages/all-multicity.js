@@ -25,10 +25,10 @@ const Multicity = () => {
             timings: '09:00 AM - 06:00 PM',
             contact: [
                 { name: 'Yash Raj Singh', phone: '8789866763' },
-                { name: 'Divyam Wwalia', phone: '9105889422' },
+                { name: 'Divyam Walia', phone: '9105889422' },
             ],
-            register_link: '#',
-            rulebook_link: '#',
+            register_link: 'https://docs.google.com/forms/d/e/1FAIpQLSfdKPCSrc0gj4R8jcq6-C0E9zc-lMp1phBzJxwlOQeZuZhi9A/viewform?usp=sf_link',
+            rulebook_link: 'http://bit.ly/3Rba0Wv',
         },
         // {
         //     key: 2,

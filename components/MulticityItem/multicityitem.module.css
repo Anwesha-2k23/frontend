@@ -80,7 +80,7 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     column-gap: min(60px, 5vw);
 
     @media screen and (max-width: 768px) {
@@ -90,7 +90,7 @@
 
 .eventLinks a {
     display: flex;
-    padding-inline: 30px;
+    padding-inline: 40px;
     padding-block: 16px;
     flex-wrap: wrap;
     align-content: center;
@@ -99,11 +99,19 @@
     text-decoration: none;
 	font-weight: bold;
     border: white 1px solid;
+}
+
+.registerLink {
     background-color: white;
     color: #63262d;
 }
 
-.eventLinks a:hover {
+.registerLink:hover {
 	color: white;
     background-color: unset;
+}
+
+.rulebookLink {
+	color: white;
+	background-color: unset;
 }
