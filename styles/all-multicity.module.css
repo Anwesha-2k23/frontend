@@ -35,7 +35,7 @@
 
 .heroImage {
 	width: 100vw;
-	margin-top: calc(60px - 5vw);
+	/* margin-top: calc(60px - 5vw); */
 	margin-bottom: min(150px, 25vw);
 }
 

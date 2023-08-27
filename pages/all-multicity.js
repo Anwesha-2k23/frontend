@@ -20,15 +20,16 @@ const Multicity = () => {
             city: 'Lucknow',
             date: '10/09/23',
             venue: 'BBD NIIT',
+			poster: "/multicity/MulticityPosterLucknow.png",
             registration_deadline: '05/09/23',
-            registration_fee: 'Nil',
+            registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
             contact: [
                 { name: 'Yash Raj Singh', phone: '8789866763' },
                 { name: 'Divyam Walia', phone: '9105889422' },
             ],
             register_link: 'https://docs.google.com/forms/d/e/1FAIpQLSfdKPCSrc0gj4R8jcq6-C0E9zc-lMp1phBzJxwlOQeZuZhi9A/viewform?usp=sf_link',
-            rulebook_link: 'http://bit.ly/3Rba0Wv',
+            rulebook_link: 'https://bit.ly/AnweshaMulticity',
         },
         // {
         //     key: 2,
@@ -51,7 +52,11 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
-            <img src={'/multicity/MulticityHeroImage.png'} className={styles.heroImage} />
+            <img
+                loading="lazy"
+                src={'/multicity/MulticityHeroImage.png'}
+                className={styles.heroImage}
+            />
             <div className={styles.title}>
                 <img src={'/multicity/MulticityAuditions.svg'} />
                 <p className={styles.about}>

@@ -264,8 +264,8 @@ function Navigation() {
                         </Link>
                     </li> */}
                     <li>
-                        <Link href="/events" onClick={() => toggleDrawer()}>
-                            Events
+                        <Link href="/all-multicity" onClick={() => toggleDrawer()}>
+                            Multicity
                         </Link>
                     </li>
                     {/* <li>
@@ -289,6 +289,11 @@ function Navigation() {
                     <li>
                         <Link href="/aboutus" onClick={() => toggleDrawer()}>
                             About Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/metaverse" onClick={() => toggleDrawer()}>
+                            Metaverse
                         </Link>
                     </li>
                     <li>
