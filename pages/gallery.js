@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar/Navbar'
 import Gallery from '../components/Gallery/Gallery'
 
 export default function Multicity({ folderLinks }) {
-    // {console.log(folderLinks)}
     return (
         <>
             <Head>
@@ -67,12 +66,20 @@ export async function getServerSideProps(context) {
             folderId: '1M372zJ4VWAC2PdgvIGUzCOE4fwFMLm0r',
             orderBy: 'createdTime desc',
         })
+        // console.log(folder.data.files)
+        const parentFolderId = '1M372zJ4VWAC2PdgvIGUzCOE4fwFMLm0r';
+        const foldersInParentFolder = await drive.files.list({
+            q: `'${parentFolderId}' in parents and mimeType='application/vnd.google-apps.folder'`,
+            fields: 'files(id, name, description, createdTime)',
+            orderBy: 'createdTime desc',
+        });
+        // console.log(foldersInParentFolder.data.files);
 
         // Creating an array out of the following object
-        const folderdata = Array.from(folder.data.files)
-
+        const folderdata = Array.from(foldersInParentFolder.data.files)
+        
         // Poping because the last entry is gallry folder itself
-        folderdata.pop()
+        // folderdata.pop()
 
         // Iterating over the folderdata array and getting the images inside each folder
         folderLinks = await Promise.all(

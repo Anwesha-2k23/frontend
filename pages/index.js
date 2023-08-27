@@ -148,14 +148,14 @@ const index = () => {
                         </div>
                         <div className={styles.ticketImages}>
                             <Link
-                                href="https://pmny.in/mJs3IkpvufoA"
-                                target="_blank"
+                                href=""
+                                // target="_blank"
                             >
                                 <EliteTicket />
                             </Link>
                             <Link
-                                href="https://pmny.in/LrfJCrtUy8S4"
-                                target="_blank"
+                                href=""
+                                // target="_blank"
                             >
                                 <ProTicket />
                             </Link>
@@ -193,56 +193,28 @@ const index = () => {
             <div className={styles.themeSection}>
                 <div className={styles.merchContainer}>
                     <div className={styles.merchDetails}>
-                        {/* <Image
-                            className={styles.tshirtImage}
-                            src="/merch/tshirt_with_bg.png"
-                            alt="Tshirts"
-                            width={600}
-                            height={580}
-                        /> */}
                     </div>
                     <div className={styles.merchBooking}>
-                        {/* <img
-                            src="/home/grab_merc_text.png"
-                            alt="Grab the merch"
-                        /> */}
                         <span className={styles.grabMerchText}>
                             Grab Your <br /> Merchandise!
                         </span>
                         {/* TODO : Add the link for the payment of the TShirts */}
-                        <Link href="/merchandise">
+                        <Link href="">
                             <button
-                                href="/merchandise"
+                                // href="/merchandise"
                                 className={styles.merchBookBtn}
                             >
-                                Buy Now
+                                Coming soon
                             </button>
                         </Link>
-                        {/* <a href="https://pmny.in/MIIjccwJBC3K">
-                            <button
-                                href="https://pmny.in/MIIjccwJBC3K"
-                                className={styles.merchBookBtn}
-                            >
-                                Buy 2
-                            </button>
-                        </a>
-                        <a href="https://pmny.in/erg5mzOjA6Oc">
-                            <button
-                                href="https://pmny.in/erg5mzOjA6Oc"
-                                className={styles.merchBookBtn}
-                            >
-                                Buy 3
-                            </button>
-                        </a> */}
                     </div>
-                    {/* TODO : Add the link for the payment of the TShirts */}
 
-                    <Link href="./merchandise" className={styles.mobileBuyNow}>
+                    <Link href="" className={styles.mobileBuyNow}>
                         <button
-                            href="/merchandise"
+                            // href="/merchandise"
                             className={styles.merchBookBtn2}
                         >
-                            Buy Now
+                            Coming soon
                         </button>
                     </Link>
                 </div>
@@ -273,14 +245,6 @@ const index = () => {
                             marginInline: '15px',
                         }}
                     >
-                        {/* <img
-                            src="/home/events.svg"
-                            layout="fill"
-                            width="100%"
-                            objectFit="contain"
-                            alt="Events image"
-                            style={{borderTopLeftRadius: '15px', borderTopRightRadius: '15px'}}
-                        /> */}
                         <DisplayRiveEvent />
 
                         <div className={styles.eventSectionText}>
