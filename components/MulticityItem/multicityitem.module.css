@@ -4,7 +4,7 @@
     display: flex;
     min-width: fit-content;
     max-width: 55vw;
-    column-gap: 135px;
+    column-gap: min(135px, 8vw);
     flex-direction: row;
     font-family: 'Poppins', sans-serif;
     align-items: center;
@@ -66,6 +66,7 @@
 
 .eventDetails p {
     font-size: 15px;
+	line-height: 30px;
     font-weight: 300;
 }
 
@@ -79,19 +80,25 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    column-gap: min(80px, 10vw);
+    justify-content: center;
+    column-gap: min(60px, 5vw);
+
+    @media screen and (max-width: 768px) {
+        max-width: 278px;
+    }
 }
 
 .eventLinks a {
     display: flex;
-    padding-inline: 30px;
+    padding-inline: 40px;
     padding-block: 16px;
     flex-wrap: wrap;
     align-content: center;
     border-radius: 15px;
     cursor: pointer;
-	text-decoration: none;
+    text-decoration: none;
+	font-weight: bold;
+    border: white 1px solid;
 }
 
 .registerLink {
@@ -99,7 +106,12 @@
     color: #63262d;
 }
 
+.registerLink:hover {
+	color: white;
+    background-color: unset;
+}
+
 .rulebookLink {
 	color: white;
-    border: white 1px solid;
+	background-color: unset;
 }

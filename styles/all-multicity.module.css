@@ -4,7 +4,7 @@
 }
 
 .container{
-	background-image: url("/MulticityBackground.svg");
+	background-image: url("/multicity/MulticityBackground.png");
 	background-size: 100vw;
 	overflow-x: hidden;
 	background-position: 0 60px;
@@ -16,6 +16,11 @@
     align-items: center;
     padding-bottom: 77px;
     top: 0px;
+
+	@media screen and (max-width: 450px) {
+		background-image: url("/multicity/MulticityBackground_Mobile.png");
+		background-position: 0 -10px;
+	}
 }
 
 .container > *{
@@ -30,6 +35,15 @@
 
 .heroImage {
 	width: 100vw;
+	margin-top: calc(60px - 5vw);
+	margin-bottom: min(150px, 25vw);
+}
+
+.parallaxBackground {
+	display: flex;
+	width: 100vw;
+	align-items: center;
+	flex-direction: column;
 }
 
 .title {
@@ -39,6 +53,7 @@
 .title img {
 	width: 500px;
 	max-width: 75vw;
+	margin-bottom: 20px;
 }
 
 .about {
@@ -49,10 +64,10 @@
 }
 
 .content{
-    margin: 50px 0;
+    margin: max(50px, 25vh) 0;
     display: flex;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-	row-gap: 150px;
+	row-gap: max(150px, 50vh);
 }
