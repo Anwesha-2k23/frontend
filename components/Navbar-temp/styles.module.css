@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .mainNav {
     -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5px);
+    background-color: #63262Df4;
     color: #000;
     text-align: center;
-    font-size: 20px;
+	font-family: Poppins;
+    font-size: 15px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 2px; */
     position: fixed;
     top: 0;
     left: 0;
@@ -25,15 +28,20 @@
 }
 
 .navLinks a {
-    color: inherit;
+    color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 9px 20px;
     display: inline-block;
     font-weight: bold;
 }
 
+.linknav {
+	border: #00000000 1px solid;
+}
+
 .linknav:hover {
-    filter: invert(100%);
+	border: #fff 1px solid;
+	border-radius: 5px;
 }
 
 .navLinks ul {
@@ -54,7 +62,7 @@
     display: none;
     opacity: 0;
     position: fixed;
-    top: 66px;
+    top: 59px;
     width: 100vw;
     transition: all 0.3s ease;
     z-index: 4;
@@ -63,7 +71,7 @@
 .nav_drawer ul {
     display: flex;
     flex-direction: column;
-    background-color: #504bbc;
+    background-color: #63262D;
     align-items: center;
     justify-content: center;
 }
