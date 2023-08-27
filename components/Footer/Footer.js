@@ -81,9 +81,9 @@ const Footer = () => {
                                     Home
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/events">
+                            <Link className={styles.footerLink} href="/all-multicity">
                                 <div className={styles.footerTableCell}>
-                                    Events
+                                    Multicity
                                 </div>
                             </Link>
                             <Link
