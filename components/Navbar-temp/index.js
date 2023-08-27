@@ -116,19 +116,6 @@ function Navigation() {
                 style={{ color: isHome ? 'white' : 'black' }}
                 ref={refNav}
             >
-                {/* <button
-                    className={styles.mobile_only}
-                    style={{ background: 'none', border: 'none' }}
-                    onClick={() => toggleDrawer()}
-                >
-                    <Image
-                        src="/navbar/hamburger.png"
-                        alt="drawer"
-                        width={35}
-                        height={35}
-                        className={styles.mobile_nav}
-                    />
-                </button> */}
                 <div className={styles.hamburger}>
                     <RiveComponent
                         onClick={() => {
@@ -153,32 +140,21 @@ function Navigation() {
                         {/* <li>
                             <Link href="/">Home</Link>
                         </li> */}
-                        {/* <li
+                        <li
                             style={
-                                router.pathname === '/aboutus'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/aboutus">
-                                About Us
-                            </Link>
-                        </li> */}
-                        {/* <li
-                            style={
-                                router.pathname === '/campusambassador'
+                                router.pathname === '/all-multicity'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
                             <Link
                                 className={styles.linknav}
-                                href="/campusambassador"
+                                href="/all-multicity"
                             >
-                                Campus Ambassador
+                                Multicity
                             </Link>
-                        </li> */}
-                        <li
+                        </li>
+                        {/* <li
                             style={
                                 router.pathname === '/events'
                                     ? { borderBottom: '3px solid white' }
@@ -188,7 +164,7 @@ function Navigation() {
                             <Link className={styles.linknav} href="/events">
                                 Events
                             </Link>
-                        </li>
+                        </li> */}
                         <li
                             style={
                                 router.pathname === '/ourteam'
@@ -225,7 +201,7 @@ function Navigation() {
                                 About Us
                             </Link>
                         </li>
-                        {/* <li
+                        <li
                             style={
                                 router.pathname === '/metaverse'
                                     ? { borderBottom: '3px solid white' }
@@ -235,7 +211,7 @@ function Navigation() {
                             <Link className={styles.linknav} href="/metaverse">
                                 Metaverse
                             </Link>
-                        </li> */}
+                        </li>
                         <li>
                             {userData.isAuth ? (
                                 <div className={styles.user_container}>
