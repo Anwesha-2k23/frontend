@@ -28,7 +28,7 @@ const Multicity = () => {
                 { name: 'Divyam Walia', phone: '9105889422' },
             ],
             register_link: 'https://docs.google.com/forms/d/e/1FAIpQLSfdKPCSrc0gj4R8jcq6-C0E9zc-lMp1phBzJxwlOQeZuZhi9A/viewform?usp=sf_link',
-            rulebook_link: 'http://bit.ly/3Rba0Wv',
+            rulebook_link: 'https://bit.ly/AnweshaMulticity',
         },
         // {
         //     key: 2,
