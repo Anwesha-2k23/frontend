@@ -187,6 +187,7 @@ letter-spacing: 0.16vw;
 
 .rightbox
 {display:flex;
+    flex-direction: row;
 gap: 0.666vw;
 border-radius: 0.666vw;
 background: #3d339acc;
@@ -198,8 +199,7 @@ font-weight: 400;
 line-height: 120.4%; /* 28.896px */
 letter-spacing: 0.16vw;
 width: 12vw;
-padding:1.066vw;
-padding: auto;
+padding-top:1vw ;
 margin-left: 1.4vw;
 justify-content:center;
 }
