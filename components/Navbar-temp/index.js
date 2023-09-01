@@ -257,7 +257,7 @@ function Navigation() {
                     </li>
                     {/* <li>
                         <Link
-                            href="/campusambassador"
+                            href="/campusambassador24"
                             onClick={() => toggleDrawer()}
                         >
                             Campus Ambassador
