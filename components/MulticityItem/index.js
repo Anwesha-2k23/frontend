@@ -5,7 +5,11 @@ const index = ({ event }) => {
         <div className={styles.eventCard}>
             <div className={styles.eventImageWrapper}>
                 <div className={styles.eventImageWrapper_dot} />
-                <div className={styles.eventImageWrapper_box}></div>
+                <img
+					loading='lazy'
+                    src={event.poster}
+                    className={styles.eventImageWrapper_box}
+                />
             </div>
             <div className={styles.eventBody}>
                 <p className={styles.eventTitle}>{event.city}</p>
