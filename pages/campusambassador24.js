@@ -44,12 +44,13 @@ export default function CampusAmbassador24() {
                 />
             </div>
             <div className={styles.registerposition} >
-                <a href="https://google.com" style={{ textDecoration: "none" }}>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdibq4yc8kvo91fNSDh0ZzhDFrmi3f_umAtgnrxrqjAXiJ7fA/viewform"
+                    style={{ textDecoration: "none" }}>
                     <div className={styles.register}>
                         <p >REGISTER</p>
                     </div>
                 </a>
-                <a href="https://google.com" style={{ textDecoration: "none", marginLeft: "" }}>
+                <a href="" style={{ textDecoration: "none", marginLeft: "" }}>
                     <div className={styles.leaderboard}>
                         LEADERBOARD
                     </div>
