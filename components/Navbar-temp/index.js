@@ -175,14 +175,14 @@ function Navigation() {
                         </li>
                         <li
                             style={
-                                router.pathname === '/campusambassador24'
+                                router.pathname === '/campusambassador'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
                             <Link
                                 className={styles.linknav}
-                                href="/campusambassador24"
+                                href="/campusambassador"
                             >
                                 Campus Ambassador
                             </Link>
@@ -259,7 +259,7 @@ function Navigation() {
                     </li>
                     <li>
                         <Link
-                            href="/campusambassador24"
+                            href="/campusambassador"
                             onClick={() => toggleDrawer()}
                         >
                             Campus Ambassador
