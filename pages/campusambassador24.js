@@ -32,12 +32,16 @@ export default function CampusAmbassador24() {
             <div id="hero">
                 <img
                     src="/CAHeroImage.svg"
+                    className={styles.pc}
                     loading='lazy'
-                    style={{
-                        layout: "fill",
-                        objectFit: "contain",
-                        width: "100%"
-                    }}
+                    // width={screenWidth}  
+                    // height={0.760214 * screenWidth}    
+                    alt="helosection"
+                />
+                <img
+                    src="CAHeroImage_mobile.svg"
+                    className={styles.mobile}
+                    loading='lazy'
                     // width={screenWidth}  
                     // height={0.760214 * screenWidth}    
                     alt="helosection"
@@ -132,7 +136,7 @@ export default function CampusAmbassador24() {
                             Offline Registration
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
-                            30px
+                            30xp
                         </p>
                     </div>
 
@@ -183,7 +187,7 @@ export default function CampusAmbassador24() {
 
                     <div className={styles.judgecontent}>
                         <p className={styles.leftbox} style={{ background: "#51295E"}}>
-                           Creative Way Of Incorporating Glimpses Of Answesha 
+                           Creative Way Of Incorporating Glimpses Of Anwesha 
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
                             10-39xp
