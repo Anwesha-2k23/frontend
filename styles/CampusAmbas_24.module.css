@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.mobile{
+    display: none;
+}
+.pc{
+    display: block;
+    -ms-layout-grid: fill;
+    object-fit: contain;
+    width: 100%;
+    margin-bottom: 14vw;
+}
+
+.registerposition {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 23.75vw;
+    left: 20.45vw;
+}
+
+.register {
+    display: flex;
+    padding: 1.6vw 3.333333vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8vw;
+    border-radius: 0.6666vw;
+    background: #2c2a5d;
+
+    color: #fff;
+    font-family: Inter;
+    font-size: 1.6vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2vw;
+    /* 125% */
+}
+
+.leaderboard {
+    margin-left: 2.3vw;
+    display: flex;
+    padding: 1.2666vw 3vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8vw;
+    border-radius: 0.666vw;
+    border: 0.3333vw solid #2c2a5d;
+
+    color: #2c2a5d;
+    font-family: Inter;
+    font-size: 1.6vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2vw;
+}
+
+.turtlediv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 29.5vw;
+    margin-left: 9vw;
+}
+
+.turtle {
+    width: 31.4666vw;
+    height: 35.733vw;
+    margin-top: 11.8vw;
+    margin-right: 1.5vw;
+}
+
+.perks {
+    height: auto;
+    margin: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 2.666 vw;
+    padding-bottom: 2vw;
+    justify-content: center;
+    align-items: center;
+    gap: 2.333vw;
+    border-radius: 1.333vw;
+    border: 0.666vw solid rgba(89, 32, 70, 0.638);
+    background: #3e339a;
+    box-shadow: 1.733vw 1.733vw 4vw -0.333vw rgba(0, 0, 0, 0.3);
+}
+.perktitle {
+    align-items: center;
+    margin: auto;
+    margin-top: 2.666vw;
+    width: 43.333vw;
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.3vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21333vw;
+    text-transform: uppercase;
+}
+
+.perkcontent {
+    margin: 2.33vw 1.4vw 0vw 2vw;
+    padding: auto;
+    list-style: none;
+    width: 43.33vw;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.55vw;
+    font-style: normal;
+    font-weight: 360;
+    line-height: 3.2333vw;
+    /* 202.083% */
+    letter-spacing: 0.27vw;
+}
+
+.mandiv {
+    display: flex;
+    flex-direction: row;
+    margin-left: 8vw;
+    margin-top: 17vw;
+}
+
+.man {
+    width: 45.933vw;
+    position: absolute;
+    left: 52.7vw;
+}
+
+.judgebox {
+    margin-top: 43vw;
+    display: flex;
+    flex-direction: column;
+}
+.judge {
+    margin: auto;
+    margin-bottom: 4vw;
+    padding: 0.66vw;
+    color: #fff;
+    text-shadow: 0.8vw 1vw 0.4vw rgba(0, 0, 0, 0.25);
+    font-family: Poppins;
+    font-size: 6.7vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    /* backdrop-filter: blur(50px); */
+}
+
+.judgecontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.333vw;
+}
+
+.condition {
+    width: 61vw;
+    padding: 1.0666vw 2vw;
+    gap: 0.666vw;
+    border-radius: 0.666vw;
+    background: #dc41aed6;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.866vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122.4%; /* 34.272px */
+    letter-spacing: 0.186vw;
+}
+
+.leftbox {
+    width: 61vw;
+    padding: 1.0666vw 2vw;
+    gap: 0.666vw;
+    border-radius: 0.666vw;
+    background: #3d339acc;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.6vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.4%; /* 28.896px */
+    letter-spacing: 0.16vw;
+}
+
+.rightbox {
+    display: flex;
+    flex-direction: row;
+    gap: 0.666vw;
+    border-radius: 0.666vw;
+    background: #3d339acc;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.6vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120.4%; /* 28.896px */
+    letter-spacing: 0.16vw;
+    width: 12vw;
+    padding-top: 1vw;
+    margin-left: 1.4vw;
+    justify-content: center;
+}
+
+.leftleaf {
+    width: 11.4vw;
+    position: absolute;
+    top: 268vw;
+    left: 1vw;
+}
+.rightleaf {
+    width: 11.4vw;
+    position: absolute;
+    top: 250vw;
+    left: 86vw;
+}
+
+.treasurebox {
+    display: flex;
+    flex-direction: row;
+    padding-left: 8vw;
+    margin-top: 34vw;
+    padding-bottom: 20vw;
+}
+
+.treasure {
+    width: 34vw;
+    margin-top: 10vw;
+    margin-left: 3vw;
+}
+
+
+@media only screen and (max-width: 900px) {
+
+.mobile
+{
+    display: block;
+    -ms-layout-grid: fill;
+    object-fit: contain;
+    width: 100%;
+    margin-bottom: 14vw;
+}
+.pc{
+    display: none;
+}
+
+.registerposition{
+    top: 34.75vw;
+    left: 17.35vw;
+
+}
+
+.register {
+        padding: 2.4vw 4.993vw;
+        gap: 4.2vw;
+        border-radius: 0.9999vw;
+        background: #2c2a5d;
+
+        color: #fff;
+        font-size: 2.6vw;
+        font-weight: 500;
+        line-height: 2.9vw;
+        letter-spacing: 0.1vw;
+        /* 125% */
+    }
+
+    .leaderboard {
+        margin-left: 3.4vw;
+        padding: 1.899vw 4.5vw;
+        gap: 4.2vw;
+        border-radius: 0.999vw;
+        border: 0.6vw solid #2c2a5d;
+
+        color: #2c2a5d;
+        font-size: 2.8vw;
+        font-weight: 900;
+        line-height: 2.9vw;
+        letter-spacing: 0.1vw;
+    }
+
+    .turtlediv {
+        margin-left: 0vw;
+    }
+
+    .turtle {
+        width: 37vw;
+        height: 42.016vw;
+        margin-top: 17vw;
+        margin-right: 0vw;
+    }
+
+    .perks {
+        height: auto;
+        padding-top: 3.458 vw;
+        gap: 3.032vw;
+        border-radius: 1.729vw;
+        border: 0.8658vw solid rgba(89, 32, 70, 0.638);
+        background: #3e339a;
+        box-shadow: 2.2529vw 2.2529vw 5.2vw -0.4329vw rgba(0, 0, 0, 0.3);
+    }
+    .perktitle {
+        margin-top: 4vw;
+        width: 56.3329vw;
+        color: #fff;
+        font-size: 2.99vw;
+        font-weight: 700;
+        letter-spacing: 0.27729vw;
+    }
+
+    .perkcontent {
+        margin: 2.5vw 1vw 0vw 1.9vw;
+        padding: auto;
+        width: 56.329vw;
+        color: #fff;
+        font-size: 2.015vw;
+        font-weight: 360;
+        line-height: 4.203vw;
+        /* 202.083% */
+        letter-spacing: 0.351vw;
+    }
+
+    .mandiv {
+        margin-left: 2vw;
+        margin-bottom: 37.4vw;
+    }
+    .man {
+        width: 54vw;
+        position: absolute;
+        left: 46vw;
+        top: 188vw;
+    }
+    .judgebox {
+        margin-top: 50vw;
+    }
+
+    .treasurebox {
+        padding-left: 2vw;
+    }
+
+    .leftleaf {
+        top: 320vw;
+    }
+    .rightleaf {
+        top: 298vw;
+    }
+}

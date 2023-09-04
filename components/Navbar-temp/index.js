@@ -165,6 +165,19 @@ function Navigation() {
                                 Events
                             </Link>
                         </li> */}
+
+                        <li
+                            style={
+                                router.pathname === '/campusambassador24'
+                                    ? { borderBottom: '3px solid white' }
+                                    : null
+                            }
+                        >
+                            <Link className={styles.linknav} href="/campusambassador24">
+                                Campus Ambassador
+                            </Link>
+                        </li>
+
                         <li
                             style={
                                 router.pathname === '/ourteam'
@@ -255,14 +268,14 @@ function Navigation() {
                     <li>
                         <Link href="/">Home</Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link
-                            href="/campusambassador"
+                            href="/campusambassador24"
                             onClick={() => toggleDrawer()}
                         >
                             Campus Ambassador
                         </Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link href="/all-multicity" onClick={() => toggleDrawer()}>
                             Multicity
