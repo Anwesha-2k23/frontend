@@ -21,7 +21,7 @@ const Multicity = () => {
             date: '10/09/23',
             venue: 'BBD NIIT',
 			poster: "/multicity/MulticityPosterLucknow.png",
-            registration_deadline: '05/09/23',
+            registration_deadline: '08/09/23',
             registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
             contact: [
