@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+.topmargin {
+	height: min(60px, 7.5vw);
+	background-image: linear-gradient(135deg, #e5793a, #de8150, #d87c5e, #be726b, #704a5c);
+}
+
 .mobile{
     display: none;
 }
@@ -15,7 +20,7 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    top: 23.75vw;
+    top: calc(23.75vw + min(60px, 7.5vw));
     left: 20.45vw;
 }
 
@@ -244,9 +249,12 @@
 .pc{
     display: none;
 }
+.topmargin {
+	display: none;
+}
 
 .registerposition{
-    top: 34.75vw;
+    top: calc(34.75vw + min(60px, 7.5vw));
     left: 17.35vw;
 
 }
