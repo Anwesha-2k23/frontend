@@ -50,10 +50,10 @@ const index = ({ event }) => {
                 </div>
                 <div className={styles.eventLinks}>
                     <a
-                        className={styles.registerLink}
-                        href={event.register_link}
+                        className={event.completed ? styles.rulebookLink : styles.registerLink}
+                        href={event.completed ? '#' : event.register_link}
                     >
-                        <p>Register</p>
+                        <p>{event.completed ? 'Conducted' : 'Register'}</p>
                     </a>
                     <a
                         className={styles.rulebookLink}

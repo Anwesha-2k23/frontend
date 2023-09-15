@@ -1,5 +1,6 @@
 import styles from '../styles/CampusAmbas_24.module.css'
 import Link from 'next/link';
+import Head from 'next/head'
 import Image from 'next/image';
 import React from 'react';
 // import { useState, useEffect } from 'react';
@@ -28,7 +29,13 @@ export default function CampusAmbassador24() {
     // }, []);
 
     return (
-        <><div style={{ background: "#1C1D47" }}>
+        <div style={{ background: "#1C1D47" }}>
+			<Head>
+				<title>Anwesha 2023</title>
+				<meta name="description" content="Multicity-Anwesha 2023" />
+				<link rel="icon" href="./logo_no_bg.svg" />
+			</Head>
+			<div className={styles.topmargin} />
             <div id="hero">
                 <img
                     src="/CAHeroImage.svg"
@@ -36,7 +43,7 @@ export default function CampusAmbassador24() {
                     loading='lazy'
                     // width={screenWidth}  
                     // height={0.760214 * screenWidth}    
-                    alt="helosection"
+                    alt="herosection"
                 />
                 <img
                     src="CAHeroImage_mobile.svg"
@@ -44,7 +51,7 @@ export default function CampusAmbassador24() {
                     loading='lazy'
                     // width={screenWidth}  
                     // height={0.760214 * screenWidth}    
-                    alt="helosection"
+                    alt="herosection"
                 />
             </div>
             <div className={styles.registerposition} >
@@ -234,6 +241,6 @@ export default function CampusAmbassador24() {
                     alt="turtle"></img>
            </div>
         </div>
-        </>)
+    )
 }
 

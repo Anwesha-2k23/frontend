@@ -17,6 +17,23 @@ const Multicity = () => {
     const events_temp = [
         {
             key: 1,
+            city: 'Kolkata',
+            date: '08/10/23',
+            venue: 'ISI Kolkata',
+			poster: "/multicity/MulticityPosterKolkata.png",
+            registration_deadline: '01/10/23',
+            registration_fee: 'Free',
+            timings: '09:00 AM - 06:00 PM',
+            contact: [
+				{ name: 'Akhilesh', phone: '9404549742' },
+				{ name: 'Raaj Harsh', phone: '7050277123' },
+			],
+			completed: false,
+            register_link: 'https://docs.google.com/forms/d/e/1FAIpQLScD75l8wtrTlitkQz6OVeYRlOQVIEc80Hzk2wXRAKxyFD-iPQ/viewform',
+            rulebook_link: 'https://bit.ly/AnweshaMulticity',
+        },
+        {
+            key: 2,
             city: 'Lucknow',
             date: '10/09/23',
             venue: 'BBD NIIT',
@@ -28,21 +45,10 @@ const Multicity = () => {
                 { name: 'Yash Raj Singh', phone: '8789866763' },
                 { name: 'Divyam Walia', phone: '9105889422' },
             ],
+			completed: true,
             register_link: 'https://docs.google.com/forms/d/e/1FAIpQLSfdKPCSrc0gj4R8jcq6-C0E9zc-lMp1phBzJxwlOQeZuZhi9A/viewform?usp=sf_link',
             rulebook_link: 'https://bit.ly/AnweshaMulticity',
         },
-        // {
-        //     key: 2,
-        //     city: 'Kolkata',
-        //     date: 'DD/MM/YY',
-        //     venue: 'Say IIT BHU',
-        //     registration_deadline: 'DD/MM/YY',
-        //     registration_fee: 'If Any',
-        //     timings: '00:00 PM',
-        //     contact: { name: 'Abhilasha', phone: '9262293394' },
-        //     register_link: '#',
-        //     rulebook_link: '#',
-        // },
     ]
 
     return (
