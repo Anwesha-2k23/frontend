@@ -64,7 +64,7 @@ const Multicity = () => {
                 className={styles.heroImage}
             />
             <div className={styles.title}>
-                <img src={'/multicity/MulticityAuditions.svg'} />
+                <img src={'/multicity/MulticityAuditions.png'} />
                 <p className={styles.about}>
                     Anwesha, the CULTURAL FEST at IIT Patna gives a huge
                     opportunity and a massive platform to showcase your
