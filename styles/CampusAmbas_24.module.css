@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .topmargin {
-	height: min(60px, 7.5vw);
+	height: 60px;
 	background-image: linear-gradient(135deg, #e5793a, #de8150, #d87c5e, #be726b, #704a5c);
 }
 
@@ -20,7 +20,7 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    top: calc(23.75vw + min(60px, 7.5vw));
+    top: calc(23.75vw + 60px);
     left: 20.45vw;
 }
 
@@ -218,7 +218,8 @@
     width: 11.4vw;
     position: absolute;
     top: 250vw;
-    left: 86vw;
+	transform: scaleX(-1);
+    right: 1vw;
 }
 
 .treasurebox {
@@ -231,10 +232,10 @@
 
 .treasure {
     width: 34vw;
+    height: 34vw;
     margin-top: 10vw;
     margin-left: 3vw;
 }
-
 
 @media only screen and (max-width: 900px) {
 
@@ -249,12 +250,10 @@
 .pc{
     display: none;
 }
-.topmargin {
-	display: none;
-}
 
 .registerposition{
-    top: calc(34.75vw + min(60px, 7.5vw));
+    /* top: calc(34.75vw + min(60px, 7.5vw)); */
+    top: calc(34.75vw + 60px);
     left: 17.35vw;
 
 }
