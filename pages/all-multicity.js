@@ -20,7 +20,7 @@ const Multicity = () => {
             city: 'Kolkata',
             date: '08/10/23',
             venue: 'ISI Kolkata',
-			poster: "/multicity/MulticityPosterKolkata.png",
+			poster: "/multicity/MulticityPosterKolkata.webp",
             registration_deadline: '01/10/23',
             registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
@@ -37,7 +37,7 @@ const Multicity = () => {
             city: 'Lucknow',
             date: '10/09/23',
             venue: 'BBD NIIT',
-			poster: "/multicity/MulticityPosterLucknow.png",
+			poster: "/multicity/MulticityPosterLucknow.webp",
             registration_deadline: '08/09/23',
             registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
@@ -61,7 +61,7 @@ const Multicity = () => {
 			<div className={styles.topmargin} />
             <img
                 loading="lazy"
-                src={'/multicity/MulticityHeroImage.png'}
+                src={'/multicity/MulticityHeroImage.webp'}
                 className={styles.heroImage}
             />
             <div className={styles.title}>
@@ -116,7 +116,7 @@ const Multicity = () => {
             </div>
             <div className={styles.content}>
                 {events_temp.map((event, index) => {
-                    return <MulticityItem event={event} key={index} />
+                    return <MulticityItem key={index} event={event} />
                 })}
             </div>
         </div>

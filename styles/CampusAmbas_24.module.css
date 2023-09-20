@@ -218,7 +218,8 @@
     width: 11.4vw;
     position: absolute;
     top: 250vw;
-    left: 86vw;
+	transform: scaleX(-1);
+    right: 1vw;
 }
 
 .treasurebox {
@@ -231,6 +232,7 @@
 
 .treasure {
     width: 34vw;
+    height: 34vw;
     margin-top: 10vw;
     margin-left: 3vw;
 }
