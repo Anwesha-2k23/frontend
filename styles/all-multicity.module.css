@@ -4,7 +4,7 @@
 }
 
 .container{
-	background-image: url("/multicity/MulticityBackground.png");
+	background-image: url("/multicity/MulticityBackground.webp");
 	background-size: 100vw;
 	overflow-x: hidden;
 	background-position: 0 60px;
@@ -18,7 +18,7 @@
     top: 0px;
 
 	@media screen and (max-width: 450px) {
-		background-image: url("/multicity/MulticityBackground_Mobile.png");
+		background-image: url("/multicity/MulticityBackground_Mobile.webp");
 		background-position: 0 -10px;
 	}
 }
