@@ -58,6 +58,7 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
+			<div className={styles.topmargin} />
             <img
                 loading="lazy"
                 src={'/multicity/MulticityHeroImage.png'}
@@ -74,6 +75,43 @@ const Multicity = () => {
                     diversified skills. So buckle up your shoe and come up with
                     something extraordinary as we come to your city and take you
                     to the Grandest Stage ever - &#34;ANWESHA&#39; 24&#34;
+                </p>
+            </div>
+            <div className={styles.section}>
+                <img src={'/multicity/Perks.svg'} />
+                <p className={styles.about}>
+                    <li>
+                        Multicity winner Certificate certified by Anwesha, IIT
+                        Patna.
+                    </li>
+                    <li>
+                        Exclusive Anwesha 24 merchandise to winners (like
+                        t-shirts, keychain, stickers) from IITP-Anwesha.
+                    </li>
+                    <li>
+                        Free registration for Anwesha 24 final events for all
+                        the participants.
+                    </li>
+                    <li>
+                        The winners' names will be featured on our Social Media
+                        handles and will be announced on stories of official
+                        social media handles.
+                    </li>
+                    <li>
+                        Chance to interact with many talented and passionate
+                        participants during the fest at IIT Patna.
+                    </li>
+                </p>
+            </div>
+            <div className={styles.title}>
+                <img src={'/multicity/Rewards and Recognition.svg'} />
+                <p className={styles.about}>
+                    <li>
+                        Direct selection for the final round in all the events
+                        of Anwesha 24.
+                    </li>
+                    <li>Chance to perform in front of renowned judges.</li>
+                    <li>Winners get exciting prizes and vouchers.</li>
                 </p>
             </div>
             <div className={styles.content}>
