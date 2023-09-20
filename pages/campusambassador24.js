@@ -46,7 +46,7 @@ export default function CampusAmbassador24() {
                     alt="herosection"
                 />
                 <img
-                    src="/ca_pageCAHeroImage_mobile.jpg"
+                    src="/ca_page/CAHeroImage_mobile.jpg"
                     className={styles.mobile}
                     loading='lazy'
                     // width={screenWidth}  
