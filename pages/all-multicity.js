@@ -21,7 +21,7 @@ const Multicity = () => {
             date: '08/10/23',
             venue: 'ISI Kolkata',
 			poster: "/multicity/MulticityPosterKolkata.webp",
-            registration_deadline: '01/10/23',
+            registration_deadline: '06/10/23',
             registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
             contact: [

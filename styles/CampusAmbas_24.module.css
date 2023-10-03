@@ -211,13 +211,13 @@
 .leftleaf {
     width: 11.4vw;
     position: absolute;
-    top: 268vw;
+    top: calc(60px + 268vw);
     left: 1vw;
 }
 .rightleaf {
     width: 11.4vw;
     position: absolute;
-    top: 250vw;
+    top: calc(60px + 250vw);
 	transform: scaleX(-1);
     right: 1vw;
 }
@@ -335,7 +335,7 @@
         width: 54vw;
         position: absolute;
         left: 46vw;
-        top: 188vw;
+        top: calc(60px + 188vw);
     }
     .judgebox {
         margin-top: 50vw;
@@ -346,9 +346,9 @@
     }
 
     .leftleaf {
-        top: 320vw;
+        top: calc(60px + 320vw);
     }
     .rightleaf {
-        top: 298vw;
+        top: calc(60px + 298vw);
     }
 }
