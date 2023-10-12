@@ -1,23 +1,23 @@
 .parentContainer{
-    background-color: #E3E3E3;
+    background-color: #c4c4c4;
 }
 
 .container{
     margin-inline: 30px;
-    margin-block: 100px;
+    padding-top: 100px;
 }
 
 .teamHeader{
-    font-size: 42px;
+    font-size: 46px;
     font-weight: 700;
     text-align: center;
     color: #403E9E;
 }
 
 .teamHeadingBar{
-    width: 240px;
+    width: 280px;
     height: 5px;
-    background-color: #403E9E;
+    background-color: #ffffff;
     margin-inline: auto;
     margin-bottom: 50px;
     border: none;
@@ -30,18 +30,21 @@
 }
 
 .teamSubHeading{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 600;
     color: #403E9E;
+    text-align: center;
+    margin-bottom: 0px;
 }
 
-.teamSubHeadingBar{
+/* .teamSubHeadingBar{
+    
     width: 230px;
     height: 5px;
     background-color: #403E9E;
     margin-bottom: 50px;
     border: none;
-}
+} */
 
 .picContainer{
     display: flex;
@@ -49,6 +52,7 @@
     justify-content: space-around;
     flex-grow: 1;
     gap: 50px;
+    padding-bottom: 100px;
 }
 
 .teamCard{
