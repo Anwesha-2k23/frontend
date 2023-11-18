@@ -1,5 +1,6 @@
 import styles from '../styles/CampusAmbas_24.module.css'
 import Link from 'next/link';
+import Head from 'next/head'
 import Image from 'next/image';
 import React from 'react';
 // import { useState, useEffect } from 'react';
@@ -28,23 +29,29 @@ export default function CampusAmbassador24() {
     // }, []);
 
     return (
-        <><div style={{ background: "#1C1D47" }}>
+        <div style={{ background: "#1C1D47" }}>
+			<Head>
+				<title>Anwesha 2023</title>
+				<meta name="description" content="Multicity-Anwesha 2023" />
+				<link rel="icon" href="./logo_no_bg.svg" />
+			</Head>
+			<div className={styles.topmargin} />
             <div id="hero">
                 <img
-                    src="/CAHeroImage.svg"
+                    src="/ca_page/CAHeroImage.jpg"
                     className={styles.pc}
                     loading='lazy'
                     // width={screenWidth}  
                     // height={0.760214 * screenWidth}    
-                    alt="helosection"
+                    alt="herosection"
                 />
                 <img
-                    src="CAHeroImage_mobile.svg"
+                    src="/ca_page/CAHeroImage_mobile.jpg"
                     className={styles.mobile}
                     loading='lazy'
                     // width={screenWidth}  
                     // height={0.760214 * screenWidth}    
-                    alt="helosection"
+                    alt="herosection"
                 />
             </div>
             <div className={styles.registerposition} >
@@ -68,7 +75,7 @@ export default function CampusAmbassador24() {
             <div className={styles.turtlediv}>
 
                 <img
-                    src="/tortiose.svg"
+                    src="/ca_page/tortiose.svg"
                     className={styles.turtle}
                     alt="turtle"></img>
 
@@ -99,7 +106,7 @@ export default function CampusAmbassador24() {
                 </div>
 
                 <img
-                    src="/man.svg"
+                    src="/ca_page/man.png"
                     className={styles.man}
                     alt="MAN"></img>
             </div>
@@ -206,11 +213,11 @@ export default function CampusAmbassador24() {
             </div>
 
             <img
-                src="/leftleaf.svg"
+                src="/ca_page/leaf.svg"
                 className={styles.leftleaf}
                 alt="leaf"></img>
             <img
-                src="/rightleaf.svg"
+                src="/ca_page/leaf.svg"
                 className={styles.rightleaf}
                 alt="leaf"></img>
 
@@ -229,11 +236,11 @@ export default function CampusAmbassador24() {
                     </ul>
                 </div>
                 <img
-                    src="/treasure.svg"
+                    src="/ca_page/treasure.png"
                     className={styles.treasure}
-                    alt="turtle"></img>
+                    alt="treasure"></img>
            </div>
         </div>
-        </>)
+    )
 }
 

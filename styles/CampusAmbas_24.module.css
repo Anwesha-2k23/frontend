@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+.topmargin {
+	height: 60px;
+	background-image: linear-gradient(135deg, #e5793a, #de8150, #d87c5e, #be726b, #704a5c);
+}
+
 .mobile{
     display: none;
 }
@@ -15,7 +20,7 @@
     position: absolute;
     display: flex;
     flex-direction: row;
-    top: 23.75vw;
+    top: calc(23.75vw + 60px);
     left: 20.45vw;
 }
 
@@ -206,14 +211,15 @@
 .leftleaf {
     width: 11.4vw;
     position: absolute;
-    top: 268vw;
+    top: calc(60px + 268vw);
     left: 1vw;
 }
 .rightleaf {
     width: 11.4vw;
     position: absolute;
-    top: 250vw;
-    left: 86vw;
+    top: calc(60px + 250vw);
+	transform: scaleX(-1);
+    right: 1vw;
 }
 
 .treasurebox {
@@ -226,10 +232,10 @@
 
 .treasure {
     width: 34vw;
+    height: 34vw;
     margin-top: 10vw;
     margin-left: 3vw;
 }
-
 
 @media only screen and (max-width: 900px) {
 
@@ -246,7 +252,8 @@
 }
 
 .registerposition{
-    top: 34.75vw;
+    /* top: calc(34.75vw + min(60px, 7.5vw)); */
+    top: calc(34.75vw + 60px);
     left: 17.35vw;
 
 }
@@ -328,7 +335,7 @@
         width: 54vw;
         position: absolute;
         left: 46vw;
-        top: 188vw;
+        top: calc(60px + 188vw);
     }
     .judgebox {
         margin-top: 50vw;
@@ -339,9 +346,9 @@
     }
 
     .leftleaf {
-        top: 320vw;
+        top: calc(60px + 320vw);
     }
     .rightleaf {
-        top: 298vw;
+        top: calc(60px + 298vw);
     }
 }

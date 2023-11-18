@@ -17,32 +17,38 @@ const Multicity = () => {
     const events_temp = [
         {
             key: 1,
+            city: 'Kolkata',
+            date: '08/10/23',
+            venue: 'ISI Kolkata',
+			poster: "/multicity/MulticityPosterKolkata.webp",
+            registration_deadline: '06/10/23',
+            registration_fee: 'Free',
+            timings: '09:00 AM - 06:00 PM',
+            contact: [
+				{ name: 'Akhilesh', phone: '9404549742' },
+				{ name: 'Raaj Harsh', phone: '7050277123' },
+			],
+			completed: false,
+            register_link: 'https://docs.google.com/forms/d/e/1FAIpQLScD75l8wtrTlitkQz6OVeYRlOQVIEc80Hzk2wXRAKxyFD-iPQ/viewform',
+            rulebook_link: 'https://bit.ly/AnweshaMulticity',
+        },
+        {
+            key: 2,
             city: 'Lucknow',
             date: '10/09/23',
             venue: 'BBD NIIT',
-			poster: "/multicity/MulticityPosterLucknow.png",
-            registration_deadline: '05/09/23',
+			poster: "/multicity/MulticityPosterLucknow.webp",
+            registration_deadline: '08/09/23',
             registration_fee: 'Free',
             timings: '09:00 AM - 06:00 PM',
             contact: [
                 { name: 'Yash Raj Singh', phone: '8789866763' },
                 { name: 'Divyam Walia', phone: '9105889422' },
             ],
+			completed: true,
             register_link: 'https://docs.google.com/forms/d/e/1FAIpQLSfdKPCSrc0gj4R8jcq6-C0E9zc-lMp1phBzJxwlOQeZuZhi9A/viewform?usp=sf_link',
             rulebook_link: 'https://bit.ly/AnweshaMulticity',
         },
-        // {
-        //     key: 2,
-        //     city: 'Kolkata',
-        //     date: 'DD/MM/YY',
-        //     venue: 'Say IIT BHU',
-        //     registration_deadline: 'DD/MM/YY',
-        //     registration_fee: 'If Any',
-        //     timings: '00:00 PM',
-        //     contact: { name: 'Abhilasha', phone: '9262293394' },
-        //     register_link: '#',
-        //     rulebook_link: '#',
-        // },
     ]
 
     return (
@@ -52,9 +58,10 @@ const Multicity = () => {
                 <meta name="description" content="Multicity-Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
+			<div className={styles.topmargin} />
             <img
                 loading="lazy"
-                src={'/multicity/MulticityHeroImage.png'}
+                src={'/multicity/MulticityHeroImage.webp'}
                 className={styles.heroImage}
             />
             <div className={styles.title}>
@@ -70,9 +77,46 @@ const Multicity = () => {
                     to the Grandest Stage ever - &#34;ANWESHA&#39; 24&#34;
                 </p>
             </div>
+            <div className={styles.section}>
+                <img src={'/multicity/Perks.svg'} />
+                <p className={styles.about}>
+                    <li>
+                        Multicity winner Certificate certified by Anwesha, IIT
+                        Patna.
+                    </li>
+                    <li>
+                        Exclusive Anwesha 24 merchandise to winners (like
+                        t-shirts, keychain, stickers) from IITP-Anwesha.
+                    </li>
+                    <li>
+                        Free registration for Anwesha 24 final events for all
+                        the participants.
+                    </li>
+                    <li>
+                        The winners' names will be featured on our Social Media
+                        handles and will be announced on stories of official
+                        social media handles.
+                    </li>
+                    <li>
+                        Chance to interact with many talented and passionate
+                        participants during the fest at IIT Patna.
+                    </li>
+                </p>
+            </div>
+            <div className={styles.title}>
+                <img src={'/multicity/Rewards and Recognition.svg'} />
+                <p className={styles.about}>
+                    <li>
+                        Direct selection for the final round in all the events
+                        of Anwesha 24.
+                    </li>
+                    <li>Chance to perform in front of renowned judges.</li>
+                    <li>Winners get exciting prizes and vouchers.</li>
+                </p>
+            </div>
             <div className={styles.content}>
                 {events_temp.map((event, index) => {
-                    return <MulticityItem event={event} key={index} />
+                    return <MulticityItem key={index} event={event} />
                 })}
             </div>
         </div>

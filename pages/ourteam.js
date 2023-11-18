@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Head from 'next/head'
 import React from 'react'
 import styles from '../styles/ourteam.module.css'
 
@@ -36,17 +37,17 @@ export default function ourteam() {
     const data = {
         festcoord: [
             { name: 'Abhilasha', image: '/team/abhilasha.png' },
-            { name: 'Yashweer', image: '/team/yashveer.png' }
+            { name: 'Yashveer', image: '/team/yashveer.png' }
         ],
         webnapp: [
             { name: 'Anurag Deo', image: '/team/anurag.png' },
             { name: 'Aritra Bhaduri', image: '/team/aritra.png' },
-            { name: 'Vaibhav Gupta', image: '/team/vaibhav.png' },
-            { name: 'Arvind Meena', image: '/team/arvind.png' },
+            { name: 'Vaibhav Gupta', image: '/team/vaibhav.jpg' },
+            { name: 'Arvind Meena', image: '/team/arvind.jpg' },
         ],
         spons: [
-            { name: 'Suryansh Bansal', image: '/team/suryansh_spons.png' },
-            { name: 'Aviral Shrivastava', image: '/team/aviral_spons.png' },
+            { name: 'Suryansh Bansal', image: '/team/suryansh_spons.jpg' },
+            { name: 'Aviral Shrivastava', image: '/team/aviral_spons.jpg' },
             { name: 'Ritvik', image: '/team/ritvik_spons.png' },
 
         ],
@@ -58,18 +59,16 @@ export default function ourteam() {
 
         ],
         events: [
-            { name: 'Aryan', image: '/team/aryan_events.png' },
             { name: 'Divyanshee', image: '/team/divyanshee_events.png' },
-            { name: 'Shivendra', image: '/team/shivendra_events.png' },
-            { name: 'Yash', image: '/team/yash_events.png' },
-            { name: 'Nikita', image: '/team/nikita_events.png' },
-            
+            { name: 'Shivendra', image: '/team/shivendra_events.jpg' },
+            { name: 'Yash', image: '/team/yash_events.jpg' },
+            { name: 'Nikita', image: '/team/nikita_events.jpg' },
+
         ],
         rsp: [
             { name: 'Khushi Pathak', image: '/team/khushi_rsp.jpeg' },
             { name: 'Harsh Chandra', image: '/team/harsh_rsp.jpeg' },
             { name: 'Swabnam', image: '/team/swabnam_rsp.jpeg' },
-            { name: 'Sudhanshu', image: '/team/sudhanshu_rsp.jpeg' },
 
         ],
         hospi: [
@@ -80,28 +79,33 @@ export default function ourteam() {
 
         ],
         mpr: [
-            { name: 'Kumari Ankita', image: '/team/ankita_mpr.png' },
-            { name: 'Gaurang Bansal', image: '/team/gaurang_mpr.png' },
-            { name: 'Ankur Kumar', image: '/team/ankur_mpr.png' },
-            { name: 'Anudeep Talari', image: '/team/anudeep_mpr.png' },
-            { name: 'Kanishka Solanki', image: '/team/kanishka_mpr.png' },
+            { name: 'Kumari Ankita', image: '/team/ankita_mpr.jpg' },
+            { name: 'Gaurang Bansal', image: '/team/gaurang_mpr.jpg' },
+            { name: 'Ankur Kumar', image: '/team/ankur_mpr.jpg' },
+            { name: 'Anudeep Talari', image: '/team/anudeep_mpr.jpg' },
+            { name: 'Kanishka Solanki', image: '/team/kanishka_mpr.jpg' },
         ],
     }
     return (
         <div className={styles.parentContainer}>
+            <Head>
+                <title>Team - Anwesha 2023</title>
+                <meta name="description" content="Team-Anwesha 2023" />
+                <link rel="icon" href="./logo_no_bg.svg" />
+            </Head>
             <div className={styles.container}>
                 <h2 className={styles.teamHeader}>Our Team</h2>
                 <hr className={styles.teamHeadingBar} />
                 <div className={styles.coordinators}>
                     {/* {[...Array(n)].map((e, i) =>  */}
                     <CoordCard data={data.festcoord} title="Fest Coordinators" />
-                    <CoordCard data={data.webnapp} title="Web & App" />
                     <CoordCard data={data.spons} title="Spons Committee" />
-                    <CoordCard data={data.events} title="Events Committee" />
                     <CoordCard data={data.mpr} title="MPR Committee" />
+                    <CoordCard data={data.webnapp} title="Web & App" />
+                    <CoordCard data={data.events} title="Events Committee" />
                     <CoordCard data={data.rsp} title="RSP  Committee" />
-                    <CoordCard data={data.TV} title="Anwesha TV" />
                     <CoordCard data={data.hospi} title="Hospitality  Committee" />
+                    <CoordCard data={data.TV} title="Anwesha TV" />
                 </div>
             </div>
         </div>
