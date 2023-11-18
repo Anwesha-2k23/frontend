@@ -37,7 +37,7 @@ export default function ourteam() {
     const data = {
         festcoord: [
             { name: 'Abhilasha', image: '/team/abhilasha.png' },
-            { name: 'Yashweer', image: '/team/yashveer.png' }
+            { name: 'Yashveer', image: '/team/yashveer.png' }
         ],
         webnapp: [
             { name: 'Anurag Deo', image: '/team/anurag.png' },
@@ -59,18 +59,16 @@ export default function ourteam() {
 
         ],
         events: [
-            { name: 'Aryan', image: '/team/aryan_events.jpg' },
             { name: 'Divyanshee', image: '/team/divyanshee_events.png' },
             { name: 'Shivendra', image: '/team/shivendra_events.jpg' },
             { name: 'Yash', image: '/team/yash_events.jpg' },
             { name: 'Nikita', image: '/team/nikita_events.jpg' },
-            
+
         ],
         rsp: [
             { name: 'Khushi Pathak', image: '/team/khushi_rsp.jpeg' },
             { name: 'Harsh Chandra', image: '/team/harsh_rsp.jpeg' },
             { name: 'Swabnam', image: '/team/swabnam_rsp.jpeg' },
-            { name: 'Sudhanshu', image: '/team/sudhanshu_rsp.jpeg' },
 
         ],
         hospi: [
@@ -90,11 +88,11 @@ export default function ourteam() {
     }
     return (
         <div className={styles.parentContainer}>
-		<Head>
-			<title>Team - Anwesha 2023</title>
-			<meta name="description" content="Team-Anwesha 2023" />
-			<link rel="icon" href="./logo_no_bg.svg" />
-		</Head>
+            <Head>
+                <title>Team - Anwesha 2023</title>
+                <meta name="description" content="Team-Anwesha 2023" />
+                <link rel="icon" href="./logo_no_bg.svg" />
+            </Head>
             <div className={styles.container}>
                 <h2 className={styles.teamHeader}>Our Team</h2>
                 <hr className={styles.teamHeadingBar} />
