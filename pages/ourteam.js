@@ -111,12 +111,12 @@ export default function ourteam() {
         ],
         webnappAdvisory: [
             { name: 'Rupak', image: '/team/rupakAdvisor_web.png' },
-            { name: 'Adil', image: '' }
+            { name: 'Adil', image: '/team/adilAdvisor_web.png' }
         ],
         sponsAdvisory: [
-            { name: 'Prateek', image: '' },
-            { name: 'Hardik', image: '' },
-            { name: 'Sai Vardhan', image: '' },
+            { name: 'Prateek', image: '/team/prateekAdvisor_spons.png' },
+            { name: 'Hardik', image: '/team/prateekAdvisor_spons.png' },
+            { name: 'Sai Vardhan', image: '/team/prateekAdvisor_spons.png' },
 
         ],
 
