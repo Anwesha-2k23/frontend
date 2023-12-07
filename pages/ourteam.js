@@ -85,6 +85,42 @@ export default function ourteam() {
             { name: 'Anudeep Talari', image: '/team/anudeep_mpr.jpg' },
             { name: 'Kanishka Solanki', image: '/team/kanishka_mpr.jpg' },
         ],
+        convenor: [
+            { name: 'Ashfaq Ahmed', image: '/team/ashfaq.png' },
+        ],
+        mprAdvisory: [
+            { name: 'Gaurav Garg', image: '/team/gauravAdvisor_mpr.png' },
+            { name: 'Robin', image: '/team/robinAdvisor_mpr.png' }
+        ],
+        eventsAdvisory: [
+            { name: 'Athul', image: '/team/athulAdvisor_events.png' },
+            { name: 'Abhishek Verma', image: '/team/abhishekAdvisor_events.png' },
+            { name: 'Yash Malik', image: '/team/yashAdvisor_events.png' },
+        ],
+        rspAdvisory: [
+            { name: 'Jayant Yadav', image: '/team/jayantAdvisor_rsp.png' },
+            { name: 'Udit', image: '/team/uditAdvisor_rsp.png' }
+        ],
+        hospiAdvisory: [
+            { name: 'Chirag Bhardwaj', image: '/team/chiragAdvisor_hospi.png' },
+            { name: 'Rohit Nayak', image: '/team/rohitAdvisor_hospi.png' }
+        ],
+        TVAdvisory: [
+            { name: 'Tanya', image: '/team/tanyaAdvisor_TV.png' },
+            { name: 'Roshan Kishore', image: '/team/roshanAdvisor_TV.png' }
+        ],
+        webnappAdvisory: [
+            { name: 'Rupak', image: '/team/rupakAdvisor_web.png' },
+            { name: 'Adil', image: '/team/adilAdvisor_web.png' }
+        ],
+        sponsAdvisory: [
+            { name: 'Prateek', image: '/team/prateekAdvisor_spons.png' },
+            { name: 'Hardik', image: '/team/prateekAdvisor_spons.png' },
+            { name: 'Sai Vardhan', image: '/team/prateekAdvisor_spons.png' },
+
+        ],
+
+
     }
     return (
         <div className={styles.parentContainer}>
@@ -99,6 +135,8 @@ export default function ourteam() {
                 <div className={styles.coordinators}>
                     {/* {[...Array(n)].map((e, i) =>  */}
                     <CoordCard data={data.festcoord} title="Fest Coordinators" />
+                    <h2 className={styles.teamHeader}>Core Team</h2>
+                    <hr className={styles.teamHeadingBar} />
                     <CoordCard data={data.spons} title="Spons Committee" />
                     <CoordCard data={data.mpr} title="MPR Committee" />
                     <CoordCard data={data.webnapp} title="Web & App" />
@@ -106,6 +144,22 @@ export default function ourteam() {
                     <CoordCard data={data.rsp} title="RSP  Committee" />
                     <CoordCard data={data.hospi} title="Hospitality  Committee" />
                     <CoordCard data={data.TV} title="Anwesha TV" />
+
+                    <h2 className={styles.teamHeader}>Fest Convenor</h2>
+                    <hr className={styles.teamHeadingBar} />
+                    <CoordCard data={data.convenor} title="" />
+                    <h2 className={styles.teamHeader}>Advisory</h2>
+                    <hr className={styles.teamHeadingBar} />
+                    
+                    <CoordCard data={data.sponsAdvisory} title="Spons Committee" />
+                    <CoordCard data={data.mprAdvisory} title="MPR Committee" />
+                    <CoordCard data={data.webnappAdvisory} title="Web & App" />
+                    <CoordCard data={data.eventsAdvisory} title="Events Committee" />
+                    <CoordCard data={data.rspAdvisory} title="RSP  Committee" />
+                    <CoordCard data={data.hospiAdvisory} title="Hospitality  Committee" />
+                    <CoordCard data={data.TVAdvisory} title="Anwesha TV" />
+                    
+                    
                 </div>
             </div>
         </div>
