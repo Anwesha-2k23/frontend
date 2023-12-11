@@ -116,7 +116,7 @@ export default function ourteam() {
         sponsAdvisory: [
             { name: 'Prateek', image: '/team/prateekAdvisor_spons.png' },
             { name: 'Hardik', image: '/team/hardikAdvisor_spons.png' },
-            { name: 'Aman', image: '/team/amanAdvisor_spons.png' },
+            { name: 'Sai Vardhan', image: '/team/saivardhanAdvisor_spons.png' },
 
         ],
 
