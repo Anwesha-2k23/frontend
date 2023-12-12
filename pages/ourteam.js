@@ -149,7 +149,7 @@ export default function ourteam() {
                     <CoordCard data={data.rsp} title="RSP  Committee" />
                     <CoordCard data={data.hospi} title="Hospitality  Committee" />
                     <CoordCard data={data.TV} title="Anwesha TV" />
-                    <CoordCard data={data.cnd} title="CnD Committee" />
+                    <CoordCard data={data.cnd} title="Cnd Committee" />
 
                     <h2 className={styles.teamHeader}>Fest Convenor</h2>
                     <hr className={styles.teamHeadingBar} />
