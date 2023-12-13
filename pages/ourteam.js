@@ -85,6 +85,11 @@ export default function ourteam() {
             { name: 'Anudeep Talari', image: '/team/anudeep_mpr.jpg' },
             { name: 'Kanishka Solanki', image: '/team/kanishka_mpr.jpg' },
         ],
+        cnd: [
+            { name: 'Varesh', image: '/team/varesh_cnd.jpg' },
+            { name: 'Dhrutisundar', image: '/team/dhrutisundar_cnd.jpg' },
+            { name: 'Vikramaditya', image: '/team/vikramaditya_cnd.jpg' },
+        ],
         convenor: [
             { name: 'Ashfaq Ahmed', image: '/team/ashfaq.png' },
         ],
@@ -144,6 +149,7 @@ export default function ourteam() {
                     <CoordCard data={data.rsp} title="RSP  Committee" />
                     <CoordCard data={data.hospi} title="Hospitality  Committee" />
                     <CoordCard data={data.TV} title="Anwesha TV" />
+                    <CoordCard data={data.cnd} title="Cnd Committee" />
 
                     <h2 className={styles.teamHeader}>Fest Convenor</h2>
                     <hr className={styles.teamHeadingBar} />
