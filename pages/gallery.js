@@ -77,7 +77,7 @@ export async function getServerSideProps(context) {
 
         // Creating an array out of the following object
         const folderdata = Array.from(foldersInParentFolder.data.files)
-        
+
         // Poping because the last entry is gallry folder itself
         // folderdata.pop()
 

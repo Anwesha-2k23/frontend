@@ -50,7 +50,7 @@ function Navigation() {
         if (refNav.current && !refNav.current.contains(event.target)) {
             document.getElementById('drawer').style.opacity = 0
             setTimeout(function () {
-                ;(document.getElementById('drawer').style.display = 'none'),
+                ; (document.getElementById('drawer').style.display = 'none'),
                     (document.getElementById('nav_div').style.backgroundColor =
                         '')
             }, 300)
@@ -68,7 +68,7 @@ function Navigation() {
         setIsHome(['/'].includes(router.pathname))
         document.getElementById('drawer').style.opacity = 0
         setTimeout(function () {
-            ;(document.getElementById('drawer').style.display = 'none'),
+            ; (document.getElementById('drawer').style.display = 'none'),
                 (document.getElementById('nav_div').style.backgroundColor = '')
         }, 300)
         setDrawerOpen(false)
@@ -205,6 +205,20 @@ function Navigation() {
                         </li>
                         <li
                             style={
+                                router.pathname === '/gallery'
+                                    ? { borderBottom: '3px solid white' }
+                                    : null
+                            }
+                        >
+                            <Link
+                                className={styles.linknav}
+                                href="/gallery"
+                            >
+                                Gallery
+                            </Link>
+                        </li>
+                        <li
+                            style={
                                 router.pathname === '/aboutus'
                                     ? { borderBottom: '3px solid white' }
                                     : null
@@ -281,11 +295,11 @@ function Navigation() {
                             Multicity
                         </Link>
                     </li>
-                    {/* <li>
-                        <Link href="/metaverse" onClick={() => toggleDrawer()}>
-                            Metaverse
+                    <li>
+                        <Link href="/gallery" onClick={() => toggleDrawer()}>
+                            Gallery
                         </Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link href="/ourteam" onClick={() => toggleDrawer()}>
                             Team
