@@ -1,23 +1,63 @@
 @font-face {
-  font-family: "BroadwayShadow";
-  src: url("./fonts/BroadwayShadow.ttf");
+    font-family: 'BroadwayShadow';
+    src: url('./fonts/BroadwayShadow.ttf');
 }
 .anwesha_bg_img {
-  font-family:  "Poppins", sans-serif;
-  background-image: url("/bg.png");
-  background-size: cover;
-  /* background-position: center; */
-  /* background-repeat: repeat-y; */
-  /* height: 100vh; */
-  height: fit-content;
+    background: #2c2a5d;
+    height: fit-content;
 }
 
 .heading_color {
-  background-color: aliceblue;
+    background-color: #a33682;
+    color: white;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 3.3px;
+    text-transform: uppercase;
+    border-color: #a33682;
 }
 
 .heading {
-  font-family: "BroadwayShadow";
-  font-size: 6em;
-  margin-top: 8vw;
+    margin: auto;
+    margin-bottom: 4vw;
+    padding: 0.66vw;
+    color: #fff;
+    text-shadow: 0.8vw 1vw 0.4vw rgba(0, 0, 0, 0.25);
+    font-family: Poppins;
+    font-size: 6.7vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.rightleaf {
+    width: 135px;
+    left: 2vw;
+}
+.leftleaf {
+    width: 135px;
+
+    transform: scaleX(-1);
+    right: 2vw;
+}
+
+@media only screen and (max-width: 900px) {
+    .leftleaf {
+        width: 15vw;
+    }
+    .rightleaf {
+        width: 15vw;
+    }
+    .heading_color {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .heading_color {
+        font-size: 10px;
+    }
 }
