@@ -30,12 +30,12 @@ export default function CampusAmbassador24() {
 
     return (
         <div style={{ background: "#1C1D47" }}>
-			<Head>
-				<title>Anwesha 2023</title>
-				<meta name="description" content="Multicity-Anwesha 2023" />
-				<link rel="icon" href="./logo_no_bg.svg" />
-			</Head>
-			<div className={styles.topmargin} />
+            <Head>
+                <title>Anwesha 2023</title>
+                <meta name="description" content="Multicity-Anwesha 2023" />
+                <link rel="icon" href="./logo_no_bg.svg" />
+            </Head>
+            <div className={styles.topmargin} />
             <div id="hero">
                 <img
                     src="/ca_page/CAHeroImage.jpg"
@@ -61,11 +61,14 @@ export default function CampusAmbassador24() {
                         <p >REGISTER</p>
                     </div>
                 </a>
-                <a href="" style={{ textDecoration: "none", marginLeft: "" }}>
-                    <div className={styles.leaderboard}>
+
+                <Link
+                    style={{ textDecoration: "none", marginLeft: "" }}
+                    href="/leaderboard"
+                ><div className={styles.leaderboard}>
                         LEADERBOARD
                     </div>
-                </a>
+                </Link>
 
             </div>
 
@@ -122,7 +125,7 @@ export default function CampusAmbassador24() {
                 <div>
                     <div className={styles.judgecontent}>
                         <p className={styles.condition}>
-                            CONDITION                         
+                            CONDITION
                         </p>
                         <p className={styles.condition} style={{ width: "12vw", padding: "auto", marginLeft: "1.4vw" }}>
                             POINTS
@@ -139,7 +142,7 @@ export default function CampusAmbassador24() {
                     </div>
 
                     <div className={styles.judgecontent}>
-                        <p className={styles.leftbox} style={{ background: "#51295E"}}>
+                        <p className={styles.leftbox} style={{ background: "#51295E" }}>
                             Offline Registration
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
@@ -157,7 +160,7 @@ export default function CampusAmbassador24() {
                     </div>
 
                     <div className={styles.judgecontent}>
-                        <p className={styles.leftbox} style={{ background: "#51295E"}}>
+                        <p className={styles.leftbox} style={{ background: "#51295E" }}>
                             Instagram Post
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
@@ -175,7 +178,7 @@ export default function CampusAmbassador24() {
                     </div>
 
                     <div className={styles.judgecontent}>
-                        <p className={styles.leftbox} style={{ background: "#51295E"}}>
+                        <p className={styles.leftbox} style={{ background: "#51295E" }}>
                             Sharing Messages On Whatsapp Groups
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
@@ -193,8 +196,8 @@ export default function CampusAmbassador24() {
                     </div>
 
                     <div className={styles.judgecontent}>
-                        <p className={styles.leftbox} style={{ background: "#51295E"}}>
-                           Creative Way Of Incorporating Glimpses Of Anwesha 
+                        <p className={styles.leftbox} style={{ background: "#51295E" }}>
+                            Creative Way Of Incorporating Glimpses Of Anwesha
                         </p>
                         <p className={styles.rightbox} style={{ background: "#51295E" }}>
                             10-39xp
@@ -224,7 +227,7 @@ export default function CampusAmbassador24() {
 
 
             <div className={styles.treasurebox}>
-                <div className={styles.perks} style={{ marginRight:"0px" }}>
+                <div className={styles.perks} style={{ marginRight: "0px" }}>
                     <div className={styles.perktitle}>REWARDS</div>
                     <ul className={styles.perkcontent}>
                         <li><h3><b>BEST CA</b></h3></li>
@@ -239,7 +242,7 @@ export default function CampusAmbassador24() {
                     src="/ca_page/treasure.png"
                     className={styles.treasure}
                     alt="treasure"></img>
-           </div>
+            </div>
         </div>
     )
 }

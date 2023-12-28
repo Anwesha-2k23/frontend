@@ -1,12 +1,13 @@
-import style from './LeaderboardItem.module.css'
+import styles from './LeaderboardItem.module.css'
 
 function LeaderboardItem(props) {
+    const backgroundColor = props.position % 2 === 0 ? '#3E339A' : '#51295E';
     return (
-        <tr>
-            <td>{props.position}</td>
-            <td>{props.name}</td>
-            <td>{props.college}</td>
-            <td>{props.points}</td>
+        <tr className={styles.item} style={{ backgroundColor: backgroundColor, borderColor: backgroundColor }}>
+            <td style={{ fontWeight: 400 }}>{props.position}</td>
+            <td style={{ fontWeight: 400 }}>{props.name}</td>
+            <td style={{ fontWeight: 400 }}>{props.college}</td>
+            <td style={{ fontWeight: 400 }}>{props.points}</td>
         </tr>
     )
 }
