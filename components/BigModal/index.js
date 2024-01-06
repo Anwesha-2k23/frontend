@@ -238,9 +238,14 @@ const Modal = (props) => {
                                     if (props.body.is_solo) {
                                         soloEventRegistration(
                                             props.body.id,
+                                            props.body.registration_fee,
+                                            userData.state.user.email_id,
+                                            userData.state.user.phone_number,
+                                            userData.state.user.anwesha_id,
                                             router,
                                             props.closeHandler
                                         )
+                                        // console.log(userData.state.user)
                                     } else {
                                         // router.replace(props.body.registration_link)
                                         router.push({

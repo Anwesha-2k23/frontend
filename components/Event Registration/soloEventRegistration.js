@@ -3,15 +3,42 @@ import { useRouter } from 'next/router'
 const host = process.env.NEXT_PUBLIC_HOST
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
-async function soloEventRegistration(eventID, router, closeHandler) {
+function loadScript(src) {
+    return new Promise((resolve) => {
+        const script = document.createElement('script')
+        script.src = src
+        script.onload = () => {
+            resolve(true)
+        }
+        script.onerror = () => {
+            resolve(false)
+        }
+        document.body.appendChild(script)
+    })
+}
+function openPay(data){
+        console.log('openPay called {{ atomTokenId|escapejs }}');
+        const options = {
+          "atomTokenId": data.atomTokenId,
+          "merchId": data.merchId,
+          "custEmail": data.custEmail,
+          "custMobile": data.custMobile,
+          "returnUrl": data.returnUrl,
+        }
+        let atom = new AtomPaynetz(options,'uat');
+    }
+async function soloEventRegistration(eventID, amount, email, phone, anwesha_id, router, closeHandler) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
 
     var raw = JSON.stringify({
         event_id: eventID,
+        amount: amount,
+        email: email,
+        phone: phone,
+        anwesha_id: anwesha_id,
     })
-
+    console.log('raw', raw)
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -20,31 +47,14 @@ async function soloEventRegistration(eventID, router, closeHandler) {
         credentials: 'include',
     }
 
-    const data = await fetch(`${host}/event/registration/solo`, requestOptions)
+    const data = await fetch(`${host}/atompay/`, requestOptions)
         .then((response) => response.json())
         .catch((error) => {
             console.error(error)
         })
-    // .then(result => console.log(result))
-    // .catch(error => console.log('error', error));
-
-    // fetch('http://localhost:1337/razorpay', { method: 'POST' }).then((t) =>
-    // 	t.json()
-    // )
-    if (data.payment_url) {
-        router.push(data.payment_url)
-    } else {
-        closeHandler()
-        toast.success(data.messagge, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-        })
-    }
+    
+    console.log('data', data)
+    const res = await loadScript('https://pgtest.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
+    openPay(data)
 }
 export default soloEventRegistration
