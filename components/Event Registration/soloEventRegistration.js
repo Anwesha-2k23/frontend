@@ -37,6 +37,7 @@ async function soloEventRegistration(eventID, amount, email, phone, anwesha_id, 
         email: email,
         phone: phone,
         anwesha_id: anwesha_id,
+        type: "solo"
     })
     console.log('raw', raw)
     var requestOptions = {

@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css'
 const eventRegistration = () => {
     const data = useContext(AuthContext)
     const router = useRouter()
+    const userData = useContext(AuthContext)
 
     const {
         id,
@@ -161,6 +162,9 @@ const eventRegistration = () => {
                                         id,
                                         teamName,
                                         memberID,
+                                        userData.state.user.email_id,
+                                        userData.state.user.phone_number,
+                                        registration_fee,
                                         router,
                                         toast
                                     )
