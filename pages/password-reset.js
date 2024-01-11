@@ -13,7 +13,7 @@ export default function forgotPassword() {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <Navbar /> */}
-            <div className={styles.container}>
+            <div className={styles.container} loading='lazy'>
                 <ForgotPassword />
             </div>
         </>

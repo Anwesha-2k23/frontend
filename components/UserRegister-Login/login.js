@@ -111,11 +111,6 @@ const UserLoginForm = () => {
 
     return (
         <div
-            style={{
-                position: 'relative',
-                marginTop: '120px',
-                overflow: 'hidden',
-            }}
         >
             <ToastContainer
                 position="top-right"
@@ -129,21 +124,16 @@ const UserLoginForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img
-                className={styles.island}
-                alt="floating-island-iitp"
-                src="/assets/floating-island.svg"
-            />
+
 
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
-                    initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '-2%' }}
+                    initial={{ opacity: 0, x: '-20%' }}
+                    whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>LOGIN</h3>
-                    <hr />
+                    <h1 style={{ letterSpacing: 1 }}>LOGIN</h1>
                     <div className={styles.field}>
                         <label htmlFor="email_id">Email ID</label>
                         <br />
@@ -186,6 +176,7 @@ const UserLoginForm = () => {
                                 flexDirection: 'row',
                                 alignItems: 'center',
                                 justifyContent: 'center',
+                                marginTop: -20,
                             }}
                         >
                             <input
@@ -205,7 +196,7 @@ const UserLoginForm = () => {
                         <br />
                         <Link
                             href="/password-reset"
-                            className={styles.forgotpass}
+                            style={{ color: '#ffffff', fontWeight: 300 }}
                         >
                             Forgot password?
                         </Link>
@@ -217,14 +208,15 @@ const UserLoginForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userRegister">
+                    <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Don't have an account? Register here.
                     </Link>
-                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7">
+                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Trouble logging in? Reach out to us here.
                     </Link>
                 </motion.form>
             </div>
+
         </div>
     )
 }

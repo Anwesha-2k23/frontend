@@ -56,13 +56,16 @@ function profile() {
             </Head>
             <div className={stylesForm.container}>
                 <div className={styles.idandqr}>
-                    <h1 className={styles.anwesha_id}>
-                        {profDetails.anwesha_id}
-                    </h1>
+                    <div>
+                        <h1 className={styles.anwesha_id}>
+                            {profDetails.anwesha_id}
+                        </h1>
+                        <button className={styles.copy} ></button>
+                    </div>
                     <div className={styles.qrcode}>
-                    <img src={qrcode} alt="" />
-                    <a href='/anweshapass'>How does AnweshaPass work?</a>
-                    <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
+                        <img src={qrcode} alt="" />
+                        <a href='/anweshapass'>How does AnweshaPass work?</a>
+                        <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
                     </div>
                 </div>
                 {/* <h1 className={styles.anwesha_id}>{profDetails.anwesha_id}</h1> */}

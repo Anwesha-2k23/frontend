@@ -13,8 +13,13 @@ export default function userRegister() {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <Navbar /> */}
-            <div className={styles.container}>
+            <div className={styles.container} loading='lazy'>
                 <UserRegisterForm />
+                {/* <img
+                    className={styles.island}
+                    alt="floating-island-iitp"
+                    src="/login_register/portal.svg"
+                /> */}
             </div>
         </>
     )

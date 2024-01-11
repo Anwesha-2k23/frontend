@@ -192,11 +192,6 @@ const UserRegisterForm = () => {
 
     return (
         <div
-            style={{
-                position: 'relative',
-                marginTop: '120px',
-                overflow: 'hidden',
-            }}
         >
             <ToastContainer
                 position="top-right"
@@ -210,20 +205,15 @@ const UserRegisterForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img
-                className={styles.island}
-                alt="floating-island-iitp"
-                src="/assets/floating-island.svg"
-            />
-            <div className={styles.form}>
+            <div className={styles.form} >
                 <motion.form
                     className={styles.mainForm}
-                    initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '-2%' }}
+                    style={{ top: 75 }}
+                    initial={{ opacity: 0, x: '-20%' }}
+                    whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>REGISTER</h3>
-                    <hr />
+                    <h2 style={{ letterSpacing: 1, fontSize: 30 }}>REGISTER</h2>
                     <div className={styles.field}>
                         <label htmlFor="full_name">Full Name</label>
                         <br />
@@ -304,7 +294,7 @@ const UserRegisterForm = () => {
                                             onChange={(e) =>
                                                 setEmail(
                                                     e.target.value +
-                                                        '@iitp.ac.in'
+                                                    '@iitp.ac.in'
                                                 )
                                             }
                                             required
@@ -457,7 +447,7 @@ const UserRegisterForm = () => {
                         >
                             <span>
                                 I accept the&nbsp;{' '}
-                                <a href="/terms" target="_blank">
+                                <a href="/terms" target="_blank" style={{ color: '#ffffff', fontWeight: 300 }}>
                                     Terms and Conditions
                                 </a>{' '}
                             </span>
@@ -503,10 +493,10 @@ const UserRegisterForm = () => {
                             )}
                         </button>
                     </motion.div>
-                    <Link href="/userLogin">
+                    <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Already have an account? Login here.
                     </Link>
-                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7">
+                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Trouble logging in? Reach out to us here.
                     </Link>
                 </motion.form>
