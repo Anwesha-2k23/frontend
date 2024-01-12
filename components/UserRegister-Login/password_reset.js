@@ -147,11 +147,11 @@ const ChangePassword = () => {
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
-                    initial={{ opacity: 0, x: '100%' }}
+                    initial={{ opacity: 0, x: '-20%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>PASSWORD RESET</h3>
+                    <h2 style={{ letterSpacing: 1, fontSize: 30 }}>Password Reset</h2>
                     <hr />
                     <div className={styles.form_row}>
                         <div className={styles.field}>
@@ -210,7 +210,7 @@ const ChangePassword = () => {
                         }}
                     >
                         <br />
-                        <Link href="/userLogin" className={styles.forgotpass}>
+                        <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 300 }}>
                             Login here
                         </Link>
                     </div>
