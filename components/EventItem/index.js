@@ -14,17 +14,10 @@ const index = ({ event }) => {
     return (
         <>
             <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap',
-                    position: 'relative',
-                }}
+				className={styles.card}
                 onClick={() => setModal(true)}
             >
-                {event.is_active ? null : (
+                {/* {event.is_active ? null : (
                     <img
                         src="/assets/coming-soon.png"
                         style={{
@@ -36,22 +29,18 @@ const index = ({ event }) => {
                         }}
                         alt="Coming Soon"
                     />
-                )}
+                )} */}
                 <div className={styles.imageWrap}>
-                    <div className={styles.item}>
-                        <img
-                            src={
-                                event.poster
-                                    ? event.poster
-                                    : '/events/poster.png'
-                            }
-                            alt="Fest Image"
-                            width={300}
-                            height={300}
-                            style={{ borderRadius: 15 }}
-                            objectfit={'contain'}
-                        />
-                    </div>
+					<img
+						src={
+							event.poster
+							? event.poster
+							: '/events/poster.png'
+						}
+						className={styles.item}
+						alt="Fest Image"
+						objectfit={'contain'}
+					/>
                     <p className={styles.img__description}>
                         <span style={{ marginBottom: '10px' }}>
                             <Image

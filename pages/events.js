@@ -1,4 +1,5 @@
 import styles from '../styles/events.module.css'
+import { Josefin_Sans, Montserrat } from '@next/font/google'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -6,6 +7,16 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 import EventItem from '../components/EventItem'
+
+const montserrat = Montserrat({
+    weight: ['400'],
+    subsets: ['latin'],
+})
+
+const josefinSans = Josefin_Sans({
+    weight: ['700'],
+    subsets: ['latin'],
+})
 
 const Events = () => {
     const [events, setEvents] = useState([])
@@ -38,8 +49,21 @@ const Events = () => {
             </Head>
             <div style={{ height: 100 }}></div>
             <div className={styles.container}>
-                <h1>Events</h1>
-
+                <div className={styles.titleBox}>
+                    <h1 className={josefinSans.className}>Events</h1>
+                    <p className={montserrat.className}>
+                        From heart-stopping dance battles and soulful singing
+                        competitions to the dazzling glamour of the fashion
+                        show, with thought-provoking Nukkad Nataks and the
+                        lyrical echoes of poetry slams, Anwesha's events ignite
+                        every artistic spark. Come, delve into Anwesha's events,
+                        where every beat has a story to tell and every
+                        expression finds a stage!
+                    </p>
+                    <Link href={''} className={styles.rulebook}>
+                        Rulebooks
+                    </Link>
+                </div>
                 <div className={styles.content}>
                     {events.map((event, index) => {
                         return <EventItem event={event} key={index} />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); */
 
 .modal {
     position: fixed;
@@ -8,7 +8,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 100;
@@ -17,7 +16,7 @@
 
 @media screen and (max-width: 950px) {
     .modal {
-        justify-content: flex-end;
+        align-items: flex-end;
     }
 }
 
@@ -31,23 +30,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 25px;
+    padding: 0 38px;
 }
 
 .modal_head {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #fff;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    padding-block: 35px;
+    padding-top: 28px;
 }
 
 .modal_head h1 {
-    font-size: 60px !important;
+	width: 100%;
+	text-align: center;
+    font-size: 32px !important;
+	color: #010031;
+	font-weight: 600;
+	margin-left: 32px;
 }
 
 @media screen and (max-width: 950px) {
@@ -56,8 +59,8 @@
         border-radius: 15px;
         /* border-top-right-radius: 15px;
         border-top-left-radius: 15px; */
-        margin-inline: 10px;
-        padding-inline: 25px;
+        /* margin-inline: 10px; */
+        padding-inline: 36px;
         transform: scale(0.8);
     }
 }
@@ -68,34 +71,32 @@
     }
 }
 
-.modal_body {
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 0 0 5px 5px;
-    max-width: 600px;
-    /* max-height: 60vh; */
+.leftColumn {
+    display: flex;
+	flex-direction: column;
+    width: 220px;
+    align-items: flex-start;
+	gap: 14px;
 }
 
-.modal_footer {
-    display: flex;
-    width: 100%;
-    justify-content: inherit;
-    align-items: center;
-    padding: 10px;
+.modal_body {
+    padding: 15px;
+	padding-bottom: 0;
     background-color: #fff;
-    border-radius: 0 0 5px 5px;
-    height: 116px;
-    overflow: hidden;
-    padding-block: 47px;
+    max-width: 600px;
+    /* max-height: 60vh; */
+	
+	@media screen and (min-width: 768px) {
+		border-left: #000000 dashed;
+	}
 }
+
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 175px;
-    min-height: 70px;
-    margin: 10px;
-    margin-left: 17px;
+    width: 100%;
+	height: 52px;
     font-size: 20px;
     font-weight: 500;
     border-radius: 15px;
@@ -104,33 +105,18 @@
     color: #ffffff;
     outline: none;
     text-decoration: none;
-    padding: 20px 59px;
 }
 
-.rulebtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 175px;
-    min-height: 70px;
-    margin: 10px;
-    margin-right: 17px;
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 15px;
-    cursor: pointer;
+#rulebtn {
     background-color: #ffffff;
     color: #000000;
     border: 3px solid #000000;
-    outline: none;
-    text-decoration: none;
-    padding: 17px 59px;
 }
 
-.modal_footer :nth-child(2) {
+/* .modal_footer :nth-child(2) {
     background-color: #000000;
     color: #ffffff;
-}
+} */
 
 .date_loc {
     display: flex;
@@ -155,12 +141,12 @@
 }
 .date_text {
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 300;
     margin-right: 8px;
 }
 .date_value {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     margin-right: 8px;
 }
 .date {
@@ -169,12 +155,12 @@
     justify-content: center;
     align-items: center; */
     margin: 3px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .day {
     font-size: 25px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .month {
@@ -196,8 +182,8 @@
 
 .description {
     font-size: 20px;
-    font-weight: 100;
-    padding: 0px 5px 20px 5px;
+    font-weight: 300;
+    padding-bottom: 20px;
 }
 
 .team_pay {
@@ -205,7 +191,7 @@
     flex-direction: column;
     align-items: flex-start;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .team_pay a {
@@ -219,18 +205,11 @@
     margin: 5px;
 }
 
-.team_pay div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-}
-
 .contacts {
     display: flex;
     flex-direction: row;
     align-items: center;
+	margin-top: 20px;
 }
 
 .contacts img {

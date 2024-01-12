@@ -140,7 +140,7 @@ function Navigation() {
                         {/* <li>
                             <Link href="/">Home</Link>
                         </li> */}
-                        <li
+                        {/* <li
                             style={
                                 router.pathname === '/all-multicity'
                                     ? { borderBottom: '3px solid white' }
@@ -153,8 +153,8 @@ function Navigation() {
                             >
                                 Multicity
                             </Link>
-                        </li>
-                        {/* <li
+                        </li> */}
+                        <li
                             style={
                                 router.pathname === '/events'
                                     ? { borderBottom: '3px solid white' }
@@ -164,7 +164,7 @@ function Navigation() {
                             <Link className={styles.linknav} href="/events">
                                 Events
                             </Link>
-                        </li> */}
+                        </li>
 
                         <li
                             style={
@@ -248,7 +248,7 @@ function Navigation() {
                                     >
                                         <div>
                                             <span className={styles.user_name}>
-                                                {userData.state.user.full_name}
+                                                {userData.state.user.full_name.split(" ")[0]}
                                             </span>
                                             <span className={styles.user_id}>
                                                 {userData.state.user.anwesha_id}
@@ -290,11 +290,16 @@ function Navigation() {
                             Campus Ambassador
                         </Link>
                     </li>
-                    <li>
+					<li>
+                        <Link href="/events" onClick={() => toggleDrawer()}>
+                            Events
+                        </Link>
+                    </li>
+                    {/* <li>
                         <Link href="/all-multicity" onClick={() => toggleDrawer()}>
                             Multicity
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link href="/gallery" onClick={() => toggleDrawer()}>
                             Gallery
