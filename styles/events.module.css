@@ -1,35 +1,69 @@
-.mainContainer{
-    width: 100%;
-    margin: 0;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/events/bg.png');
-	background-size: cover;
-	/* background-position-x: center; */
-	/* background-position-y: center; */
-    background-repeat: repeat-y;
-}
-
-.container{
+.mainContainer {
+	width: 100%;
 	margin: 0;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url('/events/bg.svg');
+	background-size: cover;
+	background-position-x: center;
+	/* background-position-y: center; */
+	/* background-repeat: repeat-y; */
 }
 
-.container h1{
-    font-size: 64px;
+.container {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.content{
-    margin-top: 50px;
-    /* width: 100vw; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.titleBox {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-start;
+	margin: min(200px, 5vh) min(5vw, 100px);
+}
+
+.titleBox h1 {
+	font-size: min(100px, 15vw);
+	color: #1664BF;
+	font-weight: 700;
+	letter-spacing: -1.2px;
+}
+
+.titleBox p {
+	text-align: justify;
+	max-width: 700px;
+	width: 90vw;
+	margin-bottom: 25px;
+	color: #010031;
+	font-size: min(20px, 5vw);
+	letter-spacing: 2px;
+	line-height: 150%;
+}
+
+.rulebook {
+	width: fit-content;
+	padding: 16px 36px;
+	background-color: #010031;
+	color: white;
+	border-radius: 10px;
+	font-size: min(20px, 5vw);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.content {
+	margin: 50px 0;
+	width: 92vw;
+	/* width: 100vw; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 70px 20px;
 }
