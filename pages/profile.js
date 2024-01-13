@@ -7,6 +7,10 @@ import Head from 'next/head'
 import styles from '../styles/profile.module.css'
 import stylesForm from '../styles/ca.module.css'
 import { AuthContext } from '../components/authContext'
+import Image from 'next/image'
+import { motion, wrap } from 'framer-motion'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -54,14 +58,57 @@ function profile() {
                 <meta name="description" content="Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div className={stylesForm.container}>
                 <div className={styles.idandqr}>
-                    <div>
+
+
+
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <h1 className={styles.anwesha_id}>
                             {profDetails.anwesha_id}
                         </h1>
-                        <button className={styles.copy} ></button>
+                        <button className={styles.copy} onClick={() => {
+                            navigator.clipboard.writeText(profDetails.anwesha_id);
+                            toast.success(
+                                'Copied to clipboard',
+                                {
+                                    position: 'top-right',
+                                    autoClose: 3000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: 'light',
+                                }
+                            )
+                        }} ><motion.div
+                            style={{ cursor: 'pointer' }}
+                            whileTap={{ scale: 0.8 }}
+                        ><Image
+                                    src="/copy.svg"
+                                    width={40}
+                                    height={40}
+                                    alt="copy"
+                                />
+                            </motion.div>
+                        </button>
                     </div>
+
+
+
                     <div className={styles.qrcode}>
                         <img src={qrcode} alt="" />
                         <a href='/anweshapass'>How does AnweshaPass work?</a>

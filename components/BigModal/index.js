@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
 import soloEventRegistration from '../Event Registration/soloEventRegistration'
+import { ToastContainer, toast } from 'react-toastify'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -47,6 +48,18 @@ const Modal = (props) => {
 
     return (
         <React.StrictMode>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div
                 id="backdrop"
                 className={styles.modal}
@@ -108,14 +121,25 @@ const Modal = (props) => {
                                     className={styles.btn}
                                     id={styles.rulebtn}
                                     href={props.body.video}
-                                    // onClick={(e) => props.closeHandler()}
+                                // onClick={(e) => props.closeHandler()}
                                 >
                                     Rulebook
                                 </a>
                             ) : null}
                             <button
                                 className={styles.btn}
-                                onClick={handleRagister}
+                                onClick={() => {
+                                    toast.warning('Coming Soon', {
+                                        position: 'top-right',
+                                        autoClose: 3000,
+                                        hideProgressBar: false,
+                                        closeOnClick: true,
+                                        pauseOnHover: true,
+                                        draggable: true,
+                                        progress: undefined,
+                                        theme: 'light',
+                                    })
+                                }}
                             >
                                 Register
                             </button>
@@ -157,16 +181,16 @@ const Modal = (props) => {
                                     {props.body.max_team_size === 1
                                         ? 'Individual Participation'
                                         : props.body.min_team_size ===
-                                          props.body.max_team_size
-                                        ? props.body.min_team_size + ' members'
-                                        : props.body.min_team_size +
-                                          ' - ' +
-                                          props.body.max_team_size +
-                                          ' members'}
+                                            props.body.max_team_size
+                                            ? props.body.min_team_size + ' members'
+                                            : props.body.min_team_size +
+                                            ' - ' +
+                                            props.body.max_team_size +
+                                            ' members'}
                                 </div>
                                 {props.body.registration_fee ? (
                                     !userData.isAuth ||
-                                    userData.state.user.user_type !==
+                                        userData.state.user.user_type !==
                                         'iitp_student' ? (
                                         <p>
                                             Registration Fee&nbsp;
@@ -181,7 +205,7 @@ const Modal = (props) => {
                             {props.body.registration_deadline ? (
                                 <div
                                     className={styles.team_pay}
-                                    // style={{ flexDirection: 'row' }}
+                                // style={{ flexDirection: 'row' }}
                                 >
                                     <p>
                                         {/* <img src="/assets/alert.svg" /> */}
@@ -227,9 +251,9 @@ const Modal = (props) => {
                                                             e[1]
                                                                 ? null
                                                                 : {
-                                                                      pointerEvents:
-                                                                          'none',
-                                                                  }
+                                                                    pointerEvents:
+                                                                        'none',
+                                                                }
                                                         }
                                                         target="_blank"
                                                         href={
