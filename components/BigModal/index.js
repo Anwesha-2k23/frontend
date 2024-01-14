@@ -153,13 +153,17 @@ const Modal = (props) => {
                                         props.body.start_time
                                     ).toLocaleString('default', {
                                         day: 'numeric',
-                                    })}{' '}
-                                    -{' '}
-                                    {new Date(
-                                        props.body.end_time
-                                    ).toLocaleString('default', {
-                                        day: 'numeric',
-                                    })}{' '}
+                                    })}
+                                    {' '}
+                                    {props.body.start_time.substring(0, 10) !== props.body.end_time.substring(0, 10) ? (
+                                        <>
+                                            {'- '}
+                                            {new Date(props.body.end_time).toLocaleString('default', {
+                                                day: 'numeric',
+                                            })}
+                                        </>
+                                    ) : null}
+                                    {' '}
                                     {new Date(
                                         props.body.start_time
                                     ).toLocaleString('default', {
