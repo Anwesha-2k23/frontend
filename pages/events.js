@@ -60,8 +60,8 @@ const Events = () => {
                         where every beat has a story to tell and every
                         expression finds a stage!
                     </p>
-                    <Link href={''} className={styles.rulebook}>
-                        Rulebooks
+                    <Link href="https://drive.google.com/file/d/1Sn8CSO_6k3gP2vQkjbguoJPbw73SC_QV/view" target='_blank' className={styles.rulebook}>
+                        Brochure
                     </Link>
                 </div>
                 <div className={styles.content}>
