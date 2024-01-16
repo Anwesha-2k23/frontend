@@ -3,10 +3,10 @@
 .mainNav {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0);
+    background: #010031;
     color: #000;
     text-align: center;
-	font-family: Poppins;
+    font-family: Poppins;
     font-size: 15px;
     font-weight: bold;
     /* text-transform: uppercase; */
@@ -20,7 +20,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 7px;
 }
 
 .mobile_nav {
@@ -36,12 +36,12 @@
 }
 
 .linknav {
-	border: #00000000 1px solid;
+    border: #00000000 1px solid;
 }
 
 .linknav:hover {
-	border: #fff 1px solid;
-	border-radius: 5px;
+    border: #fff 1px solid;
+    border-radius: 5px;
 }
 
 .navLinks ul {
@@ -71,7 +71,7 @@
 .nav_drawer ul {
     display: flex;
     flex-direction: column;
-    background-color: #010031;
+    background: #010031;
     align-items: center;
     justify-content: center;
 }

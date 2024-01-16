@@ -131,8 +131,8 @@ function Navigation() {
                     <Image
                         src="/navbar/logo_no_bg.svg"
                         alt="logo"
-                        width={147}
-                        height={33}
+                        width={159}
+                        height={37.5}
                     />
                 </Link>
                 <div className={styles.navLinks}>
@@ -290,7 +290,7 @@ function Navigation() {
                             Campus Ambassador
                         </Link>
                     </li>
-					<li>
+                    <li>
                         <Link href="/events" onClick={() => toggleDrawer()}>
                             Events
                         </Link>
