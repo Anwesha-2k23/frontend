@@ -128,18 +128,7 @@ const Modal = (props) => {
                             ) : null}
                             <button
                                 className={styles.btn}
-                                onClick={() => {
-                                    toast.warning('Coming Soon', {
-                                        position: 'top-right',
-                                        autoClose: 3000,
-                                        hideProgressBar: false,
-                                        closeOnClick: true,
-                                        pauseOnHover: true,
-                                        draggable: true,
-                                        progress: undefined,
-                                        theme: 'light',
-                                    })
-                                }}
+                                onClick={handleRagister}
                             >
                                 Register
                             </button>

@@ -58,7 +58,7 @@ async function teamEventRegistration(eventID, teamName, teamMembers, email, phon
         })
     
     console.log('data', data)
-    const res = await loadScript('https://pgtest.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
+    const res = await loadScript('https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
     openPay(data)
     // const data = await fetch(`${host}/event/registration/team`, requestOptions)
 
