@@ -45,7 +45,7 @@ const Events = () => {
         <div className={styles.mainContainer}>
             <Head>
                 <title>Events - Anwesha 2023</title>
-                <meta name="description" content="Multicity-Anwesha 2023" />
+                <meta name="description" content="Events-Anwesha 2023" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div style={{ height: 100 }}></div>
@@ -61,8 +61,8 @@ const Events = () => {
                         where every beat has a story to tell and every
                         expression finds a stage!
                     </p>
-                    <Link href={''} className={styles.rulebook}>
-                        Rulebooks
+                    <Link href="https://drive.google.com/file/d/1Sn8CSO_6k3gP2vQkjbguoJPbw73SC_QV/view" target='_blank' className={styles.rulebook}>
+                        Brochure
                     </Link>
                 </div>
                 <div className={styles.content}>
