@@ -211,6 +211,7 @@ const UserLoginForm = () => {
                     <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Don't have an account? Register here.
                     </Link>
+                    <br />
                     <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Trouble logging in? Reach out to us here.
                     </Link>

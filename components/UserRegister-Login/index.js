@@ -251,6 +251,7 @@ const UserRegisterForm = () => {
                         />
                         <br />
                     </div>
+                    <br />
                     <div
                         style={{
                             display: 'flex',
@@ -259,7 +260,6 @@ const UserRegisterForm = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        I am a student of IIT Patna{' '}
                         <input
                             type="checkbox"
                             style={{
@@ -277,8 +277,11 @@ const UserRegisterForm = () => {
                                     setCollegeName('IIT Patna')
                                 }
                             }}
-                        />
+                        />{' '}
+                        I am a student of IIT Patna
+
                     </div>
+                    <br />
                     {(() => {
                         switch (usertype) {
                             case 'iitp_student':
@@ -496,6 +499,7 @@ const UserRegisterForm = () => {
                     <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Already have an account? Login here.
                     </Link>
+                    <br />
                     <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
                         Trouble logging in? Reach out to us here.
                     </Link>
