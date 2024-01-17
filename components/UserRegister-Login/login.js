@@ -163,20 +163,13 @@ const UserLoginForm = () => {
                         <br />
                     </div>
                     <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
+                        className={styles.passwd_box}
                     >
                         <span
                             style={{
                                 display: 'flex',
                                 flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                marginTop: -20,
+                                marginTop: -15,
                             }}
                         >
                             <input
@@ -185,7 +178,8 @@ const UserLoginForm = () => {
                                 style={{
                                     width: '20px',
                                     height: '20px',
-                                    margin: '5px',
+                                    marginRight: '7px',
+                                    marginTop: '3px',
                                 }}
                                 onChange={() => {
                                     setPasswordShown((prev) => !prev)
@@ -193,10 +187,12 @@ const UserLoginForm = () => {
                             />
                             Show Password
                         </span>
-                        <br />
-                        <Link
+                        &nbsp;&nbsp;<Link
                             href="/password-reset"
-                            style={{ color: '#ffffff', fontWeight: 300 }}
+                            style={{
+                                color: '#ffffff', fontWeight: 600,
+                                marginTop: -15,
+                            }}
                         >
                             Forgot password?
                         </Link>
@@ -208,13 +204,17 @@ const UserLoginForm = () => {
                     >
                         <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 300 }}>
-                        Don't have an account? Register here.
-                    </Link>
-                    <br />
-                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
-                        Trouble logging in? Reach out to us here.
-                    </Link>
+                    <div style={{ display: 'flex', flexDirection: 'row', marginTop: 18, marginBottom: 18 }}>Don't have an account? &nbsp;
+                        <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 600 }}>
+                            Register here.
+                        </Link>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        Trouble logging in? &nbsp;
+                        <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 600 }}>
+                            Reach out to us here.
+                        </Link>
+                    </div>
                 </motion.form>
             </div>
 

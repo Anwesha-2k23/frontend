@@ -4,93 +4,56 @@ const terms = () => {
     return (
         <div
             className={styles.parentcontainer}
-            style={{ paddingInline: '3vw' }}
         >
-            <h2 style={{ fontSize: '2.5em', marginTop: '100px' }}>
+            <h2 className={styles.head}>
                 <strong>Terms and Conditions</strong>
+                <hr className={styles.hr}></hr>
             </h2>
             <div className={styles.sec}>
-                <p className={styles.para}>Welcome to anwesha.live!</p>
-
-                <p className={styles.para}>
-                    These terms and conditions outline the rules and regulations
-                    for the use of Anwesha's Website, located at anwesha.live.
+                <br />
+                <p className={styles.para}>Welcome to Anwesha.iitp.ac.in!<br />
+                    These term and conditions outline the rules and regulations for the use of Anwesha's Website, located at anwesha.live. By accessing this website we assume you accept these terms and conditions. Do not continue to use anwesha.live if you do not agree to take all of the terms and conditions stated on this page.
                 </p>
 
                 <p className={styles.para}>
-                    By accessing this website we assume you accept these terms
-                    and conditions. Do not continue to use anwesha.live if you
-                    do not agree to take all of the terms and conditions stated
-                    on this page.
-                </p>
-
-                <p className={styles.para}>
-                    The following terminology applies to these Terms and
-                    Conditions, Privacy Statement and Disclaimer Notice and all
-                    Agreements: "Client", "You" and "Your" refers to you, the
-                    person log on this website and compliant to the Company’s
-                    terms and conditions. "The Company", "Ourselves", "We",
-                    "Our" and "Us", refers to our Company. "Party", "Parties",
-                    or "Us", refers to both the Client and ourselves. All terms
-                    refer to the offer, acceptance and consideration of payment
-                    necessary to undertake the process of our assistance to the
-                    Client in the most appropriate manner for the express
-                    purpose of meeting the Client’s needs in respect of
-                    provision of the Company’s stated services, in accordance
-                    with and subject to, prevailing law of Netherlands. Any use
-                    of the above terminology or other words in the singular,
-                    plural, capitalization and/or he/she or they, are taken as
-                    interchangeable and therefore as referring to same.
+                    The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
                 </p>
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Cookies</strong>
+                    <strong>Cookies:</strong>
                 </h3>
 
                 <p className={styles.para}>
-                    We employ the use of cookies. By accessing anwesha.live, you
-                    agreed to use cookies in agreement with the Anwesha's
-                    Privacy Policy.{' '}
-                </p>
-
-                <p className={styles.para}>
-                    Most interactive websites use cookies to let us retrieve the
-                    user’s details for each visit. Cookies are used by our
-                    website to enable the functionality of certain areas to make
-                    it easier for people visiting our website. Some of our
-                    affiliate/advertising partners may also use cookies.
+                    We employ the use of cookies. By accessing anwesha.live, you agreed to use cookies in agreement with the Anwesha's Privacy Policy</p><p className={styles.para}>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
                 </p>
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>License</strong>
+                    <strong>License:</strong>
                 </h3>
 
-                <p className={styles.para}>
-                    Unless otherwise stated, Anwesha and/or its licensors own
-                    the intellectual property rights for all material on
-                    anwesha.live. All intellectual property rights are reserved.
-                    You may access this from anwesha.live for your own personal
-                    use subjected to restrictions set in these terms and
-                    conditions.
+                <p className={styles.para} style={{ marginBottom: 5 }}>
+                    Unless otherwise stated, Anwesha and/or its licensors own the intellectual property rights for all material on anwesha.live. All intellectual property rights are reserved. You may access this from anwesha.live for your own personal use subjected to restrictions set in these terms and conditions.
                 </p>
 
                 <p className={styles.para}>You must not:</p>
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
-                        Republish material from anwesha.live
+                        <p className={styles.para}>Republish material from anwesha.live</p>
                     </li>
                     <li className={styles.listitem}>
-                        Sell, rent or sub-license material from anwesha.live
+                        <p className={styles.para}>Sell, rent or sub-license material from anwesha.live</p>
+
                     </li>
                     <li className={styles.listitem}>
-                        Reproduce, duplicate or copy material from anwesha.live
+                        <p className={styles.para}>Reproduce, duplicate or copy material from anwesha.live</p>
                     </li>
                     <li className={styles.listitem}>
-                        Redistribute content from anwesha.live
+                        <p className={styles.para}>Redistribute content from anwesha.live</p>
                     </li>
                 </ul>
+                <br />
 
                 <p className={styles.para}>
                     Parts of this website offer an opportunity for users to post
@@ -106,7 +69,6 @@ const terms = () => {
                     result of any use of and/or posting of and/or appearance of
                     the Comments on this website.
                 </p>
-
                 <p className={styles.para}>
                     Anwesha reserves the right to monitor all Comments and to
                     remove any Comments which can be considered inappropriate,
@@ -117,23 +79,23 @@ const terms = () => {
 
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
-                        You are entitled to post the Comments on our website and
-                        have all necessary licenses and consents to do so;
+                        <p className={styles.para}>You are entitled to post the Comments on our website and
+                            have all necessary licenses and consents to do so;</p>
                     </li>
                     <li className={styles.listitem}>
-                        The Comments do not invade any intellectual property
-                        right, including without limitation copyright, patent or
-                        trademark of any third party;
+                        <p className={styles.para}>The Comments do not invade any intellectual property
+                            right, including without limitation copyright, patent or
+                            trademark of any third party;</p>
                     </li>
                     <li className={styles.listitem}>
-                        The Comments do not contain any defamatory, libelous,
-                        offensive, indecent or otherwise unlawful material which
-                        is an invasion of privacy
+                        <p className={styles.para}>The Comments do not contain any defamatory, libelous,
+                            offensive, indecent or otherwise unlawful material which
+                            is an invasion of privacy</p>
                     </li>
                     <li className={styles.listitem}>
-                        The Comments will not be used to solicit or promote
-                        business or custom or present commercial activities or
-                        unlawful activity.
+                        <p className={styles.para}>The Comments will not be used to solicit or promote
+                            business or custom or present commercial activities or
+                            unlawful activity.</p>
                     </li>
                 </ul>
 
@@ -146,31 +108,36 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Hyperlinking to our Content</strong>
+                    <strong>Hyperlinking to our Content:</strong>
                 </h3>
-
                 <p className={styles.para}>
                     The following organizations may link to our Website without
                     prior written approval:
                 </p>
 
                 <ul className={styles.list}>
-                    <li className={styles.listitem}>Government agencies;</li>
-                    <li className={styles.listitem}>Search engines;</li>
-                    <li className={styles.listitem}>News organizations;</li>
                     <li className={styles.listitem}>
-                        Online directory distributors may link to our Website in
-                        the same manner as they hyperlink to the Websites of
-                        other listed businesses; and
+                        <p className={styles.para}>Government agencies;</p>
                     </li>
                     <li className={styles.listitem}>
-                        System wide Accredited Businesses except soliciting
-                        non-profit organizations, charity shopping malls, and
-                        charity fundraising groups which may not hyperlink to
-                        our Web site.
+                        <p className={styles.para}>Search engines;</p>
+                    </li>
+                    <li className={styles.listitem}>
+                        <p className={styles.para}>News organizations;</p>
+                    </li>
+                    <li className={styles.listitem}>
+                        <p className={styles.para}>Online directory distributors may link to our Website in
+                            the same manner as they hyperlink to the Websites of
+                            other listed businesses; and</p>
+                    </li>
+                    <li className={styles.listitem}>
+                        <p className={styles.para}>System wide Accredited Businesses except soliciting
+                            non-profit organizations, charity shopping malls, and
+                            charity fundraising groups which may not hyperlink to
+                            our Web site.</p>
                     </li>
                 </ul>
-
+                <br />
                 <p className={styles.para}>
                     These organizations may link to our home page, to
                     publications or to other Website information so long as the
@@ -179,7 +146,6 @@ const terms = () => {
                     party and its products and/or services; and (c) fits within
                     the context of the linking party’s site.
                 </p>
-
                 <p className={styles.para}>
                     We may consider and approve other link requests from the
                     following types of organizations:
@@ -187,26 +153,30 @@ const terms = () => {
 
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
-                        commonly-known consumer and/or business information
-                        sources;
+                        <p className={styles.para}>commonly-known consumer and/or business information
+                            sources;</p>
                     </li>
                     <li className={styles.listitem}>
-                        dot.com community sites;
+                        <p className={styles.para}> dot.com community sites;</p>
                     </li>
                     <li className={styles.listitem}>
-                        associations or other groups representing charities;
+                        <p className={styles.para}> associations or other groups representing charities;</p>
                     </li>
                     <li className={styles.listitem}>
-                        online directory distributors;
-                    </li>
-                    <li className={styles.listitem}>internet portals;</li>
-                    <li className={styles.listitem}>
-                        accounting, law and consulting firms; and
+                        <p className={styles.para}> online directory distributors;</p>
                     </li>
                     <li className={styles.listitem}>
-                        educational institutions and trade associations.
+                        <p className={styles.para}> internet portals;</p>
                     </li>
+                    <li className={styles.listitem}>
+                        <p className={styles.para}> accounting, law and consulting firms; and</p>
+                    </li>
+                    <li className={styles.listitem}>
+                        <p className={styles.para}>educational institutions and trade associations.</p>
+                    </li>
+
                 </ul>
+                <br />
 
                 <p className={styles.para}>
                     We will approve link requests from these organizations if we
@@ -244,17 +214,18 @@ const terms = () => {
 
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
-                        By use of our corporate name; or
+                        <p className={styles.para}>By use of our corporate name; or</p>
                     </li>
                     <li className={styles.listitem}>
-                        By use of the uniform resource locator being linked to;
-                        or
+                        <p className={styles.para}> By use of the uniform resource locator being linked to;
+                            or</p>
                     </li>
                     <li className={styles.listitem}>
-                        By use of any other description of our Website being
-                        linked to that makes sense within the context and format
-                        of content on the linking party’s site.
+                        <p className={styles.para}> By use of any other description of our Website being
+                            linked to that makes sense within the context and format
+                            of content on the linking party’s site.</p>
                     </li>
+
                 </ul>
 
                 <p className={styles.para}>
@@ -264,7 +235,7 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>iFrames</strong>
+                    <strong>iFrames:</strong>
                 </h3>
 
                 <p className={styles.para}>
@@ -275,7 +246,7 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Content Liability</strong>
+                    <strong>Content Liability:</strong>
                 </h3>
 
                 <p className={styles.para}>
@@ -290,14 +261,14 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Your Privacy</strong>
+                    <strong>Your Privacy:</strong>
                 </h3>
 
                 <p className={styles.para}>Please read Privacy Policy</p>
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Reservation of Rights</strong>
+                    <strong>Reservation of Rights:</strong>
                 </h3>
 
                 <p className={styles.para}>
@@ -312,7 +283,7 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Removal of links from our website</strong>
+                    <strong>Removal of links from our website:</strong>
                 </h3>
 
                 <p className={styles.para}>
@@ -331,7 +302,7 @@ const terms = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Disclaimer</strong>
+                    <strong>Disclaimer:</strong>
                 </h3>
 
                 <p className={styles.para}>
@@ -343,21 +314,22 @@ const terms = () => {
 
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
-                        limit or exclude our or your liability for death or
-                        personal injury;
+                        <p className={styles.para}>limit or exclude our or your liability for death or
+                            personal injury;</p>
                     </li>
                     <li className={styles.listitem}>
-                        limit or exclude our or your liability for fraud or
-                        fraudulent misrepresentation;
+                        <p className={styles.para}>limit or exclude our or your liability for fraud or
+                            fraudulent misrepresentation;</p>
                     </li>
                     <li className={styles.listitem}>
-                        limit any of our or your liabilities in any way that is
-                        not permitted under applicable law; or
+                        <p className={styles.para}>imit any of our or your liabilities in any way that is
+                            not permitted under applicable law; or</p>
                     </li>
                     <li className={styles.listitem}>
-                        exclude any of our or your liabilities that may not be
-                        excluded under applicable law.
+                        <p className={styles.para}> exclude any of our or your liabilities that may not be
+                            excluded under applicable law.</p>
                     </li>
+
                 </ul>
 
                 <p className={styles.para}>

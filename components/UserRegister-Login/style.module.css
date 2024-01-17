@@ -8,7 +8,7 @@
 .form {
     font-family: 'Poppins', sans-serif;
     display: flex;
-    margin: 120px 0px 120px 100px;
+    margin: 120px 0px 120px 10%;
     align-content: center;
     align-items: center;
     height: fit-content;
@@ -26,7 +26,7 @@
     padding: 30px 30px 30px 30px;
     border-radius: 19px;
     background: #394a72;
-    width: 486px;
+    width: 37vw;
     /* height: 70vh; */
 }
 
@@ -61,7 +61,7 @@
 
 .form_row .field input,
 .field select {
-    width: 206px;
+    width: 15.5vw;
 }
 
 .field {
@@ -70,7 +70,7 @@
 
 .field input,
 .field select {
-    width: 426px;
+    width: 32vw;
     height: 45px;
     margin: 2px;
     padding: 2px 15px;
@@ -93,7 +93,6 @@
 
 .userType {
     width: 25vw;
-    min-width: 230px;
     height: 45px;
     margin: 2px;
     padding: 2px 15px;
@@ -123,11 +122,11 @@
 }
 
 .buttonWrapper button {
-    width: 400px;
+    width: 30vw;
     height: 59px;
     margin-top: 20px;
     cursor: pointer;
-    color: #262348;
+    color: #332f62;
     background: #ffffff;
     border-radius: 10px;
     font-family: 'Poppins';
@@ -136,6 +135,7 @@
     font-size: 24px;
     line-height: 36px;
     min-width: 200px;
+    border: none;
 }
 
 /* .buttonWrapper button:hover {
@@ -160,7 +160,7 @@
 
 .iitp_email {
     border-radius: 5px 0px 0px 5px !important;
-    width: 327px !important;
+    width: 26.5vw !important;
     margin: 0px !important;
     height: 45px;
 }
@@ -182,6 +182,13 @@
     border: 1px solid #000000;
     border-radius: 5px;
     margin-top: 20px;
+    width: 28vw;
+}
+.passwd_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 31vw;
 }
 
 @media only screen and (max-width: 860px) {
@@ -225,16 +232,22 @@
     .mainForm {
         width: 486px;
     }
+    .terms_box {
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 1023px) {
+    .passwd_box {
+        width: 400px;
+    }
     .mainForm {
         margin-top: 75px;
         margin-bottom: 75px;
         width: 401px;
         padding-left: 18px;
         padding-right: 18px;
-        background: rgba(57, 74, 114, 0.9);
+        background: rgba(57, 74, 114, 1);
     }
     .field {
         justify-content: center;
@@ -265,6 +278,9 @@
     .iitp_email {
         width: 287px !important;
     }
+    .terms_box {
+        width: auto;
+    }
 }
 @media only screen and (max-width: 426px) {
     .mainForm {
@@ -273,7 +289,10 @@
         width: 95vw;
         padding-left: 10px;
         padding-right: 10px;
-        background: rgba(57, 74, 114, 0.9);
+        background: rgba(57, 74, 114, 0.85);
+    }
+    .passwd_box {
+        width: 90vw;
     }
 
     .field input {
@@ -283,9 +302,9 @@
         width: 90vw;
     }
     .buttonWrapper button {
-        width: 80vw;
+        width: 90vw;
     }
     .iitp_email {
-        width: 30vw !important;
+        width: 50vw !important;
     }
 }
