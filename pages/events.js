@@ -51,8 +51,11 @@ const Events = () => {
             <div style={{ height: 100 }}></div>
             <div className={styles.container}>
                 <div className={styles.titleBox}>
+                    <br />
+                    <br />
+                    <br />
                     <h1 className={josefinSans.className}>Events</h1>
-                    <p className={montserrat.className}>
+                    <p className={montserrat.className} style={{ fontWeight: 'bold' }}>
                         From heart-stopping dance battles and soulful singing
                         competitions to the dazzling glamour of the fashion
                         show, with thought-provoking Nukkad Nataks and the
@@ -62,8 +65,11 @@ const Events = () => {
                         expression finds a stage!
                     </p>
                     <Link href="https://drive.google.com/file/d/1Sn8CSO_6k3gP2vQkjbguoJPbw73SC_QV/view" target='_blank' className={styles.rulebook}>
-                        Brochure
+                        Events Brochure
                     </Link>
+                    <br />
+                    <br />
+                    <br />
                 </div>
                 <div className={styles.content}>
                     {events.map((event, index) => {
