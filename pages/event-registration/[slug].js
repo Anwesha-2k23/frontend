@@ -108,7 +108,7 @@ const eventRegistration = () => {
                             >
                                 {memberID.map((item, index) => {
                                     return (
-                                        <div className={styles.member_input}>
+                                        <div key={index} className={styles.member_input}>
                                             <span>{index + 1}</span>
                                             <div>ANW</div>
                                             <input

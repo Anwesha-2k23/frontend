@@ -5,22 +5,10 @@ const aboutus = () => {
         <div className={styles.parentContainer}>
             <section className={styles.section1}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionHeading}>Anwesha'23</h2>
+                    <h2 className={styles.sectionHeading}>{"Anwesha'23"}</h2>
                     <hr className={styles.sectionHeadingBar} />
                     <div className={styles.sectionContent}>
-                        Anwesha is the Annual Techno-Cultural-Mangement
-                        Extravaganza of Indian Institute of Technology Patna.
-                        The name Anwesha symbolizes, the quest for grandeur,
-                        opulence, creativity and perfection. Since its inception
-                        in 2010, it has turned out to be one of east India's
-                        biggest and most anticipated youth festivals, witnessing
-                        participation from all over the country. Anwesha puts
-                        forth an unparalleled multitude of events, meticulously
-                        fashioned to suit the interests of the computer geeks,
-                        gaming freaks, music and dance maniacs. The cultural
-                        delight of the fest, pro-nites, share the glamour of
-                        iconic rock bands, serenity of classical art forms and
-                        amusement of comedy shows.
+                        {"Anwesha is the Annual Techno-Cultural-Mangement Extravaganza of Indian Institute of Technology Patna. The name Anwesha symbolizes, the quest for grandeur, opulence, creativity and perfection. Since its inception in 2010, it has turned out to be one of east India's biggest and most anticipated youth festivals, witnessing participation from all over the country. Anwesha puts forth an unparalleled multitude of events, meticulously fashioned to suit the interests of the computer geeks, gaming freaks, music and dance maniacs. The cultural delight of the fest, pro-nites, share the glamour of iconic rock bands, serenity of classical art forms and amusement of comedy shows."}
                         <br />
                         {/* <br />
                         We invite you to be a part of this extravaganza and help
@@ -29,12 +17,7 @@ const aboutus = () => {
                         of us. a novel and longstanding.
                         <br /> */}
                         <br />
-                        Anwesha 2023 is envisioned to be an innovative and
-                        cultural uplifting festival of togetherness in not just
-                        the state or region, but the whole nation. We have
-                        reimagined the lens through which we understand culture
-                        and celebration, deriving the cornerstones for this
-                        year's edition that shall drive forward our festival.
+                        {"Anwesha 2023 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival."}
                     </div>
                 </div>
             </section>

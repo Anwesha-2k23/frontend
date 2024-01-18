@@ -118,6 +118,7 @@ const Modal = (props) => {
                             {props.body.video ? (
                                 <a
                                     target="_blank"
+                                    rel="noreferrer"
                                     className={styles.btn}
                                     id={styles.rulebtn}
                                     href={props.body.video}
@@ -249,6 +250,7 @@ const Modal = (props) => {
                                                                 }
                                                         }
                                                         target="_blank"
+                                                        rel="noreferrer"
                                                         href={
                                                             e[1]
                                                                 ? `tel:${e[1]}`

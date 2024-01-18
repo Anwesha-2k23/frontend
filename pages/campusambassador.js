@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 // import Anwesha_text from "../images/Anwesha_text.png";
 
-export default function campusAmbassador() {
+export default function CampusAmbassador() {
     useEffect(() => {
         // Applying on mount
         document.body.style.overflowX = 'hidden'

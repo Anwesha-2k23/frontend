@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { motion, wrap } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Link from 'next/link'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -111,7 +112,7 @@ function profile() {
 
                     <div className={styles.qrcode}>
                         <img src={qrcode} alt="" />
-                        <a href='/anweshapass'>How does AnweshaPass work?</a>
+                        <Link href='/anweshapass'>How does AnweshaPass work?</Link>
                         <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
                     </div>
                 </div>

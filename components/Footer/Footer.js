@@ -238,6 +238,7 @@ const Footer = () => {
                     >
                         <a
                             target="_blank"
+                            rel="noreferrer"
                             href="https://play.google.com/store/apps/details?id=com.college.anwesha2k23"
                         >
                             {/* <img
