@@ -1,6 +1,6 @@
 import { setRequestMeta } from 'next/dist/server/request-meta'
 import React, { useState, useEffect, useContext } from 'react'
-import teamEventRegistration from '../../components/Event Registration/teamEventRegistration'
+import {teamEventRegistration, teamEventRegistrationiitp} from '../../components/Event Registration/teamEventRegistration'
 import styles from '../../styles/EventRegistration.module.css'
 import { AuthContext } from '../../components/authContext'
 import { useRouter } from 'next/router'
@@ -159,6 +159,15 @@ const eventRegistration = () => {
                                 className={styles.register_btn}
                                 onClick={(e) => {
                                     e.preventDefault()
+                                    if(userData.state.user.user_type === 'iitp_student'){
+                                        teamEventRegistrationiitp(
+                                            id,
+                                            teamName,
+                                            memberID,
+                                            router,
+                                        )
+                                    }
+                                    else{
                                     teamEventRegistration(
                                         id,
                                         teamName,
@@ -169,6 +178,7 @@ const eventRegistration = () => {
                                         router,
                                         toast
                                     )
+                                    }
                                 }}
                             >
                                 REGISTER
