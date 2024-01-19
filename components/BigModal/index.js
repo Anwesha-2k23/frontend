@@ -12,10 +12,7 @@ const Modal = (props) => {
     const userData = useContext(AuthContext)
 
     function handleRagister() {
-        if (props.body.is_online) {
-            console.log('online')
-            router.replace(props.body.registration_link)
-        } else if (userData.isAuth) {
+        if (userData.isAuth) {
             if (props.body.is_solo) {
                 soloEventRegistration(
                     props.body.id,
