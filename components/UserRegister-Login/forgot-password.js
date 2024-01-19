@@ -148,9 +148,11 @@ const ForgotPassword = () => {
                         }}
                     >
                         <br />
-                        <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 300 }}>
-                            Login here
-                        </Link>
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 600 }}>
+                                Login Here
+                            </Link>
+                        </div>
                     </div>
                     <motion.div
                         className={styles.buttonWrapper}

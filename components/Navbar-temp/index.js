@@ -82,7 +82,7 @@ function Navigation() {
             setTimeout(
                 () => (
                     (drawer.style.opacity = 1),
-                    (nav_div.style.backgroundColor = '#010031')
+                    (nav_div.style.backgroundColor = '#394a72')
                 ),
                 300
             )

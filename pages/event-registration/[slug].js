@@ -62,6 +62,7 @@ const eventRegistration = () => {
                         >
                             {/* <h2 className={styles.subHeading}>Team Details</h2> */}
                             <h2>{name}</h2>
+                            <br />
                             {/* <div className={styles.form_row}>
                                 <div className={styles.field}>
                                     <label htmlFor="Event_Name">
@@ -80,7 +81,7 @@ const eventRegistration = () => {
                             </div> */}
                             <div className={styles.form_row}>
                                 <div className={styles.field}>
-                                    <label htmlFor="Teams_Name">
+                                    <label htmlFor="Teams_Name"  >
                                         Team Name
                                     </label>
                                     <br />
@@ -107,7 +108,7 @@ const eventRegistration = () => {
                             >
                                 {memberID.map((item, index) => {
                                     return (
-                                        <div className={styles.member_input}>
+                                        <div key={index} className={styles.member_input}>
                                             <span>{index + 1}</span>
                                             <div>ANW</div>
                                             <input

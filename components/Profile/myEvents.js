@@ -31,13 +31,13 @@ function MyEvents() {
     return (
         <div>
             {events.solo.length === 0 &&
-            events.team.length === 0 &&
-            passes.length === 0 ? (
+                events.team.length === 0 &&
+                passes.length === 0 ? (
                 <div>No events registered</div>
             ) : null}
-            {passes.map((e) => {
+            {passes.map((e, key) => {
                 return (
-                    <div className={styles.pass}>
+                    <div key={key} className={styles.pass}>
                         <h2>{e.event_name}</h2>
                         {e.payment_done ? (
                             <div className={styles.verified_img}>
@@ -67,10 +67,10 @@ function MyEvents() {
                                 justifyContent: 'center',
                             }}
                         >
-                            {events.solo.map((e) => {
+                            {events.solo.map((e, key) => {
                                 if (e.event_tags !== '6') {
                                     return (
-                                        <div className={styles.event}>
+                                        <div key={key} className={styles.event}>
                                             <h2>{e.event_name}</h2>
                                             <div className={styles.date_loc}>
                                                 <div
@@ -195,9 +195,9 @@ function MyEvents() {
                                 justifyContent: 'center',
                             }}
                         >
-                            {events.team.map((e) => {
+                            {events.team.map((e, key) => {
                                 return (
-                                    <div className={styles.event}>
+                                    <div key={key} className={styles.event}>
                                         <h2>{e.event_name}</h2>
                                         <div className={styles.date_loc}>
                                             <div className={styles.date_row}>
@@ -274,35 +274,38 @@ function MyEvents() {
                                                 <strong>{e.team_lead}</strong>
                                             </h4>
                                             <div className={styles.members}>
-                                                {e.team_members.map((mem) => {
-                                                    return <div>{mem}</div>
+                                                {e.team_members.map((mem, key) => {
+                                                    return <div key={key}>{mem}</div>
                                                 })}
                                             </div>
                                         </div>
-                                        {e.payment_done ? (
-                                            <div
-                                                className={styles.verified_img}
-                                            >
-                                                <img src="assets/tick-green.svg" />
-                                                Registration Complete
-                                            </div>
-                                        ) : (
-                                            <a
-                                                className={styles.payment_btn}
-                                                href={e.payment_url}
-                                            >
-                                                Continue to payment{' '}
-                                                <img src="/assets/right-arrow.svg" />
-                                            </a>
-                                        )}
+                                        {
+                                            e.payment_done ? (
+                                                <div
+                                                    className={styles.verified_img}
+                                                >
+                                                    <img src="assets/tick-green.svg" />
+                                                    Registration Complete
+                                                </div>
+                                            ) : (
+                                                <a
+                                                    className={styles.payment_btn}
+                                                    href={e.payment_url}
+                                                >
+                                                    Continue to payment{' '}
+                                                    <img src="/assets/right-arrow.svg" />
+                                                </a>
+                                            )
+                                        }
                                     </div>
                                 )
                             })}
                         </div>
                     </div>
                 ) : null
-            ) : null}
-        </div>
+            ) : null
+            }
+        </div >
     )
 }
 

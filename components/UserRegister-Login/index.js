@@ -251,6 +251,7 @@ const UserRegisterForm = () => {
                         />
                         <br />
                     </div>
+                    <br />
                     <div
                         style={{
                             display: 'flex',
@@ -259,7 +260,6 @@ const UserRegisterForm = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        I am a student of IIT Patna{' '}
                         <input
                             type="checkbox"
                             style={{
@@ -277,8 +277,11 @@ const UserRegisterForm = () => {
                                     setCollegeName('IIT Patna')
                                 }
                             }}
-                        />
+                        />{' '}
+                        I am a student of IIT Patna
+
                     </div>
+                    <br />
                     {(() => {
                         switch (usertype) {
                             case 'iitp_student':
@@ -419,11 +422,6 @@ const UserRegisterForm = () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <span>
-                                Subscribe to the&nbsp;{' '}
-                                <strong>Anwesha Dispatch</strong>{' '}
-                                &nbsp;newsletter{' '}
-                            </span>
                             <input
                                 type="checkbox"
                                 style={{
@@ -435,7 +433,12 @@ const UserRegisterForm = () => {
                                 onChange={() => {
                                     setNewsletter((prev) => !prev)
                                 }}
-                            />
+                            />&nbsp;
+                            <span>
+                                Subscribe to the&nbsp;{' '}
+                                <strong>Anwesha Dispatch</strong>{' '}
+                                &nbsp;newsletter{' '}
+                            </span>
                         </div>
                         <div
                             style={{
@@ -445,12 +448,6 @@ const UserRegisterForm = () => {
                                 marginTop: '5px',
                             }}
                         >
-                            <span>
-                                I accept the&nbsp;{' '}
-                                <a href="/terms" target="_blank" style={{ color: '#ffffff', fontWeight: 300 }}>
-                                    Terms and Conditions
-                                </a>{' '}
-                            </span>
                             <input
                                 type="checkbox"
                                 style={{
@@ -462,7 +459,13 @@ const UserRegisterForm = () => {
                                 onChange={() => {
                                     setTerms((prev) => !prev)
                                 }}
-                            />
+                            />&nbsp;
+                            <span>
+                                I accept the&nbsp;{' '}
+                                <a href="/terms" target="_blank" style={{ color: '#ffffff', fontWeight: 600 }}>
+                                    Terms and Conditions
+                                </a>{' '}
+                            </span>
                         </div>
                     </div>
 
@@ -493,12 +496,19 @@ const UserRegisterForm = () => {
                             )}
                         </button>
                     </motion.div>
-                    <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 300 }}>
-                        Already have an account? Login here.
-                    </Link>
-                    <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 300 }}>
-                        Trouble logging in? Reach out to us here.
-                    </Link>
+                    <br />
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>Already have an account? &nbsp;
+                        <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 600 }}>
+                            Login here.
+                        </Link>
+                    </div>
+                    <br />
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        Trouble logging in? &nbsp;
+                        <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 600 }}>
+                            Reach out to us here.
+                        </Link>
+                    </div>
                 </motion.form>
             </div>
         </div>
