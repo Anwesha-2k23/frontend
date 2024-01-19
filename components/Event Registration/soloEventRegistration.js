@@ -58,4 +58,39 @@ async function soloEventRegistration(eventID, amount, email, phone, anwesha_id, 
     const res = await loadScript('https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
     openPay(data)
 }
-export default soloEventRegistration
+
+async function soloEventRegistrationiitp (eventID, router, closeHandler) {
+    var myHeaders = new Headers()
+    myHeaders.append('Content-Type', 'application/json')
+
+    var raw = JSON.stringify({
+        event_id: eventID,
+    })
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+        credentials: 'include',
+    }
+
+    const data = await fetch(`${host}/event/registration/solo`, requestOptions)
+        .then((response) => response.json())
+        .catch((error) => {
+            console.error(error)
+        })
+
+    closeHandler()
+    toast.success((data.message || data.messagge), {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
+}
+export { soloEventRegistration, soloEventRegistrationiitp };

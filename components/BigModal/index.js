@@ -1,7 +1,7 @@
 // simple react modal component
 import React, { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
-import soloEventRegistration from '../Event Registration/soloEventRegistration'
+import {soloEventRegistration, soloEventRegistrationiitp} from '../Event Registration/soloEventRegistration'
 import { ToastContainer, toast } from 'react-toastify'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
@@ -14,6 +14,7 @@ const Modal = (props) => {
     function handleRagister() {
         if (userData.isAuth) {
             if (props.body.is_solo) {
+                if (userData.state.user.user_type !== 'iitp_student') {
                 soloEventRegistration(
                     props.body.id,
                     props.body.registration_fee,
@@ -23,6 +24,14 @@ const Modal = (props) => {
                     router,
                     props.closeHandler
                 )
+                }
+                else{
+                    soloEventRegistrationiitp(
+                    props.body.id,
+                    router,
+                    props.closeHandler
+                )
+                }
                 // console.log(userData.state.user)
             } else {
                 // router.replace(props.body.registration_link)
