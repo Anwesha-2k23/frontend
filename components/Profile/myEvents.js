@@ -186,7 +186,7 @@ function MyEvents() {
                                                     rel="noreferrer"
                                                 >
                                                     <img src="assets/WhatsApp.svg" />
-                                                    Whatsapp
+                                                    Join Group
                                                 </a>
                                             ) : null}
                                         </div>
@@ -320,7 +320,7 @@ function MyEvents() {
 												rel="noreferrer"
 											>
 												<img src="assets/WhatsApp.svg" />
-												Whatsapp
+												Join Group
 											</a>
 										) : null}
                                     </div>
