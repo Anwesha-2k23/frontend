@@ -166,7 +166,7 @@ function MyEvents() {
                                                     Registration Complete
                                                 </div>
                                             ) : (
-                                                <a
+                                                {/* <a
                                                     className={
                                                         styles.payment_btn
                                                     }
@@ -174,8 +174,21 @@ function MyEvents() {
                                                 >
                                                     Continue to payment{' '}
                                                     <img src="/assets/right-arrow.svg" />
-                                                </a>
+                                                </a> */}
                                             )}
+                                            {e.payment_url ? (
+                                                <a
+                                                    className={
+                                                        styles.verified_img
+                                                    }
+                                                    href={e.payment_url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <img src="assets/WhatsApp.svg" />
+                                                    Whatsapp
+                                                </a>
+                                            ) : null}
                                         </div>
                                     )
                                 }
@@ -288,15 +301,28 @@ function MyEvents() {
                                                     Registration Complete
                                                 </div>
                                             ) : (
-                                                <a
+                                                {/* <a
                                                     className={styles.payment_btn}
                                                     href={e.payment_url}
                                                 >
                                                     Continue to payment{' '}
                                                     <img src="/assets/right-arrow.svg" />
-                                                </a>
+                                                </a> */}
                                             )
                                         }
+										{e.payment_url ? (
+											<a
+												className={
+													styles.verified_img
+												}
+												href={e.payment_url}
+												target="_blank"
+												rel="noreferrer"
+											>
+												<img src="assets/WhatsApp.svg" />
+												Whatsapp
+											</a>
+										) : null}
                                     </div>
                                 )
                             })}
