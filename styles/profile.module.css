@@ -22,7 +22,8 @@
 .tabList {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+	width: 100%;
+    justify-content: space-evenly;
 }
 
 .tab {
@@ -36,7 +37,7 @@
     list-style: none;
 }
 
-.tab:focus {
+.tabActive {
     border: 0px 0px 5px 0px;
     border-bottom: 5px solid #6833ff;
     outline: none;
