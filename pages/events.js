@@ -70,6 +70,8 @@ const Events = () => {
                     <br />
                     <br />
                     <br />
+                    <h2 style={{ color: 'red', fontWeight: 'bold' }}>
+                        Wallet payments (Paytm, PhonePe etc) are not accepted !</h2>
                 </div>
                 <div className={styles.content}>
                     {events.map((event, index) => {

@@ -1,7 +1,7 @@
 // simple react modal component
 import React, { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
-import {soloEventRegistration, soloEventRegistrationiitp} from '../Event Registration/soloEventRegistration'
+import { soloEventRegistration, soloEventRegistrationiitp } from '../Event Registration/soloEventRegistration'
 import { ToastContainer, toast } from 'react-toastify'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
@@ -15,22 +15,23 @@ const Modal = (props) => {
         if (userData.isAuth) {
             if (props.body.is_solo) {
                 if (userData.state.user.user_type !== 'iitp_student') {
-                soloEventRegistration(
-                    props.body.id,
-                    props.body.registration_fee,
-                    userData.state.user.email_id,
-                    userData.state.user.phone_number,
-                    userData.state.user.anwesha_id,
-                    router,
-                    props.closeHandler
-                )
+                    soloEventRegistration(
+                        props.body.id,
+                        props.body.registration_fee,
+                        userData.state.user.email_id,
+                        userData.state.user.phone_number,
+                        userData.state.user.anwesha_id,
+                        router,
+                        props.closeHandler
+                    )
                 }
-                else{
+
+                else {
                     soloEventRegistrationiitp(
-                    props.body.id,
-                    router,
-                    props.closeHandler
-                )
+                        props.body.id,
+                        router,
+                        props.closeHandler
+                    )
                 }
                 // console.log(userData.state.user)
             } else {
@@ -52,7 +53,8 @@ const Modal = (props) => {
             router.push('/userLogin')
         }
     }
-
+    let description = props.body.description.replace(/\n/g, '<br>');
+    console.log(props.body);
     return (
         <React.StrictMode>
             <ToastContainer
@@ -146,23 +148,44 @@ const Modal = (props) => {
                             <div className={styles.date_venue}>
                                 <span className={styles.date_text}>Date:</span>
                                 <span className={styles.date_value}>
+                                    {props.body.start_time.substring(5, 7) !== props.body.end_time.substring(5, 7) ? (
+                                        <> {new Date(
+                                            props.body.start_time
+                                        ).toLocaleString('default', {
+                                            day: 'numeric',
+                                        })}
+                                            {' '}
+                                            {new Date(
+                                                props.body.start_time
+                                            ).toLocaleString('default', {
+                                                month: 'long',
+                                            })}
+                                            {' - '}
+                                        </>
+                                    ) :
+                                        <>
+                                            {props.body.start_time.substring(8, 10) !== props.body.end_time.substring(8, 10) ?
+                                                (<>
+                                                    {
+                                                        new Date(
+                                                            props.body.start_time
+                                                        ).toLocaleString('default', {
+                                                            day: 'numeric',
+                                                        })
+                                                    }
+                                                    {' - '}
+                                                </>) : null
+                                            }
+                                        </>
+                                    }
                                     {new Date(
-                                        props.body.start_time
+                                        props.body.end_time
                                     ).toLocaleString('default', {
                                         day: 'numeric',
                                     })}
                                     {' '}
-                                    {props.body.start_time.substring(0, 10) !== props.body.end_time.substring(0, 10) ? (
-                                        <>
-                                            {'- '}
-                                            {new Date(props.body.end_time).toLocaleString('default', {
-                                                day: 'numeric',
-                                            })}
-                                        </>
-                                    ) : null}
-                                    {' '}
                                     {new Date(
-                                        props.body.start_time
+                                        props.body.end_time
                                     ).toLocaleString('default', {
                                         month: 'long',
                                     })}
@@ -173,9 +196,7 @@ const Modal = (props) => {
                                     {props.body.venue}
                                 </span>
                             </div>
-                            <p className={styles.description}>
-                                {props.body.description}
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: description }} className={styles.description} />
                             <div className={styles.team_pay}>
                                 <div style={{ fontWeight: '600' }}>
                                     {/* <img src="/assets/team.svg" /> */}
@@ -242,7 +263,7 @@ const Modal = (props) => {
                                         className={styles.team_pay}
                                         style={{ flexDirection: 'column' }}
                                     >
-                                        Organizers
+                                        {props.body.tags == "5" ? "POC" : "Organizers"}
                                         {props.body.organizer.map(
                                             (e, index) => {
                                                 return (
