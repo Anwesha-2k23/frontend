@@ -53,7 +53,8 @@ const Modal = (props) => {
             router.push('/userLogin')
         }
     }
-
+    let description = props.body.description.replace(/\n/g, '<br>');
+    console.log(props.body);
     return (
         <React.StrictMode>
             <ToastContainer
@@ -195,9 +196,7 @@ const Modal = (props) => {
                                     {props.body.venue}
                                 </span>
                             </div>
-                            <p className={styles.description}>
-                                {props.body.description}
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: description }} className={styles.description} />
                             <div className={styles.team_pay}>
                                 <div style={{ fontWeight: '600' }}>
                                     {/* <img src="/assets/team.svg" /> */}
@@ -264,7 +263,7 @@ const Modal = (props) => {
                                         className={styles.team_pay}
                                         style={{ flexDirection: 'column' }}
                                     >
-                                        Organizers
+                                        {props.body.tags == "5" ? "POC" : "Organizers"}
                                         {props.body.organizer.map(
                                             (e, index) => {
                                                 return (
