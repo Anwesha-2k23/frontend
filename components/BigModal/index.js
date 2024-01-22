@@ -10,12 +10,19 @@ import Image from 'next/image'
 const Modal = (props) => {
     const router = useRouter()
     const userData = useContext(AuthContext)
+    console.log(props.body);
 
     function handleRagister() {
         if (userData.isAuth) {
             if (props.body.is_solo) {
                 if (userData.state.user.user_type !== 'iitp_student') {
-                    soloEventRegistration(
+                    if (props.body.registration_fee === "0.00")
+                        soloEventRegistrationiitp(
+                            props.body.id,
+                            router,
+                            props.closeHandler
+                        )
+                    else soloEventRegistration(
                         props.body.id,
                         props.body.registration_fee,
                         userData.state.user.email_id,
@@ -24,10 +31,22 @@ const Modal = (props) => {
                         router,
                         props.closeHandler
                     )
+
+
                 }
 
                 else {
-                    soloEventRegistrationiitp(
+                    if (props.body.tags === "5")
+                        soloEventRegistration(
+                            props.body.id,
+                            props.body.registration_fee,
+                            userData.state.user.email_id,
+                            userData.state.user.phone_number,
+                            userData.state.user.anwesha_id,
+                            router,
+                            props.closeHandler
+                        )
+                    else soloEventRegistrationiitp(
                         props.body.id,
                         router,
                         props.closeHandler
