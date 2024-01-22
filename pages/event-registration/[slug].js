@@ -20,6 +20,7 @@ const eventRegistration = () => {
         max_team_size,
         min_team_size,
         registration_fee,
+        tags,
     } = router.query
 
     useEffect(() => {
@@ -160,7 +161,7 @@ const eventRegistration = () => {
                                 onClick={(e) => {
                                     e.preventDefault()
                                     if (userData.state.user.user_type === 'iitp_student') {
-                                        if (props.body.tags !== "5")
+                                        if (tags !== "5")
                                             teamEventRegistrationiitp(
                                                 id,
                                                 teamName,

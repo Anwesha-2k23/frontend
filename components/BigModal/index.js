@@ -65,6 +65,7 @@ const Modal = (props) => {
                         min_team_size: props.body.min_team_size,
                         registration_fee: props.body.registration_fee,
                         user_type: userData.state.user.user_type,
+                        tags: props.body.tags,
                     },
                 })
             }
