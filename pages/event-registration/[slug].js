@@ -1,6 +1,6 @@
 import { setRequestMeta } from 'next/dist/server/request-meta'
 import React, { useState, useEffect, useContext } from 'react'
-import {teamEventRegistration, teamEventRegistrationiitp} from '../../components/Event Registration/teamEventRegistration'
+import { teamEventRegistration, teamEventRegistrationiitp } from '../../components/Event Registration/teamEventRegistration'
 import styles from '../../styles/EventRegistration.module.css'
 import { AuthContext } from '../../components/authContext'
 import { useRouter } from 'next/router'
@@ -20,6 +20,7 @@ const eventRegistration = () => {
         max_team_size,
         min_team_size,
         registration_fee,
+        tags,
     } = router.query
 
     useEffect(() => {
@@ -159,25 +160,46 @@ const eventRegistration = () => {
                                 className={styles.register_btn}
                                 onClick={(e) => {
                                     e.preventDefault()
-                                    if(userData.state.user.user_type === 'iitp_student'){
-                                        teamEventRegistrationiitp(
+                                    if (userData.state.user.user_type === 'iitp_student') {
+                                        if (tags !== "5")
+                                            teamEventRegistrationiitp(
+                                                id,
+                                                teamName,
+                                                memberID,
+                                                router,
+                                            )
+                                        else {
+                                            teamEventRegistration(
+                                                id,
+                                                teamName,
+                                                memberID,
+                                                userData.state.user.email_id,
+                                                userData.state.user.phone_number,
+                                                registration_fee,
+                                                router,
+                                                toast
+                                            )
+                                        }
+                                    }
+                                    else {
+                                        // if (registration_fee !== "0.00")
+                                        teamEventRegistration(
                                             id,
                                             teamName,
                                             memberID,
+                                            userData.state.user.email_id,
+                                            userData.state.user.phone_number,
+                                            registration_fee,
                                             router,
+                                            toast
                                         )
-                                    }
-                                    else{
-                                    teamEventRegistration(
-                                        id,
-                                        teamName,
-                                        memberID,
-                                        userData.state.user.email_id,
-                                        userData.state.user.phone_number,
-                                        registration_fee,
-                                        router,
-                                        toast
-                                    )
+                                        // else
+                                        //     teamEventRegistrationiitp(
+                                        //         id,
+                                        //         teamName,
+                                        //         memberID,
+                                        //         router,
+                                        //     )
                                     }
                                 }}
                             >
