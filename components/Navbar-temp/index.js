@@ -177,6 +177,17 @@ function Navigation() {
                                 Campus Ambassador
                             </Link>
                         </li>
+                        <li
+                            style={
+                                router.pathname === '/contact'
+                                    ? { borderBottom: '3px solid white' }
+                                    : null
+                            }
+                        >
+                            <Link className={styles.linknav} href="/contact">
+                                Contact Us
+                            </Link>
+                        </li>
 
                         <li
                             style={
@@ -303,6 +314,11 @@ function Navigation() {
                     <li>
                         <Link href="/gallery" onClick={() => toggleDrawer()}>
                             Gallery
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/contact" onClick={() => toggleDrawer()}>
+                            Contact Us
                         </Link>
                     </li>
                     <li>
