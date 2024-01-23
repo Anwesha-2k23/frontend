@@ -1,13 +1,19 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from '../styles/contact.module.css';
-
+import {ToastContainer, toast} from 'react-toastify';
+// import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact=()=>{
     const form = useRef();
 
     const resetForm = ()=>{
         form.current.reset();
+    }
+
+    const Notify=()=>{
+        toast.success('Message sent successfully!');
     }
     const sendEmail = (e) => {
         e.preventDefault();
@@ -20,12 +26,13 @@ const Contact=()=>{
         )
         .then((result) => {
               console.log(result.text);
-              resetForm({name: ''})
-              console.log("message sent")
+              resetForm({name: ''});
+              console.log("message sent");
+              toast.success('Message sent successfully!');
 
           }, (error) => {
               console.log(error.text);
-
+              toast.error('Error sending message. Please try again later');
           });
       };
 
@@ -46,9 +53,10 @@ const Contact=()=>{
             <textarea className={styles.inputs} name="message" />
             <input className={styles.button} 
              type="submit" 
-             value="Send" />
+             onClick ={e=> Notify}value="Send" />
         </form>
         </div>
+        <ToastContainer/>
     </div>
     )
 }

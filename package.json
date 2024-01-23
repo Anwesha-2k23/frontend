@@ -39,7 +39,7 @@
     "react-router-dom": "^6.16.0",
     "react-simple-image-viewer": "^1.2.2",
     "react-tabs": "^6.0.0",
-    "react-toastify": "^9.1.1",
+    "react-toastify": "^10.0.4",
     "react-use-scroll-direction": "^0.1.0",
     "rive-js": "^0.7.33",
     "rive-react": "^3.0.36",
