@@ -112,7 +112,7 @@ function profile() {
 
                     <div className={styles.qrcode}>
                         <img src={qrcode} alt="" />
-                        <Link href='/anweshapass'>How does AnweshaPass work?</Link>
+                        <Link href='/anweshapass' style={{ color: 'black', fontWeight: 'bold' }}>How does AnweshaPass work?</Link>
                         <button className={styles.qrBtn} onClick={regenrateqr}>Regenerate QR</button>
                     </div>
                 </div>
@@ -124,7 +124,7 @@ function profile() {
                         selectedIndex={tabIndex}
                         onSelect={(index) => setTabIndex(index)}
                     >
-                        <Tab className={styles.tab} selectedClassName={styles.tabActive}>DETAILS</Tab>
+                        <Tab className={styles.tab} selectedClassName={styles.tabActive} >DETAILS</Tab>
                         <Tab className={styles.tab} selectedClassName={styles.tabActive}>MY EVENTS</Tab>
                         {/* <Tab className={styles.tab}>MY MERCHANDISE</Tab> */}
                     </TabList>

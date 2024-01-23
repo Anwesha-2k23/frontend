@@ -31,16 +31,16 @@
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 36px;
-    margin: 10px;
+    height: 39px;
     cursor: pointer;
-    list-style: none;
+    list-style: none; 
+    padding:0px 7px 0px 7px;
+    border-radius: 5px;
 }
 
 .tabActive {
-    border: 0px 0px 5px 0px;
-    border-bottom: 5px solid #6833ff;
-    outline: none;
+    color:white;
+    background-color: black;
 }
 
 .tabPanel {
@@ -89,3 +89,13 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+.tab:hover{
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 345px){
+    .tab{
+        font-size: 22px;
+
+    }}
