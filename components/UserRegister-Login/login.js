@@ -108,9 +108,7 @@ const UserLoginForm = () => {
             })
         }
     }
-    useEffect(() => {
-        {
-            toast.info('If registered on the Slick app, use your email address as both the username and password', {
+     toast.info('If registered on the Slick app, use your email address as both the username and password', {
                 position: 'top-right',
                 autoClose: 6000,
                 hideProgressBar: false,
@@ -119,9 +117,7 @@ const UserLoginForm = () => {
                 draggable: true,
                 progress: undefined,
                 theme: 'light',
-            })
-        }
-    }, []);
+     })
 
 
     return (
