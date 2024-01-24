@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
@@ -108,6 +108,21 @@ const UserLoginForm = () => {
             })
         }
     }
+    useEffect(() => {
+        {
+            toast.info('If registered on the Slick app, use your email address as both the username and password', {
+                position: 'top-right',
+                autoClose: 6000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+        }
+    }, []);
+
 
     return (
         <div
@@ -124,6 +139,7 @@ const UserLoginForm = () => {
                 pauseOnHover
                 theme="light"
             />
+
 
 
             <div className={styles.form}>
