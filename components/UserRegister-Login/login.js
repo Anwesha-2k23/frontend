@@ -15,6 +15,16 @@ const UserLoginForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
 
     const handleSubmit = async (event) => {
+        toast.info('If registered on the Slick app, use your email address as both the username and password', {
+                position: 'top-right',
+                autoClose: 6000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+     })
         event.preventDefault()
         let body = { username: email, password: password }
         // user input validation
@@ -108,16 +118,7 @@ const UserLoginForm = () => {
             })
         }
     }
-     toast.info('If registered on the Slick app, use your email address as both the username and password', {
-                position: 'top-right',
-                autoClose: 6000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'light',
-     })
+     
 
 
     return (
