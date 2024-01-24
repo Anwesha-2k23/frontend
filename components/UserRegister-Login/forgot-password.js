@@ -159,7 +159,7 @@ const ForgotPassword = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
+                        <button type="submit" onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
                 </motion.form>
             </div>

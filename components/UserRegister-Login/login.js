@@ -108,20 +108,6 @@ const UserLoginForm = () => {
             })
         }
     }
-    useEffect(() => {
-        {
-            toast.info('If registered on the Slick app, use your email address as both the username and password', {
-                position: 'top-right',
-                autoClose: 6000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'light',
-            })
-        }
-    }, []);
 
 
     return (
@@ -218,19 +204,32 @@ const UserLoginForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
+                        <button type="submit" onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-                    <div style={{ display: 'flex', flexDirection: 'row', marginTop: 18, marginBottom: 18 }}>Don't have an account? &nbsp;
+					<br />
+					<p style={{ textAlign: "center", fontWeight: "700" }}>
+                        If registered on the Slick app,&nbsp;
+                        <Link
+                            href="/userLogin"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
+                            Login
+                        </Link>
+						&nbsp;using email address
+                        as both the username and password &nbsp;
+                    </p>
+                    <p style={{ marginTop: 18, textAlign: "center" }}>
+						Don't have an account? &nbsp;
                         <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 600 }}>
                             Register here.
                         </Link>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    </p>
+                    <p style={{ marginTop: 18, textAlign: "center" }}>
                         Trouble logging in? &nbsp;
                         <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 600 }}>
                             Reach out to us here.
                         </Link>
-                    </div>
+                    </p>
                 </motion.form>
             </div>
 
