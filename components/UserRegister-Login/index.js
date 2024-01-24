@@ -366,7 +366,6 @@ const UserRegisterForm = () => {
                             />
                         </div>
                     ) : null}
-                    <div className={styles.form_row}>
                         <div className={styles.field}>
                             <label htmlFor="password">Password</label>
                             <br />
@@ -390,7 +389,6 @@ const UserRegisterForm = () => {
                                 required
                             />
                             <br />
-                        </div>
                     </div>
                     <div
                         style={{
@@ -474,7 +472,7 @@ const UserRegisterForm = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>
+                        <button type="submit" onClick={(e) => handleSubmit(e)}>
                             {loading ? (
                                 <ColorRing
                                     visible={true}
@@ -497,18 +495,37 @@ const UserRegisterForm = () => {
                         </button>
                     </motion.div>
                     <br />
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>Already have an account? &nbsp;
-                        <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 600 }}>
+                    <p style={{ textAlign: "center", fontWeight: "700" }}>
+                        If registered on the Slick app,&nbsp;
+                        <Link
+                            href="/userLogin"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
+                            Login
+                        </Link>
+						&nbsp;using email address
+                        as both the username and password &nbsp;
+                    </p>
+                    <br />
+                    <p>
+                        Already have an account? &nbsp;
+                        <Link
+                            href="/userLogin"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
                             Login here.
                         </Link>
-                    </div>
+                    </p>
                     <br />
-                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    <p>
                         Trouble logging in? &nbsp;
-                        <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 600 }}>
+                        <Link
+                            href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
                             Reach out to us here.
                         </Link>
-                    </div>
+                    </p>
                 </motion.form>
             </div>
         </div>

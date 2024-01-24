@@ -53,17 +53,6 @@
     left: 4%;
 }
 
-.form_row {
-    display: flex;
-    flex-direction: row;
-    gap: 13px;
-}
-
-.form_row .field input,
-.field select {
-    width: 15.5vw;
-}
-
 .field {
     margin-bottom: 10px;
 }
@@ -160,17 +149,19 @@
 
 .iitp_email {
     border-radius: 5px 0px 0px 5px !important;
-    width: 26.5vw !important;
+    width: calc(32vw - 96px) !important;
     margin: 0px !important;
     height: 45px;
 }
 
 .iitp_email_ext {
+	display: inline-flex;
+	align-items: center;
     background-color: #000000;
     color: #ffffff;
-    height: 50px;
+    height: 45px;
     font-size: 17px;
-    padding: 10px 3px 12px 5px;
+    padding: 0 3px 0 5px;
     border-radius: 0px 5px 5px 0px;
 }
 
@@ -230,7 +221,7 @@
 }
 @media only screen and (max-width: 1500px) {
     .mainForm {
-        width: 486px;
+        width: 541px;
     }
     .terms_box {
         width: auto;
@@ -255,7 +246,6 @@
     }
     .field input,
     .field select {
-        min-width: 230px;
         font-size: 13px;
         width: 365px;
     }
@@ -276,7 +266,7 @@
         margin: auto 5vw;
     }
     .iitp_email {
-        width: 287px !important;
+        width: calc(365px - 75px) !important;
     }
     .terms_box {
         width: auto;
@@ -305,6 +295,6 @@
         width: 90vw;
     }
     .iitp_email {
-        width: 50vw !important;
+        width: calc(90vw - 80px) !important;
     }
 }
