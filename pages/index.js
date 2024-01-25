@@ -86,11 +86,11 @@ const index = () => {
                 {/*End Steps section*/}
 
                 {/*ticket section*/}
-                <div
+                {/* <div
                     className={styles.ticketContainer}
                     style={{ overflow: 'hidden' }}
-                >
-                    <Carousel
+                > */}
+                {/* <Carousel
                         style={{ position: 'absolute' }}
                         showStatus={false}
                         showThumbs={false}
@@ -119,7 +119,6 @@ const index = () => {
                                         display: hasPrev ? 'block' : 'none',
                                     }}
                                 >
-                                    {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                                     <Image
                                         height={60}
                                         width={60}
@@ -143,7 +142,6 @@ const index = () => {
                                         display: hasNext ? 'block' : 'none',
                                     }}
                                 >
-                                    {/* <LeftIcon className="w-9 h-9 text-white" /> */}
                                     <Image
                                         height={60}
                                         width={60}
@@ -184,8 +182,8 @@ const index = () => {
                                     <ProTicket />
                                 </Link>
                             </div>
-                        </div>
-                        {/* <div className={styles.artistPoster}>
+                        </div> */}
+                {/* <div className={styles.artistPoster}>
                         <img
                             className={styles.artistImg}
                             src="/home/sanam.png"
@@ -208,9 +206,9 @@ const index = () => {
                             src="/home/trap_vertical.png"
                             alt="Trap Image"
                         /> */}
-                        {/* </div> */}
-                    </Carousel >
-                </div >
+                {/* </div> */}
+                {/* </Carousel > */}
+                {/* </div > */}
                 {/*end ticket section*/}
 
                 {/* Merchandise Section */}
@@ -294,7 +292,7 @@ const index = () => {
                                 </Link>
                             </motion.div>
 
-                            <Link href="/events" className={styles.mobileBuyNow}>
+                            <Link href="events" className={styles.mobileBuyNow}>
                                 <button
 
 
