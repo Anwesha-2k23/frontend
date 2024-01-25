@@ -5,7 +5,7 @@ const aboutus = () => {
         <div className={styles.parentContainer}>
             <section className={styles.section1}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionHeading}>{"Anwesha'23"}</h2>
+                    <h2 className={styles.sectionHeading}>{"Anwesha'24"}</h2>
                     <hr className={styles.sectionHeadingBar} />
                     <div className={styles.sectionContent}>
                         {"Anwesha is the Annual Techno-Cultural-Mangement Extravaganza of Indian Institute of Technology Patna. The name Anwesha symbolizes, the quest for grandeur, opulence, creativity and perfection. Since its inception in 2010, it has turned out to be one of east India's biggest and most anticipated youth festivals, witnessing participation from all over the country. Anwesha puts forth an unparalleled multitude of events, meticulously fashioned to suit the interests of the computer geeks, gaming freaks, music and dance maniacs. The cultural delight of the fest, pro-nites, share the glamour of iconic rock bands, serenity of classical art forms and amusement of comedy shows."}
@@ -17,7 +17,7 @@ const aboutus = () => {
                         of us. a novel and longstanding.
                         <br /> */}
                         <br />
-                        {"Anwesha 2023 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival."}
+                        {"Anwesha 2024 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival."}
                     </div>
                 </div>
             </section>
@@ -27,12 +27,11 @@ const aboutus = () => {
                     <hr className={styles.sectionHeadingBar} />
                     <div className={styles.sectionContent}>
                         <strong>
-                            EXPANDING THE CULTURAL LANDSCAPE & NURTURING
-                            INDEPENDENT TALENT
+                            EXPLORING THE ENCHANTED MIRAGE OF CULTURAL CREATIVITY
                         </strong>
                         <br />
                         &#x2022; With the expanding music palette of Indian
-                        audiences after the internet arrived, Anwesha 2023 is at
+                        audiences after the internet arrived, Anwesha 2024 is at
                         the converging point to introduce independent music and
                         art at college festivals.
                         <br />
@@ -42,19 +41,19 @@ const aboutus = () => {
                         indie cinema, spoken word, calligraphy and much more.
                     </div>
                     <div className={styles.sectionContent}>
-                        <strong>CREATING A SUSTAINABLE FEST</strong>
+                        <strong>BRIDGING CULTURAL FESTIVITY WITH SUSTAINABLE PRACTICES</strong>
                         <br />
                         &#x2022; As a major festival with massive footfall, we
                         are aware of the enormous resource consumption and
                         consequent waste generated throughout this festival.
-                        Anwesha’23 shall focus on bringing a sustainable
+                        Anwesha’24 shall focus on bringing a sustainable
                         lifestyle & culture to the mainstream.
                         <br />
                         &#x2022; This is a major concern for us, and thus we
                         will be adopting a zero-waste model for our festival.
                     </div>
                     <div className={styles.sectionContent}>
-                        <strong>CONNECTING BACK TO OUR ROOTS</strong>
+                        <strong>CELEBRATING OUR RICH HERITAGE</strong>
                         <br />
                         &#x2022; Anwesha values the role our local artisans,
                         craftsmen and others play in our community. Our vision
@@ -64,11 +63,11 @@ const aboutus = () => {
                         &#x2022; The folk culture in Bihar is immense - from
                         Madhubani to Yampuri, Jat-Jatin to bamboo & pottery
                         craft; we would be delighted to accommodate it all in
-                        Anwesha 2k23.
+                        Anwesha 2k24.
                     </div>
                     <div className={styles.sectionContent}>
                         <strong>
-                            ENTERING UNEXPLORED DOMAINS: TECH & INNOVATION
+                            CHARTING THE FUTURE: NAVIGATING WITH TECH & INNOVATION
                         </strong>
                         <br />
                         &#x2022; Being a premier technological institute of the

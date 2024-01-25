@@ -43,7 +43,7 @@ const oursponsors = () => {
     return (
         <div className={styles.parentContainer}>
             <div className={styles.container}>
-                <h2 className={styles.teamHeader}>Sponsors</h2>
+                <h2 className={styles.teamHeader}> Past Sponsors</h2>
                 <hr className={styles.teamHeadingBar} />
                 <div className={styles.coordinators}>
                     {/* <h2 className={styles.teamSubHeading}>Coordinators</h2> */}
