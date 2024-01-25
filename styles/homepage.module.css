@@ -1,12 +1,74 @@
-.parentcontainer {
-    height: 117vh;
-    /* width: 100vw; */
-    background-image: url(/home/homepage_bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+.bg{
+    background-image:url(/home/homepagebg.svg) ;
+    background-repeat: repeat;
+    background-size: 100%;
+    background-color: #6BD3FF;
 }
 
-.blendHomeSection {
+
+.parentcontainer {
+    
+    /* width: 100vw; */
+    background-image: url(/home/homefront.png);
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    height: 65vw;
+    background-size: 100%;
+    background-position: top center;
+    padding-top: 80px;
+}
+.regdiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 26vw;
+}
+@media screen and (max-width: 750px)
+{
+    .parentcontainer{
+        height: 600px;
+    background-size: cover;
+    margin-top: 56px;
+    padding-top: 30px;
+    }
+    .logo{
+        width: 227px;
+        height: 88.27px;
+    }
+    .regdiv{
+        margin-top: 60vw;
+    }
+}
+@media screen and (max-width: 450px)
+{
+    .regdiv{
+        margin-top: 90vw;
+    }
+    .bg{
+        background-size:150%;
+    }
+}
+.reglink{
+    display: inline-flex;
+padding: 18px 54px;
+align-items: center;
+gap: 7px;
+border-radius: 32px;
+background: #0C0F47;
+
+text-decoration: none;
+}
+.regfont{
+    color: #FFF;
+text-align: center;
+font-family: "Poppins";
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+}
+
+/* .blendHomeSection {
     top: 104vh;
     position: absolute;
     width: 100%;
@@ -14,7 +76,7 @@
     background: rgba(255, 255, 255, 0);
     z-index: 1;
     backdrop-filter: blur(10px);
-}
+} */
 
 .steps{
     width: 1070px;
@@ -124,9 +186,6 @@
 }
 
 .themeSection {
-    background: url(/home/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -188,12 +247,12 @@
     }
 }
 
-@media screen and (max-width: 610px) {
+/* @media screen and (max-width: 610px) {
     .parentcontainer {
         height: 100vh;
     }
 
-}
+} */
 
 @media screen and (max-height: 790px) {
     .blendHomeSection {
@@ -204,10 +263,19 @@
 
 /* Merchandise Container */
 .merchContainer {
-    height: 750px;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+}
+@media screen and (min-width: 2300px)
+{
+    .merchContainer{
+        height: 80vw;
+    }
+    
 }
 
 .tshirtImage {
@@ -224,18 +292,7 @@
     height: 320px;
   }
 }
-.merchDetails {
-    background-color: #504ABC;
-    display: flex;
-    padding-bottom: 20px;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    background-image: url('/merch/tshirt_with_bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
 
 .priceRow {
     display: flex;
@@ -266,6 +323,7 @@
     overflow: hidden;
 }
 
+
 .merchPrice {
     font-size: 20px;
     font-weight: 700;
@@ -280,56 +338,119 @@
     border-radius: 50px;
 }
 
-.merchBooking {
-    background-color: #7570D7;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    align-items: flex-start;
-    justify-content: center;
-    width: 50%;
-    padding-inline: 16%;
+.card{
+    padding: 36px 32px 24px 32px;
+    height: fit-content;
+    width: 40vw;
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 6px 8px 8px 0px rgba(0, 0, 0, 0.10);
+    margin-bottom: 30px;
 }
+
+.text1
+{
+    color: #000;
+font-family: "Poppins";
+font-size: 46px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.text2
+{
+    margin-top: 10px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: stretch;
+}
+@media screen and (max-width: 1150px)
+{
+
+ .card{
+        width: 60vw;
+    }
+        .merchimg{
+        width:70vw;
+        height: auto;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .merchimg{
+        width: 100vw;
+        height: auto;
+    }
+    .card{
+        width: 97vw;
+        padding: 32px 20px 24px 20px;
+
+    }
+    .text1{
+        font-size: 36;
+        font-weight: 650;
+    }
+}
+
 
 .merchBooking img {
     height: 350px;
 }
 
 
+
 .merchBookBtn {
-    background-color: #fff;
-    width: 401px;
-    height: 70px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    border: 3px solid #000000;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s;
+    
+    display: flex;
+    padding: 18px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #00354C;
+    width: 100%;
+border: none;
+color: #FFF;
+text-align: center;
+font-family: "Poppins";
+font-size: 24px;
+font-style: normal;
+font-weight: 650;
+line-height: normal;
+    text-decoration: none !important;
     cursor: pointer;
+
 }
 
 .merchBookBtn2 {
-    margin-top: 50px;
-    background-color: #fff;
-    width: 401px;
-    height: 70px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    border: 3px solid #000000;
-    text-align: center;
+    display: flex;
+padding: 12px 22px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+align-self: stretch;
+border-radius: 16px;
+background: #00354C;
+border: none;
+color: #FFF;
+text-align: center;
+font-family: "Poppins";
+font-size: 18px;
+font-style: normal;
+font-weight: 650;
+line-height: normal;
+width: 100%;
     text-decoration: none;
     display: none;
     cursor: pointer;
 }
-.merchBookBtn:hover {
-    background-color: #000000;
-    color: #fff;
-}
+
 
 .mobileBuyNow{
     overflow:hidden;
@@ -343,22 +464,16 @@
 
 }
 
-@media screen and (max-width: 450px){
-  .merchBookBtn2{
-    width: 300px;
-  }
-}
 
 @media screen and (max-width: 1171px) {
-    .merchBooking {
+    .merchBookBtn {
         display: none;
     }
     .merchContainer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 1014px;
-        background-color: #504ABC;
+        height:fit-content;
     }
     .merchBookBtn2 {
         display: block;
@@ -366,11 +481,8 @@
     .mobileBuyNow{
         display: block;
     }
-    .merchDetails{
-        width: 100%;
-        align-items: center;
-        height: 50%;
-    }
+
+   
 }
 
 
