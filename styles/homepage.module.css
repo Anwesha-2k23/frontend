@@ -376,13 +376,15 @@ line-height: normal;
     }
         .merchimg{
         width:70vw;
+        height: auto;
         align-items: center;
     }
 }
 
 @media screen and (max-width: 750px){
     .merchimg{
-        width: 100%;
+        width: 100vw;
+        height: auto;
     }
     .card{
         width: 97vw;
