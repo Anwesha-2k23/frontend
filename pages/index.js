@@ -231,14 +231,14 @@ const index = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.8 }}
                             >
-                                <Link href="/pronite" style={{ textDecoration: 'none' }}>
+                                {/* <Link href="/pronite" style={{ textDecoration: 'none' }}>
                                     <button
 
                                         className={styles.merchBookBtn}
                                     >
                                         Explore Now
                                     </button>
-                                </Link>
+                                </Link> */}
                             </motion.div>
 
                             <Link href="events" className={styles.mobileBuyNow}>
