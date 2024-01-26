@@ -173,7 +173,7 @@ const Footer = () => {
                 <div className={styles.sectionMiddle}>
                     <img
                         className={styles.frame_img}
-                        src="/footer/Anwesha_Text_Footer.svg"
+                        src="/navbar/logo_no_bg.svg"
                     />
                     <span className={styles.newsletter}>
                         Subscribe to our Mailing list
