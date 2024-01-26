@@ -76,19 +76,14 @@ const Pronite = () => {
                     <br />
                     <h1 className={josefinSans.className}>Pronite</h1>
                     <p className={montserrat.className} style={{ fontWeight: 'bold' }}>
-                        From heart-stopping dance battles and soulful singing
-                        competitions to the dazzling glamour of the fashion
-                        show, with thought-provoking Nukkad Nataks and the
-                        lyrical echoes of poetry slams, Anwesha's events ignite
-                        every artistic spark. Come, delve into Anwesha's events,
-                        where every beat has a story to tell and every
-                        expression finds a stage!
+                      Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage. With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.
                     </p>
                     <br />
                     <br />
                     <br />
                     <h2 style={{ color: 'red', fontWeight: 'bold' }}>
-                        Wallet payments (Paytm, PhonePe etc) are not accepted !</h2>
+                        {userData.isAuth ? "Wallet payments (Paytm, PhonePe etc) are not accepted !" : "Please login to buy Pronite tickets."}
+                    </h2>
                 </div>
                 <div className={styles.content}>
                     {proniteEvents.map((event, index) => {
