@@ -27,14 +27,20 @@ const Pronite = () => {
         let host = process.env.NEXT_PUBLIC_HOST
         proniteIDs.forEach(async (id) => {
             try {
-                const res = await fetch(`${host}/event/id/${id}`, {
+                const res = await fetch(`${host}/event/allevents`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 })
                 const data = await res.json()
-                setProniteEvents((prev) => [...prev, data])
+                let result = data.filter((event) => {
+                    if (proniteIDs.includes(event.id)) {
+                        return true
+                    }
+                    return false
+                })
+                setProniteEvents(result)
             } catch (e) {
                 console.log('Failed to fetch')
             }
