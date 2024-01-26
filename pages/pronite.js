@@ -83,7 +83,7 @@ const Pronite = () => {
                     <br />
                     <br />
                     <h2 style={{ color: 'red', fontWeight: 'bold' }}>
-                        {userData.isAuth ? "Wallet payments (Paytm, PhonePe etc) are not accepted !" : "Please login to buy Pronite tickets."}
+                        {userData.isAuth ? "Wallet payments (Paytm, PhonePe etc) are not accepted !" : <Link href="/userLogin" style={{textDecoration: "none", color: "red"}}>Please <u>Login</u> to Continue</Link>}
                     </h2>
                 </div>
                 <div className={styles.imageBox}>
