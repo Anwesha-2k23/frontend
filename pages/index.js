@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Josefin_Sans } from '@next/font/google'
 import HomeBackgroundAnimation from '../components/Rive/homeBackgrounAnim'
 import styles from '../styles/homepage.module.css'
 import DisplayRiveAnwesha from '../components/Rive/DisplayRiveAnwesha'
@@ -16,6 +17,11 @@ import { Carousel } from 'react-responsive-carousel'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import { motion } from 'framer-motion'
+
+const josefinSans = Josefin_Sans({
+    weight: ['400', '700'],
+    subsets: ['latin'],
+})
 
 const index = () => {
     return (
@@ -46,10 +52,10 @@ const index = () => {
                     </div> */}
                     <div style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Image
-                            src="/home/logo.svg"
+                            src="/home/logo.png"
                             alt="logo"
-                            height={127.33}
-                            width={327.44}
+                            height={400}
+                            width={1029.92}
                             className={styles.logo}
                         />
                     </div>
@@ -217,10 +223,10 @@ const index = () => {
                 <div className={styles.themeSection}>
                     <div className={styles.merchContainer}>
                         <Link href="/pronite">
-                        <ProTicket />
+                            <ProTicket />
                         </Link>
                         <div className={styles.card}>
-                            <div className={styles.text1}>
+                            <div className={styles.text1} style={josefinSans.style}>
                                 Pronite Pass
                             </div>
                             <div className={styles.text2}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage.</div>
@@ -256,7 +262,7 @@ const index = () => {
                     <div className={styles.merchContainer}>
 
                         <div className={styles.card}>
-                            <div className={styles.text1}>
+                            <div className={styles.text1} style={josefinSans.style}>
                                 Official Anwesha Merch
                             </div>
                             <div className={styles.text2}>Get ready to immerse yourselves in the allure of aesthetics as we unveil the exclusive T-shirt and Hoodie collection for Anwesha'24!</div>
@@ -311,7 +317,7 @@ const index = () => {
                             className={styles.merchimg}
                         />
                         <div className={styles.card}>
-                            <div className={styles.text1}>
+                            <div className={styles.text1} style={josefinSans.style}>
                                 Events at Anwesha’24
                             </div>
                             <div className={styles.text2}>From heart-stopping dance battles and soulful singing competitions to the dazzling glamour of the fashion show, with thought-provoking Nukkad Nataks and the lyrical echoes of poetry slams, Anwesha's events ignite every artistic spark. Come, delve into Anwesha's events, where every beat has a story to tell and every expression finds a stage!</div>
@@ -350,7 +356,7 @@ const index = () => {
                     <div className={styles.merchContainer}>
 
                         <div className={styles.card}>
-                            <div className={styles.text1}>
+                            <div className={styles.text1} style={josefinSans.style}>
                                 Mirage Of Asthete
                             </div>
                             <div className={styles.text2}>Unveiling a symphony of beauty and illusion, this ethereal experience transcends the ordinary, inviting you to explore the captivating landscapes of creativity. Join us on this mesmerizing journey where the boundaries of imagination blur, and the soul is set free to embrace the magic of this unveiled mirage!</div>

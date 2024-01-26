@@ -15,12 +15,16 @@
     height: 65vw;
     background-size: 100%;
     background-position: top center;
-    padding-top: 80px;
+    padding-top:4.16vw;
 }
 .regdiv{
     display: flex;
     justify-content: center;
     margin-top: 26vw;
+}
+.logo{
+    width: 21.62vw;
+    height: 8.392vw;
 }
 @media screen and (max-width: 750px)
 {
@@ -67,6 +71,7 @@ font-weight: 600;
 line-height: normal;
 
 }
+
 
 /* .blendHomeSection {
     top: 104vh;
@@ -351,7 +356,6 @@ line-height: normal;
 .text1
 {
     color: #000;
-font-family: "Poppins";
 font-size: 46px;
 font-style: normal;
 font-weight: 700;
@@ -463,7 +467,14 @@ width: 100%;
     font-weight: 700;
 
 }
-
+@media screen and (max-width: 1134px) {
+    .merchContainer:nth-child(2n+1) {
+        flex-direction: column;
+    }
+    .merchContainer:nth-child(2n) {
+        flex-direction: column-reverse;
+    }
+}
 
 @media screen and (max-width: 1171px) {
     .merchBookBtn {
