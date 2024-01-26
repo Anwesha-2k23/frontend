@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import EventItem from '../components/EventItem'
+import { AuthContext } from '../components/authContext.js'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -19,12 +20,24 @@ const josefinSans = Josefin_Sans({
 })
 
 // add event ids here
-const proniteIDs = ['EVTcf525', 'EVTcac95', 'EVT66e40']
+const proniteIDs = []
 
 const Pronite = () => {
     const [proniteEvents, setProniteEvents] = useState([])
+    const userData = useContext(AuthContext)
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
+        if(userData.isAuth){
+          if(userData.state.user.user_type === 'student'){
+            proniteIDs.push('EVTcf525');
+            proniteIDs.push('EVTcac95');
+            proniteIDs.push('EVT66e40');
+          }
+          else if(userData.state.user.user_type === 'iitp_student'){
+            proniteIDs.push('EVT68cb3');
+            proniteIDs.push('EVT49870');
+          }
+        }
         proniteIDs.forEach(async (id) => {
             try {
                 const res = await fetch(`${host}/event/allevents`, {
@@ -46,7 +59,7 @@ const Pronite = () => {
             }
             console.log(proniteEvents)
         })
-    }, [])
+    }, [userData])
 
     return (
         <div className={styles.mainContainer}>

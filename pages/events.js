@@ -20,7 +20,7 @@ const josefinSans = Josefin_Sans({
 
 const Events = () => {
     const [events, setEvents] = useState([])
-    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40'] // PS wars, proto UI
+    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40', 'EVT68cb3', 'EVT49870']
 
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
