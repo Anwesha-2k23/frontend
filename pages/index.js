@@ -89,7 +89,9 @@ const index = () => {
                 {/* <div
                     className={styles.ticketContainer}
                     style={{ overflow: 'hidden' }}
-                > */}
+                >
+                    <ProTicket />
+                </div> */}
                 {/* <Carousel
                         style={{ position: 'absolute' }}
                         showStatus={false}
@@ -211,8 +213,46 @@ const index = () => {
                 {/* </div > */}
                 {/*end ticket section*/}
 
-                {/* Merchandise Section */}
+                {/* Ticket Section */}
                 <div className={styles.themeSection}>
+                    <div className={styles.merchContainer}>
+                        <Link href="/pronite">
+                        <ProTicket />
+                        </Link>
+                        <div className={styles.card}>
+                            <div className={styles.text1}>
+                                Pronite Pass
+                            </div>
+                            <div className={styles.text2}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage.</div>
+                            <div className={styles.text2}>With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>
+                            <div style={{ marginTop: '24px' }}></div>
+                            <motion.div
+
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.8 }}
+                            >
+                                <Link href="/pronite" style={{ textDecoration: 'none' }}>
+                                    <button
+
+                                        className={styles.merchBookBtn}
+                                    >
+                                        Explore Now
+                                    </button>
+                                </Link>
+                            </motion.div>
+
+                            <Link href="events" className={styles.mobileBuyNow}>
+                                <button
+
+
+                                    className={styles.merchBookBtn2}
+                                >
+                                    Explore Now
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+
                     <div className={styles.merchContainer}>
 
                         <div className={styles.card}>
