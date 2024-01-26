@@ -22,7 +22,7 @@ const index = () => {
         <>
             <Head>
                 <title>Anwesha 2024</title>
-                <meta name="description" content="Anwesha 2023" />
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.bg}>
@@ -539,7 +539,7 @@ const index = () => {
                                 }}
                             />
                             <div className={styles.eventSectionText}>
-                                Anwesha 2023 is envisioned to be an innovative and
+                                Anwesha 2024 is envisioned to be an innovative and
                                 cultural uplifting festival of togetherness in not
                                 just the state or region, but the whole nation. We
                                 have reimagined the lens through which we understand

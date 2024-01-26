@@ -36,8 +36,8 @@ export default function Multicity() {
     return (
         <>
             <Head>
-                <title>Multicity-Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Multicity-Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
 
@@ -71,7 +71,7 @@ export default function Multicity() {
                             Venue: Technocrats Institute of Technology and
                             Science
                             <br />
-                            Dates: 4th - 5th February, 2023
+                            Dates: 4th - 5th February, 2024
                         </p>
                     </div>
                     <button className={styles.btn}>

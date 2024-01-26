@@ -55,8 +55,8 @@ function profile() {
     return (
         <>
             <Head>
-                <title>Profile - Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Profile - Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <ToastContainer

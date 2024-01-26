@@ -17,7 +17,7 @@ const aboutus = () => {
                         of us. a novel and longstanding.
                         <br /> */}
                         <br />
-                        {"Anwesha 2023 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival."}
+                        {"Anwesha 2024 is envisioned to be an innovative and cultural uplifting festival of togetherness in not just the state or region, but the whole nation. We have reimagined the lens through which we understand culture and celebration, deriving the cornerstones for this year's edition that shall drive forward our festival."}
                     </div>
                 </div>
             </section>
@@ -32,7 +32,7 @@ const aboutus = () => {
                         </strong>
                         <br />
                         &#x2022; With the expanding music palette of Indian
-                        audiences after the internet arrived, Anwesha 2023 is at
+                        audiences after the internet arrived, Anwesha 2024 is at
                         the converging point to introduce independent music and
                         art at college festivals.
                         <br />

@@ -44,8 +44,8 @@ const Events = () => {
     return (
         <div className={styles.mainContainer}>
             <Head>
-                <title>Events - Anwesha 2023</title>
-                <meta name="description" content="Events-Anwesha 2023" />
+                <title>Events - Anwesha 2024</title>
+                <meta name="description" content="Events-Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div style={{ height: 100 }}></div>

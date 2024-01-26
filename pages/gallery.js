@@ -7,8 +7,8 @@ export default function Multicity({ folderLinks }) {
     return (
         <>
             <Head>
-                <title>Gallery - Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Gallery - Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="/AnwehsaIcon.png" />
             </Head>
             {/* <Navbar /> */}

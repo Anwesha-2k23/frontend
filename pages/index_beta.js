@@ -19,14 +19,14 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="/AnweshaIcon.png" />
             </Head>
             <div className={styles.hero}>
                 <Countdown
-                    dateTo="March 17, 2023 00:00:00 GMT+05:30"
-                    callback={() => console.log('Anwesha 2023 is Here!!!')}
+                    dateTo="March 17, 2024 00:00:00 GMT+05:30"
+                    callback={() => console.log('Anwesha 2024 is Here!!!')}
                 />
             </div>
         </>

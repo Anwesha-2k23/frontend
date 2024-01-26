@@ -1,4 +1,4 @@
-# <img src="public/AnwehsaIcon.png" alt="Logo" width="40" height="40">      Anwesha 2023 Frontend
+# <img src="public/AnwehsaIcon.png" alt="Logo" width="40" height="40">      Anwesha 2024 Frontend
 [![Netlify Status](https://api.netlify.com/api/v1/badges/169e9195-9697-474f-9d0e-15c58701549f/deploy-status)](https://app.netlify.com/sites/anwesha2022/deploys)
 
 ## 📜 Overview

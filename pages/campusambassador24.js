@@ -31,8 +31,8 @@ export default function CampusAmbassador24() {
     return (
         <div style={{ background: "#1C1D47" }}>
             <Head>
-                <title>Anwesha 2023</title>
-                <meta name="description" content="CampusAmbassador-Anwesha 2023" />
+                <title>Anwesha 2024</title>
+                <meta name="description" content="CampusAmbassador-Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.topmargin} />
