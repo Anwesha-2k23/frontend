@@ -52,7 +52,7 @@ function Navigation() {
             setTimeout(function () {
                 ; (document.getElementById('drawer').style.display = 'none'),
                     (document.getElementById('nav_div').style.backgroundColor =
-                        '')
+                        '#010031')
             }, 300)
             setDrawerOpen(false)
             if (onClickInput) {
@@ -82,7 +82,7 @@ function Navigation() {
             setTimeout(
                 () => (
                     (drawer.style.opacity = 1),
-                    (nav_div.style.backgroundColor = '#394a72')
+                    (nav_div.style.backgroundColor = '#010031')
                 ),
                 300
             )

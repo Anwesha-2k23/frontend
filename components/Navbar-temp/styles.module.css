@@ -3,7 +3,7 @@
 .mainNav {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background: #394a72;
+    background: #010031;
     color: #000;
     text-align: center;
     font-family: Poppins;
@@ -71,7 +71,7 @@
 .nav_drawer ul {
     display: flex;
     flex-direction: column;
-    background: #394a72;
+    background: #010031;
     align-items: center;
     justify-content: center;
 }
