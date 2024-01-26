@@ -94,8 +94,8 @@ export async function getServerSideProps(context) {
                     images.data.files.map(async (image) => {
                         // To create a link we will append the id of the image to the url
                         let url =
-                            'https://drive.google.com/uc?export=view&id=' +
-                            image.id
+                            'https://lh3.google.com/u/0/d/' +
+                            image.id 
                         return url
                     })
                 )
