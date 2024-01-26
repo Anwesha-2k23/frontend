@@ -241,7 +241,7 @@ const index = () => {
                                 </Link> */}
                             </motion.div>
 
-                            <Link href="events" className={styles.mobileBuyNow}>
+                            {/* <Link href="events" className={styles.mobileBuyNow}>
                                 <button
 
 
@@ -249,7 +249,7 @@ const index = () => {
                                 >
                                     Explore Now
                                 </button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
 

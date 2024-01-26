@@ -59,7 +59,7 @@ const Pronite = () => {
             }
             console.log(proniteEvents)
         })
-    }, [userData])
+    }, [proniteEvents, userData])
 
     return (
         <div className={styles.mainContainer}>
