@@ -70,6 +70,7 @@ const Pronite = () => {
             </Head>
             <div style={{ height: 100 }}></div>
             <div className={styles.container}>
+              <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
                 <div className={styles.titleBox}>
                     <br />
                     <br />
@@ -85,11 +86,16 @@ const Pronite = () => {
                         {userData.isAuth ? "Wallet payments (Paytm, PhonePe etc) are not accepted !" : "Please login to buy Pronite tickets."}
                     </h2>
                 </div>
-                <div className={styles.content}>
+                <div className={styles.imageBox}>
+                    <Image src="/pronite/stage_layout.png" width={500} height={500} style={{width: '100%'}} />
+                    <p style={{fontWeight: 'semibold', fontSize: '20px'}}>Stage Layout</p>
+                </div>
+              </div>
+              <div className={styles.content}>
                     {proniteEvents.map((event, index) => {
                         return <EventItem event={event} key={index} />
                     })}
-                </div>
+              </div>
             </div>
         </div>
     )
