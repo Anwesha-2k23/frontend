@@ -15,7 +15,7 @@ const Modal = (props) => {
     function handleRagister() {
         if (userData.isAuth) {
             if (props.body.is_solo) {
-                if (userData.state.user.user_type !== 'iitp_student') {
+                if (userData.state.user.user_type !== 'iitp_student' || props.body.id == 'EVT49870' || props.body.id == 'EVT68cb3') {
                     if (props.body.registration_fee === "0.00")
                         soloEventRegistrationiitp(
                             props.body.id,
@@ -232,8 +232,8 @@ const Modal = (props) => {
                                 </div>
                                 {props.body.registration_fee ? (
                                     !userData.isAuth ||
-                                        userData.state.user.user_type !==
-                                        'iitp_student' ? (
+                                        (userData.state.user.user_type !==
+                                        'iitp_student') || props.body.id == 'EVT68cb3' || props.body.id == 'EVT49870' ? (
                                         <p>
                                             Registration Fee&nbsp;
                                             {/* <img src="/assets/payment.svg" /> */}
