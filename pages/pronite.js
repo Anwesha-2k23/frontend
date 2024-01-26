@@ -18,32 +18,30 @@ const josefinSans = Josefin_Sans({
     subsets: ['latin'],
 })
 
-const proniteDetails = [
-    {
-        "description": "MODELING WORKSHOP AND INTERACTIVE PERSONALITY BOOST SESSION WITH MISS GRAND\r\nINDIA 2022\r\n -- “PRACHI NAGPAL”\r\n\r\nInsta handle: https://www.instagram.com/praachinagpal?igsh=ZThxNmJxZzkyeGw1\r\n\r\nEarly Bird Offer:\r\n149/ person\r\nLater Charges:\r\n199/ person\r\n\r\nRegister soon to avail Early bird offer !",
-        "end_time": "2024-02-02T11:30:00Z",
-        "id": "EVT6a873",
-        "is_active": true,
-        "is_online": false,
-        "is_solo": true,
-        "max_team_size": 1,
-        "min_team_size": 1,
-        "name": "MODELING WORKSHOP (1 Person)",
-        "order": -1,
-        "organizer": [],
-        "poster": "https://drive.google.com/thumbnail?id=18cLzKuPzyT86h5KvyrHguLiXrduqOwu7&sz=500w",
-        "prize": "0",
-        "registration_deadline": "2024-02-02T10:30:00Z",
-        "registration_fee": "149.00",
-        "registration_link": "",
-        "start_time": "2024-02-02T10:30:00Z",
-        "tags": "5",
-        "venue": "TBD (offline , IITP)",
-        "video": ""
-    }
-]
+// add event ids here
+const proniteIDs = ['EVTcf525', 'EVTcac95', 'EVT66e40']
 
 const Pronite = () => {
+    const [proniteEvents, setProniteEvents] = useState([])
+    useEffect(() => {
+        let host = process.env.NEXT_PUBLIC_HOST
+        proniteIDs.forEach(async (id) => {
+            try {
+                const res = await fetch(`${host}/event/id/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                const data = await res.json()
+                setProniteEvents((prev) => [...prev, data])
+            } catch (e) {
+                console.log('Failed to fetch')
+            }
+            console.log(proniteEvents)
+        })
+    }, [])
+
     return (
         <div className={styles.mainContainer}>
             <Head>
@@ -74,10 +72,7 @@ const Pronite = () => {
                         Wallet payments (Paytm, PhonePe etc) are not accepted !</h2>
                 </div>
                 <div className={styles.content}>
-                    {/* {events.map((event, index) => {
-                        return <EventItem event={event} key={index} />
-                    })} */}
-                    {proniteDetails.map((event, index) => {
+                    {proniteEvents.map((event, index) => {
                         return <EventItem event={event} key={index} />
                     })}
                 </div>

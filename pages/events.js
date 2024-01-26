@@ -20,6 +20,7 @@ const josefinSans = Josefin_Sans({
 
 const Events = () => {
     const [events, setEvents] = useState([])
+    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40'] // PS wars, proto UI
 
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
@@ -33,13 +34,20 @@ const Events = () => {
                     },
                 })
                 const data = await res.json()
-                setEvents(data)
+                let result = data.filter((event) => {
+                    if (exceludedEvents.includes(event.id)) {
+                        return false
+                    }
+                    return true
+                })
+                setEvents(result)
             } catch (e) {
                 console.log('Failed to fetch')
             }
         }
         callAPI()
     }, [])
+
     console.log(events);
     return (
         <div className={styles.mainContainer}>
