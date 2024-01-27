@@ -223,13 +223,13 @@ const index = () => {
 
                 {/* Ticket Section */}
                 <div className={styles.themeSection}>
-                    {/* <div className={styles.merchContainer}>
+                    <div className={styles.merchContainer}>
                         <Link href="/pronite">
                             <ProTicket />
                         </Link>
                         <div className={styles.card}>
                             <div className={styles.text1} style={josefinSans.style}>
-                                Pronite Pass
+                                Anwesha pronite
                             </div>
                             <div className={styles.text2}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage.</div>
                             <div className={styles.text2}>With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>
@@ -241,7 +241,7 @@ const index = () => {
                             >
                             </motion.div>
                         </div>
-                    </div> */}
+                    </div>
 
                     <div className={styles.merchContainer}>
 
