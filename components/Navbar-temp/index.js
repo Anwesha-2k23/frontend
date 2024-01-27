@@ -165,7 +165,7 @@ function Navigation() {
                                 Events
                             </Link>
                         </li>
-
+                        {/* Added pronite to navbar */}
                         <li
                             style={
                                 router.pathname === '/pronite'
