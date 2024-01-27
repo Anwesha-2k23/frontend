@@ -11,7 +11,8 @@ const nextConfig = {
             'avatars.githubusercontent.com',
             'www.internationalmusicfestival.com',
             'drive.google.com',
-            'i.ibb.co'
+            'i.ibb.co',
+            'kvibbihar.com'
         ],
     },
 }

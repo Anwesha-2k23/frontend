@@ -85,7 +85,7 @@ const index = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        marginBottom: '100px',
+                        marginBottom: '40px',
                         marginTop: '100px',
                     }}
                 >

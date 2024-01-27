@@ -14,7 +14,7 @@ import Navbar from '../components/Navbar-temp'
 import Footer from '../components/Footer/Footer'
 
 const poppins = Poppins({
-    weight: ['400', '600', '900'],
+    weight: ['400', '600', '900', '100', '300', '500', '700', '800'],
     subsets: ['latin'],
 })
 function MyApp({ Component, pageProps }) {
