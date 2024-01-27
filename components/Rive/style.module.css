@@ -91,3 +91,9 @@
     width: 297px;
     height: 528px;
 }
+
+/* Register button CSS */
+.registerButton {
+    width: 100%;
+    height: 50px;
+}

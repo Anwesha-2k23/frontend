@@ -38,7 +38,7 @@ const Pronite = () => {
             proniteIDs.push('EVT49870');
           }
         }
-        proniteIDs.forEach(async (id) => {
+        async function fetchData() {
             try {
                 const res = await fetch(`${host}/event/allevents`, {
                     method: 'GET',
@@ -58,7 +58,8 @@ const Pronite = () => {
                 console.log('Failed to fetch')
             }
             console.log(proniteEvents)
-        })
+        }
+        fetchData()
     }, [proniteEvents, userData])
 
     return (

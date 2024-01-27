@@ -12,6 +12,7 @@ import DisplayRiveGymkhana from '../components/Rive/DisplayRiveGymkhana'
 import DisplayRiveEvent from '../components/Rive/DisplayRiveEvent'
 import EliteTicket from '../components/Rive/EliteTicket'
 import ProTicket from '../components/Rive/ProTicket'
+import RegisterButton from '../components/Rive/RegisterButton'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 import AwesomeSlider from 'react-awesome-slider'
@@ -68,6 +69,7 @@ const index = () => {
                                 <div className={styles.regfont}>
                                     Register Now
                                 </div>
+                                {/* <RegisterButton /> */}
                             </Link>
                         </motion.div>
                     </div>
