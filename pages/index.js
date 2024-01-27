@@ -223,7 +223,7 @@ const index = () => {
 
                 {/* Ticket Section */}
                 <div className={styles.themeSection}>
-                    <div className={styles.merchContainer}>
+                    {/* <div className={styles.merchContainer}>
                         <Link href="/pronite">
                             <ProTicket />
                         </Link>
@@ -239,27 +239,9 @@ const index = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.8 }}
                             >
-                                {/* <Link href="/pronite" style={{ textDecoration: 'none' }}>
-                                    <button
-
-                                        className={styles.merchBookBtn}
-                                    >
-                                        Explore Now
-                                    </button>
-                                </Link> */}
                             </motion.div>
-
-                            {/* <Link href="events" className={styles.mobileBuyNow}>
-                                <button
-
-
-                                    className={styles.merchBookBtn2}
-                                >
-                                    Explore Now
-                                </button>
-                            </Link> */}
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={styles.merchContainer}>
 
