@@ -6,10 +6,10 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { useEffect, useState, useContext } from 'react'
 import { useRouter } from 'next/router.js'
-import EventItem from '../components/EventItem'
+import EventItem from '../components/EventItem/index.js'
 import { AuthContext } from '../components/authContext.js'
-import ProTicket from '../components/Rive/ProTicket'
-import EliteTicket from '../components/Rive/EliteTicket'
+import ProTicket from '../components/Rive/ProTicket.js'
+import EliteTicket from '../components/Rive/EliteTicket.js'
 import { soloEventRegistration,soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 
 const montserrat = Montserrat({
@@ -25,7 +25,7 @@ const josefinSans = Josefin_Sans({
 // add event ids here
 const proniteIDs = []
 
-const Pronite = () => {
+const Entry = () => {
     const router = useRouter()
     const [proniteEvents, setProniteEvents] = useState([])
     const [profile, setProfile] = useState()
@@ -122,6 +122,27 @@ const Pronite = () => {
             <div className={styles.hero}>
                 <img src="/pronite/heading.png" alt="" className={styles.hero_heading} />
             </div>
+            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
+                <div className={styles.section_container}>
+                    <h1 className={styles.section_heading}>Cultural Night</h1>
+                    <div className={styles.section_text}>Anwesha's Cultural Night, Virasat'24, by SPIC MACAY, is a vibrant showcase of Indian culture. With mesmerizing Qawwali melodies and energetic Purulia Chhau dance, it celebrates India's rich cultural tapestry. Accomplished artists and rising talents promise an unforgettable evening of rhythmic beats and graceful movements.</div>
+                </div>
+                <div className={styles.section_container}></div>
+            </div>
+            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/edm.png')"}}>
+                <div className={styles.section_container}>
+                    <h1 className={styles.section_heading}>EDM Night</h1>
+                    <div className={styles.section_text}>Dive into sonic bliss at our EDM night. Let DJs weave exhilarating beats on the dance floor, creating an unforgettable experience of pulsating rhythms. Join us for an immersive night of electronic enchantment with vibrant lights, energetic beats, and contagious energy.</div>
+                </div>
+                <div className={styles.section_container}></div>
+            </div>
+            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/bollywood.png')"}}>
+                <div className={styles.section_container}>
+                    <h1 className={styles.section_heading}>Bollywood Night</h1>
+                    <div className={styles.section_text}>IIT Patna's Anwesha brings back the dazzling Bollywood night, Pronite! Featuring the musical maestro behind hits like "Badtameez Dil" and "Pashmina," this event follows the legacy of Sanam Band and KK. Join us for a night of vibrant melodies, pulsating beats, and Bollywood magic as Pronite 2024 lights up the town under the disco ball!</div>
+                </div>
+                <div className={styles.section_container}></div>
+            </div>
             <div className={styles.passes}>
                 <div className={styles.pass_header}>
                     <h1 className={styles.heading}>Nights with Superstars</h1>
@@ -131,27 +152,6 @@ const Pronite = () => {
                 <div onClick={()=>{handleRagister(1)}}><ProTicket /></div>
                 <div onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
                 </div>
-            </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>Cultural Night</h1>
-                    <div className={styles.section_text}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage. With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>
-                </div>
-                <div className={styles.section_container}></div>
-            </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/edm.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>EDM Night</h1>
-                    <div className={styles.section_text}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage. With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>
-                </div>
-                <div className={styles.section_container}></div>
-            </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/bollywood.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>Bollywood Night</h1>
-                    <div className={styles.section_text}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage. With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>
-                </div>
-                <div className={styles.section_container}></div>
             </div>
             {/* <div style={{ height: 100 }}></div>
             <div className={styles.container}>
@@ -181,4 +181,4 @@ const Pronite = () => {
         </div>
     )
 }
-export default Pronite
+export default Entry
