@@ -22,8 +22,12 @@ const josefinSans = Josefin_Sans({
     subsets: ['latin'],
 })
 
-// add event ids here
 const proniteIDs = []
+
+const PASS_IITP_GENERAL = 'EVTe96c6'
+const PASS_IITP_SPECIAL = 'EVT8e600'
+const PASS_GENERAL = 'EVT7a8a7'
+const PASS_SPECIAL = 'EVT691bc'
 
 const Registration = () => {
     const router = useRouter()
@@ -35,12 +39,12 @@ const Registration = () => {
         let host = process.env.NEXT_PUBLIC_HOST
         if(userData.isAuth){
           if(userData.state.user.user_type === 'iitp_student'){
-              proniteIDs.push('EVTe96c6');
-              proniteIDs.push('EVT8e600');
+              proniteIDs.push(PASS_IITP_GENERAL);
+              proniteIDs.push(PASS_IITP_SPECIAL);
             }
             else{
-              proniteIDs.push('EVT7a8a7');
-              proniteIDs.push('EVT691bc');
+              proniteIDs.push(PASS_GENERAL);
+              proniteIDs.push(PASS_SPECIAL);
           }
         }
         async function fetchData() {
@@ -72,7 +76,7 @@ const Registration = () => {
                 if (profile.state.user.user_type !== 'iitp_student') {
                     if (id == 0){
                         soloEventRegistration(
-                            'EVT691bc',
+                            PASS_SPECIAL,
                             1499,
                             profile.state.user.email_id,
                             profile.state.user.phone_number,
@@ -81,7 +85,7 @@ const Registration = () => {
                     }
                     else if (id == 1){
                         soloEventRegistration(
-                            'EVT7a8a7',
+                            PASS_GENERAL,
                             999,
                             profile.state.user.email_id,
                             profile.state.user.phone_number,
@@ -93,7 +97,7 @@ const Registration = () => {
                 else {
                     if (id == 0){
                         soloEventRegistration(
-                            'EVT8e600',
+                            PASS_IITP_SPECIAL,
                             699,
                             profile.state.user.email_id,
                             profile.state.user.phone_number,
@@ -102,7 +106,7 @@ const Registration = () => {
                     }
                     else if (id == 1){
                         soloEventRegistrationiitp(
-                            'EVTe96c6'
+                            PASS_IITP_GENERAL
                         )
                     }
                 }
@@ -145,12 +149,12 @@ const Registration = () => {
             </div>
             <div className={styles.passes}>
                 <div className={styles.pass_header}>
-                    <h1 className={styles.heading}>Nights with Superstars</h1>
+                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
                     <h3 className={styles.heading_text}>Get your passes to unlock the awesomeness!</h3>
                 </div>
                 <div className={styles.pass_container}>
-                <div onClick={()=>{handleRagister(1)}}><ProTicket /></div>
-                <div onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
+                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(1)}}><ProTicket /></div>
+                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
                 </div>
             </div>
             {/* <div style={{ height: 100 }}></div>

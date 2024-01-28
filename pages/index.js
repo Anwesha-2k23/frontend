@@ -346,7 +346,7 @@ const index = () => {
 
                         <div className={styles.card}>
                             <div className={styles.text1} style={josefinSans.style}>
-                                Mirage Of Asthete
+                                Mirage Of Aesthete
                             </div>
                             <div className={styles.text2}>Unveiling a symphony of beauty and illusion, this ethereal experience transcends the ordinary, inviting you to explore the captivating landscapes of creativity. Join us on this mesmerizing journey where the boundaries of imagination blur, and the soul is set free to embrace the magic of this unveiled mirage!</div>
                             <div style={{ marginTop: '24px' }}></div>
