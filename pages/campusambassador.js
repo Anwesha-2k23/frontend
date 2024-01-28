@@ -4,14 +4,23 @@ import { motion } from 'framer-motion'
 import GreetingLottie from '../components/displaylottie'
 import styles from '../styles/campusamb.module.css'
 import Image from 'next/image'
+import { useEffect } from 'react'
 // import Anwesha_text from "../images/Anwesha_text.png";
 
-export default function campusAmbassador() {
+export default function CampusAmbassador() {
+    useEffect(() => {
+        // Applying on mount
+        document.body.style.overflowX = 'hidden'
+        // Applying on unmount
+        return () => {
+            document.body.style.overflowX = 'visible'
+        }
+    }, [])
     return (
         <div className={styles.campusamb_body}>
             <Head>
-                <title>Anwesha 2023 - Campus Ambassador</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Anwesha 2024 - Campus Ambassador</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <div style={{ height: '100px' }}></div> */}

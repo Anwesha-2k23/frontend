@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.eventCard {
+    display: flex;
+    min-width: fit-content;
+    max-width: 55vw;
+    column-gap: min(135px, 8vw);
+    flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    row-gap: 2.5vh;
+}
+
+@media screen and (max-width: 768px) {
+    .eventCard {
+        flex-direction: column;
+    }
+}
+
+.eventImageWrapper {
+    min-width: 278px;
+    aspect-ratio: 278/322;
+    background-color: #ce552f;
+    border: 2.05px solid;
+    --border-color: #44151a;
+    border-color: var(--border-color);
+    position: relative;
+    border-radius: 10.8px 41.5px 10.8px 10.8px;
+}
+
+.eventImageWrapper_dot {
+    background-color: #df7a31;
+    border: 2.05px solid;
+    border-color: var(--border-color);
+    border-radius: 6.74px;
+    height: 13px;
+    left: 16px;
+    position: absolute;
+    top: 11px;
+    width: 13px;
+}
+
+.eventImageWrapper_box {
+    background-color: #f7c158;
+    border: 2.05px solid;
+    border-color: var(--border-color);
+    border-radius: 26.96px;
+    height: 226px;
+    left: 24px;
+    position: absolute;
+    top: 24px;
+    width: 226px;
+}
+
+.eventBody {
+    color: white;
+    height: fit-content;
+}
+
+.eventTitle {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 15px;
+}
+
+.eventDetails p {
+    font-size: 15px;
+	line-height: 30px;
+    font-weight: 300;
+}
+
+.eventDetails b {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.eventLinks {
+    margin-top: 30px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: min(60px, 5vw);
+
+    @media screen and (max-width: 768px) {
+        max-width: 278px;
+    }
+}
+
+.eventLinks a {
+    display: flex;
+    padding-inline: 40px;
+    padding-block: 16px;
+    flex-wrap: wrap;
+    align-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+	font-weight: bold;
+    border: white 1px solid;
+}
+
+.registerLink {
+    background-color: white;
+    color: #63262d;
+}
+
+.registerLink:hover {
+	color: white;
+    background-color: unset;
+}
+
+.rulebookLink {
+	color: white;
+	background-color: unset;
+}

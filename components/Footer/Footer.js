@@ -10,13 +10,13 @@ var validator = require('email-validator')
 const Footer = () => {
     const [email, setEmail] = useState('')
     useEffect(() => {
-        // const scriptURL = 'https://script.google.com/macros/s/AKfycbw51WVpKO2DRiLvCG7GMr-CvlI3pSMXNe2WlGlwLCwTisYKxLysZ0lVeR-qwbId_VE1/exec'
         const scriptURL =
-            'https://script.google.com/macros/s/AKfycby-IHPwPAe6nM854aqDwsK8Ln2hAWB3B_HsmCwXBxHH-deaosldviJ0ADrnNxHFAS89/exec'
+            'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault()
+            console.log(new FormData(form))
             if (validator.validate(document.getElementById('email').value)) {
                 toast.success('You are subscribed to our newsletter', {
                     position: 'top-right',
@@ -28,14 +28,16 @@ const Footer = () => {
                     progress: undefined,
                     theme: 'light',
                 })
-                let a = await fetch(scriptURL, {
+                const response = await fetch(scriptURL, {
                     method: 'POST',
                     body: new FormData(form),
                 })
-                let b = await a.json()
-                // console.log(b)
+                const data = await response.json()
+                console.log(data)
+                // .then(response => console.log('Success!', response))
+                // .catch(error => console.error('Error!', error.message))
                 setEmail('')
-                if (b.result != 'success') {
+                if (data.result != 'success') {
                     toast.error('Failed to subscribe the newsletter', {
                         position: 'top-right',
                         autoClose: 3000,
@@ -67,12 +69,11 @@ const Footer = () => {
 
     const handleChange = (e) => {
         setEmail(e.target.value)
-        console.log(email)
     }
     return (
         <div className={styles.footer}>
-            <div className={[styles.mainSection].join(' ')}>
-                <div className={[styles.section3].join(' ')}>
+            <div className={styles.mainSection}>
+                <div className={styles.sectionLeft}>
                     <div className={styles.footerTable}>
                         <div className={styles.footerTableRow}>
                             <Link className={styles.footerLink} href="/">
@@ -80,14 +81,14 @@ const Footer = () => {
                                     Home
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/events">
+                            <Link className={styles.footerLink} href="https://forms.gle/67XktxG9iTFgfT9n9" target='_blank'>
                                 <div className={styles.footerTableCell}>
-                                    Events
+                                    Report a Problem
                                 </div>
                             </Link>
                             <Link
                                 className={styles.footerLink}
-                                href="/sponsors"
+                                href="/oursponsors"
                             >
                                 <div className={styles.footerTableCell}>
                                     Sponsors
@@ -95,12 +96,9 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className={styles.footerTableRow}>
-                            <Link
-                                className={styles.footerLink}
-                                href="/alumni-outreach"
-                            >
+                            <Link className={styles.footerLink} href="/profile">
                                 <div className={styles.footerTableCell}>
-                                    Alumni Outreach
+                                    Profile
                                 </div>
                             </Link>
                             <Link className={styles.footerLink} href="/aboutus">
@@ -108,11 +106,20 @@ const Footer = () => {
                                     About Us
                                 </div>
                             </Link>
-                            <Link className={styles.footerLink} href="/team">
+                            <Link className={styles.footerLink} href="/ourteam">
                                 <div className={styles.footerTableCell}>
                                     Team
                                 </div>
                             </Link>
+                            {/* <Link
+                                className={styles.footerLink}
+                                href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                                target="_blank"
+                            >
+                                <div className={styles.footerTableCell}>
+                                    Report issue
+                                </div>
+                            </Link> */}
                         </div>
                     </div>
                     <div
@@ -162,10 +169,11 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={styles.middle_container}>
+
+                <div className={styles.sectionMiddle}>
                     <img
                         className={styles.frame_img}
-                        src="/footer/anwesha_text_footer.png"
+                        src="/navbar/logo_no_bg.svg"
                     />
                     <span className={styles.newsletter}>
                         Subscribe to our Mailing list
@@ -176,7 +184,7 @@ const Footer = () => {
                             onChange={handleChange}
                             value={email}
                             type="email"
-                            name="mailing"
+                            name="Email"
                             id="email"
                             className={styles.mailInput}
                         />
@@ -206,9 +214,8 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                {/* <div className={[styles.sectionSeperator].join(' ')}></div> */}
 
-                <div className={[styles.section1].join(' ')}>
+                <div className={styles.sectionRight}>
                     {/* <a href="https://goo.gl/maps/g8QCu3qN2DhuM2W49"> */}
                     {/* <img src="/footer/location.svg" /> */}
                     <div className={styles.a}>
@@ -229,12 +236,16 @@ const Footer = () => {
                             styles.googlePlayButton,
                         ].join(' ')}
                     >
-                        <a href="#">
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://play.google.com/store/apps/details?id=com.college.anwesha2k23"
+                        >
                             {/* <img
                               alt="Get it on Google Play"
                               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                           /> */}
-                            <div>Download the Anwesha'23 app now</div>
+                            {/* <div>Download the Anwesha'23 app now</div> */}
                             <Image
                                 alt="google play icon"
                                 src={'/footer/googlePlay.svg'}
@@ -246,7 +257,6 @@ const Footer = () => {
                     {/* </a> */}
                 </div>
             </div>
-            {/* <div className={[styles.footerSeperator].join(' ')}>svsdf</div> */}
         </div>
     )
 }

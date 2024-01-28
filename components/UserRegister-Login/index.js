@@ -4,10 +4,11 @@ import React from 'react'
 import Link from 'next/link'
 
 import styles from './style.module.css'
-import { motion } from 'framer-motion'
+import { motion, wrap } from 'framer-motion'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router'
+import { ColorRing } from 'react-loader-spinner'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -21,20 +22,18 @@ const UserRegisterForm = () => {
     const [passwordShown, setPasswordShown] = React.useState(false)
     const [usertype, setUserType] = React.useState('iitp_student')
     const [college_name, setCollegeName] = React.useState('')
+    const [newsletter, setNewsletter] = React.useState(true)
+    const [terms, setTerms] = React.useState(false)
+    const [loading, setLoading] = React.useState(false)
     const handleChange = (e) => {
         setUserType(e.target.value)
     }
     const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log({
-            phone_number: phone,
-            full_name: name,
-            email_id: email,
-            password: password,
-            user_type: usertype,
-            college_name,
-        })
-        // running user input validation
+        const formData = new FormData()
+        formData.append('Email', email)
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
         if (name.length < 5) {
             toast.warning('Username is too small', {
                 position: 'top-right',
@@ -89,6 +88,21 @@ const UserRegisterForm = () => {
                 theme: 'light',
             })
             return
+        } else if (!terms) {
+            toast.warning(
+                'Please accept the terms and conditions to continue',
+                {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
+                }
+            )
+            return
         }
 
         let body = {
@@ -100,6 +114,15 @@ const UserRegisterForm = () => {
             college_name,
         }
         try {
+            setLoading(true)
+            if (newsletter) {
+                let emailResponse = await fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData,
+                })
+                let emailData = await emailResponse.json()
+                // console.log(emailData)
+            }
             const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
                 headers: {
@@ -110,9 +133,9 @@ const UserRegisterForm = () => {
             //check if request is successful
             if (response.status === 201 || response.status === 200) {
                 const data = await response.json()
-                console.log(data)
+                setLoading(false)
                 toast.success(
-                    'Please check your email for verification. Check spam folder if mail is not present in inbox',
+                    'Registered Successfully',
                     {
                         position: 'top-right',
                         autoClose: 3000,
@@ -127,6 +150,7 @@ const UserRegisterForm = () => {
                 router.push('/userLogin')
             } else if (response.status === 409) {
                 const data = await response.json()
+                setLoading(false)
                 toast.error(data.message || 'Unable to register', {
                     position: 'top-right',
                     autoClose: 3000,
@@ -139,6 +163,7 @@ const UserRegisterForm = () => {
                 })
             } else {
                 const data = await response.json()
+                setLoading(false)
                 toast.error(data.message, {
                     position: 'top-right',
                     autoClose: 3000,
@@ -167,11 +192,6 @@ const UserRegisterForm = () => {
 
     return (
         <div
-            style={{
-                position: 'relative',
-                marginTop: '120px',
-                overflow: 'hidden',
-            }}
         >
             <ToastContainer
                 position="top-right"
@@ -185,20 +205,15 @@ const UserRegisterForm = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img
-                className={styles.island}
-                alt="floating-island-iitp"
-                src="/assets/floating-island.svg"
-            />
-            <div className={styles.form}>
+            <div className={styles.form} >
                 <motion.form
                     className={styles.mainForm}
-                    initial={{ opacity: 0, x: '100%' }}
-                    whileInView={{ opacity: 1, x: '-2%' }}
+                    style={{ top: 75 }}
+                    initial={{ opacity: 0, x: '-20%' }}
+                    whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>REGISTER</h3>
-                    <hr />
+                    <h2 style={{ letterSpacing: 1, fontSize: 30 }}>REGISTER</h2>
                     <div className={styles.field}>
                         <label htmlFor="full_name">Full Name</label>
                         <br />
@@ -236,6 +251,7 @@ const UserRegisterForm = () => {
                         />
                         <br />
                     </div>
+                    <br />
                     <div
                         style={{
                             display: 'flex',
@@ -244,7 +260,6 @@ const UserRegisterForm = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        I am a student of IIT Patna{' '}
                         <input
                             type="checkbox"
                             style={{
@@ -262,8 +277,11 @@ const UserRegisterForm = () => {
                                     setCollegeName('IIT Patna')
                                 }
                             }}
-                        />
+                        />{' '}
+                        I am a student of IIT Patna
+
                     </div>
+                    <br />
                     {(() => {
                         switch (usertype) {
                             case 'iitp_student':
@@ -279,10 +297,11 @@ const UserRegisterForm = () => {
                                             onChange={(e) =>
                                                 setEmail(
                                                     e.target.value +
-                                                        '@iitp.ac.in'
+                                                    '@iitp.ac.in'
                                                 )
                                             }
                                             required
+                                            placeholder="Eg: rishiraj_2001ME85"
                                             className={styles.iitp_email}
                                         />
                                         <span className={styles.iitp_email_ext}>
@@ -347,7 +366,6 @@ const UserRegisterForm = () => {
                             />
                         </div>
                     ) : null}
-                    <div className={styles.form_row}>
                         <div className={styles.field}>
                             <label htmlFor="password">Password</label>
                             <br />
@@ -371,7 +389,6 @@ const UserRegisterForm = () => {
                                 required
                             />
                             <br />
-                        </div>
                     </div>
                     <div
                         style={{
@@ -395,16 +412,120 @@ const UserRegisterForm = () => {
                         Show Password
                     </div>
 
+                    <div className={styles.terms_box}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <input
+                                type="checkbox"
+                                style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    margin: '5px',
+                                }}
+                                checked={newsletter}
+                                onChange={() => {
+                                    setNewsletter((prev) => !prev)
+                                }}
+                            />&nbsp;
+                            <span>
+                                Subscribe to the&nbsp;{' '}
+                                <strong>Anwesha Dispatch</strong>{' '}
+                                &nbsp;newsletter{' '}
+                            </span>
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                marginTop: '5px',
+                            }}
+                        >
+                            <input
+                                type="checkbox"
+                                style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    margin: '5px',
+                                }}
+                                checked={terms}
+                                onChange={() => {
+                                    setTerms((prev) => !prev)
+                                }}
+                            />&nbsp;
+                            <span>
+                                I accept the&nbsp;{' '}
+                                <a href="/terms" target="_blank" style={{ color: '#ffffff', fontWeight: 600 }}>
+                                    Terms and Conditions
+                                </a>{' '}
+                            </span>
+                        </div>
+                    </div>
+
                     <motion.div
                         className={styles.buttonWrapper}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>Submit</button>
+                        <button type="submit" onClick={(e) => handleSubmit(e)}>
+                            {loading ? (
+                                <ColorRing
+                                    visible={true}
+                                    height="50"
+                                    width="50"
+                                    ariaLabel="blocks-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass="blocks-wrapper"
+                                    colors={[
+                                        '#85F4FF',
+                                        '#EFFFFD',
+                                        '#85F4FF',
+                                        '#EFFFFD',
+                                        '#85F4FF',
+                                    ]}
+                                />
+                            ) : (
+                                'Submit'
+                            )}
+                        </button>
                     </motion.div>
-                    <Link href="/userLogin">
-                        Already have an account? Login here.
-                    </Link>
+                    <br />
+                    <p style={{ textAlign: "center", fontWeight: "700" }}>
+                        If registered on the Slick app,&nbsp;
+                        <Link
+                            href="/userLogin"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
+                            Login
+                        </Link>
+						&nbsp;using email address
+                        as both the username and password &nbsp;
+                    </p>
+                    <br />
+                    <p>
+                        Already have an account? &nbsp;
+                        <Link
+                            href="/userLogin"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
+                            Login here.
+                        </Link>
+                    </p>
+                    <br />
+                    <p>
+                        Trouble logging in? &nbsp;
+                        <Link
+                            href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                            style={{ color: '#ffffff', fontWeight: 600 }}
+                        >
+                            Reach out to us here.
+                        </Link>
+                    </p>
                 </motion.form>
             </div>
         </div>

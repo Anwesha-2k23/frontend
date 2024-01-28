@@ -8,12 +8,12 @@ export default function forgotPassword() {
     return (
         <>
             <Head>
-                <title>Password Reset - Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Password Reset - Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <Navbar /> */}
-            <div className={styles.container}>
+            <div className={styles.container} loading='lazy'>
                 <ForgotPassword />
             </div>
         </>

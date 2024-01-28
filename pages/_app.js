@@ -14,7 +14,7 @@ import Navbar from '../components/Navbar-temp'
 import Footer from '../components/Footer/Footer'
 
 const poppins = Poppins({
-    weight: ['400', '900'],
+    weight: ['400', '600', '900', '100', '300', '500', '700', '800'],
     subsets: ['latin'],
 })
 function MyApp({ Component, pageProps }) {
@@ -29,12 +29,12 @@ function MyApp({ Component, pageProps }) {
     //     showHeader = false
     // }
     return (
-        <main className={poppins.className} style={{ background: '#a7ddfe' }}>
+        <main className={poppins.className} style={{ background: 'linear-gradient(169deg, #81D9FF -5.25%, #D4F2FF 111.03%)' }}>
             <Script
                 strategy="lazyOnload"
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
             />
-            <Script strategy="lazyOnload">
+            <Script strategy="lazyOnload" id="google-analytics">
                 {`
 
           window.dataLayer = window.dataLayer || [];

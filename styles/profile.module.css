@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #FFFFFF;
-    border: 4px solid #6833FF;
+    background: #ffffff;
+    border: 4px solid #6833ff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     min-height: 600px;
@@ -11,11 +11,19 @@
     width: 90%;
     margin: 20px auto 20px auto;
 }
+.copy {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding-left: 8px;
+    padding-bottom: 100px;
+}
 
 .tabList {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+	width: 100%;
+    justify-content: space-evenly;
 }
 
 .tab {
@@ -23,21 +31,26 @@
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 36px;
-    margin: 10px;
+    height: 39px;
     cursor: pointer;
+    list-style: none; 
+    padding:0px 7px 0px 7px;
+    border-radius: 5px;
 }
 
-.tab:focus {
-    border: 0px 0px 5px 0px;
-    border-bottom: 5px solid #6833FF;
-    outline: none;
+.tabActive {
+    color:white;
+    background-color: black;
+}
+
+.tabPanel {
+    width: 90%;
 }
 
 .anwesha_id {
     font-size: 60px;
-    margin-left: 5%;
-    margin-top: 100px;
+    /* margin-left: 5%; */
+    /* margin-top: 100px; */
     text-transform: uppercase;
 }
 
@@ -46,3 +59,43 @@
         font-size: 10vw;
     }
 }
+
+.idandqr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .idandqr {
+        flex-direction: column;
+    }
+}
+
+.qrcode {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.qrBtn {
+    background: #6833ff;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.tab:hover{
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 345px){
+    .tab{
+        font-size: 22px;
+
+    }}

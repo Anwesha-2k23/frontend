@@ -1,10 +1,12 @@
 @font-face {
-    font-family: "BroadwayShadow";
-    src: url("../styles/fonts/BroadwayShadow.ttf");
+    font-family: 'BroadwayShadow';
+    src: url('../styles/fonts/BroadwayShadow.ttf');
 }
 
-.container{
-    background-image: url('../images/gallery_bg.png');
+.container {
+    background-image: url('/events/bg.svg');
+    padding: 15px 0px 20px 0px;
+    min-height: 100vh;
 }
 
 .hero {
@@ -21,7 +23,7 @@
     margin-bottom: 4rem;
     margin-top: 5rem;
     text-align: center;
-    color: #2B0072;
+    color: #2b0072;
     font-family: BroadwayShadow;
     font-size: 6vw;
     font-weight: 400;
@@ -31,7 +33,7 @@
     margin-bottom: 4rem;
     margin-top: 1rem;
     text-align: center;
-    color: #2B0072;
+    color: #2b0072;
     font-family: BroadwayShadow;
     font-size: 4vw;
     font-weight: 400;
@@ -39,49 +41,67 @@
 }
 
 .mainForm {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100vw; */
     /* margin-right: 2vw; */
     /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #c1e9fb;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    height: fit-content;
+    padding: 20px;
+    width: fit-content;
+    margin: 8rem auto 20px auto;
+    border: 2px black;
 }
 
-.form_row{
+.mainForm h2 {
+    font-size: 55px;
+    font-weight: 550;
+}
+
+.form_row {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
 .field {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-.field input {
-    width: 40vw;
+.field input,
+.field select {
+    width: 25vw;
     height: 45px;
     margin: 2px;
-    border-radius: 5px;
     padding: 2px 15px;
     font-size: 17px;
-    border-color: #2B0072;
-    border-bottom: 2px solid #2B0072;
+    background: #eee9ff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    /* border-color: #2b0072;
+    border-bottom: 2px solid #2b0072;
     border-top: 0;
     border-left: 0;
-    border-right: 0;
+    border-right: 0; */
 }
 
-.field input:focus {
+.field input:focus,
+.field select:focus {
     outline: none;
 }
 
 .field label {
     font-size: 20px;
-    color: #2B0072;
     padding-inline: 5px;
 }
-
 
 .buttonWrapper {
     margin-top: 20px;
@@ -99,7 +119,7 @@
     margin-top: 20px;
     border-radius: 7px;
     cursor: pointer;
-    background-color: #2B0072;
+    background-color: #2b0072;
     color: aliceblue;
 }
 
@@ -122,11 +142,11 @@
     align-items: center;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 18px;
     line-height: 27px;
-    background-color: #6833FF;
-    color: #FFFFFF;
+    background-color: #000000;
+    color: #ffffff;
     height: 40px;
     width: 40px;
     border-radius: 20px;
@@ -136,14 +156,14 @@
 .member_input div {
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
     line-height: 27px;
-    background-color: #6833FF;
-    color: #FFFFFF;
+    background-color: #000000;
+    color: #ffffff;
     padding: 2px 5px 2px 5px;
-    border: 4px 4px 4px 0px solid #6833FF;
-    box-shadow: 0px 4px 4px #6833FF;
+    border: 4px 4px 4px 0px solid #000000;
+    box-shadow: 0px 4px 4px #000000;
     border-radius: 5px 0px 0px 5px;
 }
 
@@ -153,9 +173,9 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 27px;
-    background: #FFFFFF;
-    border: 4px 4px 4px 0px solid #6833FF;
-    box-shadow: 0px 4px 4px #6833FF;
+    background: #ffffff;
+    border: 4px 4px 4px 0px solid #000000;
+    box-shadow: 0px 4px 4px #000000;
     border-radius: 0px 5px 5px 0px;
     outline: none;
     width: 150px;
@@ -180,13 +200,13 @@
     width: fit-content;
     padding: 2px 7px 2px 7px;
     cursor: pointer;
-    color: #FFFFFF;
-    background: #6833FF;
-    border: 1px solid #4F4F4F;
+    color: #ffffff;
+    background: #000000;
+    border: 1px solid #4f4f4f;
     border-radius: 5px;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 900;
+    font-weight: 650;
     font-size: 13px;
     line-height: 36px;
 }
@@ -200,16 +220,22 @@
     width: fit-content;
     padding: 5px 10px 5px 10px;
     cursor: pointer;
-    color: #FFFFFF;
-    background: #6833FF;
-    border: 1px solid #4F4F4F;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #4f4f4f;
     border-radius: 5px;
     margin: 10px auto 20px auto;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 25px;
     line-height: 36px;
+    transition: 0.5s;
+}
+
+.register_btn:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 @media only screen and (max-width: 860px) {
@@ -224,16 +250,15 @@
         /* height: 100vh; */
     }
 
-
     .mainHeading {
         font-size: 10vw;
     }
 
-    .form_row{
+    .form_row {
         flex-direction: column;
     }
 
-    .form_row .field input{
+    .form_row .field input {
         width: 80vw;
     }
 

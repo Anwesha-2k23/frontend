@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+.hero{
+    background-image: url('/pronite/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Set width for different viewports for .hero_heading */
+.hero_heading{
+    width: 70%;
+    min-width: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    .hero_heading {
+            width: 90%;
+            min-width: 200px;
+        }
+}
+
+
+.passes{
+    background-image: url('/pronite/passes.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.pass_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.heading{
+    font-family: "Josefin Sans";
+    font-weight: 700;
+    font-size: 4rem;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.heading_text{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.section_text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: justify;
+
+}
+
+.pass_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+}
+
+@media only screen and (max-width: 600px) {
+    .pass_container {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 70%;
+    }
+    .passes{
+        height: 100%;
+    }
+    .heading{
+        margin-top: 20px;
+    }
+}
+
+.cultural{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.section_container{
+    width: 30%;
+    min-width: 500px;
+    margin: 0 6rem;
+}
+
+.section_heading{
+    font-family: "Josefin Sans";
+    font-weight: 700;
+    font-size: 4.5rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.section_text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: justify;
+}
+
+/* For mobile view */
+
+@media only screen and (max-width: 600px) {
+    .section_container{
+        width: 90%;
+        min-width: 0px;
+        margin: 0 1rem;
+    }
+    .section_heading{
+        font-size: 3rem;
+    }
+    .section_text{
+        font-size: 1rem;
+    }
+}

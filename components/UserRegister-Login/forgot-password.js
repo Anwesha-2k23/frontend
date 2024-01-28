@@ -101,8 +101,6 @@ const ForgotPassword = () => {
     return (
         <div
             style={{
-                position: 'relative',
-                marginTop: '120px',
                 overflow: 'hidden',
             }}
         >
@@ -118,26 +116,16 @@ const ForgotPassword = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img
-                className={styles.island}
-                alt="floating-island-iitp"
-                src="/assets/floating-island.svg"
-            />
-            <img
-                className={styles.clouds}
-                alt="clouds"
-                src="/assets/clouds.svg"
-            />
+
 
             <div className={styles.form}>
                 <motion.form
                     className={styles.mainForm}
-                    initial={{ opacity: 0, x: '100%' }}
+                    initial={{ opacity: 0, x: '-20%' }}
                     whileInView={{ opacity: 1, x: '0%' }}
                     transition={{ duration: 1 }}
                 >
-                    <h3>PASSWORD RESET</h3>
-                    <hr />
+                    <h2 style={{ letterSpacing: 1, fontSize: 30 }}>Password Reset</h2>
                     <div className={styles.field}>
                         <label htmlFor="email_id">Email ID</label>
                         <br />
@@ -160,16 +148,18 @@ const ForgotPassword = () => {
                         }}
                     >
                         <br />
-                        <Link href="/userLogin" className={styles.forgotpass}>
-                            Login here
-                        </Link>
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <Link href="/userLogin" style={{ color: '#ffffff', fontWeight: 600 }}>
+                                Login Here
+                            </Link>
+                        </div>
                     </div>
                     <motion.div
                         className={styles.buttonWrapper}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <button onClick={(e) => handleSubmit(e)}>SUBMIT</button>
+                        <button type="submit" onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
                 </motion.form>
             </div>

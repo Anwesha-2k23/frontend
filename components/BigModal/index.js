@@ -1,7 +1,8 @@
 // simple react modal component
 import React, { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../authContext'
-import soloEventRegistration from '../Payments/soloEventRegistration'
+import { soloEventRegistration, soloEventRegistrationiitp } from '../Event Registration/soloEventRegistration'
+import { ToastContainer, toast } from 'react-toastify'
 import styles from './Modal.module.css'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
@@ -9,9 +10,85 @@ import Image from 'next/image'
 const Modal = (props) => {
     const router = useRouter()
     const userData = useContext(AuthContext)
+    console.log(props.body);
 
+    function handleRagister() {
+        if (userData.isAuth) {
+            if (props.body.is_solo) {
+                if (userData.state.user.user_type !== 'iitp_student' || props.body.id == 'EVT49870' || props.body.id == 'EVT68cb3') {
+                    if (props.body.registration_fee === "0.00")
+                        soloEventRegistrationiitp(
+                            props.body.id,
+                            router,
+                            props.closeHandler
+                        )
+                    else soloEventRegistration(
+                        props.body.id,
+                        props.body.registration_fee,
+                        userData.state.user.email_id,
+                        userData.state.user.phone_number,
+                        userData.state.user.anwesha_id,
+                        router,
+                        props.closeHandler
+                    )
+
+
+                }
+
+                else {
+                    if (props.body.tags === "5")
+                        soloEventRegistration(
+                            props.body.id,
+                            props.body.registration_fee,
+                            userData.state.user.email_id,
+                            userData.state.user.phone_number,
+                            userData.state.user.anwesha_id,
+                            router,
+                            props.closeHandler
+                        )
+                    else soloEventRegistrationiitp(
+                        props.body.id,
+                        router,
+                        props.closeHandler
+                    )
+                }
+                // console.log(userData.state.user)
+            } else {
+                // router.replace(props.body.registration_link)
+                router.push({
+                    pathname: `/event-registration/${[props.body.id]}`,
+                    query: {
+                        id: props.body.id,
+                        name: props.body.name,
+                        description: props.body.description,
+                        max_team_size: props.body.max_team_size,
+                        min_team_size: props.body.min_team_size,
+                        registration_fee: props.body.registration_fee,
+                        user_type: userData.state.user.user_type,
+                        tags: props.body.tags,
+                    },
+                })
+            }
+        } else {
+            router.push('/userLogin')
+        }
+    }
+    let description = props.body.description.replace(/\n/g, '<br>');
+    console.log(props.body);
     return (
         <React.StrictMode>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <div
                 id="backdrop"
                 className={styles.modal}
@@ -35,16 +112,26 @@ const Modal = (props) => {
                             style={{ cursor: 'pointer' }}
                         />
                     </div>
+                    <hr
+                        style={{
+                            width: '100%',
+                            height: '2px',
+                            marginBottom: '35px',
+                        }}
+                    />
                     <div
                         style={{
                             display: 'flex',
                             flexDirection: 'row',
+                            columnGap: '30px',
                             flexWrap: 'wrap',
                             alignItems: 'center',
-                            justifyContent: 'center',
+                            justifyContent: 'space-evenly',
+                            overflowY: 'scroll',
+                            paddingBottom: '50px',
                         }}
                     >
-                        <div className={styles.image}>
+                        <div className={styles.leftColumn}>
                             <img
                                 src={
                                     props.body.poster
@@ -52,80 +139,128 @@ const Modal = (props) => {
                                         : '/events/poster.png'
                                 }
                                 alt="Fest Image"
-                                width={300}
-                                height={300}
+                                width={220}
+                                height={220}
                                 style={{ borderRadius: '15px' }}
                             />
+                            {/* <div className={styles.modal_footer}> */}
+                            {props.body.video ? (
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={styles.btn}
+                                    id={styles.rulebtn}
+                                    href={props.body.video}
+                                // onClick={(e) => props.closeHandler()}
+                                >
+                                    Rulebook
+                                </a>
+                            ) : null}
+                            <button
+                                className={styles.btn}
+                                onClick={handleRagister}
+                            >
+                                Register
+                            </button>
+                            {/* </div> */}
                         </div>
                         <div className={styles.modal_body}>
                             <div className={styles.date_venue}>
-                                <span className={styles.date_text}>Date</span>
+                                <span className={styles.date_text}>Date:</span>
                                 <span className={styles.date_value}>
-                                    {new Date(
-                                        props.body.start_time
-                                    ).toLocaleString('default', {
-                                        day: 'numeric',
-                                    })}{' '}
-                                    -{' '}
+                                    {props.body.start_time.substring(5, 7) !== props.body.end_time.substring(5, 7) ? (
+                                        <> {new Date(
+                                            props.body.start_time
+                                        ).toLocaleString('default', {
+                                            day: 'numeric',
+                                        })}
+                                            {' '}
+                                            {new Date(
+                                                props.body.start_time
+                                            ).toLocaleString('default', {
+                                                month: 'long',
+                                            })}
+                                            {' - '}
+                                        </>
+                                    ) :
+                                        <>
+                                            {props.body.start_time.substring(8, 10) !== props.body.end_time.substring(8, 10) ?
+                                                (<>
+                                                    {
+                                                        new Date(
+                                                            props.body.start_time
+                                                        ).toLocaleString('default', {
+                                                            day: 'numeric',
+                                                        })
+                                                    }
+                                                    {' - '}
+                                                </>) : null
+                                            }
+                                        </>
+                                    }
                                     {new Date(
                                         props.body.end_time
                                     ).toLocaleString('default', {
                                         day: 'numeric',
                                     })}
+                                    {' '}
                                     {new Date(
-                                        props.body.start_time
+                                        props.body.end_time
                                     ).toLocaleString('default', {
                                         month: 'long',
                                     })}
                                 </span>
                                 <br />
-                                <span className={styles.date_text}>Venue</span>
+                                <span className={styles.date_text}>Venue:</span>
                                 <span className={styles.date_value}>
                                     {props.body.venue}
                                 </span>
                             </div>
-                            <p className={styles.description}>
-                                {props.body.description}
-                            </p>
+                            <p dangerouslySetInnerHTML={{ __html: description }} className={styles.description} />
                             <div className={styles.team_pay}>
-                                <div style={{ fontWeight: '700' }}>
+                                <div style={{ fontWeight: '600' }}>
                                     {/* <img src="/assets/team.svg" /> */}
                                     {props.body.max_team_size === 1
                                         ? 'Individual Participation'
                                         : props.body.min_team_size ===
-                                          props.body.max_team_size
-                                        ? props.body.min_team_size + ' members'
-                                        : props.body.min_team_size +
-                                          ' - ' +
-                                          props.body.max_team_size +
-                                          ' members'}
+                                            props.body.max_team_size
+                                            ? props.body.min_team_size + ' members'
+                                            : props.body.min_team_size +
+                                            ' - ' +
+                                            props.body.max_team_size +
+                                            ' members'}
                                 </div>
                                 {props.body.registration_fee ? (
-                                    <div>
-                                        Registration Fee &nbsp;
-                                        {/* <img src="/assets/payment.svg" /> */}
-                                        <span style={{ fontWeight: '700' }}>
-                                            {' '}
-                                            ₹{props.body.registration_fee}
-                                        </span>
-                                    </div>
+                                    !userData.isAuth ||
+                                        (userData.state.user.user_type !==
+                                        'iitp_student') || props.body.id == 'EVT68cb3' || props.body.id == 'EVT49870' ? (
+                                        <p>
+                                            Registration Fee&nbsp;
+                                            {/* <img src="/assets/payment.svg" /> */}
+                                            <span style={{ fontWeight: '600' }}>
+                                                ₹{props.body.registration_fee}
+                                            </span>
+                                        </p>
+                                    ) : null
                                 ) : null}
                             </div>
                             {props.body.registration_deadline ? (
                                 <div
                                     className={styles.team_pay}
-                                    style={{ flexDirection: 'row' }}
+                                // style={{ flexDirection: 'row' }}
                                 >
-                                    {/* <img src="/assets/alert.svg" /> */}
-                                    Registration closes on &nbsp;{' '}
-                                    <span style={{ fontWeight: '700' }}>
-                                        {new Date(
-                                            props.body.registration_deadline
-                                        ).toDateString('default', {
-                                            day: 'numeric',
-                                            month: 'long',
-                                        })}
-                                    </span>
+                                    <p>
+                                        {/* <img src="/assets/alert.svg" /> */}
+                                        Registration closes on&nbsp;
+                                        <span style={{ fontWeight: '600' }}>
+                                            {new Date(
+                                                props.body.registration_deadline
+                                            ).toDateString('default', {
+                                                day: 'numeric',
+                                                month: 'long',
+                                            })}
+                                        </span>
+                                    </p>
                                 </div>
                             ) : null}
                             {props.body.prize ? (
@@ -135,7 +270,7 @@ const Modal = (props) => {
                                 >
                                     {/* <img src="/assets/prize.svg" /> */}
                                     Prizes worth: &nbsp;
-                                    <span style={{ fontWeight: '700' }}>
+                                    <span style={{ fontWeight: '600' }}>
                                         {' '}
                                         ₹{props.body.prize}!
                                     </span>
@@ -148,7 +283,7 @@ const Modal = (props) => {
                                         className={styles.team_pay}
                                         style={{ flexDirection: 'column' }}
                                     >
-                                        Organizers
+                                        {props.body.tags == "5" ? "POC" : "Organizers"}
                                         {props.body.organizer.map(
                                             (e, index) => {
                                                 return (
@@ -158,11 +293,12 @@ const Modal = (props) => {
                                                             e[1]
                                                                 ? null
                                                                 : {
-                                                                      pointerEvents:
-                                                                          'none',
-                                                                  }
+                                                                    pointerEvents:
+                                                                        'none',
+                                                                }
                                                         }
                                                         target="_blank"
+                                                        rel="noreferrer"
                                                         href={
                                                             e[1]
                                                                 ? `tel:${e[1]}`
@@ -172,7 +308,7 @@ const Modal = (props) => {
                                                         <span
                                                             style={{
                                                                 fontWeight:
-                                                                    '700',
+                                                                    '600',
                                                             }}
                                                         >
                                                             {e[0]}
@@ -182,7 +318,7 @@ const Modal = (props) => {
                                                             <span
                                                                 style={{
                                                                     fontWeight:
-                                                                        '700',
+                                                                        '600',
                                                                 }}
                                                             >
                                                                 {/* <img
@@ -204,26 +340,6 @@ const Modal = (props) => {
                                 )}
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.modal_footer}>
-                        {props.body.video ? (
-                            <a
-                                target="_blank"
-                                className={styles.rulebtn}
-                                href={props.body.video}
-                                // onClick={(e) => props.closeHandler()}
-                            >
-                                Rulebook
-                            </a>
-                        ) : null}
-                        <button
-                            className={styles.btn}
-                            onClick={() => {
-                                router.replace(props.body.registration_link)
-                            }}
-                        >
-                            Register
-                        </button>
                     </div>
                 </div>
             </div>
