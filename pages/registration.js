@@ -11,6 +11,7 @@ import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket.js'
 import EliteTicket from '../components/Rive/EliteTicket.js'
 import { soloEventRegistration,soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
+import blacklist from '../components/blacklist.js'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -69,7 +70,7 @@ const Registration = () => {
             console.log(proniteEvents)
         }
         fetchData()
-    }, [proniteEvents, userData])
+    }, [proniteIDs, userData])
 
     function handleRagister(id) {
         if (profile.isAuth) {
@@ -105,9 +106,22 @@ const Registration = () => {
                         )
                     }
                     else if (id == 1){
-                        soloEventRegistrationiitp(
-                            PASS_IITP_GENERAL
-                        )
+                        // check if used email is in blacklist
+                        if (blacklist.includes(profile.state.user.email_id)) {
+                            console.log("blacklist detected")
+                            soloEventRegistration(
+                                PASS_IITP_GENERAL,
+                                500,
+                                profile.state.user.email_id,
+                                profile.state.user.phone_number,
+                                profile.state.user.anwesha_id
+                            )
+                        } else {
+                            console.log("Not blacklist detected")
+                            soloEventRegistrationiitp(
+                                PASS_IITP_GENERAL
+                            )
+                        }
                     }
                 }
                 // console.log(userData.state.user)
