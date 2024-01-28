@@ -206,20 +206,19 @@ const UserLoginForm = () => {
                     >
                         <button type="submit" onClick={(e) => handleSubmit(e)}>SUBMIT</button>
                     </motion.div>
-					<br />
-					<p style={{ textAlign: "center", fontWeight: "700" }}>
-                        If registered on the Slick app,&nbsp;
+                    <br />
+                    <p style={{ textAlign: "center", fontWeight: "400" }}>
+                        <strong>FOR IITP STUDS-- </strong>verify you college email in Slick app to be able to&nbsp;
                         <Link
                             href="/userLogin"
                             style={{ color: '#ffffff', fontWeight: 600 }}
                         >
                             Login
                         </Link>
-						&nbsp;using email address
-                        as both the username and password &nbsp;
+                        &nbsp; ; check spam/junk folder for slick otp
                     </p>
                     <p style={{ marginTop: 18, textAlign: "center" }}>
-						Don't have an account? &nbsp;
+                        Don't have an account? &nbsp;
                         <Link href="/userRegister" style={{ color: '#ffffff', fontWeight: 600 }}>
                             Register here.
                         </Link>
