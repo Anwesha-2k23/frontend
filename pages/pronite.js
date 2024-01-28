@@ -5,11 +5,12 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useEffect, useState, useContext } from 'react'
-
+import { useRouter } from 'next/router.js'
 import EventItem from '../components/EventItem'
 import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket'
 import EliteTicket from '../components/Rive/EliteTicket'
+import { soloEventRegistration,soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -25,9 +26,12 @@ const josefinSans = Josefin_Sans({
 const proniteIDs = []
 
 const Pronite = () => {
+    const router = useRouter()
     const [proniteEvents, setProniteEvents] = useState([])
+    const [profile, setProfile] = useState()
     const userData = useContext(AuthContext)
     useEffect(() => {
+        setProfile(userData)
         let host = process.env.NEXT_PUBLIC_HOST
         if(userData.isAuth){
           if(userData.state.user.user_type === 'iitp_student'){
@@ -63,6 +67,51 @@ const Pronite = () => {
         fetchData()
     }, [proniteEvents, userData])
 
+    function handleRagister(id) {
+        if (profile.isAuth) {
+                if (profile.state.user.user_type !== 'iitp_student') {
+                    if (id == 0){
+                        soloEventRegistration(
+                            'EVT691bc',
+                            1499,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    }
+                    else if (id == 1){
+                        soloEventRegistration(
+                            'EVT7a8a7',
+                            999,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    }
+                }
+
+                else {
+                    if (id == 0){
+                        soloEventRegistration(
+                            'EVT8e600',
+                            699,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    }
+                    else if (id == 1){
+                        soloEventRegistrationiitp(
+                            'EVTe96c6'
+                        )
+                    }
+                }
+                // console.log(userData.state.user)
+        } else {
+            router.push('/userLogin')
+        }
+    }
+
     return (
         <div className={styles.mainContainer}>
             <Head>
@@ -79,8 +128,8 @@ const Pronite = () => {
                     <h3 className={styles.heading_text}>Get your passes to unlock the awesomeness!</h3>
                 </div>
                 <div className={styles.pass_container}>
-                <ProTicket/>
-                <EliteTicket/>
+                <div onClick={()=>{handleRagister(1)}}><ProTicket /></div>
+                <div onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
                 </div>
             </div>
             <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
