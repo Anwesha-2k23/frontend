@@ -47,7 +47,7 @@ const aboutus = () => {
                         &#x2022; As a major festival with massive footfall, we
                         are aware of the enormous resource consumption and
                         consequent waste generated throughout this festival.
-                        Anwesha’23 shall focus on bringing a sustainable
+                        Anwesha'24 shall focus on bringing a sustainable
                         lifestyle & culture to the mainstream.
                         <br />
                         &#x2022; This is a major concern for us, and thus we
@@ -64,7 +64,7 @@ const aboutus = () => {
                         &#x2022; The folk culture in Bihar is immense - from
                         Madhubani to Yampuri, Jat-Jatin to bamboo & pottery
                         craft; we would be delighted to accommodate it all in
-                        Anwesha 2k23.
+                        Anwesha 2k24.
                     </div>
                     <div className={styles.sectionContent}>
                         <strong>
