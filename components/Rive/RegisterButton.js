@@ -3,8 +3,8 @@ import styles from './style.module.css'
 
 export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
-        src: '/anwesha_24.riv',
-        artboard: 'blue ribbon base',
+        src: '/pronite/anwesha_24_pronite_pass.riv',
+        artboard: 'button register',
         autoplay: true,
     })
 

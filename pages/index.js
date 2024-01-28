@@ -61,7 +61,12 @@ const index = () => {
                         />
                     </div>
                     <div className={styles.regdiv} >
-                        <motion.div
+                        {/* <RegisterButton /> */}
+                        <Link style={{width: '30%', minWidth: '300px'}} href="/userRegister" >
+                                
+                                <RegisterButton />
+                            </Link>
+                        {/* <motion.div
 
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.8 }}
@@ -69,9 +74,9 @@ const index = () => {
                                 <div className={styles.regfont}>
                                     Register Now
                                 </div>
-                                {/* <RegisterButton /> */}
+                                <RegisterButton />
                             </Link>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
 
                 </div>
@@ -224,12 +229,12 @@ const index = () => {
                 {/* Ticket Section */}
                 <div className={styles.themeSection}>
                     <div className={styles.merchContainer}>
-                        <Link href="/pronite">
+                        <Link href="/registration">
                             <ProTicket />
                         </Link>
                         <div className={styles.card}>
                             <div className={styles.text1} style={josefinSans.style}>
-                                Anwesha pronite
+                                Anwesha Fest Passes
                             </div>
                             <div className={styles.text2}>Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage.</div>
                             <div className={styles.text2}>With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.</div>

@@ -40,13 +40,13 @@
         height: 88.27px;
     }
     .regdiv{
-        margin-top: 60vw;
+        margin-top: 220px;
     }
 }
 @media screen and (max-width: 450px)
 {
     .regdiv{
-        margin-top: 90vw;
+        margin-top: 220px;
     }
     .bg{
         background-size:150%;

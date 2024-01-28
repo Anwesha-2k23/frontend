@@ -25,7 +25,7 @@ const josefinSans = Josefin_Sans({
 // add event ids here
 const proniteIDs = []
 
-const Entry = () => {
+const Registration = () => {
     const router = useRouter()
     const [proniteEvents, setProniteEvents] = useState([])
     const [profile, setProfile] = useState()
@@ -181,4 +181,4 @@ const Entry = () => {
         </div>
     )
 }
-export default Entry
+export default Registration
