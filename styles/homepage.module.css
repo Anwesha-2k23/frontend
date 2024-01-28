@@ -85,11 +85,12 @@ line-height: normal;
 } */
 
 .steps{
-    width: 1070px;
-    height: 342px;
-    background: url("/home/steps.svg");
+    width: 1114px;
+    height:367px;
+    background: url("/home/steps.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100%;
     z-index: 2;
 }
 
@@ -148,7 +149,7 @@ line-height: normal;
 
 @media screen and (max-width: 1071px){
   .steps{
-    background: url("/home/steps-mobile.svg");
+    background: url("/home/steps-mobile.png");
     width: 100vw;
     min-height: 600px;
     background-size: contain;
@@ -193,7 +194,7 @@ line-height: normal;
 
 .themeSection {
     width: 100%;
-    padding-top: 100px;
+    padding-top: 0px;
     padding-bottom: 100px;
     transform: translateY(-52px);
 }

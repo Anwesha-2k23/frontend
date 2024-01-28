@@ -1,5 +1,15 @@
 .parentContainer{
-    background-color: #c7c7c7;
+    background: linear-gradient(169deg, #81D9FF -6.11%, #D4F2FF 107.75%);
+    background-image:url(/home/cloud.svg);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: 100%;
+}
+.wave{
+     background-image:url(/sponsors/waves.png);
+    background-repeat: repeat;
+    background-size: 100%;
+
 }
 
 .container{
@@ -8,10 +18,18 @@
 }
 
 .teamHeader{
-    font-size: 46px;
-    font-weight: 700;
-    text-align: center;
-    color: #403E9E;
+color: #010031;
+text-align: center;
+text-shadow: 4px 4px 96px rgba(0, 0, 0, 0.25);
+font-size: 100px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-transform: capitalize;
+@media screen and (max-width: 750px)
+{
+    font-size: 14.5vw;
+}
 }
 
 .teamHeadingBar{
@@ -30,9 +48,18 @@
 }
 
 .teamSubHeading{
-    font-size: 30px;
-    font-weight: 600;
-    color: #403E9E;
+   color: #010031;
+text-shadow: 4px 4px 100px rgba(0, 0, 0, 0.25);
+font-size: 72px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
+margin-left: 1.5vw;
+@media screen and (max-width: 950px)
+{
+    font-size: 9.5vw;
+}
 }
 
 .teamSubHeadingBar{
@@ -52,36 +79,38 @@
 }
 
 .teamCard{
-    background-color: transparent;
-    padding: 20px;
-    width: 290px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 13px;
-    margin: 20px;
-    /* box-shadow: 4.63213px 4.63213px 0px #000000; */
+   display: flex;
+padding: 15px 40px;
+flex-direction: column;
+align-items: flex-start;
+gap: 5px;
+border-radius: 20px;
+background: #FFF;
+box-shadow: 4px 4px 100px 0px rgba(0, 0, 0, 0.04);
+width: min-content;
 }
 
 .memberImage{
     /* background-color: #56a5fe; */
-    border-radius: 17px;
+    border-radius: 12px;
     /* border: green 2px solid; */
     margin-bottom: 10px;
+    object-fit: contain;
 }
 
 .teamMemberDetails{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
 }
 
 .memberName{
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 24px;
-    overflow: hidden;
-    margin-bottom: 5px;
+    color: #102B71;
+text-align: center;
+font-family: Poppins;
+font-size: 22px;
+font-style: normal;
+line-height: normal;
+text-transform: capitalize;
+font-weight: 500;
 }
 
 .memberCommitte{

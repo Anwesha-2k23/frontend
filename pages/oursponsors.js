@@ -1,13 +1,18 @@
 import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/oursponsors.module.css'
+import { Josefin_Sans } from '@next/font/google'
+
+const josefinSans = Josefin_Sans({
+    weight: ['400', '700', '500', '600'],
+    subsets: ['latin'],
+})
 
 const oursponsors = () => {
     // const n = 4;
     const data = {
         coordinators: [
-            { name: 'Bihar Urban Infrastructure Development Corporation Limited', image: 'https://drive.google.com/uc?export=view&id=130g30785sNwC_dDr6hURI-HOGG5TQ4ZZ', link: 'http://www.buidco.in/' },
-            { name: 'Bihar Art Culture and Youth Department', image: 'https://drive.google.com/uc?export=view&id=1nYe6yUwWQZU6pSxS7tDNPhhI7Wz8EMex', link: '' },
+            { name: 'Bihar Art Culture and Youth Department', image: "https://drive.google.com/uc?export=view&id=1nYe6yUwWQZU6pSxS7tDNPhhI7Wz8EMex", link: '' },
             { name: 'Bihar Tourism', image: 'https://drive.google.com/uc?export=view&id=1pRqsKrhyTbhOpnxnNOKNTVwQxW4krm-L', link: 'https://tourism.bihar.gov.in/' },
             { name: 'Bihar Rajya Pul Nirman Nigam', image: 'https://drive.google.com/uc?export=view&id=1sD17yO4Zwm449d9ilTh9cPRoTeUd4tpy', link: 'https://brpnnl.bihar.gov.in/' },
             { name: 'Bihar State Electronics Development Corporation', image: 'https://drive.google.com/uc?export=view&id=1QZLHYPSJsMLQUKssih7HPqU5DwMGkcnc', link: 'https://bsedc.bihar.gov.in/' },
@@ -31,43 +36,46 @@ const oursponsors = () => {
             { name: 'Bizeal "The Dream Bakers"', image: '/sponsors/bizeal.png', link: 'https://www.bizeal.com/' },
             { name: 'Talentwala', image: 'https://drive.google.com/uc?export=view&id=1VnxW_CraRRFX5afz5krpZ0H7mRut69Oz', link: '' },
             { name: 'Basic', image: 'https://drive.google.com/uc?export=view&id=1BhFpl6SlDGnMriHJhsO0MttgV6ZoINEa', link: '' },
-            { name: 'Bulkinza', image: 'https://bulkinza.com/wp-content/uploads/2022/10/cropped-cropped-cropped-png-logo-18.png', link: 'https://bulkinza.com/' },
+            { name: 'Bulkinza', image: '/sponsors/bulkinza.png', link: 'https://bulkinza.com/' },
             { name: 'Sudha', image: 'https://drive.google.com/uc?export=view&id=1g26UGW2z-m4qkJKeF4Ug06dWHcwR8Vlr', link: 'https://www.patnadairy.org/' },
             { name: 'FujiFilm Instax', image: 'https://drive.google.com/uc?export=view&id=1G3NIuTFl_Rl-tSy-etc05p6yt5kusNPO', link: 'https://fujifilmxindia.com/' },
             { name: 'Pizza Hut', image: 'https://drive.google.com/uc?export=view&id=1WNL6lJ17emyTNqqv8-NXB8IHIHHMNLB1', link: 'https://www.pizzahut.co.in/' },
-            { name: 'The Comunity Events', image: 'https://scontent.fpat1-1.fna.fbcdn.net/v/t39.30808-6/299511904_434321178716617_6383655103419683984_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xhKjzVW6KnQAX_0oD-Y&_nc_ht=scontent.fpat1-1.fna&oh=00_AfB3kkEsA1WaJ2qjyTCF5e6rYeScPMEhb-qZMYpfZgBcJw&oe=6422A03D', link: 'https://www.facebook.com/thecommunityevents/' },
+            { name: 'The Comunity Events', image: '/sponsors/thecommunityevents.jpg', link: 'https://www.facebook.com/thecommunityevents/' },
             { name: 'Coffee For You', image: '/sponsors/coffeeforyou.png', link: '' },
 
         ],
     }
     return (
         <div className={styles.parentContainer}>
-            <div className={styles.container}>
-                <h2 className={styles.teamHeader}>Sponsors</h2>
-                <hr className={styles.teamHeadingBar} />
-                <div className={styles.coordinators}>
-                    {/* <h2 className={styles.teamSubHeading}>Coordinators</h2> */}
-                    {/* <hr className={styles.teamSubHeadingBar} /> */}
-                    <div className={styles.picContainer}>
-                        {/* {[...Array(n)].map((e, i) =>  */}
-                        {data.coordinators.map((item, index) => (
-                            <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{ color: 'black', textDecoration: 'none' }}>
-                                <div className={styles.teamCard}>
-                                    <img
-                                        className={styles.memberImage}
-                                        height={220}
-                                        width={220}
-                                        src={`${item.image}`}
-                                        alt={item.name}
-                                    />
-                                    <div className={styles.teamMemberDetails}>
-                                        <div className={styles.memberName}>
-                                            <strong>{item.name}</strong>
+            <div className={styles.wave} style={{ paddingTop: '4vw' }}>
+                <div className={styles.container}>
+                    <h2 className={styles.teamHeader} style={josefinSans.style}> Our Sponsors</h2>
+                    <div style={{ height: '10vw' }}></div>
+                    <h3 className={styles.teamSubHeading} style={josefinSans.style}>Past Sponsors</h3>
+                    <div style={{ height: '2vw' }}></div>
+                    <div className={styles.coordinators}>
+                        <div className={styles.picContainer}>
+                            {/* {[...Array(n)].map((e, i) =>  */}
+                            {data.coordinators.map((item, index) => (
+                                <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{ color: 'black', textDecoration: 'none' }}>
+                                    <div className={styles.teamCard}>
+                                        <Image
+                                            src={`${item.image}`}
+                                            className={styles.memberImage}
+                                            height={220}
+                                            width={220}
+                                            alt={item.name}
+
+                                        />
+                                        <div className={styles.teamMemberDetails}>
+                                            <div className={styles.memberName} >
+                                                {item.name}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        ))}
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
