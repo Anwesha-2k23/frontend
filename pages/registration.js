@@ -168,7 +168,7 @@ const Registration = () => {
                 </div>
                 <div className={styles.pass_container}>
                 <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(1)}}><ProTicket /></div>
-                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
+                {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
                 </div>
             </div>
             {/* <div style={{ height: 100 }}></div>
