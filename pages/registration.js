@@ -75,7 +75,8 @@ const Registration = () => {
     function handleRagister(id) {
         if (profile.isAuth) {
                 if (profile.state.user.user_type !== 'iitp_student') {
-                    if (id == 0){
+                    // id == 0 is unused
+                    if (id == 0) {
                         soloEventRegistration(
                             PASS_SPECIAL,
                             1499,
@@ -96,6 +97,7 @@ const Registration = () => {
                 }
 
                 else {
+                    // id == 0 is unused
                     if (id == 0){
                         soloEventRegistration(
                             PASS_IITP_SPECIAL,
@@ -111,7 +113,7 @@ const Registration = () => {
                             console.log("blacklist detected")
                             soloEventRegistration(
                                 PASS_IITP_GENERAL,
-                                500,
+                                699,
                                 profile.state.user.email_id,
                                 profile.state.user.phone_number,
                                 profile.state.user.anwesha_id
