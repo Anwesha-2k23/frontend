@@ -140,6 +140,16 @@ const Registration = () => {
             <div className={styles.hero}>
                 <img src="/pronite/heading.png" alt="" className={styles.hero_heading} />
             </div>
+            <div className={styles.passes}>
+                <div className={styles.pass_header}>
+                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
+                    <h3 className={styles.heading_text}>Get your pass to unlock the awesomeness!</h3>
+                </div>
+                <div className={styles.pass_container}>
+                    <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>
+                    {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
+                </div>
+            </div>
             <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
                 <div className={styles.section_container}>
                     <h1 className={styles.section_heading}>Cultural Night</h1>
@@ -160,16 +170,6 @@ const Registration = () => {
                     <div className={styles.section_text}>IIT Patna's Anwesha brings back the dazzling Bollywood night, Pronite! Featuring the musical maestro behind hits like "Badtameez Dil" and "Pashmina," this event follows the legacy of Sanam Band and KK. Join us for a night of vibrant melodies, pulsating beats, and Bollywood magic as Pronite 2024 lights up the town under the disco ball!</div>
                 </div>
                 <div className={styles.section_container}></div>
-            </div>
-            <div className={styles.passes}>
-                <div className={styles.pass_header}>
-                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
-                    <h3 className={styles.heading_text}>Get your passes to unlock the awesomeness!</h3>
-                </div>
-                <div className={styles.pass_container}>
-                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(1)}}><ProTicket /></div>
-                {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
-                </div>
             </div>
             {/* <div style={{ height: 100 }}></div>
             <div className={styles.container}>
