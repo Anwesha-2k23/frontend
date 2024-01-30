@@ -8,6 +8,7 @@
 .form {
     font-family: 'Poppins', sans-serif;
     display: flex;
+    flex-direction: column;
     margin: 120px 0px 120px 10%;
     align-content: center;
     align-items: center;
@@ -264,6 +265,7 @@
     }
     .form {
         margin: auto 5vw;
+        padding-top: 100px;
     }
     .iitp_email {
         width: calc(365px - 75px) !important;
@@ -275,7 +277,7 @@
 @media only screen and (max-width: 426px) {
     .mainForm {
         /* margin-top: -60px; */
-        margin: 100px 2.5vw 100px 2.5vw;
+        margin: 0px 2.5vw 100px 2.5vw;
         width: 95vw;
         padding-left: 10px;
         padding-right: 10px;
