@@ -11,6 +11,7 @@ import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket.js'
 import EliteTicket from '../components/Rive/EliteTicket.js'
 import { soloEventRegistration,soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
+import blacklist from '../components/blacklist.js'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -69,12 +70,13 @@ const Registration = () => {
             console.log(proniteEvents)
         }
         fetchData()
-    }, [proniteEvents, userData])
+    }, [proniteIDs, userData])
 
     function handleRagister(id) {
         if (profile.isAuth) {
                 if (profile.state.user.user_type !== 'iitp_student') {
-                    if (id == 0){
+                    // id == 0 is unused
+                    if (id == 0) {
                         soloEventRegistration(
                             PASS_SPECIAL,
                             1499,
@@ -95,6 +97,7 @@ const Registration = () => {
                 }
 
                 else {
+                    // id == 0 is unused
                     if (id == 0){
                         soloEventRegistration(
                             PASS_IITP_SPECIAL,
@@ -105,9 +108,22 @@ const Registration = () => {
                         )
                     }
                     else if (id == 1){
-                        soloEventRegistrationiitp(
-                            PASS_IITP_GENERAL
-                        )
+                        // check if used email is in blacklist
+                        if (blacklist.includes(profile.state.user.email_id)) {
+                            console.log("blacklist detected")
+                            soloEventRegistration(
+                                PASS_IITP_GENERAL,
+                                699,
+                                profile.state.user.email_id,
+                                profile.state.user.phone_number,
+                                profile.state.user.anwesha_id
+                            )
+                        } else {
+                            console.log("Not blacklist detected")
+                            soloEventRegistrationiitp(
+                                PASS_IITP_GENERAL
+                            )
+                        }
                     }
                 }
                 // console.log(userData.state.user)
@@ -125,6 +141,16 @@ const Registration = () => {
             </Head>
             <div className={styles.hero}>
                 <img src="/pronite/heading.png" alt="" className={styles.hero_heading} />
+            </div>
+            <div className={styles.passes}>
+                <div className={styles.pass_header}>
+                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
+                    <h3 className={styles.heading_text}>Get your pass to unlock the awesomeness!</h3>
+                </div>
+                <div className={styles.pass_container}>
+                    <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>
+                    {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
+                </div>
             </div>
             <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
                 <div className={styles.section_container}>
@@ -146,16 +172,6 @@ const Registration = () => {
                     <div className={styles.section_text}>IIT Patna's Anwesha brings back the dazzling Bollywood night, Pronite! Featuring the musical maestro behind hits like "Badtameez Dil" and "Pashmina," this event follows the legacy of Sanam Band and KK. Join us for a night of vibrant melodies, pulsating beats, and Bollywood magic as Pronite 2024 lights up the town under the disco ball!</div>
                 </div>
                 <div className={styles.section_container}></div>
-            </div>
-            <div className={styles.passes}>
-                <div className={styles.pass_header}>
-                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
-                    <h3 className={styles.heading_text}>Get your passes to unlock the awesomeness!</h3>
-                </div>
-                <div className={styles.pass_container}>
-                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(1)}}><ProTicket /></div>
-                <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div>
-                </div>
             </div>
             {/* <div style={{ height: 100 }}></div>
             <div className={styles.container}>

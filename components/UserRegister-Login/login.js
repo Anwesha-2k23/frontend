@@ -262,7 +262,7 @@ const UserLoginForm = () => {
                     </p>
                     <p style={{ marginTop: 18, textAlign: "center" }}>
                         Trouble logging in? &nbsp;
-                        <Link href="https://forms.gle/LD4gSRg9CaxEeAXK7" style={{ color: '#ffffff', fontWeight: 600 }}>
+                        <Link href="https://forms.gle/67XktxG9iTFgfT9n9" style={{ color: '#ffffff', fontWeight: 600 }}>
                             Reach out to us here.
                         </Link>
                     </p>
