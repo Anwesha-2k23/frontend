@@ -519,7 +519,7 @@ const UserRegisterForm = () => {
                     <p>
                         Trouble logging in? &nbsp;
                         <Link
-                            href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                            href="https://forms.gle/67XktxG9iTFgfT9n9"
                             style={{ color: '#ffffff', fontWeight: 600 }}
                         >
                             Reach out to us here.
