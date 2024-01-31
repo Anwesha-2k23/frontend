@@ -14,6 +14,42 @@ const UserLoginForm = () => {
     const [password, setPassword] = React.useState('')
     const [passwordShown, setPasswordShown] = React.useState(false)
 
+
+
+    useEffect(() => {
+        const frame = document.createElement("iframe");
+        frame.id = "3pc";
+        frame.src = "https://chamithrepo.github.io/create-third-party-cookie/"; //Add your hosted domain url here
+        frame.style.display = "none";
+        frame.style.position = "fixed";
+        document.body.appendChild(frame);
+
+        window.addEventListener(
+            "message",
+            function listen(event) {
+                if (event.data === "3pcUnsupported") {
+                    document.body.removeChild(frame);
+                    window.removeEventListener("message", listen);
+                    toast.error('Please Enable third party cookies to be able to Login (go to browser settings)', {
+                        position: 'top-right',
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    });
+                }
+
+
+            },
+            false
+        );
+    }, []);
+
+
+
     const handleSubmit = async (event) => {
         event.preventDefault()
         let body = { username: email, password: password }
@@ -129,6 +165,7 @@ const UserLoginForm = () => {
 
 
             <div className={styles.form}>
+
                 <motion.form
                     className={styles.mainForm}
                     initial={{ opacity: 0, x: '-20%' }}
