@@ -168,12 +168,12 @@ function Navigation() {
                         {/* Added pronite to navbar */}
                         <li
                             style={
-                                router.pathname === '/pronite'
+                                router.pathname === '/registration'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
-                            <Link className={styles.linknav} href="/pronite">
+                            <Link className={styles.linknav} href="/registration">
                                 Fest Pass
                             </Link>
                         </li>
@@ -295,7 +295,7 @@ function Navigation() {
                     </li>
                     <li>
                         <Link
-                            href="/pronite"
+                            href="/registration"
                             onClick={() => toggleDrawer()}
                         >
                             Fest Pass
