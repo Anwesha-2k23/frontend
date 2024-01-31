@@ -133,16 +133,6 @@ const ChangePassword = () => {
                 pauseOnHover
                 theme="light"
             />
-            <img
-                className={styles.island}
-                alt="floating-island-iitp"
-                src="/assets/floating-island.svg"
-            />
-            <img
-                className={styles.clouds}
-                alt="clouds"
-                src="/assets/clouds.svg"
-            />
 
             <div className={styles.form}>
                 <motion.form
