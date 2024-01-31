@@ -130,8 +130,8 @@ export default function ourteam() {
     return (
         <div className={styles.parentContainer}>
             <Head>
-                <title>Team - Anwesha 2023</title>
-                <meta name="description" content="Team-Anwesha 2023" />
+                <title>Team - Anwesha 2024</title>
+                <meta name="description" content="Team-Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.container}>

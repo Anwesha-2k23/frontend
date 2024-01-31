@@ -14,30 +14,16 @@ const Modal = (props) => {
 
     function handleRagister() {
         if (userData.isAuth) {
-            if (props.body.is_solo) {
-                if (userData.state.user.user_type !== 'iitp_student') {
-                    if (props.body.registration_fee === "0.00")
-                        soloEventRegistrationiitp(
-                            props.body.id,
-                            router,
-                            props.closeHandler
-                        )
-                    else soloEventRegistration(
-                        props.body.id,
-                        props.body.registration_fee,
-                        userData.state.user.email_id,
-                        userData.state.user.phone_number,
-                        userData.state.user.anwesha_id,
-                        router,
-                        props.closeHandler
-                    )
-
-
-                }
-
-                else {
-                    if (props.body.tags === "5")
-                        soloEventRegistration(
+            if (props.body.is_active) {
+                if (props.body.is_solo) {
+                    if (userData.state.user.user_type !== 'iitp_student' || props.body.id == 'EVT49870' || props.body.id == 'EVT68cb3') {
+                        if (props.body.registration_fee === "0.00")
+                            soloEventRegistrationiitp(
+                                props.body.id,
+                                router,
+                                props.closeHandler
+                            )
+                        else soloEventRegistration(
                             props.body.id,
                             props.body.registration_fee,
                             userData.state.user.email_id,
@@ -46,27 +32,55 @@ const Modal = (props) => {
                             router,
                             props.closeHandler
                         )
-                    else soloEventRegistrationiitp(
-                        props.body.id,
-                        router,
-                        props.closeHandler
-                    )
+
+
+                    }
+
+                    else {
+                        if (props.body.tags === "5")
+                            soloEventRegistration(
+                                props.body.id,
+                                props.body.registration_fee,
+                                userData.state.user.email_id,
+                                userData.state.user.phone_number,
+                                userData.state.user.anwesha_id,
+                                router,
+                                props.closeHandler
+                            )
+                        else soloEventRegistrationiitp(
+                            props.body.id,
+                            router,
+                            props.closeHandler
+                        )
+                    }
+                    // console.log(userData.state.user)
+                } else {
+                    // router.replace(props.body.registration_link)
+                    router.push({
+                        pathname: `/event-registration/${[props.body.id]}`,
+                        query: {
+                            id: props.body.id,
+                            name: props.body.name,
+                            description: props.body.description,
+                            max_team_size: props.body.max_team_size,
+                            min_team_size: props.body.min_team_size,
+                            registration_fee: props.body.registration_fee,
+                            user_type: userData.state.user.user_type,
+                            tags: props.body.tags,
+                        },
+                    })
                 }
-                // console.log(userData.state.user)
-            } else {
-                // router.replace(props.body.registration_link)
-                router.push({
-                    pathname: `/event-registration/${[props.body.id]}`,
-                    query: {
-                        id: props.body.id,
-                        name: props.body.name,
-                        description: props.body.description,
-                        max_team_size: props.body.max_team_size,
-                        min_team_size: props.body.min_team_size,
-                        registration_fee: props.body.registration_fee,
-                        user_type: userData.state.user.user_type,
-                        tags: props.body.tags,
-                    },
+            }
+            else {
+                toast.info("Registration Closed !", {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'light',
                 })
             }
         } else {
@@ -232,8 +246,8 @@ const Modal = (props) => {
                                 </div>
                                 {props.body.registration_fee ? (
                                     !userData.isAuth ||
-                                        userData.state.user.user_type !==
-                                        'iitp_student' ? (
+                                        (userData.state.user.user_type !==
+                                            'iitp_student') || props.body.id == 'EVT68cb3' || props.body.id == 'EVT49870' ? (
                                         <p>
                                             Registration Fee&nbsp;
                                             {/* <img src="/assets/payment.svg" /> */}

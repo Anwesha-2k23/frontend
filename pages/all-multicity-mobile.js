@@ -17,8 +17,8 @@ const Multicity = () => {
     return (
         <div className={styles.container} style={{ overflow: 'hidden' }}>
             <Head>
-                <title>Anwesha 2023</title>
-                <meta name="description" content="Multicity-Anwesha 2023" />
+                <title>Anwesha 2024</title>
+                <meta name="description" content="Multicity-Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div style={{ height: '5vh' }}></div>

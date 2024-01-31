@@ -45,6 +45,13 @@
 	line-height: 150%;
 }
 
+.imageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .rulebook {
 	width: fit-content;
 	padding: 16px 36px;

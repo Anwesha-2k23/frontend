@@ -52,7 +52,7 @@ function Navigation() {
             setTimeout(function () {
                 ; (document.getElementById('drawer').style.display = 'none'),
                     (document.getElementById('nav_div').style.backgroundColor =
-                        '')
+                        '#010031')
             }, 300)
             setDrawerOpen(false)
             if (onClickInput) {
@@ -82,7 +82,7 @@ function Navigation() {
             setTimeout(
                 () => (
                     (drawer.style.opacity = 1),
-                    (nav_div.style.backgroundColor = '#394a72')
+                    (nav_div.style.backgroundColor = '#010031')
                 ),
                 300
             )
@@ -165,16 +165,16 @@ function Navigation() {
                                 Events
                             </Link>
                         </li>
-
+                        {/* Added pronite to navbar */}
                         <li
                             style={
-                                router.pathname === '/campusambassador24'
+                                router.pathname === '/registration'
                                     ? { borderBottom: '3px solid white' }
                                     : null
                             }
                         >
-                            <Link className={styles.linknav} href="/campusambassador24">
-                                Campus Ambassador
+                            <Link className={styles.linknav} href="/registration">
+                                Fest Pass
                             </Link>
                         </li>
                         <li
@@ -295,10 +295,10 @@ function Navigation() {
                     </li>
                     <li>
                         <Link
-                            href="/campusambassador24"
+                            href="/registration"
                             onClick={() => toggleDrawer()}
                         >
-                            Campus Ambassador
+                            Fest Pass
                         </Link>
                     </li>
                     <li>

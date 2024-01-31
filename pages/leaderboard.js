@@ -45,8 +45,8 @@ function Leaderboard() {
                 </div>
                 <div className="container">
                     <Head>
-                        <title>Leaderboard - Anwesha 2023</title>
-                        <meta name="description" content="Anwesha 2023" />
+                        <title>Leaderboard - Anwesha 2024</title>
+                        <meta name="description" content="Anwesha 2024" />
                         <link rel="icon" href="./AnwehsaIcon.png" />
                     </Head>
                 </div>

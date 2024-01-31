@@ -366,29 +366,29 @@ const UserRegisterForm = () => {
                             />
                         </div>
                     ) : null}
-                        <div className={styles.field}>
-                            <label htmlFor="password">Password</label>
-                            <br />
-                            <input
-                                type={passwordShown ? 'text' : 'password'}
-                                name="Password"
-                                // placeholder="Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <br />
-                        </div>
-                        <div className={styles.field}>
-                            <label htmlFor="password">Confirm Password</label>
-                            <br />
-                            <input
-                                type={passwordShown ? 'text' : 'password'}
-                                name="Password"
-                                // placeholder="Confirm Password"
-                                onChange={(e) => setCnfPassword(e.target.value)}
-                                required
-                            />
-                            <br />
+                    <div className={styles.field}>
+                        <label htmlFor="password">Password</label>
+                        <br />
+                        <input
+                            type={passwordShown ? 'text' : 'password'}
+                            name="Password"
+                            // placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                        <br />
+                    </div>
+                    <div className={styles.field}>
+                        <label htmlFor="password">Confirm Password</label>
+                        <br />
+                        <input
+                            type={passwordShown ? 'text' : 'password'}
+                            name="Password"
+                            // placeholder="Confirm Password"
+                            onChange={(e) => setCnfPassword(e.target.value)}
+                            required
+                        />
+                        <br />
                     </div>
                     <div
                         style={{
@@ -495,16 +495,15 @@ const UserRegisterForm = () => {
                         </button>
                     </motion.div>
                     <br />
-                    <p style={{ textAlign: "center", fontWeight: "700" }}>
-                        If registered on the Slick app,&nbsp;
+                    <p style={{ textAlign: "center", fontWeight: "400" }}>
+                        <strong>FOR IITP STUDS-- </strong>verify you college email in Slick app to be able to&nbsp;
                         <Link
                             href="/userLogin"
                             style={{ color: '#ffffff', fontWeight: 600 }}
                         >
                             Login
                         </Link>
-						&nbsp;using email address
-                        as both the username and password &nbsp;
+                        &nbsp; ; check spam/junk folder for slick otp
                     </p>
                     <br />
                     <p>
@@ -520,7 +519,7 @@ const UserRegisterForm = () => {
                     <p>
                         Trouble logging in? &nbsp;
                         <Link
-                            href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                            href="https://forms.gle/67XktxG9iTFgfT9n9"
                             style={{ color: '#ffffff', fontWeight: 600 }}
                         >
                             Reach out to us here.

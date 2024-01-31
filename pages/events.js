@@ -20,6 +20,7 @@ const josefinSans = Josefin_Sans({
 
 const Events = () => {
     const [events, setEvents] = useState([])
+    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40', 'EVT68cb3', 'EVT49870', 'EVTe96c6', 'EVT8e600', 'EVT7a8a7', 'EVT691bc']
 
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
@@ -33,19 +34,26 @@ const Events = () => {
                     },
                 })
                 const data = await res.json()
-                setEvents(data)
+                let result = data.filter((event) => {
+                    if (exceludedEvents.includes(event.id)) {
+                        return false
+                    }
+                    return true
+                })
+                setEvents(result)
             } catch (e) {
                 console.log('Failed to fetch')
             }
         }
         callAPI()
     }, [])
+
     console.log(events);
     return (
         <div className={styles.mainContainer}>
             <Head>
-                <title>Events - Anwesha 2023</title>
-                <meta name="description" content="Events-Anwesha 2023" />
+                <title>Events - Anwesha 2024</title>
+                <meta name="description" content="Events-Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div style={{ height: 100 }}></div>

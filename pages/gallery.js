@@ -7,8 +7,8 @@ export default function Multicity({ folderLinks }) {
     return (
         <>
             <Head>
-                <title>Gallery - Anwesha 2023</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Gallery - Anwesha 2024</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="/AnwehsaIcon.png" />
             </Head>
             {/* <Navbar /> */}
@@ -94,8 +94,8 @@ export async function getServerSideProps(context) {
                     images.data.files.map(async (image) => {
                         // To create a link we will append the id of the image to the url
                         let url =
-                            'https://drive.google.com/uc?export=view&id=' +
-                            image.id
+                            'https://lh3.google.com/u/0/d/' +
+                            image.id 
                         return url
                     })
                 )

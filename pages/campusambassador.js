@@ -19,8 +19,8 @@ export default function CampusAmbassador() {
     return (
         <div className={styles.campusamb_body}>
             <Head>
-                <title>Anwesha 2023 - Campus Ambassador</title>
-                <meta name="description" content="Anwesha 2023" />
+                <title>Anwesha 2024 - Campus Ambassador</title>
+                <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             {/* <div style={{ height: '100px' }}></div> */}
