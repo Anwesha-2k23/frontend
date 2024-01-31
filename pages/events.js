@@ -20,7 +20,7 @@ const josefinSans = Josefin_Sans({
 
 const Events = () => {
     const [events, setEvents] = useState([])
-    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40', 'EVT68cb3', 'EVT49870', 'EVTe96c6', 'EVT8e600', 'EVT7a8a7', 'EVT691bc']
+    let exceludedEvents = ['EVTcf525', 'EVTcac95', 'EVT66e40', 'EVT68cb3', 'EVT49870', 'EVTe96c6', 'EVT8e600', 'EVT7a8a7', 'EVT691bc', 'EVT40d32', 'EVTba113', 'EVT2842f']
 
     useEffect(() => {
         let host = process.env.NEXT_PUBLIC_HOST
