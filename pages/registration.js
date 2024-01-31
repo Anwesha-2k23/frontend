@@ -70,7 +70,6 @@ const Pronite = () => {
             } catch (e) {
                 console.log('Failed to fetch')
             }
-            console.log(proniteEvents)
         }
         fetchData()
     }, [proniteIDs, userData])
@@ -113,7 +112,6 @@ const Pronite = () => {
                 else if (id == 1) {
                     // check if used email is in blacklist
                     if (blacklist.includes(profile.state.user.email_id)) {
-                        console.log("blacklist detected")
                         soloEventRegistration(
                             PASS_IITP_GENERAL,
                             699,
@@ -122,7 +120,6 @@ const Pronite = () => {
                             profile.state.user.anwesha_id
                         )
                     } else {
-                        console.log("Not blacklist detected")
                         soloEventRegistrationiitp(
                             PASS_IITP_GENERAL
                         )

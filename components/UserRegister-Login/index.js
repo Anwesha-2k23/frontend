@@ -121,7 +121,6 @@ const UserRegisterForm = () => {
                     body: formData,
                 })
                 let emailData = await emailResponse.json()
-                // console.log(emailData)
             }
             const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
@@ -176,7 +175,6 @@ const UserRegisterForm = () => {
                 })
             }
         } catch (err) {
-            console.log(err)
             toast.error('Unable to register. check your internet connection', {
                 position: 'top-right',
                 autoClose: 3000,

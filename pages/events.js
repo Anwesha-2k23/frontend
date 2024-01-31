@@ -48,7 +48,6 @@ const Events = () => {
         callAPI()
     }, [])
 
-    console.log(events);
     return (
         <div className={styles.mainContainer}>
             <Head>

@@ -25,9 +25,7 @@ const Contact=()=>{
             "NDeri4iyFqfZH9rNw"
         )
         .then((result) => {
-              console.log(result.text);
               resetForm({name: ''});
-              console.log("message sent");
               toast.success('Message sent successfully!');
 
           }, (error) => {

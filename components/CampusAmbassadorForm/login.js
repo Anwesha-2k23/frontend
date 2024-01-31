@@ -63,7 +63,6 @@ const CampusAmbassadorLogin = () => {
                 })
             } else {
                 const data = await response.json()
-                console.log(data.message)
                 setErrorMsg(
                     'Internal Server Error. Check your browser console for more details'
                 )

@@ -16,7 +16,6 @@ const Footer = () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault()
-            console.log(new FormData(form))
             if (validator.validate(document.getElementById('email').value)) {
                 toast.success('You are subscribed to our newsletter', {
                     position: 'top-right',
@@ -33,7 +32,6 @@ const Footer = () => {
                     body: new FormData(form),
                 })
                 const data = await response.json()
-                console.log(data)
                 // .then(response => console.log('Success!', response))
                 // .catch(error => console.error('Error!', error.message))
                 setEmail('')

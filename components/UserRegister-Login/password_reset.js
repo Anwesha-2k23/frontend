@@ -15,7 +15,6 @@ const ChangePassword = () => {
     const [password, setPassword] = React.useState('')
     const [cnfPassword, setCnfPassword] = React.useState('')
     const [passwordShown, setPasswordShown] = React.useState(false)
-    console.log(router.query.slug)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -57,7 +56,6 @@ const ChangePassword = () => {
             })
 
             //check if request is successful
-            // console.log(response.status)
             if (response.status === 200 || response.status === 201) {
                 toast.success('Password reset successfully!', {
                     position: 'top-right',
