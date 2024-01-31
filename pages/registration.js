@@ -13,6 +13,8 @@ import EliteTicket from '../components/Rive/EliteTicket.js'
 import { soloEventRegistration, soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 import blacklist from '../components/blacklist.js'
 import { Carousel } from 'react-responsive-carousel'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -124,6 +126,16 @@ const Pronite = () => {
                         soloEventRegistrationiitp(
                             PASS_IITP_GENERAL
                         )
+                        toast.success('You are successfully registered', {
+                        position: 'top-right',
+                        autoClose: 10000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    });
                     }
                 }
             }
@@ -141,6 +153,18 @@ const Pronite = () => {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.hero}>
+                <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
                 <Image
                     src="/pronite/logo.svg"
                     alt="logo"
