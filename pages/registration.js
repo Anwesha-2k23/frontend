@@ -42,6 +42,7 @@ const Pronite = () => {
     const [proniteEvents, setProniteEvents] = useState([])
     const [profile, setProfile] = useState()
     const [isFacStaff, setIsFacStaff] = useState(false)
+    const [maxCount, setMaxCount] = useState(0)
     const [generalPassCount, setGeneralPassCount] = useState(0)
     const [specialPassCount, setSpecialPassCount] = useState(0)
     const userData = useContext(AuthContext)
@@ -61,13 +62,16 @@ const Pronite = () => {
             // check if email is contained in details array
             let email = userData.state.user.email_id
             let isFacStaff = false
+            let maxCount = 0
             details.forEach((detail) => {
                 if (detail.webmail === email) {
                     isFacStaff = true
+                    maxCount = detail.count
                 }
             })
             console.log("Faculty/Staff detected")
             setIsFacStaff(isFacStaff)
+            setMaxCount(maxCount)
         }
         async function fetchData() {
             try {
@@ -114,24 +118,6 @@ const Pronite = () => {
                         profile.state.user.anwesha_id
                     )
                 }
-                else if (id == 3) {
-                    if(generalPassCount > 0)
-                        soloEventRegistrationiitp(
-                            PASS_STAFF_GEN[generalPassCount-1]
-                        )
-                    else alert("Please select a valid number of passes")
-                }
-                else if (id == 4) {
-                    if(specialPassCount > 0)
-                        soloEventRegistration(
-                            PASS_STAFF_SPE[specialPassCount-1],
-                            449,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
-                        )
-                    else alert("Please select a valid number of passes")
-                }
             }
 
             else {
@@ -170,6 +156,26 @@ const Pronite = () => {
                             theme: 'light',
                         });
                     }
+                }
+                else if (id == 3) {
+                    console.log(generalPassCount)
+                    if (generalPassCount > 0)
+                        soloEventRegistrationiitp(
+                            PASS_STAFF_GEN[generalPassCount - 1]
+                        )
+                    else alert("Please select a valid number of passes")
+                }
+                else if (id == 4) {
+                    console.log(specialPassCount)
+                    if (specialPassCount > 0)
+                        soloEventRegistration(
+                            PASS_STAFF_SPE[specialPassCount - 1],
+                            749 * specialPassCount,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    else alert("Please select a valid number of passes")
                 }
             }
             // console.log(userData.state.user)
@@ -220,7 +226,11 @@ const Pronite = () => {
                                         })
                                     }}>-</button>
                                     <div className={styles.generalPassCount}>{generalPassCount}</div>
-                                    <button className={styles.btn} onClick={() => setGeneralPassCount((prev) => prev + 1)}>+</button>
+                                    <button className={styles.btn} onClick={() => setGeneralPassCount((prev) => {
+                                        if(prev + 1 <= maxCount)
+                                            return prev + 1
+                                        else return prev
+                                    })}>+</button>
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
                             </div>
@@ -235,7 +245,11 @@ const Pronite = () => {
                                         })
                                     }}>-</button>
                                         <div className={styles.generalPassCount}>{specialPassCount}</div>
-                                    <button className={styles.btn} onClick={() => setSpecialPassCount((prev) => prev + 1)}>+</button>
+                                    <button className={styles.btn} onClick={() => setSpecialPassCount((prev) => {
+                                        if (prev + 1 <= maxCount)
+                                            return prev + 1
+                                        else return prev
+                                    })}>+</button>
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(4) }}>Grab Now</button>
                             </div>
