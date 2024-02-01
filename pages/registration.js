@@ -90,7 +90,7 @@ const Pronite = () => {
                 else if (id == 1) {
                     soloEventRegistration(
                         PASS_GENERAL,
-                        999,
+                        1199,
                         profile.state.user.email_id,
                         profile.state.user.phone_number,
                         profile.state.user.anwesha_id
