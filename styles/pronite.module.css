@@ -102,6 +102,14 @@ margin-bottom: 10px;
     margin: 0 10px;
 }
 
+.pass_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1000px) {
     .logo{
         width: 170px;
