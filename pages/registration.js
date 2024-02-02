@@ -276,7 +276,7 @@ const Pronite = () => {
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
                             </div>
-
+                            <div className={styles.stage}></div>
                             <div style={{ cursor: 'pointer' }}>
                                 {/* <FacultyPass type="Special" /> */}
                                 <ProfSpecialPass />
@@ -294,6 +294,9 @@ const Pronite = () => {
                                     })}>+</button>
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(4) }}>Grab Now</button>
+                            </div>
+                            <div className={styles.merchContainer}>
+                                <img src="/pronite/price_table.png" alt="" className={styles.prices} />
                             </div>
                         </>
                     }

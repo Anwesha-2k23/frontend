@@ -129,7 +129,6 @@ const list = [
     "tripti_2101ee75@iitp.ac.in",
     "udita_2101ee77@iitp.ac.in",
     "vaibhav_2101ee80@iitp.ac.in",
-    "aditya_2101ee87@iitp.ac.in",
     "divyansh_2101ee89@iitp.ac.in",
     "ayush_2101ee90@iitp.ac.in",
     "abhishek_2101ee92@iitp.ac.in",
