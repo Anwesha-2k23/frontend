@@ -10,6 +10,7 @@ import EventItem from '../components/EventItem/index.js'
 import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket.js'
 import EliteTicket from '../components/Rive/EliteTicket.js'
+import ProfSpecialPass from '../components/Rive/ProfSpecialPass.js'
 import { soloEventRegistration, soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 import blacklist from '../components/blacklist.js'
 import details from '../components/prof_staff_details.js'
@@ -97,6 +98,7 @@ const Pronite = () => {
     }, [proniteIDs, userData])
 
     function handleRagister(id) {
+        console.log(id)
         if (profile.isAuth) {
             if (profile.state.user.user_type !== 'iitp_student') {
                 // id == 0 is unused
@@ -117,6 +119,26 @@ const Pronite = () => {
                         profile.state.user.phone_number,
                         profile.state.user.anwesha_id
                     )
+                }
+                else if (id == 3) {
+                    console.log(generalPassCount)
+                    if (generalPassCount > 0)
+                        soloEventRegistrationiitp(
+                            PASS_STAFF_GEN[generalPassCount - 1]
+                        )
+                    else alert("Please select a valid number of passes")
+                }
+                else if (id == 4) {
+                    console.log(specialPassCount)
+                    if (specialPassCount > 0)
+                        soloEventRegistration(
+                            PASS_STAFF_SPE[specialPassCount - 1],
+                            749 * specialPassCount,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    else alert("Please select a valid number of passes")
                 }
             }
 
@@ -157,26 +179,6 @@ const Pronite = () => {
                         });
                     }
                 }
-                else if (id == 3) {
-                    console.log(generalPassCount)
-                    if (generalPassCount > 0)
-                        soloEventRegistrationiitp(
-                            PASS_STAFF_GEN[generalPassCount - 1]
-                        )
-                    else alert("Please select a valid number of passes")
-                }
-                else if (id == 4) {
-                    console.log(specialPassCount)
-                    if (specialPassCount > 0)
-                        soloEventRegistration(
-                            PASS_STAFF_SPE[specialPassCount - 1],
-                            749 * specialPassCount,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
-                        )
-                    else alert("Please select a valid number of passes")
-                }
             }
             // console.log(userData.state.user)
         } else {
@@ -216,7 +218,9 @@ const Pronite = () => {
                     {!isFacStaff && <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>}
                     {isFacStaff &&
                         <>
-                            <div style={{ cursor: 'pointer', marginBottom: '30px' }}><FacultyPass type="General" />
+                            <div style={{ cursor: 'pointer', marginBottom: '30px' }}>
+                            {/* <FacultyPass type="General" /> */}
+                            <EliteTicket />
                             <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <button className={styles.btn} onClick={() => {
                                         setGeneralPassCount((prev) => {
@@ -235,7 +239,9 @@ const Pronite = () => {
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
                             </div>
 
-                            <div style={{ cursor: 'pointer' }}><FacultyPass type="Special" />
+                            <div style={{ cursor: 'pointer' }}>
+                                {/* <FacultyPass type="Special" /> */}
+                                <ProfSpecialPass />
                                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                                     <button className={styles.btn} onClick={() => {
                                         setSpecialPassCount((prev) => {

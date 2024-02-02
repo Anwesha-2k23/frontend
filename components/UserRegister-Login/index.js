@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router'
 import { ColorRing } from 'react-loader-spinner'
+import details from '../prof_staff_details'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -104,15 +105,23 @@ const UserRegisterForm = () => {
             )
             return
         }
-
+        let isproff = ""
+        for (let i = 0; i < details.length; i++) {
+            if (details[i].webmail === email) {
+                // setUserType('faculty')
+                isproff = 'faculty'
+                setCollegeName('IIT Patna')
+            }
+        }
         let body = {
             phone_number: phone,
             full_name: name,
             email_id: email,
             password: password,
-            user_type: usertype,
-            college_name,
+            user_type: isproff ? isproff : usertype,
+            college_name: isproff ? 'IIT Patna' : college_name,
         }
+        console.log(body)
         try {
             setLoading(true)
             if (newsletter) {
@@ -276,7 +285,7 @@ const UserRegisterForm = () => {
                                 }
                             }}
                         />{' '}
-                        I am a student of IIT Patna
+                        I am from IIT Patna
 
                     </div>
                     <br />
