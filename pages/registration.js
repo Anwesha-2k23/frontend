@@ -10,8 +10,11 @@ import EventItem from '../components/EventItem/index.js'
 import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket.js'
 import EliteTicket from '../components/Rive/EliteTicket.js'
+import ProfSpecialPass from '../components/Rive/ProfSpecialPass.js'
 import { soloEventRegistration, soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 import blacklist from '../components/blacklist.js'
+import details from '../components/prof_staff_details.js'
+import FacultyPass from '../components/FacultyPass'
 import { Carousel } from 'react-responsive-carousel'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -32,11 +35,17 @@ const PASS_IITP_GENERAL = 'EVTe96c6'
 const PASS_IITP_SPECIAL = 'EVT8e600'
 const PASS_GENERAL = 'EVT7a8a7'
 const PASS_SPECIAL = 'EVT691bc'
+const PASS_STAFF_GEN = ['EVT63763', 'EVTcb689', 'EVTa1ae2', 'EVT20570', 'EVT9dda6', 'EVTbdb92']
+const PASS_STAFF_SPE = ['EVT12910', 'EVT8d60d', 'EVT291e3', 'EVT9fcc8', 'EVTc90d3', 'EVTbdbc6']
 
 const Pronite = () => {
     const router = useRouter()
     const [proniteEvents, setProniteEvents] = useState([])
     const [profile, setProfile] = useState()
+    const [isFacStaff, setIsFacStaff] = useState(false)
+    const [maxCount, setMaxCount] = useState(0)
+    const [generalPassCount, setGeneralPassCount] = useState(0)
+    const [specialPassCount, setSpecialPassCount] = useState(0)
     const userData = useContext(AuthContext)
     useEffect(() => {
         setProfile(userData)
@@ -50,6 +59,20 @@ const Pronite = () => {
                 proniteIDs.push(PASS_GENERAL);
                 proniteIDs.push(PASS_SPECIAL);
             }
+
+            // check if email is contained in details array
+            let email = userData.state.user.email_id
+            let isFacStaff = false
+            let maxCount = 0
+            details.forEach((detail) => {
+                if (detail.webmail === email) {
+                    isFacStaff = true
+                    maxCount = detail.count
+                }
+            })
+            console.log("Faculty/Staff detected")
+            setIsFacStaff(isFacStaff)
+            setMaxCount(maxCount)
         }
         async function fetchData() {
             try {
@@ -75,6 +98,7 @@ const Pronite = () => {
     }, [proniteIDs, userData])
 
     function handleRagister(id) {
+        console.log(id)
         if (profile.isAuth) {
             if (profile.state.user.user_type !== 'iitp_student') {
                 // id == 0 is unused
@@ -95,6 +119,44 @@ const Pronite = () => {
                         profile.state.user.phone_number,
                         profile.state.user.anwesha_id
                     )
+                }
+                else if (id == 3) {
+                    console.log(generalPassCount)
+                    if (generalPassCount > 0)
+                        soloEventRegistrationiitp(
+                            PASS_STAFF_GEN[generalPassCount - 1]
+                        )
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
+                }
+                else if (id == 4) {
+                    console.log(specialPassCount)
+                    if (specialPassCount > 0)
+                        soloEventRegistration(
+                            PASS_STAFF_SPE[specialPassCount - 1],
+                            749 * specialPassCount,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
                 }
             }
 
@@ -124,15 +186,15 @@ const Pronite = () => {
                             PASS_IITP_GENERAL
                         )
                         toast.success('You are successfully registered', {
-                        position: 'top-right',
-                        autoClose: 10000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                    });
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
                     }
                 }
             }
@@ -151,17 +213,17 @@ const Pronite = () => {
             </Head>
             <div className={styles.hero}>
                 <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
                 <Image
                     src="/pronite/logo.svg"
                     alt="logo"
@@ -171,8 +233,63 @@ const Pronite = () => {
                 />
                 <div className={styles.festpass}>Fest Passes</div>
                 <div className={styles.pass_container}>
-                    <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>
-                    {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
+                    {!isFacStaff && <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>}
+                    {isFacStaff &&
+                        <>
+                            <div style={{ cursor: 'pointer', marginBottom: '30px' }}>
+                            {/* <FacultyPass type="General" /> */}
+                            <EliteTicket />
+                            <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
+                                    <button className={styles.btn} onClick={() => {
+                                        setGeneralPassCount((prev) => {
+                                            if (prev > 0)
+                                                return prev - 1
+                                            return prev
+                                        })
+                                    }}>-</button>
+                                    <div className={styles.generalPassCount}>{generalPassCount}</div>
+                                    <button className={styles.btn} onClick={() => setGeneralPassCount((prev) => {
+                                        if(prev + 1 <= maxCount)
+                                            return prev + 1
+                                        else {
+                                            toast.warning(`Sorry, but you can only buy up to ${prev} tickets`, {
+                                                position: 'top-right',
+                                                autoClose: 10000,
+                                                hideProgressBar: false,
+                                                closeOnClick: true,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: 'light',
+                                            });
+                                            return prev}
+                                    })}>+</button>
+                                </div>
+                                <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
+                            </div>
+
+                            <div style={{ cursor: 'pointer' }}>
+                                {/* <FacultyPass type="Special" /> */}
+                                <ProfSpecialPass />
+                                <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
+                                    <button className={styles.btn} onClick={() => {
+                                        setSpecialPassCount((prev) => {
+                                            if (prev > 0)
+                                                return prev - 1
+                                            return prev
+                                        })
+                                    }}>-</button>
+                                        <div className={styles.generalPassCount}>{specialPassCount}</div>
+                                    <button className={styles.btn} onClick={() => setSpecialPassCount((prev) => {
+                                        if (prev + 1 <= maxCount)
+                                            return prev + 1
+                                        else return prev
+                                    })}>+</button>
+                                </div>
+                                <button className={styles.facultyBtn} onClick={() => { handleRagister(4) }}>Grab Now</button>
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
             <div style={{ height: '120px' }}></div>

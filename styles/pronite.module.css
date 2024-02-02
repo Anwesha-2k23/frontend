@@ -46,6 +46,70 @@ margin-bottom: 10px;
     height: 585.4px;
     width: 679.12px;
 }
+
+.facultyBtn{
+    display: flex;
+    padding: 18px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #00354C;
+    width: 100%;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 24px;
+}
+
+.facultyBtn:hover{
+    background: #00243C;
+}
+
+.btn{
+    display: flex;
+    padding: 18px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: #00354C;
+    width: 100%;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #FFF;
+    font-family: "Poppins";
+    font-size: 24px;
+}
+
+.btn:hover{
+    background: #00243C;
+}
+
+.generalPassCount{
+    color: #010031;
+    text-align: center;
+    font-family: "Josefin Sans";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -3.6px;
+    margin-bottom: 10px;
+    margin: 0 10px;
+}
+
+.pass_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 1000px) {
     .logo{
         width: 170px;
