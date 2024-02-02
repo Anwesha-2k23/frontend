@@ -1,7 +1,7 @@
 const details = [
     {
-        "webmail": "anurag@iitp.ac.in",
-        "count": 2
+        "webmail": "aritra_2101ai40@iitp.ac.in",
+        "count": 5
     },
     {
         "webmail": "skumar@iitp.ac.in",

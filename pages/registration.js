@@ -35,8 +35,8 @@ const PASS_IITP_GENERAL = 'EVTe96c6'
 const PASS_IITP_SPECIAL = 'EVT8e600'
 const PASS_GENERAL = 'EVT7a8a7'
 const PASS_SPECIAL = 'EVT691bc'
-const PASS_STAFF_GEN = ['EVT63763', 'EVTcb689', 'EVTa1ae2', 'EVT20570', 'EVT9dda6', 'EVTbdb92']
-const PASS_STAFF_SPE = ['EVT12910', 'EVT8d60d', 'EVT291e3', 'EVT9fcc8', 'EVTc90d3', 'EVTbdbc6']
+const PASS_STAFF_GEN = ['EVT63763', 'EVTcb689', 'EVTa1ae2', 'EVT20570', 'EVT9dda6', 'EVTbdb92', 'EVT49b71']
+const PASS_STAFF_SPE = ['EVT12910', 'EVT8d60d', 'EVT291e3', 'EVT9fcc8', 'EVTc90d3', 'EVTbdbc6', 'EVT3264e']
 
 const Pronite = () => {
     const router = useRouter()
@@ -72,7 +72,7 @@ const Pronite = () => {
             })
             console.log("Faculty/Staff detected")
             setIsFacStaff(isFacStaff)
-            setMaxCount(maxCount + 1)
+            setMaxCount(maxCount + 1) //passes count incl himself
         }
         async function fetchData() {
             try {
@@ -98,7 +98,7 @@ const Pronite = () => {
     }, [proniteIDs, userData])
 
     function handleRagister(id) {
-        console.log(id)
+        console.log({id, isAuth: profile.isAuth, user_type: profile.state.user.user_type})
         if (profile.isAuth) {
             if (profile.state.user.user_type !== 'iitp_student') {
                 // id == 0 is unused
@@ -140,13 +140,22 @@ const Pronite = () => {
                 else if (id == 4) {
                     console.log(specialPassCount)
                     if (specialPassCount > 0)
-                        soloEventRegistration(
-                            PASS_STAFF_SPE[specialPassCount - 1],
-                            749 * specialPassCount,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
-                        )
+                        if (specialPassCount >= PASS_STAFF_SPE.length)
+                            soloEventRegistration(
+                                PASS_STAFF_SPE[PASS_STAFF_SPE.length - 1],
+                                749 * (specialPassCount), 
+                                profile.state.user.email_id,
+                                profile.state.user.phone_number,
+                                profile.state.user.anwesha_id
+                            )
+                        else
+                            soloEventRegistration(
+                                PASS_STAFF_SPE[specialPassCount],
+                                749 * (specialPassCount),
+                                profile.state.user.email_id,
+                                profile.state.user.phone_number,
+                                profile.state.user.anwesha_id
+                            )
                     else toast.error('Select a valid number of passes', {
                             position: 'top-right',
                             autoClose: 10000,
@@ -281,9 +290,7 @@ const Pronite = () => {
                                     }}>-</button>
                                         <div className={styles.generalPassCount}>{specialPassCount}</div>
                                     <button className={styles.btn} onClick={() => setSpecialPassCount((prev) => {
-                                        if (prev + 1 <= maxCount)
-                                            return prev + 1
-                                        else return prev
+                                        return prev + 1 
                                     })}>+</button>
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(4) }}>Grab Now</button>
