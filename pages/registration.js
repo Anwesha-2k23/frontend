@@ -98,7 +98,7 @@ const Pronite = () => {
     }, [proniteIDs, userData])
 
     function handleRagister(id) {
-        console.log({id, isAuth: profile.isAuth, user_type: profile.state.user.user_type})
+        // console.log({id, isAuth: profile.isAuth, user_type: profile.state.user.user_type})
         if (profile.isAuth) {
             if (profile.state.user.user_type !== 'iitp_student') {
                 // id == 0 is unused
