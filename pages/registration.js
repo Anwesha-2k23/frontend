@@ -126,7 +126,16 @@ const Pronite = () => {
                         soloEventRegistrationiitp(
                             PASS_STAFF_GEN[generalPassCount - 1]
                         )
-                    else alert("Please select a valid number of passes")
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
                 }
                 else if (id == 4) {
                     console.log(specialPassCount)
@@ -138,7 +147,16 @@ const Pronite = () => {
                             profile.state.user.phone_number,
                             profile.state.user.anwesha_id
                         )
-                    else alert("Please select a valid number of passes")
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
                 }
             }
 
@@ -233,7 +251,18 @@ const Pronite = () => {
                                     <button className={styles.btn} onClick={() => setGeneralPassCount((prev) => {
                                         if(prev + 1 <= maxCount)
                                             return prev + 1
-                                        else return prev
+                                        else {
+                                            toast.warning(`Sorry, but you can only buy up to ${prev} tickets`, {
+                                                position: 'top-right',
+                                                autoClose: 10000,
+                                                hideProgressBar: false,
+                                                closeOnClick: true,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: 'light',
+                                            });
+                                            return prev}
                                     })}>+</button>
                                 </div>
                                 <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
