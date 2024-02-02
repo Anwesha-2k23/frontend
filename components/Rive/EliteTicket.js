@@ -4,7 +4,7 @@ import styles from './style.module.css'
 export default function Displayrive() {
     const { rive, RiveComponent } = useRive({
         src: '/pronite/anwesha_24_maybe_final.riv',
-        artboard: 'genral pass rive',
+        artboard: 'Fest Pass no price',
         autoplay: true,
     })
 
