@@ -72,7 +72,7 @@ const Pronite = () => {
             })
             console.log("Faculty/Staff detected")
             setIsFacStaff(isFacStaff)
-            setMaxCount(maxCount)
+            setMaxCount(maxCount + 1)
         }
         async function fetchData() {
             try {
