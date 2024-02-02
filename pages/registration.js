@@ -221,7 +221,7 @@ const Pronite = () => {
                             <div style={{ cursor: 'pointer', marginBottom: '30px' }}>
                             {/* <FacultyPass type="General" /> */}
                             <EliteTicket />
-                            <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
                                     <button className={styles.btn} onClick={() => {
                                         setGeneralPassCount((prev) => {
                                             if (prev > 0)
@@ -242,7 +242,7 @@ const Pronite = () => {
                             <div style={{ cursor: 'pointer' }}>
                                 {/* <FacultyPass type="Special" /> */}
                                 <ProfSpecialPass />
-                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
                                     <button className={styles.btn} onClick={() => {
                                         setSpecialPassCount((prev) => {
                                             if (prev > 0)
