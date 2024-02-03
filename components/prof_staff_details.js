@@ -244,7 +244,7 @@ const details = [
         "count": 5
     },
     {
-        "webmail": "om.prakash@iitp.ac.in",
+        "webmail": "om@iitp.ac.in",
         "count": 5
     },
     {
@@ -312,10 +312,11 @@ const details = [
         "count": 2
     },
     {
+        "webmail": "rakesh_kr@iitp.ac.in",
         "count": 2
     },
     {
-        "webmail": "sunils@iitp.ac.in",
+        "webmail": "sunilkr@iitp.ac.in",
         "count": 3
     },
     {
@@ -635,7 +636,7 @@ const details = [
         "count": 4
     },
     {
-        "webmail": "skverma@iitp.ac.in",
+        "webmail": "shail@iitp.ac.in",
         "count": 0
     },
     {
@@ -695,7 +696,11 @@ const details = [
         "count": 2
     },
     {
-        "webmail": "pksri@iitp.ac.in",
+        "webmail": "prash@iitp.ac.in",
+        "count": 3
+    },
+    {
+        "webmail": "prashantkumar@iitp.ac.in",
         "count": 3
     },
     {
@@ -1079,7 +1084,7 @@ const details = [
         "count": 1
     },
     {
-        "webmail": "akverma@iitp.ac.in",
+        "webmail": "akv@iitp.ac.in",
         "count": 3
     },
     {

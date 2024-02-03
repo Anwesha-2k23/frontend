@@ -116,7 +116,7 @@ const UserRegisterForm = () => {
         let body = {
             phone_number: phone,
             full_name: name,
-            email_id: email,
+            email_id: email.toLowerCase(),
             password: password,
             user_type: isproff ? isproff : usertype,
             college_name: isproff ? 'IIT Patna' : college_name,
@@ -303,7 +303,7 @@ const UserRegisterForm = () => {
                                             name="IITP_Mail_Id"
                                             onChange={(e) =>
                                                 setEmail(
-                                                    e.target.value +
+                                                    e.target.value.toLowerCase() +
                                                     '@iitp.ac.in'
                                                 )
                                             }
