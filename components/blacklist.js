@@ -1,7 +1,5 @@
 const list = [
     "himanshu_2101mm09@iitp.ac.in",
-    "satyam_2101mm27@iitp.ac.in",
-    "vikas_2101mm38@iitp.ac.in",
     "yash_2101mm40@iitp.ac.in",
     "falendra_2000MM03@iitp.ac.in",
     "ade_2101me04@iitp.ac.in",
