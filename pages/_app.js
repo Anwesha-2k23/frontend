@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { Poppins } from '@next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import { AuthProvider, PrivateRoute } from '../components/authContext'
@@ -50,6 +51,7 @@ function MyApp({ Component, pageProps }) {
                 <div className={styles.main_component}>
                     <PrivateRoute>
                         <Component {...pageProps} />
+                        <Analytics/>
                     </PrivateRoute>
                 </div>
                 <Footer />
