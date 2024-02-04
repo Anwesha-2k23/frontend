@@ -185,7 +185,7 @@ const Pronite = () => {
                     if (blacklist.includes(profile.state.user.email_id)) {
                         soloEventRegistration(
                             PASS_IITP_GENERAL,
-                            699,
+                            399,
                             profile.state.user.email_id,
                             profile.state.user.phone_number,
                             profile.state.user.anwesha_id
