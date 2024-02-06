@@ -12,7 +12,7 @@ const terms = () => {
             <div className={styles.sec}>
                 <br />
                 <p className={styles.para}>Welcome to Anwesha.iitp.ac.in!<br />
-                    These term and conditions outline the rules and regulations for the use of Anwesha's Website, located at anwesha.live. By accessing this website we assume you accept these terms and conditions. Do not continue to use anwesha.live if you do not agree to take all of the terms and conditions stated on this page.
+                    These term and conditions outline the rules and regulations for the use of Anwesha's Website, located at anwesha.live. By accessing this website we assume you accept these terms and conditions. Do not continue to use anwesha.iitp.ac.in if you do not agree to take all of the terms and conditions stated on this page.
                 </p>
 
                 <p className={styles.para}>

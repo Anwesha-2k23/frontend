@@ -23,7 +23,6 @@ function MyEvents() {
                     }
                 })
                 setPasses([...arr])
-                console.log(result)
             })
             .catch((error) => console.log('error', error))
     }, [])

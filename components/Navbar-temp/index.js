@@ -35,7 +35,6 @@ function Navigation() {
     }, [onClickInput, clickInputFired])
 
     useEffect(() => {
-        console.log(drawerOpen)
         if (drawerOpen) {
             document.addEventListener('click', handleClickOutside)
         }
@@ -59,7 +58,6 @@ function Navigation() {
                 onClickInput.fire()
             }
             setClickInputFired(true)
-            console.log('clicked outside')
         } else {
         }
     }

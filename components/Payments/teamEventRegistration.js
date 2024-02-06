@@ -75,7 +75,6 @@ async function teamEventRegistration(userData, eventID, teamName, teamMembers) {
     // 	t.json()
     // )
 
-    console.log('Proper', data)
 
     const options = {
         key: __DEV__

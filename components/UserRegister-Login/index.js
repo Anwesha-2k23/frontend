@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router'
 import { ColorRing } from 'react-loader-spinner'
+import details from '../prof_staff_details'
 
 const host = process.env.NEXT_PUBLIC_HOST
 
@@ -104,15 +105,23 @@ const UserRegisterForm = () => {
             )
             return
         }
-
+        let isproff = ""
+        for (let i = 0; i < details.length; i++) {
+            if (details[i].webmail === email) {
+                // setUserType('faculty')
+                isproff = 'faculty'
+                setCollegeName('IIT Patna')
+            }
+        }
         let body = {
             phone_number: phone,
             full_name: name,
-            email_id: email,
+            email_id: email.toLowerCase(),
             password: password,
-            user_type: usertype,
-            college_name,
+            user_type: isproff ? isproff : usertype,
+            college_name: isproff ? 'IIT Patna' : college_name,
         }
+        console.log(body)
         try {
             setLoading(true)
             if (newsletter) {
@@ -121,7 +130,6 @@ const UserRegisterForm = () => {
                     body: formData,
                 })
                 let emailData = await emailResponse.json()
-                // console.log(emailData)
             }
             const response = await fetch(`${host}/user/register`, {
                 method: 'POST',
@@ -176,7 +184,6 @@ const UserRegisterForm = () => {
                 })
             }
         } catch (err) {
-            console.log(err)
             toast.error('Unable to register. check your internet connection', {
                 position: 'top-right',
                 autoClose: 3000,
@@ -278,7 +285,7 @@ const UserRegisterForm = () => {
                                 }
                             }}
                         />{' '}
-                        I am a student of IIT Patna
+                        I am from IIT Patna
 
                     </div>
                     <br />
@@ -296,7 +303,7 @@ const UserRegisterForm = () => {
                                             name="IITP_Mail_Id"
                                             onChange={(e) =>
                                                 setEmail(
-                                                    e.target.value +
+                                                    e.target.value.toLowerCase() +
                                                     '@iitp.ac.in'
                                                 )
                                             }

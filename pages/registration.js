@@ -10,8 +10,14 @@ import EventItem from '../components/EventItem/index.js'
 import { AuthContext } from '../components/authContext.js'
 import ProTicket from '../components/Rive/ProTicket.js'
 import EliteTicket from '../components/Rive/EliteTicket.js'
-import { soloEventRegistration,soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
+import ProfSpecialPass from '../components/Rive/ProfSpecialPass.js'
+import { soloEventRegistration, soloEventRegistrationiitp } from '../components/Event Registration/proniteRegistration.js'
 import blacklist from '../components/blacklist.js'
+import details from '../components/prof_staff_details.js'
+import FacultyPass from '../components/FacultyPass'
+import { Carousel } from 'react-responsive-carousel'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const montserrat = Montserrat({
     weight: ['400'],
@@ -29,24 +35,44 @@ const PASS_IITP_GENERAL = 'EVTe96c6'
 const PASS_IITP_SPECIAL = 'EVT8e600'
 const PASS_GENERAL = 'EVT7a8a7'
 const PASS_SPECIAL = 'EVT691bc'
+const PASS_STAFF_GEN = ['EVT63763', 'EVTcb689', 'EVTa1ae2', 'EVT20570', 'EVT9dda6', 'EVTbdb92', 'EVT49b71']
+const PASS_STAFF_SPE = ['EVT12910', 'EVT8d60d', 'EVT291e3', 'EVT9fcc8', 'EVTc90d3', 'EVTbdbc6', 'EVT3264e']
 
-const Registration = () => {
+const Pronite = () => {
     const router = useRouter()
     const [proniteEvents, setProniteEvents] = useState([])
     const [profile, setProfile] = useState()
+    const [isFacStaff, setIsFacStaff] = useState(false)
+    const [maxCount, setMaxCount] = useState(0)
+    const [generalPassCount, setGeneralPassCount] = useState(0)
+    const [specialPassCount, setSpecialPassCount] = useState(0)
     const userData = useContext(AuthContext)
     useEffect(() => {
         setProfile(userData)
         let host = process.env.NEXT_PUBLIC_HOST
-        if(userData.isAuth){
-          if(userData.state.user.user_type === 'iitp_student'){
-              proniteIDs.push(PASS_IITP_GENERAL);
-              proniteIDs.push(PASS_IITP_SPECIAL);
+        if (userData.isAuth) {
+            if (userData.state.user.user_type === 'iitp_student') {
+                proniteIDs.push(PASS_IITP_GENERAL);
+                proniteIDs.push(PASS_IITP_SPECIAL);
             }
-            else{
-              proniteIDs.push(PASS_GENERAL);
-              proniteIDs.push(PASS_SPECIAL);
-          }
+            else {
+                proniteIDs.push(PASS_GENERAL);
+                proniteIDs.push(PASS_SPECIAL);
+            }
+
+            // check if email is contained in details array
+            let email = userData.state.user.email_id
+            let isFacStaff = false
+            let maxCount = 0
+            details.forEach((detail) => {
+                if (detail.webmail === email) {
+                    isFacStaff = true
+                    maxCount = detail.count
+                }
+            })
+            console.log("Faculty/Staff detected")
+            setIsFacStaff(isFacStaff)
+            setMaxCount(maxCount + 1) //passes count incl himself
         }
         async function fetchData() {
             try {
@@ -67,66 +93,121 @@ const Registration = () => {
             } catch (e) {
                 console.log('Failed to fetch')
             }
-            console.log(proniteEvents)
         }
         fetchData()
     }, [proniteIDs, userData])
 
     function handleRagister(id) {
+        // console.log({id, isAuth: profile.isAuth, user_type: profile.state.user.user_type})
         if (profile.isAuth) {
-                if (profile.state.user.user_type !== 'iitp_student') {
-                    // id == 0 is unused
-                    if (id == 0) {
-                        soloEventRegistration(
-                            PASS_SPECIAL,
-                            1499,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
-                        )
-                    }
-                    else if (id == 1){
-                        soloEventRegistration(
-                            PASS_GENERAL,
-                            999,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
-                        )
-                    }
+            if (profile.state.user.user_type !== 'iitp_student') {
+                // id == 0 is unused
+                if (id == 0) {
+                    soloEventRegistration(
+                        PASS_SPECIAL,
+                        1499,
+                        profile.state.user.email_id,
+                        profile.state.user.phone_number,
+                        profile.state.user.anwesha_id
+                    )
                 }
-
-                else {
-                    // id == 0 is unused
-                    if (id == 0){
-                        soloEventRegistration(
-                            PASS_IITP_SPECIAL,
-                            699,
-                            profile.state.user.email_id,
-                            profile.state.user.phone_number,
-                            profile.state.user.anwesha_id
+                else if (id == 1) {
+                    soloEventRegistration(
+                        PASS_GENERAL,
+                        1199,
+                        profile.state.user.email_id,
+                        profile.state.user.phone_number,
+                        profile.state.user.anwesha_id
+                    )
+                }
+                else if (id == 3) {
+                    console.log(generalPassCount)
+                    if (generalPassCount > 0)
+                        soloEventRegistrationiitp(
+                            PASS_STAFF_GEN[generalPassCount - 1]
                         )
-                    }
-                    else if (id == 1){
-                        // check if used email is in blacklist
-                        if (blacklist.includes(profile.state.user.email_id)) {
-                            console.log("blacklist detected")
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
+                }
+                else if (id == 4) {
+                    console.log(specialPassCount)
+                    if (specialPassCount > 0)
+                        if (specialPassCount >= PASS_STAFF_SPE.length)
                             soloEventRegistration(
-                                PASS_IITP_GENERAL,
-                                699,
+                                PASS_STAFF_SPE[PASS_STAFF_SPE.length - 1],
+                                749 * (specialPassCount), 
                                 profile.state.user.email_id,
                                 profile.state.user.phone_number,
                                 profile.state.user.anwesha_id
                             )
-                        } else {
-                            console.log("Not blacklist detected")
-                            soloEventRegistrationiitp(
-                                PASS_IITP_GENERAL
+                        else
+                            soloEventRegistration(
+                                PASS_STAFF_SPE[specialPassCount],
+                                749 * (specialPassCount),
+                                profile.state.user.email_id,
+                                profile.state.user.phone_number,
+                                profile.state.user.anwesha_id
                             )
-                        }
+                    else toast.error('Select a valid number of passes', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
+                }
+            }
+
+            else {
+                // id == 0 is unused
+                if (id == 0) {
+                    soloEventRegistration(
+                        PASS_IITP_SPECIAL,
+                        699,
+                        profile.state.user.email_id,
+                        profile.state.user.phone_number,
+                        profile.state.user.anwesha_id
+                    )
+                }
+                else if (id == 1) {
+                    // check if used email is in blacklist
+                    if (blacklist.includes(profile.state.user.email_id)) {
+                        soloEventRegistration(
+                            PASS_IITP_GENERAL,
+                            399,
+                            profile.state.user.email_id,
+                            profile.state.user.phone_number,
+                            profile.state.user.anwesha_id
+                        )
+                    } else {
+                        soloEventRegistrationiitp(
+                            PASS_IITP_GENERAL
+                        )
+                        toast.success('You are successfully registered', {
+                            position: 'top-right',
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: 'light',
+                        });
                     }
                 }
-                // console.log(userData.state.user)
+            }
+            // console.log(userData.state.user)
         } else {
             router.push('/userLogin')
         }
@@ -140,65 +221,198 @@ const Registration = () => {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.hero}>
-                <img src="/pronite/heading.png" alt="" className={styles.hero_heading} />
-            </div>
-            <div className={styles.passes}>
-                <div className={styles.pass_header}>
-                    <h1 className={styles.heading}>Anwesha Fest Pass</h1>
-                    <h3 className={styles.heading_text}>Get your pass to unlock the awesomeness!</h3>
-                </div>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
+                <Image
+                    src="/pronite/logo.svg"
+                    alt="logo"
+                    height={75.4}
+                    width={299}
+                    className={styles.logo}
+                />
+                <div className={styles.festpass}>Fest Passes</div>
                 <div className={styles.pass_container}>
-                    <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>
-                    {/* <div style={{cursor: 'pointer'}} onClick={()=>{handleRagister(0)}}><EliteTicket /></div> */}
+                    {!isFacStaff && <div style={{ cursor: 'pointer' }} onClick={() => { handleRagister(1) }}><ProTicket /></div>}
+                    {isFacStaff &&
+                        <>
+                            <div style={{ cursor: 'pointer', marginBottom: '30px' }}>
+                            {/* <FacultyPass type="General" /> */}
+                            <EliteTicket />
+                            <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
+                                    <button className={styles.btn} onClick={() => {
+                                        setGeneralPassCount((prev) => {
+                                            if (prev > 0)
+                                                return prev - 1
+                                            return prev
+                                        })
+                                    }}>-</button>
+                                    <div className={styles.generalPassCount}>{generalPassCount}</div>
+                                    <button className={styles.btn} onClick={() => setGeneralPassCount((prev) => {
+                                        if(prev + 1 <= maxCount)
+                                            return prev + 1
+                                        else {
+                                            toast.warning(`Sorry, but you can only buy up to ${prev} tickets`, {
+                                                position: 'top-right',
+                                                autoClose: 10000,
+                                                hideProgressBar: false,
+                                                closeOnClick: true,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: 'light',
+                                            });
+                                            return prev}
+                                    })}>+</button>
+                                </div>
+                                <button className={styles.facultyBtn} onClick={() => { handleRagister(3) }}>Grab Now</button>
+                            </div>
+                            <div className={styles.stage}></div>
+                            <div style={{ cursor: 'pointer' }}>
+                                {/* <FacultyPass type="Special" /> */}
+                                <ProfSpecialPass />
+                                <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '5px' }}>
+                                    <button className={styles.btn} onClick={() => {
+                                        setSpecialPassCount((prev) => {
+                                            if (prev > 0)
+                                                return prev - 1
+                                            return prev
+                                        })
+                                    }}>-</button>
+                                        <div className={styles.generalPassCount}>{specialPassCount}</div>
+                                    <button className={styles.btn} onClick={() => setSpecialPassCount((prev) => {
+                                        return prev + 1 
+                                    })}>+</button>
+                                </div>
+                                <button className={styles.facultyBtn} onClick={() => { handleRagister(4) }}>Grab Now</button>
+                            </div>
+                            <div className={styles.merchContainer}>
+                                <img src="/pronite/price_table.png" alt="" className={styles.prices} />
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/cultural.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>Cultural Night</h1>
-                    <div className={styles.section_text}>Anwesha's Cultural Night, Virasat'24, by SPIC MACAY, is a vibrant showcase of Indian culture. With mesmerizing Qawwali melodies and energetic Purulia Chhau dance, it celebrates India's rich cultural tapestry. Accomplished artists and rising talents promise an unforgettable evening of rhythmic beats and graceful movements.</div>
+            <div style={{ height: '120px' }}></div>
+            {/* <div className={styles.eventtext}>Events at Anwesha`24</div> */}
+
+
+
+            <div className={styles.merchContainer}>
+
+                <div className={styles.card}>
+                    <div className={styles.text1} style={josefinSans.style}>
+                        Cultural Night
+                    </div>
+                    <div className={styles.text2}>Anwesha's Cultural Night, Virasat'24, by SPIC MACAY, is a vibrant showcase of Indian culture. With mesmerizing Qawwali melodies and energetic Purulia Chhau dance, it celebrates India's rich cultural tapestry. Accomplished artists and rising talents promise an unforgettable evening of rhythmic beats and graceful movements.</div>
+
+                    {/* <motion.div
+
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.8 }}
+                    >
+                        <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" style={{ textDecoration: 'none' }}>
+                            <button
+
+                                className={styles.merchBookBtn}
+                            >
+                                Grab Now
+                            </button>
+                        </Link>
+                    </motion.div>
+
+                    <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" className={styles.mobileBuyNow}>
+                        <button
+
+
+                            className={styles.merchBookBtn2}
+                        >
+                            Grab Now
+                        </button>
+                    </Link> */}
                 </div>
-                <div className={styles.section_container}></div>
+                <Image
+                    src="/pronite/virasat.png"
+                    alt="merch"
+                    height={874}
+                    width={1019}
+                    className={styles.merchimg}
+                />
             </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/edm.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>EDM Night</h1>
-                    <div className={styles.section_text}>Dive into sonic bliss at our EDM night. Let DJs weave exhilarating beats on the dance floor, creating an unforgettable experience of pulsating rhythms. Join us for an immersive night of electronic enchantment with vibrant lights, energetic beats, and contagious energy.</div>
+
+
+
+            <div className={styles.merchContainer}>
+                <Image
+                    src="/pronite/edm.png"
+                    alt="merch"
+                    height={874}
+                    width={1019}
+                    className={styles.merchimg}
+                />
+                <div className={styles.card}>
+                    <div className={styles.text1} style={josefinSans.style}>
+                        EDM Night
+                    </div>
+                    <div className={styles.text2}>Dive into sonic bliss at our EDM night. Let DJs weave exhilarating beats on the dance floor, creating an unforgettable experience of pulsating rhythms. Join us for an immersive night of electronic enchantment with vibrant lights, energetic beats, and contagious energy.</div>
+
+
                 </div>
-                <div className={styles.section_container}></div>
+
             </div>
-            <div className={styles.cultural} style={{backgroundImage: "url('/pronite/bollywood.png')"}}>
-                <div className={styles.section_container}>
-                    <h1 className={styles.section_heading}>Bollywood Night</h1>
-                    <div className={styles.section_text}>IIT Patna's Anwesha brings back the dazzling Bollywood night, Pronite! Featuring the musical maestro behind hits like "Badtameez Dil" and "Pashmina," this event follows the legacy of Sanam Band and KK. Join us for a night of vibrant melodies, pulsating beats, and Bollywood magic as Pronite 2024 lights up the town under the disco ball!</div>
+
+
+
+            <div className={styles.merchContainer}>
+
+                <div className={styles.card}>
+                    <div className={styles.text1} style={josefinSans.style}>
+                        Bollywood Night
+                    </div>
+                    <div className={styles.text2}>IIT Patna's Anwesha brings back the dazzling Bollywood night, Pronite! Featuring the musical maestro behind hits like "Badtameez Dil" and "Pashmina," this event follows the legacy of Sanam Band and KK. Join us for a night of vibrant melodies, pulsating beats, and Bollywood magic as Pronite 2024 lights up the town under the disco ball!</div>
+
+
                 </div>
-                <div className={styles.section_container}></div>
+                <Image
+                    src="/pronite/amit.png"
+                    alt="merch"
+                    height={883}
+                    width={1019}
+                    className={styles.merchimg}
+                />
             </div>
-            {/* <div style={{ height: 100 }}></div>
-            <div className={styles.container}>
-              <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-                <div className={styles.titleBox}>
-                    <br />
-                    <br />
-                    <br />
-                    <h1 className={josefinSans.className}>Pronite</h1>
-                    <p className={montserrat.className} style={{ fontWeight: 'bold' }}>
-                      Step into the epitome of musical extravagance at Anwesha's gala event. Previous years witnessed the magic of KK and Sanam, and this year, anticipation soars as the iconic Amit Trivedi graces the stage. With dynamic lights, resounding melodies, and an unparalleled atmosphere, the night promises a glamorous, amazing, and unforgettable experience. Anwesha's signature event is set to be the zenith of cultural celebration, featuring the brilliance of Amit Trivedi in a performance that will leave an indelible mark on the tapestry of our festivities.
-                    </p>
-                    <br />
-                    <br />
-                    <br />
-                    <h2 style={{ color: 'red', fontWeight: 'bold' }}>
-                        {userData.isAuth ? "Wallet payments (Paytm, PhonePe etc) are not accepted !" : <Link href="/userLogin" style={{textDecoration: "none", color: "red"}}>Please <u>Login</u> to Continue</Link>}
-                    </h2>
+
+
+
+            <div className={styles.merchContainer}>
+                <Image
+                    src="/pronite/carnivarl.png"
+                    alt="merch"
+                    height={883}
+                    width={1019}
+                    className={styles.merchimg}
+                />
+                <div className={styles.card}>
+                    <div className={styles.text1} style={josefinSans.style}>
+                        Carnival Zone
+                    </div>
+                    <div className={styles.text2}>Welcome to the heart-pounding excitement of the Carnival Zone at Anwesha24, where a symphony of laughter and adrenaline-filled moments awaits you! Feel the rush of the wind as you soar through the sky on thrilling amusement rides, each twist and turn adding to the excitement. Challenge your skills at our variety of thrill games that will test your aim, precision, and courage. Amidst the excitement, take a sweet pause at our delightful stalls offering a myriad of candies and treats – a sugary haven for those with a sweet tooth. This carnival zone is a sensory delight, combining the thrill of rides, the challenge of games, and the sweetness of indulgent treats, creating an unforgettable experience for all thrill-seekers and candy enthusiasts alike!</div>
+
+
                 </div>
-              </div>
-              <div className={styles.content}>
-                    {proniteEvents.map((event, index) => {
-                        return <EventItem event={event} key={index} />
-                    })}
-              </div>
-            </div> */}
+
+            </div>
+
         </div>
     )
 }
-export default Registration
+export default Pronite

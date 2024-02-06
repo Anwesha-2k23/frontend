@@ -17,7 +17,6 @@ function loadScript(src) {
     })
 }
 function openPay(data){
-        console.log('openPay called {{ atomTokenId|escapejs }}');
         const options = {
           "atomTokenId": data.atomTokenId,
           "merchId": data.merchId,
@@ -39,7 +38,6 @@ async function soloEventRegistration(eventID, amount, email, phone, anwesha_id) 
         anwesha_id: anwesha_id,
         type: "solo"
     })
-    console.log('raw', raw)
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -54,7 +52,6 @@ async function soloEventRegistration(eventID, amount, email, phone, anwesha_id) 
             console.error(error)
         })
     
-    console.log('data', data)
     const res = await loadScript('https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
     openPay(data)
 }

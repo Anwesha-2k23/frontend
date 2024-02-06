@@ -8,6 +8,5 @@ export default function Displayrive() {
         autoplay: true,
     })
 
-    console.log(rive)
     return <RiveComponent className={styles.registerButton} />
 }

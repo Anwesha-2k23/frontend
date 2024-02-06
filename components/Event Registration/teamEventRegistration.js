@@ -19,7 +19,6 @@ function loadScript(src) {
     })
 }
 function openPay(data){
-        console.log('openPay called {{ atomTokenId|escapejs }}');
         const options = {
           "atomTokenId": data.atomTokenId,
           "merchId": data.merchId,
@@ -32,7 +31,6 @@ function openPay(data){
 async function teamEventRegistration(eventID, teamName, teamMembers, email, phone, amount, router) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
-    // console.log(eventID,teamName,teamMembers,email,phone);
     var raw = JSON.stringify({
         event_id: eventID,
         team_name: teamName,
@@ -57,7 +55,6 @@ async function teamEventRegistration(eventID, teamName, teamMembers, email, phon
             console.error(error)
         })
     
-    console.log('data', data)
     const res = await loadScript('https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v='+data.atomTokenId)
     openPay(data)
     // const data = await fetch(`${host}/event/registration/team`, requestOptions)
@@ -127,7 +124,6 @@ async function teamEventRegistrationiitp (eventID, teamName, teamMembers, router
     }
 
     const data = await fetch(`${host}/event/registration/team`, requestOptions)
-    // console.log(data)
     const response = await data.json()
     if (data.status === 200 || data.status === 201) {
         if (data.payment_url) {

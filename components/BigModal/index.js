@@ -10,7 +10,6 @@ import Image from 'next/image'
 const Modal = (props) => {
     const router = useRouter()
     const userData = useContext(AuthContext)
-    console.log(props.body);
 
     function handleRagister() {
         if (userData.isAuth) {
@@ -53,7 +52,6 @@ const Modal = (props) => {
                             props.closeHandler
                         )
                     }
-                    // console.log(userData.state.user)
                 } else {
                     // router.replace(props.body.registration_link)
                     router.push({
@@ -88,7 +86,6 @@ const Modal = (props) => {
         }
     }
     let description = props.body.description.replace(/\n/g, '<br>');
-    console.log(props.body);
     return (
         <React.StrictMode>
             <ToastContainer
