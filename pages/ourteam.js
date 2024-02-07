@@ -135,7 +135,7 @@ export default function ourteam() {
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>
             <div className={styles.container}>
-                <h2 className={styles.teamHeader}>Our Team</h2>
+                <h2 className={styles.teamHeader}>Team Anwesha 2024</h2>
                 <hr className={styles.teamHeadingBar} />
                 <div className={styles.coordinators}>
                     {/* {[...Array(n)].map((e, i) =>  */}

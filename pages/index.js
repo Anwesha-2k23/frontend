@@ -64,7 +64,7 @@ const index = () => {
                         {/* <RegisterButton /> */}
                         <Link style={{width: '30%', minWidth: '300px'}} href="/userRegister" >
                                 
-                                <RegisterButton />
+                                {/* <RegisterButton /> */}
                             </Link>
                         {/* <motion.div
 
@@ -228,7 +228,7 @@ const index = () => {
 
                 {/* Ticket Section */}
                 <div className={styles.themeSection}>
-                    <div className={styles.merchContainer}>
+                    {/* <div className={styles.merchContainer}>
                         <Link href="/registration">
                             <ProTicket />
                         </Link>
@@ -246,7 +246,7 @@ const index = () => {
                             >
                             </motion.div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={styles.merchContainer}>
 
@@ -265,12 +265,12 @@ const index = () => {
                                 whileTap={{ scale: 0.8 }}
                             >
                                 <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" style={{ textDecoration: 'none' }}>
-                                    <button
+                                    {/* <button
 
                                         className={styles.merchBookBtn}
                                     >
                                         Grab Now
-                                    </button>
+                                    </button> */}
                                 </Link>
                             </motion.div>
 

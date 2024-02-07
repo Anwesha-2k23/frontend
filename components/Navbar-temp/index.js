@@ -152,7 +152,7 @@ function Navigation() {
                                 Multicity
                             </Link>
                         </li> */}
-                        <li
+                        {/* <li
                             style={
                                 router.pathname === '/events'
                                     ? { borderBottom: '3px solid white' }
@@ -162,9 +162,9 @@ function Navigation() {
                             <Link className={styles.linknav} href="/events">
                                 Events
                             </Link>
-                        </li>
+                        </li> */}
                         {/* Added pronite to navbar */}
-                        <li
+                        {/* <li
                             style={
                                 router.pathname === '/registration'
                                     ? { borderBottom: '3px solid white' }
@@ -174,7 +174,7 @@ function Navigation() {
                             <Link className={styles.linknav} href="/registration">
                                 Fest Pass
                             </Link>
-                        </li>
+                        </li> */}
                         <li
                             style={
                                 router.pathname === '/contact'
@@ -248,7 +248,7 @@ function Navigation() {
                                 Metaverse
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             {userData.isAuth ? (
                                 <div className={styles.user_container}>
                                     <Link
@@ -281,7 +281,7 @@ function Navigation() {
                                     Login
                                 </Link>
                             )}
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
@@ -291,19 +291,19 @@ function Navigation() {
                     <li>
                         <Link href="/">Home</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link
                             href="/registration"
                             onClick={() => toggleDrawer()}
                         >
                             Fest Pass
                         </Link>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                         <Link href="/events" onClick={() => toggleDrawer()}>
                             Events
                         </Link>
-                    </li>
+                    </li> */}
                     {/* <li>
                         <Link href="/all-multicity" onClick={() => toggleDrawer()}>
                             Multicity
@@ -342,7 +342,7 @@ function Navigation() {
                             Metaverse
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         {userData.isAuth ? (
                             <div className={styles.user_container}>
                                 <Link
@@ -377,7 +377,7 @@ function Navigation() {
                                 Login
                             </Link>
                         )}
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </>

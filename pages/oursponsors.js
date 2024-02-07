@@ -54,34 +54,12 @@ const oursponsors = () => {
     }
     return (
         <div className={styles.parentContainer}>
-<<<<<<< HEAD
-            <div className={styles.container}>
-                <h2 className={styles.teamHeader}> Past Sponsors</h2>
-                <hr className={styles.teamHeadingBar} />
-                <div className={styles.coordinators}>
-                    {/* <h2 className={styles.teamSubHeading}>Coordinators</h2> */}
-                    {/* <hr className={styles.teamSubHeadingBar} /> */}
-                    <div className={styles.picContainer}>
-                        {/* {[...Array(n)].map((e, i) =>  */}
-                        {data.coordinators.map((item, index) => (
-                            <a key={index} href={item.link} target="_blank" rel="noreferrer" style={{ color: 'black', textDecoration: 'none' }}>
-                                <div className={styles.teamCard}>
-                                    <img
-                                        className={styles.memberImage}
-                                        height={220}
-                                        width={220}
-                                        src={`${item.image}`}
-                                        alt={item.name}
-                                    />
-                                    <div className={styles.teamMemberDetails}>
-                                        <div className={styles.memberName}>
-                                            <strong>{item.name}</strong>
-=======
+
             <div className={styles.wave} style={{ paddingTop: '4vw' }}>
                 <div className={styles.container}>
                     <h2 className={styles.teamHeader} style={josefinSans.style}> Our Sponsors</h2>
                     <div style={{ height: '10vw' }}></div>
-                    <h3 className={styles.teamSubHeading} style={josefinSans.style}>Past Sponsors</h3>
+                    <h3 className={styles.teamSubHeading} style={josefinSans.style}></h3>
                     <div style={{ height: '2vw' }}></div>
                     <div className={styles.coordinators}>
                         <div className={styles.picContainer}>
@@ -101,7 +79,7 @@ const oursponsors = () => {
                                             <div className={styles.memberName} >
                                                 {item.name}
                                             </div>
->>>>>>> 6c83eede4c648f7e2ab243ffe83b551d181286ae
+
                                         </div>
                                     </div>
                                 </a>
