@@ -275,13 +275,13 @@ const index = () => {
                             </motion.div>
 
                             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" className={styles.mobileBuyNow}>
-                                <button
+                                {/* <button
 
 
                                     className={styles.merchBookBtn2}
                                 >
                                     Grab Now
-                                </button>
+                                </button> */}
                             </Link>
                         </div>
                         <Image
