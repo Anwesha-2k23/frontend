@@ -312,7 +312,7 @@ const index = () => {
                             <div className={styles.text2}>From heart-stopping dance battles and soulful singing competitions to the dazzling glamour of the fashion show, with thought-provoking Nukkad Nataks and the lyrical echoes of poetry slams, Anwesha's events ignite every artistic spark. Come, delve into Anwesha's events, where every beat has a story to tell and every expression finds a stage!</div>
                             <div className={styles.text2}>   what are you waiting for? Get your Anwesha ID ready, and get ready to jump into the pool of events. If you have any doubts or queries, just hit up the organizers, and they'll help you faster than a pizza delivery guy. Let's get this party started!!</div>
                             <div style={{ marginTop: '24px' }}></div>
-                            <motion.div
+                            {/* <motion.div
 
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.8 }}
@@ -325,7 +325,7 @@ const index = () => {
                                         Explore Now
                                     </button>
                                 </Link>
-                            </motion.div>
+                            </motion.div>*/}
 
                             <Link href="events" className={styles.mobileBuyNow}>
                                 <button
