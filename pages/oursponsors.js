@@ -54,11 +54,12 @@ const oursponsors = () => {
     }
     return (
         <div className={styles.parentContainer}>
+
             <div className={styles.wave} style={{ paddingTop: '4vw' }}>
                 <div className={styles.container}>
                     <h2 className={styles.teamHeader} style={josefinSans.style}> Our Sponsors</h2>
                     <div style={{ height: '10vw' }}></div>
-                    <h3 className={styles.teamSubHeading} style={josefinSans.style}>Past Sponsors</h3>
+                    <h3 className={styles.teamSubHeading} style={josefinSans.style}></h3>
                     <div style={{ height: '2vw' }}></div>
                     <div className={styles.coordinators}>
                         <div className={styles.picContainer}>
@@ -78,6 +79,7 @@ const oursponsors = () => {
                                             <div className={styles.memberName} >
                                                 {item.name}
                                             </div>
+
                                         </div>
                                     </div>
                                 </a>

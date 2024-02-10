@@ -1,39 +1,83 @@
-.parentContainer {
-    background-color: #ABE0FF;
-}
 
-.section1 {
-    padding: 100px 20px;
-    padding-bottom: 20px;
+.parentcontainer {
+    background-image: url('/bg.svg');
+    background-size: 100%;
+    background-color: #9edffe;
+    color: black;
+    padding: 150px 150px 100px 120px;
 }
-
-.sectionHeading {
-    font-size: 40px;
+.head{
+    color: #002886;
+    font-family: Poppins;
+    font-size: 44px;
+    font-style: normal;
     font-weight: 700;
-    color: #403E9E;
-    margin-inline: 25px;
+    line-height: normal;
+    margin-left: -2px;
 }
-
-.sectionHeadingBar {
-    width: 250px;
-    height: 5px;
-    background-color: #403E9E;
-    margin-bottom: 20px;
-    margin-inline: 25px;
+.hr {
+    width: 275px;
+    height: 6px;
+    border-radius: 3.2px;
+    background: #415991;
     border: none;
 }
-
-.sectionContent {
-    position: relative;
-    font-size: 16px;
+.para {
+    color: #262626;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 24px;
-    background-color: #ffffff;
-    padding: 20px;
-    margin-inline: 25px;
-    margin-block: 25px;
-    border-radius: 10px;
-    /* -webkit-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75); */
-    box-shadow: 6px 6px 0px #000000;;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.subheading {
+    color: #002886;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.title{
+    font-size: 20px;
+}
+.list {
+    margin-left: 40px;
+}
+
+.sec {
+    margin-block: 1em;
+}
+.listitem {
+    color: black;
+    font-size: 20px;
+}
+
+.listitem::before {
+    margin-left: 1.5em;
+}
+@media only screen and (max-width: 1023px) {
+    .parentcontainer {
+        padding: 90px 5vw 50px 5vw;
+    }
+}
+@media only screen and (max-width: 555px) {
+    .hr {
+        width: 275px;
+    }
+    .head {
+        font-size: 40px;
+    }
+    .para {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+    .subheading {
+        font-size: 35px;
+    }
+    .list {
+        margin-left: 20px;
+    }
 }

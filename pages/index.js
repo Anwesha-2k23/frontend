@@ -64,7 +64,7 @@ const index = () => {
                         {/* <RegisterButton /> */}
                         <Link style={{width: '30%', minWidth: '300px'}} href="/userRegister" >
                                 
-                                <RegisterButton />
+                                {/* <RegisterButton /> */}
                             </Link>
                         {/* <motion.div
 
@@ -228,7 +228,7 @@ const index = () => {
 
                 {/* Ticket Section */}
                 <div className={styles.themeSection}>
-                    <div className={styles.merchContainer}>
+                    {/* <div className={styles.merchContainer}>
                         <Link href="/registration">
                             <ProTicket />
                         </Link>
@@ -246,7 +246,7 @@ const index = () => {
                             >
                             </motion.div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={styles.merchContainer}>
 
@@ -265,23 +265,23 @@ const index = () => {
                                 whileTap={{ scale: 0.8 }}
                             >
                                 <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" style={{ textDecoration: 'none' }}>
-                                    <button
+                                    {/* <button
 
                                         className={styles.merchBookBtn}
                                     >
                                         Grab Now
-                                    </button>
+                                    </button> */}
                                 </Link>
                             </motion.div>
 
                             <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfMANDdV-NDi7P5-j3RzGEWJYDC1xlTLg-KvnLuGfd1ygG5rg/viewform" className={styles.mobileBuyNow}>
-                                <button
+                                {/* <button
 
 
                                     className={styles.merchBookBtn2}
                                 >
                                     Grab Now
-                                </button>
+                                </button> */}
                             </Link>
                         </div>
                         <Image
@@ -312,7 +312,7 @@ const index = () => {
                             <div className={styles.text2}>From heart-stopping dance battles and soulful singing competitions to the dazzling glamour of the fashion show, with thought-provoking Nukkad Nataks and the lyrical echoes of poetry slams, Anwesha's events ignite every artistic spark. Come, delve into Anwesha's events, where every beat has a story to tell and every expression finds a stage!</div>
                             <div className={styles.text2}>   what are you waiting for? Get your Anwesha ID ready, and get ready to jump into the pool of events. If you have any doubts or queries, just hit up the organizers, and they'll help you faster than a pizza delivery guy. Let's get this party started!!</div>
                             <div style={{ marginTop: '24px' }}></div>
-                            <motion.div
+                            {/* <motion.div
 
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.8 }}
@@ -325,7 +325,7 @@ const index = () => {
                                         Explore Now
                                     </button>
                                 </Link>
-                            </motion.div>
+                            </motion.div>*/}
 
                             <Link href="events" className={styles.mobileBuyNow}>
                                 <button
