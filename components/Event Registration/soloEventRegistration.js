@@ -62,14 +62,41 @@ async function soloEventRegistration(
 
     const res = await loadScript(
         'https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v=' +
-            data.atomTokenId
+        data.atomTokenId
     )
-    openPay(data)
+    console.log(data);
+    if (data.messagge) {
+        toast.error('Already Registered', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+
+    }
+    else {
+        openPay(data);
+    }
+    toast.success("If Registered, it will show in profile", {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
 }
 
 async function soloEventRegistrationiitp(eventID, router, closeHandler) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     var raw = JSON.stringify({
         event_id: eventID,
@@ -82,23 +109,40 @@ async function soloEventRegistrationiitp(eventID, router, closeHandler) {
         redirect: 'follow',
         credentials: 'include',
     }
-
     const data = await fetch(`${host}/event/registration/solo`, requestOptions)
         .then((response) => response.json())
         .catch((error) => {
             console.error(error)
         })
+    console.log(data);
+    if (data.messagge) {
+        toast.error('Already REgistered', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
 
+    }
+    else {
+        toast.success("Registration successfully, check in profile", {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+    }
+
+    await delay(3000);
     closeHandler()
-    toast.success(data.message || data.messagge, {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: 'light',
-    })
+
 }
 export { soloEventRegistration, soloEventRegistrationiitp }

@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-.card {
+@import url('https://fonts.cdnfonts.com/css/laila');
 
+@font-face {
+    font-family: 'AnavioSmallCapitalsW01-Bold'; /* Name for the font */
+    src: url('/font/Anavio_Small_Capitals_W01_Bold.ttf') format('truetype'); /* Path to the font */
+    font-weight: normal; /* Define the weight */
+    font-style: normal;  /* Define the style */
+}
+.card {
 	background-color: black;
 	width: fit-content;
 	height: fit-content;
@@ -10,41 +17,76 @@
 }
 
 .imageWrap {
-	position: relative;
-	width: 293px;
-	max-width: 90vw;
-	height: 239px;
-	max-height: 90vw;
-	overflow: hidden;
-	border-radius: 15px;
-	filter: drop-shadow(0px 4px 11.2px rgba(0, 0, 0, 0.25));
+	width: 319.61px;
+height: 358.481px;
+flex-shrink: 0;
+border-radius: 8px;
+background: #FFF;
+mix-blend-mode: luminosity;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+padding-bottom: 33px;
+filter: grayscale(100%);
+transition: transform 0.3s ease, filter 0.3s ease; /* Add smooth transition */
+position: relative; /* Ensures innerShadow is properly positioned */
 }
 
+.imageWrap:hover{
+	transform: scale(1.10); /* Slightly zoom on hover */
+    filter: grayscale(0%); /* Remove grayscale filter */
+    border-radius: 7.357px; /* Slightly reduce border radius */
+	
+	mix-blend-mode: normal;
+	border: 2px solid #50ff00; /* Add a green solid border */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+
+}
+.innerShadow {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40%; /* Increased height for a more prominent shadow */
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.7) 0%, /* Darker at the bottom */
+		rgba(0, 0, 0, 0.0) 100% /* Transparent at the top */
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none; /* Prevent interference with interactions */
+	border-radius: 0 0 8px 8px; /* Matches card border-radius */
+  }
+
 .item {
-    height: 100%;
-    width: 100%;
+	height: 100%;
+	width: 100%;
+	border-radius: 6.355px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 60%, #000 100%);
 }
 
 .img__description {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgb(2, 0, 36);
-    background: rgba(32, 32, 32, 0.4);
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    /* margin: 10px 30px 10px 30px; */
-    transition: opacity 0.2s, visibility 0.2s;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    border-radius: 15px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgb(2, 0, 36);
+	background: rgba(32, 32, 32, 0.4);
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	/* margin: 10px 30px 10px 30px; */
+	transition: opacity 0.2s, visibility 0.2s;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
 }
-
 
 /* .imageWrap:hover .img__description {
 	visibility: visible;
@@ -52,23 +94,32 @@
 } */
 
 .eventName {
-	font-size: 22px;
-	margin-top: 8px;
-	color: white;
+	color: #FFF; /* White text */
+	text-align: center;
+	font-family: "AnavioSmallCapitalsW01-Bold";
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 
-    width: 284px;
-	font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
 }
 
 .smalldescription {
-	color: #9D9D9D;
-	font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-	font-size: 14px;
+	color: #FFF; /* White text */
+	text-align: center;
+	font-family: laila;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; /* 24px */
 }
 
+.eventDescription{
+	display: flex;
+	width: 90%;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	
+	
+}

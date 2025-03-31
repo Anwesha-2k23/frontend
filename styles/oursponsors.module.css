@@ -1,10 +1,42 @@
+@font-face {
+    font-family: 'SF Ironside';
+    src: url('/font/SF_Ironsides.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'laila';
+    src: url('/font/Laila-Medium.ttf') format('truetype');
+}
+
+/* OUR SPONSORS */
+
 .parentContainer {
-    /* background: linear-gradient(169deg, #81d9ff -6.11%, #d4f2ff 107.75%); */
-    /* background-image: url(/home/cloud.svg); */
     background-attachment: fixed;
     background-repeat: repeat;
     background-size: 100%;
     background-color: black;
+    color: white;
+    font-family: 'laila', sans-serif;
+}
+.partnerGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.partnerHeading {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    @media screen and (max-width: 750px) {
+        font-size: 5vw;
+    }
+}
+.sponsorGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px; /* optional spacing */
+    justify-content: center;
 }
 .wave {
     background-image: url(/sponsors/waves.png);
@@ -24,13 +56,14 @@
     color: white;
     text-align: center;
     text-shadow: 4px 4px 96px rgba(0, 0, 0, 0.25);
-    font-size: 65px;
-    font-style: normal;
-    font-weight: 700;
+    font-size: 4rem;
+    font-family: 'SF Ironside';
     line-height: normal;
     text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 50px;
     @media screen and (max-width: 750px) {
-        font-size: 10vw;
+        font-size: 12vw;
     }
 }
 
@@ -41,12 +74,6 @@
     margin-inline: auto;
     margin-bottom: 50px;
     border: none;
-}
-
-.coordinators {
-    display: flex;
-    flex-direction: column;
-    /* TODO : Complete the styling */
 }
 
 .teamSubHeading {
@@ -70,6 +97,11 @@
     margin-bottom: 50px;
     border: none;
 }
+.coordinators {
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+}
 
 .picContainer {
     display: flex;
@@ -81,33 +113,49 @@
 
 .teamCard {
     display: flex;
-    padding: 15px 40px;
+    padding: 10px 40px;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-    border-radius: 20px;
     background: black;
     box-shadow: 4px 4px 100px 0px rgba(0, 0, 0, 0.04);
     width: min-content;
 }
+.teamImage {
+    background: white;
+    width: 250px;
+    height: 250x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .memberImage {
-    /* background-color: #56a5fe; */
-    border-radius: 12px;
-    /* border: green 2px solid; */
-    margin-bottom: 10px;
     object-fit: contain;
+    width: 70%;
 }
 
 .teamMemberDetails {
     width: 100%;
+    margin-top: 30px;
 }
 
 .memberName {
     color: white;
     text-align: center;
-    font-family: Poppins;
-    font-size: 22px;
+    font-family: 'laila';
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: normal;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.partner {
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+    font-family: 'laila';
     font-style: normal;
     line-height: normal;
     text-transform: capitalize;
@@ -122,28 +170,29 @@
     margin-block: 5px;
 }
 
-/* Container for the dropdown */
 .dropdownContainer {
+    font-family: 'SF Ironside';
     position: absolute;
-    top: 90px; /* Adjust for navbar height */
-    right: 40px; /* Align to the right */
-    z-index: 10; /* Ensure it is above other content */
+    top: 100px;
+    right: 40px;
+    z-index: 1;
     background-color: rgb(20, 20, 20);
+    margin-bottom: 15px;
 }
 
 /* Dropdown button */
 .dropdownButton {
+    font-family: 'SF Ironside';
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(0, 0, 0);
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-bottom: solid 1px rgb(80, 255, 0);
     cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 18px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
@@ -153,15 +202,14 @@
 }
 
 .dropdownContent {
-    display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: rgb(20, 20, 20); /* Dark background color */
+    background-color: rgb(20, 20, 20);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
     width: 100%;
     z-index: 10;
+    padding-top: 5px;
     overflow: hidden; /* Prevents overflow for rounded edges */
 }
 
@@ -171,50 +219,101 @@
     padding: 10px 20px;
     text-decoration: none;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
+    border-bottom: solid 1px rgb(80, 255, 0);
 }
 
 .dropdownContent a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Show dropdown content when button is hovered */
-.dropdownContainer:hover .dropdownContent {
-    display: block;
-}
 
 .arrow {
     font-size: 12px;
     color: white;
     transition: transform 0.3s ease;
 }
+.disabled {
+    background-color: rgb(39, 39, 39);
+    color: inherit;
+    opacity: 0.8;
+}
 
 /* For screens 768px or less */
-@media (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 768px) {
     .dropdownContainer {
         position: static;
-        margin-top: 10px; /* Adjust for smaller screens */
-        text-align: center; /* Center align the container */
-        font-size: 3vw;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 2.8vw;
     }
 
     .dropdownButton {
         padding: 8px 16px;
-        font-size: 3vw;
+        font-size: 2.8vw;
     }
 
     .dropdownContent {
-        position: static; /* Stack dropdown below the button */
+        position: static;
     }
 
     .dropdownContent a {
         padding: 8px;
-        font-size: 3vw;
+        font-size: 2.8vw;
+    }
+    .teamHeader {
+        margin-bottom: 20px;
     }
 
-    /* Adjust the arrow size and position for mobile */
+    .arrow {
+        font-size: 1.6vw;
+        margin-left: 4px;
+    }
+    .memberName {
+        font-size: 4vw;
+    }
+    .teamImage {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 576px) {
+    /* Styles for phones */
+    .memberName {
+        font-size: 5vw;
+    }
+
+    .dropdownContainer {
+        position: static;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 4vw;
+    }
+
+    .dropdownButton {
+        padding: 8px 16px;
+        font-size: 4vw;
+    }
+
+    .dropdownContent {
+        position: static;
+    }
+
+    .dropdownContent a {
+        padding: 8px;
+        font-size: 4vw;
+    }
+    .teamHeader {
+        margin-bottom: 20px;
+    }
+
     .arrow {
         font-size: 2vw;
         margin-left: 4px;
+    }
+    .teamImage {
+        width: 220px;
+        height: 220px;
     }
 }

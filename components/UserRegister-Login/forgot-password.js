@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './style.module.css'
 import { motion } from 'framer-motion'
@@ -7,6 +8,10 @@ import { AuthContext } from '../authContext'
 import 'react-toastify/dist/ReactToastify.css'
 
 const host = process.env.NEXT_PUBLIC_HOST
+
+const cn = (...classes) => {
+    return classes.filter(Boolean).join(' ')
+}
 
 const ForgotPassword = () => {
     const context = useContext(AuthContext)
@@ -99,11 +104,7 @@ const ForgotPassword = () => {
     }
 
     return (
-        <div
-            style={{
-                overflow: 'hidden',
-            }}
-        >
+        <div>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -117,58 +118,94 @@ const ForgotPassword = () => {
                 theme="light"
             />
 
-            <div className={styles.form}>
-                <motion.form
-                    className={styles.mainForm}
-                    initial={{ opacity: 0, x: '-20%' }}
-                    whileInView={{ opacity: 1, x: '0%' }}
-                    transition={{ duration: 1 }}
-                >
-                    <h2 style={{ letterSpacing: 1, fontSize: 30 }}>
-                        Password Reset
-                    </h2>
-                    <div className={styles.field}>
-                        <label htmlFor="email_id">Email ID</label>
-                        <br />
-                        <input
-                            type="email"
-                            name="Email_Id"
-                            placeholder="Eg: vineet@gmail.com"
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <br />
-                    </div>
+            <motion.form
+                initial={{ opacity: 0, x: '-20%' }}
+                whileInView={{ opacity: 1, x: '0%' }}
+                transition={{ duration: 1 }}
+            >
+                <div className={styles.container}>
+                    <div className={styles.form}>
+                        <h2
+                            style={{
+                                fontSize: '2rem',
+                                fontFamily: 'Anavio Small Capitals W01 Bold',
+                                margin: ' -1rem 0 2rem 0',
+                                textAlign: 'center',
+                            }}
+                        >
+                            Password Reset
+                        </h2>
+                        <div className={styles.field}>
+                            <label htmlFor="email_id">Email ID</label>
+                            <br />
+                            <input
+                                type="email"
+                                name="Email_Id"
+                                placeholder="Eg: vineet@gmail.com"
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <br />
+                        </div>
 
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <br />
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
-                            <Link
-                                href="/userLogin"
-                                style={{ color: '#ffffff', fontWeight: 600 }}
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <br />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                }}
                             >
-                                Login Here
-                            </Link>
+                                <Link
+                                    href="/userLogin"
+                                    style={{
+                                        color: '#ffffff',
+                                        fontSize: '0.8rem',
+                                        marginBottom: 15,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    Login Here
+                                </Link>
+                            </div>
+                        </div>
+                        {/* <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.8 }}
+                        >
+                            <button className={styles.fancyButton}>
+                                <span>SUBMIT</span>
+                                <Image
+                                    src={'/assets/Subtract.svg'}
+                                    className={styles.memberImage}
+                                    height={220}
+                                    width={220}
+                                    alt="register"
+                                />
+                            </button>
+                        </motion.div> */}
+
+                        <div className={styles.hero_button}>
+                            <button
+                                className={cn(
+                                    styles.sexy_button,
+                                    styles.sexy_button_small
+                                )}
+                                onClick={handleSubmit}
+                            >
+                                SUBMIT
+                            </button>
                         </div>
                     </div>
-                    <motion.div
-                        className={styles.buttonWrapper}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.8 }}
-                    >
-                        <button type="submit" onClick={(e) => handleSubmit(e)}>
-                            SUBMIT
-                        </button>
-                    </motion.div>
-                </motion.form>
-            </div>
+                </div>
+            </motion.form>
         </div>
     )
 }

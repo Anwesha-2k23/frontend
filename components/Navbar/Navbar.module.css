@@ -62,7 +62,7 @@
     height: 100%;
     padding: 20vw 10px 10px 10px;
     box-shadow: 20px #4e1dd9;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .nav_item {

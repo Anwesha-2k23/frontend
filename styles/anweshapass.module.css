@@ -1,5 +1,20 @@
-.parentContainer {
-    background-color: #ABE0FF;
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); */
+@import url('https://fonts.cdnfonts.com/css/laila');
+@font-face {
+    font-family: 'SF Ironsides';
+    src: url('/font/SF-Ironsides.ttf');
+}
+@font-face {
+    font-family: 'AnavioSmallCapitalsW01-Bold';
+    src: url('/font/Anavio-Small-Capitals-W01-Bold.ttf');
+}
+@font-face {
+    font-family: 'Laila';
+    src: url('/font/Laila-Regular.ttf');
+}
+
+/* .parentContainer {
+ 
     padding-top: 100px;
 }
 
@@ -17,14 +32,14 @@
 
 .sectionHeadingBar {
     /* width: 100vw; */
-    height: 5px;
+/* height: 5px;
     background-color: #403E9E;
     margin-bottom: 20px;
     margin-inline: 25px;
     border: none;
-}
+}  */
 
-.sectionContent {
+/* .sectionContent {
     position: relative;
     font-size: 25px;
     font-weight: 400;
@@ -33,13 +48,13 @@
     padding: 30px;
     margin-inline: 25px;
     margin-block: 25px;
-    border-radius: 10px;
-    /* -webkit-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px; */
+/* -webkit-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 9px 10px 6px 0px rgba(0, 0, 0, 0.75); */
-    box-shadow: 6px 6px 0px #000000;;
-}
+/* box-shadow: 6px 6px 0px #000000;; */
+/* } */
 
-.sectionContent ol {
+/* .sectionContent ol {
     font-size: 20px;
     font-weight: 700;
     margin-top: 20px;
@@ -59,5 +74,1183 @@
     }
     .sectionContent li {
         line-height: 25px;
+    }
+} */
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Start from 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate to 360 degrees (one full turn) */
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers sections horizontally */
+    justify-content: center; /* Centers sections vertically if needed */
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Centers the container in the viewport */
+}
+
+/* ===========================================pass Section===================================================================== */
+.passcontainer {
+    display: flex;
+    margin-top: 50px;
+    padding: 0px 64px 0px 64Fpx;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+
+    background: #000300;
+}
+.passcontainer_body {
+    display: flex;
+    width: 371px;
+    min-width: 371px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 40px;
+}
+.passcontainer_body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+.passcontainer_body > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.passcontainer_body > div > h3 {
+    align-self: stretch;
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+.passcontainer_body > p {
+    align-self: stretch;
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+.passcontainer_hero {
+    width: 100%;
+    max-width: 905px;
+    height: 676px;
+    border-radius: 19.347px;
+    background: #000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+}
+.passcontainer_background {
+    position: absolute;
+    margin-left: 13px;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+            min(350px, 40vw) min(350px, 40vw) at 50% 50%,
+            rgba(0, 0, 0, 0) 50%,
+            #000 100%
+        ),
+        url('/pics/circle_full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    mix-blend-mode: screen;
+}
+
+.passcontainer_hero_fix {
+    position: relative;
+    width: 600px;
+    margin-top: 120px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.linkContainer {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    z-index: 1;
+    margin-bottom: 0px;
+}
+
+.linkContainer a {
+    font-family: 'Laila', serif;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 550px) {
+    .linkContainer {
+        right: 50%; /* Position at the horizontal center */
+        transform: translateX(50%);
+    }
+}
+
+.passcontainer_tshirts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tshirt_white {
+    margin-top: 125px;
+    margin-right: -10px;
+    height: 418.97px;
+    width: 134.48px;
+    flex-shrink: 0;
+    background: url('/passes/rightpass.svg');
+}
+.tshirt_black {
+    margin-left: auto;
+    margin-right: auto;
+    width: 134.48px;
+    height: 418.97px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    background: url('/passes/centerpass.svg') transparent 50% no-repeat;
+    z-index: 9;
+    position: relative;
+}
+
+.tshirt_blue {
+    margin-top: 125px;
+    margin-left: -38px;
+    width: 134.48px;
+    height: 418.97px;
+    flex-shrink: 0;
+    background: url('/passes/leftpass.svg');
+}
+
+.passcontainer_button {
+    bottom: 130px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding-left: 40px;
+    flex-direction: column;
+}
+.passcontainer_button > button {
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.earlybird {
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: AnavioSmallCapitalsW01-Bold;
+}
+
+.earlybird1 {
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: AnavioSmallCapitalsW01-Bold;
+}
+
+@media only screen and (max-width: 1250px) {
+    .passcontainer {
+        flex-direction: column;
+        padding-top: 44px;
+        gap: 0px;
+    }
+    .passcontainer_body {
+        width: 100%;
+        max-width: 768px;
+    }
+    .passcontainer_body > p {
+        text-align-last: center;
+    }
+    .passcontainer_body > div > h2 {
+        text-align: center;
+    }
+    .passcontainer_body > div > h3 {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .passcontainer {
+        padding-top: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .passcontainer_background {
+        background-image: radial-gradient(
+                45vw 45vw at 50% 50%,
+                rgba(0, 0, 0, 0) 50%,
+                #000 100%
+            ),
+            url('/pics/circle_full.png');
+    }
+    .passcontainer_body {
+        gap: 22px;
+    }
+    .passcontainer_body > div {
+        gap: 2px !important;
+    }
+    .passcontainer_body > div > h2 {
+        font-size: 48px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .passcontainer_body > div > h3 {
+        font-size: 22px;
+    }
+    .passcontainer_body > p {
+        font-size: 16px;
+    }
+    .passcontainer_hero {
+        margin-top: -30px;
+    }
+    .passcontainer_hero_fix {
+        margin-top: 0;
+        height: 100%;
+        padding-top: 30px;
+        width: 75vw;
+        max-width: 515px;
+    }
+    .passcontainer_tshirts {
+        height: 100%;
+    }
+
+    .passcontainer_button {
+        position: relative;
+        bottom: 180px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .passcontainer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .passcontainer_background {
+        background-image: radial-gradient(
+                50vw 50vw at 50% 50%,
+                rgba(0, 0, 0, 0) 50%,
+                #000 100%
+            ),
+            url('/pics/circle_full.png');
+    }
+    .passcontainer_body {
+        min-width: unset;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .passcontainer_body > div > h2 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .passcontainer_body > div > h3 {
+        font-size: 17px;
+    }
+    .passcontainer_body > p {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .passcontainer_hero_fix {
+        width: 90vw;
+        max-width: 400px;
+        min-width: 280px;
+    }
+    .passcontainer_tshirts {
+        margin-left: -30px;
+    }
+
+    .passcontainer_button {
+        position: relative;
+        padding-left: 0;
+    }
+    .passcontainer_button > button {
+        width: 191.315px;
+        height: 62.963px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .passcontainer_body > div > h3 {
+        font-size: 14px;
+    }
+    .passcontainer_tshirts {
+        margin-left: 0px;
+    }
+    .tshirt_white {
+        display: none;
+    }
+    .tshirt_blue {
+        display: none;
+    }
+}
+
+.sexy_button {
+    /* USE TAILWIND I struggle to name classes :) */
+    all: unset;
+    width: 231.338px;
+    height: 76.135px;
+
+    /* flex-shrink: 0; */
+    background-image: url('/pics/Subtract.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    background-position: center;
+    fill: #000;
+    filter: drop-shadow(0px -3.623px 3.623px #55a826);
+
+    color: var(--Color-Primary500, #50ff00);
+    text-align: center;
+
+    /* SF/SF - 36 REG */
+    font-family: 'SF Ironsides';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.sexy_button_small {
+    width: 191.315px;
+    height: 62.963px;
+    font-size: 28px;
+    filter: drop-shadow(0px -2.996px 2.996px #55a826);
+}
+/* .sexy_button:focus{
+    filter: drop-shadow(0px -1px 1px white);
+} */
+.sexy_button:hover {
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);
+}
+.sexy_button:active {
+    filter: drop-shadow(1px 1px 1px white);
+}
+
+.bat_scroll_button {
+    all: unset;
+    cursor: pointer;
+    width: min-content;
+    height: min-content;
+}
+.bat_scroll_button:hover {
+    filter: drop-shadow(1px 1px 1px yellow);
+}
+.bat_scroll_button:active {
+    filter: drop-shadow(2px 2px 2px white);
+}
+
+/* =================================== EVENTS =================================== */
+.events {
+    height: 781px;
+    align-self: stretch;
+    background: #000300;
+}
+.events_title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 52px;
+    gap: 52px;
+}
+.events_title > div {
+    display: flex;
+    width: 398px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.events_title > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+    text-align: right;
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.events_title > div > h3 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.events_images_parent {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    max-width: 100%;
+}
+.events_images {
+    width: 100%;
+    /* display: flex; */
+    /* gap: 28.14px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 52px;
+    margin-bottom: 52px;
+    overflow-x: hidden;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.events_image {
+    background-position: center;
+    background-color: lightgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* mix-blend-mode: luminosity; */
+    /* background-blend-mode: luminosity; */
+    background-position-y: 0;
+}
+/* .events_image_active{ */
+/* mix-blend-mode: unset !important; */
+/* background-blend-mode: normal; */
+/* } */
+.events_image > div {
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.events_image > div > h2 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.events_image > div > h3 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+    font-family: 'EB Garamond';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.events_button {
+    width: 100%;
+    display: flex;
+}
+.events_button > button {
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 1250px) {
+    .events_title {
+        gap: 16px;
+        justify-content: space-evenly;
+    }
+    .events_title > svg {
+        width: 150px;
+    }
+    /* .events_image_active{
+        z-index: 1;
+        position: relative;
+    }
+    .events_image:not(.events_image_active){
+        position: absolute;
+        z-index: 0;
+    }
+    .events_images .events_image:first-child{
+        left: 0;
+        margin-left: 65px;
+
+        transform: rotateY(15deg);
+        clip-path: polygon(0% 3%, 100% 0%, 100% 100%, 0% 97%);
+        transform-origin: center center;
+    }
+    .events_images .events_image:last-child{
+        right: 0;
+        margin-right: 65px;
+
+        transform: rotateY(-15deg);
+        clip-path: polygon(0% 0%, 100% 3%, 100% 97%, 0% 100%);
+        transform-origin: center center;
+    } */
+}
+@media only screen and (max-width: 768px) {
+    .events_title > svg {
+        position: absolute;
+    }
+    .events_title > svg:first-child {
+        left: 0;
+    }
+    .events_title > svg:last-child {
+        right: 0;
+    }
+    .events_title > div {
+        position: relative;
+        z-index: 1;
+    }
+    .events_title > div > h2 {
+        text-align: center;
+    }
+    .events_title > div > h3 {
+        text-align: center;
+    }
+    /* .events_images_parent{
+        overflow-x: hidden;
+    } */
+    .events_images_parent > .bat_scroll_button > svg {
+        width: 8vw;
+        height: calc(55px * (8vw / 155px));
+        min-width: calc(65px / 1.75);
+        min-height: calc(85px / 1.75);
+    }
+    .events_image > div > h2 {
+        font-size: calc(10px + max(2.8vw, 8.4px)); /* 0.028 * 300 */
+    }
+    .events_image > div > h3 {
+        font-size: calc(10px + max(1.8vw, 5.4px)); /* 0.018 * 300 */
+    }
+    .events_button {
+        margin-top: -16px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .events {
+        height: unset;
+    }
+    .events_title {
+        position: relative;
+        padding-top: 24px;
+    }
+    .events_title > svg {
+        width: calc(155px / 1.2);
+        height: calc(55px / 1.2);
+    }
+    /* .events_images_parent{
+        gap: 0;
+    }
+    .events_image:not(.events_image_active){
+        display: none;
+    }
+    .events_image_active{
+        width: 100% !important;
+    }
+    .events_images_parent > .bat_scroll_button > svg{
+        width: calc(65px / 1.75);
+        height: calc(85px / 1.75);
+    } */
+    .events_button {
+        margin-top: -32px;
+        margin-bottom: 32px;
+    }
+    .events_title {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    /* .events_image > div{
+        gap: 0;
+    } */
+    .events_title > div > h2 {
+        font-size: 48px;
+    }
+    .events_title > div > h3 {
+        font-size: 18px;
+    }
+}
+
+/* ---------------------------------------------------------Cultural Night------------------------------------------------- */
+
+.cultural_Night {
+    display: flex;
+    padding: 0px 64px 0px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+
+    background: #000300;
+}
+
+.cultural_Night_body {
+    display: flex;
+    width: 371px;
+    min-width: 371px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+.cultural_Night_body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+.cultural_Night_body > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.cultural_Night_body > div > h3 {
+    align-self: stretch;
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+.cultural_Night_body > p {
+    align-self: stretch;
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.cultural_Night_hero {
+    width: 100%;
+    max-width: 905px;
+    height: 676px;
+    border-radius: 19.347px;
+    background: #000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cultural_Night_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+            min(350px, 40vw) min(350px, 40vw) at 50% 50%,
+            rgba(0, 0, 0, 0) 50%,
+            #000 100%
+        ),
+        url('/pics/circle_full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    mix-blend-mode: screen;
+}
+
+.cultural_Night_imgbg {
+    background: #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+    .cultural_Night {
+        flex-direction: column;
+        padding-top: 44px;
+        gap: 0px;
+    }
+    .cultural_Night_body {
+        width: 100%;
+        max-width: 768px;
+    }
+    .cultural_Night_body > p {
+        text-align-last: center;
+    }
+    .cultural_Night_body > div > h2 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cultural_Night_body {
+        gap: 22px;
+    }
+    .cultural_Night_body > div {
+        gap: 2px !important;
+    }
+    .cultural_Night_body > div > h2 {
+        font-size: 48px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cultural_Night_body > p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .cultural_Night {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .cultural_Night_body {
+        min-width: unset;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .cultural_Night_body > div > h2 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .cultural_Night_body > div > h3 {
+        font-size: 17px;
+    }
+    .cultural_Night_body > p {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .cultural_Night_hero {
+        height: 500px;
+    }
+    .cultural_Night_imgbg img {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .cultural_Night_body > div > h3 {
+        font-size: 14px;
+    }
+    .cultural_Night_hero {
+        height: 350px;
+    }
+}
+
+/* ---------------------------------------------------------Melody Night------------------------------------------------- */
+
+.Melody_Night {
+    display: flex;
+    padding: 0px 64px 0px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+
+    background: #000300;
+}
+
+.Melody_Night_body {
+    display: flex;
+    width: 371px;
+    min-width: 371px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+.Melody_Night_body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+.Melody_Night_body > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.Melody_Night_body > div > h3 {
+    align-self: stretch;
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+.Melody_Night_body > p {
+    align-self: stretch;
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.Melody_Night_hero {
+    width: 100%;
+    max-width: 905px;
+    height: 676px;
+    border-radius: 19.347px;
+    background: #000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Melody_Night_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+            min(350px, 40vw) min(350px, 40vw) at 50% 50%,
+            rgba(0, 0, 0, 0) 50%,
+            #000 100%
+        ),
+        url('/pics/circle_full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    order: 1;
+    mix-blend-mode: screen;
+}
+
+.Melody_Night_imgbg {
+    background: #000;
+    position: relative;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+    .Melody_Night_background {
+        order: 2;
+    }
+    .Melody_Night_imgbg {
+        order: 1;
+    }
+    .Melody_Night {
+        flex-direction: column;
+        padding-top: 44px;
+        gap: 0px;
+    }
+    .Melody_Night_body {
+        width: 100%;
+        max-width: 768px;
+    }
+    .Melody_Night_body > p {
+        text-align-last: center;
+    }
+    .Melody_Night_body > div > h2 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Melody_Night_body {
+        gap: 22px;
+        margin-bottom: 90px;
+    }
+    .Melody_Night_body > div {
+        gap: 2px !important;
+    }
+    .Melody_Night_body > div > h2 {
+        font-size: 48px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Melody_Night_body > p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .Melody_Night {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .Melody_Night_body {
+        min-width: unset;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .Melody_Night_body > div > h2 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .Melody_Night_body > div > h3 {
+        font-size: 17px;
+    }
+    .Melody_Night_hero {
+        height: 500px;
+    }
+    .Melody_Night_body > p {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .Melody_Night_imgbg img {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .Melody_Night_body > div > h3 {
+        font-size: 14px;
+    }
+    .Melody_Night_hero {
+        height: 350px;
+    }
+}
+
+/* ---------------------------------------------------------Bollywood Night------------------------------------------------- */
+
+.Bollywood_Night {
+    display: flex;
+    padding: 0px 64px 0px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+
+    background: #000300;
+}
+
+.Bollywood_Night_body {
+    display: flex;
+    width: 371px;
+    min-width: 371px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+.Bollywood_Night_body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+.Bollywood_Night_body > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.Bollywood_Night_body > div > h3 {
+    align-self: stretch;
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+.Bollywood_Night_body > p {
+    align-self: stretch;
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+
+.Bollywood_Night_hero {
+    width: 100%;
+    max-width: 905px;
+    height: 676px;
+    border-radius: 19.347px;
+    background: #000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Bollywood_Night_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+            min(350px, 40vw) min(350px, 40vw) at 50% 50%,
+            rgba(0, 0, 0, 0) 50%,
+            #000 100%
+        ),
+        url('/pics/circle_full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    mix-blend-mode: screen;
+}
+
+.Bollywood_Night_imgbg {
+    background: #000;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1250px) {
+    .Bollywood_Night {
+        flex-direction: column;
+        padding-top: 44px;
+    }
+    .Bollywood_Night_body {
+        width: 100%;
+        max-width: 768px;
+    }
+    .Bollywood_Night_body > p {
+        text-align-last: center;
+    }
+    .Bollywood_Night_body > div > h2 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Bollywood_Night_body {
+        gap: 22px;
+    }
+    .Bollywood_Night_body > div {
+        gap: 2px !important;
+    }
+    .Bollywood_Night_body > div > h2 {
+        font-size: 48px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Bollywood_Night_body > p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .Bollywood_Night {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .passcontainer_hero_fix {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Bollywood_Night_body {
+        min-width: unset;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .Bollywood_Night_body > div > h2 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .Bollywood_Night_body > div > h3 {
+        font-size: 17px;
+    }
+    .Bollywood_Night_hero {
+        height: 500px;
+    }
+    .Bollywood_Night_body > p {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .Bollywood_Night_imgbg img {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .Bollywood_Night_body > div > h3 {
+        font-size: 14px;
+    }
+    .Bollywood_Night_hero {
+        height: 350px;
     }
 }

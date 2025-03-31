@@ -4,6 +4,7 @@ import { AuthContext } from '../authContext'
 const host = process.env.NEXT_PUBLIC_HOST
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -50,6 +51,7 @@ async function teamEventRegistration(
         anwesha_id: teamMembers[0],
     })
 
+
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -57,17 +59,48 @@ async function teamEventRegistration(
         redirect: 'follow',
         credentials: 'include',
     }
+
     const data = await fetch(`${host}/atompay/`, requestOptions)
         .then((response) => response.json())
         .catch((error) => {
             console.error(error)
         })
-
+    if (data.message == 'This user does not exist') {
+        toast.error('One or more incorrect anwesha id entered');
+        await delay(4000);
+        return;
+    }
+    console.log(data);
     const res = await loadScript(
         'https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v=' +
-            data.atomTokenId
+        data.atomTokenId
     )
-    openPay(data)
+    if (data.messagge) {
+        toast.error('Already Registered', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+
+    }
+    else {
+        openPay(data);
+    }
+    toast.success("If Registered, it will show in profile", {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
     // const data = await fetch(`${host}/event/registration/team`, requestOptions)
 
     // const response = await data.json()
@@ -124,6 +157,7 @@ async function teamEventRegistrationiitp(
 ) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     var raw = JSON.stringify({
         event_id: eventID,
@@ -145,7 +179,7 @@ async function teamEventRegistrationiitp(
         if (data.payment_url) {
             router.push(response.payment_url)
         } else {
-            toast.success(response.messagge || response.message, {
+            toast.success("Regestered successfully, check out profile", {
                 position: 'top-right',
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -155,6 +189,7 @@ async function teamEventRegistrationiitp(
                 progress: undefined,
                 theme: 'light',
             })
+            await delay(3000);
             router.replace('/events')
         }
     } else {

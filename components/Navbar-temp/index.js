@@ -10,6 +10,9 @@ const host = process.env.NEXT_PUBLIC_HOST
 const STATE_MACHINE_NAME = 'Basic State Machine'
 const INPUT_NAME = 'Switch'
 
+const cn = (...classes) => {
+    return classes.filter(Boolean).join(' ')
+}
 function Navigation() {
     const userData = useContext(AuthContext)
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -49,9 +52,7 @@ function Navigation() {
         if (refNav.current && !refNav.current.contains(event.target)) {
             document.getElementById('drawer').style.opacity = 0
             setTimeout(function () {
-                ;(document.getElementById('drawer').style.display = 'none'),
-                    (document.getElementById('nav_div').style.backgroundColor =
-                        '#010031')
+                document.getElementById('drawer').style.display = 'none'
             }, 300)
             setDrawerOpen(false)
             if (onClickInput) {
@@ -66,7 +67,7 @@ function Navigation() {
         setIsHome(['/'].includes(router.pathname))
         document.getElementById('drawer').style.opacity = 0
         setTimeout(function () {
-            ;(document.getElementById('drawer').style.display = 'none'),
+            ; (document.getElementById('drawer').style.display = 'none'),
                 (document.getElementById('nav_div').style.backgroundColor = '')
         }, 300)
         setDrawerOpen(false)
@@ -80,7 +81,7 @@ function Navigation() {
             setTimeout(
                 () => (
                     (drawer.style.opacity = 1),
-                    (nav_div.style.backgroundColor = '#010031')
+                    (nav_div.style.backgroundColor = '#000000')
                 ),
                 300
             )
@@ -89,7 +90,7 @@ function Navigation() {
             setTimeout(
                 () => (
                     (drawer.style.display = 'none'),
-                    (nav_div.style.backgroundColor = '')
+                    (nav_div.style.backgroundColor = '#000000')
                 ),
                 300
             )
@@ -129,8 +130,8 @@ function Navigation() {
                     <Image
                         src="/navbar/logo_no_bg.svg"
                         alt="logo"
-                        width={159}
-                        height={37.5}
+                        width={108}
+                        height={45}
                     />
                 </Link>
                 <div className={styles.navLinks}>
@@ -175,87 +176,128 @@ function Navigation() {
                                 Fest Pass
                             </Link>
                         </li> */}
-                         <li
-                            style={
-                                router.pathname === '/events'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/events">
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/events'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/events"
+                            >
                                 Events
                             </Link>
                         </li>
-                        <li
-                            style={
-                                router.pathname === '/contact'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/contact">
+                        {/* <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/schedule'
+                                        ? {
+                                              color: 'rgb(80, 255, 0)',
+                                          }
+                                        : null
+                                }
+                                href="/schedule"
+                            >
+                                Schedule
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/merch'
+                                        ? {
+                                              color: 'rgb(80, 255, 0)',
+                                          }
+                                        : null
+                                }
+                                href="/merch"
+                            >
+                                Merch
+                            </Link>
+                        </li> */}
+
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/gallery'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/gallery"
+                            >
+                                Gallery
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/ourteam'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/ourteam"
+                            >
+                                Team
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/oursponsors'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/oursponsors"
+                            >
+                                Sponsors
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/aboutus'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/aboutus"
+                            >
+                                About Us
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                className={styles.linknav}
+                                style={
+                                    router.pathname === '/contact'
+                                        ? {
+                                            color: 'rgb(80, 255, 0)',
+                                        }
+                                        : null
+                                }
+                                href="/contact"
+                            >
                                 Contact Us
                             </Link>
                         </li>
 
-                        <li
-                            style={
-                                router.pathname === '/ourteam'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/ourteam">
-                                Team
-                            </Link>
-                        </li>
-                        <li
-                            style={
-                                router.pathname === '/oursponsors'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link
-                                className={styles.linknav}
-                                href="/oursponsors"
-                            >
-                                Our Partners
-                            </Link>
-                        </li>
-                        <li
-                            style={
-                                router.pathname === '/gallery'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/gallery">
-                                Gallery
-                            </Link>
-                        </li>
-                        <li
-                            style={
-                                router.pathname === '/aboutus'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/aboutus">
-                                About Us
-                            </Link>
-                        </li>
-                        {/* <li
-                            style={
-                                router.pathname === '/metaverse'
-                                    ? { borderBottom: '3px solid white' }
-                                    : null
-                            }
-                        >
-                            <Link className={styles.linknav} href="/metaverse">
-                                Metaverse
-                            </Link>
-                        </li> */}
                         {/* <li>
                             {userData.isAuth ? (
                                 <div className={styles.user_container}>
@@ -292,8 +334,62 @@ function Navigation() {
                         </li> */}
                     </ul>
                 </div>
-                <div id='getCardsButton'>
-                    <button className={styles.getcardsbutton}> Get Cards</button>
+                <div className={styles.navEnds}>
+                    {/* <button className={styles.fancyButton}>
+                        <span>PROFILE</span>
+                    <button className={styles.fancyButton} onClick={() => { router.push('/userLogin') }}>
+                        <span>{!userData.isAuth ? "LOGIN" : "PROFILE"}</span>
+                        <Image
+                            src={'/assets/navSubtract.svg'}
+                            height={42}
+                            width={120}
+                            alt="register"
+                        />
+                    </button> */}
+
+                    <div className={styles.hero_button}>
+                        <button
+                            className={cn(
+                                styles.sexy_button,
+                                styles.sexy_button_small
+                            )}
+                            onClick={() => {
+                                router.push('/anweshapass')
+                            }}
+                        >
+                            GET PASSES
+                        </button>
+                    </div>
+
+                    <div className={styles.hero_button}>
+                        <button
+                            onClick={() => {
+                                router.push('/userLogin')
+                            }}
+                            className={cn(
+                                styles.sexy_button,
+                                styles.sexy_button_small
+                            )}
+                        >
+                            {!userData.isAuth ? 'LOGIN' : 'PROFILE'}
+                        </button>
+                    </div>
+
+                    {userData.isAuth && (
+                        <div className={styles.hero_button}>
+                            <button
+                                className={cn(
+                                    styles.sexy_button,
+                                    styles.sexy_button_small
+                                )}
+                                onClick={handleLogout}
+                            >
+                                LOGOUT
+                            </button>
+                        </div>
+                    )}
+
+
                 </div>
             </div>
 
@@ -302,6 +398,19 @@ function Navigation() {
                     <li>
                         <Link href="/">Home</Link>
                     </li>
+                    {userData.isAuth ? (
+                        <li>
+                            <Link
+                                href="/profile"
+                                onClick={() => toggleDrawer()}
+                            >
+                                Profile
+                            </Link>
+                        </li>
+                    ) : (
+                        ''
+                    )}
+
                     {/* <li>
                         <Link
                             href="/registration"
@@ -330,23 +439,34 @@ function Navigation() {
                             Gallery
                         </Link>
                     </li>
+                    {/* <li>
+                        <Link href="/schedule" onClick={() => toggleDrawer()}>
+                            Schedule
+                        </Link>
+                    </li> */}
+
+                    {/* <li>
+                        <Link href="/getPasses" onClick={() => toggleDrawer()}>
+                            Get Passes
+                        </Link>
+                    </li> */}
+                    {/* <li>
+                        <Link href="/Merch" onClick={() => toggleDrawer()}>
+                            Merch
+                        </Link>
+                    </li> */}
                     <li>
-                        <Link href="/contact" onClick={() => toggleDrawer()}>
-                            Contact Us
+                        <Link href="/ourteam" onClick={() => toggleDrawer()}>
+                            Teams
                         </Link>
                     </li>
 
-                    <li>
-                        <Link href="/ourteam" onClick={() => toggleDrawer()}>
-                            Team
-                        </Link>
-                    </li>
                     <li>
                         <Link
                             href="/oursponsors"
                             onClick={() => toggleDrawer()}
                         >
-                            Our Partners
+                            SPONSORS
                         </Link>
                     </li>
                     <li>
@@ -355,11 +475,16 @@ function Navigation() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/metaverse" onClick={() => toggleDrawer()}>
-                            Metaverse
+                        <Link href="/contact" onClick={() => toggleDrawer()}>
+                            Contact Us
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
+                        <Link href="/anweshapass" onClick={() => toggleDrawer()}>
+                            getPasses
+                        </Link>
+                    </li>
+                    <li>
                         {userData.isAuth ? (
                             <div className={styles.user_container}>
                                 <Link
@@ -387,14 +512,13 @@ function Navigation() {
                             </div>
                         ) : (
                             <Link
-                                className={styles.login}
                                 href="/userLogin"
                                 onClick={() => toggleDrawer()}
                             >
                                 Login
                             </Link>
                         )}
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </>

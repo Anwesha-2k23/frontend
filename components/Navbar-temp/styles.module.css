@@ -1,28 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'SF Ironside';
+    src: url('/font/SF_Ironsides.ttf') format('truetype');
+}
+
+.hero_button {
+    z-index: 1;
+}
+.sexy_button {
+    /* USE TAILWIND I struggle to name classes :) */
+    all: unset;
+    width: 127.338px;
+    height: 42.135px;
+
+    /* flex-shrink: 0; */
+    background-image: url('/pics/Subtract.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    background-position: center;
+    fill: #000;
+    filter: drop-shadow(0px -3.623px 3.623px #55a826);
+
+    color: var(--Color-Primary500, #50ff00);
+    text-align: center;
+
+    /* SF/SF - 36 REG */
+    font-family: 'SF Ironside';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.sexy_button_small {
+    width: 127.338px;
+    height: 42.135px;
+
+    font-size: 20px;
+    filter: drop-shadow(0px -2.996px 2.996px #55a826);
+}
+/* .sexy_button:focus{
+    filter: drop-shadow(0px -1px 1px white);
+} */
+.sexy_button:hover {
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);
+}
+.sexy_button:active {
+    filter: drop-shadow(1px 1px 1px white);
+}
+
 .mainNav {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     background: #000000;
     color: #000;
     text-align: center;
-    font-family: "Outfit", sans-serif;
+    font-family: 'SF Ironside', sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 2px; */
+    font-size: 1.25rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 65px;
     z-index: 13;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 7px;
+    padding: 7px 20px;
 }
 
 .mobile_nav {
@@ -32,8 +82,9 @@
 .navLinks a {
     color: #fff;
     text-decoration: none;
-    padding: 9px 20px;
+    padding: 9px 15px;
     display: inline-block;
+    white-space: nowrap;
     /* font-weight: bold; */
 }
 
@@ -44,6 +95,30 @@
 .linknav:hover {
     border: #fff 1px solid;
     border-radius: 5px;
+}
+.fancyButton {
+    position: relative;
+    display: inline-block;
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.fancyButton img {
+    display: block;
+    width: 100%;
+}
+
+.fancyButton span {
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    color: rgb(80, 255, 0);
+    font-size: 1.25rem;
+    font-family: 'SF Ironside';
+    letter-spacing: 0.15rem;
 }
 
 .navLinks ul {
@@ -56,7 +131,7 @@
     padding: 0;
 }
 .getcardsbutton {
-    font-family: "Outfit", sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
@@ -78,31 +153,36 @@
     display: none;
     opacity: 0;
     position: fixed;
-    top: 57px;
+    top: 65px;
     width: 100vw;
+    max-height: 65vh;
+    font-family: 'SF Ironside', sans-serif;
     transition: all 0.3s ease;
-    z-index: 4;
+    z-index: 15;
+    border-bottom: 3px solid rgb(80, 255, 0);
+    overflow-y: scroll;
+    background: rgb(0, 0, 0);
 }
 
 .nav_drawer ul {
     display: flex;
     flex-direction: column;
-    background: #010031;
+    /* background: rgb(0, 0, 0); */
     align-items: center;
     justify-content: center;
 }
 
 .nav_drawer li {
     margin: 10px 0;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     overflow: hidden;
 }
 
 .nav_drawer a {
     color: #fff;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
@@ -155,18 +235,35 @@
 }
 
 .hamburger {
-    position: relative;
+    position: absolute;
     cursor: pointer;
-    z-index: 4;
-    height: 50%;
+    z-index: 30;
+    height: 30px;
     width: 10%;
+    top: 17.5px;
+    left: 10px;
     display: none !important;
+}
+.navEnds {
+    display: none;
+}
+
+@media (min-width: 1050px) {
+    .navEnds {
+        display: flex;
+        flex-direction: 'row';
+        gap: '10px';
+    }
 }
 
 @media screen and (max-width: 1050px) {
     .navLinks {
         display: none;
     }
+    .mainNav {
+        justify-content: center;
+    }
+
     .mobile_nav {
         display: block;
         margin-left: 20px;

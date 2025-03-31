@@ -1,8 +1,12 @@
+@import url(https://db.onlinewebfonts.com/c/c4edbff807a21e68cd990230dab176df?family=Anavio+Small+Capitals+W01+Rg);
+
+@import url('https://fonts.cdnfonts.com/css/sf-ironsides');
+
 .container {
     position: relative;
     width: 100%;
-    overflow: hidden;
     background-color: #000;
+    overflow: visible;
 }
 
 .fullscreenText {
@@ -18,35 +22,13 @@
     color: #fff;
     z-index: 10;
     transition: opacity 0.5s ease-out;
+    animation: zoomIn 1.5s ease-out; /* Smooth entrance */
+    pointer-events: none;
 }
 
 .fadeOut {
     opacity: 0;
     pointer-events: none;
-}
-
-.glimpse {
-    font-family: 'Outfit', sans-serif;
-    font-size: 135px;
-    font-weight: 300;
-    margin-right: 25rem;
-    text-align: center;
-}
-
-.anwesha {
-    font-family: 'Outfit', sans-serif;
-    font-size: 202.5px;
-    font-weight: 300;
-    margin: 0;
-    text-align: center;
-}
-
-.galleryWrapper {
-    padding-top: 100vh; /* Ensures gallery starts after fullscreen text */
-}
-
-.gallerySection {
-    margin: 2rem 0;
 }
 
 .folderTitle {
@@ -56,45 +38,143 @@
     margin-bottom: 1rem;
 }
 
-.galleryRow {
+.imageStack {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    height: 100vh;
+    margin-top: 2rem;
+    z-index: 1;
+    transition: all 0.1s ease-out;
 }
 
-.galleryCard {
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
+.stackedImage {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    transform: rotate(calc(var(--i) * 5deg)) scale(1.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.galleryCard img {
+@media (max-width: 1536px) {
+    .stackedImage {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .stackedImage {
+        width: 60%;
+    }
+}
+
+.stackedImage:hover {
+    transform: scale(1.15) !important;
+    opacity: 1;
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 20px;
+    margin: 50px 0;
+    align-items: start;
+  }
+  
+  /* Left and Right Columns for stacked images */
+  .leftColumn,
+  .rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .leftColumn img,
+  .rightColumn img {
     width: 100%;
-    height: 100%;
+    height: auto;
+  }
+  
+  /* Middle Column for overlapping content */
+  .middleColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .textBlock {
+    font-family: 'SF Ironsides',sans-serif;
+    font-size: 5rem;
+    color: #50FF00;
+    text-align: center;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Overlapping Images */
+  .middleColumn img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-}
+    position: relative;
+  }
+
 
 /* RESPONSIVE DESIGN */
 
-@media (max-width: 768px) {
-    .glimpse {
-        font-size: 12vw; /* Smaller text for mobiles */
-        margin-left: 12rem;
-    }
-
-    .anwesha {
-        font-size: 20vw; /* Smaller text for mobiles */
-    }
+.glimpse {
+    font-size: calc(26px + (130 - 26) * ((100vw - 300px) / (1600 - 300)));
+    color: white;
+    text-align: left;
+    margin-right: calc(calc(26px + (130 - 26) * ((100vw - 300px) / (1600 - 300))) * 2.6923076923076925);
+    margin-top: 30vh;
+    margin-bottom: 0;
+    font-family: 'Anavio Small Capitals W01 Rg';
 }
 
-/* Medium devices (tablets) */
 @media (max-width: 1024px) {
     .glimpse {
-        font-size: 8vw; /* Adjust size for tablets */
-    }
-
-    .anwesha {
-        font-size: 12vw; /* Adjust size for tablets */
+        margin-top: 15vh;
     }
 }
+
+@media (max-width: 640px) {
+    .glimpse {
+        margin-top: 14vh;
+    }
+}
+
+.anwesha {
+    font-size: calc(30px + (150 - 30) * ((100vw - 300px) / (1600 - 300)));
+    margin-top: 0;
+    font-family: 'Anavio Small Capitals W01 Rg';
+    display: flex;
+}
+
+.anweshaA {
+    font-size: calc(50px + (250 - 50) * ((100vw - 300px) / (1600 - 300)));
+    transform: translateY(calc(calc(50px + (250 - 50) * ((100vw - 300px) / (1600 - 300))) * -0.45));
+}
+
+.anwesha24 {
+    font-size: calc(46px + (230 - 46) * ((100vw - 300px) / (1600 - 300)));
+    transform: translateY(calc(calc(46px + (230 - 46) * ((100vw - 300px) / (1600 - 300))) * -0.4));
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .galleryContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+/* vi: set et sw=4: */

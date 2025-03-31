@@ -71,6 +71,7 @@ const Navbar = () => {
                             width={100}
                             height={200}
                             className={[styles.navbar_2].join(' ')}
+                            alt="Anwesha"
                         />
                     </Link>
                     <img

@@ -4,8 +4,7 @@ const aboutus = () => {
     return (
         <div className={styles.parentcontainer}>
             <h2 className={styles.head}>
-                <strong>Anwesha'24</strong>
-                <hr className={styles.hr}></hr>
+                Anwesha'25
             </h2>
             <div className={styles.sec}>
                 <br />
@@ -25,7 +24,7 @@ const aboutus = () => {
                 </p>
                 <br />
                 <p className={styles.para}>
-                    Anwesha 2024 is envisioned to be an innovative and cultural
+                    Anwesha 2025 is envisioned to be an innovative and cultural
                     uplifting festival of togetherness in not just the state or
                     region, but the whole nation. We have reimagined the lens
                     through which we understand culture and celebration,
@@ -35,20 +34,18 @@ const aboutus = () => {
             </div>
             <div className={styles.sec}>
                 <h3 className={styles.subheading}>
-                    <strong>Initiatives</strong>
+                    Initiatives
                 </h3>
                 <br />
                 <h4 className={styles.title}>
-                    <strong>
-                        EXPANDING THE CULTURAL LANDSCAPE & NURTURING INDEPENDENT
-                        SET
-                    </strong>
+                    EXPANDING THE CULTURAL LANDSCAPE & NURTURING INDEPENDENT
+                    SET
                 </h4>
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
                         <p className={styles.para}>
                             With the expanding music palette of Indian audiences
-                            after the internet arrived, Anwesha 2024 is at the
+                            after the internet arrived, Anwesha 2025 is at the
                             converging point to introduce independent music and
                             art at college festivals.
                         </p>
@@ -64,7 +61,7 @@ const aboutus = () => {
                 </ul>
                 <br />
                 <h4 className={styles.title}>
-                    <strong>CREATING A SUSTAINABLE FEST</strong>
+                    CREATING A SUSTAINABLE FEST
                 </h4>
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
@@ -72,7 +69,7 @@ const aboutus = () => {
                             As a major festival with massive footfall, we are
                             aware of the enormous resource consumption and
                             consequent waste generated throughout this festival.
-                            Anwesha'24 shall focus on bringing a sustainable
+                            Anwesha'25 shall focus on bringing a sustainable
                             lifestyle & culture to the mainstream.
                         </p>
                     </li>
@@ -85,7 +82,7 @@ const aboutus = () => {
                 </ul>
                 <br />
                 <h4 className={styles.title}>
-                    <strong>CONNECTING BACK TO OUR ROOTS</strong>
+                    CONNECTING BACK TO OUR ROOTS
                 </h4>
                 <ul className={styles.list}>
                     <li className={styles.listitem}>
@@ -101,15 +98,13 @@ const aboutus = () => {
                             The folk culture in Bihar is immense - from
                             Madhubani to Yampuri, Jat-Jatin to bamboo & pottery
                             craft; we would be delighted to accommodate it all
-                            in Anwesha 2k24.
+                            in Anwesha 2k25.
                         </p>
                     </li>
                 </ul>
                 <br />
                 <h4 className={styles.title}>
-                    <strong>
-                        ENTERING UNEXPLORED DOMAINS: TECH & INNOVATION
-                    </strong>
+                    ENTERING UNEXPLORED DOMAINS: TECH & INNOVATION
                 </h4>
                 <ul className={styles.list}>
                     <li className={styles.listitem}>

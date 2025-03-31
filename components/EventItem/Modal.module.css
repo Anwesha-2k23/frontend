@@ -1,42 +1,69 @@
 /* components/Modal.module.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal {
-    background: black;
-    padding: 20px;
-    border-radius: 8px;
-    width: 700px;
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  .item {
-	height: 183px;
-	width: 224px;
-    border-radius: 15px;
+@import url('https://fonts.cdnfonts.com/css/lato');
+@font-face {
+  font-family: 'AnavioSmallCapitalsW01-Bold'; /* Name for the font */
+  src: url('/font/Anavio_Small_Capitals_W01_Bold.ttf') format('truetype'); /* Path to the font */
+  font-weight: normal; /* Define the weight */
+  font-style: normal;  /* Define the style */
+}
+@font-face {
+  font-family: 'SF Ironsides'; /* Name for the font */
+  src: url('/font/SF_Ironsides.ttf') format('truetype'); /* Path to the font */
+  font-weight: normal; /* Define the weight */
+  font-style: normal;  /* Define the style */
+}
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+  backdrop-filter: blur(6px); /* Apply blur effect to the area behind the modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
-.title {
+
+.modal {
+  background: rgba(255, 255, 255, 0.64); /* Modal background */
+
+  
+  padding: 20px 32px;
+  width: 600px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  
+}
+
+
+  .item {
+	height: 170px;
+	width: 170px;
+  
+}
+
+
+.titleBox {
     display: flex;
     justify-content: center;
-    color: white;
-    font-family: "Inter", sans-serif;
-  font-weight: 200;
-  font-optical-sizing: auto;
-  font-style: normal;
+  text-align: center;
+  align-items: center;
 }
+.title{
+  width: 80%;
+  color: #000;
+font-family: "SF Ironsides";
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
 .innerContainer {
   display: flex;
   flex-direction: row;
@@ -48,17 +75,17 @@
     
 }
   .closeButton {
-    color: white;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
+    background: none; /* Remove default button styling */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex; /* Center icon inside the button */
+    align-items: center; /* Vertically center icon */
+    justify-content: center; /* Horizontally center icon */
+    color: inherit; /* Inherit text color */
+    font-size: 1.5rem; /* Adjust icon size */
+}
   .closeicon{
-    color: #6000C5;
+    color: #000;
   }
   .content {
     padding: 10px 0;
@@ -71,24 +98,56 @@
     align-items: center;
   }
 
+  .registerButtonBox{
+
+    width: 132px;
+  height: 48px;
+  flex-shrink: 0;
+    background-image: url('/events/blackButtonbg.svg');
+    fill: #000;
+    filter: drop-shadow(0px -2.004px 2.004px #D9D9D9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .registerButton{
-    width: 100%;
-    background-color: #6000C5;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Outfit', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
+    color: #D9D9D9;
+    text-align: right;
+    font-family: "SF Ironsides";
+    font-size: 20px;
     font-style: normal;
-    border: none;
-    font-size: 15px;
-    padding-bottom: 12px;
-    padding-top: 12px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .RuleButtonBox{
+
+    width: 132px;
+  height: 48px;
+    flex-shrink: 0;
+    background-image: url('/events/whiteButtonbg.svg');
+    fill: #FFF;
+    filter: drop-shadow(0px -2.006px 2.006px #7B7B7B);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .ruleBookButton{
+    color: #494949;
+text-align: right;
+font-family: "SF Ironsides";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
   }
 
   .verticalline {
-    border-left: 2px dotted white; /* Dotted line color and width */
+    border-left: 2px dotted black; /* Dotted line color and width */
     height: auto;
     margin: 0 20px; /* Add space around the line */
     align-self: stretch;
@@ -96,67 +155,51 @@
 
 
 
-.rightBlock{
-    color: white;
-    width: auto;
-    max-width: 400px;
-    overflow-y: auto; /* Adds a scroll bar if content exceeds height */
-    word-wrap: break-word; /* Wraps long words */
-    word-break: break-word; 
-    height: 100%;
-    font-size: 15px;
-  font-weight: 200;
-  font-family: "Inter", sans-serif;
-
+.rightBlock {
+  display: flex; /* Enables flexbox for the container */
+  flex-direction: column; /* Ensures the content stacks vertically */
+  justify-content: center; /* Vertically centers the content */
+  width: auto;
+  max-width: 280px;
+  overflow-y: auto; /* Adds a scroll bar if content exceeds height */
+  word-wrap: break-word; /* Wraps long words */
+  word-break: break-word; 
+  color: #000;
+  font-family: lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
 }
-  .ruleBookButton{
+
+  
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 90%; /* Reduce modal width */
+    padding: 15px;
+    max-height: 80vh; /* Limit height for scrolling */
+    overflow-y: auto;
+  }
+
+  .innerContainer {
+    flex-direction: column; /* Stack left and right sections */
+  }
+
+  .verticalline {
+    border-left: none;
+    border-top: 2px dashed black; /* Horizontal line for smaller screens */
     width: 100%;
-    
-    border-color: #6000C5;
-    border: 2px solid #6000C5;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    background-color: black;
-    font-family: 'Outfit', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    
-  }
-
-  @media screen and (max-width: 768px) {
-      .innerContainer{
-        flex-direction: column;
-      }
-
-      .verticalline {
-        border-left: none; /* Remove the vertical line */
-        border-top: 2px dashed white; /* Horizontal dashed line */
-        width: 100%; /* Adjust width to full width */
-        margin: 20px 0; /* Adjust margin for horizontal line */
-        align-self: center;
-    }
-
-    .modal {
-      width: 90%; /* Adjust width for mobile/tablet screens */
-      padding: 15px;
-      border-radius: 6px;
-      max-height: 80vh; /* Limit height to 80% of viewport height */
-      overflow-y: auto; /* Add vertical scrolling */
-      border-radius: 6px; /* Slightly smaller border-radius */
+    margin: 20px 0;
   }
 }
+
 
 @media (max-width: 480px) {
   .modal {
       width: 90%; /* Further reduce width for smaller screens */
       padding: 10px;
       /* padding-bottom: 12px; */
-      border-radius: 5px;
+  
       max-height: 80vh; /* Limit height to 80% of viewport height */
       overflow-y: auto; /* Enable vertical scrolling */
   }

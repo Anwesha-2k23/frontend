@@ -1,68 +1,349 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-.container{
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'SF Ironsides'; /* Name for the font */
+    src: url('/font/SF_Ironsides.ttf') format('truetype'); /* Path to the font */
+    font-weight: normal; /* Define the weight */
+    font-style: normal; /* Define the style */
+}
+@font-face {
+    font-family: 'AnavioSmallCapitalsW01-Bold'; /* Name for the font */
+    src: url('/font/Anavio_Small_Capitals_W01_Bold.ttf') format('truetype'); /* Path to the font */
+    font-weight: normal; /* Define the weight */
+    font-style: normal; /* Define the style */
+}
+.maincontainer {
     width: 100%;
-	margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center;
+
+    background-image: url('/contactUsBg2.png');
+    background-repeat: no-repeat;
+    background-position: 80px 40px;
+    /* background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.20) 85.95%); */
+}
+
+.effectContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    text-align: center;
+    background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.2) 85.95%);
+}
+
+.container {
+    width: 80%;
+    margin: 0;
     padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-image: url('/events/bg.svg');
-	background-size: cover;
-    font-family: 'Poppins', sans-serif; 
-} 
-
-.forms{
-    display: block;
-    background-color: #394a72;
-    box-shadow: 1px 1px 3px 2px #ddd;
-    margin: 160px auto;
-    /* margin-top: 120px; */
-    min-width: 500px;
-    max-height: 800px;
-    padding: 25px 40px;
-}
-
-.heading{
-    color: white;
-    margin-bottom: 30px;
-}
-.texts{
-    font-size: 19px;
-    color: white;
-}
-.inputs{
-    display:flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 15px auto;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-}
-.button{
-    height: 25px;
-    width: 80px;
+    display: flex;
     align-items: center;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 14px;
+    justify-content: center;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15vh;
 }
-@media only screen and (max-width: 500px){
-    .forms{
+
+.leftcontainer {
+    width: 50%;
+    display: flex;
+}
+
+.leftinnercontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px;
+}
+.titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.title {
+    color: var(--Color-Primary500, #50ff00);
+    font-family: 'SF Ironsides';
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.description {
+    width: 451px;
+    color: #fff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 150% */
+    text-align: left; /* Ensure text is aligned to the left */
+    font-family: 'Laila', serif;
+}
+.email {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+}
+.emailtext {
+    color: #fff;
+    font-optical-sizing: auto;
+    font-family: 'Laila', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+}
+
+.rightContainer {
+    width: 50%;
+}
+.rightinnercontainer {
+    display: flex;
+    padding: 20px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 42px;
+    border-radius: 28px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.formtitlebox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    color: #fff;
+}
+.formtitle {
+    color: #fff;
+    font-family: 'AnavioSmallCapitalsW01-Bold';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px; /* 112.5% */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+.formdescription {
+    color: #fff;
+    font-family: 'EB Garamond';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 116.667% */
+    font-family: 'Laila', serif;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    font-family: 'Laila', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+ /* .namebox{
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.texts {
+    color: #fff;
+    font-family: 'EB Garamond';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    font-family: "Laila", serif;
+}
+.nameinput {
+    display: flex;
+    width: 100%;
+    padding: 20px; 
+    align-items: center;
+    gap: 10px;
+    background: #141414; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: text; 
+} */
+/* .inputs{
+    flex: 1; 
+    color: #FFF;
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; 
+    background-color: transparent; 
+    border: none; 
+    outline: none;
+    padding: 0; 
+    width: 100%;
+    height: 100%;
+    font-family: "Laila", serif;
+} */
+
+/* .inputs::placeholder {
+    color: #FFF;
+    opacity: 0.9; 
+} */
+
+/* .emailandnumberbox{
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    justify-content: flex-end;
+}
+.emailbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 50%;
+}
+.numberbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 50%;
+}
+.emailinput {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+    background: #141414;
+    width: 100%;
+} */
+
+
+
+/* .numberinput{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+    background: #141414;
+    width: 100%;
+}  */
+.buttonbox{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 191.432px;
+    height: 63.11px;
+    background-image: url('/button_bg.svg');
+    fill: #000;
+    filter: drop-shadow(0px -2.996px 2.996px #55A826);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.buttonbox:hover{
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);}
+
+.messagebox{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+.messageinput {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    background: #141414;
+    gap: 10px;
+    align-items: self-start;
+    height: 146px;
+}
+.button {
+    color: var(--Color-Primary500, #50ff00);
+
+font-family: "SF Ironsides";
+font-size: 29.964px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+cursor: pointer;
+background: #000;
+border: none;
+}
+
+.buttonbox:hover {
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);
+}
+.buttonbox:active {
+    filter: drop-shadow(1px 1px 1px white);
+}
+
+@media only screen and (max-width: 1250px) {
+    .emailandnumberbox {
+        flex-direction: column;
+    }
+    .emailbox {
+        width: 100%;
+    }
+    .numberbox {
+        width: 100%;
+    }
+    .description {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    .forms {
         /* margin-top: 120px; */
         min-width: 300px;
     }
-}
-@media only screen and (max-width: 300px) {
-    .forms{
-        min-width: 200px;
+    .container {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .leftcontainer {
+        width: 100%;
+    }
+    .rightContainer {
+        width: 100%;
     }
 }
-
-
-
+@media only screen and (max-width: 550px) {
+    .forms {
+        min-width: 200px;
+    }
+    .container {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .leftcontainer {
+        width: 100%;
+    }
+    .rightContainer {
+        width: 100%;
+    }
+}

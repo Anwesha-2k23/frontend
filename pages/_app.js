@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { AuthProvider, PrivateRoute } from '../components/authContext'
 import { useRouter } from 'next/router'
 import styles from '../styles/comingsoon.module.css'
+import { ToastContainer, toast } from 'react-toastify'
 // const Navbar = dynamic(() => import('../components/Navbar/Navbar'), {
 //     ssr: false,
 // })
@@ -30,8 +31,7 @@ function MyApp({ Component, pageProps }) {
     //     showHeader = false
     // }
     return (
-
-        <main className={poppins.className} style={{background:'black'}} >
+        <main className={poppins.className} style={{ background: 'black' }}>
             {/* style={{ background: 'linear-gradient(169deg, #81D9FF -5.25%, #D4F2FF 111.03%)' }} */}
 
             <Script
@@ -49,6 +49,18 @@ function MyApp({ Component, pageProps }) {
         `}
             </Script>
             <AuthProvider>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                />
                 {showHeader && <Navbar />}
                 {/* {showHeader && <div style={{height: '30%'}}/>} */}
                 <div className={styles.main_component}>

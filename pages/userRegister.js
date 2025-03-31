@@ -12,6 +12,7 @@ export default function userRegister() {
             </Head>
 
             <div className={styles.container} loading="lazy">
+
                 <UserRegisterForm />
                 {/* <img
                     className={styles.island}

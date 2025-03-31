@@ -1,19 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url(https://db.onlinewebfonts.com/c/16ff7a691ffa5aae54301d500d494a5b?family=Anavio+Small+Capitals+W01+Bold);
 
 @font-face {
     font-family: 'BroadwayShadow';
-    src: url('../../styles/fonts/BroadwayShadow.ttf');
+    src: url('/font/BroadwayShadow.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'SF Ironside';
+    src: url('/font/SF_Ironsides.ttf') format('truetype');
+}
+
+/* body {
+    background-image: url('/public/pics/registerBg.jpg');
+} */
+.hero_button {
+    z-index: 1;
+}
+.sexy_button {
+    /* USE TAILWIND I struggle to name classes :) */
+    all: unset;
+    width: 191.338px;
+    height: 63.135px;
+
+    /* flex-shrink: 0; */
+    background-image: url('/pics/Subtract.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    background-position: center;
+    fill: #000;
+    filter: drop-shadow(0px -3.623px 3.623px #55a826);
+
+    color: var(--Color-Primary500, #50ff00);
+    text-align: center;
+
+    /* SF/SF - 36 REG */
+    font-family: 'SF Ironside';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+.sexy_button_small {
+    width: 191.315px;
+    height: 62.963px;
+    font-size: 28px;
+    filter: drop-shadow(0px -2.996px 2.996px #55a826);
+}
+/* .sexy_button:focus{
+    filter: drop-shadow(0px -1px 1px white);
+} */
+.sexy_button:hover {
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);
+}
+.sexy_button:active {
+    filter: drop-shadow(1px 1px 1px white);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 65px 0px 0px 0px;
+    padding: 60px 20px;
+    width: 100%;
+}
+/* .container_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 65px 0px 0px 0px;
+    padding: 0px 20px;
+    width: 100%;
+} */
+
 .form {
-    font-family: 'Poppins', sans-serif;
+    background: rgba(0, 0, 0, 0.6); /* Reduced opacity for more transparency */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    font-family: 'EB Garamond';
     display: flex;
     flex-direction: column;
-    margin: 120px 0px 120px 0px;
     align-content: center;
+    max-width: 450px;
     color: #ffffff;
     width: 100%;
     align-items: center;
+    padding: 20px 20px;
 }
 
 .mainForm {
@@ -23,17 +102,13 @@
     justify-content: center;
     margin-right: 2vw;
     padding: 30px 30px 30px 30px;
-    border-radius: 25px;
-    border-color: #291f5e;
-    border-style: solid;
-    border-width: 2px;
-    background: #0c0c0c;
+    background: black;
     width: 37vw;
     /* height: 70vh; */
 }
 
 .mainForm label {
-    font-family: 'Poppins';
+    font-family: 'EB Garamond';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -49,15 +124,23 @@
     margin-top: 5rem;
     text-align: center;
     color: #2b0072;
-    font-family: BroadwayShadow;
+    font-family: 'EB Garamond';
     font-size: 6vw;
     font-weight: 400;
     left: 4%;
 }
 
-.field {
-    margin-bottom: 10px;
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
     width: 100%;
+}
+
+.field {
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: 0.8rem;
 }
 
 .field input,
@@ -65,18 +148,12 @@
     width: 100%;
     height: 45px;
     margin: 2px;
-    padding: 2px 15px;
-    font-size: 17px;
-    border-radius: 6px;
     border: none;
     color: white;
-
-    background: #141414;
-    /* border-color: #2b0072;
-    border-bottom: 2px solid #2b0072;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0; */
+    background: rgb(20, 20, 20);
+    padding: 1.5rem 1.2rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
 }
 
 .field input:focus,
@@ -85,7 +162,8 @@
 }
 .field input::placeholder {
     color: white;
-    opacity: 1;
+    opacity: 0.5;
+    font-size: 0.8rem;
 }
 
 .userType {
@@ -97,17 +175,7 @@
     background: #eee9ff;
     border: 1px solid #000000;
     border-radius: 5px;
-    /* border-color: #2b0072;
-    border-bottom: 2px solid #2b0072;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0; */
 }
-
-/* .field label {
-    font-size: 20px;
-    color: #2b0072;
-} */
 
 .buttonWrapper {
     margin-top: 10px;
@@ -123,7 +191,6 @@
     height: 59px;
     margin-top: 20px;
     cursor: pointer;
-    /* color: #332f62; */
     color: white;
     background: rgb(96, 0, 197);
     border-radius: 20px;
@@ -135,11 +202,6 @@
     min-width: 200px;
     border: none;
 }
-
-/* .buttonWrapper button:hover {
-    background-color: #424040;
-    color: #fff;
-} */
 
 .lottie {
     width: 50%;
@@ -166,10 +228,9 @@
 .iitp_email_ext {
     display: inline-flex;
     align-items: center;
-    background-color: #000000;
     color: #ffffff;
     height: 45px;
-    font-size: 17px;
+    font-size: 16px;
     padding: 0 3px 0 5px;
     border-radius: 0px 5px 5px 0px;
 }
@@ -187,48 +248,39 @@
 .passwd_box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     column-gap: 0.78vw;
     width: 100%;
 }
-
-@media only screen and (max-width: 860px) {
-    /* .form {
-        flex-direction: column;
-        align-items: center;
-        padding-inline: 20px;
-    } */
-
-    /* .mainForm {
-        align-items: center;
-        height: 100vh;
-    } */
-
-    /* .mainHeading {
-        font-size: 10vw;
-    }
-
-    .form_row {
-        flex-direction: column;
-    }
-
-    .form_row .field input {
-        width: 80vw;
-    }
-
-    .field input {
-        width: 80vw;
-    } */
-
-    /* .lottie {
-        width: 100%;
-    }
-
-    .lottie_container {
-        width: 100vw;
-        height: 50vh;
-    } */
+.fancyButton {
+    position: relative;
+    display: inline-block;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 1.2rem 0;
 }
+
+.fancyButton img {
+    display: block;
+    width: 100%;
+    height: auto;
+    width: 190px;
+}
+
+.fancyButton span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(80, 255, 0);
+    font-size: 1.5rem;
+    font-family: 'SF Ironside';
+    text-align: center;
+    letter-spacing: 0.15rem;
+}
+
 @media only screen and (max-width: 1500px) {
     .mainForm {
         width: 541px;
@@ -239,44 +291,29 @@
 }
 
 @media only screen and (max-width: 1023px) {
-    .passwd_box {
-        width: 400px;
-        flex-direction: column;
-    }
     .mainForm {
         margin-top: 75px;
         margin-bottom: 75px;
         width: 401px;
         padding-left: 18px;
         padding-right: 18px;
-        background: rgb(12, 12, 12);
+        background: black;
     }
-    .field {
-        justify-content: center;
-        align-items: center;
+
+    .container {
     }
-    .field input,
-    .field select {
-        font-size: 13px;
-        width: 365px;
+    .container_login {
     }
     .iitp_email_ext {
         font-size: 13px;
     }
-    .field label {
-        font-size: 14px;
-    }
-
     .form_row {
         flex-direction: column;
     }
     .buttonWrapper button {
         width: 345px;
     }
-    .form {
-        margin: auto 5vw;
-        padding-top: 100px;
-    }
+
     .iitp_email {
         width: calc(365px - 75px) !important;
     }
@@ -286,19 +323,18 @@
 }
 @media only screen and (max-width: 426px) {
     .mainForm {
-        margin: 10px auto; /* Center form with vertical space */
-        width: 90vw; /* Ensure the form takes up 90% of the viewport width */
-        max-width: 400px; /* Optional: Set a max width for better control */
-        padding: 10px; /* Provide consistent padding inside the form */
-        background: rgba(57, 74, 114, 0.85);
-        box-sizing: border-box; /* Include padding in the total width */
+        margin: 0px auto;
+        width: 90vw;
+        max-width: 400px;
+        padding: 10px;
+        box-sizing: border-box;
     }
-
-    .passwd_box,
-    .field input,
-    .field select,
-    .buttonWrapper button {
-        width: 100%; /* Make child elements fully responsive */
+    .container {
+    }
+    .container_login {
+    }
+    .row {
+        flex-wrap: wrap;
     }
 
     .iitp_email {

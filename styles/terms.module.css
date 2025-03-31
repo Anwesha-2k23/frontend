@@ -1,13 +1,28 @@
+@font-face {
+    font-family: 'SF Ironsides';
+    src: url('/font/SF-Ironsides.ttf');
+}
+ 
+@font-face {
+    font-family: "Laila";
+    src: url('/font/Laila-Regular.ttf');
+}
+
 .parentcontainer {
-    background-image: url('/bg.svg');
+    background-image: url("/aboutusBg.png");
+    /* background-image: url("/contactUsBg2.png"); */
     background-size: 100%;
-    background-color: #9edffe;
-    color: black;
+    background-color: #0b0c0c;
+    color: rgb(255, 255, 255);
     padding: 150px 150px 100px 120px;
+}
+.parentcontainer > h2{
+    color: #50FF00;
+    font-family: 'SF Ironsides', sans-serif;
 }
 .head {
     color: #002886;
-    font-family: Poppins;
+    font-family: laila;
     font-size: 44px;
     font-style: normal;
     font-weight: 700;
@@ -22,8 +37,8 @@
     border: none;
 }
 .para {
-    color: #262626;
-    font-family: Poppins;
+    color: #fff;
+    font-family: laila;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -32,12 +47,13 @@
 }
 
 .subheading {
-    color: #002886;
-    font-family: Poppins;
+    color:  #50FF00;
+    font-family: 'SF Ironsides', sans-serif;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    padding-bottom: 10px;
 }
 
 .list {
@@ -48,7 +64,7 @@
     margin-block: 1em;
 }
 .listitem {
-    color: #002886;
+    color: #eaeffa;
     font-size: 20px;
 }
 

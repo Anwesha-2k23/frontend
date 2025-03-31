@@ -7,12 +7,13 @@ const privacy = () => {
             className={styles.parentcontainer}
             style={{ paddingInline: '3vw' }}
         >
-            <h2 style={{ fontSize: '2.5em', marginTop: '100px' }}>
+            <h2 style={{ fontSize: '2.5em', marginTop: '10px' }}>
                 <strong>Privacy Policy for Anwesha</strong>
+                <hr className={styles.hr}/>
             </h2>
             <div className={styles.sec}>
                 <p className={styles.para}>
-                    At anwesha.live, accessible from https://anwesha.live, one
+                    At anwesha.iitp.ac.in, accessible from <a style={{ all: 'unset', cursor :'pointer' }} href="/">https://anwesha.iitp.ac.in</a>, one
                     of our main priorities is the privacy of our visitors. This
                     Privacy Policy document contains types of information that
                     is collected and recorded by anwesha.live and how we use it.

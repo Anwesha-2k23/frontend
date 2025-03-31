@@ -1,551 +1,1238 @@
-.bg{
-    background-image:url(/home/homepagebg.svg) ;
-    background-repeat: repeat;
-    background-size: 100%;
-    background-color: #6BD3FF;
-    background-attachment: fixed;
+@font-face {
+    font-family: 'SF Ironsides';
+    src: url('/font/SF-Ironsides.ttf');
+}
+@font-face {
+    font-family: 'AnavioSmallCapitalsW01-Bold';
+    src: url('/font/Anavio-Small-Capitals-W01-Bold.ttf');
+}
+@font-face {
+    font-family: 'Laila';
+    src: url('/font/Laila-Regular.ttf');
 }
 
-
-.parentcontainer {
-    
-    /* width: 100vw; */
-    background-image: url(/home/homefront.png);
-    background-repeat: no-repeat;
-    margin-top: 50px;
-    height: 65vw;
-    background-size: 100%;
-    background-position: top center;
-    padding-top:4.16vw;
-}
-.regdiv{
-    display: flex;
-    justify-content: center;
-    margin-top: 26vw;
-}
-.logo{
-    width: 21.62vw;
-    height: 8.392vw;
-}
-@media screen and (max-width: 750px)
-{
-    .parentcontainer{
-        height: 600px;
-    background-size: cover;
-    margin-top: 56px;
-    padding-top: 30px;
-    }
-    .logo{
-        width: 227px;
-        height: 88.27px;
-    }
-    .regdiv{
-        margin-top: 220px;
-    }
-}
-@media screen and (max-width: 450px)
-{
-    .regdiv{
-        margin-top: 220px;
-    }
-    .bg{
-        background-size:150%;
-    }
-}
-.reglink{
-    display: inline-flex;
-padding: 18px 54px;
-align-items: center;
-gap: 7px;
-border-radius: 32px;
-background: #0C0F47;
-
-text-decoration: none;
-}
-.regfont{
-    color: #FFF;
-text-align: center;
-font-family: "Poppins";
-font-size: 24px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-
-}
-
-
-/* .blendHomeSection {
-    top: 104vh;
-    position: absolute;
-    width: 100%;
-    height: 9vh;
-    background: rgba(255, 255, 255, 0);
-    z-index: 1;
-    backdrop-filter: blur(10px);
-} */
-
-.steps{
-    width: 1114px;
-    height:285px;
-    background: url("/home/steps.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    z-index: 2;
-}
-
-.ticketContainer{
+.bg {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url("/home/ticketbg.png");
-    min-height: 822px;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    align-items: flex-start;
+    min-width: 280px; /* SCROLL BAR ON 300px WHICH IS FINE */
 }
-
-.ticketDetails{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.ticketImages{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 55vw;
-    max-width: 900px;
-    min-width: 330px;
-    height: 100%;
-}
-
-@media screen and (max-width: 1080px){
-  .ticketContainer{
-    background: url("/home/ticketbg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 1360px;
-    margin: 0 auto;
-    border-radius: 20px;
-  }
-  .ticketDetails{
-    height: 180px;
-  }
-  .ticketImages{
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: 1071px){
-  .steps{
-    background: url("/home/steps-mobile.png");
-    width: 100vw;
-    min-height: 600px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-.lecturehall {
-    position: absolute;
-    top: 400px;
-    left: 400px;
-}
-
-.eventSection {
-    background: url(/home/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    transform: translateY(-50px);
-}
-
-.eventSectionContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.eventSectionText {
-    max-width: 600px;
-    padding: 30px;
-    background: #fff;
-    font-weight: 400;
-    font-size: 16px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.themeSection {
-    width: 100%;
-    padding-top: 0px;
-    padding-bottom: 100px;
-    transform: translateY(-52px);
-}
-
-.themeSectionContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.themeSectionText {
-    max-width: 600px;
-    padding: 30px;
-    background: #fff;
-    font-weight: 400;
-    font-size: 16px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.homebtn {
-    padding: 15px 10px;
-    gap: 10px;
-    width: 60%;
-    height: 51px;
-    background: #000000;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 16px;
+.bat_scroll_button {
+    all: unset;
     cursor: pointer;
-    color: #fff;
+    width: min-content;
+    height: min-content;
 }
-
-.homebtn:hover {
-    background: #fff;
-    color: #000;
-    border: 2px solid #000;
+.bat_scroll_button:hover {
+    filter: drop-shadow(1px 1px 1px yellow);
 }
-
-@media screen and (max-width: 1550px) {
-    .blendHomeSection {
-        display: none;
-    }
+.bat_scroll_button:active {
+    filter: drop-shadow(2px 2px 2px white);
 }
+.sexy_button {
+    /* USE TAILWIND I struggle to name classes :) */
+    all: unset;
+    width: 231.338px;
+    height: 76.135px;
 
-@media screen and (max-width: 1171px) {
-    .lecturehall {
-        display: none;
-    }
+    /* flex-shrink: 0; */
+    background-image: url('/pics/Subtract.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    background-position: center;
+    fill: #000;
+    filter: drop-shadow(0px -3.623px 3.623px #55a826);
+
+    color: var(--Color-Primary500, #50ff00);
+    text-align: center;
+
+    /* SF/SF - 36 REG */
+    font-family: 'SF Ironsides';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    cursor: pointer;
 }
-
-@media screen and (max-width: 1134px) {
-    .themeSectionContainer {
-        flex-direction: row;
-    }
-    .merchContainer:nth-child(2n+1) {
-        flex-direction: column;
-    }
-    .merchContainer:nth-child(2n) {
-        flex-direction: column-reverse;
-    }
+.sexy_button_small {
+    width: 191.315px;
+    height: 62.963px;
+    font-size: 28px;
+    filter: drop-shadow(0px -2.996px 2.996px #55a826);
 }
-
-/* @media screen and (max-width: 610px) {
-    .parentcontainer {
-        height: 100vh;
-    }
-
+/* .sexy_button:focus{
+    filter: drop-shadow(0px -1px 1px white);
 } */
-
-@media screen and (max-height: 790px) {
-    .blendHomeSection {
-        display: block;
-    }
+.sexy_button:hover {
+    filter: drop-shadow(0px -3.623px 3.623px #03fa24);
+    color: var(--Color-Primary500, #00ff26);
+}
+.sexy_button:active {
+    filter: drop-shadow(1px 1px 1px white);
 }
 
-
-/* Merchandise Container */
-.merchContainer {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.sexy_title {
+    display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    background-color: rgba(0,0,0,0);
+    gap: 4px;
+    width: 100%;
 }
-@media screen and (min-width: 2300px)
-{
-    .merchContainer{
-        height: 80vw;
+.sexy_title > h2 {
+    color: #50ff00;
+    text-align: center;
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.sexy_title > h3 {
+    color: #fff;
+    text-align: center;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+@media only screen and (max-width: 768px) {
+    .sexy_title > h2 {
+        font-size: 48px;
     }
-    
+    .sexy_title > h3 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .sexy_title > h2 {
+        font-size: 36px;
+    }
+    .sexy_title > h3 {
+        font-size: 18px;
+    }
 }
 
-.tshirtImage {
-    width: auto;
-    /* width: 40%; */
-    /* position: relative;
-    top: 318px;
-    margin-left: 70px; */
+/* =================================== HERO =================================== */
+.hero {
+    background-image: url('/pics/image398.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-position: center; /* right */
 }
-
-@media screen and (max-width: 700px) {
-  .tshirtImage {
-    width: 350px;
-    height: 320px;
-  }
-}
-
-
-.priceRow {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    overflow: hidden;
-    /* padding-bottom: 20px; */
-    margin-top: 25px;
-}
-
-.priceCol {
+.hero_text {
+    margin-top: -650px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    /* height: 105%; */
     width: 100%;
-    overflow: hidden;
 }
-
-
-.tshirtText {
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    overflow: hidden;
+.hero_text > img {
+    position: relative;
+    z-index: 1;
 }
-
-
-.merchPrice {
-    font-size: 20px;
-    font-weight: 700;
-    color: #000000;
-    text-transform: uppercase;
-    background-color: #CCC9FF;
-    padding-block: 10px;
-    padding-inline: 20px;
-    width: 141px;
-    overflow: hidden;
+.hero_text > h2 {
+    margin-top: -200px;
+    color: #000;
     text-align: center;
-    border-radius: 50px;
-}
-
-.card{
-    padding: 36px 32px 24px 32px;
-    height: fit-content;
-    width: 40vw;
-    border-radius: 16px;
-    background: #FFF;
-    box-shadow: 6px 8px 8px 0px rgba(0, 0, 0, 0.10);
-    margin-bottom: 30px;
-}
-
-.text1
-{
-    color: #000;
-font-size: 46px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-.text2
-{
-    margin-top: 10px;
-    color: #000;
-    font-family: Poppins;
-    font-size: 18px;
+    font-family: 'SF Ironsides';
+    font-size: 128px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-transform: uppercase;
+
+    position: relative;
+    z-index: 0;
+
+    filter: drop-shadow(0px -7px 1px #5dc02c);
+}
+.hero_button {
+    z-index: 1;
+}
+@media only screen and (max-width: 900px) {
+    .hero {
+        padding-top: 27px;
+    }
+    .hero_text > h2 {
+        margin-top: -100px;
+        margin-bottom: 10px;
+        font-size: 92px;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 52px 48px;
+    }
+    .hero_text > h2 {
+        margin-top: -116px;
+        max-width: 565px;
+        font-size: 64px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .hero_text > img {
+        width: calc(1047px / 1.2);
+        height: calc(589px / 1.2);
+        margin-top: 12px;
+    }
+    .hero_text > h2 {
+        padding-top: 20px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .hero_text > h2 {
+        font-size: 46px;
+    }
+}
+/* =================================== EVENTS =================================== */
+.events {
+    height: 781px;
     align-self: stretch;
+    background: #000300;
 }
-@media screen and (max-width: 1150px)
-{
-
- .card{
-        width: 60vw;
-    }
-        .merchimg{
-        width:70vw;
-        height: auto;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width: 750px){
-    .merchimg{
-        width: 100vw;
-        height: auto;
-    }
-    .card{
-        width: 97vw;
-        padding: 32px 20px 24px 20px;
-
-    }
-    .text1{
-        font-size: 36;
-        font-weight: 650;
-    }
-}
-
-
-.merchBooking img {
-    height: 350px;
-}
-
-
-
-.merchBookBtn {
-    
+.events_title {
     display: flex;
-    padding: 18px 36px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 16px;
-    background: #00354C;
-    width: 100%;
-border: none;
-color: #FFF;
-text-align: center;
-font-family: "Poppins";
-font-size: 24px;
-font-style: normal;
-font-weight: 650;
-line-height: normal;
-    text-decoration: none !important;
-    cursor: pointer;
-
+    padding-top: 52px;
+    gap: 52px;
 }
-
-.merchBookBtn2 {
+.events_title > div {
     display: flex;
-padding: 12px 22px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-align-self: stretch;
-border-radius: 16px;
-background: #00354C;
-border: none;
-color: #FFF;
-text-align: center;
-font-family: "Poppins";
-font-size: 18px;
-font-style: normal;
-font-weight: 650;
-line-height: normal;
-width: 100%;
-    text-decoration: none;
-    display: none;
-    cursor: pointer;
+    width: 398px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
+.events_title > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+    text-align: right;
 
-
-.mobileBuyNow{
-    overflow:hidden;
-    text-decoration: none;
-    display: none;
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
 }
+.events_title > div > h3 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
 
-.grabMerchText{
-    font-size: 45px;
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 700;
-
+    line-height: normal;
 }
-@media screen and (max-width: 1134px) {
-    .merchContainer:nth-child(2n+1) {
-        flex-direction: column;
+.events_images_parent {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    max-width: 100%;
+}
+.events_images {
+    width: 100%;
+    /* display: flex; */
+    /* gap: 28.14px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 52px;
+    margin-bottom: 52px;
+    overflow-x: hidden;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.events_image {
+    background-position: center;
+    background-color: lightgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* mix-blend-mode: luminosity; */
+    /* background-blend-mode: luminosity; */
+    background-position-y: 0;
+}
+/* .events_image_active{ */
+/* mix-blend-mode: unset !important; */
+/* background-blend-mode: normal; */
+/* } */
+.events_image > div {
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.events_image > div > h2 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.events_image > div > h3 {
+    align-self: stretch;
+    color: #fff;
+    text-align: center;
+    font-family: 'EB Garamond';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.events_button {
+    width: 100%;
+    display: flex;
+}
+.events_button > button {
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 1250px) {
+    .events_title {
+        gap: 16px;
+        justify-content: space-evenly;
     }
-    .merchContainer:nth-child(2n) {
-        flex-direction: column-reverse;
+    .events_title > svg {
+        width: 150px;
+    }
+    /* .events_image_active{
+        z-index: 1;
+        position: relative;
+    }
+    .events_image:not(.events_image_active){
+        position: absolute;
+        z-index: 0;
+    }
+    .events_images .events_image:first-child{
+        left: 0;
+        margin-left: 65px;
+
+        transform: rotateY(15deg);
+        clip-path: polygon(0% 3%, 100% 0%, 100% 100%, 0% 97%);
+        transform-origin: center center;
+    }
+    .events_images .events_image:last-child{
+        right: 0;
+        margin-right: 65px;
+
+        transform: rotateY(-15deg);
+        clip-path: polygon(0% 0%, 100% 3%, 100% 97%, 0% 100%);
+        transform-origin: center center;
+    } */
+}
+@media only screen and (max-width: 768px) {
+    .events_title > svg {
+        position: absolute;
+    }
+    .events_title > svg:first-child {
+        left: 0;
+    }
+    .events_title > svg:last-child {
+        right: 0;
+    }
+    .events_title > div {
+        position: relative;
+        z-index: 1;
+    }
+    .events_title > div > h2 {
+        text-align: center;
+    }
+    .events_title > div > h3 {
+        text-align: center;
+    }
+    /* .events_images_parent{
+        overflow-x: hidden;
+    } */
+    .events_images_parent > .bat_scroll_button > svg {
+        width: 8vw;
+        height: calc(55px * (8vw / 155px));
+        min-width: calc(65px / 1.75);
+        min-height: calc(85px / 1.75);
+    }
+    .events_image > div > h2 {
+        font-size: calc(10px + max(2.8vw, 8.4px)); /* 0.028 * 300 */
+    }
+    .events_image > div > h3 {
+        font-size: calc(10px + max(1.8vw, 5.4px)); /* 0.018 * 300 */
+    }
+    .events_button {
+        margin-top: -16px;
     }
 }
-
-@media screen and (max-width: 1171px) {
-    .merchBookBtn {
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .events {
+        height: unset;
+    }
+    .events_title {
+        position: relative;
+        padding-top: 24px;
+    }
+    .events_title > svg {
+        width: calc(155px / 1.2);
+        height: calc(55px / 1.2);
+    }
+    /* .events_images_parent{
+        gap: 0;
+    }
+    .events_image:not(.events_image_active){
         display: none;
     }
-    .merchContainer{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height:fit-content;
+    .events_image_active{
+        width: 100% !important;
     }
-    .merchBookBtn2 {
-        display: block;
+    .events_images_parent > .bat_scroll_button > svg{
+        width: calc(65px / 1.75);
+        height: calc(85px / 1.75);
+    } */
+    .events_button {
+        margin-top: -32px;
+        margin-bottom: 32px;
     }
-    .mobileBuyNow{
-        display: block;
+    .events_title {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
     }
-
-   
+    /* .events_image > div{
+        gap: 0;
+    } */
+    .events_title > div > h2 {
+        font-size: 48px;
+    }
+    .events_title > div > h3 {
+        font-size: 18px;
+    }
 }
-
-
-.artistPoster{
-    display: inline-table;
+/* =================================== MERCH =================================== */
+.merch {
     display: flex;
-    align-content: center;
-    position: relative;
-    /* top: 34px; */
-    /* margin-top: 82px; */
+    padding: 0px 64px 0px 64px;
     justify-content: center;
     align-items: center;
-    /* height: 120%; */
+    gap: 20px;
+    align-self: stretch;
+
+    background: #000300;
+}
+.merch_body {
+    display: flex;
+    width: 371px;
+    min-width: 371px;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+}
+.merch_body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+.merch_body > div > h2 {
+    align-self: stretch;
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.merch_body > div > h3 {
+    align-self: stretch;
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+.merch_body > p {
+    align-self: stretch;
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+.merch_hero {
+    width: 100%;
+    max-width: 905px;
+    height: 676px;
+    border-radius: 19.347px;
+    background: #000;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+}
+.merch_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+            min(350px, 40vw) min(350px, 40vw) at 50% 50%,
+            rgba(0, 0, 0, 0) 50%,
+            #000 100%
+        ),
+        url('/pics/circle_full.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: rotateAnimation 15s linear infinite;
+    mix-blend-mode: screen;
+}
+.merch_hero_fix {
+    position: relative;
+    width: 600px;
+    margin-top: 120px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.merch_tshirts {
+    position: relative;
+    
+    margin-left: auto;
+    margin-right: auto;
+    flex-shrink: 0;
+    background: url('/pics/merch_comb.png') transparent 50% / cover no-repeat;
+    z-index: 9;
+    aspect-ratio: 2898 / 2454;
+}
+/* .tshirt_blue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 110px;
+    width: 271.126px;
+    height: 358.956px;
+    flex-shrink: 0;
+    background: url('/pics/tshirt_blue.png') transparent 0px 0px / 200% 100%
+        no-repeat;
+    animation: flipTshirtBlue 5s infinite steps(1);
+}
+.tshirt_black_parent {
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
+.tshirt_black {
+    margin-left: auto;
+    margin-right: auto;
+    width: 430.793px;
+    height: 526.036px;
+    flex-shrink: 0;
+    background: url('/pics/tshirt_black.png') transparent 50% / cover no-repeat;
+    z-index: 9;
+    position: relative;
+}
+.tshirt_white {
+    top: 0;
+    right: 0;
+    margin-top: 110px;
+    position: absolute;
+    width: 271.126px;
+    height: 358.956px;
+    flex-shrink: 0;
+    background: url('/pics/tshirt_white.png') transparent 0px 0px / 200% 100%
+        no-repeat;
+    animation: flipTshirtWhite 5s infinite steps(1);
+}
+@keyframes flipTshirtBlue {
+    0%,
+    100% {
+        background-position: -14px 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+@keyframes flipTshirtWhite {
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: calc(100% + 14px) 0;
+    }
+} */
+.merch_button {
+    bottom: 180px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding-right: 8px;
+}
+.merch_button > button {
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.artistImg{
-    width: 40% !important;
-    max-width: 700px;
-    min-width: 600px;
+@media only screen and (max-width: 1250px) {
+    .merch {
+        flex-direction: column;
+        padding-top: 44px;
+        gap: 0px;
+    }
+    .merch_body {
+        width: 100%;
+        max-width: 768px;
+    }
+    .merch_body > p {
+        text-align-last: center;
+    }
+    .merch_body > div > h2 {
+        text-align: center;
+    }
+    .merch_body > div > h3 {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .merch {
+        padding-top: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .merch_background {
+        background-image: radial-gradient(
+                45vw 45vw at 50% 50%,
+                rgba(0, 0, 0, 0) 50%,
+                #000 100%
+            ),
+            url('/pics/circle_full.png');
+    }
+    .merch_body {
+        gap: 22px;
+    }
+    .merch_body > div {
+        gap: 2px !important;
+    }
+    .merch_body > div > h2 {
+        font-size: 48px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .merch_body > div > h3 {
+        font-size: 22px;
+    }
+    .merch_body > p {
+        font-size: 16px;
+    }
+    .merch_hero {
+        margin-top: -30px;
+        height: calc(400px + 43vw);
+    }
+    .merch_hero_fix {
+        margin-top: 0;
+        height: 100%;
+        padding-top: 130px;
+        width: 75vw;
+        max-width: 515px;
+    }
+    /* .merch_tshirts {
+        height: 100%;
+    }
+    .tshirt_blue {
+        width: calc(271.126px / 1.25);
+        height: calc(358.956px / 1.25);
+    }
+    .tshirt_black {
+        width: calc(430.793px / 1.25);
+        height: calc(526.036px / 1.25);
+    }
+    .tshirt_white {
+        width: calc(271.126px / 1.25);
+        height: calc(358.956px / 1.25);
+    } */
+    .merch_button {
+        bottom: 120px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .merch {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .merch_background {
+        background-image: radial-gradient(
+                50vw 50vw at 50% 50%,
+                rgba(0, 0, 0, 0) 50%,
+                #000 100%
+            ),
+            url('/pics/circle_full.png');
+    }
+    .merch_body {
+        min-width: unset;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .merch_body > div > h2 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .merch_body > div > h3 {
+        font-size: 17px;
+    }
+    .merch_body > p {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .merch_hero_fix {
+        width: 90vw;
+        max-width: 400px;
+        min-width: 280px;
+    }
+    .merch_hero {
+        height: calc(450px + 45vw);
+    }
+    /* .tshirt_blue {
+        width: calc(271.126px / 1.5);
+        height: calc(358.956px / 1.5);
+    }
+    .tshirt_black_parent {
+        padding-top: 26px;
+    }
+    .tshirt_black {
+        width: calc(430.793px / 1.55);
+        height: calc(526.036px / 1.55);
+    }
+    .tshirt_white {
+        width: calc(271.126px / 1.5);
+        height: calc(358.956px / 1.5);
+    } */
+    .merch_button {
+        bottom: 180px;
+    }
+    .merch_button > button {
+        width: 191.315px;
+        height: 62.963px;
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .merch_body > div > h3 {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .merch_hero {
+        height: 550px;
+    }
+}
+/* =================================== Anwesha Through the Lens =================================== */
+.moments {
+    align-self: stretch;
+    background: #000300;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+.moments_images_parent {
+    overflow: hidden;
+}
+.moments_images_curve {
+    background-color: #000300;
+    width: 120%;
+    margin-left: -10%;
+    height: 60px;
+    z-index: 10;
+    position: relative;
+}
+.moments_images_top_curve {
+    border-bottom-left-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    margin-bottom: -90px;
+}
+.moments_images_bottom_curve {
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    margin-top: -90px;
+}
+.moments_images {
+    display: flex;
+    position: relative;
+    gap: 10px;
+
+    margin-top: 32px;
+    margin-bottom: 32px;
+    height: 546px;
+    overflow: hidden;
+    user-select: none;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        #000 3%,
+        #000 97%,
+        transparent 100%
+    );
+}
+
+.moments_button {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+@media only screen and (max-width: 1250px) {
+    .moments {
+        padding-top: 24px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .moments_images_top_curve {
+        border-bottom-left-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+    }
+    .moments_images_bottom_curve {
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .moments {
+        margin-bottom: 0;
+    }
+    .moments_images_curve {
+        width: 130%;
+        margin-left: -15%;
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .moments_button {
+        gap: 12px;
+    }
+    .moments_images_curve {
+        width: 140%;
+        margin-left: -20%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .moments > .sexy_title > h3 {
+        font-size: 14px;
+    }
+    .moments_button > .sexy_button_small {
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+    }
+    .moments_button {
+        padding-top: 0.5rem;
+        gap: 0;
+    }
+}
+/* =================================== aftermovie =================================== */
+.aftermovie {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 34px;
+    align-self: stretch;
+    background: #000300;
+    width: 100%;
+}
+.aftermovie_video {
+    width: 100%;
+    max-width: 1280px;
+    /* display: flex; */
+    /* width: 1280px;
+    height: 633px; */
+    padding: 13px 27px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    position: relative;
+}
+.aftermovie_video > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1226 / 607;
+}
+.aftermovie_video > iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1226 / 607;
+}
+.aftermovie_video > video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1226 / 607;
+}
+.aftermovie_video > div {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1226 / 607;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aftermovie_video > div > button{
+    all: unset;
+    display: none;
+    top: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+    /* margin-right: 5.5rem; */
+    /* margin-top: 1rem; */
+    cursor: pointer;
+    background-color: white;
+    border-radius: 9999px;
+    /* padding: 1px; */
+}
+.aftermovie_video:hover > div > button{
     display: block;
 }
-
-.artistImgMob{
-    display: none !important;
-}
-
-@media screen and (max-width: 450px) {
-    .artistImg{
-        /* width: 100% !important; */
-        display: none !important;
-    }
-    .artistImgMob{
-        width: 54% !important;
-        display: block !important;
-    }
-    .carouselArrow{
-        height: 30px;
-    }
-    .carouselArrowDivLeft{
-        left: 2% !important;
-    }
-    .carouselArrowDivRight{
-        right: 2% !important;
+@media only screen and (max-width: 1250px) {
+    .aftermovie {
+        gap: 24px;
     }
 }
+@media only screen and (max-width: 768px) {
+    .aftermovie_video {
+        padding: 13px 16px;
+    }
+    .aftermovie {
+        gap: 16px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .aftermovie_video {
+        padding: 13px 4px;
+    }
+    .aftermovie {
+        gap: 8px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .aftermovie > .sexy_title > h3 {
+        font-size: 16px;
+    }
+}
+/* =================================== CTA =================================== */
+.cta {
+    align-self: stretch;
+    background: #000300;
+    padding-top: 64px;
+}
+.cta_body {
+    display: flex;
+    justify-content: center;
+}
 
+.cta_body_right {
+    padding-top: 120px;
+    padding-right: 27px;
+}
+.cta_body_right > p {
+    max-width: 618.207px;
+    width: 100%;
+
+    color: #fff;
+    text-align: justify;
+
+    /* La/La - 20 Reg */
+    font-family: Laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+}
+.cta_body_right > p > span {
+    color: var(--Color-Primary500, #50ff00);
+
+    /* La/La - 20 Reg */
+    font-family: Laila;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+.cta_button {
+    margin-top: 52px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.cta_body_left {
+    /* width: 626px;
+    height: 626px;
+    flex-shrink: 0; */
+    overflow: hidden;
+    border-radius: 9999px;
+    position: relative;
+}
+/* .cta_body_left > svg{
+    filter: brightness(90%);
+} */
+.cta_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 125px;
+    padding-left: 65px;
+}
+.cta_image > img {
+    filter: brightness(60%);
+}
+.rotating_circle {
+    animation: rotateAnimation 5s linear infinite; /* Set animation to rotate infinitely */
+}
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Start from 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate to 360 degrees (one full turn) */
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .cta_body {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 44px;
+        padding-left: 27px;
+        padding-right: 27px;
+        overflow-y: hidden;
+    }
+    .cta_body_right {
+        padding-top: 0;
+        padding-right: 0;
+    }
+    .cta_button {
+        margin-top: 22px;
+    }
+    .cta_body_right > p {
+        max-width: 768px;
+        text-align-last: center;
+    }
+    .cta_body_left {
+        margin-top: -50px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cta {
+        padding-top: 48px;
+    }
+    .cta_body {
+        overflow-x: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 32px;
+    }
+    .cta_body_right > p {
+        font-size: 16px;
+        max-width: 600px;
+    }
+    .cta_body_left > svg {
+        width: 550px;
+        height: 550px;
+    }
+
+    .cta_image {
+        padding-top: 125px;
+        padding-left: 65px;
+    }
+    .cta_image > img {
+        width: 400px;
+        height: 400px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .cta {
+        padding-top: 32px;
+    }
+    .cta_body {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 24px;
+    }
+}
+/* =================================== Sponsors =================================== */
+.sponsors {
+    background: #000300;
+    display: flex;
+    width: 100%;
+    padding-bottom: 48px;
+}
+.sponsors_title {
+    display: inline-flex;
+    padding: 32px 24px;
+    padding-top: 20px;
+    padding-left: 64px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    align-items: flex-start;
+    gap: 12px;
+    width: 500px;
+    min-width: 500px;
+}
+.sponsors_title > h2 {
+    color: var(--Color-Primary500, #50ff00);
+
+    /* SF/SF - 64 Reg */
+    font-family: 'SF Ironsides';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.sponsors_title > h3 {
+    color: #fff;
+
+    /* AN/AN - 24 */
+    font-family: AnavioSmallCapitalsW01-Bold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.sponsors_images_slider {
+    /* display: inline-flex;
+    align-items: center;
+    gap: 24px; */
+    overflow: hidden;
+    width: 100%;
+    background-color: inherit;
+    align-content: center;
+    mask-image: linear-gradient(to right, transparent, #000, transparent);
+}
+.autoScrollSponseAnimation {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: autoScrollSponse;
+}
+
+@keyframes autoScrollSponse {
+    from {
+        left: -127.381px;
+    }
+    to {
+        left: 100%;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .sponsors {
+        flex-direction: column;
+        padding: 0 64px;
+        padding-bottom: 72px;
+    }
+    .sponsors_title {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 100%;
+        max-width: 768px;
+        min-width: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sponsors {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .sponsors {
+        padding: 0 16px;
+        padding-bottom: 64px;
+    }
+    .sponsors_title > h2 {
+        font-size: 48px;
+    }
+    .sponsors_title > h3 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    /* TODO */
+    .sponsors {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* =================================== NewsLetter =================================== */
+.newsletter {
+    width: 100%;
+    padding: 40px 40px;
+    background: #000300;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.newsletter > iframe {
+    padding: 0 4px;
+    /* min-width: min(100%, 300px); */
+    width: 80vw;
+    max-width: 768px;
+}
+@media only screen and (max-width: 768px) {
+    .newsletter {
+        padding: 40px 0;
+    }
+    .newsletter > iframe{
+        width: 90vw;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .newsletter > iframe{
+        width: 98%;
+        padding: 0 10px;
+    }
+}

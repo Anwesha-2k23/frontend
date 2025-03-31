@@ -1,97 +1,322 @@
-.parentContainer{
-    background-color: #c4c4c4;
+@import url('https://fonts.cdnfonts.com/css/sf-ironsides');
+@import url(https://db.onlinewebfonts.com/c/c4edbff807a21e68cd990230dab176df?family=Anavio+Small+Capitals+W01+Rg);
+@import url('https://fonts.cdnfonts.com/css/laila');
+
+.parentContainer {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-.container{
-    margin-inline: 30px;
-    padding-top: 100px;
+.fullPageTitle {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 0;
+    background-image: url('/TeamBg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-size 0.3s ease-out;
+}   
+
+.fullPageTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 60%);
+    pointerEvents: none;
 }
 
-.teamHeader{
-    font-size: 46px;
-    font-weight: 700;
+.titleOverlay {
     text-align: center;
-    color: #403E9E;
+    padding: 20px;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-.teamHeadingBar{
-    width: 280px;
-    height: 5px;
-    background-color: #ffffff;
+.subTitle {
+    font-family: 'Anavio Small Capitals W01 Rg';
+    font-size: 7.5vw;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transform: translate(-15%, 40%);
+}
+
+.subTitle::first-letter {
+    font-size: 11vw;
+}
+
+.mainTitle {
+    font-family: 'Anavio Small Capitals W01 Rg';
+    font-size: 9vw;
+    color: #ffffff;
+    transform: translateY(-20%);
+}
+
+.firstLetter {
+    font-size: 14vw;
+}
+
+.lastNumber {
+    font-size: 14vw;
+}
+
+.container {
+    font-family: 'Outfit', sans-serif;
+    margin-top: 0;
+    padding-top: 100px;
+    background-image: url('/aboutusBg.png');
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(91, 91, 91, 0) 80%);
+}
+
+.teamHeader {
+    font-family: 'SF Ironsides', sans-serif;
+    font-size: 50px;
+    font-weight: 250;
+    color: red;
+    text-align: center;
+}
+
+.teamHeadingBar {
+    width: 0;
+    height: 0;
+    background-color: #FFFFFF;
     margin-inline: auto;
     margin-bottom: 50px;
     border: none;
 }
 
-.coordinators{
+.coordinators {
     display: flex;
     flex-direction: column;
-    /* TODO : Complete the styling */
 }
 
-.teamSubHeading{
-    font-size: 35px;
-    font-weight: 600;
-    color: #403E9E;
+.teamSubHeading {
+    font-family: 'SF Ironsides', sans-serif;
+    font-size: 50px;
+    font-weight: 250;
+    color: #50FF00;
     text-align: center;
     margin-bottom: 0px;
+    position: relative;
+    background-image: url('/subheading.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-transform: uppercase;
 }
 
-/* .teamSubHeadingBar{
-    
-    width: 230px;
-    height: 5px;
-    background-color: #403E9E;
-    margin-bottom: 50px;
-    border: none;
-} */
-
-.picContainer{
+.picContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    flex-grow: 1;
-    gap: 50px;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     padding-bottom: 100px;
 }
 
-.teamCard{
-    background-color: #ffffff;
-    padding: 20px;
-    width: 290px;
+.teamCard {
+    perspective: 1000px;
+    position: relative;
+    width: calc((100% - 60px) / 3);
+    height: 460px;
+    min-width: 280px;
+    max-width: 360px;
+    
+}
+
+.flipInner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.teamCard:hover .flipInner {
+    transform: rotateY(180deg);
+}
+
+.flipFront, .flipBack {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-radius: 13px;
-    margin: 20px;
-    box-shadow: 4.63213px 4.63213px 0px #000000;
+    overflow: hidden;
 }
 
-.memberImage{
-    background-color: #56a5fe;
-    border-radius: 17px;
-    border: green 2px solid;
+.flipBack {
+    transform: rotateY(180deg);
+    color: #ffffff;
+}
+
+.memberImage {
+    width: 75%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 2%;
 }
 
-.teamMemberDetails{
+.teamMemberDetails {
+    width: 100%;
+    padding: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.memberName{
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 24px;
-    overflow: hidden;
+.memberName {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    padding: 0 5%;
+    margin-top: 14px;
     margin-bottom: 5px;
+    color: #ffffff;
+    font-family: 'Laila', sans-serif;
 }
 
-.memberCommitte{
+.memberCommitte {
     font-size: 16px;
     font-weight: 500;
     line-height: 18.5px;
     overflow: hidden;
     margin-block: 5px;
+}
+
+.cardBackContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cardBack {
+    width: 75%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 2%;
+}
+
+.socialLinks {
+    position: absolute;
+    width: 90%;
+    height: auto;
+    display: flex;
+    gap: 5%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-30px);
+}
+
+.socialIcon {
+    color: #000000;
+    transition: transform 0.2s;
+    width: 26px;
+    height: auto;
+    fill: #ffffff;
+}
+
+.linkedinIcon{
+    color: rgba(0, 0, 0, 0.0);
+    transition: transform 0.2s;
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+
+.socialIcon:hover {
+    transform: scale(1.2);
+}
+.linkedinIcon:hover {
+    transform: scale(1.2);
+}
+
+.iconDivider {
+    width: 1.5px;
+    height: 30px;
+    background-color: #ffffff;
+    margin: 0 5px;
+}
+
+@media (max-width: 1024px) {
+    .picContainer {
+        gap: 20px;
+    }
+    
+    .teamCard {
+        width: calc((100% - 20px) / 2);
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .subTitle {
+        transform: none;
+        left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .titleOverlay {
+        padding: 10px;
+    }
+    
+    .teamSubHeading {
+        font-size: 30px;
+    }
+    
+    .picContainer {
+        gap: 15px;
+    }
+    
+    .teamCard {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 360px;
+    }
+
+}
+.titleOverlay {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.fullPageTitle {
+    transition: background-size 0.2s ease-out;
 }

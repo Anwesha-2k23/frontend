@@ -8,6 +8,39 @@
     align-content: center;
 }
 
+.eventsInfo {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Anavio Small Capitals W01 Bold';
+}
+.eventsHeading {
+    font-family: 'Anavio Small Capitals W01 Bold';
+    border-bottom: 1px solid white;
+    font-size: 20px;
+}
+.pass {
+    padding: 12px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Laila', sans-serif;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+.passType {
+    font-family: 'Laila-Bold', sans-serif;
+}
+.pass img {
+    height: 65px;
+}
+.passDetail {
+    display: flex;
+    flex-direction: column;
+}
+/* 
 .pass {
     position: relative;
     background-color: #e5e5e5;
@@ -18,7 +51,7 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 /* .pass h2 {
     position: absolute;

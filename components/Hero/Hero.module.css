@@ -1,0 +1,39 @@
+.hero{
+    align-self: stretch;
+    padding: 52px 64px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100dvh;
+}
+.hero_main{
+    width: 767.308px;
+    height: 675.457px;
+    flex-shrink: 0;
+    background-image: radial-gradient(52.44% 42.58% at 50% 50%, rgba(0, 0, 0, 0.00) 29.61%, #000 100%), url("/pics/circle_full.png");
+    animation: rotateAnimation 15s linear infinite;
+    background-position: -116.259px -0.04px;
+    background-size: 127.85% 96.835%;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000,
+        transparent
+    );
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg); /* Start from 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Rotate to 360 degrees (one full turn) */
+    }
+}

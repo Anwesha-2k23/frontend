@@ -26,23 +26,38 @@ function openPay(data) {
     }
     let atom = new AtomPaynetz(options, 'uat')
 }
-async function soloEventRegistration(
+async function proniteRegistration(
     eventID,
-    amount,
     email,
     phone,
-    anwesha_id
+    anwesha_id,
+    usertype,
+    setisloading
 ) {
     var myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    if (usertype == 'iitp_student') {
+        toast.warn("IITP students don't need to buy pass", {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+        setisloading(false);
+        return;
 
+    }
     var raw = JSON.stringify({
         event_id: eventID,
-        amount: amount,
+        amount: 949,
         email: email,
         phone: phone,
         anwesha_id: anwesha_id,
-        type: 'solo',
+        type: 'FESTPASS',
     })
     var requestOptions = {
         method: 'POST',
@@ -51,43 +66,35 @@ async function soloEventRegistration(
         redirect: 'follow',
         credentials: 'include',
     }
+    console.log(raw);
 
-    const data = await fetch(`${host}/atompay/`, requestOptions)
+    const data = await fetch(`${host}/festpasses/atompay`, requestOptions)
         .then((response) => response.json())
         .catch((error) => {
             console.error(error)
         })
+    if (data.message == 'You have already purchased festpass') {
+        toast.warn("Already purchased", {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+        })
+        setisloading(false);
+        return;
+    }
 
     const res = await loadScript(
         'https://psa.atomtech.in/staticdata/ots/js/atomcheckout.js?v=' +
-            data.atomTokenId
+        data.atomTokenId
     )
     openPay(data)
-}
-
-async function soloEventRegistrationiitp(eventID) {
-    var myHeaders = new Headers()
-    myHeaders.append('Content-Type', 'application/json')
-
-    var raw = JSON.stringify({
-        event_id: eventID,
-    })
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow',
-        credentials: 'include',
-    }
-
-    const data = await fetch(`${host}/event/registration/solo`, requestOptions)
-        .then((response) => response.json())
-        .catch((error) => {
-            console.error(error)
-        })
-
-    toast.success(data.message || data.messagge, {
+    setisloading(false);
+    toast.success('If purchased you can check it in profile', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
@@ -98,4 +105,14 @@ async function soloEventRegistrationiitp(eventID) {
         theme: 'light',
     })
 }
-export { soloEventRegistration, soloEventRegistrationiitp }
+
+
+export { proniteRegistration }
+
+
+
+
+
+
+
+

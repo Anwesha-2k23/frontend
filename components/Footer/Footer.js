@@ -1,265 +1,186 @@
-import Link from 'next/link'
-import styles from './Footer.module.css'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
-import { motion } from 'framer-motion'
-import 'react-toastify/dist/ReactToastify.css'
-var validator = require('email-validator')
+import styles from './Footer.module.css'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+// TO USE More Classes => {cn(className1, className2, className3)}
+const cn = (...classes) => {
+    return classes.filter(Boolean).join(' ')
+}
+// assets path => '/pics/footer/{name}'
 
 const Footer = () => {
-    const [email, setEmail] = useState('')
-    useEffect(() => {
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycbxjZQnFTF4rkZgSlA7IaVaMSoXdsqvt39LrUfaFtocPE-qkQWQhqItmXdyw-HvpACmA/exec'
-        const form = document.forms['submit-to-google-sheet']
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault()
-            if (validator.validate(document.getElementById('email').value)) {
-                toast.success('You are subscribed to our newsletter', {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
-                const response = await fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form),
-                })
-                const data = await response.json()
-                // .then(response => console.log('Success!', response))
-                // .catch(error => console.error('Error!', error.message))
-                setEmail('')
-                if (data.result != 'success') {
-                    toast.error('Failed to subscribe the newsletter', {
-                        position: 'top-right',
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: 'light',
-                    })
-                }
-            } else {
-                toast.warning('Check your email once again', {
-                    position: 'top-right',
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: 'light',
-                })
-            }
-
-            // .then(response => console.log('Success!', response))
-            // .catch(error => console.error('Error!', error.message))
-        })
-    }, [])
-
-    const handleChange = (e) => {
-        setEmail(e.target.value)
-    }
+    const router = useRouter();
     return (
-        <div className={styles.footer}>
-            <div className={styles.mainSection}>
-                <div className={styles.sectionLeft}>
-                    <div className={styles.footerTable}>
-                        <div className={styles.footerTableRow}>
-                            <Link className={styles.footerLink} href="/">
-                                <div className={styles.footerTableCell}>
-                                    Home
-                                </div>
-                            </Link>
-                            <Link
-                                className={styles.footerLink}
-                                href="https://forms.gle/67XktxG9iTFgfT9n9"
+        <section>
+            <div className={styles.footer}>
+                <div className={styles.footer_upper}>
+                    <div className={styles.foter_logo}>
+                        <Image
+                            src="/pics/footer/logo.svg"
+                            alt="Image description"
+                            width={394.55}
+                            height={225.76}
+                        />
+                    </div>
+                    <div className={styles.social_logo}>
+                        <div className={styles.social_logo_container}>
+                            <a
+
+                                href="mailto:anwesha@iitp.ac.in"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <div className={styles.footerTableCell}>
-                                    Report a Problem
-                                </div>
-                            </Link>
-                            <Link
-                                className={styles.footerLink}
-                                href="/oursponsors"
+                                <Image
+                                    src="/pics/footer/email.svg"
+                                    alt="Image description"
+                                    width={62.173}
+                                    height={49.173}
+                                />
+                            </a>
+                            <a
+
+                                href="https://www.instagram.com/anwesha_iitpatna/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <div className={styles.footerTableCell}>
-                                    Sponsors
-                                </div>
-                            </Link>
+                                <Image
+                                    src="/pics/footer/insta.svg"
+                                    alt="Image description"
+                                    width={62.173}
+                                    height={49.173}
+                                />
+                            </a>
                         </div>
-                        <div className={styles.footerTableRow}>
-                            <Link className={styles.footerLink} href="/profile">
-                                <div className={styles.footerTableCell}>
-                                    Profile
-                                </div>
-                            </Link>
-                            <Link className={styles.footerLink} href="/aboutus">
-                                <div className={styles.footerTableCell}>
-                                    About Us
-                                </div>
-                            </Link>
-                            <Link className={styles.footerLink} href="/ourteam">
-                                <div className={styles.footerTableCell}>
-                                    Team
-                                </div>
-                            </Link>
-                            {/* <Link
-                                className={styles.footerLink}
-                                href="https://forms.gle/LD4gSRg9CaxEeAXK7"
+                        <div className={styles.social_logo_container}>
+                            <a
+
+                                href="https://www.facebook.com/anwesha.iitpatna/"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <div className={styles.footerTableCell}>
-                                    Report issue
-                                </div>
-                            </Link> */}
+                                <Image
+                                    src="/pics/footer/facebook.svg"
+                                    alt="Image description"
+                                    width={63.173}
+                                    height={49.173}
+                                />
+                            </a>
+                        </div>
+                        <div className={styles.social_logo_container}>
+                            <a
+
+                                href="https://twitter.com/anweshaiitpat/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src="/pics/footer/twittter.svg"
+                                    alt="Image description"
+                                    width={63.173}
+                                    height={49.173}
+                                />
+                            </a>
+                            <a
+
+                                href="https://www.youtube.com/@AnweshaIITP"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image
+                                    src="/pics/footer/youtube.svg"
+                                    alt="Image description"
+                                    width={63.173}
+                                    height={49.173}
+                                />
+                            </a>
                         </div>
                     </div>
-                    <div
-                        className={[styles.icon_links, styles.linkGroup].join(
-                            ' '
-                        )}
-                    >
-                        <Link
-                            className={[styles.icon_link, styles.link].join(
-                                ' '
-                            )}
-                            href="mailto:anweshaiitp@gmail.com"
-                        >
-                            <img src="/footer/gmail.svg" />
-                        </Link>
-                        <Link
-                            className={[styles.icon_link, styles.link].join(
-                                ' '
-                            )}
-                            href="https://instagram.com/anwesha.iitp?igshid=YmMyMTA2M2Y="
-                        >
-                            <img src="/footer/instagram.svg" />
-                        </Link>
-                        <Link
-                            className={[styles.icon_link, styles.link].join(
-                                ' '
-                            )}
-                            href="https://m.youtube.com/@AnweshaIITP?itct=CBgQq6cCIhMIv5uekI6m-wIVKcmgAh3FlAur"
-                        >
-                            <img src="/footer/youtube.svg" />
-                        </Link>
-                        <Link
-                            className={[styles.icon_link, styles.link].join(
-                                ' '
-                            )}
-                            href="https://www.facebook.com/anwesha.iitpatna/"
-                        >
-                            <img src="/footer/facebook.svg" />
-                        </Link>
-                        <Link
-                            className={[styles.icon_link, styles.link].join(
-                                ' '
-                            )}
-                            href="https://twitter.com/anweshaiitpat/"
-                        >
-                            <img src="/footer/twitter.svg" />
-                        </Link>
+                    <div className={styles.footer_address}>
+                        <h4>
+                            Anwesha Office, <br />
+                            Indian Institute of Technology Patna, <br />
+                            Bihta, Patna - 801103 <br />
+                            anwesha@iitp.ac.in ( office work only )  <br />
+                            <span
+                                onClick={() => router.push('/contact')}
+                                style={{ textDecoration: 'underline', cursor: 'pointer' }}
+                            >
+                                Contact us
+                            </span>
+                            → for technical issues
+                        </h4>
                     </div>
                 </div>
-
-                <div className={styles.sectionMiddle}>
-                    <img
-                        className={styles.frame_img}
-                        src="/navbar/logo_no_bg.svg"
+                {/* <div className={styles.footer_middle}>
+                    <div className={styles.footer_nav}>
+                        <div className={styles.four_fingure}>
+                            {' '}
+                            <Link href="">
+                                <h3>Events</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Merch</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Gellerty</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Teams</h3>
+                            </Link>{' '}
+                        </div>
+                        <div className={styles.four_fingure}>
+                            {' '}
+                            <Link href="">
+                                <h3>Sponsors</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Contat Us</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Profile</h3>
+                            </Link>
+                            <Link href="">
+                                <h3>Get Passes</h3>
+                            </Link>{' '}
+                        </div>
+                    </div>
+                </div> */}
+                <div className={styles.line_section}>
+                    <Image
+                        src="/pics/footer/Line.svg"
+                        alt="Image description"
+                        width={500}
+                        height={50}
+                        style={{
+                            width: '100%',
+                            height: '10px',
+                            objectFit: 'contain',
+                        }}
                     />
-                    <span className={styles.newsletter}>
-                        Subscribe to our Mailing list
-                    </span>
-                    <form className={styles.form} name="submit-to-google-sheet">
-                        <input
-                            placeholder="Anwesha Dispatch"
-                            onChange={handleChange}
-                            value={email}
-                            type="email"
-                            name="Email"
-                            id="email"
-                            className={styles.mailInput}
-                        />
-                        {/* <button
-                            className={styles.nlnewbtn}
-                            type="submit"
-                        > */}
-                        {/* Subscribe */}
-                        <input
-                            type="image"
-                            alt="submit"
-                            name="submit"
-                            style={{
-                                height: '40px',
-                                filter: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%)',
-                            }}
-                            src="/footer/newsletter.svg"
-                        />
-                        {/* </button> */}
-                    </form>
-                    <div className={styles.termsPrivacy}>
-                        <Link href="/privacy" className={styles.privacy_text}>
-                            Privacy Policy
-                        </Link>
-                        <Link href="/terms" className={styles.terms_text}>
-                            Terms and Conditions
-                        </Link>
-                    </div>
                 </div>
-
-                <div className={styles.sectionRight}>
-                    {/* <a href="https://goo.gl/maps/g8QCu3qN2DhuM2W49"> */}
-                    {/* <img src="/footer/location.svg" /> */}
-                    <div className={styles.a}>
-                        <div className={styles.address}>
-                            Anwesha Office,
-                            <br />
-                            Indian Institute of Technology Patna,
-                            <br />
-                            Bihta, Patna - 801 103
-                            <br />
-                            <a href="tel:+917907323522">+91 7907323522</a>
-                        </div>
-                    </div>
-                    <div
-                        className={[
-                            styles.button_links,
-                            styles.linkGroup,
-                            styles.googlePlayButton,
-                        ].join(' ')}
-                    >
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://play.google.com/store/apps/details?id=com.college.anwesha2k23"
-                        >
-                            {/* <img
-                              alt="Get it on Google Play"
-                              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                          /> */}
-                            {/* <div>Download the Anwesha'23 app now</div> */}
-                            <Image
-                                alt="google play icon"
-                                src={'/footer/googlePlay.svg'}
-                                width={250}
-                                height={250}
-                            ></Image>
-                        </a>
-                    </div>
-                    {/* </a> */}
+                <div className={styles.footer_lower}>
+                    <h4 onClick={() => { router.push('/privacy') }}> Privacy Policy </h4>
+                    <h4 onClick={() => { router.push('/terms') }}>   Terms and Condition</h4>
+                </div>
+                <div className={styles.left_helobean}>
+                    <Image
+                        src="/pics/footer/chootSmall.svg"
+                        alt="Image description"
+                        width={200}
+                        height={100}
+                    />
+                </div>
+                <div className={styles.right_helobean}>
+                    <Image
+                        src="/pics/footer/chootHead.svg"
+                        alt="Image description"
+                        width={300}
+                        height={200}
+                    />
                 </div>
             </div>
-        </div>
+        </section >
     )
 }
 

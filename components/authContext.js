@@ -14,23 +14,26 @@ const PrivateRoute = ({ children }) => {
     const authContext = React.useContext(AuthContext)
 
     useEffect(() => {
+        // Redirect to login if the user is unauthenticated and trying to access protected routes
         if (
-            authContext.state.user === null &&
-            ['/profile', '/event-registration'].includes(router.pathname)
-        ) {
-            router.push('/userLogin')
-        } else if (
-            authContext.state.user !== null &&
-            ['/userLogin', '/userRegister'].includes(router.pathname)
-        ) {
-            router.push('/registration')
-        } else if (
-            authContext.state.user === null &&
-            router.pathname.includes('/event-registrations')
+            !authContext.isAuth &&
+            [
+                '/event-registration',
+                '/event-registrations',
+                '/profile',
+            ].includes(router.pathname)
         ) {
             router.push('/userLogin')
         }
-    })
+        // Redirect logged-in users away from the login page
+        if (
+            authContext.isAuth &&
+            (router.pathname === '/userLogin' ||
+                router.pathname === '/userRegister')
+        ) {
+            router.push('/profile')
+        }
+    }, [authContext.isAuth, router.pathname]) // Dependency array ensures this effect runs on changes to auth status or path
 
     return children
 }
@@ -38,69 +41,67 @@ const PrivateRoute = ({ children }) => {
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const router = useRouter()
-    function getUser() {
-        fetch(`${host}/user/editprofile`, {
-            method: 'GET',
-            credentials: 'include',
-            redirect: 'follow',
-        })
-            .then((response) => response.json())
-            .then((result) => {
-                if (
-                    result.message ===
-                        'you are unauthenticated , Please Log in First' ||
-                    result.message ===
-                        'Your token is expired please generate new one' ||
-                    result.message ===
-                        'Your token is expired please login again'
-                ) {
-                    setUser(null)
-                    if (
-                        ['/profile', '/event-registration'].includes(
-                            router.pathname
-                        )
-                    ) {
-                        toast.error(result.message, {
-                            position: 'top-right',
-                            autoClose: 3000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: 'light',
-                        })
-                    }
-                } else {
-                    setUser(result)
-                }
-                // console.log(result)
+
+    // Function to fetch user data and update the state
+    const getUser = async () => {
+        try {
+            const response = await fetch(`${host}/user/editprofile`, {
+                method: 'GET',
+                credentials: 'include',
+                redirect: 'follow',
             })
-            .catch((error) => console.log('error', error))
+            const result = await response.json()
+
+            // Check for specific unauthenticated messages
+            if (
+                result.message ===
+                'You are unauthenticated. Please log in first.' ||
+                result.message ===
+                'Your token is expired. Please generate a new one.' ||
+                result.message === 'Your token is expired. Please log in again.'
+            ) {
+                setUser(null) // Mark the user as unauthenticated
+
+                // Show error message if accessing restricted routes
+                if (
+                    [
+                        '/profile',
+                        '/event-registration',
+                        '/event-registrations',
+                    ].includes(router.pathname)
+                ) {
+                    toast.error(result.message, {
+                        position: 'top-right',
+                        autoClose: 3000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: 'light',
+                    })
+                }
+            } else {
+                setUser(result) // Successfully authenticated, set the user data
+            }
+        } catch (error) {
+            console.error('Error fetching user data:', error)
+        }
     }
+
+    // Fetch user data on component mount
     useEffect(() => {
         getUser()
     }, [])
+
     return (
         <>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
             <Provider
                 value={{
-                    state: { user: user },
-                    setUser: setUser,
-                    isAuth: user !== null,
-                    getUser: getUser,
+                    state: { user },
+                    setUser,
+                    isAuth: user !== null, // Ensure isAuth is correctly tied to user state
+                    getUser,
                 }}
             >
                 {children}

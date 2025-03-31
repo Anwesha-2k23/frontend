@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'SF Ironsides'; /* Name for the font */
+    src: url('/font/SF_Ironsides.ttf') format('truetype'); /* Path to the font */
+    font-weight: normal; /* Define the weight */
+    font-style: normal;  /* Define the style */
+}
+
 .mainContainer {
     width: 100%;
     margin: 0;
@@ -6,95 +15,207 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-image: url('/events/bg.svg'); */
-    background-size: cover;
-    background-position-x: center;
-    /* background-position-y: center; */
-    /* background-repeat: repeat-y; */
+    background-image: 
+    radial-gradient(
+            circle at center, 
+            rgba(255, 255, 255, 0.2) 0%, /* Brighter center */
+            rgba(0, 0, 0, 1) 70%, /* Darker towards the edges */
+            rgba(0, 0, 0, 1) 100% /* Fully black at the edges */
+        ),
+    url("/events/bgImg.png"); /* Add your image */
+
+    background-position: center 120px; /* Center the images horizontally */
+    background-repeat: repeat-y; /* Repeat images in the Y-direction */
+    background-size: 1200px 838.941px; /* Set the image dimensions */
+    background-blend-mode: overlay; /* Blend the image with the black background */
+
+   
 }
+
 
 .container {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+   
     align-items: center;
-    padding-top: 20vh;
+    padding-top: 12vh;
     transition: opacity 0.5s ease-in-out;
     width: 90vw;
     margin-bottom: 40px;
+    
 }
-.searchcontainer {
+
+
+
+.searchContainer{
+    width: 90%;
     display: flex;
+    justify-content: space-around;
+    margin-top: 36px;
+}
+.searchbox {
+    display: flex;
+    width: 610px;
+    padding: 20px 24px;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-    max-width: 50vw;
     transition: opacity 0.5s ease-in-out;
+    border-bottom: 1px solid var(--Color-Primary500, #50FF00);
+    background: #000;
+
+    /* My Shadow 2 */
+    box-shadow: 4.123px -104.442px 29.546px 0px rgba(0, 0, 0, 0.02), 2.748px -66.651px 26.798px 0px rgba(0, 0, 0, 0.15), 1.374px -37.792px 22.675px 0px rgba(0, 0, 0, 0.50), 0.687px -16.491px 16.491px 0px rgba(0, 0, 0, 0.85), 0px -4.123px 8.933px 0px rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(30.920454025268555px);
 }
 .searchbar {
-    background-color: black;
+   
+    flex-grow: 1;
+    color: #FFF;
+    background-color: #000;
     border: none;
-    border-radius: 25px;
-    box-shadow: 0px 2px 2px rgba(96, 0, 197, 0.5);
-    width:100%;
-    height: 40px;
-    padding: 10px;
+    /* La/La - 20 Reg */
+    font-family: "Laila", serif;
     font-size: 20px;
-    font-family: 'Outfit', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    color: white;
     font-style: normal;
-    outline: none; /* Remove outline on focus */
-    color: transparent;
-}
-.searchicon {
-    position: absolute;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    fill: #ffffff; /* Icon color */
-    pointer-events: none; /* Make icon non-clickable */
-}
-.titletext {
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
-    font-size: 35px;
-    transition: opacity 0.5s ease-in-out;
-}
-.fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    pointer-events: none; /* Disable interaction when faded out */
+    line-height: 150%; /* 30px */
+    
 }
 
-/* Fade-in effect */
-.fadeIn {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+.searchbar::placeholder {
+    color: #FFFFFF; /* Bright white placeholder text */
+    
+}
+.searchbar:focus {
+    outline: none; /* Ensures no border is applied when focused */
+    border: none;  /* Ensures the border property is also reset */
 }
 
-.cardContainer {
+.searchicon {
+    width: 24px;
+height: 24px;
+flex-shrink: 0;
+}
+
+.leftgroup{
+    width: 183.728px;
+    height: 53.209px;
+    flex-shrink: 0;
+}
+
+.rightgroup{
+    width: 183.728px;
+    height: 53.209px;
+    flex-shrink: 0;
+}
+
+.textLinkContainer {
+    margin-top: 0px;
+    margin-right: 0px; 
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-end;
+    position: relative;
     width: 100%;
+}
+
+.textLink {
+    color: #FFF;
+    font-family: "Laila", serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 30px */
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+    display: inline; 
+    right: 0px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.textLink::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(5px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 550px) {
+    .textLinkContainer {
+        justify-content: center;
+    }
+}
+
+.textLink {
+    animation: blink 1s infinite;
 }
 
 .titleBox {
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
-    margin: min(200px, 5vh) min(5vw, 100px);
+    gap: 34px;
 }
+
+.centergroup {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    text-align: center;     /* Centers inline text within the element */
+    height: 100%;           /* Ensure the height is sufficient for vertical centering */
+}
+.titletext {
+    color: var(--Color-Primary500, #50FF00);
+    text-align: center;
+    font-family: "SF Ironsides", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+
+    background: #000;
+
+    /* Thick shadow in all directions */
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5), 
+                0px -20px 50px rgba(0, 0, 0, 0.5), 
+                20px 0px 50px rgba(0, 0, 0, 0.5), 
+                -20px 0px 50px rgba(0, 0, 0, 0.5);
+
+    /* Optional blur for a soft effect */
+    backdrop-filter: blur(15px);
+
+}
+
+.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fade-in effect
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+} */
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items to the next row */
+    justify-content: center; /* Add spacing between items */
+    ; /* Space between grid items */
+    gap: 32px;
+    max-width: 1065px;
+    margin-top: 63px;
+}
+
+
+
+
 
 .titleBox h1 {
     font-size: min(100px, 15vw);
@@ -103,18 +224,43 @@
     letter-spacing: -1.2px;
 }
 
-.titleBox p {
-    text-align: justify;
-    max-width: 700px;
+
+.workshopContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
     width: 90vw;
-    margin-bottom: 25px;
-    color: #010031;
-    font-size: min(20px, 5vw);
-    letter-spacing: 2px;
-    line-height: 150%;
+    align-items: center;
 }
 
-.imageBox {
+.workshoptitletext{
+    color: var(--Color-Primary500, #50FF00);
+    text-align: center;
+    font-family: "SF Ironsides", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+    background: #000;
+
+    /* Thick shadow in all directions */
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5), 
+                0px -20px 50px rgba(0, 0, 0, 0.5), 
+                20px 0px 50px rgba(0, 0, 0, 0.5), 
+                -20px 0px 50px rgba(0, 0, 0, 0.5);
+
+    /* Optional blur for a soft effect */
+    backdrop-filter: blur(15px);
+
+    
+
+    
+}
+
+/* .imageBox {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,21 +282,150 @@
     margin: 50px 0;
     width: 92vw;
     /* width: 100vw; */
-    display: flex;
+    /*display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 70px 20px;
+} */
+
+
+.sponsors{
+    background: #000300;
+    display: flex;
+    width: 100%;
+    padding-bottom: 48px;
 }
+.sponsors_title{
+    display: inline-flex;
+    padding: 32px 24px;
+    padding-top: 20px;
+    padding-left: 64px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    align-items: flex-start;
+    gap: 12px;
+    width: 500px;
+    min-width: 500px;
+}
+.sponsors_title > h2{
+    color: var(--Color-Primary500, #50FF00);
+
+    /* SF/SF - 64 Reg */
+    font-family: "SF Ironsides";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 64px */
+    text-transform: uppercase;
+}
+.sponsors_title > h3{
+    color: #FFF;
+
+    /* AN/AN - 24 */
+    font-family: 'AnavioSmallCapitalsW01-Bold';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.sponsors_images_slider{
+    /* display: inline-flex;
+    align-items: center;
+    gap: 24px; */
+    overflow: hidden;
+    width: 100%;
+    background-color: inherit;
+    align-content: center;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000,
+        transparent
+    );
+}
+.autoScrollSponseAnimation{
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: autoScrollSponse;
+}
+
+@media only screen and (max-width: 1250px) {
+    .sponsors{
+         flex-direction: column;
+         padding: 0 64px;
+         padding-bottom: 72px;
+    }
+    .sponsors_title{
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+         width: 100%;
+         max-width: 768px;
+         min-width: unset;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding-left: 0;
+         padding-right: 0;
+    }
+    .sponsors{
+         padding-left: 48px;
+         padding-right: 48px;
+     }
+ }
+ @media only screen and (max-width: 768px){
+     .sponsors{
+         padding: 0 16px;
+         padding-bottom: 64px;
+     }
+     .sponsors_title > h2{
+         font-size: 48px;
+     }
+     .sponsors_title > h3{
+         font-size: 18px;
+     }
+ }
+ @media only screen and (max-width: 550px){
+     /* TODO */
+     .sponsors{
+         padding-left: 12px;
+         padding-right: 12px;
+     }
+ }
+ 
+
+@keyframes autoScrollSponse{
+    from{
+        left: -127.381px;
+    }to{
+        left: 100%;
+    }
+}
+
 @media screen and (max-width: 785px) {
     .searchcontainer {
-        max-width: 60vw;
+        max-width: 70vw;
+        width: 100%;
+    }
+    
+    .rightgroup{
+        display: none;
+    }
+    .leftgroup{
+        display: none;
     }
 }
 
 @media screen and (max-width: 550px) {
     .searchcontainer {
         max-width: 80vw;
+        width: 100%;
     }
+    .searchbox{
+        width: 100%;
+    }
+   
 }

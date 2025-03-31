@@ -8,7 +8,7 @@ export default function forgotPassword() {
     return (
         <>
             <Head>
-                <title>Password Reset - Anwesha 2024</title>
+                <title>Password Reset - Anwesha 2025</title>
                 <meta name="description" content="Anwesha 2024" />
                 <link rel="icon" href="./logo_no_bg.svg" />
             </Head>

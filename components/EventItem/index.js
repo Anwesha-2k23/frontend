@@ -1,21 +1,21 @@
 import Image from 'next/image'
 import styles from './eventitem.module.css'
 import { motion } from 'framer-motion'
-// import Modal from '../BigModal'
+import Modal from '../BigModal'
 import { useState } from 'react'
 
-const index = ({ event,onClick }) => {
-    const [modal, setModal] = useState(false)
 
-    const close = () => {
-        setModal(false)
-    }
+const index = ({ event, onClick }) => {
+    const [modal, setModal] = useState(false)
+    const [first, second] = (event?.name ?? "").split("#");
+
+
 
     return (
         <>
 
             <div
-				className={styles.card}
+                className={styles.card}
                 onClick={onClick}
 
             >
@@ -33,31 +33,24 @@ const index = ({ event,onClick }) => {
                         alt="Coming Soon"
                     />
                 )} */}
-                <div className={styles.imageWrap}>
-                    <img
-                        src={event.poster ? event.poster : '/events/poster.png'}
-                        className={styles.item}
-                        alt="Fest Image"
-                        objectfit={'contain'}
-                    />
-                    <p className={styles.img__description}>
-                        <span style={{ marginBottom: '10px' }}>
-                            <Image
-                                src="/events/Vector.png"
-                                width={70}
-                                height={70}
-                                alt="Fest Image overlay"
-                            />
-                        </span>{' '}
-                    </p>
+                <div className={`${styles.imageWrap}`} style={{
+                    background: `url('${event.poster
+                        ? event.poster
+                        : '/events/poster1.png'}') center center / cover no-repeat `
+                }}>
+                    <div className={styles.innerShadow}> {/* Add shadow layer */}
+                        <div className={styles.eventDescription}>
+                            <div className={styles.eventName}>{first}</div>
+                            <div className={styles.smalldescription}>{second}</div>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles.eventName}>{event.name}</div>
-                <div className={styles.smalldescription}>{event.smalldescription}</div>
+
             </div>
             {/* {modal && (
                 <>
                     <Modal
-                        title={event.name}
+                        title={first}
                         body={event}
                         closeHandler={close}
                     />
